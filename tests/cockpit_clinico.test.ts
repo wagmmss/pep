@@ -53,14 +53,14 @@ function extractScriptAndRun() {
   };
 
   const vibrateCalls: any[] = [];
-  const mockCards = Array.from({ length: 93 }, (_, idx) => {
+  const mockCards = Array.from({ length: 105 }, (_, idx) => {
     const el = makeEl();
     el.dataset = {
-      mod: idx < 16 ? 'go' : idx < 57 ? 'upa' : idx < 66 ? 'enf' : idx < 74 ? 'ped' : 'hab',
+      mod: idx < 16 ? 'go' : idx < 63 ? 'upa' : idx < 70 ? 'enf' : idx < 83 ? 'ped' : 'hab',
       cat: 'Categoria Teste',
       search: ''
     };
-    el.style = { display: idx < 74 ? 'flex' : 'none' };
+    el.style = { display: idx < 83 ? 'flex' : 'none' };
     el.scrollIntoView = () => {};
     return el;
   });
@@ -116,12 +116,12 @@ function extractScriptAndRun() {
 test('Prompt 1: Semantic search maps tags_sintomas and ranks Asma, DPOC, and EAP at top for "falta de ar"', () => {
   const { sandbox, runExpr } = extractScriptAndRun();
   const allData = runExpr('allData');
-  assert.equal(allData.length, 93, 'All 93 protocols (74 PEP + 19 Habilidades) must be preserved');
+  assert.equal(allData.length, 105, 'All 105 protocols (83 PEP + 22 Habilidades) must be preserved');
 
   const pepCount = Array.from(allData).filter((x: any) => x.mod_id !== 'hab').length;
   const habCount = Array.from(allData).filter((x: any) => x.mod_id === 'hab').length;
-  assert.equal(pepCount, 74, 'Must have exactly 74 PEP protocols');
-  assert.equal(habCount, 19, 'Must have exactly 19 Habilidades Clínicas cards');
+  assert.equal(pepCount, 83, 'Must have exactly 83 PEP protocols');
+  assert.equal(habCount, 22, 'Must have exactly 22 Habilidades Clínicas cards');
 
   const t0 = performance.now();
   sandbox.window.searchCommandPalette('falta de ar');
@@ -248,25 +248,42 @@ test('Desktop Workstation Refactor, Column Resizers & Weight Calculator Exclusio
   assert.equal(elements.shortcutsOverlay.classList.contains('open'), false, 'closeShortcutsModal must close shortcuts modal');
 });
 
-test('Preceptor V2.0 Audit: All 19 Clinical Skills cards upgraded in 05_Habilidades_Clinicas, snippets_hab.json, and index.html', () => {
-  const { runExpr } = extractScriptAndRun();
+test('Preceptor V2.0 Audit: All 22 Clinical Skills cards upgraded, deduplicated, and interactive in 05_Habilidades_Clinicas, snippets_hab.json, snippets_todos.json, and index.html', () => {
+  const { elements, runExpr } = extractScriptAndRun();
   const allData = Array.from<any>(runExpr('allData'));
   const habItems = allData.filter((d: any) => d.mod_id === 'hab');
-  assert.equal(habItems.length, 19, 'Must have all 19 Clinical Skills cards in index.html');
+  assert.equal(habItems.length, 22, 'Must have all 22 Clinical Skills cards in index.html');
 
   const habJsonPath = path.resolve(process.cwd(), 'snippets/snippets_hab.json');
   const habJson = JSON.parse(fs.readFileSync(habJsonPath, 'utf8'));
-  assert.equal(habJson.length, 19, 'snippets_hab.json must have 19 cards');
+  assert.equal(habJson.length, 22, 'snippets_hab.json must have 22 cards');
+
+  const todosJsonPath = path.resolve(process.cwd(), 'snippets/snippets_todos.json');
+  const todosJson = JSON.parse(fs.readFileSync(todosJsonPath, 'utf8'));
+  assert.equal(todosJson.length, 105, 'snippets_todos.json must have 105 items synchronized with index.html');
 
   for (const item of habItems) {
     assert.ok(item.trigger && item.trigger.startsWith(';hab-'), `Card ${item.id} must have a ;hab-* trigger`);
     assert.ok(item.anchor && item.anchor.length > 20, `Card ${item.id} must have a V2.0 anchor sequence`);
     assert.ok(item.pre_porta && item.pre_porta.includes('1. O QUE NÃO ESQUECER'), `Card ${item.id} pre_porta must include V2.0 Preceptor structure`);
     assert.ok(item.pre_porta.includes('COMO REGISTRAR NO PRONTUÁRIO'), `Card ${item.id} pre_porta must include ready-to-copy clinical record`);
+    assert.equal(item.pre_porta.includes('1. 1.'), false, `Card ${item.id} pre_porta must not contain double numbering "1. 1."`);
+    assert.equal(item.pre_porta.includes('2. 2.'), false, `Card ${item.id} pre_porta must not contain double numbering "2. 2."`);
+    assert.ok(item.registro_body && item.registro_body.length > 200, `Card ${item.id} must have extracted interactive registro_body`);
     assert.ok(Array.isArray(item.checklist_sections) && item.checklist_sections.length >= 3, `Card ${item.id} must have structured checklist sections`);
     const hasV2Section = item.checklist_sections.some((s: any) => s.title.includes('Upgrade Preceptor V2.0'));
     assert.equal(hasV2Section, true, `Card ${item.id} must include Upgrade Preceptor V2.0 checklist section`);
     assert.ok(Array.isArray(item.pitfalls) && item.pitfalls.length >= 4, `Card ${item.id} must have Red Flags + Pitfalls populated`);
+
+    // Ensure pitfalls have zero duplicate titles and zero raw LaTeX or markdown asterisk artifacts
+    const pitTitles = item.pitfalls.map((p: any) => String(p.title).toLowerCase().trim());
+    assert.equal(new Set(pitTitles).size, pitTitles.length, `Card ${item.id} must not have duplicate pitfalls`);
+    for (const p of item.pitfalls) {
+      assert.equal(/\\(ge|le|times|text|mathbf|circ|%)|\*/.test(p.title), false, `Card ${item.id} pitfall title must not contain raw LaTeX or *: ${p.title}`);
+      assert.equal(/\\(ge|le|times|text|mathbf|circ|%)|\*/.test(p.detail), false, `Card ${item.id} pitfall detail must not contain raw LaTeX or *: ${p.detail}`);
+      assert.equal(p.title.includes('Imanência'), false, `Card ${item.id} must use "Iminência" instead of "Imanência"`);
+    }
+    assert.equal(/\\(ge|le|times|text|mathbf|circ|%)|\*/.test(item.pre_porta), false, `Card ${item.id} pre_porta must not contain raw LaTeX or *`);
 
     // Verify corresponding markdown file on disk
     const mdFull = path.resolve(process.cwd(), item.path);
@@ -279,23 +296,33 @@ test('Preceptor V2.0 Audit: All 19 Clinical Skills cards upgraded in 05_Habilida
     assert.ok(mdText.includes('## ⚠️ 6. ARMADILHAS DO INTERNO'), `${item.path} must have V2.0 section 6`);
     assert.ok(mdText.includes('## ✅ 7. CHECKLIST PÓS-ATENDIMENTO'), `${item.path} must have V2.0 section 7`);
   }
+
+  // Test opening a Habilidade card (index 83 = hab-1), switching to interactive Registro PEP, hiding + Carrinho, and 1/2/3 shortcuts
+  runExpr("openInspector(83, 'registro')");
+  assert.equal(runExpr('currentDrawerTab'), 'registro', 'openInspector(83, "registro") must activate Registro PEP tab');
+  assert.equal(elements.tabCartBtn.style.display, 'none', '#tabCartBtn must be hidden when a Habilidade is open');
+  assert.equal(elements.btnAddToCart.style.display, 'none', '#btnAddToCart must be hidden when a Habilidade is open');
+  assert.equal(elements.drawerTriggerChip.style.display, 'inline-flex', '#drawerTriggerChip must be visible for Habilidades');
+
+  runExpr('triggerPowerCopy(2)');
+  assert.equal(elements.toastMsg.textContent, '✅ Registro PEP copiado com sucesso!', 'Shortcut 2 on Habilidade must copy Registro PEP');
 });
 
-test('Padrão Ouro PEP v2.0: All 74 PEP protocols (15 GO + 42 UPA + 7 Enfermaria + 10 Pediatria) have bipartite Conduta, Diretriz/Guia, and 49 Outpatient Receitas', () => {
+test('Padrão Ouro PEP v2.0: All 83 PEP protocols (16 GO + 47 UPA + 7 Enfermaria + 13 Pediatria) have bipartite Conduta, Diretriz/Guia, and Outpatient Receitas', () => {
   const { runExpr } = extractScriptAndRun();
   const allData = Array.from<any>(runExpr('allData'));
   const pepItems = allData.filter((d: any) => d.mod_id !== 'hab');
-  assert.equal(pepItems.length, 74, 'Must have all 74 PEP protocols in index.html');
+  assert.equal(pepItems.length, 83, 'Must have all 83 PEP protocols in index.html');
 
   const goItems = pepItems.filter((d: any) => d.mod_id === 'go');
   const upaItems = pepItems.filter((d: any) => d.mod_id === 'upa');
   const enfItems = pepItems.filter((d: any) => d.mod_id === 'enf');
   const pedItems = pepItems.filter((d: any) => d.mod_id === 'ped');
 
-  assert.equal(goItems.length, 15, 'Must have 15 GO protocols');
-  assert.equal(upaItems.length, 42, 'Must have 42 UPA protocols');
+  assert.equal(goItems.length, 16, 'Must have 16 GO protocols');
+  assert.equal(upaItems.length, 47, 'Must have 47 UPA protocols');
   assert.equal(enfItems.length, 7, 'Must have 7 Enfermaria protocols');
-  assert.equal(pedItems.length, 10, 'Must have 10 Pediatria protocols');
+  assert.equal(pedItems.length, 13, 'Must have 13 Pediatria protocols');
 
   for (const item of pepItems) {
     assert.equal(item.has_split, true, `PEP protocol ${item.id} (${item.trigger}) must have bipartite # PLANO / CONDUTA split`);
@@ -448,11 +475,58 @@ test('Personalizar v3.0 & Modular Architecture: Sub-inputs restored, 49 Receitas
 
 
 
-test('Compositor Modular de Prescrição: Carrinho de Prescrição em 1 Clique (#tabCartBtn, #btnAddToCart, #drawerCartPanel)', () => {
+test('Compositor Modular de Prescrição: Carrinho de Prescrição em 1 Clique (#tabCartBtn, #btnAddToCart, #drawerCartPanel) com medicamentos categorizados e sem orientações não-medicamentosas', () => {
   const html = fs.readFileSync(path.join(process.cwd(), 'index.html'), 'utf-8');
   assert.ok(html.includes('id="btnAddToCart"'), 'Must include #btnAddToCart button in drawer footer');
   assert.ok(html.includes('id="tabCartBtn"'), 'Must include #tabCartBtn tab in drawer tabs');
   assert.ok(html.includes('id="drawerCartPanel"'), 'Must include #drawerCartPanel dedicated UI panel');
   assert.ok(html.includes('function addCustomItemToCart'), 'Must define addCustomItemToCart function in JS');
   assert.ok(html.includes('function copyPrescriptionCart'), 'Must define copyPrescriptionCart function in JS');
+
+  // Verify non-prescription buttons are removed
+  assert.equal(html.includes('+ Hidratação/Repouso'), false, 'Must not include + Hidratação/Repouso in quick cart buttons');
+  assert.equal(html.includes('+ Sinais de Alarme'), false, 'Must not include + Sinais de Alarme in quick cart buttons');
+
+  // Verify clinical categories and real medications with box/bottle quantity & duration are present
+  const expectedMedButtons = [
+    '+ Dipirona 1g',
+    '+ Paracetamol 750mg',
+    '+ Ibuprofeno 600mg',
+    '+ Cetoprofeno 100mg',
+    '+ Prednisolona 20mg',
+    '+ Ciclobenzaprina 5mg',
+    '+ Orfenadrina Comp.',
+    '+ Ondansetrona 8mg',
+    '+ Escopolamina + Dip.',
+    '+ Omeprazol 20mg',
+    '+ Simeticona 125mg',
+    '+ SRO OMS',
+    '+ Loratadina 10mg',
+    '+ Dexclorfeniramina 2mg',
+    '+ Levodropropizina Xpe',
+    '+ Lavagem Nasal SF',
+    '+ Amoxicilina 500mg',
+    '+ Amox + Clavulanato',
+    '+ Azitromicina 500mg',
+    '+ Cefalexina 500mg'
+  ];
+  for (const btnLabel of expectedMedButtons) {
+    assert.ok(html.includes(btnLabel), `Quick cart presets must include medication button "${btnLabel}"`);
+  }
+
+  const { runExpr } = extractScriptAndRun();
+  assert.equal(runExpr("isNonMedicationCartEntry('Sinais de Alarme: febre > 72h ou dispneia.')"), true, 'Must filter out Sinais de Alarme from cart import');
+  assert.equal(runExpr("isNonMedicationCartEntry('Repouso domiciliar e hidratação oral abundante.')"), true, 'Must filter out Repouso/Hidratação from cart import');
+  assert.equal(runExpr("isNonMedicationCartEntry('Amoxicilina 500 mg (cápsulas) — 1 caixa (21 cápsulas): Tomar 1 cápsula VO a cada 8 horas por 7 dias.')"), false, 'Must keep real medications in cart import');
+
+  // Verify 1-click Medical Documents & Red Room Dilutions generator
+  const atestadoDoc = String(runExpr("generateMedicalDoc('atestado')"));
+  assert.ok(atestadoDoc.includes('ATESTADO MÉDICO'), 'generateMedicalDoc("atestado") must generate Atestado Médico');
+  const declDoc = String(runExpr("generateMedicalDoc('declaracao')"));
+  assert.ok(declDoc.includes('DECLARAÇÃO DE COMPARECIMENTO'), 'generateMedicalDoc("declaracao") must generate Declaração de Comparecimento');
+  const encDoc = String(runExpr("generateMedicalDoc('encaminhamento')"));
+  assert.ok(encDoc.includes('GUIA DE ENCAMINHAMENTO MÉDICO'), 'generateMedicalDoc("encaminhamento") must generate Guia de Encaminhamento');
+  const dilDoc = String(runExpr("generateMedicalDoc('diluicoes')"));
+  assert.ok(dilDoc.includes('NORADRENALINA') && dilDoc.includes('Fentanil'), 'generateMedicalDoc("diluicoes") must generate Red Room DVA & Sedation dilutions');
 });
+
