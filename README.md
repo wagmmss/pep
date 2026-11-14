@@ -1,9 +1,9 @@
 # 🩺 Sistema Protocolar de Atendimento Médico & Snippets para PEP
 
-[![Deploy Cockpit to GitHub Pages](https://github.com/wagmms/protocolos-clinicos/actions/workflows/deploy.yml/badge.svg)](https://github.com/wagmms/protocolos-clinicos/actions/workflows/deploy.yml)
-[![Cockpit Online](https://img.shields.io/badge/Cockpit_Online-Acessar_Agora-0284c7?style=flat&logo=safari&logoColor=white)](https://wagmms.github.io/protocolos-clinicos/)
+[![Deploy Cockpit to GitHub Pages](https://github.com/wagmmss/protocolos-clinicos/actions/workflows/deploy.yml/badge.svg)](https://github.com/wagmmss/protocolos-clinicos/actions/workflows/deploy.yml)
+[![Cockpit Online](https://img.shields.io/badge/Cockpit_Online-Acessar_Agora-0284c7?style=flat&logo=safari&logoColor=white)](https://wagmmss.github.io/protocolos-clinicos/)
 
-🌐 **Acesse o Cockpit Online de Qualquer Lugar:** **[https://wagmms.github.io/protocolos-clinicos/](https://wagmms.github.io/protocolos-clinicos/)**
+🌐 **Acesse o Cockpit Online de Qualquer Lugar:** **[https://wagmmss.github.io/protocolos-clinicos/](https://wagmmss.github.io/protocolos-clinicos/)**
 
 Biblioteca médica estruturada, defensiva e padronizada para atendimento clínico, registros em Prontuário Eletrônico do Paciente (PEP: MV, Tasy, Vivver, e-SUS) e discussão de casos em rounds.
 
@@ -14,7 +14,7 @@ Biblioteca médica estruturada, defensiva e padronizada para atendimento clínic
 ## ⚡ Como Usar no Dia a Dia
 
 ### Método 1: Cockpit Web High-End (Online & Offline)
-Acesse via navegador em **[https://wagmms.github.io/protocolos-clinicos/](https://wagmms.github.io/protocolos-clinicos/)** ou abra localmente o arquivo [`index.html`](index.html) / [`painel_rapido_snippets.html`](painel_rapido_snippets.html):
+Acesse via navegador em **[https://wagmmss.github.io/protocolos-clinicos/](https://wagmmss.github.io/protocolos-clinicos/)** ou abra localmente o arquivo [`index.html`](index.html) / [`painel_rapido_snippets.html`](painel_rapido_snippets.html):
 - **Cópia Segmentada em 3 Níveis:** Botões dedicados para `Copiar Tudo`, `💉 Conduta` (apenas a conduta/prescrição imediata de emergência) e `💊 Receita` (receita estruturada com posologias).
 - **Personalizador com Chips Interativos:** Clique nas opções `[Opção A / Opção B]` diretamente nos chips visuais na aba *"⚡ Personalizar & Chips"* para ajustar a conduta antes de copiar para o prontuário.
 - **Calculadora de Doses por Peso na Topbar:** Insira o peso do paciente (`Peso: [ 70 ] kg`) e acesse instantaneamente doses calculadas de Sepse (30 mL/kg), Dengue C (10 mL/kg/h), Alteplase (0,9 mg/kg), Enoxaparina (1 mg/kg vs 0,75 mg/kg em idosos), Drogas de Intubação (SRI), Dipirona e Paracetamol gotas.
