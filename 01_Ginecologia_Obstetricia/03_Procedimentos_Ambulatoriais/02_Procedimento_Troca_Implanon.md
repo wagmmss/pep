@@ -1,38 +1,46 @@
 # Procedimento Ambulatorial - Retirada e Troca de Implanon
 
-> **Atalho sugerido:** `;implanon-troca`  
-> **Finalidade:** Nota técnica de remoção de implante subdérmico (*Pop-Out*) com ou sem reinserção imediata no mesmo ato e receita pós-procedimento.
+**Atalho:** `;implanon-troca` | **Categoria:** Procedimentos Ambulatoriais
 
----
-
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
-
+## SNIPPET PEP
 ```text
-###### NOTA DE PROCEDIMENTO: RETIRADA / TROCA DE IMPLANTE SUBDÉRMICO (IMPLANON) ######
-# IDENTIFICAÇÃO & INDICAÇÃO:
-Paciente [Nome], [Idade] anos, G[ ] P[ ] A[ ].
-- Indicação: [Troca por término da validade de 3 anos / Retirada eletiva por desejo reprodutivo / Retirada por sangramento desfavorável].
-- Consentimento: TCLE lido e assinado. [Novo lote inserido: [ ] — Validade até: [DD/MM/AAAA] / Apenas retirada eletiva].
+### PLANEJAMENTO FAMILIAR — RETIRADA / TROCA DE IMPLANON NXT ###
+# ID: [Nome], [ ] anos
+G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
+DUM: [DD/MM/AAAA] | MAC: Implanon NXT 68 mg (Inserido em [MM/AAAA])
+# AP:
+PAT: [Nega / HAS / DM2 / Depressão / Enxaqueca]
+MED: [Nega uso contínuo / Em uso de: [ ]]
+HAB: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
+CX: [Nega / Cesárea prévia / Outras: [ ]]
+ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
+HF: [Nega / CA de mama ou gineco / HAS / DM]
 
-# DESCRIÇÃO TÉCNICA DO PROCEDIMENTO:
-1. Posicionamento & Palpação Prévia Obrigatória: Paciente em decúbito dorsal, braço [esquerdo / direito] abduzido com cotovelo fletido. Implante prévio facilmente localizado por palpação bimanual no plano subdérmico superficial, móvel e íntegro.
-2. Antissepsia & Anestesia Sob a Ponta Distal: Antissepsia com Clorexidina Alcoólica 2% e campo estéril. Infiltração de 0,5 a 1 mL de Lidocaína 2% sem vasoconstritor exatamente ABAIXO da extremidade distal do implante (para elevar a ponta contra a derme, evitando hidrodissecção acima do implante que o esconderia).
-3. Incisão Longitudinal & Extração (*Técnica Pop-Out*):
-   - Pressão digital firme na extremidade proximal do implante para projetar a ponta distal contra a pele.
-   - Incisão longitudinal de 2 a 3 mm com lâmina nº 11 sobre a extremidade distal.
-   - Divulsão delicada da cápsula fibrosa com gaze/lâmina até exteriorização da ponta branca; apreensão com pinça Mosquito curva e extração completa de bastonete íntegro medindo 4,0 cm (apresentado à paciente).
-4. [SE REALIZADA TROCA IMEDIATA]:
-   - Complementada anestesia subdérmica ao longo de 4 cm cranialmente.
-   - Introduzida a agulha do novo aplicador Implanon NXT pela mesma incisão de retirada, avançando no plano subdérmico superficial sob visão/elevação da pele e liberado o novo implante.
-   - Palpação confirmatória do novo bastonete de 4 cm realizada pelo médico e pela paciente.
-5. Síntese & Curativo: Hemostasia compressiva, fechamento com [fita de aproximação estéril *Steri-Strip* / 1 ponto simples de Mononylon 4-0], gaze estéril e faixa compressiva de crepe. Procedimento sem intercorrências.
+# CASO: [RETIRADA E TROCA IMEDIATA / RETIRADA ISOLADA] DE IMPLANON NXT 68 MG
+
+HMA: Paciente comparece para [troca por término da validade de 3 anos / retirada eletiva por desejo reprodutivo / retirada por sangramento desfavorável]. [Se troca dentro dos 3 anos: efeito contraceptivo contínuo / Se expirado > 3 anos: descartada gestação com β-hCG negativo hoje]. TCLE lido e assinado. [Novo lote inserido: [ ] — Validade até: [DD/MM/AAAA] / Apenas retirada eletiva].
+
+# EXAME CLÍNICO
+Bom estado geral, corada, hidratada, acianótica, anictérica, afebril. Braço não dominante ([esquerdo / direito]) sem lesões cutâneas; implante prévio palpável em suas duas extremidades no plano subdérmico superficial.
+- DESCRIÇÃO TÉCNICA DO PROCEDIMENTO:
+  1. Posicionamento & Palpação Prévia Obrigatória: Paciente em decúbito dorsal, braço [esquerdo / direito] abduzido com cotovelo fletido. Implante prévio facilmente localizado por palpação bimanual no plano subdérmico superficial, móvel e íntegro.
+  2. Antissepsia & Anestesia Sob a Ponta Distal: Antissepsia com Clorexidina Alcoólica 2% e campo estéril. Infiltração de 0,5 a 1 mL de Lidocaína 2% sem vasoconstritor exatamente ABAIXO da extremidade distal do implante (para elevar a ponta contra a derme, evitando hidrodissecção acima do implante que o esconderia).
+  3. Incisão Longitudinal & Extração (*Técnica Pop-Out*):
+     - Pressão digital firme na extremidade proximal do implante para projetar a ponta distal contra a pele.
+     - Incisão longitudinal de 2 a 3 mm com lâmina nº 11 sobre a extremidade distal.
+     - Divulsão delicada da cápsula fibrosa com gaze/lâmina até exteriorização da ponta branca; apreensão com pinça Mosquito curva e extração completa de bastonete íntegro medindo 4,0 cm (apresentado à paciente).
+  4. [SE REALIZADA TROCA IMEDIATA]:
+     - Complementada anestesia subdérmica ao longo de 4 cm cranialmente (totalizando até 2 mL de lidocaína).
+     - Introduzida a agulha do novo aplicador Implanon NXT pela mesma incisão de retirada, avançando no plano subdérmico superficial sob elevação da pele (*tenting*) e liberado o novo implante.
+     - Palpação confirmatória do novo bastonete de 4 cm realizada pelo médico e pela paciente.
+  5. Síntese & Curativo: Hemostasia compressiva, fechamento com [fita de aproximação estéril *Steri-Strip* / 1 ponto simples de Mononylon 4-0], gaze estéril e faixa compressiva de crepe. Procedimento sem intercorrências.
 
 # AVALIAÇÃO DIAGNÓSTICA:
 1. [Remoção e reinserção imediata de implante subdérmico (CID-10: Z30.5) / Remoção eletiva de implante subdérmico (Z30.5)].
 
 # PLANO / CONDUTA:
 >> CONDUTA & ORIENTAÇÕES PÓS-PROCEDIMENTO:
-1. [Entregue novo Cartão da Usuária com validade de 3 anos (efeito contraceptivo imediato mantido sem necessidade de pausa) / Se apenas retirada: orientada sobre retorno imediato da fertilidade ovulatória e prescrito Ácido Fólico pré-concepcional ou novo método contraceptivo].
+1. [Entregue novo Cartão da Usuária com validade de 3 anos (efeito contraceptivo imediato mantido se troca dentro da validade; usar preservativo 7 dias se estava vencido > 3 anos) / Se apenas retirada: orientada sobre retorno imediato da fertilidade ovulatória e prescrito Ácido Fólico pré-concepcional ou novo método contraceptivo].
 
 >> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
 USO ORAL:
@@ -47,9 +55,7 @@ CUIDADOS COM O CURATIVO E SINAIS DE ALARME:
 - Procurar atendimento médico se houver dor intensa, sangramento persistente, calor/secreção local ou formigamento no braço.
 ```
 
----
-
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## DIRETRIZES E RACIOCÍNIO CLÍNICO
 
 ### 🧠 1. Por Que Usamos a Técnica *"Pop-Out"* na Retirada do Implanon?
 - **A Cápsula Fibrosa Periprotética:** Logo após a inserção subdérmica, o tecido conjuntivo subcutâneo envolve o bastão de etonogestrel com uma **bainha fibrosa de colágeno milimétrica**.

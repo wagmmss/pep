@@ -1,24 +1,34 @@
 # Manejo de Emergência - Hemorragia Pós-Parto (HPP) / Protocolo Código Vermelho
 
-> **Atalho sugerido:** `;hpp`  
-> **Finalidade:** Registro estruturado e prescrição de emergência da Hora de Ouro da HPP (Índice de Choque, 4 Ts, Ácido Tranexâmico, Uterotônicos e Balão de Bakri).
+**Atalho:** `;hpp` | **Categoria:** Emergencias GO
 
----
-
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
-
+## SNIPPET PEP
 ```text
-###### ATENDIMENTO DE EMERGÊNCIA — HEMORRAGIA PÓS-PARTO (CÓDIGO VERMELHO) ######
-# IDENTIFICAÇÃO & RECONHECIMENTO DO CHOQUE:
-- Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
-- Perda Sanguínea Estimada: [ ] mL ([> 500 mL pós-parto vaginal / > 1.000 mL pós-cesárea / sangramento com instabilidade hemodinâmica]).
-- Sinais Vitais & Perfusão: PA: [85x50] mmHg | FC: [118] bpm | Índice de Choque Obstétrico (FC/PAS): [1,38] (Normal < 0,9 | Alerta >= 0,9 | Transfusão maciça se >= 1,4) | FR: [22] irpm | SpO2: [98]% | TEC: [3]s | Consciência: [Lúcida / Ansiosa / Sonolenta].
+### EMERGÊNCIA OBSTÉTRICA — HEMORRAGIA PÓS-PARTO (CÓDIGO VERMELHO) ###
+# ID: [Nome], [ ] anos | Leito: [ ]
+G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
+PARTO: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às [HH:MM] | Perda Sanguínea Estimada: [ ] mL ([> 500 mL pós-parto vaginal / > 1.000 mL pós-cesárea / sangramento com instabilidade hemodinâmica])
+TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-]
+# AP:
+PAT: [Nega / Anemia gestacional / Pré-eclâmpsia / Coagulopatia prévia]
+MED: [Nega / Sulfato de Magnésio / Ocitocina]
+HAB: [Nega tabagismo ou etilismo]
+CX: [Nega / Cesárea prévia]
+ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
+HF: [Nega / Coagulopatias]
 
-# REVISÃO ETIOLÓGICA IMEDIATA DOS "4 Ts" (AO EXAME FÍSICO):
-- [x] 1. TÔNUS (70% — Atonia Uterina): [Útero hipotônico, amolecido e acima da cicatriz umbilical -> iniciada Manobra de Compressão Uterina Bimanual de Hamilton + esvaziamento vesical / Tônus firme preservado].
-- [ ] 2. TRAUMA (20% — Canal/Rotura/Inversão): Revisão sob válvulas: [Ausência de lacerações cervicais ou vaginais ativas / Suturada laceração de colo/vagina sangrante / Drenado hematoma puerperal / Afastada inversão ou rotura uterina].
-- [ ] 3. TECIDO (10% — Restos Placentários): Revisão da cavidade uterina: [Cavidade vazia e limpa / Realizada curagem uterina com retirada de restos placentários/membranas].
-- [ ] 4. TROMBINA (1% — Coagulopatia): [Sem coagulopatia prévia / Coagulograma e Fibrinogênio de urgência coletados].
+# CASO: HEMORRAGIA PÓS-PARTO PRIMÁRIA — PROTOCOLO CÓDIGO VERMELHO (4 Ts)
+
+HMA: Puérpera imediata evolui às [HH:MM] com sangramento transvaginal volumoso (> 500 mL vaginal ou > 1.000 mL cesárea) após parto [vaginal / cesariana], associado a taquicardia, sudorese e sinais clínicos de hipovolemia. Acionado Código Vermelho imediatamente.
+
+# EXAME CLÍNICO
+Paciente hipocorada, sudoreica, [lúcida / ansiosa / sonolenta], extremidades frias, afebril — Choque Hemorrágico Obstétrico em evolução.
+- Sinais Vitais & Perfusão: PA: [85x50] mmHg | FC: [118] bpm | Índice de Choque Obstétrico (FC/PAS): [1,38] (Normal < 0,9 | Alerta ≥ 0,9 | Transfusão maciça se ≥ 1,4) | FR: [22] irpm | SpO2: [98]% | TEC: [3]s.
+- REVISÃO ETIOLÓGICA IMEDIATA DOS "4 Ts" AO EXAME FÍSICO:
+  - [x] 1. TÔNUS (70% — Atonia Uterina): [Útero hipotônico, amolecido e acima da cicatriz umbilical → iniciada Manobra de Compressão Uterina Bimanual de Hamilton + esvaziamento vesical / Tônus firme preservado].
+  - [ ] 2. TRAUMA (20% — Canal/Rotura/Inversão): Revisão sob válvulas: [Ausência de lacerações cervicais ou vaginais ativas / Suturada laceração de colo/vagina sangrante / Drenado hematoma puerperal / Afastada inversão ou rotura uterina].
+  - [ ] 3. TECIDO (10% — Restos Placentários): Revisão da cavidade uterina: [Cavidade vazia e limpa / Realizada curagem uterina com retirada de restos placentários/membranas].
+  - [ ] 4. TROMBINA (1% — Coagulopatia): [Sem coagulopatia prévia / Coagulograma e Fibrinogênio de urgência coletados].
 
 # AVALIAÇÃO DIAGNÓSTICA:
 1. Hemorragia Pós-Parto Primária por [Atonia Uterina (CID-10: O72.1) / Laceração de Trajeto (O71.3) / Retenção Placentária (O72.0)] com Índice de Choque de [ ].
@@ -40,17 +50,14 @@
 4. Misoprostol 800 mcg (4 comprimidos de 200 mcg): Administrado via retal ou sublingual em dose única.
 
 >> 3. ESCALONAMENTO MECÂNICO, HEMOTERÁPICO E CIRÚRGICO (SE REFRATARIEDADE):
-1. [ ] Balão de Tamponamento Intrauterino (Bakri / Artesanal): Inserido na cavidade uterina e insuflado com [300 a 500] mL de SF 0,9% morno + ocitocina contínua e Cefazolina 2 g EV profilática (Teste do Tamponamento positivo em 15 min).
+1. [ ] Balão de Tamponamento Intrauterino (Bakri / Artesanal): Inserido na cavidade uterina e insuflado com [300 a 500] mL de SF 0,9% estéril, mantendo ocitocina EV contínua e Cefazolina 2 g EV profilática (Teste do Tamponamento positivo em 15 min).
 2. [ ] Traje Anti-Choque Não-Pneumático (TAN): Posicionado dos tornozelos ao abdome (segmentos 1 a 6).
 3. [ ] Hemotransfusão / Coagulopatia: Transfundidos [ ] CH + [ ] PFC + Crioprecipitado 1 UI/10 kg (ou Concentrado de Fibrinogênio 2–4 g EV se Fibrinogênio < 200 mg/dL) + Gluconato de Cálcio 10% 10 mL EV se Ca++ iônico baixo.
 4. [ ] Abordagem Cirúrgica (Laparotomia): [Sutura compressiva de B-Lynch / Cho / Hayman | Ligadura bilateral das artérias uterinas (O'Leary) ou hipogástricas | Histerectomia subtotal hemostática].
 5. Desfecho pós-estabilização: Útero contraído, sangramento controlado, PA [ ]x[ ] mmHg, FC [ ] bpm -> encaminhada à UTI / Recuperação para vigilância intensiva.
 ```
 
----
-
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
-
+## DIRETRIZES E RACIOCÍNIO CLÍNICO
 ### 🧠 1. Por Que Não Esperamos a PA Cair para Acionar o Código Vermelho? (Fisiopatologia do Choque Obstétrico)
 - **A Armadilha da Reserva Volêmica da Gestante:** Ao final da gestação, o volume sanguíneo materno expandiu em `40 a 50%` (`~6 a 7 litros`) e o fluxo sanguíneo uterino consome **`600 a 800 mL por minuto`**.
 - Graças à intensa vasoconstrição simpática compensatória, uma puérpera saudável consegue perder **1.000 a 1.500 mL de sangue mantendo Pressão Arterial normal (`110x70 mmHg`)**! Quando a PAS finalmente cai abaixo de 90 mmHg, ela já perdeu `> 30–40%` da volemia total e já entrou na **Tríade Letal (Acidose + Hipotermia + Coagulopatia de Consumo)**.
@@ -71,5 +78,5 @@
 ### 🧭 3. Os 4 "Ts" da HPP: Como Não Esquecer as Outras 3 Causas
 - **Tônus (70% — Atonia Uterina):** Útero mole e esponjoso acima da cicatriz umbilical.
 - **Trauma (20% — Laceração de colo/vagina, Hematoma pélvico ou Rotura/Inversão uterina):** Sangramento vermelho vivo contínuo **com o útero firme e bem contraído (Globo de Pinard presente)!** Exige revisão com valvas de Doyen sob boa luz.
-- **Tecido (9% — Retenção placentária / Cotilédone acessório / Acretismo):** Placenta incompleta à inspeção → curagem digital ou curetagem romba com cureta de Wallich.
-- **Trombina (1% — Coagulopatia prévia ou CIVD secundária a DPP/embolia amniótica/sepse):** Sangue que **não forma coágulo firme em tubo seco após 7–10 min** (*Teste de Weiner*) e sangra pelos locais de venopunção → acionar transfusão maciça `1 CH : 1 PFC : 1 Plaquetas` + Crioprecipitado se fibrinogênio `< 200 mg/dL`.
+- **Tecido (9% — Retenção placentária / Cotilédone acessório / Acretismo):** Placenta incompleta à inspeção $\rightarrow$ curagem digital ou curetagem romba com cureta de Wallich.
+- **Trombina (1% — Coagulopatia prévia ou CIVD secundária a DPP/embolia amniótica/sepse):** Sangue que **não forma coágulo firme em tubo seco após 7–10 min** (*Teste de Weiner*) e sangra pelos locais de venopunção $\rightarrow$ acionar transfusão maciça `1 CH : 1 PFC : 1 Plaquetas` + Crioprecipitado se fibrinogênio `< 200 mg/dL`.

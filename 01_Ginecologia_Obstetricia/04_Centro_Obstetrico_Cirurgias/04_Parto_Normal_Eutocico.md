@@ -1,37 +1,39 @@
-# Descrição de Parto Normal Eutócico (Espontâneo)
+# Descrição de Parto Normal Eutócico + Revisão de Canal e Perineorrafia
 
-> **Atalho sugerido:** `;pn-eutocico`  
-> **Finalidade:** Nota operatória de assistência ao parto vaginal espontâneo, manejo ativo do 3º período, revisão de canal e prescrição imediata pós-parto.
+**Atalho:** `;pn-eutocico` | **Categoria:** Centro Obstetrico Cirurgias
 
----
-
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
-
+## SNIPPET PEP
 ```text
-###### DESCRIÇÃO DE PARTO VAGINAL EUTÓCICO (ESPONTÂNEO) ######
-# IDENTIFICAÇÃO & DADOS DO NASCIMENTO:
-- Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
-- Equipe: Obstetra: [Dr(a). ] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr(a). ].
-- Nascimento: [DD/MM/AAAA] às [HH:MM] | Apresentação: Cefálica fletida em [OP / OEA / ODA] | Bolsa: [Rota intraparto / Amniotomia no expulsivo], LA [claro com grumos / meconial fluido], sem odor.
-- Recém-Nascido: Vivo, sexo [masculino / feminino], Peso: [ ] g, Apgar: [9/10] (1º/5º min), colocado em contato pele a pele imediato e clampeamento oportuno do cordão (após 1–3 min).
+### CENTRO OBSTÉTRICO — PARTO VAGINAL EUTÓCICO ###
+# ID: [Nome], [ ] anos | Leito: [ ]
+G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
+DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | TS/Rh Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda]
+EQUIPE: Obstetra: [Dr(a). ] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr(a). ]
+# AP:
+PAT: [Nega / HAG / DMG / Anemia]
+MED: [Nega / Ocitocina intraparto / Profilaxia EGB com Penicilina Cristalina]
+HAB: [Nega tabagismo, etilismo ou drogas ilícitas]
+CX: [Nega / Cesárea prévia]
+ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
+HF: [Nega / HAS / DM2]
 
-# DESCRIÇÃO TÉCNICA DA ASSISTÊNCIA (2º E 3º PERÍODOS):
-1. Posição & Antissepsia: Parturiente em posição [semissentada / verticalizada / litotomia a 45°], antissepsia vulvoperineal com Clorexidina Aquosa 0,5% e campos estéreis. BCF monitorizado no expulsivo entre [120–155] bpm sem desacelerações patológicas.
-2. Desprendimento Cefálico & Corporal:
-   - Puxos espontâneos coordenados às contrações; proteção perineal ativa pela Manobra de Ritgen modificada com deflexão cefálica controlada (sem episiotomia).
-   - Checada região cervical: [ausência de circular de cordão / circular frouxa reduzida sobre o polo cefálico].
-   - Rotação externa espontânea (restituição), tração suave biparietal inferior para desprendimento do ombro anterior sob a sínfise púbica e elevação cranial para o ombro posterior e tronco.
-3. Manejo Ativo do 3º Período (Dequitação Placentária — Diretriz OMS/MS):
-   - Administradas 10 UI de Ocitocina IM profunda no vasto lateral da coxa imediatamente após o desprendimento fetal.
-   - Tração controlada do cordão umbilical associada à contrapressão suprapúbica do segmento uterino (Manobra de Brandt-Andrews) e rotação placentária sobre seu eixo na saída vulvar (Manobra de Jacob-Dublin) às [HH:MM].
-   - Revisão Placentária: Faces materna (cotilédones completos) e fetal íntegras, membranas completas e cordão com 2 artérias e 1 veia. Coletado sangue de cordão para TS/Rh e Coombs Direto (se mãe Rh-).
-4. Revisão do Canal de Parto & 4º Período (Greenberg):
-   - Revisão sob válvulas: Colo uterino íntegro em 360°, paredes vaginais sem hematomas. Períneo: [Íntegro / Laceração superficial de 1º grau hemostática sem necessidade de rafia / Laceração de 2º grau suturada conforme nota de perineorrafia].
-   - Toque retal confirmatório: Esfíncter anal externo normotônico e mucosa retal íntegra.
-   - Globo de Segurança de Pinard formado e firme, lóquios fisiológicos, PA: [115x75] mmHg, FC: [78] bpm.
+# CASO: DESCRIÇÃO DE PARTO NORMAL EUTÓCICO + REVISÃO DE CANAL E PERINEORRAFIA
+
+HMA: Parturiente em fase expulsiva de trabalho de parto. Nascimento ocorrido em [DD/MM/AAAA] às [HH:MM]h, apresentação cefálica fletida em [OP / OEA / ODA], bolsa [rota intraparto / amniotomia no expulsivo], líquido amniótico [claro com grumos / meconial fluido], sem odor. Recém-nascido vivo, sexo [masculino / feminino], Peso: [ ] g, Apgar: [9/10] (1º/5º min), colocado em contato pele a pele imediato e clampeamento oportuno do cordão (após 1–3 min).
+
+# EXAME CLÍNICO
+Puérpera imediata em bom estado geral, corada, hidratada, acianótica, anictérica, afebril, estável hemodinamicamente no 4º período (Greenberg).
+- Sinais Vitais Pós-Parto: PA: [115x75] mmHg | FC: [82] bpm | Globo de Segurança de Pinard presente (útero contraído abaixo da cicatriz umbilical), sangramento transvaginal fisiológico.
+- DESCRIÇÃO TÉCNICA DA ASSISTÊNCIA (2º, 3º E 4º PERÍODOS):
+  1. Posição & Antissepsia: Parturiente em posição [semissentada / verticalizada / litotomia a 45°], antissepsia vulvoperineal com Clorexidina Aquosa 0,5% e campos estéreis. BCF monitorizado no expulsivo entre [120–155] bpm sem desacelerações patológicas.
+  2. Desprendimento Cefálico & Corporal: Puxos espontâneos coordenados às contrações; proteção perineal ativa pela Manobra de Ritgen modificada com deflexão cefálica controlada. Checada região cervical: [ausência de circular de cordão / circular frouxa reduzida sobre o polo cefálico]. Rotação externa espontânea, tração suave para desprendimento do ombro anterior e elevação cranial para ombro posterior e tronco.
+  3. Manejo Ativo do 3º Período (Dequitação — Diretriz OMS/MS): Administradas 10 UI de Ocitocina IM profunda no vasto lateral da coxa após desprendimento fetal. Tração controlada do cordão (Manobra de Brandt-Andrews) e rotação placentária (Jacob-Dublin) às [HH:MM]. Revisão placentária: faces materna e fetal íntegras, membranas completas e cordão com 2 artérias e 1 veia. Coletado sangue de cordão para TS/Rh e Coombs Direto (se mãe Rh-).
+  4. Revisão Sistemática do Canal de Parto & Perineorrafia:
+     - Classificação Perineal (OASIS / ACOG): [Períneo íntegro, sem necessidade de sutura / Laceração de 1º grau (pele e mucosa vaginal) / Laceração de 2º grau (músculos do corpo perineal, esfíncter anal íntegro ao toque retal) / Episiotomia médio-lateral direita / Laceração de 3º ou 4º grau (OASIS)].
+     - Técnica de Sutura: Antissepsia, infiltração anestésica com Lidocaína 1% sem vasoconstritor ([10] mL), identificação do ângulo superior da lesão vaginal, sutura contínua não ancorada da mucosa vaginal com Poliglactina 910 (Vicryl Rapide) 2-0, aproximação muscular do corpo perineal sem espaço morto e sutura intradérmica contínua da pele [Se 3º/4º grau (OASIS): reparo do esfíncter em centro cirúrgico com PDS/Vicryl 2-0 ou 3-0 + Cefazolina 2 g EV dose única + Lactulose]. Toque retal final confirmando esfíncter anal íntegro e ausência de pontos transfixantes na mucosa retal.
 
 # AVALIAÇÃO DIAGNÓSTICA:
-1. Puerpério imediato de Parto Vaginal Eutócico a termo sem intercorrências (CID-10: O80.0).
+1. Parto vaginal eutócico sem intercorrências, com dequitação placentária completa e revisão de canal [íntegro / perineorrafia realizada com boa hemostasia].
 
 # PLANO / CONDUTA:
 >> PRESCRIÇÃO MÉDICA PÓS-PARTO IMEDIATO (CENTRO OBSTÉTRICO -> ALOJAMENTO CONJUNTO):
@@ -43,12 +45,22 @@
 6. Simeticona 40 gotas VO de 8/8h se desconforto abdominal.
 7. Sulfato Ferroso 40 mg Fe elementar (200 mg) 1 cp VO/dia a partir do 1º DPO.
 8. Checar Tipagem Sanguínea do RN e VDRL/HIV maternos antes da transferência para o Alojamento Conjunto.
+
+# PRESCRIÇÃO DOMICILIAR / DE ALTA
+USO ORAL:
+1. Dipirona Monoidratada [1 g / 500 mg] -------------------------------- 1 caixa
+   Tomar 1 comprimido via oral de 6 em 6 horas se dor perineal.
+2. Ibuprofeno 600 mg [NÃO PRESCREVER SE HIPERTENSA / PRÉ-ECLÂMPSIA] ----- 1 caixa
+   Tomar 1 comprimido via oral de 8 em 8 horas, após as refeições, por 4 dias.
+3. [Lactulose 667 mg/mL Xarope / Polietilenoglicol (PEG 3350)] ----------- 1 frasco
+   Tomar 15 mL (ou 1 envelope dissolvido) via oral à noite por 5 dias para amolecer as fezes e evitar esforço nos pontos.
+
+ORIENTAÇÕES DE CUIDADOS COM OS PONTOS:
+- Lavar a região íntima com água corrente e sabonete neutro após urinar ou evacuar, secando sem esfregar (os pontos são absorvíveis e caem sozinhos em 15 a 30 dias).
+- Procurar a Maternidade se surgir dor forte latejante com inchaço roxo local (hematoma), saída de pus, febre ou abertura completa dos pontos.
 ```
 
----
-
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
-
+## DIRETRIZES E RACIOCÍNIO CLÍNICO
 ### 🧠 1. O Porquê Fisiológico de Cada Passo da Assistência ao Parto Normal
 - **Proteção Perineal (*Hands-on* / Manobra de Ritgen Modificada) & Episiotomia Seletiva:** A deflexão controlada e lenta do polo cefálico permite que as fibras musculares do levantador do ânus e do corpo perineal sofram distensão elástica gradual. A episiotomia de rotina foi abolida pela OMS/FEBRASGO porque **não previne lacerações de 3º e 4º graus** e aumenta a perda sanguínea e a dispareunia; hoje ela é **estritamente seletiva** (`< 10–15%`, reservada para sofrimento fetal agudo no período expulsivo ou períneo rígido intransponível).
 - **Por que fazemos Clampeamento Oportuno do Cordão (1 a 3 minutos) no RN Vigoroso?** Nos primeiros `60 a 180 segundos` após o nascimento, a placenta transfunde cerca de **`80 a 100 mL` de sangue** (`20–30 mL/kg`) para o recém-nascido. Isso fornece **40 a 50 mg/kg de ferro extra**, reduzindo em 60% a anemia ferropriva no primeiro semestre de vida e estabilizando a transição hemodinâmica cardiopulmonar neonatal. *(Exceção: clampeamento imediato se RN hipotônico/apneico precisando de reanimação na mesa aquecida ou descolamento placentário agudo)*.
