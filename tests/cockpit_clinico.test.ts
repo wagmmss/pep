@@ -839,7 +839,7 @@ test('Parte 1 - src/engine/search: normalização de múltiplos espaços e corre
 test('Parte 2 - Passo A: allData extraído do index.html, ponte window global, XSS no carrinho, sev-tecnica e wsCenterCounter', () => {
   // 1. Verificar que index.html carrega via <script type="module"> e não embute o JSON inline gigante
   assert.ok(htmlContent.includes('<script type="module">'), 'index.html must use <script type="module">');
-  assert.ok(htmlContent.includes("from './snippets/snippets_todos.json'"), 'index.html must import clinical data from snippets_todos.json');
+  assert.ok(htmlContent.includes('./snippets/snippets_todos.json'), 'index.html must load clinical data from ./snippets/snippets_todos.json');
   assert.equal(htmlContent.includes('const allData = [{'), false, 'index.html must no longer embed inline 2 MB allData JSON literal');
 
   const { sandbox, elements, runExpr } = extractScriptAndRun();

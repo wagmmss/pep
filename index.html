@@ -6767,8 +6767,9 @@
   </nav>
 
   <script type="module">
-    import rawAllData from './snippets/snippets_todos.json';
-    const allData = rawAllData.map((item) => ({ ...item }));
+    const allData = (typeof rawAllData !== 'undefined' && Array.isArray(rawAllData))
+      ? rawAllData.map((item) => ({ ...item }))
+      : [];
     const TOTAL_PEP = 83;
     const HAB_STORAGE_PREFIX = 'hab_checklist_v1:';
 
@@ -10762,12 +10763,36 @@ Médico Assistente — CRM/UF: [ ] | Data: [DD/MM/AAAA]`,
     });
 
     // Inicialização da Workstation Clínica
-    enrichClinicalDataAndDOM();
-    initColumnResizers();
-    updateSubcategories();
-    filterCards();
-    syncAllHabCardBadges();
-    openInspector(0, null, { scrollCard: false, silentMobileOverlay: true });
+    function bootstrapWorkstation() {
+      enrichClinicalDataAndDOM();
+      initColumnResizers();
+      updateSubcategories();
+      filterCards();
+      syncAllHabCardBadges();
+      openInspector(0, null, { scrollCard: false, silentMobileOverlay: true });
+    }
+
+    if (allData.length > 0) {
+      bootstrapWorkstation();
+    } else if (typeof fetch === 'function') {
+      fetch('./snippets/snippets_todos.json')
+        .then((res) => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json();
+        })
+        .then((loaded) => {
+          if (Array.isArray(loaded)) {
+            loaded.forEach((item) => allData.push({ ...item }));
+          }
+          bootstrapWorkstation();
+        })
+        .catch((err) => {
+          console.error('Erro ao carregar protocolos:', err);
+          initColumnResizers();
+          updateSubcategories();
+          filterCards();
+        });
+    }
   </script>
 </body>
 </html>
