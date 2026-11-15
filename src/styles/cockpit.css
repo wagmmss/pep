@@ -232,13 +232,11 @@
 
     .nav-tabs {
       display: flex;
+      flex-wrap: wrap;
       gap: 4px;
-      overflow-x: auto;
       border-bottom: 1px solid var(--border);
-      scrollbar-width: none;
       padding: 0 12px;
     }
-    .nav-tabs::-webkit-scrollbar { display: none; }
 
     .tab-btn {
       -webkit-appearance: none;
@@ -387,12 +385,12 @@
 
     .subcat-chips {
       display: flex;
+      flex-wrap: wrap;
       gap: 5px;
-      overflow-x: auto;
-      scrollbar-width: none;
+      max-height: 112px;
+      overflow-y: auto;
       padding-bottom: 2px;
     }
-    .subcat-chips::-webkit-scrollbar { display: none; }
     .subcat-chip {
       -webkit-appearance: none;
       appearance: none;
@@ -869,19 +867,18 @@
 
     .drawer-tabs {
       display: flex;
+      flex-wrap: wrap;
+      flex-shrink: 0;
       border-bottom: 1px solid var(--border);
       background: var(--bg);
       padding: 0 20px;
-      gap: 4px;
-      overflow-x: auto;
-      scrollbar-width: none;
+      gap: 2px 4px;
     }
-    .drawer-tabs::-webkit-scrollbar { display: none; }
     .drawer-tab {
       -webkit-appearance: none;
       appearance: none;
       padding: 9px 12px;
-      margin-bottom: -1px;
+      margin-bottom: 0;
       font-size: 0.78rem;
       font-weight: 500;
       color: var(--text-secondary);
@@ -2658,6 +2655,7 @@
       }
       .nav-tabs {
         flex-direction: column;
+        flex-wrap: nowrap;
         gap: 2px;
         border-bottom: none;
         padding: 0;
@@ -2821,7 +2819,10 @@
       .drawer-overlay.open .drawer {
         position: static;
         width: 100%;
+        min-width: 0;
+        max-width: 100%;
         height: 100%;
+        overflow: hidden;
         z-index: auto;
         transform: none;
         border-left: none;
