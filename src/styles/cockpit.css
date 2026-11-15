@@ -389,8 +389,13 @@
       gap: 5px;
       max-height: 112px;
       overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-strong) transparent;
       padding-bottom: 2px;
+      padding-right: 4px;
     }
+    .subcat-chips::-webkit-scrollbar { width: 5px; height: 5px; }
+    .subcat-chips::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
     .subcat-chip {
       -webkit-appearance: none;
       appearance: none;
