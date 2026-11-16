@@ -1,33 +1,23 @@
 # Manejo de Emergência - Doença Inflamatória Pélvica (DIP)
 
-**Atalho:** `;dip` | **Categoria:** Emergencias GO
+> **Atalho sugerido:** `;dip`  
+> **Finalidade:** Diagnóstico clínico de DIP (Critérios CDC/MS), estadiamento de Monif (I a IV), tratamento hospitalar vs ambulatorial e receita completa (incluindo parceiro).
 
-## SNIPPET PEP
+---
+
+### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+
 ```text
-### EMERGÊNCIA GINECOLÓGICA — DOENÇA INFLAMATÓRIA PÉLVICA (DIP) ###
-# ID: [Nome], [ ] anos
-G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório)
-MAC: [Nenhum / Preservativo inconsistente / ACO / DIU de Cobre / SIU-LNG]
-# AP:
-PAT: [Nega / DIP prévia / IST prévia]
-MED: [Nega uso contínuo / Em uso de: [ ]]
-HAB: [Nega tabagismo ou etilismo / Tabagista]
-CX: [Nega / Cirurgia pélvica prévia]
-ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
-HF: [Nega / HAS / DM2]
+###### ATENDIMENTO DE EMERGÊNCIA GINECOLÓGICA — DOENÇA INFLAMATÓRIA PÉLVICA (DIP) ######
+# IDENTIFICAÇÃO & FATORES DE RISCO:
+- Paciente: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
+- Contexto & Alergias: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
 
-# CASO: DOENÇA INFLAMATÓRIA PÉLVICA AGUDA (DIP — ESTÁGIO MONIF [I / II / III])
+# SUBJETIVO (QD & HMA):
+- Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria].
+- Negativas Mandatórias: Nega atraso menstrual (β-hCG negativo — afastada ectópica). [Nega vômitos incoercíveis, peritonismo difuso ou instabilidade hemodinâmica (elegível para Monif I ambulatorial) / Apresenta febre alta, vômitos e peritonismo (indicada internação — Monif II/III)].
 
-HMA: Paciente procura emergência por dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria]. Nega atraso menstrual (β-hCG negativo — afastada ectópica). [Nega vômitos incoercíveis, peritonismo difuso ou instabilidade hemodinâmica (elegível para Monif I ambulatorial) / Apresenta febre alta, vômitos e peritonismo (indicada internação — Monif II/III)].
-
-CHECO EXAMES COMPLEMENTARES:
-- Teste Rápido / β-hCG sérico: NEGATIVO | Testes Rápidos (HIV, Sífilis, Hep B e C): [Não reagentes].
-- Laboratório: Leucócitos: [ ]/mm³, PCR: [ ] mg/L, EAS: [ ].
-- USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas (Monif I/II) / Imagem complexa heterogênea retrouterina/anexial de [ ] cm compatível com Abscesso Tubo-Ovariano (Monif III)].
-
-# EXAME CLÍNICO
-Bom estado geral [ou regular estado geral/álgica/febril], corada, hidratada, acianótica, anictérica.
+# OBJETIVO (EXAME FÍSICO GINECOLÓGICO & EXAMES):
 - Sinais Vitais: PA: [115x70] mmHg | FC: [88] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [37,8] °C.
 - Exame Abdominal: Abdome plano, RHA+, dor à palpação profunda de hipogástrio e fossas ilíacas bilateralmente, [sem sinais de peritonite difusa (DB negativo) / com descompressão brusca dolorosa localizada em pelve]. Sinal de Murphy/dor em HCD (Síndrome de Fitz-Hugh-Curtis): [Ausente / Presente].
 - Exame Especular: Paredes vaginais hiperemiadas, secreção mucopurulenta amarelada fluindo pelo orifício cervical externo (cervicite mucopurulenta) e colo friável ao toque do swab.
@@ -35,6 +25,10 @@ Bom estado geral [ou regular estado geral/álgica/febril], corada, hidratada, ac
   * 1. Dor intensa à mobilização do colo uterino (Sinal de Chandelier / Frenkel positivo);
   * 2. Dor à palpação uterina em hipogástrio;
   * 3. Dor à palpação das regiões anexiais bilateralmente, [sem massas anexiais palpáveis (Monif I) / com espessamento/massa anexial palpável sugerindo abscesso tubo-ovariano (Monif III)].
+- Exames Complementares:
+  * Teste Rápido / β-hCG sérico: NEGATIVO | Testes Rápidos (HIV, Sífilis, Hep B e C): [Não reagentes].
+  * Laboratório: Leucócitos: [ ]/mm³, PCR: [ ] mg/L, EAS: [ ].
+  * USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas (Monif I/II) / Imagem complexa heterogênea retrouterina/anexial de [ ] cm compatível com Abscesso Tubo-Ovariano (Monif III)].
 
 # AVALIAÇÃO DIAGNÓSTICA:
 1. Doença Inflamatória Pélvica Aguda (CID-10: N73.0 / N73.9) — Estágio [Monif I (Leve — Ambulatorial) / Monif II (Moderada com peritonismo — Hospitalar) / Monif III (Abscesso Tubo-Ovariano — Hospitalar) / Monif IV (Abscesso Roto/Sepse — Cirúrgico)].
@@ -43,11 +37,11 @@ Bom estado geral [ou regular estado geral/álgica/febril], corada, hidratada, ac
 >> [MODALIDADE 1 — CONDUTA AMBULATORIAL (MONIF I — APLICAR CEFTRIAXONA IM AGORA NA UNIDADE)]:
 1. Administrar AGORA na unidade: Ceftriaxona 500 mg IM profunda em dose única + Dipirona 1 g EV/VO para alívio álgico.
 2. Prescrever Doxiciclina + Metronidazol por 14 dias para casa + convocação e tratamento empírico obrigatório do(a) parceiro(a) sexual.
-3. Agendar Reavaliação Médica Obrigatória em 48 a 72 horas (se não houver melhora clínica substancial em 72h -> internar para esquema EV!; se usuária de DIU, NÃO retirar o DIU na admissão — só remover se ausência de melhora após 48–72h de ATB!).
+3. Agendar Reavaliação Médica Obrigatória em 48 a 72 horas (se não houver melhora clínica substancial em 72h -> internar para esquema EV!).
 
 >> [MODALIDADE 2 — CONDUTA HOSPITALAR (SE MONIF II, III, IV, GESTANTE, VÔMITOS OU FALHA EM 72H)]:
 1. Internação hospitalar, dieta zero se vômitos/possibilidade cirúrgica, hidratação venosa e analgesia EV.
-2. Esquema Antibiótico Hospitalar (1ª Linha — MS/CDC — ATENÇÃO: se gestante, PROIBIDA Doxiciclina -> preferir Clindamicina + Gentamicina ou Ceftriaxona + Azitromicina + Metronidazol):
+2. Esquema Antibiótico Hospitalar (1ª Linha — MS/CDC):
    - Ceftriaxona 1 g EV de 24/24 horas (ou 2 g EV 1x/dia)
    - + Doxiciclina 100 mg VO (ou EV) de 12/12 horas
    - + Metronidazol 400 mg VO de 12/12h (ou 500 mg EV de 8/8h)
@@ -64,9 +58,10 @@ USO INTRAMUSCULAR (REALIZAR NA UNIDADE DE SAÚDE / UPA HOJE):
 USO ORAL (PARA A PACIENTE — TRATAMENTO COMPLETO DE 14 DIAS):
 2. Doxiciclina 100 mg -------------------------------------------------- 28 comprimidos
    Tomar 1 comprimido via oral de 12 em 12 horas (após o café e o jantar, com 1 copo cheio de água e sem deitar por 30 min), durante 14 dias consecutivos.
-3. [Metronidazol 250 mg (56 cp) — Tomar 2 comprimidos (500 mg) VO de 12/12h por 14 dias / Metronidazol 400 mg (28 cp) — Tomar 1 comprimido VO de 12/12h por 14 dias]
+3. Metronidazol [250 mg (56 cp) / 400 mg (28 cp)] ---------------------- 14 dias
+   Tomar 2 comprimidos de 250 mg (500 mg) via oral de 12 em 12 horas, durante 14 dias consecutivos.
    *(Atenção: Proibido ingerir bebida alcoólica durante os 14 dias e até 48h após o término — risco de reação grave com vômitos e mal-estar)*.
-4. Ibuprofeno 600 mg [EVITAR SE HIPERTENSA / NEFROPATA / ÚLCERA PÉPTICA] ------- 1 caixa
+4. Ibuprofeno 600 mg --------------------------------------------------- 1 caixa
    Tomar 1 comprimido via oral de 8 em 8 horas após as refeições por 5 dias se dor.
 
 TRATAMENTO OBRIGATÓRIO DO(A) PARCEIRO(A) SEXUAL (DOSE ÚNICA):
@@ -77,7 +72,10 @@ ORIENTAÇÕES E RETORNO OBRIGATÓRIO:
 - RETORNO OBRIGATÓRIO EM 48 A 72 HORAS para reavaliação médica (ou procurar o Hospital imediatamente antes disso se a febre/dor aumentarem ou se apresentar vômitos que impeçam tomar os comprimidos).
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
+---
+
+### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+
 ### 🧠 1. Por Que o Diagnóstico de DIP é Clínico e de Baixo Limiar? (Prevenção de Sequelas Tubárias)
 - **A Fisiopatologia da Lesão Tubária Irreversível:** A Doença Inflamatória Pélvica nasce da ascensão canalicular de *Neisseria gonorrhoeae* e *Chlamydia trachomatis* do colo uterino para o endométrio, endossalpinge e peritônio pélvico (facilitada pela abertura do canal cervical e perda do tampão mucoso durante a menstruação!). A resposta inflamatória destrói as células ciliadas da mucosa tubária: **cada episódio de DIP atrasado dobra o risco de Infertilidade por Fator Tubário, multiplica em 6 a 10x o risco de Gravidez Ectópica e causa Dor Pélvica Crônica (e aderências peri-hepáticas em *"cordas de violino"* — Síndrome de Fitz-Hugh-Curtis)**.
 - **Regra Diagnóstica do Ministério da Saúde (PCDT-IST):** Basta a presença dos **3 Critérios Maiores** (**Dor hipogástrica + Dor à palpação de anexos + Dor à mobilização do colo uterino / *Sinal de Chandelier***) somados a **1 Critério Menor** (febre, corrimento endocervical mucopurulento, leucocitose, PCR/VHS elevados ou diplococos/clamídia) para iniciar o tratamento imediatamente na porta!

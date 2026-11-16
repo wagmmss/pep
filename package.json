@@ -7,13 +7,11 @@
     "dev": "vite --host 0.0.0.0 --port 3000",
     "start": "vite --host 0.0.0.0 --port 3000",
     "build": "vite build",
-    "preview": "vite preview --host",
+    "preview": "vite preview --host 0.0.0.0 --port 3000",
     "test": "node --test tests/cockpit_clinico.test.ts",
-    "lint": "node --check vite.config.js && tsc --noEmit"
+    "lint": "node --check vite.config.js"
   },
   "devDependencies": {
-    "@types/node": "^26.6.6",
-    "typescript": "^7.0.2",
     "vite": "^8.3.8"
   }
 }

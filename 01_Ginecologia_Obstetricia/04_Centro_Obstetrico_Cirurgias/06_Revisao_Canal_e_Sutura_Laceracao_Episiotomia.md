@@ -1,41 +1,33 @@
 # Revisão de Canal de Parto e Perineorrafia (Lacerações e Episiotomia)
 
-**Atalho:** `;perineorrafia` | **Categoria:** Centro Obstetrico Cirurgias
+> **Atalho sugerido:** `;perineorrafia`  
+> **Finalidade:** Nota operatória de revisão de colo/vagina, sutura anatômica por planos de lacerações perineais/episiotomia, toque retal de segurança e prescrição pós-sutura.
 
-## SNIPPET PEP
+---
+
+### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+
 ```text
-### CENTRO OBSTÉTRICO — REVISÃO DE CANAL E PERINEORRAFIA ###
-# ID: [Nome], [ ] anos | Leito: [ ]
-G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-PARTO: Vaginal às [HH:MM] de [DD/MM/AAAA] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-]
-# AP:
-PAT: [Nega / HAG / Pré-eclâmpsia / DMG / Anemia]
-MED: [Nega / Ocitocina intraparto / Profilaxia EGB]
-HAB: [Nega tabagismo ou etilismo]
-CX: [Nega / Episiotomia prévia / Cesárea prévia]
-ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
-HF: [Nega / HAS / DM2]
+###### NOTA CIRÚRGICA: REVISÃO DE CANAL DE PARTO E PERINEORRAFIA ######
+# IDENTIFICAÇÃO & CLASSIFICAÇÃO DA LESÃO:
+- Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | Data/Hora: [DD/MM/AAAA] às [HH:MM].
+- Indicação & Grau da Lesão: [Laceração perineal espontânea de 2º grau / Episiotomia médio-lateral direita seletiva / Laceração de 1º grau sangrante / Laceração de 3º grau com reparo esfincteriano (OASIS)].
+- Extensão Anatômica Verificada: Comprometimento de mucosa vaginal, fúrcula e musculatura do corpo perineal (transverso superficial e bulbocavernoso). Toque retal pré-sutura confirmando integridade do complexo do esfíncter anal externo/interno e da mucosa anorretal (afastada lesão de 3º/4º grau).
 
-# CASO: REVISÃO DE CANAL DE PARTO E PERINEORRAFIA ([LACERAÇÃO DE 2º GRAU / EPISIOTOMIA])
-
-HMA: Puérpera imediata submetida à revisão sistemática de canal de parto após parto vaginal. Indicação e grau da lesão: [Laceração perineal espontânea de 2º grau / Episiotomia médio-lateral direita seletiva / Laceração de 1º grau sangrante / Laceração de 3º grau com reparo esfincteriano (OASIS)].
-
-# EXAME CLÍNICO
-Puérpera estável hemodinamicamente no 4º período (PA: [115x75] mmHg | FC: [80] bpm), útero contraído (Globo de Pinard presente). Comprometimento de mucosa vaginal, fúrcula e musculatura do corpo perineal (transverso superficial e bulbocavernoso); toque retal pré-sutura confirmando integridade do esfíncter anal externo/interno e mucosa anorretal.
-- TEMPOS TÉCNICOS DA REVISÃO E PERINEORRAFIA:
-  1. Exposição & Revisão de Canal: Paciente em litotomia sob foco cirúrgico, antissepsia com Clorexidina Aquosa 0,5% e campos estéreis. Revisão de colo uterino em 360° com pinças de Foerster (DeLee) e paredes vaginais: [íntegras e sem hematomas / suturada laceração cervical em lábio [ ]]. Posicionado tampão de gaze estéril com reparo para manter campo seco.
-  2. Anestesia Local: Infiltração em leque nos planos mucoso, muscular e subcutâneo com 10 a 15 mL de Lidocaína 1% sem vasoconstritor [ou até 10 mL a 2%, respeitando teto de 4,5 mg/kg] (aspiração prévia negativa).
-  3. Síntese da Mucosa Vaginal (1º Plano):
-     - Identificado o ápice da laceração vaginal; dado 1º ponto de ancoragem 0,5 a 1,0 cm ACIMA (cranial) do ápice para ligadura de vasos submucosos retraídos.
-     - Sutura contínua não-ancorada da mucosa vaginal com fio absorvível Poliglactina (Vicryl) 2-0 até o anel himenal/carúnculas.
-  4. Miorrafia do Corpo Perineal (2º Plano):
-     - Aproximação anatômica sem tensão dos músculos bulbocavernoso e transverso superficial do períneo com 3 a 4 pontos contínuos frouxos ou separados invertidos de Vicryl 2-0, obliterando o espaço morto.
-  5. Síntese da Pele Perineal (3º Plano):
-     - Sutura contínua intradérmica/subcuticular com Vicryl 2-0 (menor dor pós-operatória), finalizada com nó sepultado na fúrcula.
-  6. Conferência Final Obrigatória (Tampão + Toque Vaginal + Toque Retal):
-     - Retirado o tampão de gaze vaginal (contagem de compressas conferida).
-     - Toque vaginal: Vagina pérvia, linha de sutura hemostática e ausência de hematomas de parede.
-     - Toque retal pós-sutura (com luva limpa): Mucosa retal livre e deslizante (ausência de pontos transfixantes acidentais na luz retal) e tônus esfincteriano preservado.
+# TEMPOS TÉCNICOS DA REVISÃO E PERINEORRAFIA:
+1. Exposição & Revisão de Canal: Paciente em litotomia sob foco cirúrgico, antissepsia com Clorexidina Aquosa 0,5% e campos estéreis. Revisão de colo uterino em 360° com pinças de Foerster (DeLee) e paredes vaginais: [íntegras e sem hematomas / suturada laceração cervical em lábio [ ]]. Posicionado tampão de gaze estéril com reparo para manter campo seco.
+2. Anestesia Local: Infiltração em leque nos planos mucoso, muscular e subcutâneo com 10 a 15 mL de Lidocaína 2% sem vasoconstritor (aspiração prévia negativa).
+3. Síntese da Mucosa Vaginal (1º Plano):
+   - Identificado o ápice da laceração vaginal; dado 1º ponto de ancoragem 0,5 a 1,0 cm ACIMA (cranial) do ápice para ligadura de vasos submucosos retraídos.
+   - Sutura contínua não-ancorada da mucosa vaginal com fio absorvível Poliglactina (Vicryl) 2-0 até o anel himenal/carúnculas.
+4. Miorrafia do Corpo Perineal (2º Plano):
+   - Aproximação anatômica sem tensão dos músculos bulbocavernoso e transverso superficial do períneo com 3 a 4 pontos contínuos frouxos ou separados invertidos de Vicryl 2-0, obliterando o espaço morto.
+5. Síntese da Pele Perineal (3º Plano):
+   - Sutura contínua intradérmica/subcuticular com Vicryl 2-0 (menor dor pós-operatória), finalizada com nó sepultado na fúrcula.
+6. Conferência Final Obrigatória (Tampão + Toque Vaginal + Toque Retal):
+   - Retirado o tampão de gaze vaginal (contagem de compressas conferida).
+   - Toque vaginal: Vagina pérvia, linha de sutura hemostática e ausência de hematomas de parede.
+   - Toque retal pós-sutura (com luva limpa): Mucosa retal livre e deslizante (ausência de pontos transfixantes acidentais na luz retal) e tônus esfincteriano preservado.
 
 # AVALIAÇÃO DIAGNÓSTICA:
 1. Perineorrafia pós-parto por [laceração perineal de 2º grau (CID-10: O70.1) / episiotomia (O75.9)] sem intercorrências.
@@ -49,17 +41,19 @@ Puérpera estável hemodinamicamente no 4º período (PA: [115x75] mmHg | FC: [8
 USO ORAL:
 1. Dipirona Monoidratada [1 g / 500 mg] -------------------------------- 1 caixa
    Tomar 1 comprimido via oral de 6 em 6 horas se dor perineal.
-2. Ibuprofeno 600 mg [CONTRAINDICADO SE HIPERTENSA / PRÉ-ECLÂMPSIA / NEFROPATA] -- 1 caixa
+2. Ibuprofeno 600 mg [NÃO PRESCREVER SE HIPERTENSA / PRÉ-ECLÂMPSIA] ----- 1 caixa
    Tomar 1 comprimido via oral de 8 em 8 horas, após as refeições, por 4 dias.
-3. [Lactulose 667 mg/mL Xarope / Polietilenoglicol (PEG 3350)] ----------- 1 frasco
-   Tomar 15 mL (ou 1 envelope dissolvido) via oral à noite por 5 dias para amolecer as fezes e evitar esforço nos pontos.
+3. [Lactulose 667 mg/mL Xarope / Óleo Mineral] ------------------------- 1 frasco
+   Tomar 15 mL via oral à noite por 5 dias para amolecer as fezes e evitar esforço nos pontos.
 
 ORIENTAÇÕES DE CUIDADOS COM OS PONTOS:
 - Lavar a região íntima com água corrente e sabonete neutro após urinar ou evacuar, secando sem esfregar (os pontos são absorvíveis e caem sozinhos em 15 a 30 dias).
 - Procurar a Maternidade se surgir dor forte latejante com inchaço roxo local (hematoma), saída de pus, febre ou abertura completa dos pontos.
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
+---
+
+### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
 
 ### 🧠 1. Por Que a Classificação Anatômica (1º ao 4º Grau / OASIS) Muda Toda a Sutura?
 Antes de dar o primeiro ponto de uma perineorrafia, é **obrigatório realizar inspeção sob boa iluminação + toque retal digital** para classificar a lesão:

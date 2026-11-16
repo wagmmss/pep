@@ -1,48 +1,47 @@
-# Evolução Diária e Passagem de Caso (Round) em Enfermaria de Puerpério
+# Evolução Diária em Enfermaria de Puerpério
 
-**Atalho:** `;puerp-evo` | **Categoria:** Enfermaria Puerperio
+> **Atalho sugerido:** `;puerp-evo`  
+> **Finalidade:** Evolução clínica diária de enfermaria (Alojamento Conjunto), prescrição hospitalar e receita de alta puerperal.
 
-## SNIPPET PEP
+---
+
+### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+
 ```text
-### ENFERMARIA DE PUERPÉRIO — ALOJAMENTO CONJUNTO ###
-# ID: [Nome], [ ] anos | Leito: [ ]
-G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-PARTO: [Parto Normal / Parto Normal com episiotomia / Cesariana por indicação de [ ]] em [DD/MM/AAAA] às [HH:MM] ([1º / 2º / 3º] DPO) | IG ao nascer: [ ]s[ ]d
-TS/Rh Mãe: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-] | TS/Rh RN: [ ] (Coombs Direto: [Negativo / Positivo])
-# AP:
-PAT: [Nega / HAG / Pré-eclâmpsia / DMG sob dieta / Anemia / Hipotireoidismo]
-MED: [Nega / Em uso de: [Sulfato Ferroso / Metildopa / Analgésicos]]
-HAB: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
-CX: [Nega / Cesárea atual / Cesárea prévia]
-ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
-HF: [Nega / HAS / DM2 / Pré-eclâmpsia]
+###### EVOLUÇÃO DIÁRIA DE ENFERMARIA — PUERPÉRIO (ALOJAMENTO CONJUNTO) ######
+# IDENTIFICAÇÃO & PARTO:
+Paciente [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] A[ ], TS Materna: [O+ / A+ / B+ / Rh negativo] | TS RN: [ ] (Coombs Direto: [Negativo / Positivo]).
+Em [1º / 2º / 3º] dia de puerpério de [Parto Normal sem laceração / Parto Normal com rafia de laceração de 2º grau / Parto Normal com episiotomia / Cesárea por indicação de [ ]] realizado em [DD/MM às HH:MM] com IG de [ ]s[ ]d.
+Comorbidades & Alergias: [Hígida / HAG / Pré-eclâmpsia / DMG sob dieta / Anemia] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
 
-# CASO: EVOLUÇÃO DIÁRIA DE PUERPÉRIO ([1º / 2º / 3º] DPO DE [PARTO NORMAL / CESARIANA])
+# SUBJETIVO (EVOLUÇÃO NAS 24H & AMAMENTAÇÃO):
+Encontro puérpera no leito com RN em alojamento conjunto.
+- Evolução Geral & Dor: Passou bem nas últimas 24h, deambulando sem tontura ortostática e com boa aceitação da dieta. Dor [ausente / leve e controlada com analgesia / discreta em ferida operatória / leve em região perineal].
+- Fisiológicas & Loquiação: Diurese espontânea clara e em bom volume (sem disúria); eliminação de flatos presente, evacuação [presente sem esforço / ausente até o momento]. Lóquios [rubros fisiológicos em pequena-moderada quantidade, sem odor fétido ou coágulos / aumentados].
+- Amamentação: Aleitamento materno exclusivo em livre demanda, [boa pega e posicionamento observados (boca bem aberta, lábio inferior evertido, queixo tocando a mama e deglutição audível), sem dor mamilar / dificuldade de pega orientada à beira-leito].
+- Negativas Mandatórias de Alarme: Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, lipotímia ou dor/empastamento em panturrilhas.
 
-HMA: Puérpera encontrada no leito em alojamento conjunto com RN. Passou bem nas últimas 24h, deambulando sem tontura ortostática e com boa aceitação da dieta. Dor [ausente / leve e controlada com analgesia / discreta em ferida operatória / leve em região perineal]. Diurese espontânea clara e em bom volume (sem disúria); eliminação de flatos presente, evacuação [presente sem esforço / ausente até o momento]. Lóquios [rubros fisiológicos em pequena-moderada quantidade, sem odor fétido ou coágulos / aumentados]. Aleitamento materno exclusivo em livre demanda, [boa pega e posicionamento observados (boca bem aberta, lábio inferior evertido, queixo tocando a mama e deglutição audível), sem dor mamilar / dificuldade de pega orientada à beira-leito]. Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, dor em panturrilhas ou odor fétido vaginal.
-
-RESUMO ESTRUTURADO PARA PASSAGEM DE ROUND (1 LINHA):
-- Síntese SBAR: Puérpera no [1º / 2º / 3º] DPO de [Parto Normal / Cesariana por indicação obstétrica], G[ ]P[ ]A[ ], IG [ ]s[ ]d, TS Mãe [ ] / RN [ ] (Coombs Direto [Negativo / Positivo]), evoluindo [estável, afebril, lóquios fisiológicos e amamentação eficaz / com pendência clínica descrita], programação de [alta hospitalar hoje / aguardar 48h de observação neonatal / completar fototerapia].
-
-# EXAME CLÍNICO
-Bom estado geral, corada, hidratada, acianótica, anictérica, afebril, normotensa, eupneica em ar ambiente.
-- Sinais Vitais: PA: [110x70] mmHg | FC: [76] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C.
-- Aparelho Cardiovascular & Respiratório: RCR em 2T, BNF, sem sopros. MV+ bilateral, sem ruídos adventícios.
-- Mamas: Mamas [túrgidas / lactantes fisiológicas], simétricas, sem áreas de hiperemia, calor local, nódulos ou fissuras mamilares; colostro/leite presente à expressão suave.
-- Abdome & Involução Uterina: Abdome flácido, RHA presentes, indolor à palpação profunda (sem irritação peritoneal). Útero contraído firmemente (Globo de Segurança de Pinard presente) palpável a [1 a 2 cm abaixo da cicatriz umbilical / na altura da cicatriz umbilical].
-- Ferida Operatória / Períneo: [Ferida operatória de Pfannenstiel limpa, seca, bordas bem coaptadas, sem hiperemia, edema, calor ou secreção / Períneo íntegro sem edema ou equimose / Episiorrafia/perineorrafia limpa, bem coaptada, sem hematoma ou sinais flogísticos].
-- Lóquios & Membros Inferiores: Lóquios [rubros / serossanguinolentos] fisiológicos em moderada quantidade, sem odor fétido. Panturrilhas livres e indolores à palpação (Sinal de Homans e Bandeira negativos), sem edema assimétrico.
+# OBJETIVO (EXAME FÍSICO DIRIGIDO & CONTROLES):
+- Sinais Vitais: PA: [110x70] mmHg | FC: [78] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C.
+- Ectoscopia: BEG, lúcida, corada, hidratada, anictérica, acianótica, afebril e eupneica.
+- Mamas: [Flácidas / Túrgidas fisiológicas], indolores, sem áreas de hiperemia, calor ou ingurgitamento patológico. Papilas [íntegras sem fissuras / com fissura superficial em mama]. Colostro presente à expressão bilateral.
+- Abdome & Útero: Abdome flácido, RHA+, indolor, sem bexigoma palpável. Útero globoso, firme e bem contraído (Globo de Pinard presente), centrado, involuindo a [1 a 2] cm abaixo da cicatriz umbilical, indolor à mobilização.
+- Sítio Cirúrgico / Períneo: [Períneo íntegro sem edema ou hematoma / Rafia perineal com bordas coaptadas, pontos íntegros, limpa e sem hematoma / Ferida operatória de Pfannenstiel limpa, seca, bordas coaptadas, sem flogose ou hematoma]. Lóquios rubros fisiológicos sem odor.
+- Extremidades: Aquecidas, TEC < 2s, pulsos distais simétricos, [sem edema / edema maleolar leve +/4+ simétrico], panturrilhas livres e indolores.
+- Controles & Exames: Sorologias de admissão (HIV, VDRL, HBsAg, Toxo) [todas não reagentes / checadas]. [Curva pressórica normotensa / Perfil glicêmico no alvo / Hb pós-parto: g/dL].
 
 # AVALIAÇÃO DIAGNÓSTICA:
-1. Puerpério imediato/mediato fisiológico ([1º / 2º / 3º] dia pós-[Parto Vaginal / Cesariana]) sem sinais de alarme infecciosos, hemorrágicos, hipertensivos ou tromboembólicos. [Elegível para alta hospitalar segura / Manter internação para observação materno-neonatal].
+1. [1º / 2º / 3º] dia de puerpério de [Parto Normal / Cesariana] com evolução favorável (CID-10: Z39.0).
+2. Estratificação de TEV: [Baixo risco (deambulação precoce) / Alto risco (indicada Enoxaparina profilática)].
+3. Status para Alta: [Apta para alta hospitalar hoje após 24h-48h / Manter internada para vigilância clínica e completar 48h].
 
 # PLANO / CONDUTA:
 >> CONDUTA HOSPITALAR DIÁRIA:
 1. Dieta geral laxativa rica em fibras e hidratação oral vigorosa; estímulo à deambulação precoce e aleitamento materno em livre demanda.
-2. Analgesia hospitalar: Dipirona 1 g VO/EV de 6/6h se dor + [Paracetamol 750 mg VO 6/6h se dor (preferencial se hipertensa/PE) / Cetoprofeno 100 mg EV/VO 12/12h se dor (CONTRAINDICADO se hipertensa/PE, nefropata ou úlcera péptica)].
+2. Analgesia hospitalar: Dipirona 1 g VO/EV de 6/6h se dor + [Cetoprofeno 100 mg EV/VO 12/12h se dor (evitar AINE se hipertensa/PE) / Paracetamol 750 mg VO 6/6h se dor].
 3. [Se constipação / rafia perineal / cesárea]: Simeticona 40 gotas VO 8/8h se gases + Lactulose 15 mL VO à noite se necessário.
 4. [Se mãe Rh negativo com RN Rh positivo e Coombs Direto negativo]: Prescrever e checar Imunoglobulina Anti-D 300 mcg IM (em até 72h do parto).
-5. [Se alto risco para TEV]: Enoxaparina 40 mg SC 1x/dia (iniciar >= 6–12h pós-parto/bloqueio neuroaxial, se hemostasia segura; ajustar dose se peso > 90 kg).
+5. [Se alto risco para TEV]: Enoxaparina 40 mg SC 1x/dia.
 6. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Inserido DIU de Cobre pós-placentário / Inserido Implanon antes da alta].
 
 >> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
@@ -51,7 +50,7 @@ USO ORAL:
    Tomar 1 comprimido via oral, 1 vez ao dia (30 min antes do almoço, com suco cítrico), por 60 a 90 dias (suplementação puerperal).
 2. Dipirona Monoidratada 500 mg ou 1 g ------------------------------- 1 caixa
    Tomar 1 comprimido via oral de 6 em 6 horas se dor ou febre.
-3. Ibuprofeno 600 mg [CONTRAINDICADO SE HIPERTENSA / PRÉ-ECLÂMPSIA / NEFROPATA] -- 1 caixa
+3. Ibuprofeno 600 mg [NÃO PRESCREVER SE HIPERTENSA / PRÉ-ECLÂMPSIA] -- 1 caixa
    Tomar 1 comprimido via oral de 8 em 8 horas, após as refeições, por 3 a 5 dias se dor local.
 4. [Opcional - Contracepção na Lactação] Desogestrel 75 mcg ---------- 3 caixas
    Tomar 1 comprimido via oral todos os dias no mesmo horário, de forma contínua (sem pausa entre as cartelas).
@@ -62,7 +61,10 @@ ORIENTAÇÕES DE ALTA PUERPERAL:
 - SINAIS DE ALARME (Procurar Maternidade imediatamente se): Febre >= 37,8 °C, sangramento vaginal intenso (encharcar > 2 absorventes/hora) ou com odor fétido, dor/vermelhidão localizada nas mamas, abertura/pus nos pontos, dor na panturrilha, falta de ar ou dor de cabeça forte com visão turva.
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
+---
+
+### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+
 ### 🧠 1. Por Que Avaliamos Assim na Enfermaria? (Fisiopatologia do Puerpério)
 - **Involução Uterina Fisiológica (1 cm/dia) & Globo de Pinard:** Logo após a dequitação, a contração tônica das fibras miometriais oblíquas estrangula as artérias espiraladas (*ligaduras vivas de Pinard*). No 1º DPO o fundo uterino está na cicatriz umbilical e regride cerca de **1 cm por dia**, tornando-se intrapélvico por volta do `10º–14º dia`.
   - **Por que útero alto e desviado para a direita no 1º DPO quase sempre é Bexigoma?** Após raquianestesia ou parto vaginal instrumentalizado, há hiporreflexia detrusora transitória. A bexiga cheia empurra o útero para cima e para a direita, impedindo sua contração eficaz — por isso **sempre mandamos urinar ou sondamos antes de diagnosticar atonia tardia**.
