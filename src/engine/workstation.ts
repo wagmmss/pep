@@ -1,6 +1,8 @@
 // ============================================================================
-// WORKSTATION CLÍNICA — GRAVIDADE, LAYOUT REDIMENSIONÁVEL & CHECKLIST HAB
+// WORKSTATION CLÍNICA — GRAVIDADE, LAYOUT REDIMENSIONÁVEL, CARRINHO & CHECKLIST
 // ============================================================================
+
+import { sanitizePepOutput } from './personalizar';
 
 export interface ClinicalSeverity {
   code: 'critico' | 'urgente' | 'rotina' | 'tecnica';
@@ -46,4 +48,41 @@ export function getClinicalSeverity(item: { id?: string; category?: string; mod_
   }
 
   return { code: 'rotina', label: 'ROTINA', cls: 'sev-rotina' };
+}
+
+export function parsePrescriptionItemsForCart(rawReceitaText: string): string[] {
+  const sanitized = sanitizePepOutput(rawReceitaText, { keepEmptyBrackets: true, stripMarkdownHeaders: true });
+  const lines = sanitized.split('\n');
+  const items: string[] = [];
+  let currentEntry = '';
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+
+    // Parar de capturar medicamentos numerados ao atingir bloco de orientações/sinais de alarme
+    if (/^(?:ORIENTAÇÕES|SINAIS DE ALARME|RETORNO IMEDIATO|CUIDADOS DOMICILIARES)/i.test(trimmed)) {
+      break;
+    }
+
+    // Ignorar cabeçalhos de via de administração ("USO ORAL:", "USO TÓPICO:", "USO INALATÓRIO:")
+    if (/^USO\s+[A-ZÀ-Ÿ\s/]+:$/i.test(trimmed)) {
+      continue;
+    }
+
+    if (/^\d+\.\s+/.test(trimmed)) {
+      if (currentEntry) {
+        items.push(currentEntry.trim());
+      }
+      currentEntry = trimmed.replace(/^\d+\.\s+/, '');
+    } else if (currentEntry && !trimmed.startsWith('#')) {
+      currentEntry += '\n   ' + trimmed;
+    }
+  }
+
+  if (currentEntry) {
+    items.push(currentEntry.trim());
+  }
+
+  return items;
 }

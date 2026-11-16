@@ -1881,11 +1881,42 @@
       margin-top: 6px;
       border-bottom: 1px solid rgba(56, 189, 248, 0.14);
       padding-bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
     }
     .pep-line.pep-line-subheading {
       color: #f59e0b;
       font-weight: 600;
       margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pep-sec-copy-btn {
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(2, 132, 199, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.36);
+      color: #bae6fd;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-left: auto;
+      flex-shrink: 0;
+      transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    }
+    .pep-sec-copy-btn:hover {
+      background: var(--primary-solid);
+      border-color: var(--primary-bright);
+      color: #ffffff;
     }
     .pep-line.is-excluded,
     .pep-line.is-excluded-block {
@@ -2401,6 +2432,22 @@
       transform: translateY(0);
       opacity: 1;
     }
+    .toast.has-pending-gaps {
+      border-color: var(--warning);
+    }
+    .toast-pending-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid rgba(245, 158, 11, 0.55);
+      color: #fde68a;
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
 
     /* Barra Inferior Flutuante Mobile (Thumb-Zone Bottom Sheet Compacto < 768px) */
     .mobile-bottom-bar {
@@ -2846,6 +2893,92 @@
         right: 14px;
         justify-content: center;
       }
+    }
+
+    /* ==========================================================================
+       FASE 2 & 3: MODO EDIÇÃO LIVRE UNIDIRECIONAL + BADGE DE SINTOMA NA BUSCA
+       ========================================================================== */
+    .pep-tool-btn.is-active-mode {
+      background: rgba(245, 158, 11, 0.16);
+      border-color: rgba(245, 158, 11, 0.48);
+      color: #fde68a;
+    }
+    .pep-free-edit-wrap {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      min-height: 360px;
+    }
+    .pep-free-edit-wrap.is-open {
+      display: flex;
+    }
+    .pep-free-edit-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.32);
+      color: #fde68a;
+      font-size: 0.75rem;
+    }
+    .pep-free-edit-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pep-free-edit-confirm {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.42);
+      color: #fecaca;
+      font-size: 0.75rem;
+    }
+    .pep-free-edit-confirm.is-open {
+      display: flex;
+    }
+    .pep-free-edit-textarea {
+      width: 100%;
+      flex: 1;
+      min-height: 360px;
+      resize: vertical;
+      background: var(--surface-inset);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      line-height: 1.62;
+      outline: none;
+    }
+    .pep-free-edit-textarea:focus {
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.15);
+    }
+    .card-symptom-match-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.66rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #7dd3fc;
+      margin-left: 6px;
     }
   </style>
 </head>
@@ -6038,7 +6171,30 @@ IDENTIFICAÇÃO &amp; PESO:
           <h2 id="drawerTitle">Título do Protocolo</h2>
         </div>
 
-        <div class="cockpit-power-actions" id="cockpitPowerActions">
+        <div class="cockpit-power-actions" id="cockpitPowerActions" role="toolbar" aria-label="Ações rápidas de cópia para prontuário">
+          <button type="button" class="power-action-btn primary-action" id="powerBtnCopyAll" onclick="triggerPowerCopy(1, this)" title="Copiar Prontuário Completo Sanitizado (Tecla 1)">
+            <span class="kbd-num">1</span>
+            <span>Tudo</span>
+          </button>
+          <button type="button" class="power-action-btn" id="powerBtnCopyConduta" onclick="triggerPowerCopy(2, this)" title="Copiar apenas Conduta / Plano (Tecla 2)">
+            <span class="kbd-num">2</span>
+            <span>Conduta</span>
+          </button>
+          <button type="button" class="power-action-btn" id="powerBtnCopyReceita" onclick="triggerPowerCopy(3, this)" title="Copiar apenas Receita / Prescrição de Alta (Tecla 3)">
+            <span class="kbd-num">3</span>
+            <span>Receita</span>
+          </button>
+          <button type="button" class="power-action-btn" id="powerBtnCopyEvolucao" onclick="triggerPowerCopy(4, this)" title="Copiar apenas Evolução / Anamnese + Exame Físico (Tecla 4)">
+            <span class="kbd-num">4</span>
+            <span>Evolução</span>
+          </button>
+          <button type="button" class="power-action-btn" id="powerBtnCopyOrientacoes" onclick="triggerPowerCopy(5, this)" title="Copiar apenas Orientações de Alta & Sinais de Alarme (Tecla 5)">
+            <span class="kbd-num">5</span>
+            <span>Orientações</span>
+          </button>
+          <button type="button" class="power-action-btn icon-only-btn" id="powerBtnResetPatient" onclick="resetInteractiveCurrent()" title="Novo Paciente / Restaurar campos para o padrão" aria-label="Novo Paciente">
+            <span>↺</span>
+          </button>
           <button class="close-btn" onclick="closeInspector()" title="Fechar (Esc)" aria-label="Fechar">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
@@ -6070,14 +6226,34 @@ IDENTIFICAÇÃO &amp; PESO:
               <span class="interactive-toolbar-hint">Tab/Enter salta campos • Nome/Idade/Peso espelham na Receita</span>
             </div>
             <div class="interactive-toolbar-actions">
-              <button type="button" class="pep-tool-btn btn-primary-tool" id="btnPepNextField" onclick="focusNextEmptyInteractiveInput()" title="Pular para o próximo campo em branco (Tab/Enter)">⏭ Próximo campo</button>
+              <button type="button" class="pep-tool-btn btn-primary-tool" id="btnPepNextField" onclick="focusNextEmptyInteractiveInput()" title="Pular para o próximo campo em branco (Alt+N / Tab)">⏭ Próximo campo</button>
               <button type="button" class="pep-tool-btn" id="btnPepNormalVitals" onclick="fillInteractiveNormalVitals()" title="Preencher todos os sinais vitais em branco com valores normais para a especialidade (Alt+V)">💓 Sinais Vitais Normais</button>
-              <button type="button" class="pep-tool-btn" id="btnPepFillDates" onclick="fillInteractiveDatesToday()" title="Preencher todas as datas/horários gerais com Hoje/Agora">📅 Datas = Hoje</button>
+              <button type="button" class="pep-tool-btn" id="btnPepFillDates" onclick="fillInteractiveDatesToday()" title="Preencher todas as datas/horários gerais com Hoje/Agora (Alt+D)">📅 Datas = Hoje</button>
+              <button type="button" class="pep-tool-btn" id="btnPepFreeEditToggle" onclick="toggleFreeEditMode()" title="Alternar para Edição Livre de texto com histórico Desfazer (Alt+E)">✏️ Edição Livre</button>
+              <button type="button" class="pep-tool-btn" id="btnPepCopyOrientacoes" onclick="copyOrientacoes(currentDrawerIndex, this)" title="Copiar apenas as Orientações ao Paciente / Sinais de Alarme (Tecla 5)">📢 Orientações</button>
               <button type="button" class="pep-tool-btn" id="btnPepToggleEmptyMode" onclick="toggleInteractiveEmptyMode()" title="Alternar formato de cópia de campos vazios">[ ] Vazios: Manter</button>
               <button type="button" class="pep-tool-btn" id="btnPepReset" onclick="resetInteractiveCurrent()" title="Restaurar todas as opções e campos para o valor padrão">↺ Restaurar padrão</button>
             </div>
           </div>
           <div class="pep-weight-dose-banner" id="pepWeightDoseBanner" style="display:none;"></div>
+          <div class="pep-free-edit-wrap" id="pepFreeEditWrap">
+            <div class="pep-free-edit-banner">
+              <span id="pepFreeEditStatusText">🔒 <strong>Modo Edição Livre ativo</strong> — o texto abaixo é a fonte da verdade para todas as cópias (1–5).</span>
+              <div class="pep-free-edit-actions">
+                <button type="button" class="pep-tool-btn" id="btnFreeEditUndo" onclick="undoFreeEdit()" title="Desfazer última alteração manual (Ctrl+Z)">↶ Desfazer <span id="freeEditUndoCount">(0)</span></button>
+                <button type="button" class="pep-tool-btn" id="btnFreeEditCopyMedsOnly" onclick="copyReceitaMedsOnly(currentDrawerIndex, this)" title="Copiar apenas os medicamentos numerados da receita (sem orientações)">💊 Só Medicamentos</button>
+                <button type="button" class="pep-tool-btn" id="btnFreeEditBackToPills" onclick="requestExitFreeEditMode()" title="Retornar para a árvore de pílulas e campos estruturados">🔙 Voltar às pílulas</button>
+              </div>
+            </div>
+            <div class="pep-free-edit-confirm" id="pepFreeEditConfirmBar">
+              <span>⚠️ Você editou o texto manualmente. Voltar às pílulas descartará as alterações livres deste atendimento.</span>
+              <div class="pep-free-edit-actions">
+                <button type="button" class="pep-tool-btn" id="btnConfirmDiscardFreeEdit" onclick="confirmExitFreeEditMode()" style="border-color:#ef4444; color:#fecaca;">Sim, descartar edição manual</button>
+                <button type="button" class="pep-tool-btn" id="btnCancelDiscardFreeEdit" onclick="cancelExitFreeEditMode()">Continuar editando texto</button>
+              </div>
+            </div>
+            <textarea id="pepFreeEditTextarea" class="pep-free-edit-textarea" spellcheck="false" aria-label="Editor livre do prontuário"></textarea>
+          </div>
           <div class="interactive-rendered" id="interactiveRendered"></div>
         </div>
 
@@ -6270,6 +6446,34 @@ IDENTIFICAÇÃO &amp; PESO:
             <span class="shortcut-desc">Copiar Receita (💊 Receita)</span>
             <span class="shortcut-keys"><kbd>3</kbd></span>
           </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">Copiar Evolução (SOAP puro)</span>
+            <span class="shortcut-keys"><kbd>4</kbd></span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">Copiar Orientações de Alta &amp; Sinais de Alarme</span>
+            <span class="shortcut-keys"><kbd>5</kbd></span>
+          </div>
+        </div>
+
+        <div class="shortcuts-group">
+          <div class="shortcuts-group-title">Personalização Rápida &amp; Edição Livre</div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">Preencher Sinais Vitais Normais</span>
+            <span class="shortcut-keys"><kbd>Alt</kbd><kbd>V</kbd></span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">Preencher Datas/Horários com Hoje/Agora</span>
+            <span class="shortcut-keys"><kbd>Alt</kbd><kbd>D</kbd></span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">Pular para próximo campo em branco</span>
+            <span class="shortcut-keys"><kbd>Alt</kbd><kbd>N</kbd></span>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-desc">Alternar Modo Edição Livre (Trava Unidirecional)</span>
+            <span class="shortcut-keys"><kbd>Alt</kbd><kbd>E</kbd></span>
+          </div>
         </div>
 
         <div class="shortcuts-group">
@@ -6294,6 +6498,7 @@ IDENTIFICAÇÃO &amp; PESO:
   <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite">
     <span id="toastMsg">✅ Conduta copiada com sucesso!</span>
+    <span id="toastPendingBadge" class="toast-pending-badge" style="display:none;"></span>
   </div>
 
   <!-- Barra Flutuante Inferior Mobile (Thumb-Zone < 768px) -->
@@ -6334,6 +6539,7 @@ IDENTIFICAÇÃO &amp; PESO:
     const counterText = document.getElementById('counterText');
     const toast = document.getElementById('toast');
     const toastMsg = document.getElementById('toastMsg');
+    const toastPendingBadge = document.getElementById('toastPendingBadge');
 
     // Workstation Mode & Shortcuts elements
     const btnModeConsulta = document.getElementById('btnModeConsulta');
@@ -6395,10 +6601,22 @@ IDENTIFICAÇÃO &amp; PESO:
     const cmdCount = document.getElementById('cmdCount');
 
     let toastTimer = null;
-    function showToast(msg, durationMs) {
+    function showToast(msg, durationMs, pendingGapsReport) {
       const dur = typeof durationMs === 'number' ? durationMs : 1800;
       const formatted = String(msg || '').trim();
       toastMsg.textContent = formatted.startsWith('✅') ? formatted : `✅ ${formatted}`;
+      if (toastPendingBadge) {
+        const gapsCount = pendingGapsReport && typeof pendingGapsReport.totalGaps === 'number' ? pendingGapsReport.totalGaps : 0;
+        if (gapsCount > 0) {
+          toastPendingBadge.style.display = 'inline-flex';
+          toastPendingBadge.textContent = `⚠️ ${gapsCount} ${gapsCount === 1 ? 'lacuna pendente' : 'lacunas pendentes'}`;
+          toast.classList.add('has-pending-gaps');
+        } else {
+          toastPendingBadge.style.display = 'none';
+          toastPendingBadge.textContent = '';
+          toast.classList.remove('has-pending-gaps');
+        }
+      }
       toast.classList.add('show');
       if (toastTimer) clearTimeout(toastTimer);
       toastTimer = setTimeout(() => toast.classList.remove('show'), dur);
@@ -6462,10 +6680,13 @@ IDENTIFICAÇÃO &amp; PESO:
         .replace(/'/g, '&#39;');
     }
 
-    function copyTextToClipboard(text, successMsg, btnEl) {
+    function copyTextToClipboard(text, successMsg, btnEl, skipGapCheck) {
       triggerHaptic();
       if (btnEl) animateCopyButtonSuccess(btnEl);
-      showToast(successMsg, 1800);
+      const gapsReport = skipGapCheck ? null : detectPendingGaps(text);
+      window.lastCopiedText = text;
+      window.lastCopyPendingGaps = gapsReport || { totalGaps: 0, emptyBrackets: 0, namedPlaceholders: 0, unresolvedChoices: 0, samples: [] };
+      showToast(successMsg, 1800, gapsReport);
       if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
         navigator.clipboard.writeText(text).catch(() => {
           fallbackCopy(text);
@@ -6495,13 +6716,14 @@ IDENTIFICAÇÃO &amp; PESO:
       if (item.mod_id === 'hab') {
         const text = `${item.title}\nMeta: ${item.time_goal || ''}\nÂncora: ${item.anchor || ''}\n\n${item.pre_porta || ''}`.trim();
         const targetHabBtn = btnEl || drawerCopyBtn;
-        copyTextToClipboard(text, '✅ Roteiro completo copiado com sucesso!', targetHabBtn);
+        copyTextToClipboard(text, '✅ Roteiro completo copiado com sucesso!', targetHabBtn, true);
         return;
       }
       const resolved = getResolvedProtocolBodies(index);
       const targetBtn = btnEl || document.querySelector(`[data-copy-snippet="${index}"]`);
       copyTextToClipboard(resolved.pep_body, '✅ Snippet completo copiado com sucesso!', targetBtn);
     }
+    window.copySnippet = copySnippet;
 
     function copyConduta(index, btnEl) {
       const item = allData[index];
@@ -6515,6 +6737,7 @@ IDENTIFICAÇÃO &amp; PESO:
         copyTextToClipboard(resolved.pep_body, 'ℹ️ Sem conduta isolada: copiado snippet completo', targetBtn);
       }
     }
+    window.copyConduta = copyConduta;
 
     function copyReceita(index, btnEl) {
       const item = allData[index];
@@ -6528,23 +6751,60 @@ IDENTIFICAÇÃO &amp; PESO:
         copyTextToClipboard(resolved.conduta_body || resolved.pep_body, 'ℹ️ Sem receita específica: copiada conduta/snippet', targetBtn);
       }
     }
+    window.copyReceita = copyReceita;
+
+    function copyEvolucao(index, btnEl) {
+      const item = allData[index];
+      if (!item) return;
+      const resolved = getResolvedProtocolBodies(index);
+      const bodyToCopy = resolved.evolucao_body || resolved.pep_body;
+      const targetBtn = btnEl || document.getElementById('powerBtnCopyEvolucao');
+      copyTextToClipboard(bodyToCopy, '✅ Evolução copiada com sucesso!', targetBtn);
+    }
+    window.copyEvolucao = copyEvolucao;
+
+    function copyOrientacoes(index, btnEl) {
+      const targetIdx = index !== undefined && index !== null ? index : currentDrawerIndex;
+      const item = allData[targetIdx];
+      if (!item) return;
+      const resolved = getResolvedProtocolBodies(targetIdx);
+      const bodyToCopy = resolved.orientacoes_body || resolved.receita_body || resolved.conduta_body || resolved.pep_body;
+      const targetBtn = btnEl || document.getElementById('powerBtnCopyOrientacoes') || document.getElementById('btnPepCopyOrientacoes');
+      copyTextToClipboard(bodyToCopy, '✅ Orientações ao paciente copiadas com sucesso!', targetBtn);
+    }
+    window.copyOrientacoes = copyOrientacoes;
+
+    function copyReceitaMedsOnly(index, btnEl) {
+      const targetIdx = index !== undefined && index !== null ? index : currentDrawerIndex;
+      const item = allData[targetIdx];
+      if (!item) return;
+      const resolved = getResolvedProtocolBodies(targetIdx);
+      const bodyToCopy = resolved.receita_meds_body || resolved.receita_body || resolved.conduta_body;
+      const targetBtn = btnEl || document.getElementById('btnFreeEditCopyMedsOnly');
+      copyTextToClipboard(bodyToCopy, '✅ Prescrição (só medicamentos) copiada com sucesso!', targetBtn);
+    }
+    window.copyReceitaMedsOnly = copyReceitaMedsOnly;
 
     function copyTrigger(trig, btnEl) {
       if (!trig) return;
-      copyTextToClipboard(trig, `✅ Atalho ${trig} copiado com sucesso!`, btnEl);
+      copyTextToClipboard(trig, `✅ Atalho ${trig} copiado com sucesso!`, btnEl, true);
     }
 
-    // Power Copy Actions (Atalhos 1, 2, 3)
+    // Power Copy Actions (Atalhos 1, 2, 3, 4, 5)
     function triggerPowerCopy(slot, btnEl) {
       const targetIdx = currentDrawerIndex !== null ? currentDrawerIndex : selectedProtocolIndex;
       const item = allData[targetIdx];
       if (!item) return;
       if (slot === 1) {
-        copySnippet(targetIdx, btnEl);
+        copySnippet(targetIdx, btnEl || document.getElementById('powerBtnCopyAll'));
       } else if (slot === 2) {
-        copyConduta(targetIdx, btnEl);
+        copyConduta(targetIdx, btnEl || document.getElementById('powerBtnCopyConduta'));
       } else if (slot === 3) {
-        copyReceita(targetIdx, btnEl);
+        copyReceita(targetIdx, btnEl || document.getElementById('powerBtnCopyReceita'));
+      } else if (slot === 4) {
+        copyEvolucao(targetIdx, btnEl || document.getElementById('powerBtnCopyEvolucao'));
+      } else if (slot === 5) {
+        copyOrientacoes(targetIdx, btnEl || document.getElementById('powerBtnCopyOrientacoes'));
       }
     }
     window.triggerPowerCopy = triggerPowerCopy;
@@ -6790,6 +7050,18 @@ IDENTIFICAÇÃO &amp; PESO:
       tabHabChecklistBtn.style.display = isHab ? 'inline-block' : 'none';
       tabHabPitfallsBtn.style.display = isHab ? 'inline-block' : 'none';
 
+      // Atualizar botões de Power Actions no cabeçalho do Cockpit
+      const pwrCondBtn = document.getElementById('powerBtnCopyConduta');
+      const pwrRecBtn = document.getElementById('powerBtnCopyReceita');
+      const pwrEvoBtn = document.getElementById('powerBtnCopyEvolucao');
+      const pwrOriBtn = document.getElementById('powerBtnCopyOrientacoes');
+      const pwrResetBtn = document.getElementById('powerBtnResetPatient');
+      if (pwrCondBtn) pwrCondBtn.style.display = (!isHab && item.has_split) ? 'inline-flex' : 'none';
+      if (pwrRecBtn) pwrRecBtn.style.display = (!isHab && item.has_receita) ? 'inline-flex' : 'none';
+      if (pwrEvoBtn) pwrEvoBtn.style.display = (!isHab && item.has_split) ? 'inline-flex' : 'none';
+      if (pwrOriBtn) pwrOriBtn.style.display = !isHab ? 'inline-flex' : 'none';
+      if (pwrResetBtn) pwrResetBtn.style.display = !isHab ? 'inline-flex' : 'none';
+
       if (isHab) {
         drawerTriggerChip.style.display = 'none';
         drawerHabMetaFooter.style.display = 'inline-flex';
@@ -6810,7 +7082,14 @@ IDENTIFICAÇÃO &amp; PESO:
         }
         drawerHabMetaFooter.style.display = 'inline-flex';
         drawerHabMetaFooter.textContent = `${item.module_name} • ${item.category}`;
-        const defaultPepTab = 'pep';
+        // Pré-compilar árvore interativa do protocolo para sincronia imediata entre abas e Power Actions
+        if (currentInteractiveRenderedIdx !== index || !(interactiveRendered && interactiveRendered.childNodes && interactiveRendered.childNodes.length > 0)) {
+          renderInteractive(item.pep_body, index);
+        }
+        if (typeof syncFreeEditUIForCurrentProtocol === 'function') {
+          syncFreeEditUIForCurrentProtocol();
+        }
+        const defaultPepTab = workstationMode === 'treino' ? 'interactive' : 'pep';
         switchDrawerTab(initialTab || defaultPepTab);
       }
 
@@ -6818,6 +7097,7 @@ IDENTIFICAÇÃO &amp; PESO:
         drawerOverlay.classList.add('open');
       }
     }
+    window.openInspector = openInspector;
 
     function closeInspector() {
       drawerOverlay.classList.remove('open');
@@ -7220,9 +7500,7 @@ IDENTIFICAÇÃO &amp; PESO:
         drawerContent.style.display = 'block';
         const resolved = getResolvedProtocolBodies(currentDrawerIndex);
         if (tab === 'pep') {
-          drawerContent.textContent = ((currentInteractiveRenderedIdx === currentDrawerIndex && interactiveEditCount > 0) || Boolean(interactiveSessionCache[currentDrawerIndex]))
-            ? resolved.pep_body
-            : item.pep_body;
+          drawerContent.textContent = resolved.pep_body || item.pep_body;
         } else if (tab === 'conduta') {
           drawerContent.textContent = resolved.conduta_body || item.conduta_body || 'Sem seção de conduta separada.';
         } else if (tab === 'receita') {
@@ -7551,6 +7829,19 @@ IDENTIFICAÇÃO &amp; PESO:
       return tokens;
     }
 
+    function isInternalInstructionBracket(inner) {
+      const trimmed = String(inner || '').trim();
+      if (!trimmed) return false;
+      return /^(?:SE\s+|Se\s+|Opcional\b|A\s+critério\b|Caso\s+|Conforme\s+|OPÇÃO\s+|MODALIDADE\s+|1ª\s*ESCOLHA|2ª\s*ESCOLHA|3ª\s*ESCOLHA|OU\s+2ª|OU\s+SE\b|Escolha\s+|NÃO\s+PRESCREVER|CONTRAINDICAD|EVITAR\s+SE|ATENÇÃO\b|ALERTA\b|NOTA\b|OBS\b)/i.test(trimmed);
+    }
+    window.isInternalInstructionBracket = isInternalInstructionBracket;
+
+    function isSecondaryOptionBracket(inner) {
+      const trimmed = String(inner || '').trim();
+      return /^(?:OPÇÃO\s+[2-9]|MODALIDADE\s+[2-9]|2ª\s*ESCOLHA|3ª\s*ESCOLHA|OU\s+2ª)/i.test(trimmed);
+    }
+    window.isSecondaryOptionBracket = isSecondaryOptionBracket;
+
     function splitTopLevelChoices(inner) {
       const trimmed = inner.trim();
       // Nunca dividir máscaras de data/hora
@@ -7558,7 +7849,7 @@ IDENTIFICAÇÃO &amp; PESO:
         return [trimmed];
       }
       // Nunca dividir cabeçalhos condicionais de bloco ([SE ...], [OPÇÃO ...], [MODALIDADE ...], [NÃO PRESCREVER...], [CONTRAINDICADA...])
-      if (/^(?:SE\s+|Se\s+|Opcional\b|OPÇÃO\s+|MODALIDADE\s+|1ª\s*ESCOLHA|2ª\s*ESCOLHA|OU\s+|Escolha\s+|NÃO\s+PRESCREVER|CONTRAINDICAD)/i.test(trimmed)) {
+      if (isInternalInstructionBracket(trimmed)) {
         return [trimmed];
       }
 
@@ -7600,6 +7891,225 @@ IDENTIFICAÇÃO &amp; PESO:
 
       return [trimmed];
     }
+
+    function sanitizePepOutput(rawText, opts) {
+      const keepEmpty = opts && opts.keepEmptyBrackets !== undefined ? opts.keepEmptyBrackets : interactiveKeepEmptyBrackets;
+      const stripMd = opts && opts.stripMarkdownHeaders !== undefined ? opts.stripMarkdownHeaders : true;
+
+      const lines = String(rawText || '').replace(/\r\n/g, '\n').split('\n');
+      const outLines = [];
+      let skipSecondaryMode = 'none';
+
+      for (let idx = 0; idx < lines.length; idx++) {
+        const rawLine = lines[idx];
+        const trimmedRaw = rawLine.trim();
+
+        if (skipSecondaryMode === 'item') {
+          if (trimmedRaw && /^\s+/.test(rawLine) && !/^\s*(?:\d+\.|[-*]|#+|>>)\s+/.test(rawLine)) {
+            continue;
+          }
+          skipSecondaryMode = 'none';
+        } else if (skipSecondaryMode === 'block') {
+          if (
+            !trimmedRaw ||
+            /^#+/.test(trimmedRaw) ||
+            /^>>/.test(trimmedRaw) ||
+            /^(?:>>\s*)?\[(?:OPÇÃO|MODALIDADE|1ª\s*ESCOLHA|2ª\s*ESCOLHA|OU\s+2ª)/i.test(trimmedRaw) ||
+            /^(?:USO\s+|ORIENTAÇÕES|SINAIS DE ALARME)/i.test(trimmedRaw)
+          ) {
+            skipSecondaryMode = 'none';
+          } else {
+            continue;
+          }
+        }
+
+        const tokens = parseBalancedBrackets(rawLine);
+        const firstBracket = tokens.find(t => t.type === 'bracket');
+        if (
+          firstBracket &&
+          firstBracket.inner &&
+          isSecondaryOptionBracket(firstBracket.inner)
+        ) {
+          if (/^\d+\.\s*\[/.test(trimmedRaw)) {
+            skipSecondaryMode = 'item';
+            continue;
+          }
+          if (trimmedRaw.startsWith('[') || /^>>\s*\[/.test(trimmedRaw)) {
+            skipSecondaryMode = 'block';
+            continue;
+          }
+        }
+
+        let builtLine = '';
+        for (let t = 0; t < tokens.length; t++) {
+          const tok = tokens[t];
+          if (tok.type === 'text') {
+            builtLine += tok.raw;
+          } else {
+            const inner = (tok.inner || '').trim();
+            if (
+              t === 1 &&
+              (inner === 'x' || inner === 'X' || inner === '') &&
+              /^\s*(?:[-*]|\d+\.)\s+$/.test(tokens[0].raw)
+            ) {
+              builtLine += tok.raw;
+              continue;
+            }
+            if (isInternalInstructionBracket(inner)) {
+              continue;
+            }
+            if (inner === '') {
+              builtLine += keepEmpty ? '[ ]' : '___';
+            } else {
+              builtLine += tok.raw;
+            }
+          }
+        }
+
+        if (stripMd) {
+          builtLine = builtLine.replace(/^#{2,6}\s*(.*?)\s*#{2,6}$/, '$1');
+          builtLine = builtLine.replace(/^#{1,6}\s+/, '');
+          builtLine = builtLine.replace(/^>>\s*/, '');
+        }
+
+        builtLine = builtLine.replace(/^(\s*(?:\d+\.|[-*])\s*)[:\-–]\s+/, '$1');
+        builtLine = builtLine.replace(/^[:\-–]\s+/, '');
+
+        const leadingIndentMatch = builtLine.match(/^(\s*)/);
+        const leadingIndent = leadingIndentMatch ? leadingIndentMatch[1] : '';
+        const contentPart = builtLine.slice(leadingIndent.length).replace(/\s{2,}(?!--)/g, ' ').trimEnd();
+
+        if (!contentPart && trimmedRaw.length > 0) {
+          continue;
+        }
+
+        outLines.push(contentPart ? leadingIndent + contentPart : '');
+      }
+
+      return outLines
+        .join('\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+    }
+    window.sanitizePepOutput = sanitizePepOutput;
+
+    function detectPendingGaps(text) {
+      const lines = String(text || '').split('\n');
+      let emptyBrackets = 0;
+      let namedPlaceholders = 0;
+      let unresolvedChoices = 0;
+      const samples = [];
+
+      const pushSample = (s) => {
+        if (samples.length < 4 && !samples.includes(s)) {
+          samples.push(s);
+        }
+      };
+
+      for (let lIdx = 0; lIdx < lines.length; lIdx++) {
+        const line = lines[lIdx];
+        const underscoreMatches = line.match(/\b___+\b/g);
+        if (underscoreMatches) {
+          emptyBrackets += underscoreMatches.length;
+          pushSample('___');
+        }
+
+        const tokens = parseBalancedBrackets(line);
+        for (let i = 0; i < tokens.length; i++) {
+          const tok = tokens[i];
+          if (tok.type !== 'bracket') continue;
+          const inner = (tok.inner || '').trim();
+
+          if (
+            i === 1 &&
+            (inner === 'x' || inner === 'X' || inner === '') &&
+            /^\s*(?:[-*]|\d+\.)\s+$/.test(tokens[0].raw)
+          ) {
+            continue;
+          }
+
+          if (isInternalInstructionBracket(inner)) {
+            continue;
+          }
+
+          if (inner === '' || /^_+$/.test(inner)) {
+            emptyBrackets++;
+            pushSample('[ ]');
+            continue;
+          }
+
+          if (
+            /^(?:Nome|Idade|Profissão|Dr\(a\)\.?|Procedimento|Hospital|Leito|Peso|Altura|IMC|\+\/-|DD\/MM\/AAAA|DD\/MM|HH:MM|indicação)$/i.test(
+              inner
+            )
+          ) {
+            namedPlaceholders++;
+            pushSample(`[${inner}]`);
+            continue;
+          }
+
+          const choices = splitTopLevelChoices(inner);
+          if (choices.length >= 2) {
+            unresolvedChoices++;
+            const preview = inner.length > 24 ? inner.slice(0, 22) + '…' : inner;
+            pushSample(`[${preview}]`);
+          }
+        }
+      }
+
+      const totalGaps = emptyBrackets + namedPlaceholders + unresolvedChoices;
+      return {
+        totalGaps,
+        total: totalGaps,
+        emptyBrackets,
+        blankBrackets: emptyBrackets,
+        namedPlaceholders,
+        unresolvedChoices,
+        samples
+      };
+    }
+    window.detectPendingGaps = detectPendingGaps;
+
+    function inferVitalSignRole(inner, beforeText, afterText) {
+      const trimmed = String(inner || '').trim();
+      const bef = String(beforeText || '').trim();
+      const aft = String(afterText || '').trim();
+
+      if (/PA(?:\s*\([^)]*\))?\s*:?\s*$/i.test(bef)) {
+        if (/^\s*[x/]\s*(?:\[|\d)/i.test(aft) || /^[x/]$/i.test(aft)) return 'pas';
+        return 'pa-composta';
+      }
+      if (/^\d{2,3}\s*[x/]\s*\d{2,3}$/i.test(trimmed)) {
+        return 'pa-composta';
+      }
+      if (/(?:[x/]|\bPA\s*:?\s*\d{2,3}\s*[x/])\s*$/i.test(bef) && (/^mmHg/i.test(aft) || aft === '')) return 'pad';
+      if (/BCF[^:]*:\s*$/i.test(bef)) return 'bcf';
+      if (/\bFC\s*:?\s*$/i.test(bef)) return 'fc';
+      if (/\bFR\s*:?\s*$/i.test(bef)) return 'fr';
+      if (/\b(?:SpO2|SatO2)\s*:?\s*$/i.test(bef)) return 'spo2';
+      if (/\b(?:Tax|Temp(?:eratura)?)\b[^:]*:\s*$/i.test(bef)) return 'tax';
+      if (/\b(?:HGT|DX|Glicemia\s+capilar)\b[^:]*:\s*$/i.test(bef)) return 'hgt';
+      return null;
+    }
+    window.inferVitalSignRole = inferVitalSignRole;
+
+    function getNormalVitalDefaults(modId) {
+      const mod = String(modId || 'upa').toLowerCase();
+      const isGo = mod === 'go';
+      const isPed = mod === 'ped';
+      return {
+        'pa-composta': isGo ? '110x70' : (isPed ? '95x60' : '120x80'),
+        pas: isGo ? '110' : (isPed ? '95' : '120'),
+        pad: isGo ? '70' : (isPed ? '60' : '80'),
+        fc: isPed ? '110' : (isGo ? '80' : '76'),
+        bcf: '142',
+        fr: isPed ? '28' : '16',
+        spo2: '98',
+        tax: '36,5',
+        hgt: '92'
+      };
+    }
+    window.getNormalVitalDefaults = getNormalVitalDefaults;
 
     function inferSmartPlaceholder(inner, beforeText, afterText) {
       const cleanInner = inner.trim();
@@ -7835,40 +8345,40 @@ IDENTIFICAÇÃO &amp; PESO:
       if (!interactiveRendered) return;
       const item = allData[currentDrawerIndex];
       const mod = item ? item.mod_id : 'upa';
-      const isGo = mod === 'go';
-      const isPed = mod === 'ped';
-
-      const defaults = {
-        PAS: isGo ? '110' : '120',
-        PAD: isGo ? '70' : '80',
-        bpm: isPed ? '110' : (isGo ? '80' : '76'),
-        bcf: '142',
-        irpm: isPed ? '28' : '16',
-        '%': '98',
-        '°C': '36,5',
-        hgt: '92'
-      };
+      const defaults = getNormalVitalDefaults(mod);
 
       let count = 0;
       interactiveRendered.querySelectorAll('.pep-inline-input').forEach(inp => {
-        if (inp.classList.contains('is-filled') && inp.value.trim() !== '') return;
+        // Não sobrescrever campos que o usuário já editou manualmente
+        if (inp.dataset.userEdited === 'true' && inp.value.trim() !== '') return;
+
+        const role = inp.dataset.vitalRole || '';
         const ph = inp.placeholder || '';
         const prevNode = inp.previousSibling;
         const befTxt = (prevNode && prevNode.nodeType === Node.TEXT_NODE ? prevNode.textContent : '').toLowerCase();
 
         let valToSet = '';
-        if (ph === 'PAS') valToSet = defaults.PAS;
-        else if (ph === 'PAD') valToSet = defaults.PAD;
-        else if (ph === 'bpm') {
-          valToSet = befTxt.includes('bcf') ? defaults.bcf : defaults.bpm;
+        if (role && defaults[role]) {
+          valToSet = defaults[role];
+        } else if (ph === 'PAS') {
+          valToSet = defaults.pas;
+        } else if (ph === 'PAD') {
+          valToSet = defaults.pad;
+        } else if (ph === 'bpm') {
+          valToSet = befTxt.includes('bcf') ? defaults.bcf : defaults.fc;
+        } else if (ph === 'irpm' && befTxt.includes('fr')) {
+          valToSet = defaults.fr;
+        } else if (ph === '%' && befTxt.includes('spo2')) {
+          valToSet = defaults.spo2;
+        } else if (ph === '°C' && (befTxt.includes('tax') || befTxt.includes('temp'))) {
+          valToSet = defaults.tax;
+        } else if ((befTxt.includes('hgt') || befTxt.includes('glicemia')) && !inp.value.trim()) {
+          valToSet = defaults.hgt;
         }
-        else if (ph === 'irpm' && befTxt.includes('fr')) valToSet = defaults.irpm;
-        else if (ph === '%' && befTxt.includes('spo2')) valToSet = defaults['%'];
-        else if (ph === '°C' && (befTxt.includes('tax') || befTxt.includes('temp'))) valToSet = defaults['°C'];
-        else if ((befTxt.includes('hgt') || befTxt.includes('glicemia')) && !inp.value.trim()) valToSet = defaults.hgt;
 
         if (valToSet) {
           inp.value = valToSet;
+          inp.classList.remove('is-prefilled');
           inp.classList.add('is-filled');
           autoSizeInlineInput(inp);
           count++;
@@ -7877,7 +8387,7 @@ IDENTIFICAÇÃO &amp; PESO:
 
       interactiveEditCount += count;
       updateInteractiveCounter();
-      showToast(count > 0 ? `💓 ${count} sinais vitais preenchidos com valores normais!` : 'ℹ️ Sinais vitais já estão preenchidos nesta ficha.');
+      showToast(count > 0 ? `💓 ${count} sinais vitais preenchidos/confirmados com valores normais!` : 'ℹ️ Sinais vitais já foram editados manualmente nesta ficha.');
     }
     window.fillInteractiveNormalVitals = fillInteractiveNormalVitals;
 
@@ -8098,23 +8608,38 @@ IDENTIFICAÇÃO &amp; PESO:
     }
 
     function focusNextInteractiveInput(currentInput, reverse) {
-      const allInputs = Array.from(
-        interactiveRendered.querySelectorAll('.pep-inline-input:not(:disabled), .pill-sub-input:not(:disabled)')
-      ).filter(el => {
-        const line = el.closest('.pep-line');
-        if (line && (line.classList.contains('is-excluded') || line.classList.contains('is-excluded-block'))) return false;
-        const pill = el.closest('.choice-pill');
-        if (pill && !pill.classList.contains('active')) return false;
-        return true;
+      if (!interactiveRendered) return;
+      const allControls = [];
+      interactiveRendered.querySelectorAll('.pep-line').forEach(line => {
+        if (line.classList.contains('is-excluded') || line.classList.contains('is-excluded-block')) return;
+        line.childNodes.forEach(node => {
+          if (!node || !node.classList) return;
+          if (node.classList.contains('pep-date-widget')) {
+            const inp = node.querySelector('.pep-inline-input:not(:disabled)');
+            if (inp) allControls.push(inp);
+          } else if (node.classList.contains('pep-inline-input') && !node.disabled) {
+            allControls.push(node);
+          } else if (node.classList.contains('choice-group')) {
+            const activePill = node.querySelector('.choice-pill.active') || node.querySelector('.choice-pill');
+            if (activePill) allControls.push(activePill);
+            node.querySelectorAll('.choice-pill.active .pill-sub-input:not(:disabled)').forEach(sub => {
+              allControls.push(sub);
+            });
+          }
+        });
       });
-      const idx = allInputs.indexOf(currentInput);
+
+      const idx = allControls.indexOf(currentInput);
       if (idx === -1) return;
       const nextIdx = reverse ? idx - 1 : idx + 1;
-      if (nextIdx >= 0 && nextIdx < allInputs.length) {
-        allInputs[nextIdx].focus();
-        allInputs[nextIdx].select();
-        if (typeof allInputs[nextIdx].scrollIntoView === 'function') {
-          allInputs[nextIdx].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      if (nextIdx >= 0 && nextIdx < allControls.length) {
+        const target = allControls[nextIdx];
+        target.focus();
+        if (typeof target.select === 'function' && target.tagName === 'INPUT') {
+          target.select();
+        }
+        if (typeof target.scrollIntoView === 'function') {
+          target.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
         }
       }
     }
@@ -8124,9 +8649,9 @@ IDENTIFICAÇÃO &amp; PESO:
       const candidates = Array.from(
         interactiveRendered.querySelectorAll('.pep-inline-input:not(:disabled), .pill-sub-input:not(:disabled)')
       ).filter(el => {
-        const line = el.closest('.pep-line');
+        const line = typeof el.closest === 'function' ? el.closest('.pep-line') : null;
         if (line && (line.classList.contains('is-excluded') || line.classList.contains('is-excluded-block'))) return false;
-        const pill = el.closest('.choice-pill');
+        const pill = typeof el.closest === 'function' ? el.closest('.choice-pill') : null;
         if (pill && !pill.classList.contains('active')) return false;
         return !el.classList.contains('is-filled') && !el.classList.contains('is-prefilled');
       });
@@ -8140,7 +8665,7 @@ IDENTIFICAÇÃO &amp; PESO:
       const curIdx = candidates.indexOf(curActive);
       const nextTarget = curIdx >= 0 ? candidates[(curIdx + 1) % candidates.length] : candidates[0];
       nextTarget.focus();
-      nextTarget.select();
+      if (typeof nextTarget.select === 'function') nextTarget.select();
       if (typeof nextTarget.scrollIntoView === 'function') {
         nextTarget.scrollIntoView({ block: 'center', behavior: 'smooth' });
       }
@@ -8275,6 +8800,12 @@ IDENTIFICAÇÃO &amp; PESO:
         inp.dataset.anthroRole = 'imc';
       }
 
+      // Mapear sinal vital (PA composta, PAS, PAD, FC, BCF, FR, SpO2, Tax, HGT)
+      const vitalRole = inferVitalSignRole(inner, beforeText, afterText);
+      if (vitalRole) {
+        inp.dataset.vitalRole = vitalRole;
+      }
+
       if (/^Nome$/i.test(trimmed) || /(?:Paciente|Criança|Lactente|Gestante|Puérpera):\s*$/i.test(bef)) {
         inp.dataset.mirrorRole = 'nome';
       } else if (/^Idade$/i.test(trimmed) || /Idade:\s*$/i.test(bef)) {
@@ -8290,8 +8821,10 @@ IDENTIFICAÇÃO &amp; PESO:
       inp.addEventListener('input', () => {
         autoSizeInlineInput(inp);
         const val = inp.value.trim();
+        inp.dataset.userEdited = val.length > 0 ? 'true' : 'false';
         const isModified = isEmpty ? (val.length > 0) : (val !== inp.dataset.defaultVal);
-        inp.classList.toggle('is-filled', isModified);
+        inp.classList.toggle('is-filled', isModified || val.length > 0);
+        if (val.length > 0) inp.classList.remove('is-prefilled');
         interactiveEditCount++;
 
         // Espelhar automaticamente Nome, Idade e Peso entre a Evolução e o Cabeçalho da Receita
@@ -8663,6 +9196,29 @@ IDENTIFICAÇÃO &amp; PESO:
                 updateInteractiveCounter();
               };
 
+              btn.addEventListener('keydown', (e) => {
+                const pills = Array.from(groupSpan.querySelectorAll('.choice-pill'));
+                const curIdx = pills.indexOf(btn);
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                  e.preventDefault();
+                  const nextPill = pills[(curIdx + 1) % pills.length];
+                  if (nextPill) {
+                    nextPill.focus();
+                    nextPill.click();
+                  }
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                  e.preventDefault();
+                  const prevPill = pills[(curIdx - 1 + pills.length) % pills.length];
+                  if (prevPill) {
+                    prevPill.focus();
+                    prevPill.click();
+                  }
+                } else if (e.key === 'Tab') {
+                  e.preventDefault();
+                  focusNextInteractiveInput(btn, e.shiftKey);
+                }
+              });
+
               groupSpan.appendChild(btn);
             });
 
@@ -8675,6 +9231,21 @@ IDENTIFICAÇÃO &amp; PESO:
           const inputNode = createInlineInputNode(inner, beforeText, afterText, line);
           lineDiv.appendChild(inputNode);
         });
+
+        // P0.3: Adicionar botão [📋 Copiar seção] nos cabeçalhos de seção (# SEÇÃO ou >> SUBSEÇÃO), exceto no título ######
+        const isDocBanner = /^#{4,6}\s+.*#{4,6}$/.test(trimmedLine);
+        if (!isDocBanner && (/^#{1,3}\s+/.test(trimmedLine) || /^>>\s*\S+/.test(trimmedLine))) {
+          const secBtn = document.createElement('button');
+          secBtn.type = 'button';
+          secBtn.className = 'pep-sec-copy-btn';
+          secBtn.textContent = '📋 Copiar seção';
+          secBtn.title = 'Copiar apenas esta seção higienizada para o prontuário';
+          secBtn.onclick = (e) => {
+            e.stopPropagation();
+            copyInteractiveSection(lineDiv, secBtn);
+          };
+          lineDiv.appendChild(secBtn);
+        }
 
         frag.appendChild(lineDiv);
       });
@@ -8693,34 +9264,44 @@ IDENTIFICAÇÃO &amp; PESO:
       updateInteractiveCounter();
     }
 
-    function serializeInteractiveDOM() {
-      if (!interactiveRendered || !interactiveRendered.childNodes || interactiveRendered.childNodes.length === 0) return '';
+    function serializeInteractiveLines(lineNodesList) {
+      if (!lineNodesList || lineNodesList.length === 0) return '';
       const outLines = [];
 
-      interactiveRendered.childNodes.forEach(lineNode => {
-        if (!lineNode.classList || !lineNode.classList.contains('pep-line')) return;
+      Array.from(lineNodesList).forEach(lineNode => {
+        if (!lineNode || !lineNode.classList || !lineNode.classList.contains('pep-line')) return;
         if (lineNode.classList.contains('is-excluded') || lineNode.classList.contains('is-excluded-block')) {
           return;
         }
 
         let lineText = '';
+        let justOmittedCondChip = false;
+
         lineNode.childNodes.forEach(child => {
           if (child.nodeType === Node.TEXT_NODE) {
-            lineText += child.textContent;
+            let txt = child.textContent || '';
+            if (justOmittedCondChip) {
+              txt = txt.replace(/^[:\-–]?\s+/, '');
+              justOmittedCondChip = false;
+            }
+            lineText += txt;
           } else if (child.classList) {
-            if (child.classList.contains('pep-line-check-label')) {
+            if (child.classList.contains('pep-sec-copy-btn')) {
+              return;
+            } else if (child.classList.contains('pep-line-check-label')) {
               const chk = child.querySelector('.pep-line-checkbox');
               lineText += (chk && chk.checked) ? '[x] ' : '[ ] ';
             } else if (child.classList.contains('pep-cond-chip')) {
-              if (!child.classList.contains('is-off') && child.dataset.isSafetyWarning !== 'true' && child.dataset.isOptionGroup !== 'true') {
-                lineText += `[${child.dataset.condLabel || ''}]`;
-              }
+              // Nunca vazar rótulos condicionais internos ([Se ...], [Opcional...], [NÃO PRESCREVER...]) no texto do prontuário
+              justOmittedCondChip = true;
             } else if (child.classList.contains('choice-group')) {
+              justOmittedCondChip = false;
               const actives = Array.from(child.querySelectorAll('.choice-pill.active'));
               if (actives.length > 0) {
                 lineText += actives.map(a => serializeChoicePill(a)).join(', ');
               }
             } else if (child.classList.contains('pep-date-widget')) {
+              justOmittedCondChip = false;
               const inp = child.querySelector('.pep-inline-input');
               const val = inp ? inp.value.trim() : '';
               if (val) {
@@ -8729,11 +9310,12 @@ IDENTIFICAÇÃO &amp; PESO:
                 lineText += interactiveKeepEmptyBrackets ? (child.dataset.origBracket || '[DD/MM/AAAA]') : '___';
               }
             } else if (child.classList.contains('pep-inline-input')) {
+              justOmittedCondChip = false;
               const val = child.value.trim();
               if (val) {
                 lineText += val;
               } else {
-                lineText += interactiveKeepEmptyBrackets ? '[ ]' : '___';
+                lineText += interactiveKeepEmptyBrackets ? (child.dataset.origBracket && !/^\[(?: |_+)\]$/.test(child.dataset.origBracket) ? child.dataset.origBracket : '[ ]') : '___';
               }
             } else {
               lineText += child.textContent;
@@ -8741,7 +9323,6 @@ IDENTIFICAÇÃO &amp; PESO:
           }
         });
 
-        // Omitir linhas que eram apenas o cabeçalho [OPÇÃO 1 ...] vazio após serialização
         if (lineText.trim() === '' && (lineNode.dataset.rawLine || '').trim().startsWith('[')) {
           return;
         }
@@ -8749,26 +9330,121 @@ IDENTIFICAÇÃO &amp; PESO:
         outLines.push(lineText);
       });
 
-      return outLines.join('\n').trim();
+      return sanitizePepOutput(outLines.join('\n'), {
+        keepEmptyBrackets: interactiveKeepEmptyBrackets,
+        stripMarkdownHeaders: true
+      });
     }
 
+    function serializeInteractiveDOM() {
+      if (!interactiveRendered || !interactiveRendered.childNodes || interactiveRendered.childNodes.length === 0) return '';
+      return serializeInteractiveLines(interactiveRendered.childNodes);
+    }
+
+    function copyInteractiveSection(headingLineDiv, btnEl) {
+      if (!headingLineDiv || !interactiveRendered) return;
+      const rawHeading = (headingLineDiv.dataset.rawLine || '').trim();
+      const isSubheading = /^>>/.test(rawHeading);
+      const sectionNodes = [headingLineDiv];
+
+      let nextEl = headingLineDiv.nextElementSibling;
+      while (nextEl && nextEl.classList.contains('pep-line')) {
+        const nextRaw = (nextEl.dataset.rawLine || '').trim();
+        if (/^#{1,3}\s+/.test(nextRaw)) break;
+        if (isSubheading && /^>>\s*\S+/.test(nextRaw)) break;
+        sectionNodes.push(nextEl);
+        nextEl = nextEl.nextElementSibling;
+      }
+
+      const sectionText = serializeInteractiveLines(sectionNodes);
+      const cleanTitle = rawHeading.replace(/^(?:#+|>>)\s*/, '').replace(/:$/, '').trim();
+      copyTextToClipboard(sectionText, `✅ Seção "${cleanTitle}" copiada com sucesso!`, btnEl);
+    }
+    window.copyInteractiveSection = copyInteractiveSection;
+
     function extractBodiesFromCustomPep(customPep, item) {
-      const condMatch = customPep.match(/^(#+\s*(?:PLANO\s*\/\s*CONDUTA|PLANO|CONDUTA|PRESCRIÇÃO)[\s\S]*)$/m);
-      const customConduta = condMatch ? condMatch[1].trim() : (item.conduta_body || customPep);
-      const recMatch = customPep.match(/(?:>>\s*|#+\s*|^)(?:PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL)[^\n]*\n([\s\S]*)$/im);
-      const customReceita = recMatch ? recMatch[1].trim() : (item.receita_body || customConduta);
+      const sanitizeOpts = {
+        keepEmptyBrackets: interactiveKeepEmptyBrackets,
+        stripMarkdownHeaders: true
+      };
+      const raw = String(customPep || '');
+      const condRegex = /^((?:#+\s*)?(?:5\.\s*AVALIAÇÃO\s*&\s*PLANO\s*\/\s*CONDUTA[^\n]*\n)?(?:#+\s*)?(?:PLANO\s*\/\s*CONDUTA|PLANO\s+TERAPÊUTICO|PLANO|CONDUTA|PRESCRIÇÃO)\b[\s\S]*)$/im;
+      const condMatch = raw.match(condRegex);
+
+      let rawEvolucao = raw;
+      let rawConduta = (item && item.conduta_body) ? item.conduta_body : raw;
+
+      if (condMatch && condMatch.index !== undefined) {
+        rawEvolucao = raw.slice(0, condMatch.index).trim();
+        rawConduta = (condMatch[1] || condMatch[0] || '').trim();
+      } else if (item && item.evolucao_body) {
+        rawEvolucao = item.evolucao_body;
+      }
+
+      const recRegex = /(?:>>\s*|#+\s*|^)(?:PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL|PRESCRIÇÃO AMBULATORIAL)[^\n]*\n([\s\S]*)$/im;
+      const recMatch = raw.match(recRegex);
+      const rawReceita = recMatch
+        ? (recMatch[1] || '').trim()
+        : String((item && item.receita_body) || rawConduta)
+            .replace(/^(?:>>\s*|#+\s*)(?:PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL)[^\n]*\n?/i, '')
+            .trim();
+
+      const oriRegex = /^((?:>>\s*|#+\s*)?(?:ORIENTAÇÕES|SINAIS DE ALARME)[^\n]*\n[\s\S]*)$/im;
+      const oriMatch = raw.match(oriRegex);
+      const rawOrientacoes = oriMatch ? (oriMatch[1] || oriMatch[0] || '').trim() : '';
+
+      const recOriMatch = rawReceita.match(oriRegex);
+      const rawReceitaMedsOnly = (recOriMatch && recOriMatch.index !== undefined)
+        ? rawReceita.slice(0, recOriMatch.index).trim()
+        : rawReceita;
+
       return {
-        pep_body: customPep,
-        conduta_body: customConduta,
-        receita_body: customReceita
+        pep_body: sanitizePepOutput(raw, sanitizeOpts),
+        evolucao_body: sanitizePepOutput(rawEvolucao, sanitizeOpts),
+        conduta_body: sanitizePepOutput(rawConduta, sanitizeOpts),
+        receita_body: sanitizePepOutput(rawReceita, sanitizeOpts),
+        receita_meds_body: sanitizePepOutput(rawReceitaMedsOnly, sanitizeOpts),
+        orientacoes_body: rawOrientacoes ? sanitizePepOutput(rawOrientacoes, sanitizeOpts) : ''
       };
     }
+    window.extractBodiesFromCustomPep = extractBodiesFromCustomPep;
 
     
     // =========================================================================
     // MOTOR DO COMPOSITOR MODULAR DE PRESCRIÇÃO ("CARRINHO DE PRESCRIÇÃO")
     // =========================================================================
     let prescriptionCartItems = [];
+
+    function parsePrescriptionItemsForCart(rawReceitaText) {
+      const sanitized = sanitizePepOutput(rawReceitaText, { keepEmptyBrackets: interactiveKeepEmptyBrackets, stripMarkdownHeaders: true });
+      const lines = sanitized.split('\n');
+      const items = [];
+      let currentEntry = '';
+
+      for (let i = 0; i < lines.length; i++) {
+        const trimmed = lines[i].trim();
+        if (!trimmed) continue;
+        if (/^(?:ORIENTAÇÕES|SINAIS DE ALARME|RETORNO IMEDIATO|CUIDADOS DOMICILIARES)/i.test(trimmed)) {
+          break;
+        }
+        if (/^USO\s+[A-ZÀ-Ÿ\s/]+:$/i.test(trimmed)) {
+          continue;
+        }
+        if (/^\d+\.\s+/.test(trimmed)) {
+          if (currentEntry) {
+            items.push(currentEntry.trim());
+          }
+          currentEntry = trimmed.replace(/^\d+\.\s+/, '');
+        } else if (currentEntry && !trimmed.startsWith('#')) {
+          currentEntry += '\n   ' + trimmed;
+        }
+      }
+      if (currentEntry) {
+        items.push(currentEntry.trim());
+      }
+      return items;
+    }
+    window.parsePrescriptionItemsForCart = parsePrescriptionItemsForCart;
 
     function updateCartBadges() {
       const count = prescriptionCartItems.length;
@@ -8802,26 +9478,13 @@ IDENTIFICAÇÃO &amp; PESO:
       const resolved = getResolvedProtocolBodies(currentDrawerIndex);
       const textToScan = resolved.receita_body || resolved.conduta_body || resolved.pep_body || "";
 
-      const lines = textToScan.split(/\n+/);
+      const parsedItems = parsePrescriptionItemsForCart(textToScan);
       let added = 0;
-      let currentEntry = "";
 
-      lines.forEach(l => {
-        const trimmed = l.trim();
-        if (/^(\d+\.|>>|[-*])\s+/.test(trimmed)) {
-          if (currentEntry) {
-            addCustomItemToCart(currentEntry);
-            added++;
-          }
-          currentEntry = trimmed.replace(/^(\d+\.|>>|[-*])\s+/, "");
-        } else if (currentEntry && trimmed && !trimmed.startsWith("#")) {
-          currentEntry += " " + trimmed;
-        }
-      });
-      if (currentEntry) {
-        addCustomItemToCart(currentEntry);
+      parsedItems.forEach(entry => {
+        addCustomItemToCart(entry);
         added++;
-      }
+      });
 
       if (added === 0 && textToScan.trim()) {
         addCustomItemToCart(item.title + ": " + textToScan.slice(0, 120) + "...");
@@ -8856,7 +9519,7 @@ IDENTIFICAÇÃO &amp; PESO:
         html += "<div style=\"display:flex; align-items:flex-start; justify-content:space-between; gap:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:6px; padding:8px 12px;\">";
         html += "<div style=\"display:flex; gap:8px; align-items:baseline; flex:1;\">";
         html += "<span style=\"font-weight:700; color:#38bdf8; font-size:12px;\">" + (idx + 1) + ".</span>";
-        html += "<span style=\"font-size:12px; color:#e2e8f0; line-height:1.4;\">" + it.text + "</span>";
+        html += "<span style=\"font-size:12px; color:#e2e8f0; line-height:1.4; white-space:pre-line;\">" + escapeHtml(it.text) + "</span>";
         html += "</div>";
         html += "<button type=\"button\" onclick=\"removeCartItem(" + idx + ")\" style=\"background:none; border:none; color:#ef4444; cursor:pointer; font-size:14px; padding:2px;\" title=\"Remover este item\">&times;</button>";
         html += "</div>";
@@ -8882,12 +9545,210 @@ IDENTIFICAÇÃO &amp; PESO:
       copyTextToClipboard(fullText, "✅ Receita combinada copiada com sucesso (" + prescriptionCartItems.length + " itens)!", null);
     }
 
+    // =========================================================================
+    // MODO EDIÇÃO LIVRE UNIDIRECIONAL (COM TRAVA DE FONTE DA VERDADE & UNDO)
+    // =========================================================================
+    const pepFreeEditStates = {};
+
+    function createFreeEditState(initialCompiledText) {
+      const cleanInitial = String(initialCompiledText || '');
+      return {
+        active: true,
+        initialText: cleanInitial,
+        currentText: cleanInitial,
+        dirty: false,
+        undoStack: [cleanInitial],
+        confirmingDiscard: false
+      };
+    }
+    window.createFreeEditState = createFreeEditState;
+
+    function pushFreeEditSnapshot(state, nextText) {
+      const text = String(nextText == null ? '' : nextText);
+      if (!state || text === state.currentText) return state;
+      const nextStack = state.undoStack.concat([text]);
+      if (nextStack.length > 40) nextStack.shift();
+      return {
+        active: state.active,
+        initialText: state.initialText,
+        currentText: text,
+        dirty: text !== state.initialText,
+        undoStack: nextStack,
+        confirmingDiscard: false
+      };
+    }
+    window.pushFreeEditSnapshot = pushFreeEditSnapshot;
+
+    function undoFreeEditSnapshot(state) {
+      if (!state || !state.undoStack || state.undoStack.length <= 1) {
+        return state ? {
+          active: state.active,
+          initialText: state.initialText,
+          currentText: state.initialText,
+          dirty: false,
+          undoStack: [state.initialText],
+          confirmingDiscard: false
+        } : null;
+      }
+      const nextStack = state.undoStack.slice(0, -1);
+      const prevText = nextStack[nextStack.length - 1];
+      return {
+        active: state.active,
+        initialText: state.initialText,
+        currentText: prevText,
+        dirty: prevText !== state.initialText,
+        undoStack: nextStack,
+        confirmingDiscard: false
+      };
+    }
+    window.undoFreeEditSnapshot = undoFreeEditSnapshot;
+
+    function syncFreeEditUIForCurrentProtocol() {
+      const idx = currentDrawerIndex;
+      const st = (idx !== null && idx !== undefined) ? pepFreeEditStates[idx] : null;
+      const wrapEl = document.getElementById('pepFreeEditWrap');
+      const taEl = document.getElementById('pepFreeEditTextarea');
+      const toggleBtn = document.getElementById('btnPepFreeEditToggle');
+      const undoCountEl = document.getElementById('freeEditUndoCount');
+      const confirmBar = document.getElementById('pepFreeEditConfirmBar');
+
+      if (!wrapEl || !taEl) return;
+
+      if (st && st.active) {
+        wrapEl.classList.add('is-open');
+        if (interactiveRendered) interactiveRendered.style.display = 'none';
+        if (taEl.value !== st.currentText) {
+          taEl.value = st.currentText;
+        }
+        if (toggleBtn) {
+          toggleBtn.classList.add('is-active-mode');
+          toggleBtn.textContent = st.dirty ? '🔒 Edição Livre (Editado)' : '🔒 Edição Livre Ativa';
+        }
+        if (undoCountEl) {
+          const steps = Math.max(0, (st.undoStack ? st.undoStack.length : 1) - 1);
+          undoCountEl.textContent = `(${steps})`;
+        }
+        if (confirmBar) {
+          confirmBar.classList.toggle('is-open', Boolean(st.confirmingDiscard));
+        }
+      } else {
+        wrapEl.classList.remove('is-open');
+        if (interactiveRendered) interactiveRendered.style.display = '';
+        if (toggleBtn) {
+          toggleBtn.classList.remove('is-active-mode');
+          toggleBtn.textContent = '✏️ Edição Livre';
+        }
+        if (confirmBar) {
+          confirmBar.classList.remove('is-open');
+        }
+      }
+    }
+
+    function enterFreeEditMode() {
+      const idx = currentDrawerIndex;
+      const item = allData[idx];
+      if (!item || item.mod_id === 'hab') return;
+      if (currentDrawerTab !== 'interactive') {
+        switchDrawerTab('interactive');
+      }
+      const compiled = serializeInteractiveDOM() || sanitizePepOutput(item.pep_body || '');
+      pepFreeEditStates[idx] = createFreeEditState(compiled);
+      syncFreeEditUIForCurrentProtocol();
+      const taEl = document.getElementById('pepFreeEditTextarea');
+      if (taEl && typeof taEl.focus === 'function') {
+        taEl.focus();
+      }
+      showToast('✏️ Modo Edição Livre ativado! O texto agora é a fonte da verdade.');
+    }
+    window.enterFreeEditMode = enterFreeEditMode;
+
+    function requestExitFreeEditMode() {
+      const idx = currentDrawerIndex;
+      const st = pepFreeEditStates[idx];
+      if (!st || !st.active) return;
+      if (st.dirty) {
+        st.confirmingDiscard = true;
+        syncFreeEditUIForCurrentProtocol();
+        return;
+      }
+      confirmExitFreeEditMode();
+    }
+    window.requestExitFreeEditMode = requestExitFreeEditMode;
+
+    function confirmExitFreeEditMode() {
+      const idx = currentDrawerIndex;
+      delete pepFreeEditStates[idx];
+      syncFreeEditUIForCurrentProtocol();
+      showToast('🔙 Retornado para as pílulas estruturadas!');
+    }
+    window.confirmExitFreeEditMode = confirmExitFreeEditMode;
+
+    function cancelExitFreeEditMode() {
+      const idx = currentDrawerIndex;
+      const st = pepFreeEditStates[idx];
+      if (st) {
+        st.confirmingDiscard = false;
+        syncFreeEditUIForCurrentProtocol();
+      }
+    }
+    window.cancelExitFreeEditMode = cancelExitFreeEditMode;
+
+    function toggleFreeEditMode() {
+      const idx = currentDrawerIndex;
+      const st = pepFreeEditStates[idx];
+      if (st && st.active) {
+        requestExitFreeEditMode();
+      } else {
+        enterFreeEditMode();
+      }
+    }
+    window.toggleFreeEditMode = toggleFreeEditMode;
+
+    function undoFreeEdit() {
+      const idx = currentDrawerIndex;
+      const st = pepFreeEditStates[idx];
+      if (!st || !st.active) return;
+      if (!st.undoStack || st.undoStack.length <= 1) {
+        showToast('ℹ️ Não há alterações manuais para desfazer.');
+        return;
+      }
+      pepFreeEditStates[idx] = undoFreeEditSnapshot(st);
+      syncFreeEditUIForCurrentProtocol();
+      showToast('↶ Alteração desfeita na Edição Livre!');
+    }
+    window.undoFreeEdit = undoFreeEdit;
+
+    (function initFreeEditListeners() {
+      const taEl = document.getElementById('pepFreeEditTextarea');
+      if (!taEl) return;
+      taEl.addEventListener('input', () => {
+        const idx = currentDrawerIndex;
+        const st = pepFreeEditStates[idx];
+        if (!st || !st.active) return;
+        pepFreeEditStates[idx] = pushFreeEditSnapshot(st, taEl.value);
+        syncFreeEditUIForCurrentProtocol();
+      });
+      taEl.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && !e.shiftKey) {
+          e.preventDefault();
+          undoFreeEdit();
+        }
+      });
+    })();
+
     function getResolvedProtocolBodies(index) {
       const item = allData[index];
-      if (!item) return { pep_body: '', conduta_body: '', receita_body: '' };
+      if (!item) return { pep_body: '', evolucao_body: '', conduta_body: '', receita_body: '', receita_meds_body: '', orientacoes_body: '' };
+
+      // 0. Trava Unidirecional de Edição Livre: se ativa para este protocolo, o texto livre é a fonte da verdade
+      if (pepFreeEditStates[index] && pepFreeEditStates[index].active) {
+        const taEl = (index === currentDrawerIndex) ? document.getElementById('pepFreeEditTextarea') : null;
+        const liveFreeText = (taEl && taEl.value) ? taEl.value : pepFreeEditStates[index].currentText;
+        return extractBodiesFromCustomPep(liveFreeText, item);
+      }
 
       // 1. Se o protocolo aberto no Personalizar é este, compilar o texto personalizado ao vivo
-      if (index === currentInteractiveRenderedIdx && interactiveRendered && interactiveRendered.childNodes && interactiveRendered.childNodes.length > 0 && (currentDrawerTab === 'interactive' || interactiveEditCount > 0)) {
+      if (index === currentInteractiveRenderedIdx && interactiveRendered && interactiveRendered.childNodes && interactiveRendered.childNodes.length > 0) {
         const customPep = serializeInteractiveDOM();
         if (customPep) {
           return extractBodiesFromCustomPep(customPep, item);
@@ -8899,15 +9760,8 @@ IDENTIFICAÇÃO &amp; PESO:
         return extractBodiesFromCustomPep(interactiveSessionCache[index].serializedPep, item);
       }
 
-      const cleanRec = String(item.receita_body || item.conduta_body || item.pep_body || '')
-        .replace(/^(?:>>\s*|#+\s*)(?:PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL)[^\n]*\n?/i, '')
-        .trim();
-
-      return {
-        pep_body: item.pep_body || '',
-        conduta_body: item.conduta_body || item.pep_body || '',
-        receita_body: cleanRec
-      };
+      // 3. Caso contrário (ex: cópia 1-Click direto do card na lista central), sanitizar os corpos brutos
+      return extractBodiesFromCustomPep(item.pep_body || '', item);
     }
 
     function fillInteractiveDatesToday() {
@@ -8946,7 +9800,12 @@ IDENTIFICAÇÃO &amp; PESO:
       const item = allData[currentDrawerIndex];
       if (!item || item.mod_id === 'hab') return;
       delete interactiveSessionCache[currentDrawerIndex];
+      delete pepFreeEditStates[currentDrawerIndex];
       renderInteractive(item.pep_body, currentDrawerIndex, true);
+      syncFreeEditUIForCurrentProtocol();
+      if (currentDrawerTab !== 'interactive') {
+        switchDrawerTab(currentDrawerTab);
+      }
       showToast('✅ Campos e opções restaurados para o padrão!');
     }
     window.resetInteractiveCurrent = resetInteractiveCurrent;
@@ -9450,12 +10309,29 @@ IDENTIFICAÇÃO &amp; PESO:
       const visibleList = [];
       cards.forEach((c, idx) => {
         const item = allData[idx];
+        const symMatch = (qNorm && item) ? findMatchedSymptom(item, qNorm) : null;
         const matchSearch = !qNorm ||
           c.dataset.search.includes(qRaw) ||
           (c.dataset.searchNorm && c.dataset.searchNorm.includes(qNorm)) ||
-          Boolean(item && findMatchedSymptom(item, qNorm));
+          Boolean(symMatch);
         const matchMod = (activeModule === 'all') ? (c.dataset.mod !== 'hab') : (c.dataset.mod === activeModule);
         const matchCat = (activeSubcat === 'all') || (c.dataset.cat === activeSubcat);
+
+        // Atualizar badge visual de queixa/sintoma correspondente no card
+        const cardHead = typeof c.querySelector === 'function' ? c.querySelector('.card-head') : null;
+        if (cardHead) {
+          let symBadge = cardHead.querySelector('.card-symptom-match-badge');
+          if (symMatch && matchSearch && matchMod && matchCat) {
+            if (!symBadge) {
+              symBadge = document.createElement('span');
+              symBadge.className = 'card-symptom-match-badge';
+              cardHead.appendChild(symBadge);
+            }
+            symBadge.textContent = `🎯 ${symMatch.tag}`;
+          } else if (symBadge && symBadge.parentNode) {
+            symBadge.parentNode.removeChild(symBadge);
+          }
+        }
 
         if (matchSearch && matchMod && matchCat) {
           c.style.display = 'flex';
@@ -9485,6 +10361,25 @@ IDENTIFICAÇÃO &amp; PESO:
     window.filterProtocols = filterProtocols;
 
     searchInput.addEventListener('input', filterCards);
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateProtocolList(1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigateProtocolList(-1);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (selectedProtocolIndex !== null && allData[selectedProtocolIndex]) {
+          if (e.shiftKey || e.ctrlKey || e.metaKey) {
+            copySnippet(selectedProtocolIndex);
+          } else {
+            openInspector(selectedProtocolIndex, null, { scrollCard: true });
+            searchInput.blur();
+          }
+        }
+      }
+    });
 
     moduleTabs.addEventListener('click', (e) => {
       const btn = e.target.closest('.tab-btn');
@@ -9709,6 +10604,27 @@ IDENTIFICAÇÃO &amp; PESO:
         return;
       }
 
+      if (e.altKey && !e.ctrlKey && !e.metaKey) {
+        const altKey = e.key.toLowerCase();
+        if (altKey === 'v') {
+          e.preventDefault();
+          fillInteractiveNormalVitals();
+          return;
+        } else if (altKey === 'd') {
+          e.preventDefault();
+          fillInteractiveDatesToday();
+          return;
+        } else if (altKey === 'n') {
+          e.preventDefault();
+          focusNextEmptyInteractiveInput();
+          return;
+        } else if (altKey === 'e') {
+          e.preventDefault();
+          toggleFreeEditMode();
+          return;
+        }
+      }
+
       if (!e.ctrlKey && !e.metaKey && !e.altKey) {
         const keyLower = e.key.toLowerCase();
         if (keyLower === 'j' || e.key === 'ArrowDown') {
@@ -9726,6 +10642,12 @@ IDENTIFICAÇÃO &amp; PESO:
         } else if (e.key === '3') {
           e.preventDefault();
           triggerPowerCopy(3);
+        } else if (e.key === '4') {
+          e.preventDefault();
+          triggerPowerCopy(4);
+        } else if (e.key === '5') {
+          e.preventDefault();
+          triggerPowerCopy(5);
         }
       }
     });
@@ -9875,5 +10797,6 @@ IDENTIFICAÇÃO &amp; PESO:
     syncAllHabCardBadges();
     openInspector(0, null, { scrollCard: false, silentMobileOverlay: true });
   </script>
+  <script type="module" src="/src/engine/index.ts"></script>
 </body>
 </html>

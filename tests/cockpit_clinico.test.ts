@@ -456,3 +456,209 @@ test('Compositor Modular de Prescrição: Carrinho de Prescrição em 1 Clique (
   assert.ok(html.includes('function addCustomItemToCart'), 'Must define addCustomItemToCart function in JS');
   assert.ok(html.includes('function copyPrescriptionCart'), 'Must define copyPrescriptionCart function in JS');
 });
+
+test('Fase 1 (P0.1): Clinical Sanitizer strips internal instructions, secondary options, and Markdown headers while detecting pending gaps', async () => {
+  const enginePersonalizar = await import('../src/engine/personalizar.ts');
+  const { sandbox, elements } = extractScriptAndRun();
+
+  const rawClinicalSample = [
+    '###### EVOLUÇÃO DIÁRIA — ENFERMARIA ######',
+    '# IDENTIFICAÇÃO:',
+    'Paciente [Nome], [Idade] anos, PA: [110x70] mmHg, FC: [ ] bpm.',
+    'Dor [ausente / leve / moderada].',
+    '# CONDUTA E PRESCRIÇÃO:',
+    '[NÃO PRESCREVER AINES EM CASO DE SUSPEITA DE DENGUE]',
+    '1. [OPÇÃO 1 - 1ª ESCOLHA]: Amoxicilina 500mg VO de 8/8h por 7 dias.',
+    '2. [OPÇÃO 2 - ALÉRGICOS A PENICILINA]: Azitromicina 500mg VO 1x/dia por 5 dias.',
+    '3. [Se constipação intestinal ou dor]: Simeticona 40mg VO de 8/8h.',
+    '4. [Opcional - se náuseas]: Ondansetrona 4mg VO de 8/8h.',
+    '>> CUIDADOS GERAIS:',
+    '- [x] Dieta oral livre',
+    '- [ ] Hidratação venosa'
+  ].join('\n');
+
+  for (const fnSanitize of [enginePersonalizar.sanitizePepOutput, sandbox.window.sanitizePepOutput]) {
+    const cleaned = fnSanitize(rawClinicalSample);
+    assert.equal(cleaned.includes('######'), false, 'Must strip ###### banners');
+    assert.equal(cleaned.includes('NÃO PRESCREVER'), false, 'Must strip [NÃO PRESCREVER...] safety alerts');
+    assert.equal(cleaned.includes('OPÇÃO 1'), false, 'Must strip [OPÇÃO 1...] label');
+    assert.equal(cleaned.includes('Azitromicina'), false, 'Must exclude secondary [OPÇÃO 2...] lines by default');
+    assert.equal(cleaned.includes('[Se constipação'), false, 'Must strip [Se ...] conditional tags');
+    assert.equal(cleaned.includes('[Opcional'), false, 'Must strip [Opcional...] tags');
+    assert.equal(cleaned.includes('>>'), false, 'Must strip >> subheading prefix');
+    assert.ok(cleaned.includes('1. Amoxicilina 500mg VO de 8/8h por 7 dias.'), 'Must preserve primary choice cleanly without orphaned colon');
+    assert.ok(cleaned.includes('3. Simeticona 40mg VO de 8/8h.'), 'Must clean orphaned colon after conditional tag removal');
+    assert.ok(cleaned.includes('Dor [ausente / leve / moderada].'), 'Must NOT blindly auto-select unresolved clinical choice brackets');
+  }
+
+  for (const fnGaps of [enginePersonalizar.detectPendingGaps, sandbox.window.detectPendingGaps]) {
+    const gaps = fnGaps(rawClinicalSample);
+    assert.equal(gaps.blankBrackets, 1, 'Must count 1 blank [ ] input (ignoring - [ ] checkbox)');
+    assert.equal(gaps.namedPlaceholders, 2, 'Must count [Nome] and [Idade] named placeholders');
+    assert.equal(gaps.unresolvedChoices, 1, 'Must count [ausente / leve / moderada] unresolved choice');
+    assert.equal(gaps.total, 4, 'Total pending gaps must be 4');
+  }
+
+  // Verify Toast Pending Badge updates when copying a protocol with pending gaps
+  await sandbox.window.copySnippet(0);
+  assert.equal(elements.toastMsg.textContent, '✅ Snippet completo copiado com sucesso!');
+  assert.ok(elements.toastPendingBadge.textContent.includes('lacuna'), 'Toast pending badge must warn about pending clinical gaps');
+});
+
+test('Fase 1 (P0.2 & P0.3): Cockpit Power Actions (1-4 + Reset) & Granular Section Extraction (Evolução, Conduta, Receita, Orientações)', async () => {
+  const enginePersonalizar = await import('../src/engine/personalizar.ts');
+  const { sandbox, elements } = extractScriptAndRun();
+
+  const html = fs.readFileSync(path.join(process.cwd(), 'index.html'), 'utf-8');
+  assert.ok(html.includes('id="powerBtnCopyAll"'), 'Must include 1 Tudo button in #cockpitPowerActions');
+  assert.ok(html.includes('id="powerBtnCopyConduta"'), 'Must include 2 Conduta button in #cockpitPowerActions');
+  assert.ok(html.includes('id="powerBtnCopyReceita"'), 'Must include 3 Receita button in #cockpitPowerActions');
+  assert.ok(html.includes('id="powerBtnCopyEvolucao"'), 'Must include 4 Evolução button in #cockpitPowerActions');
+  assert.ok(html.includes('id="powerBtnResetPatient"'), 'Must include Reset Patient button in #cockpitPowerActions');
+  assert.ok(html.includes('src="/src/engine/index.ts"'), 'Must link modularized src/engine/index.ts');
+
+  const samplePep = [
+    '# IDENTIFICAÇÃO:',
+    'Paciente Maria, 28 anos.',
+    '# SUBJETIVO:',
+    'Refere melhora clínica.',
+    '# OBJETIVO:',
+    'PA: 110x70 mmHg | FC: 78 bpm.',
+    '# AVALIAÇÃO:',
+    'Puerpério fisiológico.',
+    '# CONDUTA:',
+    '- Dieta livre',
+    '# PRESCRIÇÃO DE ALTA:',
+    '1. Dipirona 500mg VO 6/6h se dor.',
+    '# ORIENTAÇÕES DE ALTA E SINAIS DE ALARME:',
+    '- Retornar se febre ou sangramento intenso.'
+  ].join('\n');
+
+  for (const fnExtract of [enginePersonalizar.extractBodiesFromCustomPep, sandbox.window.extractBodiesFromCustomPep]) {
+    const bodies = fnExtract(samplePep);
+    assert.ok(bodies.evolucao_body.includes('IDENTIFICAÇÃO') && bodies.evolucao_body.includes('AVALIAÇÃO'), 'evolucao_body must contain SOAP sections');
+    assert.equal(bodies.evolucao_body.includes('PRESCRIÇÃO DE ALTA'), false, 'evolucao_body must exclude prescription');
+    assert.ok(bodies.conduta_body.includes('Dieta livre'), 'conduta_body must contain Conduta section');
+    assert.ok(bodies.receita_body.includes('Dipirona 500mg'), 'receita_body must contain Prescription section');
+    assert.ok(bodies.orientacoes_body.includes('Retornar se febre'), 'orientacoes_body must contain Orientations section');
+  }
+
+  sandbox.window.openInspector(0);
+  await sandbox.window.triggerPowerCopy(4);
+  assert.equal(elements.toastMsg.textContent, '✅ Evolução copiada com sucesso!');
+});
+
+test('Fase 1 (P0.4 & Cart Parser): Compound Vitals inference (PA: [110x70]) and Multiline Prescription Cart Parser', async () => {
+  const enginePersonalizar = await import('../src/engine/personalizar.ts');
+  const engineWorkstation = await import('../src/engine/workstation.ts');
+  const { sandbox } = extractScriptAndRun();
+
+  for (const fnVital of [enginePersonalizar.inferVitalSignRole, sandbox.window.inferVitalSignRole]) {
+    assert.equal(fnVital('110x70', '- Sinais Vitais: PA: '), 'pa-composta', 'Must detect compound PA [110x70]');
+    assert.equal(fnVital('', 'PA: '), 'pa-composta', 'Must detect blank compound PA when not followed by /');
+    assert.equal(fnVital('', 'PA: ', '/80'), 'pas', 'Must detect systolic PA when followed by /');
+    assert.equal(fnVital('', 'PA: 120/'), 'pad', 'Must detect diastolic PA after /');
+    assert.equal(fnVital('78', 'PA: 110x70 mmHg | FC: '), 'fc', 'Must detect FC after compound PA');
+    assert.equal(fnVital('99', 'SpO2: '), 'spo2', 'Must detect SpO2');
+    assert.equal(fnVital('36,5', 'Tax: '), 'tax', 'Must detect Tax');
+  }
+
+  const sampleReceita = [
+    '# PRESCRIÇÃO DOMICILIAR:',
+    '[NÃO PRESCREVER AINES]',
+    '1. [OPÇÃO 1]: Amoxicilina 500mg (14 cápsulas)',
+    '   Tomar 1 cápsula VO de 8/8h por 7 dias.',
+    '2. [OPÇÃO 2 - ALÉRGICOS]: Azitromicina 500mg',
+    '3. [Se dor ou febre]: Dipirona 500mg — tomar 1 cp de 6/6h.',
+    '# ORIENTAÇÕES AO PACIENTE:',
+    '1. Beber bastante líquido.',
+    '2. Retornar se febre persistente.'
+  ].join('\n');
+
+  for (const fnParseCart of [engineWorkstation.parsePrescriptionItemsForCart, sandbox.window.parsePrescriptionItemsForCart]) {
+    const items = fnParseCart(sampleReceita);
+    assert.equal(items.length, 2, 'Must extract only the 2 active medications and ignore OPÇÃO 2 and ORIENTAÇÕES section');
+    assert.ok(items[0].includes('Amoxicilina 500mg') && items[0].includes('Tomar 1 cápsula VO'), 'Must preserve multiline posology on item 1');
+    assert.equal(items[0].includes('OPÇÃO 1'), false, 'Must strip [OPÇÃO 1] tag from cart item');
+    assert.ok(items[1].includes('Dipirona 500mg'), 'Must extract item 3 without [Se dor ou febre] prefix');
+  }
+});
+
+test('Fase 2 (P1.1 & P1.2): Unidirectional Free Edit Mode with Undo Stack, Inline Discard Confirmation, and Orientações / Meds-Only Copy', async () => {
+  const enginePersonalizar = await import('../src/engine/personalizar.ts');
+  const { sandbox, elements, runExpr } = extractScriptAndRun();
+
+  // 1. Pure FreeEdit state & undo stack tests
+  for (const mod of [enginePersonalizar, sandbox.window]) {
+    let st = mod.createFreeEditState('Texto inicial compilado');
+    assert.equal(st.active, true);
+    assert.equal(st.dirty, false);
+    assert.equal(st.undoStack.length, 1);
+
+    st = mod.pushFreeEditSnapshot(st, 'Texto editado pelo plantonista v1');
+    assert.equal(st.dirty, true);
+    assert.equal(st.currentText, 'Texto editado pelo plantonista v1');
+    assert.equal(st.undoStack.length, 2);
+
+    st = mod.pushFreeEditSnapshot(st, 'Texto editado pelo plantonista v2');
+    assert.equal(st.undoStack.length, 3);
+
+    st = mod.undoFreeEditSnapshot(st);
+    assert.equal(st.currentText, 'Texto editado pelo plantonista v1');
+    assert.equal(st.dirty, true);
+
+    st = mod.undoFreeEditSnapshot(st);
+    assert.equal(st.currentText, 'Texto inicial compilado');
+    assert.equal(st.dirty, false);
+  }
+
+  // 2. Unidirectional Source-of-Truth Lock & Inline Confirmation when returning to pills
+  sandbox.window.openInspector(0);
+  sandbox.window.enterFreeEditMode();
+  assert.equal(elements.pepFreeEditWrap.classList.contains('is-open'), true, 'Free Edit wrapper must open');
+
+  // Simulate manual edit in Free Edit Mode
+  runExpr("pepFreeEditStates[0] = pushFreeEditSnapshot(pepFreeEditStates[0], '# IDENTIFICAÇÃO:\\nPaciente Editada Manualmente, 31 anos.\\n# PLANO / CONDUTA:\\nConduta ajustada manualmente.')");
+  elements.pepFreeEditTextarea.value = '# IDENTIFICAÇÃO:\nPaciente Editada Manualmente, 31 anos.\n# PLANO / CONDUTA:\nConduta ajustada manualmente.';
+
+  const resolvedDuringFreeEdit = runExpr('getResolvedProtocolBodies(0)');
+  assert.ok(resolvedDuringFreeEdit.pep_body.includes('Paciente Editada Manualmente'), 'Free Edit text must be the single source of truth for pep_body');
+  assert.ok(resolvedDuringFreeEdit.conduta_body.includes('Conduta ajustada manualmente'), 'Free Edit text must be the single source of truth for conduta_body');
+
+  // Requesting exit while dirty must NOT discard immediately; it must open the inline confirmation bar
+  sandbox.window.requestExitFreeEditMode();
+  assert.equal(elements.pepFreeEditWrap.classList.contains('is-open'), true, 'Must stay in Free Edit Mode until user confirms discard');
+  assert.equal(elements.pepFreeEditConfirmBar.classList.contains('is-open'), true, 'Must display inline discard confirmation bar');
+
+  // Cancel discard keeps Free Edit Mode open
+  sandbox.window.cancelExitFreeEditMode();
+  assert.equal(elements.pepFreeEditConfirmBar.classList.contains('is-open'), false, 'Cancel must hide confirmation bar');
+  assert.equal(elements.pepFreeEditWrap.classList.contains('is-open'), true, 'Cancel must preserve Free Edit Mode');
+
+  // Confirm discard exits back to structured pills
+  sandbox.window.confirmExitFreeEditMode();
+  assert.equal(elements.pepFreeEditWrap.classList.contains('is-open'), false, 'Confirm discard must exit Free Edit Mode');
+
+  // 3. Test Orientações (Shortcut 5) & Meds-Only Prescription extraction
+  await sandbox.window.triggerPowerCopy(5);
+  assert.equal(elements.toastMsg.textContent, '✅ Orientações ao paciente copiadas com sucesso!');
+
+  await sandbox.window.copyReceitaMedsOnly(0);
+  assert.equal(elements.toastMsg.textContent, '✅ Prescrição (só medicamentos) copiada com sucesso!');
+  const resolved0 = runExpr('getResolvedProtocolBodies(0)');
+  assert.ok(resolved0.receita_meds_body.includes('Sulfato Ferroso'), 'receita_meds_body must include medications');
+  assert.equal(resolved0.receita_meds_body.includes('ORIENTAÇÕES DE ALTA'), false, 'receita_meds_body must exclude ORIENTAÇÕES DE ALTA');
+  assert.ok(resolved0.orientacoes_body.includes('ORIENTAÇÕES DE ALTA'), 'orientacoes_body must contain ORIENTAÇÕES DE ALTA');
+});
+
+test('Fase 3 (P2): scripts/build_snippets.py uses portable BASE_PROJECT and safe anchored allData regex', () => {
+  const pyPath = path.resolve(process.cwd(), 'scripts/build_snippets.py');
+  const pyContent = fs.readFileSync(pyPath, 'utf8');
+  assert.equal(pyContent.includes('/home/wagmoraes'), false, 'scripts/build_snippets.py must not hardcode /home/wagmoraes');
+  assert.ok(pyContent.includes('os.path.dirname(os.path.dirname(os.path.abspath(__file__)))'), 'Must use portable repository root');
+  assert.ok(pyContent.includes('// --- Estado Global ---'), 'Must anchor allData regex to // --- Estado Global ---');
+});
+
+
+
+

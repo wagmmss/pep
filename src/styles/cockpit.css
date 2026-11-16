@@ -1871,11 +1871,42 @@
       margin-top: 6px;
       border-bottom: 1px solid rgba(56, 189, 248, 0.14);
       padding-bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
     }
     .pep-line.pep-line-subheading {
       color: #f59e0b;
       font-weight: 600;
       margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pep-sec-copy-btn {
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(2, 132, 199, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.36);
+      color: #bae6fd;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-left: auto;
+      flex-shrink: 0;
+      transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    }
+    .pep-sec-copy-btn:hover {
+      background: var(--primary-solid);
+      border-color: var(--primary-bright);
+      color: #ffffff;
     }
     .pep-line.is-excluded,
     .pep-line.is-excluded-block {
@@ -2391,6 +2422,22 @@
       transform: translateY(0);
       opacity: 1;
     }
+    .toast.has-pending-gaps {
+      border-color: var(--warning);
+    }
+    .toast-pending-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid rgba(245, 158, 11, 0.55);
+      color: #fde68a;
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
 
     /* Barra Inferior Flutuante Mobile (Thumb-Zone Bottom Sheet Compacto < 768px) */
     .mobile-bottom-bar {
@@ -2837,3 +2884,90 @@
         justify-content: center;
       }
     }
+
+    /* ==========================================================================
+       FASE 2 & 3: MODO EDIÇÃO LIVRE UNIDIRECIONAL + BADGE DE SINTOMA NA BUSCA
+       ========================================================================== */
+    .pep-tool-btn.is-active-mode {
+      background: rgba(245, 158, 11, 0.16);
+      border-color: rgba(245, 158, 11, 0.48);
+      color: #fde68a;
+    }
+    .pep-free-edit-wrap {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      min-height: 360px;
+    }
+    .pep-free-edit-wrap.is-open {
+      display: flex;
+    }
+    .pep-free-edit-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.32);
+      color: #fde68a;
+      font-size: 0.75rem;
+    }
+    .pep-free-edit-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pep-free-edit-confirm {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.42);
+      color: #fecaca;
+      font-size: 0.75rem;
+    }
+    .pep-free-edit-confirm.is-open {
+      display: flex;
+    }
+    .pep-free-edit-textarea {
+      width: 100%;
+      flex: 1;
+      min-height: 360px;
+      resize: vertical;
+      background: var(--surface-inset);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      line-height: 1.62;
+      outline: none;
+    }
+    .pep-free-edit-textarea:focus {
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.15);
+    }
+    .card-symptom-match-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.66rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #7dd3fc;
+      margin-left: 6px;
+    }
+

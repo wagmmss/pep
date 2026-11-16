@@ -1,6 +1,6 @@
 import os, glob, re, json, html
 
-BASE_PROJECT = '/home/wagmoraes/Projetos IA/Protocolos_Clinicos'
+BASE_PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SNIPPETS_DIR = os.path.join(BASE_PROJECT, 'snippets')
 os.makedirs(SNIPPETS_DIR, exist_ok=True)
 
@@ -3319,13 +3319,18 @@ html_page = (
 
 with open(html_path, 'w', encoding='utf-8') as fh:
     fh.write(html_page)
-# Protegendo a Workstation V2.0: atualiza apenas os snippets inline sem destruir o index.html moderno
+# Protegendo a Workstation V2.0+: atualiza apenas os dados (allData) sem truncar colchetes internos nem destruir módulos de src/engine/
 index_path = os.path.join(BASE_PROJECT, 'index.html')
 if os.path.exists(index_path):
     with open(index_path, 'r', encoding='utf-8') as fh:
         idx_code = fh.read()
-    import re
-    idx_code = re.sub(r'const allData = \[[\s\S]*?\];', f'const allData = {snippets_json_payload};', idx_code, count=1)
+    idx_code = re.sub(
+        r'const allData = \[[\s\S]*?\];(?=\s*// --- Estado Global ---)',
+        lambda _: f'const allData = {snippets_json_payload};',
+        idx_code,
+        count=1
+    )
     with open(index_path, 'w', encoding='utf-8') as fh:
         fh.write(idx_code)
 print(f"Cockpit Web UI/UX High-End salvo com sucesso em {html_path} e {index_path}!")
+
