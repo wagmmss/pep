@@ -2,7 +2,7 @@
 // WORKSTATION CLÍNICA — GRAVIDADE, LAYOUT REDIMENSIONÁVEL, CARRINHO & CHECKLIST
 // ============================================================================
 
-import { sanitizePepOutput } from './personalizar';
+import { sanitizePepOutput } from './personalizar.ts';
 
 export interface ClinicalSeverity {
   code: 'critico' | 'urgente' | 'rotina' | 'tecnica';

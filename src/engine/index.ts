@@ -2,10 +2,10 @@
 // ENTRYPOINT MODULAR DO MOTOR CLÍNICO (Conectado via Vite / ES Modules)
 // ============================================================================
 
-import * as PersonalizarEngine from './personalizar';
-import * as WorkstationEngine from './workstation';
-import * as SearchEngine from './search';
-import * as DiretrizesEngine from './diretrizes';
+import * as PersonalizarEngine from './personalizar.ts';
+import * as WorkstationEngine from './workstation.ts';
+import * as SearchEngine from './search.ts';
+import * as DiretrizesEngine from './diretrizes.ts';
 
 export {
   PersonalizarEngine,
