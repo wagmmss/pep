@@ -9,9 +9,9 @@
 ```text
 ###### SUMÁRIO DE ALTA HOSPITALAR & CONTRARREFERÊNCIA — CLÍNICA MÉDICA ######
 # IDENTIFICAÇÃO & PERÍODO DE INTERNAÇÃO:
-- Paciente: [Nome], [Idade] anos | Sexo: [Masculino / Feminino] | Prontuário/CNS: [ ]
+- Paciente: [Nome], [Idade] anos | Sexo: [Masculino / Feminino][? Prontuário :: | Prontuário/CNS: [ ]]
 - Data de Admissão: [DD/MM/AAAA] | Data da Alta Hospitalar: [DD/MM/AAAA] | Permanência Total: [ ] dias
-- Setor / Leito de Origem: Enfermaria de Clínica Médica — Leito [ ]
+- Setor / Leito de Origem: Enfermaria de Clínica Médica[? Leito :: — Leito [ ]]
 
 # DIAGNÓSTICOS DEFINITIVOS DE ALTA:
 1. Diagnóstico Principal (Causa da Internação): [ ] (CID-10: [ ]).

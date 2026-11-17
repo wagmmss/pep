@@ -14,12 +14,11 @@
 - HMA: Relata episódio agudo de vertigem rotatória verdadeira iniciada há [ ] horas, acompanhada de instabilidade na marcha, náuseas e vômitos incoercíveis.
   * HIPÓTESE A - VERTIGEM POSICIONAL PAROXÍSTICA BENIGNA (VPPB): Vertigem desencadeada por mudanças súbitas de posição da cabeça (ao virar de lado na cama ou olhar para cima), com episódios breves de forte intensidade durando menos de 60 segundos cada.
   * HIPÓTESE B - NEVRITE VESTIBULAR / LABIRINTITE: Vertigem contínua incapacitante iniciada há 24-48 horas, que persiste mesmo com a cabeça parada em repouso, associada a sintomas de infecção viral recente de vias aéreas superiores.
-- NEGATIVAS MANDATÓRIAS (EXCLUSÃO DE AVC DE FOSSA POSTERIOR / TRONCO):
-  * Nega diplopia (visão dupla) ou perda visual transitória.
-  * Nega disfagia (dificuldade de engolir) ou disartria (fala enrolada/pastosa).
-  * Nega fraqueza, perda de força muscular ou dormência em um dos lados do corpo.
-  * Nega incoordenação motora grave (incapacidade de alcançar objetos).
-  * Nega cefaleia occipital súbita de início hiperagudo.
+- Nega diplopia (visão dupla) ou perda visual transitória.
+- Nega disfagia (dificuldade de engolir) ou disartria (fala enrolada/pastosa).
+- Nega fraqueza, perda de força muscular ou dormência em um dos lados do corpo.
+- Nega incoordenação motora grave (incapacidade de alcançar objetos).
+- Nega cefaleia occipital súbita de início hiperagudo.
 - Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO NEUROLÓGICO & PROTOCOLO HINTS NA SÍNDROME CONTÍNUA):

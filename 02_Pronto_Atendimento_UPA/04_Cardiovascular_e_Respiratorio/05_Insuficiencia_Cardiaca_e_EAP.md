@@ -16,10 +16,9 @@
 # SUBJETIVO:
 - Queixa Principal: Falta de ar intensa e súbita, sensação de afogamento e tosse com catarro espumoso há [ ] horas.
 - HMA: Paciente com diagnóstico de Insuficiência Cardíaca / HAS grave relata início súbito de dispneia em repouso há cerca de [ ] horas. Refere ortopneia absoluta (incapaz de deitar na maca), dispneia paroxística noturna e tosse produtiva com expectoração espumosa [esbranquiçada / rósea característica]. Relata história recente de: [abandono de diuréticos / transgressão hídrica e de sal / pico hipertensivo / infecção recente / síndrome coronariana aguda desencadeante].
-- NEGATIVAS MANDATÓRIAS (EXCLUSÃO DE OUTRAS CAUSAS FATAIS):
-  * Nega dor torácica pleurítica aguda súbita com assimetria de murmúrio (afastado pneumotórax).
-  * Nega febre alta, calafrios ou secreção purulenta espessa (afastada sepse pulmonar pura).
-  * Nega estridor respiratório ou edema de glote anafilático.
+- Nega dor torácica pleurítica aguda súbita com assimetria de murmúrio (afastado pneumotórax).
+- Nega febre alta, calafrios ou secreção purulenta espessa (afastada sepse pulmonar pura).
+- Nega estridor respiratório ou edema de glote anafilático.
 - Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DA SALA DE EMERGÊNCIA):

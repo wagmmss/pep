@@ -10,30 +10,32 @@
 ```text
 ###### EVOLUÇÃO DIÁRIA DE ENFERMARIA — PUERPÉRIO (ALOJAMENTO CONJUNTO) ######
 # IDENTIFICAÇÃO & PARTO:
-Paciente [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] A[ ], TS Materna: [O+ / A+ / B+ / Rh negativo] | TS RN: [ ] (Coombs Direto: [Negativo / Positivo]).
-Em [1º / 2º / 3º] dia de puerpério de [Parto Normal sem laceração / Parto Normal com rafia de laceração de 2º grau / Parto Normal com episiotomia / Cesárea por indicação de [ ]] realizado em [DD/MM às HH:MM] com IG de [ ]s[ ]d.
-Comorbidades & Alergias: [Hígida / HAG / Pré-eclâmpsia / DMG sob dieta / Anemia] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]].
+TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: | TS RN: [ ] (Coombs Direto: [Negativo / Positivo])].
+Comorbidades: [Hígida / [ ]].
+Alergias: [Nega / [ ]].
+Sorologias: [Não reagentes (HIV, VDRL, HBsAg, Toxo) / [ ]].
+Em [1º / 2º / 3º] dia de puerpério de [Parto Normal sem laceração / Parto Normal com rafia de laceração de 2º grau / Parto Normal com episiotomia / Cesárea por indicação de [ ]] realizado em [DD/MM às HH:MM] com IG de [ ]s[ ]d[? G/P/A :: , G[ ] P[ ] A[ ]].
 
 # SUBJETIVO (EVOLUÇÃO NAS 24H & AMAMENTAÇÃO):
 Encontro puérpera no leito com RN em alojamento conjunto.
 - Evolução Geral & Dor: Passou bem nas últimas 24h, deambulando sem tontura ortostática e com boa aceitação da dieta. Dor [ausente / leve e controlada com analgesia / discreta em ferida operatória / leve em região perineal].
 - Fisiológicas & Loquiação: Diurese espontânea clara e em bom volume (sem disúria); eliminação de flatos presente, evacuação [presente sem esforço / ausente até o momento]. Lóquios [rubros fisiológicos em pequena-moderada quantidade, sem odor fétido ou coágulos / aumentados].
 - Amamentação: Aleitamento materno exclusivo em livre demanda, [boa pega e posicionamento observados (boca bem aberta, lábio inferior evertido, queixo tocando a mama e deglutição audível), sem dor mamilar / dificuldade de pega orientada à beira-leito].
-- Negativas Mandatórias de Alarme: Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, lipotímia ou dor/empastamento em panturrilhas.
+- Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, lipotímia ou dor/empastamento em panturrilhas.
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO & CONTROLES):
+# OBJETIVO (EXAME FÍSICO DIRIGIDO):
 - Sinais Vitais: PA: [110x70] mmHg | FC: [78] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C.
 - Ectoscopia: BEG, lúcida, corada, hidratada, anictérica, acianótica, afebril e eupneica.
 - Mamas: [Flácidas / Túrgidas fisiológicas], indolores, sem áreas de hiperemia, calor ou ingurgitamento patológico. Papilas [íntegras sem fissuras / com fissura superficial em mama]. Colostro presente à expressão bilateral.
 - Abdome & Útero: Abdome flácido, RHA+, indolor, sem bexigoma palpável. Útero globoso, firme e bem contraído (Globo de Pinard presente), centrado, involuindo a [1 a 2] cm abaixo da cicatriz umbilical, indolor à mobilização.
 - Sítio Cirúrgico / Períneo: [Períneo íntegro sem edema ou hematoma / Rafia perineal com bordas coaptadas, pontos íntegros, limpa e sem hematoma / Ferida operatória de Pfannenstiel limpa, seca, bordas coaptadas, sem flogose ou hematoma]. Lóquios rubros fisiológicos sem odor.
 - Extremidades: Aquecidas, TEC < 2s, pulsos distais simétricos, [sem edema / edema maleolar leve +/4+ simétrico], panturrilhas livres e indolores.
-- Controles & Exames: Sorologias de admissão (HIV, VDRL, HBsAg, Toxo) [todas não reagentes / checadas]. [Curva pressórica normotensa / Perfil glicêmico no alvo / Hb pós-parto: g/dL].
 
 # AVALIAÇÃO DIAGNÓSTICA:
 1. [1º / 2º / 3º] dia de puerpério de [Parto Normal / Cesariana] com evolução favorável (CID-10: Z39.0).
 2. Estratificação de TEV: [Baixo risco (deambulação precoce) / Alto risco (indicada Enoxaparina profilática)].
-3. Status para Alta: [Apta para alta hospitalar hoje após 24h-48h / Manter internada para vigilância clínica e completar 48h].
+3. Status para Alta: [Condições de alta hospitalar / Manter internada para vigilância clínica e completar 48h].
 
 # PLANO / CONDUTA:
 >> CONDUTA HOSPITALAR DIÁRIA:
@@ -42,7 +44,7 @@ Encontro puérpera no leito com RN em alojamento conjunto.
 3. [Se constipação / rafia perineal / cesárea]: Simeticona 40 gotas VO 8/8h se gases + Lactulose 15 mL VO à noite se necessário.
 4. [Se mãe Rh negativo com RN Rh positivo e Coombs Direto negativo]: Prescrever e checar Imunoglobulina Anti-D 300 mcg IM (em até 72h do parto).
 5. [Se alto risco para TEV]: Enoxaparina 40 mg SC 1x/dia.
-6. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Inserido DIU de Cobre pós-placentário / Inserido Implanon antes da alta].
+6. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / [ ]].
 
 >> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
 USO ORAL:

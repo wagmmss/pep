@@ -21,7 +21,7 @@ Paciente [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacm
 # ANTECEDENTES & SUBJETIVO (QD & HMA):
 - Comorbidades, HF & Alergias: [Hígida / HAS / DM2 / Dislipidemia / Hipotireoidismo] | HF Câncer (Mama < 50a / Ovário / Endométrio em 1º grau): [Nega / Positivo em: [ ]] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]] | Tabagismo: [Nega / Sim].
 - Queixa Principal & HMA: Comparece para [rotina ginecológica preventiva anual assintomática / queixa de corrimento vaginal com prurido / queixa de corrimento com odor fétido (peixe) / sangramento uterino anormal / fogachos e ressecamento vaginal].
-- Negativas Mandatórias Ginecológicas: Nega sinusorragia (sangramento pós-coito), sangramento pós-menopausa, dor pélvica aguda, dispareunia profunda, febre ou perda urinária.
+- Nega sinusorragia (sangramento pós-coito), sangramento pós-menopausa, dor pélvica aguda, dispareunia profunda, febre ou perda urinária.
 
 # OBJETIVO (EXAME FÍSICO GINECOLÓGICO):
 - Vitais & Antropometria: PA: [115x75] mmHg | FC: [74] bpm | Peso: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m². BEG, corada, hidratada.

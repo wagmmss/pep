@@ -15,7 +15,7 @@
 
 # SUBJETIVO (QD & EXCLUSÃO DE CONTRAINDICAÇÕES À TOCÓLISE):
 - Queixa Principal & HMA: Contrações uterinas dolorosas e rítmicas associadas a pressão pélvica e dor lombar há [ ] horas. Movimentação fetal presente.
-- Negativas Mandatórias (Sem Contraindicação à Inibição): Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido (afastada corioamnionite), nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
+- Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido (afastada corioamnionite), nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
 
 # OBJETIVO (EXAME FÍSICO OBSTÉTRICO):
 - Sinais Vitais: PA: [110x70] mmHg | FC: [84] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C (afebril).

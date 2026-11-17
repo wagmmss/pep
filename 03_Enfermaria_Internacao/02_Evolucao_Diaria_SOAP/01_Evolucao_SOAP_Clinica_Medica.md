@@ -9,7 +9,7 @@
 ```text
 ###### EVOLUÇÃO MÉDICA DIÁRIA — CLÍNICA MÉDICA (MÉTODO SOAP) ######
 # IDENTIFICAÇÃO & MANCHETE DO LEITO:
-- Paciente: [Nome], [Idade] anos | Leito: [ ] | [ ]º Dia de Internação Hospitalar (DIH)
+- Paciente: [Nome], [Idade] anos[? Leito :: | Leito: [ ]] | [ ]º Dia de Internação Hospitalar (DIH)
 - Diagnóstico Principal Ativo: [ ]
 - Antimicrobiano em Curso: [Sem antibioticoterapia ativa / Em uso de [ ] — D[ ] de [ ] dias programados (início em [DD/MM])]
 - Dispositivos Atuais: [Acesso venoso periférico em [MSD / MSE] D[ ] / Cateter Venoso Central D[ ] / Sonda Vesical de Demora D[ ] / Sem dispositivos invasivos]

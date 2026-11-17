@@ -5,17 +5,17 @@ matches:
     replace: |
       ###### ADMISSÃO EM ENFERMARIA DE CLÍNICA MÉDICA ######
       # IDENTIFICAÇÃO & ORIGEM:
-      - Paciente: [Nome], [Idade] anos | Sexo: [Masculino / Feminino] | Leito: [ ]
+      - Paciente: [Nome], [Idade] anos | Sexo: [Masculino / Feminino][? Leito :: | Leito: [ ]]
       - Origem da Admissão: [Pronto Atendimento / UPA / Transferência Hospitalar / Ambulatório]
       - Data e Hora da Admissão: [DD/MM/AAAA] às [HH:MM]
       - Diagnóstico Sindrômico / Motivo da Internação: [ ]
       
       # SUBJETIVO (HISTÓRIA DA ADMISSÃO & ANTECEDENTES):
-      - HMA: Paciente admitido(a) nesta enfermaria proveniente de [UPA / Pronto-Socorro / Ambulatório] com quadro de [ ], iniciado há [ ] dias, caracterizado por [ ]. No serviço de origem recebeu [medidas e medicações prévias: ( )]. No momento da admissão no leito, encontra-se [estável sem queixas álgicas agudas / com queixa residual de].
-      - Negativas de Gravidade Mandatórias: Nega no momento precordialgia típica, dispneia em repouso, síncope, déficits motores focais agudos ou sangramentos francos ativos.
+      - HMA: Paciente admitido(a) nesta enfermaria proveniente de [UPA / Pronto-Socorro / Ambulatório] com quadro de [ ], iniciado há [ ] dias, caracterizado por [ ]. No serviço de origem recebeu [medidas e medicações prévias: [ ]]. No momento da admissão no leito, encontra-se [estável sem queixas álgicas agudas / com queixa residual de: [ ]].
+      - Nega no momento precordialgia típica, dispneia em repouso, síncope, déficits motores focais agudos ou sangramentos francos ativos.
       - Comorbidades Ativas: [Nega comorbidades prévias / HAS / DM tipo 2 / Dislipidemia / Insuficiência Cardíaca (FE [ ]%) / DPOC / Asma / DRC estágio [ ] / Hepatopatia crônica / Neoplasia: [ ]].
       - Cirurgias e Internações Prévias: [Nega / Sim: [ ]].
-      - Alergias Medicamentosas: [Nega alergias conhecidas / Alérgico(a) a: — pulseira de alerta acionada].
+      - Alergias Medicamentosas: [Nega alergias conhecidas / Alérgico(a) a: [ ] — pulseira de alerta acionada].
       - Hábitos de Vida: Tabagismo: [Nega / Ex-tabagista há [ ] anos / Ativo ([ ] maços-ano)] | Etilismo: [Nega / Etilista social / Etilista crônico: [ ]] | Uso de substâncias ilícitas: [Nega / Sim: [ ]].
       
       # RECONCILIAÇÃO MEDICAMENTOSA DE ADMISSÃO (USO PRÉVIO DOMICILIAR):
@@ -24,7 +24,7 @@ matches:
       3. [Medicamento 3, dose e posologia] -> Conduta na internação: [Manter em prescrição / Suspender temporariamente por [ ] / Substituir por [ ]]
       
       # OBJETIVO (EXAME FÍSICO ADMISSIONAL & DISPOSITIVOS):
-      - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob cateter nasal de O2 a L/min]) | Tax: [ ] °C | Glicemia capilar (HGT): [ ] mg/dL.
+      - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob cateter nasal de O2 a [ ] L/min]) | Tax: [ ] °C | Glicemia capilar (HGT): [ ] mg/dL.
       - Ectoscopia Geral: [Bom / Regular / Mau] estado geral, lúcido(a) e orientado(a) no tempo e espaço (Glasgow 15). Mucosas [coradas / hipocoradas ((+ / ++)/4+)], [hidratadas / desidratadas ((+ / ++)/4+)], [anictéricas / ictéricas ((+ / ++)/4+)], acianóticas. Tempo de enchimento capilar < 2 segundos.
       - Aparelho Cardiovascular: Ictus cordis normoposto no 5º EIC na linha hemiclavicular esquerda. Ritmo cardíaco [regular em 2 tempos / irregular em fibrilação atrial], bulhas [normofonéticas / hipofonéticas], [sem sopros audíveis / sopro sistólico em foco]. Pulsos periféricos amplos e simétricos. Ausência de turgência jugular patológica a 45°.
       - Aparelho Respiratório: Tórax simétrico, expansibilidade preservada. Murmúrio vesicular [universalmente audível sem ruídos adventícios / diminuído em base com estertores crepitantes / com sibilos difusos]. Ausência de tiragem intercostal ou esforço ventilatório.
@@ -44,17 +44,17 @@ matches:
       # PLANO / CONDUTA:
       
       >> PRESCRIÇÃO HOSPITALAR DE ADMISSÃO (ENFERMARIA):
-      1. Dieta: [Dieta geral / Dieta para diabetes (hipoglicídica) / Dieta hipossódica (2 g NaCl) / Dieta branda / Dieta por SNE mL/h / Jejum até segunda ordem].
+      1. Dieta: [Dieta geral / Dieta para diabetes (hipoglicídica) / Dieta hipossódica (2 g NaCl) / Dieta branda / Dieta por SNE [ ] mL/h / Jejum até segunda ordem].
       2. Hidratação Venosa / Acesso: [Acesso venoso periférico salinizado de 6/6h / SF 0,9% 500 mL a 1.000 mL EV em 24h / Sem soroterapia de manutenção].
       3. Terapêutica Específica da Causa da Internação:
          - [Antimicrobiano: Ceftriaxona 1 g EV de 12/12h (ou 2 g EV 1x/dia) — D1 previsto para [ ] dias / Outro esquema: [ ]].
-         - [Terapia dirigida adicional: Corticoterapia / Broncodilatador inalatório / Diureticoterapia EV com Furosemida mg / Insulina basal-bólus].
+         - [Terapia dirigida adicional: Corticoterapia / Broncodilatador inalatório / Diureticoterapia EV com Furosemida [ ] mg / Insulina basal-bólus].
       4. Profilaxia de Tromboembolismo Venoso (TEV):
          - [Alto risco (Pádua ≥ 4 e ClCr ≥ 30 mL/min): Enoxaparina 40 mg SC 1x/dia às 10h / Se ClCr < 30 mL/min: HNF 5.000 UI SC de 8/8h (ou Enoxaparina 20 mg SC 1x/dia) / Baixo risco (Pádua < 4): Deambulação precoce assistida / Alto risco hemorrágico: Compressão pneumática intermitente ou meias elásticas].
       5. Profilaxia de Úlcera de Estresse:
          - [Não indicada de rotina (paciente em dieta oral sem coagulopatia ou VM) / Indicada por fator de risco maior: Omeprazol 40 mg EV ou VO 1x/dia em jejum].
       6. Controle Glicêmico & Sintomáticos:
-         - Glicemia capilar (HGT) [6/6h / pré-prandial e às 22h] + Esquema de Insulina [Basal NPH UI + Regular pré-prandial conforme HGT (alvo hospitalar 140–180 mg/dL)].
+         - Glicemia capilar (HGT) [6/6h / pré-prandial e às 22h] + Esquema de Insulina [Basal NPH [ ] UI + Regular pré-prandial conforme HGT (alvo hospitalar 140–180 mg/dL)].
          - Dipirona 1 g EV/VO até de 6/6h se dor ou Tax ≥ 37,8 °C + Ondansetrona 4 mg EV de 8/8h se náuseas ou vômitos.
       7. Cuidados de Enfermagem & Monitorização:
          - Sinais vitais de 6/6h; Cabeceira elevada a 30–45°; Controle de diurese e balanço hídrico fechado a cada 24h; Prevenção de quedas e mudança de decúbito a cada 2h se restrito ao leito.
@@ -66,17 +66,17 @@ matches:
       # PLANO / CONDUTA:
       
       >> PRESCRIÇÃO HOSPITALAR DE ADMISSÃO (ENFERMARIA):
-      1. Dieta: [Dieta geral / Dieta para diabetes (hipoglicídica) / Dieta hipossódica (2 g NaCl) / Dieta branda / Dieta por SNE mL/h / Jejum até segunda ordem].
+      1. Dieta: [Dieta geral / Dieta para diabetes (hipoglicídica) / Dieta hipossódica (2 g NaCl) / Dieta branda / Dieta por SNE [ ] mL/h / Jejum até segunda ordem].
       2. Hidratação Venosa / Acesso: [Acesso venoso periférico salinizado de 6/6h / SF 0,9% 500 mL a 1.000 mL EV em 24h / Sem soroterapia de manutenção].
       3. Terapêutica Específica da Causa da Internação:
          - [Antimicrobiano: Ceftriaxona 1 g EV de 12/12h (ou 2 g EV 1x/dia) — D1 previsto para [ ] dias / Outro esquema: [ ]].
-         - [Terapia dirigida adicional: Corticoterapia / Broncodilatador inalatório / Diureticoterapia EV com Furosemida mg / Insulina basal-bólus].
+         - [Terapia dirigida adicional: Corticoterapia / Broncodilatador inalatório / Diureticoterapia EV com Furosemida [ ] mg / Insulina basal-bólus].
       4. Profilaxia de Tromboembolismo Venoso (TEV):
          - [Alto risco (Pádua ≥ 4 e ClCr ≥ 30 mL/min): Enoxaparina 40 mg SC 1x/dia às 10h / Se ClCr < 30 mL/min: HNF 5.000 UI SC de 8/8h (ou Enoxaparina 20 mg SC 1x/dia) / Baixo risco (Pádua < 4): Deambulação precoce assistida / Alto risco hemorrágico: Compressão pneumática intermitente ou meias elásticas].
       5. Profilaxia de Úlcera de Estresse:
          - [Não indicada de rotina (paciente em dieta oral sem coagulopatia ou VM) / Indicada por fator de risco maior: Omeprazol 40 mg EV ou VO 1x/dia em jejum].
       6. Controle Glicêmico & Sintomáticos:
-         - Glicemia capilar (HGT) [6/6h / pré-prandial e às 22h] + Esquema de Insulina [Basal NPH UI + Regular pré-prandial conforme HGT (alvo hospitalar 140–180 mg/dL)].
+         - Glicemia capilar (HGT) [6/6h / pré-prandial e às 22h] + Esquema de Insulina [Basal NPH [ ] UI + Regular pré-prandial conforme HGT (alvo hospitalar 140–180 mg/dL)].
          - Dipirona 1 g EV/VO até de 6/6h se dor ou Tax ≥ 37,8 °C + Ondansetrona 4 mg EV de 8/8h se náuseas ou vômitos.
       7. Cuidados de Enfermagem & Monitorização:
          - Sinais vitais de 6/6h; Cabeceira elevada a 30–45°; Controle de diurese e balanço hídrico fechado a cada 24h; Prevenção de quedas e mudança de decúbito a cada 2h se restrito ao leito.
@@ -87,7 +87,7 @@ matches:
     replace: |
       ###### EVOLUÇÃO MÉDICA DIÁRIA — CLÍNICA MÉDICA (MÉTODO SOAP) ######
       # IDENTIFICAÇÃO & MANCHETE DO LEITO:
-      - Paciente: [Nome], [Idade] anos | Leito: [ ] | [ ]º Dia de Internação Hospitalar (DIH)
+      - Paciente: [Nome], [Idade] anos[? Leito :: | Leito: [ ]] | [ ]º Dia de Internação Hospitalar (DIH)
       - Diagnóstico Principal Ativo: [ ]
       - Antimicrobiano em Curso: [Sem antibioticoterapia ativa / Em uso de [ ] — D[ ] de [ ] dias programados (início em [DD/MM])]
       - Dispositivos Atuais: [Acesso venoso periférico em [MSD / MSE] D[ ] / Cateter Venoso Central D[ ] / Sonda Vesical de Demora D[ ] / Sem dispositivos invasivos]
@@ -99,11 +99,11 @@ matches:
       - Sintomas Cardinais de Alarme: Nega dor torácica, palpitações, dispneia em repouso ou ortopneia, calafrios, tontura postural ou sangramentos.
       - Eliminações Fisiológicas:
         * Diurese: [Presente, espontânea, límpida e sem disúria / Por SVD com débito claro e satisfatório].
-        * Hábito Intestinal: [Evacuação presente nas últimas 24h, aspecto habitual (Bristol 3–4) / Ausente há dias, sem distensão ou dor abdominal].
+        * Hábito Intestinal: [Evacuação presente nas últimas 24h, aspecto habitual (Bristol 3–4) / Ausente há [ ] dias, sem distensão ou dor abdominal].
       
       # OBJETIVO (O — SINAIS VITAIS, BALANÇO, EXAME FÍSICO & LABORATÓRIO):
       - Sinais Vitais & Curvas das 24h:
-        * PA: [ ]x[ ] mmHg (Variação 24h: [ ] a [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob O2 a L/min]).
+        * PA: [ ]x[ ] mmHg (Variação 24h: [ ] a [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob O2 a [ ] L/min]).
         * Curva Térmica (24h): Tax máxima de [ ] °C ([Afebril há > 24–48h / Apresentou pico febril de [ ] °C às [HH:MM]]).
         * Balanço Hídrico (24h): Diurese total: [ ] mL ([ ] mL/kg/h) | BH fechado: [Neutro / Positivo em +[ ] mL / Negativo em -[ ] mL].
         * Curva Glicêmica Capilar (HGT 24h): Jejum: [ ] mg/dL | Pré-almoço: [ ] mg/dL | Pré-jantar: [ ] mg/dL | 22h: [ ] mg/dL.
@@ -119,14 +119,14 @@ matches:
       
       # AVALIAÇÃO (A — IMPRESSÃO CLÍNICA POR PROBLEMAS):
       1. [Problema Principal 1]: [Evoluindo com franca melhora clínica e queda de marcadores inflamatórios / Estável clinicamente, mantida conduta / Descompensação aguda exigindo ajuste terapêutico].
-      2. [Comorbidades / Equilíbrio Hidroeletrolítico]: [Função renal e eletrólitos estáveis, glicemias dentro da meta hospitalar (140–180 mg/dL) / Em correção de].
+      2. [Comorbidades / Equilíbrio Hidroeletrolítico]: [Função renal e eletrólitos estáveis, glicemias dentro da meta hospitalar (140–180 mg/dL) / Em correção de: [ ]].
       3. Auditoria de Antimicrobiano & Dispositivos: [Mantido esquema atual em D / Preenchidos critérios de Switch Therapy para via oral / Indicada retirada de SVD/AVP hoje].
       
       # PLANO / CONDUTA:
       
       >> CONDUTA & METAS DO DIA (ENFERMARIA):
       1. Dieta: Manter dieta [geral / para diabetes / hipossódica / branda] por via oral; estimular ingesta hídrica oral.
-      2. Hidratação Venosa: [Suspensa soroterapia de manutenção; manter acesso salinizado / Manter SF 0,9% mL EV em 24h].
+      2. Hidratação Venosa: [Suspensa soroterapia de manutenção; manter acesso salinizado / Manter SF 0,9% [ ] mL EV em 24h].
       3. Terapêutica Antimicrobiana & Específica:
          - [Manter [ ] em D[ ] de [ ] dias / Realizar transição (Switch Therapy) para via oral com [ ] / Suspender antibiótico por término de tratamento].
          - [Ajuste de medicações de uso contínuo / controle pressórico e glicêmico: [ ]].
@@ -141,7 +141,7 @@ matches:
       
       >> CONDUTA & METAS DO DIA (ENFERMARIA):
       1. Dieta: Manter dieta [geral / para diabetes / hipossódica / branda] por via oral; estimular ingesta hídrica oral.
-      2. Hidratação Venosa: [Suspensa soroterapia de manutenção; manter acesso salinizado / Manter SF 0,9% mL EV em 24h].
+      2. Hidratação Venosa: [Suspensa soroterapia de manutenção; manter acesso salinizado / Manter SF 0,9% [ ] mL EV em 24h].
       3. Terapêutica Antimicrobiana & Específica:
          - [Manter [ ] em D[ ] de [ ] dias / Realizar transição (Switch Therapy) para via oral com [ ] / Suspender antibiótico por término de tratamento].
          - [Ajuste de medicações de uso contínuo / controle pressórico e glicêmico: [ ]].
@@ -154,12 +154,12 @@ matches:
     replace: |
       ###### EVOLUÇÃO MÉDICA DIÁRIA — PÓS-OPERATÓRIO CIRÚRGICO (SOAP) ######
       # IDENTIFICAÇÃO & PROCEDIMENTO:
-      - Paciente: [Nome], [Idade] anos | Leito: [ ] | **[ ]º Dia Pós-Operatório (DPO)**
+      - Paciente: [Nome], [Idade] anos[? Leito :: | Leito: [ ]] | [ ]º Dia Pós-Operatório (DPO)
       - Procedimento Realizado: [ ] | Via de Acesso: [Videolaparoscópica / Convencional aberta / Ortopédica / Urológica]
       - Antimicrobiano Pós-Operatório: [Profilaxia cirúrgica suspensa em < 24h / Antibioticoterapia terapêutica com [ ] — D[ ] de [ ] dias]
       
       # SUBJETIVO (S — RECUPERAÇÃO FUNCIONAL & MARCOS PÓS-OPERATÓRIOS):
-      - Estado Geral no Período: Passou as últimas 24h [bem, sem intercorrências agudas / com queixa de].
+      - Estado Geral no Período: Passou as últimas 24h [bem, sem intercorrências agudas / com queixa de: [ ]].
       - Controle da Dor Pós-Operatória (EVA 0–10): [EVA [0–2] restrita à ferida operatória, bem controlada com analgesia regular / Dor moderada (EVA [ ]) controlada após resgate].
       - Tolerância Alimentar & Retorno do Trânsito Intestinal:
         * Dieta atual: [Líquida / Pastosa / Branda / Geral] -> [Boa aceitação plena, nega náuseas ou vômitos / Apresentou náusea isolada controlada com antiemético].
@@ -289,7 +289,7 @@ matches:
     replace: |
       ###### AUDITORIA MULTIDISCIPLINAR DE LEITO — BUNDLE FAST HUG BID ######
       # IDENTIFICAÇÃO DO LEITO:
-      - Leito: [ ] | Paciente: [Nome], [Idade] anos | [ ]º Dia de Internação Hospitalar (DIH)
+      - [? Leito :: Leito: [ ] | ]Paciente: [Nome], [Idade] anos | [ ]º Dia de Internação Hospitalar (DIH)
       - Diagnóstico Principal: [ ]
       
       # CHECAGEM SISTEMÁTICA DOS 10 DOMINIOS (FAST HUG + BID):
@@ -311,7 +311,7 @@ matches:
       - [G] GLYCEMIC CONTROL (Controle Glicêmico Hospitalar — Alvo 140 a 180 mg/dL):
         * Variação HGT 24h: Mínima de [ ] mg/dL | Máxima de [ ] mg/dL ([Sem episódios de hipoglicemia (< 70 mg/dL) / Esquema basal-bólus ajustado hoje]).
       - [B] BOWEL MOVEMENT (Função Intestinal):
-        * Última evacuação: [Hoje / Ontem / Ausente há dias] | Aspecto: [Fisiológico (Bristol 3–4) / Ressecado (Bristol 1–2) / Diarreico (Bristol 6–7)].
+        * Última evacuação: [Hoje / Ontem / Ausente há [ ] dias] | Aspecto: [Fisiológico (Bristol 3–4) / Ressecado (Bristol 1–2) / Diarreico (Bristol 6–7)].
       - [I] INDWELLING CATHETERS (Auditoria de Dispositivos Invasivos):
         * Acesso Venoso: [Periférico em [MSD / MSE] D[ ] sem sinais de flebite / CVC em [ ] D[ ] com curativo limpo / Indicada retirada hoje].
         * Sonda Vesical (SVD): [Ausente / Retirada hoje para prevenção de ITU-AC / Mantida por controle estrito de diurese horária ou obstrução urinária].
@@ -321,10 +321,10 @@ matches:
       # PLANO / CONDUTA:
       
       >> AÇÕES IMEDIATAS RESULTANTES DO BUNDLE FAST HUG BID:
-      1. Ajuste Nutricional & Hidratação: [Manter dieta atual / Progredir dieta oral / Ajustar vazão de dieta enteral para mL/h].
+      1. Ajuste Nutricional & Hidratação: [Manter dieta atual / Progredir dieta oral / Ajustar vazão de dieta enteral para [ ] mL/h].
       2. Desprescrição Segura (Stewardship): [Suspenso Omeprazol/IBP sem indicação formal / Suspensas medicações sedativas ou anticolinérgicas desnecessárias].
       3. Retirada de Dispositivos Invasivos: [Retirar Sonda Vesical de Demora hoje / Sacar acesso venoso periférico ocioso / Sacar dreno cirúrgico].
-      4. Regulação Intestinal & Glicêmica: [Prescrito laxativo osmótico (Lactulose 15 mL VO 12/12h ou PEG 4000) / Ajustada dose de Insulina NPH basal para UI].
+      4. Regulação Intestinal & Glicêmica: [Prescrito laxativo osmótico (Lactulose 15 mL VO 12/12h ou PEG 4000) / Ajustada dose de Insulina NPH basal para [ ] UI].
       5. Meta de Desospitalização: [Reabilitação motora ativa com fisioterapia; alta hospitalar prevista em (24 / 48) horas].
 
   - trigger: ";fasthug-cnd"
@@ -332,17 +332,144 @@ matches:
       # PLANO / CONDUTA:
       
       >> AÇÕES IMEDIATAS RESULTANTES DO BUNDLE FAST HUG BID:
-      1. Ajuste Nutricional & Hidratação: [Manter dieta atual / Progredir dieta oral / Ajustar vazão de dieta enteral para mL/h].
+      1. Ajuste Nutricional & Hidratação: [Manter dieta atual / Progredir dieta oral / Ajustar vazão de dieta enteral para [ ] mL/h].
       2. Desprescrição Segura (Stewardship): [Suspenso Omeprazol/IBP sem indicação formal / Suspensas medicações sedativas ou anticolinérgicas desnecessárias].
       3. Retirada de Dispositivos Invasivos: [Retirar Sonda Vesical de Demora hoje / Sacar acesso venoso periférico ocioso / Sacar dreno cirúrgico].
-      4. Regulação Intestinal & Glicêmica: [Prescrito laxativo osmótico (Lactulose 15 mL VO 12/12h ou PEG 4000) / Ajustada dose de Insulina NPH basal para UI].
+      4. Regulação Intestinal & Glicêmica: [Prescrito laxativo osmótico (Lactulose 15 mL VO 12/12h ou PEG 4000) / Ajustada dose de Insulina NPH basal para [ ] UI].
       5. Meta de Desospitalização: [Reabilitação motora ativa com fisioterapia; alta hospitalar prevista em (24 / 48) horas].
+
+  - trigger: ";04-controle-glicemico-e-insulinoterapia-hospitalar"
+    replace: |
+      EVOLUÇÃO DIÁRIA DIRECIONADA — CONTROLE GLICÊMICO HOSPITALAR (DIRETRIZ SBD / ADA)
+      PERFIL DO PACIENTE E META GLICÊMICA:
+      - Paciente: [Nome], [Idade] anos, Peso: [70] kg, TFG estimada (CKD-EPI): [ ] mL/min/1,73m².
+      - Diagnóstico Glicêmico: [DM2 prévio em uso domiciliar de antidiabéticos orais / DM2 insulinodependente prévio / Hiperglicemia de estresse hospitalar / Hiperglicemia induzida por Corticoide (Prednisona/Dexametasona/Metilprednisolona)].
+      - Via de Alimentação Atual: [Dieta oral regular para diabetes (3 refeições) / Dieta enteral contínua ou intermitente por SNE / Em jejum ou dieta zero para procedimento].
+      - Mapa Glicêmico das Últimas 24 Horas (HGT):
+        * Jejum (06h): [ ] mg/dL | Pré-Almoço (11h): [ ] mg/dL | Pré-Jantar (17h): [ ] mg/dL | 22h: [ ] mg/dL.
+        * Episódios de Hipoglicemia (< 70 mg/dL): [Ausentes nas últimas 24h / Presente às [ ]h com HGT de [ ] mg/dL — exige redução de 20% da dose total de insulina hoje!].
+        * Meta Glicêmica Hospitalar: **140 a 180 mg/dL** (aceitável 100 a 180 mg/dL em enfermaria clínica/cirúrgica estável).
+      
+      # PLANO / CONDUTA
+      1. Suspensão de Antidiabéticos Orais na Internação: Suspender Metformina (risco de acidose lática na sepse, hipóxia, IRA ou uso de contraste iodado), Sulfoniureias (alto risco de hipoglicemia prolongada) e Inibidores de SGLT2 (risco de cetoacidose euglicêmica no perioperatório/sepse).
+      2. Cálculo da Dose Diária Total (DDT) de Insulina Subcutânea (Proibido manter apenas "Sliding Scale" / insulina de correção isolada se HGT persistente > 180 mg/dL!):
+         - 0,2 a 0,3 UI/kg/dia: Idosos (> 70 anos), TFG < 45 mL/min ou baixo peso / virgens de insulina.
+         - 0,4 UI/kg/dia: Pacientes clínicos/cirúrgicos padrão com glicemia entre 140 e 200 mg/dL.
+         - 0,5 UI/kg/dia: Pacientes obesos, resistentes à insulina, em uso de corticoide ou glicemia > 200 mg/dL.
+      3. Distribuição do Esquema Basal-Bolus (se Dieta Oral Presente — 50% Basal + 50% Prandial + Correção):
+         - Componente BASAL (50% da DDT):
+           * Insulina NPH SC: 2/3 da dose basal às 06h (ou 1/2 às 06h e 1/2 às 22h — ou dividir em 3 tomadas 06h/11h/22h); OU Insulina Glargina SC: dose basal total 1x/dia às 22h.
+         - Componente PRANDIAL / BOLUS (50% da DDT dividida em 3 partes iguais — 1/3 antes do café, 1/3 antes do almoço e 1/3 antes do jantar):
+           * Insulina Regular SC (aplicar 30 min antes da refeição) ou Lispro/Asparte/Glulisina SC (aplicar imediatamente antes da refeição). Se o paciente estiver em JEJUM, suspender a dose prandial fixa e manter a dose basal reduzida em 20–25%!
+         - Escala de CORREÇÃO Suplementar (Insulina Regular ou Rápida SC pré-prandial conforme sensibilidade):
+           * HGT 141 a 180 mg/dL: +[2] UI (Padrão) | +[1] UI (Sensível/Idoso/IRC) | +[4] UI (Resistente/Corticoide)
+           * HGT 181 a 220 mg/dL: +[4] UI (Padrão) | +[2] UI (Sensível) | +[6] UI (Resistente)
+           * HGT 221 a 260 mg/dL: +[6] UI (Padrão) | +[3] UI (Sensível) | +[8] UI (Resistente)
+           * HGT 261 a 300 mg/dL: +[8] UI (Padrão) | +[4] UI (Sensível) | +[10] UI (Resistente)
+           * HGT > 300 mg/dL: +[10] UI (Padrão) e avisar plantonista para checar cetonemia/hidratação.
+      4. Protocolo de Hipoglicemia Hospitalar (Prescrever SEMPRE junto com qualquer insulina!):
+         - Se HGT < 70 mg/dL e paciente consciente c/ via oral: Oferecer 15 g de carboidrato rápido (150 mL de suco de laranja/refrigerante comum ou 1 colher de sopa de açúcar em água) e repetir HGT em 15 minutos.
+         - Se HGT < 70 mg/dL e paciente sonolento, em jejum ou inconsciente: Administrar **30 a 40 mL de Glicose a 50% IV em bolus** (3 a 4 ampolas de 10 mL) + instalar SG 5% ou 10% contínuo e repetir HGT em 15 minutos.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO SUBCUTÂNEO E ORAL (TRANSIÇÃO DO CONTROLE GLICÊMICO NA ALTA HOSPITALAR — CONFORME HbA1c):
+      
+      1. Cloridrato de Metformina 850 mg (ou XR 500 mg) comprimidos (se TFG ≥ 30–45 mL/min e sem contraindicação) — Uso contínuo
+         - Tomar 1 comprimido por via oral logo após o almoço e 1 comprimido logo após o jantar.
+      
+      2. Insulina Humana NPH 100 UI/mL (frasco ou caneta descartável — se HbA1c > 9–10% ou necessidade de insulina basal na alta) — Uso contínuo
+         - Aplicar [10 a 16] UI por via subcutânea na região abdominal ou face anterolateral da coxa às 22h (ou 2/3 pela manhã e 1/3 às 22h conforme ajuste da internação).
+      
+      3. Orientações de Automonitorização e Segurança contra Hipoglicemia:
+         - Caso apresente suor frio, tremores, coração acelerado, fome súbita ou tontura (glicemia < 70 mg/dL), ingerir imediatamente 1 copo (150 mL) de suco adoçado ou 1 colher de sopa de açúcar diluída em água, aguardar 15 minutos e fazer um lanche com pão ou biscoito.
+
+  - trigger: ";04-controle-glicemico-e-insulinoterapia-hospitalar-cnd"
+    replace: |
+      # PLANO / CONDUTA
+      1. Suspensão de Antidiabéticos Orais na Internação: Suspender Metformina (risco de acidose lática na sepse, hipóxia, IRA ou uso de contraste iodado), Sulfoniureias (alto risco de hipoglicemia prolongada) e Inibidores de SGLT2 (risco de cetoacidose euglicêmica no perioperatório/sepse).
+      2. Cálculo da Dose Diária Total (DDT) de Insulina Subcutânea (Proibido manter apenas "Sliding Scale" / insulina de correção isolada se HGT persistente > 180 mg/dL!):
+         - 0,2 a 0,3 UI/kg/dia: Idosos (> 70 anos), TFG < 45 mL/min ou baixo peso / virgens de insulina.
+         - 0,4 UI/kg/dia: Pacientes clínicos/cirúrgicos padrão com glicemia entre 140 e 200 mg/dL.
+         - 0,5 UI/kg/dia: Pacientes obesos, resistentes à insulina, em uso de corticoide ou glicemia > 200 mg/dL.
+      3. Distribuição do Esquema Basal-Bolus (se Dieta Oral Presente — 50% Basal + 50% Prandial + Correção):
+         - Componente BASAL (50% da DDT):
+           * Insulina NPH SC: 2/3 da dose basal às 06h (ou 1/2 às 06h e 1/2 às 22h — ou dividir em 3 tomadas 06h/11h/22h); OU Insulina Glargina SC: dose basal total 1x/dia às 22h.
+         - Componente PRANDIAL / BOLUS (50% da DDT dividida em 3 partes iguais — 1/3 antes do café, 1/3 antes do almoço e 1/3 antes do jantar):
+           * Insulina Regular SC (aplicar 30 min antes da refeição) ou Lispro/Asparte/Glulisina SC (aplicar imediatamente antes da refeição). Se o paciente estiver em JEJUM, suspender a dose prandial fixa e manter a dose basal reduzida em 20–25%!
+         - Escala de CORREÇÃO Suplementar (Insulina Regular ou Rápida SC pré-prandial conforme sensibilidade):
+           * HGT 141 a 180 mg/dL: +[2] UI (Padrão) | +[1] UI (Sensível/Idoso/IRC) | +[4] UI (Resistente/Corticoide)
+           * HGT 181 a 220 mg/dL: +[4] UI (Padrão) | +[2] UI (Sensível) | +[6] UI (Resistente)
+           * HGT 221 a 260 mg/dL: +[6] UI (Padrão) | +[3] UI (Sensível) | +[8] UI (Resistente)
+           * HGT 261 a 300 mg/dL: +[8] UI (Padrão) | +[4] UI (Sensível) | +[10] UI (Resistente)
+           * HGT > 300 mg/dL: +[10] UI (Padrão) e avisar plantonista para checar cetonemia/hidratação.
+      4. Protocolo de Hipoglicemia Hospitalar (Prescrever SEMPRE junto com qualquer insulina!):
+         - Se HGT < 70 mg/dL e paciente consciente c/ via oral: Oferecer 15 g de carboidrato rápido (150 mL de suco de laranja/refrigerante comum ou 1 colher de sopa de açúcar em água) e repetir HGT em 15 minutos.
+         - Se HGT < 70 mg/dL e paciente sonolento, em jejum ou inconsciente: Administrar **30 a 40 mL de Glicose a 50% IV em bolus** (3 a 4 ampolas de 10 mL) + instalar SG 5% ou 10% contínuo e repetir HGT em 15 minutos.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO SUBCUTÂNEO E ORAL (TRANSIÇÃO DO CONTROLE GLICÊMICO NA ALTA HOSPITALAR — CONFORME HbA1c):
+      
+      1. Cloridrato de Metformina 850 mg (ou XR 500 mg) comprimidos (se TFG ≥ 30–45 mL/min e sem contraindicação) — Uso contínuo
+         - Tomar 1 comprimido por via oral logo após o almoço e 1 comprimido logo após o jantar.
+      
+      2. Insulina Humana NPH 100 UI/mL (frasco ou caneta descartável — se HbA1c > 9–10% ou necessidade de insulina basal na alta) — Uso contínuo
+         - Aplicar [10 a 16] UI por via subcutânea na região abdominal ou face anterolateral da coxa às 22h (ou 2/3 pela manhã e 1/3 às 22h conforme ajuste da internação).
+      
+      3. Orientações de Automonitorização e Segurança contra Hipoglicemia:
+         - Caso apresente suor frio, tremores, coração acelerado, fome súbita ou tontura (glicemia < 70 mg/dL), ingerir imediatamente 1 copo (150 mL) de suco adoçado ou 1 colher de sopa de açúcar diluída em água, aguardar 15 minutos e fazer um lanche com pão ou biscoito.
+
+  - trigger: ";01-delirium-hospitalar-e-agitacao-no-idoso"
+    replace: |
+      AVALIAÇÃO DE INTERCORRÊNCIA EM ENFERMARIA — DELIRIUM HOSPITALAR (MÉTODO CAM)
+      IDENTIFICAÇÃO E STATUS COGNITIVO BASAL:
+      - Paciente: [Nome], [Idade] anos, Leito [ ], no [ ]º DIH por [motivo da internação].
+      - Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular leve/moderada / Doença de Parkinson ou Demência por Corpos de Lewy].
+      
+      DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2 + [3 OU 4]):
+      1. Início Agudo e Curso Flutuante (mudança súbita em horas/dias que piora à noite — *sundowning*): [Presente].
+      2. Inatenção (incapaz de dizer os dias da semana de trás para frente ou soletrar MUNDO ao contrário): [Presente].
+      3. Pensamento Desorganizado (discurso incoerente, ilógico ou fluxo imprevisível de ideias): [Presente / Ausente].
+      4. Alteração do Nível de Consciência (RASS diferente de 0): [Delirium Hiperativo (RASS +1 a +4: agitado, tentando arrancar acessos/sondas) / Delirium Hipoativo (RASS -1 a -3: sonolento, apático, letárgico — mais comum e de pior prognóstico!) / Delirium Misto].
+      
+      RASTREIO SISTEMÁTICO DA CAUSA BASE (MNEMÔNICO DELIRIUM):
+      - [D] Drugs (Conciliação medicamentosa): Uso recente de [Benzodiazepínicos (Diazepam/Clonazepam) / Anti-histamínicos 1ª geração (Prometazina/Dexclorfeniramina) / Anticolinérgicos (Escopolamina, Amitriptilina, Ciclobenzaprina) / Opioides / Corticoides].
+      - [E] Electrolyte & Metabolic: Na+: [ ] mEq/L, Ca2+: [ ], Ureia/Creatinina: [ ], Glicemia Capilar: [ ] mg/dL, Função Hepática/Tireoidiana.
+      - [L] Lack of Drugs (Abstinência): [Abstinência alcoólica ou suspensão abrupta de benzodiazepínico crônico] | Lack of Sleep / Dor não tratada.
+      - [I] Infection (Sepse oculta): [ITU / Pneumonia aspirativa / Celulite ou infecção de cateter].
+      - [R] Reduced Sensory Input: Paciente sem seus [óculos / aparelho auditivo], restrito ao leito sem luz natural.
+      - [I] Intracranial: Exame neurológico [sem sinais focais ou meningismo — afasta AVC ou hematoma subdural pós-queda].
+      - [U] Urinary Retention & Fecal Impaction (Bexigoma e Fecaloma — palpar hipogástrio e checar evacuação!): [Globo vesical palpável / Fecaloma há > 3 dias / Diurese e hábito intestinal preservados].
+      - [M] Myocardial & Pulmonary (Hipóxia / Hipercapnia / IAM silencioso): SpO2: [ ]%, ECG: [sem isquemia aguda].
+      
+      # PLANO / CONDUTA
+      1. Tratamento Imediato do Fator Precipitante: Tratar a infecção subjacente, corrigir distúrbio hidroeletrolítico (hiponatremia/desidratação), aliviar retenção urinária aguda ou fecaloma, controlar a dor e suspender imediatamente medicações delirogênicas (benzodiazepínicos, anticolinérgicos, anti-histamínicos sedativos).
+      2. Pacote Multicomponente Não Farmacológico (1ª Linha para TODOS os pacientes — especialmente no Delirium Hipoativo, onde antipsicóticos não têm benefício!):
+         - Reorientação cognitiva frequente (calendário, relógio visível, iluminação natural diurna e ambiente escuro/silencioso à noite para restaurar o ciclo sono-vigília).
+         - Devolver imediatamente óculos, aparelho auditivo e prótese dentária; liberar presença de familiar acompanhante 24h ao lado do leito.
+         - Mobilização precoce fora do leito e retirada de contenções físicas, sondas vesicais e acessos venosos desnecessários.
+      3. Manejo Farmacológico de Resgate (Restrito EXCLUSIVAMENTE ao Delirium Hiperativo Grave com risco iminente de auto/heteroagressão ou avulsão de dispositivos vitais):
+         - 1ª Escolha (Idoso sem Parkinson/Demência de Lewy e com QTc < 470 ms): Haloperidol em microdose: **0,5 mg a 1 mg VO, IM ou IV lento**, podendo repetir em 30–60 min se necessário (evitar doses > 3 mg/dia no idoso frágil!).
+         - Opções Atípicas Orais: Risperidona 0,5 mg VO à noite ou Quetiapina 12,5 a 25 mg VO (a **Quetiapina é a única opção segura em pacientes com Doença de Parkinson ou Demência por Corpos de Lewy**, nos quais o Haloperidol é estritamente contraindicado!).
+         - PROIBIDO usar Benzodiazepínicos (Diazepam, Midazolam, Clonazepam) no Delirium do idoso (pioram e prolongam o delirium, exceto se a causa for Abstinência Alcoólica / Delirium Tremens ou abstinência de BZD!).
+
+  - trigger: ";01-delirium-hospitalar-e-agitacao-no-idoso-cnd"
+    replace: |
+      # PLANO / CONDUTA
+      1. Tratamento Imediato do Fator Precipitante: Tratar a infecção subjacente, corrigir distúrbio hidroeletrolítico (hiponatremia/desidratação), aliviar retenção urinária aguda ou fecaloma, controlar a dor e suspender imediatamente medicações delirogênicas (benzodiazepínicos, anticolinérgicos, anti-histamínicos sedativos).
+      2. Pacote Multicomponente Não Farmacológico (1ª Linha para TODOS os pacientes — especialmente no Delirium Hipoativo, onde antipsicóticos não têm benefício!):
+         - Reorientação cognitiva frequente (calendário, relógio visível, iluminação natural diurna e ambiente escuro/silencioso à noite para restaurar o ciclo sono-vigília).
+         - Devolver imediatamente óculos, aparelho auditivo e prótese dentária; liberar presença de familiar acompanhante 24h ao lado do leito.
+         - Mobilização precoce fora do leito e retirada de contenções físicas, sondas vesicais e acessos venosos desnecessários.
+      3. Manejo Farmacológico de Resgate (Restrito EXCLUSIVAMENTE ao Delirium Hiperativo Grave com risco iminente de auto/heteroagressão ou avulsão de dispositivos vitais):
+         - 1ª Escolha (Idoso sem Parkinson/Demência de Lewy e com QTc < 470 ms): Haloperidol em microdose: **0,5 mg a 1 mg VO, IM ou IV lento**, podendo repetir em 30–60 min se necessário (evitar doses > 3 mg/dia no idoso frágil!).
+         - Opções Atípicas Orais: Risperidona 0,5 mg VO à noite ou Quetiapina 12,5 a 25 mg VO (a **Quetiapina é a única opção segura em pacientes com Doença de Parkinson ou Demência por Corpos de Lewy**, nos quais o Haloperidol é estritamente contraindicado!).
+         - PROIBIDO usar Benzodiazepínicos (Diazepam, Midazolam, Clonazepam) no Delirium do idoso (pioram e prolongam o delirium, exceto se a causa for Abstinência Alcoólica / Delirium Tremens ou abstinência de BZD!).
 
   - trigger: ";sbar-round"
     replace: |
       ###### PASSAGEM DE PLANTÃO & ROUND MULTIDISCIPLINAR (PROTOCOLO SBAR) ######
       # 1. [S] SITUATION (MANCHETE EXECUTIVA DO LEITO):
-      - Leito: [ ] | Paciente: [Nome], [Idade] anos | Equipe: [Clínica Médica / Cirurgia Geral / Terapia Intensiva]
+      - [? Leito :: Leito: [ ] | ]Paciente: [Nome], [Idade] anos | Equipe: [Clínica Médica / Cirurgia Geral / Terapia Intensiva]
       - Tempo de Internação: [ ]º DIH ([Não cirúrgico / [ ]º DPO de [ ]])
       - Diagnóstico Principal Ativo: [ ]
       - Antimicrobiano em Curso: [Sem antibiótico / Em uso de [ ] — D[ ] de [ ] dias (início em [DD/MM])]
@@ -356,7 +483,7 @@ matches:
       
       # 3. [A] ASSESSMENT (AVALIAÇÃO DAS ÚLTIMAS 24H, EXAME & LABORATÓRIO):
       - Evolução nas Últimas 24h: [Estável, sem intercorrências no plantão / Apresentou pico febril de [ ] °C / Apresentou dessaturação para [ ]% / Episódio de hipotensão ou dor aguda].
-      - Sinais Vitais Atuais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob O2 a L/min]) | Tax máx 24h: [ ] °C.
+      - Sinais Vitais Atuais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob O2 a [ ] L/min]) | Tax máx 24h: [ ] °C.
       - Balanço Hídrico & Diurese (24h): Diurese: [ ] mL ([ ] mL/kg/h) | BH 24h: [Neutro / Positivo em +[ ] mL / Negativo em -[ ] mL].
       - Achados Físicos Positivos do Dia: [Lúcido(a), eupneico(a), abdome flácido e indolor, extremidades bem perfundidas / Alteração relevante: [ ]].
       - Dispositivos Ativos: [Acesso periférico em [MSD / MSE] D[ ] / CVC em [ ] D[ ] / SVD / SNE / Dreno [ ] com débito de [ ] mL/24h].
@@ -373,7 +500,7 @@ matches:
          - Dispositivos: [Retirar SVD hoje / Sacar acesso venoso / Sacar dreno cirúrgico / Manter dispositivos].
       2. Pendências Objetivas para o Plantonista (Formato "Se X → Fazer Y"):
          - Pendência 1 (Laboratório): Checar resultado de [Eletrólitos / Hb / Função renal / Cultura] às [HH:MM] -> [Se K < 3,5 mEq/L, repor KCl; se Hb < 7,0 g/dL, transfundir 1 CH; se normal, manter conduta].
-         - Pendência 2 (Imagem / Parecer): Cobrar realização/laudo de [TC / USG / Parecer da] -> [Conduta conforme achado: ( )].
+         - Pendência 2 (Imagem / Parecer): Cobrar realização/laudo de [TC / USG / Parecer da [ ]] -> [Conduta conforme achado: [ ]].
          - Pendência 3 (Vigilância Clínica): Reavaliar [padrão respiratório / pressão arterial / diurese] às [HH:MM].
       3. Previsão de Alta Hospitalar: [Programada alta para (hoje / amanhã / em 48h) após conclusão de metas].
 
@@ -388,7 +515,7 @@ matches:
          - Dispositivos: [Retirar SVD hoje / Sacar acesso venoso / Sacar dreno cirúrgico / Manter dispositivos].
       2. Pendências Objetivas para o Plantonista (Formato "Se X → Fazer Y"):
          - Pendência 1 (Laboratório): Checar resultado de [Eletrólitos / Hb / Função renal / Cultura] às [HH:MM] -> [Se K < 3,5 mEq/L, repor KCl; se Hb < 7,0 g/dL, transfundir 1 CH; se normal, manter conduta].
-         - Pendência 2 (Imagem / Parecer): Cobrar realização/laudo de [TC / USG / Parecer da] -> [Conduta conforme achado: ( )].
+         - Pendência 2 (Imagem / Parecer): Cobrar realização/laudo de [TC / USG / Parecer da [ ]] -> [Conduta conforme achado: [ ]].
          - Pendência 3 (Vigilância Clínica): Reavaliar [padrão respiratório / pressão arterial / diurese] às [HH:MM].
       3. Previsão de Alta Hospitalar: [Programada alta para (hoje / amanhã / em 48h) após conclusão de metas].
 
@@ -396,9 +523,9 @@ matches:
     replace: |
       ###### SUMÁRIO DE ALTA HOSPITALAR & CONTRARREFERÊNCIA — CLÍNICA MÉDICA ######
       # IDENTIFICAÇÃO & PERÍODO DE INTERNAÇÃO:
-      - Paciente: [Nome], [Idade] anos | Sexo: [Masculino / Feminino] | Prontuário/CNS: [ ]
+      - Paciente: [Nome], [Idade] anos | Sexo: [Masculino / Feminino][? Prontuário :: | Prontuário/CNS: [ ]]
       - Data de Admissão: [DD/MM/AAAA] | Data da Alta Hospitalar: [DD/MM/AAAA] | Permanência Total: [ ] dias
-      - Setor / Leito de Origem: Enfermaria de Clínica Médica — Leito [ ]
+      - Setor / Leito de Origem: Enfermaria de Clínica Médica[? Leito :: — Leito [ ]]
       
       # DIAGNÓSTICOS DEFINITIVOS DE ALTA:
       1. Diagnóstico Principal (Causa da Internação): [ ] (CID-10: [ ]).
@@ -538,7 +665,7 @@ matches:
       # IDENTIFICAÇÃO & CRONOLOGIA DO ÓBITO:
       - Paciente: [Nome completo], [Idade] anos | Sexo: [Masculino / Feminino] | DN: [DD/MM/AAAA]
       - Prontuário / Registro: [ ] | Setor / Leito: [ ]
-      - Data e Horário Exato da Constatação do Óbito: **[DD/MM/AAAA] às [HH:MM]**
+      - Data e Horário Exato da Constatação do Óbito: [DD/MM/AAAA] às [HH:MM]
       
       # OBJETIVO (EXAME FÍSICO CONFIRMATÓRIO DE MORTE CLÍNICA):
       Chamado(a) ao leito às [HH:MM] pela equipe de enfermagem por parada cardiorrespiratória / ausência de sinais vitais. Ao exame físico dirigido à beira do leito, constato:
@@ -558,10 +685,10 @@ matches:
       
       >> CADEIA CAUSAL REGISTRADA NA DECLARAÇÃO DE ÓBITO (CAMPO 40 — PARTE I E II):
       - PARTE I (Cadeia Causal Direta — da causa terminal na linha A até a causa básica na última linha):
-        * Linha a (Causa Imediata / Terminal): [ex: Choque séptico refratário / Insuficiência respiratória aguda hipoxêmica / Tamponamento cardíaco] — Tempo aproximado: [ horas / dias].
+        * Linha a (Causa Imediata / Terminal): [ex: Choque séptico refratário / Insuficiência respiratória aguda hipoxêmica / Tamponamento cardíaco] — Tempo aproximado: [ ] [horas / dias].
         * Linha b (Devido a / Causa Intermediária): [ex: Pneumonia bacteriana nosocomial / Tromboembolismo pulmonar maciço / Infarto agudo do miocárdio] — Tempo aproximado: [ dias].
         * Linha c (Devido a / Causa Intermediária): [Não se aplica / Causa: [ ]] — Tempo aproximado: [ ].
-        * Linha d (Causa Básica Fundamental — doença que iniciou a cadeia): [ex: Doença Pulmonar Obstrutiva Crônica grave / Neoplasia maligna de cólon metastática / Aterosclerose coronariana hipertensiva] — Tempo aproximado: [ meses / anos].
+        * Linha d (Causa Básica Fundamental — doença que iniciou a cadeia): [ex: Doença Pulmonar Obstrutiva Crônica grave / Neoplasia maligna de cólon metastática / Aterosclerose coronariana hipertensiva] — Tempo aproximado: [ ] [meses / anos].
       - PARTE II (Outras condições mórbidas preexistentes que contribuíram, mas não entraram na cadeia direta):
         * [ex: Diabetes Mellitus tipo 2, Doença Renal Crônica estágio 4, Fibrilação Atrial crônica].
       
@@ -577,10 +704,10 @@ matches:
       
       >> CADEIA CAUSAL REGISTRADA NA DECLARAÇÃO DE ÓBITO (CAMPO 40 — PARTE I E II):
       - PARTE I (Cadeia Causal Direta — da causa terminal na linha A até a causa básica na última linha):
-        * Linha a (Causa Imediata / Terminal): [ex: Choque séptico refratário / Insuficiência respiratória aguda hipoxêmica / Tamponamento cardíaco] — Tempo aproximado: [ horas / dias].
+        * Linha a (Causa Imediata / Terminal): [ex: Choque séptico refratário / Insuficiência respiratória aguda hipoxêmica / Tamponamento cardíaco] — Tempo aproximado: [ ] [horas / dias].
         * Linha b (Devido a / Causa Intermediária): [ex: Pneumonia bacteriana nosocomial / Tromboembolismo pulmonar maciço / Infarto agudo do miocárdio] — Tempo aproximado: [ dias].
         * Linha c (Devido a / Causa Intermediária): [Não se aplica / Causa: [ ]] — Tempo aproximado: [ ].
-        * Linha d (Causa Básica Fundamental — doença que iniciou a cadeia): [ex: Doença Pulmonar Obstrutiva Crônica grave / Neoplasia maligna de cólon metastática / Aterosclerose coronariana hipertensiva] — Tempo aproximado: [ meses / anos].
+        * Linha d (Causa Básica Fundamental — doença que iniciou a cadeia): [ex: Doença Pulmonar Obstrutiva Crônica grave / Neoplasia maligna de cólon metastática / Aterosclerose coronariana hipertensiva] — Tempo aproximado: [ ] [meses / anos].
       - PARTE II (Outras condições mórbidas preexistentes que contribuíram, mas não entraram na cadeia direta):
         * [ex: Diabetes Mellitus tipo 2, Doença Renal Crônica estágio 4, Fibrilação Atrial crônica].
       

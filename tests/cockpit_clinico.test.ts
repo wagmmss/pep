@@ -659,6 +659,86 @@ test('Fase 3 (P2): scripts/build_snippets.py uses portable BASE_PROJECT and safe
   assert.ok(pyContent.includes('// --- Estado Global ---'), 'Must anchor allData regex to // --- Estado Global ---');
 });
 
+test('Puerpério Evolução Diária (go-1): Header fields, optional [? ...] toggles, Subjetivo/Avaliação/Planejamento Reprodutivo updates', async () => {
+  const enginePersonalizar = await import('../src/engine/personalizar.ts');
+  const { sandbox, runExpr } = extractScriptAndRun();
+  const allData = Array.from<any>(runExpr('allData'));
+  const go1 = allData[0];
+
+  assert.equal(go1.id, 'go-1');
+  assert.ok(go1.pep_body.includes('ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]].'), 'Header must have ID with optional Leito toggle');
+  assert.ok(go1.pep_body.includes('TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: | TS RN: [ ] (Coombs Direto: [Negativo / Positivo])].'), 'Header must have TS Materna with optional TS RN toggle');
+  assert.ok(go1.pep_body.includes('Comorbidades: [Hígida / [ ]].'), 'Header must have Comorbidades with Hígida and free-text fallback');
+  assert.ok(go1.pep_body.includes('Alergias: [Nega / [ ]].'), 'Header must have Alergias with Nega and free-text fallback');
+  assert.ok(go1.pep_body.includes('Sorologias: [Não reagentes (HIV, VDRL, HBsAg, Toxo) / [ ]].'), 'Header must include Sorologias');
+  assert.equal(go1.pep_body.includes('Controles & Exames'), false, 'Subjetivo/Objetivo must omit Controles & Exames');
+  assert.equal(go1.pep_body.includes('Negativas Mandatórias de Alarme:'), false, 'Subjetivo must omit Negativas Mandatórias de Alarme label');
+  assert.ok(go1.pep_body.includes('- Nega cefaleia occipital/frontal, escotomas'), 'Subjetivo must keep alarm negatives sentence');
+  assert.equal(go1.pep_body.includes('Apta para alta hospitalar'), false, 'Avaliação Diagnóstica must replace Apta para alta hospitalar');
+  assert.ok(go1.pep_body.includes('Condições de alta hospitalar'), 'Avaliação Diagnóstica must include Condições de alta hospitalar');
+  assert.ok(go1.pep_body.includes('Encaminhada à UBS para inserção de Implanon'), 'Planejamento Reprodutivo must include UBS Implanon option');
+  assert.ok(go1.pep_body.includes('Encaminhada à UBS para inserção de DIU'), 'Planejamento Reprodutivo must include UBS DIU option');
+  assert.ok(go1.pep_body.includes('Medroxiprogesterona 150 mg IM trimestral'), 'Planejamento Reprodutivo must include other contraceptive methods');
+  assert.ok(go1.pep_body.includes('Laqueadura tubária realizada'), 'Planejamento Reprodutivo must include Laqueadura tubária');
+
+  // Verify [? ...] optional blocks are stripped by default in sanitizePepOutput and ignored in detectPendingGaps
+  for (const fnSanitize of [enginePersonalizar.sanitizePepOutput, sandbox.window.sanitizePepOutput]) {
+    const cleaned = fnSanitize(go1.pep_body);
+    assert.ok(cleaned.includes('ID: [Nome], [Idade] anos.'), 'Optional Leito must be omitted by default when sanitized');
+    assert.equal(cleaned.includes('[? Leito'), false, 'Raw optional marker must never leak into sanitized output');
+    assert.equal(cleaned.includes('TS RN:'), false, 'Optional TS RN must be omitted by default when sanitized');
+    assert.equal(cleaned.includes('Coombs Direto:'), false, 'Optional Coombs Direto inside TS RN must be omitted by default');
+  }
+
+  for (const fnGaps of [enginePersonalizar.detectPendingGaps, sandbox.window.detectPendingGaps]) {
+    const gapsOnlyOptional = fnGaps('ID: Maria, 28 anos[? Leito :: , Leito [ ]].\nTS Materna: O+[? TS RN :: | TS RN: [ ] (Coombs Direto: [Negativo / Positivo])].');
+    assert.equal(gapsOnlyOptional.total, 0, 'Hidden optional [? ...] brackets must not count as pending gaps');
+  }
+
+  const tsChoicesEngine = enginePersonalizar.splitTopLevelChoices('? TS RN :: | TS RN: [ ] (Coombs Direto: [Negativo / Positivo])');
+  assert.equal(tsChoicesEngine.length, 1, 'Optional [? ...] wrapper must not split on inner | character in engine');
+  const tsChoicesDom = Array.from<string>(runExpr("splitTopLevelChoices('? TS RN :: | TS RN: [ ] (Coombs Direto: [Negativo / Positivo])')"));
+  assert.equal(tsChoicesDom.length, 1, 'Optional [? ...] wrapper must not split on inner | character in index.html');
+});
+
+test('Padronização Global de Prontuário: zero rótulos "Negativas Mandatórias", fallback [ ] em Alergias/Comorbidades, Round de Puerpério e opcionais em Enfermaria/Pré-Natal', () => {
+  const { runExpr } = extractScriptAndRun();
+  const allData = Array.from<any>(runExpr('allData'));
+  const pepItems = allData.filter((d: any) => d.mod_id !== 'hab');
+
+  for (const item of pepItems) {
+    assert.equal(
+      /Negativas(?:\s+de\s+Gravidade)?\s+Mandatórias/i.test(item.pep_body),
+      false,
+      `Protocol ${item.id} must not expose artificial "Negativas Mandatórias" label`
+    );
+
+    const lines = String(item.pep_body).split('\n');
+    for (const line of lines) {
+      if (/^-\s*Alergias(?:\s+Medicamentosas|\s+&\s+Comorbidades)?:/i.test(line)) {
+        assert.ok(line.includes('[ ]'), `Alergias line in ${item.id} must include free-text [ ] fallback: ${line}`);
+      }
+      if (/^-\s*Comorbidades(?:\s*\/\s*Fatores de Risco|\s+Ativas|\s*,\s*(?:HF|Drogas)\s*&\s*Alergias)?:/i.test(line)) {
+        assert.ok(line.includes('[ ]'), `Comorbidades line in ${item.id} must include free-text [ ] fallback: ${line}`);
+      }
+    }
+  }
+
+  const go2 = pepItems.find((d: any) => d.id === 'go-2');
+  assert.ok(go2.pep_body.includes('[? Leito :: Leito [ ], ]'), 'go-2 must have optional Leito');
+  assert.ok(go2.pep_body.includes('[? TS RN ::'), 'go-2 must have optional TS RN');
+  assert.ok(go2.pep_body.includes('Encaminhada à UBS para inserção de Implanon'), 'go-2 must include UBS Implanon');
+  assert.ok(go2.pep_body.includes('Condições de alta hospitalar'), 'go-2 must use Condições de alta hospitalar');
+
+  const go3 = pepItems.find((d: any) => d.id === 'go-3');
+  assert.ok(go3.pep_body.includes('[? Profissão :: , Profissão: [ ]]'), 'go-3 must have optional Profissão');
+
+  for (const enfId of ['enf-58', 'enf-59', 'enf-60', 'enf-61', 'enf-62', 'enf-63']) {
+    const enfItem = pepItems.find((d: any) => d.id === enfId);
+    assert.ok(enfItem.pep_body.includes('[? Leito ::'), `${enfId} must make Leito optional inline`);
+  }
+});
+
 
 
 

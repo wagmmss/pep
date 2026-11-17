@@ -12,13 +12,12 @@
 # SUBJETIVO:
 - Queixa Principal: Diarreia, vômitos e dor de barriga em cólica há [ ] dias.
 - HMA: Refere início há cerca de [ ] dias de evacuações líquidas frequentes (cerca de [ ] episódios/dia), fezes de aspecto [líquido amarelado sem restos de sangue / com restos alimentares / sanguinolento], associadas a episódios de vômitos ([ ] episódios), cólicas abdominais difusas e febre não aferida. Relata história epidemiológica de consumo de alimento suspeito ou familiares com quadro similar.
-- NEGATIVAS MANDATÓRIAS DE GRAVIDADE:
-  * Nega disenteria grave (fezes com sangue vivo abundante, muco e pus com tenesmo retal intenso).
-  * Nega dor abdominal contínua localizada em fossa ilíaca direita ou hipocôndrio direito.
-  * Nega vômitos incoercíveis com intolerância absoluta a qualquer líquido.
-  * Nega anúria ou oligúria severa (diurese ausente há mais de 12 horas).
-  * Nega síncope, hipotensão postural severa ou confusão mental.
-- Alergias: [Nega / Alérgico a Dipirona / Alérgico a Metoclopramida/Plasil].
+- Nega disenteria grave (fezes com sangue vivo abundante, muco e pus com tenesmo retal intenso).
+- Nega dor abdominal contínua localizada em fossa ilíaca direita ou hipocôndrio direito.
+- Nega vômitos incoercíveis com intolerância absoluta a qualquer líquido.
+- Nega anúria ou oligúria severa (diurese ausente há mais de 12 horas).
+- Nega síncope, hipotensão postural severa ou confusão mental.
+- Alergias: [Nega / Alérgico a Dipirona / Alérgico a Metoclopramida/Plasil / [ ]].
 
 # OBJETIVO (EXAME FÍSICO & AVALIAÇÃO DE HIDRATAÇÃO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

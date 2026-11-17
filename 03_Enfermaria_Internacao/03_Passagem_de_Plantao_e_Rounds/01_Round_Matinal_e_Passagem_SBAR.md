@@ -9,7 +9,7 @@
 ```text
 ###### PASSAGEM DE PLANTÃO & ROUND MULTIDISCIPLINAR (PROTOCOLO SBAR) ######
 # 1. [S] SITUATION (MANCHETE EXECUTIVA DO LEITO):
-- Leito: [ ] | Paciente: [Nome], [Idade] anos | Equipe: [Clínica Médica / Cirurgia Geral / Terapia Intensiva]
+- [? Leito :: Leito: [ ] | ]Paciente: [Nome], [Idade] anos | Equipe: [Clínica Médica / Cirurgia Geral / Terapia Intensiva]
 - Tempo de Internação: [ ]º DIH ([Não cirúrgico / [ ]º DPO de [ ]])
 - Diagnóstico Principal Ativo: [ ]
 - Antimicrobiano em Curso: [Sem antibiótico / Em uso de [ ] — D[ ] de [ ] dias (início em [DD/MM])]

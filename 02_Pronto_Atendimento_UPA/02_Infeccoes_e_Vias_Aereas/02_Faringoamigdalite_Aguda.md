@@ -19,12 +19,11 @@
   - Exsudato amigdaliano ou placas purulentas visíveis (+1)
   - Idade: [3-14 anos (+1) / 15-44 anos (0) / >= 45 anos (-1)]
   * PONTUAÇÃO DE CENTOR TOTAL: [ ] PONTOS ([0-1: Baixo risco/viral / 2-3: Intermediário / >= 4: Alta probabilidade de S. pyogenes]).
-- Negativas Mandatórias de Complicações (Alerta de Abscesso):
-  * Nega trismo (dificuldade ou dor intensa ao tentar abrir a boca).
-  * Nega sialorreia (dificuldade para engolir a própria saliva com baba).
-  * Nega estridor respiratório ou sensação de asfixia.
-  * Nega dor cervical com rigidez ou abaulamento cervical lateral.
-- Alergias: [Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona].
+- Nega trismo (dificuldade ou dor intensa ao tentar abrir a boca).
+- Nega sialorreia (dificuldade para engolir a própria saliva com baba).
+- Nega estridor respiratório ou sensação de asfixia.
+- Nega dor cervical com rigidez ou abaulamento cervical lateral.
+- Alergias: [Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

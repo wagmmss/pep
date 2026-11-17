@@ -15,19 +15,18 @@ Acolhimento / Classificação de Risco: [Azul / Verde / Amarelo / Vermelho] às 
 # SUBJETIVO:
 - Queixa Principal (QP): "[Descrever queixa principal e tempo exato de início]".
 - História da Moléstia Atual (HMA): Paciente refere [descrever início súbito/insidioso, características do sintoma, intensidade 0-10, fatores de melhora/piora e sintomas associados].
-- NEGATIVAS MANDATÓRIAS DE GRAVIDADE (EXCLUSÃO DE RED FLAGS):
-  * Nega febre alta, calafrios ou confusão mental aguda.
-  * Nega dor precordial, opressão torácica ou irradiação para mandíbula/membros superiores.
-  * Nega dispneia, falta de ar súbita, estridor ou ortopneia.
-  * Nega síncope, lipotímia, tontura rotatória aguda ou perda de consciência.
-  * Nega cefaleia em trovoada súbita (thunderclap) ou déficits neurológicos focais.
-  * Nega dor abdominal em barra, vômitos incoercíveis ou parada de eliminação de flatos/fezes.
-  * Nega sangramentos ativos (hematêmese, enterorragia, melena ou metrorragia volumosa).
+- Nega febre alta, calafrios ou confusão mental aguda.
+- Nega dor precordial, opressão torácica ou irradiação para mandíbula/membros superiores.
+- Nega dispneia, falta de ar súbita, estridor ou ortopneia.
+- Nega síncope, lipotímia, tontura rotatória aguda ou perda de consciência.
+- Nega cefaleia em trovoada súbita (thunderclap) ou déficits neurológicos focais.
+- Nega dor abdominal em barra, vômitos incoercíveis ou parada de eliminação de flatos/fezes.
+- Nega sangramentos ativos (hematêmese, enterorragia, melena ou metrorragia volumosa).
 
 # ANTECEDENTES (HPP & HÁBITOS):
-- Comorbidades: [Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia].
+- Comorbidades: [Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / [ ]].
 - Medicações em Uso Contínuo: [Nega uso de medicações contínuas / Em uso de: [ ]].
-- ALERGIAS MEDICAMENTOSAS: [NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: (DIPIRONA / PENICILINA / AINES / OUTRA:)].
+- ALERGIAS MEDICAMENTOSAS: [NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A: Penicilina / ALÉRGICO(A) A: AINEs / [ ]].
 - Hábitos: [Nega tabagismo, etilismo ou substâncias ilícitas / Tabagista maços/ano / Etilista social].
 
 # OBJETIVO (EXAME FÍSICO GERAL & DIRIGIDO):

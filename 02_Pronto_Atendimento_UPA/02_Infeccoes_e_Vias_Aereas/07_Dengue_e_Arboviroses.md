@@ -23,8 +23,8 @@
   - Letargia, sonolência excessiva, desorientação ou irritabilidade
   - Aumento progressivo e abrupto do hematócrito (hemoconcentração)
   * STATUS: [TODOS OS SINAIS DE ALARME NEGADOS / SINAL DE ALARME PRESENTE: [ ]].
-- Comorbidades / Fatores de Risco: [Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma].
-- Alergias: [Nega / Alérgico a Dipirona].
+- Comorbidades / Fatores de Risco: [Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / [ ]].
+- Alergias: [Nega / Alérgico a Dipirona / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO):
 - SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | PA em pé (se tolerar): [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.

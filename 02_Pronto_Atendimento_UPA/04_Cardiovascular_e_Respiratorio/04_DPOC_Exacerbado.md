@@ -21,11 +21,10 @@
     - [ ] Tipo 1 (Exacerbação Grave): 3 sintomas cardinais presentes -> INDICAÇÃO FORMAL DE ANTIBIOTICOTERAPIA.
     - [ ] Tipo 2 (Exacerbação Moderada): 2 sintomas cardinais presentes (indicado antibiótico se houver purulência).
     - [ ] Tipo 3 (Exacerbação Leve): 1 sintoma cardinal associado a tosse, febre ou sintomas gripais.
-- Negativas Mandatórias (Exclusão de Fatores Descompensadores Graves):
-  * Nega dor torácica pleurítica aguda súbita (afastado Pneumotórax espontâneo por rotura de bolha).
-  * Nega dor precordial em aperto (afastada Síndrome Coronariana Aguda associada).
-  * Nega edema assimétrico de panturrilhas ou hemoptise (afastado TEP).
-  * Nega piora de edema de membros inferiores ou ortopneia (afastada Insuficiência Cardíaca descompensada associada).
+- Nega dor torácica pleurítica aguda súbita (afastado Pneumotórax espontâneo por rotura de bolha).
+- Nega dor precordial em aperto (afastada Síndrome Coronariana Aguda associada).
+- Nega edema assimétrico de panturrilhas ou hemoptise (afastado TEP).
+- Nega piora de edema de membros inferiores ou ortopneia (afastada Insuficiência Cardíaca descompensada associada).
 - Medicações Habitual: [Em uso de Formoterol/Budesonida, Tiotrópio, Salbutamol SOS].
 - Alergias: [Nega / Sim: [ ]].
 

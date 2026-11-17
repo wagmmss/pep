@@ -71,7 +71,12 @@
 
 ---
 
-### [REGRAS DE CONDUTA NA SEPSE E CHOQUE SÉPTICO]
-- **Hora de Ouro do Antibiótico:** A cada 60 minutos de atraso na primeira dose do antibiótico endovenoso após o reconhecimento do choque séptico, a mortalidade aumenta linearmente em cerca de **7% a 8%**. Coletar as hemoculturas imediatamente, mas NUNCA adiar o início da droga se houver dificuldade de acesso laboratorial.
-- **Ringer Lactato vs Soro Fisiológico:** Cristaloides balanceados (como o Ringer Lactato) são formalmente preferíveis ao Soro Fisiológico a 0,9%. Grandes volumes de SF 0,9% provocam **acidose metabólica hiperclorêmica grave**, vasoconstrição da arteríola renal e aumento da taxa de insuficiência renal aguda com necessidade de diálise.
-- **Vasopressor Periférico Precoce:** Se a pressão arterial média (PAM) estiver francamente baixa (< 65 mmHg), NÃO espere terminar os 30 mL/kg de volume nem aguarde um cateter venoso central para ligar a Noradrenalina. Iniciar precocemente em veia periférica calibrosa de membro superior (antecubital) enquanto o acesso central é providenciado.
+### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+
+### ⏱️ 1. Por Que o Pacote de 1 Hora Muda a Sobrevida na Sepse?
+- **Por Que Cada Hora de Atraso no Antibiótico Aumenta a Mortalidade?** No choque séptico, cada hora de atraso até a primeira dose do antibiótico endovenoso eleva o risco de óbito em cerca de **7% a 8%**. Coletar hemoculturas imediatamente é mandatório, mas **nunca atrase o início do antimicrobiano** por dificuldade de coleta ou demora de exames de imagem.
+- **Lactato Arterial/Venoso como Marcador de Hipoperfusão Oculta:** Mesmo com PA limítrofe, lactato `≥ 2 mmol/L` (ou `> 4 mmol/L`) denuncia metabolismo anaeróbio por microcirculação comprometida e exige ressuscitação guiada e reavaliação seriada em 2–4 horas (*clearance* de lactato).
+
+### 💧 2. Por Que Preferimos Ringer Lactato e Vasopressor Periférico Precoce?
+- **Por Que Cristaloides Balanceados (Ringer Lactato) São Melhores que SF 0,9%?** Grandes volumes de SF 0,9% (concentração suprafisiológica de cloreto `154 mEq/L`) causam **acidose metabólica hiperclorêmica**, vasoconstrição da arteríola aferente renal e maior risco de lesão renal aguda.
+- **Por Que Não Esperar o Acesso Central para Iniciar Noradrenalina?** Se a `PAM < 65 mmHg` persiste durante ou após o início da expansão (`30 mL/kg`), iniciar **Noradrenalina em veia periférica calibrosa** (preferencialmente antecubital, com vigilância do sítio) restaura rapidamente a perfusão coronariana e cerebral enquanto o acesso venoso central é providenciado.

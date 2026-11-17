@@ -16,10 +16,9 @@
   * Eliminação de espécime macroscópico nas fezes tipo "minhoca branca/rosada" (Ascaris lumbricoides).
   * Fezes amolecidas, espumosas, de odor fétido acentuado com distensão abdominal e eructações frequentes (suspeita de Giardíase).
   * Dor abdominal periumbilical mal definida em cólica leve, perda de apetite e sensação de fraqueza.
-- NEGATIVAS MANDATÓRIAS DE GRAVIDADE:
-  * Nega vômitos fecaloides ou parada de eliminação de flatos e fezes (afasta suboclusão por bolo de áscaris).
-  * Nega febre alta, calafrios ou fezes com sangue vivo e pus.
-  * Nega desidratação, prostração grave ou perda de peso volumosa.
+- Nega vômitos fecaloides ou parada de eliminação de flatos e fezes (afasta suboclusão por bolo de áscaris).
+- Nega febre alta, calafrios ou fezes com sangue vivo e pus.
+- Nega desidratação, prostração grave ou perda de peso volumosa.
 - Hábitos & Saneamento: [Água encanada tratada / Água de poço; consome verduras cruas sem higienização com hipoclorito; crianças pequenas no domicílio].
 - Alergias: [Nega / Sim: [ ]].
 

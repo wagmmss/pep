@@ -10,7 +10,7 @@
 ```text
 ###### CONSULTA DE PRÉ-NATAL — ADMISSÃO / 1ª CONSULTA ######
 # IDENTIFICAÇÃO & DATAÇÃO GESTACIONAL:
-Paciente [Nome], [Idade] anos, Profissão: [Profissão], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+Paciente [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
 - DUM: [DD/MM/AAAA] ([Certa e confiável / Incerta]) -> IG DUM: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
 - USG Precoce (1º Tri): [Solicitada hoje / Realizada em [DD/MM] com CCN de [ ] mm = IG USG: [ ]s[ ]d].
 - IG Definitiva Adotada: [ ] semanas e [ ] dias.
@@ -19,7 +19,7 @@ Paciente [Nome], [Idade] anos, Profissão: [Profissão], G[ ] P[ ] (PN [ ] / PC 
 - Antecedentes Obstétricos: [Nulípara / Gestações prévias sem intercorrências / Antecedente de Pré-eclâmpsia / DMG prévio / Parto prematuro prévio / Cesárea prévia há [ ] anos]. Último Citopatológico: [Em dia e normal / Colhido há > 1–3 anos].
 - Comorbidades, Drogas & Alergias: [Hígida, nega HAS, DM, tireoidopatia ou trombofilia / Portadora de: [ ]] | Medicações em uso: [Nega uso contínuo / Em uso de: [ ]] | Alergias: [Nega alergias conhecidas / Alérgica a: [ ]] | Hábitos: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista / Etilismo / Outros: [ ]].
 - HMA: Comparece para abertura de pré-natal. Refere [ausência de queixas / náuseas matinais leves sem perda ponderal / mastalgia e sonolência fisiológicas].
-- Negativas Mandatórias: Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
+- Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
 
 # OBJETIVO (EXAME FÍSICO INICIAL):
 - Antropometria & Vitais: Peso Pré-Gestacional: [ ] kg | Peso Atual: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m² ([Eutrófica / Sobrepeso / Obesidade / Baixo peso]). PA (sentada): [110x70] mmHg | FC: [78] bpm | Tax: [36,4] °C.

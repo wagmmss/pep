@@ -9,7 +9,7 @@
 ```text
 ###### EVOLUÇÃO MÉDICA DIÁRIA — PÓS-OPERATÓRIO CIRÚRGICO (SOAP) ######
 # IDENTIFICAÇÃO & PROCEDIMENTO:
-- Paciente: [Nome], [Idade] anos | Leito: [ ] | [ ]º Dia Pós-Operatório (DPO)
+- Paciente: [Nome], [Idade] anos[? Leito :: | Leito: [ ]] | [ ]º Dia Pós-Operatório (DPO)
 - Procedimento Realizado: [ ] | Via de Acesso: [Videolaparoscópica / Convencional aberta / Ortopédica / Urológica]
 - Antimicrobiano Pós-Operatório: [Profilaxia cirúrgica suspensa em < 24h / Antibioticoterapia terapêutica com [ ] — D[ ] de [ ] dias]
 

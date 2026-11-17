@@ -81,7 +81,7 @@ ORIENTAÇÕES PRÁTICAS PARA A AMAMENTAÇÃO NA MASTITE:
 - **O Esquema Padrão-Ouro:**
   - **Clindamicina 900 mg EV de 8 em 8 horas**
   - **+ Gentamicina 5 mg/kg EV em dose única diária (24/24h)** [ou 1,5 mg/kg EV de 8/8h].
-- **O Porquê Desta Combinação Farmacológica:**
+- **Por Que Usamos Esta Combinação Farmacológica?**
   - A **Gentamicina** atinge rápida ação bactericida concentração-dependente contra os bacilos Gram-negativos entéricos aeróbios (*E. coli*).
   - A **Clindamicina** penetra profundamente na decídua necrótica e nos trombos miometriais, cobrindo com alta eficácia os **anaeróbios produtores de beta-lactamase (*Bacteroides fragilis*)**, que são naturalmente resistentes às penicilinas e cefalosporinas comuns.
 - **Critério de Alta & Desmame Antibiótico (Sem ATB Oral em Casa!):**

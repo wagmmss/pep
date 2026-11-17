@@ -27,7 +27,7 @@
   * Aceitação de Líquidos e Dieta: [Mantendo aceitação plena de seio materno e líquidos / Aceitando líquidos com redução parcial de sólidos / Recusa alimentar e hídrica importante].
   * Diurese: [Preservada (> 4–6 fraldas molhadas/dia, urina clara) / Reduzida com urina concentrada / Sem diurese há > 6–8 horas].
   * Hábito Intestinal: [Normal / Diarreia líquida ([ ] episódios/24h, sem sangue ou muco) / Constipação há [ ] dias].
-- Negativas Mandatórias de Alarme Pediátrico: Nega crises convulsivas, gemência contínua, cianose perioral, vômitos incoercíveis/biliosos, petéquias ou manchas arroxeadas que não somem à digitopressão, abaulamento de fontanela ou rigidez de nuca.
+- Nega crises convulsivas, gemência contínua, cianose perioral, vômitos incoercíveis/biliosos, petéquias ou manchas arroxeadas que não somem à digitopressão, abaulamento de fontanela ou rigidez de nuca.
 - Antecedentes & Vacinação:
   * Perinatal: Parto [Normal / Cesárea] com [ ] semanas, Peso ao nascer: [ ] g, [sem intercorrências neonatais / intercorrência: [ ]].
   * Vacinação (Caderneta PNI): [Rigorasamente em dia para a idade / Atraso vacinal: [ ]] | Comorbidades: [Hígido(a) / Asma / Sibilância recorrente / APLV / Prematuridade / Outra: [ ]] | Alergias: [Nega alergias conhecidas / Alérgico(a) a: [ ]].

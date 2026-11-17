@@ -16,12 +16,11 @@
 - DIFERENCIAÇÃO CLÍNICA & PESQUISA DE SINAIS DE PIELONEFRITE:
   * [ ] CISTITE AGUDA NÃO COMPLICADA: Sintomas puramente miccionais baixos; nega febre, calafrios, dor lombar ou vômitos.
   * [ ] PIELONEFRITE AGUDA (ITU ALTA): Presença de dor lombar unilateral, febre alta com calafrios (Tax [ ] °C), prostração, náuseas e vômitos.
-- NEGATIVAS MANDATÓRIAS (EXCLUSÃO DE OUTRAS ETIOLOGIAS):
-  * Em mulheres: Nega corrimento vaginal com prurido ou dor à relação sexual (afastada vaginite/cervicite).
-  * Em homens: Nega secreção uretral purulenta ou dor perineal/ejaculatória (afastada uretrite e prostatite aguda).
-  * Nega cólica nefrética irradiando para a virilha sem febre (afastada litíase pura).
+- Em mulheres: Nega corrimento vaginal com prurido ou dor à relação sexual (afastada vaginite/cervicite).
+- Em homens: Nega secreção uretral purulenta ou dor perineal/ejaculatória (afastada uretrite e prostatite aguda).
+- Nega cólica nefrética irradiando para a virilha sem febre (afastada litíase pura).
 - Fatores de ITU Complicada: [Mulher jovem hígida / Gestante / Diabética / Idosa / Sexo masculino / Uso recente de cateter vesical de demora / Litíase conhecida].
-- Alergias: [Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Penicilinas].
+- Alergias: [Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Penicilinas / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO DA UPA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.

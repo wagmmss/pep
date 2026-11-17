@@ -18,9 +18,8 @@
   * [ ] CAUSA PSIQUIÁTRICA PRIMÁRIA: Paciente com diagnóstico prévio de Esquizofrenia / Transtorno Bipolar em episódio maníaco / Transtorno de Personalidade em crise; relata abandono recente de antipsicóticos.
   * [ ] CAUSA ORGÂNICA / DELIRIUM: Paciente idoso com quadro agudo flutuante de desorientação (investigar sepse urinária, pneumonia oculta, AVC ou distúrbio metabólico).
   * [ ] CAUSA TÓXICA / ABSTINÊNCIA: Suspeita de intoxicação aguda por drogas de abuso estimulantes (cocaína/crack/canabinoides sintéticos) ou Síndrome de Abstinência Alcoólica (Delirium Tremens).
-- Negativas Mandatórias:
-  * Nega histórico de trauma cranioencefálico recente ou cefaleia febril precedente.
-  * Sem porte de armas ou objetos perfurocortantes (revista de segurança realizada pela equipe/guarda).
+- Nega histórico de trauma cranioencefálico recente ou cefaleia febril precedente.
+- Sem porte de armas ou objetos perfurocortantes (revista de segurança realizada pela equipe/guarda).
 - Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO & ESTADO MENTAL NA SALA DE EMERGÊNCIA):

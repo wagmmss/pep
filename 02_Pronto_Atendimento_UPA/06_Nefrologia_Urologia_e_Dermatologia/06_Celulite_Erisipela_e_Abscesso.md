@@ -23,7 +23,7 @@
   * Nega presença de gás ou estalidos/crepitação à palpação do tecido subcutâneo.
   * Nega bolhas escuras hemorrágicas, necrose cutânea franca ou anestesia local no centro da lesão.
 - Fatores de Risco: [Diabetes Mellitus / Obesidade / Insuficiência venosa crônica / Linfedema prévio / Imunossupressão].
-- Alergias: [Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas].
+- Alergias: [Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DERMATOLÓGICO DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C | SpO2: [ ]%.

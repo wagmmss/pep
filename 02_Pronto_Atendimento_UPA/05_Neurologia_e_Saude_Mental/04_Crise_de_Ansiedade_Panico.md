@@ -17,10 +17,9 @@
   * Refere formigamento (parestesias) ao redor dos lábios/boca e nas pontas dos dedos das mãos e pés.
   * Presença de contratura muscular espasmódica leve nas mãos (espasmo carpopedal por hipocalcemia iônica secundária à hiperventilação).
 - Fatores Desencadeantes: [Gatilho emocional recente / Estresse profissional ou familiar intenso / Privação de sono / Consumo excessivo de cafeína ou energéticos / Episódios semelhantes prévios].
-- NEGATIVAS MANDATÓRIAS (EXCLUSÃO DE URGÊNCIAS ORGÂNICAS POTENCIAIS):
-  * EXCLUSÃO DE SÍNDROME CORONARIANA AGUDA: Nega dor precordial em aperto com irradiação para mandíbula ou dorso; nega histórico de cardiopatia isquêmica.
-  * EXCLUSÃO DE TEP E ASMA: Nega dor pleurítica aguda em pontada, nega tosse ou chiado no peito; nega imobilização recente ou TVP prévia.
-  * EXCLUSÃO DE INTOXICAÇÃO: Nega uso de drogas simpaticomiméticas ilícitas (cocaína, ecstasy, anfetaminas) ou anorexígenos.
+- EXCLUSÃO DE SÍNDROME CORONARIANA AGUDA: Nega dor precordial em aperto com irradiação para mandíbula ou dorso; nega histórico de cardiopatia isquêmica.
+- EXCLUSÃO DE TEP E ASMA: Nega dor pleurítica aguda em pontada, nega tosse ou chiado no peito; nega imobilização recente ou TVP prévia.
+- EXCLUSÃO DE INTOXICAÇÃO: Nega uso de drogas simpaticomiméticas ilícitas (cocaína, ecstasy, anfetaminas) ou anorexígenos.
 - Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA):

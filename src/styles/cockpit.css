@@ -2028,6 +2028,40 @@
       color: var(--text-dim);
       text-decoration: none;
     }
+    .pep-opt-inline {
+      display: inline;
+    }
+    .pep-opt-inline.is-off .pep-opt-content {
+      display: none;
+    }
+    .pep-opt-chip {
+      -webkit-appearance: none;
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.42);
+      color: #6ee7b7;
+      font-family: var(--font-sans);
+      font-size: 0.69rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      margin: 1px 3px;
+      border-radius: 3px;
+      cursor: pointer;
+      vertical-align: baseline;
+      transition: all 0.12s ease;
+    }
+    .pep-opt-inline.is-off .pep-opt-chip {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--text-dim);
+    }
+    .pep-opt-inline.is-off .pep-opt-chip:hover {
+      border-color: var(--primary-bright);
+      color: var(--text);
+    }
     .pep-line-check-label {
       display: inline-flex;
       align-items: center;

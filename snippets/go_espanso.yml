@@ -5,30 +5,32 @@ matches:
     replace: |
       ###### EVOLUÇÃO DIÁRIA DE ENFERMARIA — PUERPÉRIO (ALOJAMENTO CONJUNTO) ######
       # IDENTIFICAÇÃO & PARTO:
-      Paciente [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] A[ ], TS Materna: [O+ / A+ / B+ / Rh negativo] | TS RN: [ ] (Coombs Direto: [Negativo / Positivo]).
-      Em [1º / 2º / 3º] dia de puerpério de [Parto Normal sem laceração / Parto Normal com rafia de laceração de 2º grau / Parto Normal com episiotomia / Cesárea por indicação de [ ]] realizado em [DD/MM às HH:MM] com IG de [ ]s[ ]d.
-      Comorbidades & Alergias: [Hígida / HAG / Pré-eclâmpsia / DMG sob dieta / Anemia] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]].
+      TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: | TS RN: [ ] (Coombs Direto: [Negativo / Positivo])].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
+      Sorologias: [Não reagentes (HIV, VDRL, HBsAg, Toxo) / [ ]].
+      Em [1º / 2º / 3º] dia de puerpério de [Parto Normal sem laceração / Parto Normal com rafia de laceração de 2º grau / Parto Normal com episiotomia / Cesárea por indicação de [ ]] realizado em [DD/MM às HH:MM] com IG de [ ]s[ ]d[? G/P/A :: , G[ ] P[ ] A[ ]].
       
       # SUBJETIVO (EVOLUÇÃO NAS 24H & AMAMENTAÇÃO):
       Encontro puérpera no leito com RN em alojamento conjunto.
       - Evolução Geral & Dor: Passou bem nas últimas 24h, deambulando sem tontura ortostática e com boa aceitação da dieta. Dor [ausente / leve e controlada com analgesia / discreta em ferida operatória / leve em região perineal].
       - Fisiológicas & Loquiação: Diurese espontânea clara e em bom volume (sem disúria); eliminação de flatos presente, evacuação [presente sem esforço / ausente até o momento]. Lóquios [rubros fisiológicos em pequena-moderada quantidade, sem odor fétido ou coágulos / aumentados].
       - Amamentação: Aleitamento materno exclusivo em livre demanda, [boa pega e posicionamento observados (boca bem aberta, lábio inferior evertido, queixo tocando a mama e deglutição audível), sem dor mamilar / dificuldade de pega orientada à beira-leito].
-      - Negativas Mandatórias de Alarme: Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, lipotímia ou dor/empastamento em panturrilhas.
+      - Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, lipotímia ou dor/empastamento em panturrilhas.
       
-      # OBJETIVO (EXAME FÍSICO DIRIGIDO & CONTROLES):
+      # OBJETIVO (EXAME FÍSICO DIRIGIDO):
       - Sinais Vitais: PA: [110x70] mmHg | FC: [78] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C.
       - Ectoscopia: BEG, lúcida, corada, hidratada, anictérica, acianótica, afebril e eupneica.
       - Mamas: [Flácidas / Túrgidas fisiológicas], indolores, sem áreas de hiperemia, calor ou ingurgitamento patológico. Papilas [íntegras sem fissuras / com fissura superficial em mama]. Colostro presente à expressão bilateral.
       - Abdome & Útero: Abdome flácido, RHA+, indolor, sem bexigoma palpável. Útero globoso, firme e bem contraído (Globo de Pinard presente), centrado, involuindo a [1 a 2] cm abaixo da cicatriz umbilical, indolor à mobilização.
       - Sítio Cirúrgico / Períneo: [Períneo íntegro sem edema ou hematoma / Rafia perineal com bordas coaptadas, pontos íntegros, limpa e sem hematoma / Ferida operatória de Pfannenstiel limpa, seca, bordas coaptadas, sem flogose ou hematoma]. Lóquios rubros fisiológicos sem odor.
       - Extremidades: Aquecidas, TEC < 2s, pulsos distais simétricos, [sem edema / edema maleolar leve +/4+ simétrico], panturrilhas livres e indolores.
-      - Controles & Exames: Sorologias de admissão (HIV, VDRL, HBsAg, Toxo) [todas não reagentes / checadas]. [Curva pressórica normotensa / Perfil glicêmico no alvo / Hb pós-parto: g/dL].
       
       # AVALIAÇÃO DIAGNÓSTICA:
       1. [1º / 2º / 3º] dia de puerpério de [Parto Normal / Cesariana] com evolução favorável (CID-10: Z39.0).
       2. Estratificação de TEV: [Baixo risco (deambulação precoce) / Alto risco (indicada Enoxaparina profilática)].
-      3. Status para Alta: [Apta para alta hospitalar hoje após 24h-48h / Manter internada para vigilância clínica e completar 48h].
+      3. Status para Alta: [Condições de alta hospitalar / Manter internada para vigilância clínica e completar 48h].
       
       # PLANO / CONDUTA:
       >> CONDUTA HOSPITALAR DIÁRIA:
@@ -37,7 +39,7 @@ matches:
       3. [Se constipação / rafia perineal / cesárea]: Simeticona 40 gotas VO 8/8h se gases + Lactulose 15 mL VO à noite se necessário.
       4. [Se mãe Rh negativo com RN Rh positivo e Coombs Direto negativo]: Prescrever e checar Imunoglobulina Anti-D 300 mcg IM (em até 72h do parto).
       5. [Se alto risco para TEV]: Enoxaparina 40 mg SC 1x/dia.
-      6. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Inserido DIU de Cobre pós-placentário / Inserido Implanon antes da alta].
+      6. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / [ ]].
       
       >> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
       USO ORAL:
@@ -64,7 +66,7 @@ matches:
       3. [Se constipação / rafia perineal / cesárea]: Simeticona 40 gotas VO 8/8h se gases + Lactulose 15 mL VO à noite se necessário.
       4. [Se mãe Rh negativo com RN Rh positivo e Coombs Direto negativo]: Prescrever e checar Imunoglobulina Anti-D 300 mcg IM (em até 72h do parto).
       5. [Se alto risco para TEV]: Enoxaparina 40 mg SC 1x/dia.
-      6. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Inserido DIU de Cobre pós-placentário / Inserido Implanon antes da alta].
+      6. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / [ ]].
       
       >> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
       USO ORAL:
@@ -103,8 +105,8 @@ matches:
     replace: |
       ###### PASSAGEM DE CASO / ROUND OBSTÉTRICO DE PUERPÉRIO (5 TEMPOS) ######
       # 1. MANCHETE OBSTÉTRICA (IDENTIFICAÇÃO + PARTO + RISCO):
-      "Preceptor(a), Leito [ ], [Nome], [Idade] anos, G[ ] P[ ] A[ ], no [1º / 2º / 3º] DPO de [Parto Normal sem intercorrências / Parto Normal com laceração de [2º] grau / Cesariana por [indicação]] com IG de [ ]s[ ]d.
-      - Antecedentes: [Hígida / HAG / Pré-eclâmpsia / DMG em dieta / Anemia] | Alergias: [Nega alergias / Alérgica a: [ ]].
+      "Preceptor(a), [? Leito :: Leito [ ], ][Nome], [Idade] anos[? G/P/A :: , G[ ] P[ ] A[ ]], no [1º / 2º / 3º] DPO de [Parto Normal sem intercorrências / Parto Normal com laceração de [2º] grau / Cesariana por [indicação]] com IG de [ ]s[ ]d.
+      - Antecedentes: [Hígida / HAG / Pré-eclâmpsia / DMG em dieta / Anemia / [ ]] | Alergias: [Nega alergias / Alérgica a: [ ]].
       - Intraparto: [Sem intercorrências / Apresentou HPP por atonia revertida com ocitocina + ácido tranexâmico]."
       
       # 2. SUBJETIVO & AMAMENTAÇÃO (ÚLTIMAS 24H):
@@ -121,30 +123,30 @@ matches:
       - Extremidades: Sem edemas assimétricos, panturrilhas livres e indolores."
       
       # 4. AUDITORIA DE PRONTUÁRIO (DADOS MANDATÓRIOS DA CHEFIA):
-      "- Imuno-hematologia: Mãe TS [O+ / A+ / B+ / AB+ / O- / A-], RN TS [O+ / A+ / B+ / AB+ / O- / A-], Coombs Direto [negativo -> sem indicação de Anti-D / Mãe Rh- com RN Rh+ -> Anti-D 300 mcg IM já administrada].
-      - Sorologias & Vacinas: HIV, VDRL e HBsAg [não reagentes], Toxo [imune / suscetível orientada].
+      "- Imuno-hematologia: Mãe TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: , RN TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-], Coombs Direto [negativo -> sem indicação de Anti-D / Mãe Rh- com RN Rh+ -> Anti-D 300 mcg IM já administrada]].
+      - Sorologias & Vacinas: HIV, VDRL e HBsAg [não reagentes / [ ]], Toxo [imune / suscetível orientada].
       - Controles Específicos: [Curva pressórica normotensa < 140x90 mmHg / Glicemias capilares normais após suspensão de insulina/dieta / Hb de controle pós-HPP: g/dL]."
       
       # 5. AVALIAÇÃO & PLANO / CONDUTA PROPOSTA:
       # PLANO / CONDUTA:
       1. Risco de TEV: [Baixo -> manter deambulação precoce / Alto -> manter Enoxaparina 40 mg SC/dia por 10–15 dias].
       2. Analgesia & Suporte: Manter Dipirona 1 g 6/6h SOS [sem AINEs por ser hipertensa / + Ibuprofeno 600 mg 8/8h] + Sulfato Ferroso 40 mg Fe elementar/dia.
-      3. Planejamento Reprodutivo: [Optou por Desogestrel 75 mcg/dia contínuo / Implanon inserido na enfermaria / DIU pós-placentário posicionado].
-      4. Desfecho Proposto: [Alta hospitalar hoje com receita, cartão de puerpério e retorno agendado na UBS em 7 dias / Manter internada por mais 24h para vigilância pressórica]."
+      3. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / [ ]].
+      4. Desfecho Proposto: [Condições de alta hospitalar hoje com receita, cartão de puerpério e retorno agendado na UBS em 7 dias / Manter internada por mais 24h para vigilância pressórica]."
 
   - trigger: ";round-puerp-cnd"
     replace: |
       # PLANO / CONDUTA:
       1. Risco de TEV: [Baixo -> manter deambulação precoce / Alto -> manter Enoxaparina 40 mg SC/dia por 10–15 dias].
       2. Analgesia & Suporte: Manter Dipirona 1 g 6/6h SOS [sem AINEs por ser hipertensa / + Ibuprofeno 600 mg 8/8h] + Sulfato Ferroso 40 mg Fe elementar/dia.
-      3. Planejamento Reprodutivo: [Optou por Desogestrel 75 mcg/dia contínuo / Implanon inserido na enfermaria / DIU pós-placentário posicionado].
-      4. Desfecho Proposto: [Alta hospitalar hoje com receita, cartão de puerpério e retorno agendado na UBS em 7 dias / Manter internada por mais 24h para vigilância pressórica]."
+      3. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / [ ]].
+      4. Desfecho Proposto: [Condições de alta hospitalar hoje com receita, cartão de puerpério e retorno agendado na UBS em 7 dias / Manter internada por mais 24h para vigilância pressórica]."
 
   - trigger: ";pn-1cons"
     replace: |
       ###### CONSULTA DE PRÉ-NATAL — ADMISSÃO / 1ª CONSULTA ######
       # IDENTIFICAÇÃO & DATAÇÃO GESTACIONAL:
-      Paciente [Nome], [Idade] anos, Profissão: [Profissão], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+      Paciente [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
       - DUM: [DD/MM/AAAA] ([Certa e confiável / Incerta]) -> IG DUM: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
       - USG Precoce (1º Tri): [Solicitada hoje / Realizada em [DD/MM] com CCN de [ ] mm = IG USG: [ ]s[ ]d].
       - IG Definitiva Adotada: [ ] semanas e [ ] dias.
@@ -153,7 +155,7 @@ matches:
       - Antecedentes Obstétricos: [Nulípara / Gestações prévias sem intercorrências / Antecedente de Pré-eclâmpsia / DMG prévio / Parto prematuro prévio / Cesárea prévia há [ ] anos]. Último Citopatológico: [Em dia e normal / Colhido há > 1–3 anos].
       - Comorbidades, Drogas & Alergias: [Hígida, nega HAS, DM, tireoidopatia ou trombofilia / Portadora de: [ ]] | Medicações em uso: [Nega uso contínuo / Em uso de: [ ]] | Alergias: [Nega alergias conhecidas / Alérgica a: [ ]] | Hábitos: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista / Etilismo / Outros: [ ]].
       - HMA: Comparece para abertura de pré-natal. Refere [ausência de queixas / náuseas matinais leves sem perda ponderal / mastalgia e sonolência fisiológicas].
-      - Negativas Mandatórias: Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
+      - Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
       
       # OBJETIVO (EXAME FÍSICO INICIAL):
       - Antropometria & Vitais: Peso Pré-Gestacional: [ ] kg | Peso Atual: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m² ([Eutrófica / Sobrepeso / Obesidade / Baixo peso]). PA (sentada): [110x70] mmHg | FC: [78] bpm | Tax: [36,4] °C.
@@ -244,7 +246,7 @@ matches:
       # SUBJETIVO (EVOLUÇÃO & ALARME OBSTÉTRICO):
       - Evolução & Movimentação Fetal: Comparece para retorno com exames. Movimentação fetal [presente e ativa / ainda não percebida (< 18–20s)]. Queixas: [Assintomática no período / Refere pirose leve / Lombalgia mecânica leve / Edema maleolar vespertino leve].
       - Adesão Medicamentosa: Em uso regular de [Sulfato Ferroso / Ácido Fólico / AAS 100 mg + Carbonato de Cálcio / Metildopa].
-      - Negativas Mandatórias de Alarme: Nega sangramento vaginal, perda de líquido amniótico, contrações rítmicas dolorosas, cefaleia, escotomas, epigastralgia em barra, disúria ou febre.
+      - Nega sangramento vaginal, perda de líquido amniótico, contrações rítmicas dolorosas, cefaleia, escotomas, epigastralgia em barra, disúria ou febre.
       
       # OBJETIVO (EXAME FÍSICO OBSTÉTRICO & CURVAS):
       - Vitais & Antropometria: PA (sentada): [110x70] mmHg | FC: [80] bpm | Peso Atual: [ ] kg (Variação no período: [+/- ] kg | Ganho total: [ ] kg).
@@ -350,7 +352,7 @@ matches:
       # ANTECEDENTES & SUBJETIVO (QD & HMA):
       - Comorbidades, HF & Alergias: [Hígida / HAS / DM2 / Dislipidemia / Hipotireoidismo] | HF Câncer (Mama < 50a / Ovário / Endométrio em 1º grau): [Nega / Positivo em: [ ]] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]] | Tabagismo: [Nega / Sim].
       - Queixa Principal & HMA: Comparece para [rotina ginecológica preventiva anual assintomática / queixa de corrimento vaginal com prurido / queixa de corrimento com odor fétido (peixe) / sangramento uterino anormal / fogachos e ressecamento vaginal].
-      - Negativas Mandatórias Ginecológicas: Nega sinusorragia (sangramento pós-coito), sangramento pós-menopausa, dor pélvica aguda, dispareunia profunda, febre ou perda urinária.
+      - Nega sinusorragia (sangramento pós-coito), sangramento pós-menopausa, dor pélvica aguda, dispareunia profunda, febre ou perda urinária.
       
       # OBJETIVO (EXAME FÍSICO GINECOLÓGICO):
       - Vitais & Antropometria: PA: [115x75] mmHg | FC: [74] bpm | Peso: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m². BEG, corada, hidratada.
@@ -713,6 +715,97 @@ matches:
       - Lavar a região íntima com água corrente e sabonete neutro após urinar ou evacuar, secando sem esfregar (os pontos são absorvíveis e caem sozinhos em 15 a 30 dias).
       - Procurar a Maternidade se surgir dor forte latejante com inchaço roxo local (hematoma), saída de pus, febre ou abertura completa dos pontos.
 
+  - trigger: ";07-admissao-tp-e-descricao-cesariana"
+    replace: |
+      ### CENTRO OBSTÉTRICO — ADMISSÃO EM TP & CESARIANA ###
+      # ID: [Nome], [ ] anos | Leito: [ ]
+      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
+      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10]
+      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-]
+      # AP:
+      PAT: [Nega / HAS / Pré-eclâmpsia / DMG / Anemia]
+      MED: [Nega / Sulfato Ferroso / Metildopa]
+      HAB: [Nega tabagismo, etilismo ou drogas ilícitas]
+      CX: [Nega / Cesáreas prévias ([ ])]
+      ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
+      HF: [Nega / HAS / DM2]
+      
+      # CASO: [DESCRIÇÃO CIRÚRGICA DE CESARIANA / ADMISSÃO EM FASE ATIVA DE TRABALHO DE PARTO]
+      
+      HMA: Gestante admitida no Centro Obstétrico com indicação de cesariana por [desproporção cefalopélvica / falha de indução / sofrimento fetal agudo / apresentação pélvica / iteratividade (≥ 2 cesáreas prévias) / pré-eclâmpsia grave sem condições de parto imediato]. Caderneta de Pré-Natal: HIV/Sífilis/Hep B/Toxoplasmose 3º tri [Não reagentes]; Cultura EGB (35–37s): [Negativa / Positiva — realizada profilaxia com Penicilina Cristalina 5 milhões UI IV ataque + 2,5 milhões UI 4/4h].
+      
+      # EXAME CLÍNICO
+      Bom estado geral, corada, hidratada, acianótica, anictérica, afebril; encaminhada à RPA lúcida, estável e com útero firmemente contraído abaixo da cicatriz umbilical.
+      - Sinais Vitais Pós-Operatórios: PA: [115x75] mmHg | FC: [80] bpm | SpO2: [99]% AA | SVD com diurese clara.
+      - DESCRIÇÃO CIRÚRGICA DA CESARIANA (TÉCNICA DE PFANNENSTIEL / KERR):
+        1. Anestesia & Profilaxia: Raquianestesia hiperbárica + Antibioticoprofilaxia cirúrgica com Cefazolina 2 g IV (ou 3 g se peso ≥ 120 kg) administrada 30–60 minutos antes da incisão cutânea + Sondagem vesical de demora com urina clara.
+        2. Diérese: Antissepsia com clorexidina alcoólica, aposição de campos estéreis. Incisão abdominal transversa suprapúbica a Pfannenstiel (ou Joel-Cohen), abertura da aponeurose dos retos abdominais, divulsão muscular na linha média e abertura do peritônio parietal.
+        3. Histerotomia & Extração Fetal: Abertura do peritônio visceral vesicouterino, rebatimento vesical e histerotomia segmentar transversa arciforme (Kerr). Amniotomia com saída de líquido amniótico [claro com grumos / meconial fluido / meconial espesso].
+        4. Nascimento: Extração fetal em apresentação [cefálica / pélvica] às [HH:MM]h, RN do sexo [Masculino / Feminino], Peso: [ ] g, Apgar [ ]/[ ]. Clampeamento oportuno do cordão umbilical em [60] segundos e entrega ao pediatra.
+        5. Dequitação & Histerorrafia: Dequitação placentária completa (Baudelocque-Schultze) sob tração controlada do cordão + Ocitocina 3 a 5 UI IV muito lento (em 3–5 min, NUNCA 10 UI em bolus direto!) ou 10 UI IM + manutenção em infusão. Revisão e limpeza da cavidade uterina com compressa montada. Histerorrafia em plano [único contínuo / duplo plano não ancorado] com fio absorvível Vicryl 0.
+        6. Revisão & Síntese: Revisão da hemostasia da linha de sutura e anexos normais. Contagem de compressas conferida e correta. Síntese da aponeurose dos retos abdominais de forma contínua com Vicryl 1, aproximação do subcutâneo (se espessura > 2 cm) e sutura intradérmica da pele com Monocryl / Nylon 3-0. Perda sanguínea estimada: [600] mL.
+      
+      # AVALIAÇÃO DIAGNÓSTICA:
+      1. Pós-operatório imediato de Cesariana (indicação: [ ]) sem intercorrências intraoperatórias.
+      
+      # PLANO / CONDUTA
+      1. Prescrição Pós-Operatória Imediata (Centro Obstétrico / Alojamento Conjunto):
+         - Dieta livre precoce após recuperação motora do bloqueio raquidiano (2 a 4 horas pós-operatório).
+         - Ocitocina 10 a 20 UI diluídas em 500 mL de SF 0,9% ou Ringer Lactato IV a 125 mL/h nas primeiras 4–6 horas para manutenção do tônus uterino.
+         - Analgesia Multimodal Fixa: Dipirona 1 g IV 6/6h + [Cetoprofeno 100 mg IV 12/12h por 48h (CONTRAINDICADO SE HIPERTENSA / PRÉ-ECLÂMPSIA / NEFROPATA!) / Paracetamol 750 mg VO 6/6h] + Morfina 2 mg IV de resgate se dor intensa (ou conforme morfina intratecal).
+         - Antiemético e Simeticona: Ondansetrona 4 a 8 mg IV 8/8h se náuseas/prurido + Simeticona 40 a 80 gotas VO 8/8h.
+         - Retirada precoce da Sonda Vesical de Demora e estímulo à deambulação assistida após 6 a 8 horas (prevenção de TEV e íleo paralítico); Enoxaparina 40 mg SC/dia se alto risco de TEV (iniciar >= 12h após bloqueio raquidiano e hemostasia segura).
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (RECEITA DE ALTA PÓS-CESARIANA):
+      
+      1. Dipirona Monoidratada 1.000 mg (comprimidos) — 1 caixa (20 comprimidos)
+         - Tomar 1 comprimido por via oral a cada 6 horas, de horário fixo, por 5 dias.
+      
+      2. Ibuprofeno 600 mg (comprimidos) [CONTRAINDICADO SE HIPERTENSA / PRÉ-ECLÂMPSIA / NEFROPATA!] — 1 caixa (15 comprimidos)
+         - Tomar 1 comprimido por via oral a cada 8 horas, após as refeições, por 5 dias.
+      
+      3. Simeticona 125 mg (cápsulas gelatinosas) — 1 caixa (10 cápsulas)
+         - Tomar 1 cápsula por via oral a cada 8 horas por 5 dias para alívio de gases pós-operatórios.
+      
+      4. Sulfato Ferroso 40 mg de Fe elementar (comprimidos) — 3 frascos (90 comprimidos)
+         - Tomar 1 comprimido por via oral, 30 minutos antes do almoço com suco cítrico, diariamente até completar 3 meses pós-parto.
+      
+      5. Cuidados com a Ferida Operatória e Sinais de Alarme:
+         - Lavar a incisão diariamente no banho com água e sabonete neutro, secando suavemente com toalha limpa (não aplicar pomadas ou soluções caseiras).
+         - Retorno em 7 a 10 dias na UBS para avaliação da cicatriz, puerpério e teste do pezinho do RN.
+         - Procurar a maternidade imediatamente se febre (Tax ≥ 37,8°C), saída de pus/abertura dos pontos na ferida, sangramento vaginal intenso, dor na panturrilha, falta de ar ou cefaleia forte.
+
+  - trigger: ";07-admissao-tp-e-descricao-cesariana-cnd"
+    replace: |
+      # PLANO / CONDUTA
+      1. Prescrição Pós-Operatória Imediata (Centro Obstétrico / Alojamento Conjunto):
+         - Dieta livre precoce após recuperação motora do bloqueio raquidiano (2 a 4 horas pós-operatório).
+         - Ocitocina 10 a 20 UI diluídas em 500 mL de SF 0,9% ou Ringer Lactato IV a 125 mL/h nas primeiras 4–6 horas para manutenção do tônus uterino.
+         - Analgesia Multimodal Fixa: Dipirona 1 g IV 6/6h + [Cetoprofeno 100 mg IV 12/12h por 48h (CONTRAINDICADO SE HIPERTENSA / PRÉ-ECLÂMPSIA / NEFROPATA!) / Paracetamol 750 mg VO 6/6h] + Morfina 2 mg IV de resgate se dor intensa (ou conforme morfina intratecal).
+         - Antiemético e Simeticona: Ondansetrona 4 a 8 mg IV 8/8h se náuseas/prurido + Simeticona 40 a 80 gotas VO 8/8h.
+         - Retirada precoce da Sonda Vesical de Demora e estímulo à deambulação assistida após 6 a 8 horas (prevenção de TEV e íleo paralítico); Enoxaparina 40 mg SC/dia se alto risco de TEV (iniciar >= 12h após bloqueio raquidiano e hemostasia segura).
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (RECEITA DE ALTA PÓS-CESARIANA):
+      
+      1. Dipirona Monoidratada 1.000 mg (comprimidos) — 1 caixa (20 comprimidos)
+         - Tomar 1 comprimido por via oral a cada 6 horas, de horário fixo, por 5 dias.
+      
+      2. Ibuprofeno 600 mg (comprimidos) [CONTRAINDICADO SE HIPERTENSA / PRÉ-ECLÂMPSIA / NEFROPATA!] — 1 caixa (15 comprimidos)
+         - Tomar 1 comprimido por via oral a cada 8 horas, após as refeições, por 5 dias.
+      
+      3. Simeticona 125 mg (cápsulas gelatinosas) — 1 caixa (10 cápsulas)
+         - Tomar 1 cápsula por via oral a cada 8 horas por 5 dias para alívio de gases pós-operatórios.
+      
+      4. Sulfato Ferroso 40 mg de Fe elementar (comprimidos) — 3 frascos (90 comprimidos)
+         - Tomar 1 comprimido por via oral, 30 minutos antes do almoço com suco cítrico, diariamente até completar 3 meses pós-parto.
+      
+      5. Cuidados com a Ferida Operatória e Sinais de Alarme:
+         - Lavar a incisão diariamente no banho com água e sabonete neutro, secando suavemente com toalha limpa (não aplicar pomadas ou soluções caseiras).
+         - Retorno em 7 a 10 dias na UBS para avaliação da cicatriz, puerpério e teste do pezinho do RN.
+         - Procurar a maternidade imediatamente se febre (Tax ≥ 37,8°C), saída de pus/abertura dos pontos na ferida, sangramento vaginal intenso, dor na panturrilha, falta de ar ou cefaleia forte.
+
   - trigger: ";hpp"
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA — HEMORRAGIA PÓS-PARTO (CÓDIGO VERMELHO) ######
@@ -862,7 +955,7 @@ matches:
       
       # SUBJETIVO (QD & EXCLUSÃO DE CONTRAINDICAÇÕES À TOCÓLISE):
       - Queixa Principal & HMA: Contrações uterinas dolorosas e rítmicas associadas a pressão pélvica e dor lombar há [ ] horas. Movimentação fetal presente.
-      - Negativas Mandatórias (Sem Contraindicação à Inibição): Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido (afastada corioamnionite), nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
+      - Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido (afastada corioamnionite), nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
       
       # OBJETIVO (EXAME FÍSICO OBSTÉTRICO):
       - Sinais Vitais: PA: [110x70] mmHg | FC: [84] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C (afebril).
@@ -1001,7 +1094,7 @@ matches:
       
       # SUBJETIVO (QD & HMA):
       - Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria].
-      - Negativas Mandatórias: Nega atraso menstrual (β-hCG negativo — afastada ectópica). [Nega vômitos incoercíveis, peritonismo difuso ou instabilidade hemodinâmica (elegível para Monif I ambulatorial) / Apresenta febre alta, vômitos e peritonismo (indicada internação — Monif II/III)].
+      - Nega atraso menstrual (β-hCG negativo — afastada ectópica). [Nega vômitos incoercíveis, peritonismo difuso ou instabilidade hemodinâmica (elegível para Monif I ambulatorial) / Apresenta febre alta, vômitos e peritonismo (indicada internação — Monif II/III)].
       
       # OBJETIVO (EXAME FÍSICO GINECOLÓGICO & EXAMES):
       - Sinais Vitais: PA: [115x70] mmHg | FC: [88] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [37,8] °C.
@@ -1034,7 +1127,7 @@ matches:
          *(Manter EV até 24–48h após melhora clínica e defervescência; em seguida, transicionar para Doxiciclina 100 mg VO 12/12h + Metronidazol 400–500 mg VO 12/12h até completar 14 dias totais)*.
       3. *[OU Esquema Hospitalar Alternativo (Preferencial no Abscesso Tubo-Ovariano — Monif III)]*:
          - Clindamicina 900 mg EV de 8/8 horas + Gentamicina 5 mg/kg EV 1x/dia (ou 2 mg/kg ataque + 1,5 mg/kg 8/8h) + transição oral após 24–48h de melhora até completar 14 dias.
-      4. Abordagem Cirúrgica (Laparoscopia / Laparotomia / Drenagem): Imediata se Monif IV (abscesso roto / choque séptico) ou se abscesso tubo-ovariano $> 8\text{ cm}$ sem resposta após 48–72h de ATB EV.
+      4. Abordagem Cirúrgica (Laparoscopia / Laparotomia / Drenagem): Imediata se Monif IV (abscesso roto / choque séptico) ou se abscesso tubo-ovariano > 8 cm sem resposta após 48–72h de ATB EV.
       
       >> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
       USO INTRAMUSCULAR (REALIZAR NA UNIDADE DE SAÚDE / UPA HOJE):
@@ -1074,7 +1167,7 @@ matches:
          *(Manter EV até 24–48h após melhora clínica e defervescência; em seguida, transicionar para Doxiciclina 100 mg VO 12/12h + Metronidazol 400–500 mg VO 12/12h até completar 14 dias totais)*.
       3. *[OU Esquema Hospitalar Alternativo (Preferencial no Abscesso Tubo-Ovariano — Monif III)]*:
          - Clindamicina 900 mg EV de 8/8 horas + Gentamicina 5 mg/kg EV 1x/dia (ou 2 mg/kg ataque + 1,5 mg/kg 8/8h) + transição oral após 24–48h de melhora até completar 14 dias.
-      4. Abordagem Cirúrgica (Laparoscopia / Laparotomia / Drenagem): Imediata se Monif IV (abscesso roto / choque séptico) ou se abscesso tubo-ovariano $> 8\text{ cm}$ sem resposta após 48–72h de ATB EV.
+      4. Abordagem Cirúrgica (Laparoscopia / Laparotomia / Drenagem): Imediata se Monif IV (abscesso roto / choque séptico) ou se abscesso tubo-ovariano > 8 cm sem resposta após 48–72h de ATB EV.
       
       >> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
       USO INTRAMUSCULAR (REALIZAR NA UNIDADE DE SAÚDE / UPA HOJE):
@@ -1224,4 +1317,254 @@ matches:
       - NÃO pare de amamentar na mama inflamada: O leite parado piora a infecção e forma abscesso. O bebê pode mamar normalmente com segurança.
       - Aplique compressas frias (não quentes!) por 10–15 minutos após as mamadas para reduzir o edema e a dor.
       - Retorno obrigatório em 48 a 72 horas (ou imediatamente se a febre não ceder, se surgir um caroço mole/flutuante na mama ou listras vermelhas).
+
+  - trigger: ";07-sangramento-1trimestre-abortamento-e-ectopica"
+    replace: |
+      ### EMERGÊNCIA OBSTÉTRICA — SANGRAMENTO DO 1º TRIMESTRE ###
+      # ID: [Nome], [ ] anos
+      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
+      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/MM/AAAA]
+      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!]
+      # AP:
+      PAT: [Nega / HAS / DM2 / DIP prévia / Endometriose]
+      MED: [Nega / Ácido Fólico / Progesterona]
+      HAB: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
+      CX: [Nega / Cesárea prévia / Ectópica anterior / Cirurgia tubária]
+      ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
+      HF: [Nega / HAS / DM2]
+      
+      # CASO: SANGRAMENTO DO 1º TRIMESTRE (ABORTAMENTO VS. GRAVIDEZ ECTÓPICA)
+      
+      HMA: Gestante procura emergência obstétrica por sangramento vaginal iniciado há [ ] horas/dias, em volume [discreto em borra de café / moderado / intenso com coágulos e restos ovulares], associado a dor pélvica [ausente / cólica hipogástrica leve a moderada / dor em fossa ilíaca unilateral súbita e lancinante irradiada para escápula — Sinal de Lafond]. Nega [tontura ou síncope / refere lipotimia e sudorese fria]. Refere [presença prévia de DIU / ectópica anterior / nega fatores de risco para ectópica].
+      
+      CHECO EXAMES (USG TRANSVAGINAL + β-hCG QUANTITATIVO):
+      - β-hCG Quantitativo: [ ] mUI/mL (Zona Discriminatória: ≥ 2.000 a 3.500 mUI/mL).
+      - USG Transvaginal: [Gestação tópica viável com BCF presente e hematoma subcoriônico / Abortamento incompleto com eco endometrial heterogêneo > 15 mm / Abortamento retido com CCN ≥ 7 mm sem BCF ou SG médio ≥ 25 mm sem embrião / Útero vazio + massa anexial heterogênea (Sinal do Anel Tubário) e líquido livre em fundo de saco de Douglas — Gravidez Ectópica!].
+      
+      # EXAME CLÍNICO
+      Bom estado geral, corada, hidratada, acianótica, anictérica, afebril [ou hipocorada/taquicárdica se instabilidade hemodinâmica].
+      - Sinais Vitais: PA: [110x70] mmHg | FC: [82] bpm | Índice de Choque (FC/PAS): [< 0,7 normal / ≥ 0,9 choque!] | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,6] °C (descartar aborto infectado!).
+      - Abdome: [Plano, flácido, indolor, sem peritonismo / Doloroso à palpação profunda em hipogástrio ou fossa ilíaca com descompressão brusca positiva — Blumberg+].
+      - Especular: Sangramento [discreto coletado em fundo de saco / ativo pelo OE / saída de material ovular sem odor fétido / secreção purulenta fétida].
+      - Toque Vaginal Bimanual: Colo uterino [grosso, posterior e impérvio (Ameaça de Aborto ou Ectópica) / pérvio para 1 polpa digital (Aborto Inevitável ou Incompleto)]. Útero de volume [compatível com a IG / menor que a IG], mobilização do colo [indolor / intensamente dolorosa — Sinal de Proust / Grito de Douglas positivo!].
+      
+      # AVALIAÇÃO DIAGNÓSTICA:
+      1. Sangramento do 1º Trimestre compatível com: [Ameaça de Abortamento / Abortamento Incompleto / Abortamento Retido / Abortamento Completo / Abortamento Infectado / Gravidez Ectópica Íntegra / Gravidez Ectópica Rota com Hemoperitônio].
+      
+      # PLANO / CONDUTA
+      1. Estabilização Hemodinâmica (se sangramento volumoso ou Ectópica Rota): 2 acessos venosos calibrosos (14G/16G), coleta de Hb/Ht, Tipagem Sanguínea + Prova Cruzada, Coagulograma e reposição cristaloide aquecida + reserva de Concentrado de Hemácias.
+      2. Imunoprofilaxia Anti-D Obrigatória em Gestantes Rh Negativo (Coombs Indireto Negativo): Administrar Imunoglobulina Anti-D 300 mcg IM até 72h após o início do sangramento ou esvaziamento uterino.
+      3. Conduta Específica conforme Classificação:
+         - Se Ameaça de Abortamento (colo fechado + BCF presente): Orientação de repouso relativo, abstinência sexual pélvica, analgesia se cólica (Escopolamina + Paracetamol) e reavaliação ultrassonográfica em 7 a 14 dias.
+         - Se Abortamento Incompleto / Retido (< 12 semanas): [Conduta Expectante / Esvaziamento Medicamentoso com Misoprostol (800 mcg vaginal se retido / 400 mcg SL ou 600 mcg VO se incompleto) / Aspiração Manual Intrauterina (AMIU) sob bloqueio paracervical e analgesia].
+         - Se Abortamento Infectado (Febre, leucocitose, dor uterina, secreção fétida): Coleta de hemoculturas + Antibioticoterapia IV imediata (Clindamicina 900 mg IV 8/8h + Gentamicina 5 mg/kg/dia IV 24/24h) + Esvaziamento uterino cirúrgico imediato após 1ª dose de antibiótico.
+         - Se Gravidez Ectópica Íntegra (Estável, massa < 3,5–4,0 cm, sem BCF ectópico, β-hCG < 5.000 mUI/mL, hemograma/TGO/TGP/creatinina normais e sem aleitamento/imunodeficiência): Tratamento clínico com Metotrexato 50 mg/m² IM em dose única (D1), dosando β-hCG no D4 e D7 (esperada queda ≥ 15% entre D4 e D7).
+         - Se Gravidez Ectópica Rota (Instabilidade hemodinâmica, abdome agudo hemorrágico, β-hCG > 5.000 ou BCF ectópico presente): Laparoscopia / Laparotomia exploradora de emergência para Salpingectomia.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (ALTA AMBULATORIAL — AMEAÇA DE ABORTO OU PÓS-ESVAZIAMENTO / AMIU SEM INFECÇÃO):
+      
+      1. Escopolamina 10 mg + Paracetamol 500 mg (comprimidos) — 1 caixa (20 comprimidos)
+         - Tomar 1 comprimido por via oral a cada 6 ou 8 horas se dor ou cólica hipogástrica.
+      
+      2. Ibuprofeno 600 mg (comprimidos) [APENAS PÓS-ABORTAMENTO COMPLETO/AMIU — NÃO USAR SE GESTAÇÃO TÓPICA VIÁVEL!] — 1 caixa (15 comprimidos)
+         - Tomar 1 comprimido por via oral a cada 8 horas por 3 a 5 dias para controle de cólica pós-esvaziamento.
+      
+      3. Sulfato Ferroso 40 mg de Fe elementar (comprimidos) — 1 frasco (30 comprimidos)
+         - Tomar 1 comprimido por via oral, 30 minutos antes do almoço, por 30 dias (reposição pós-sangramento).
+      
+      4. Orientações de Alarme e Retorno Imediato:
+         - Retornar imediatamente à emergência se sangramento intenso (encharcar > 2 absorventes noturnos por hora por 2 horas seguidas), febre (Tax ≥ 37,8°C), dor abdominal forte refratária, tontura/desmaio ou eliminação de secreção com odor fétido.
+         - Se pós-abortamento: oferecido planejamento reprodutivo imediato (iniciar anticoncepcional ou inserir DIU/Implanon antes da alta).
+
+  - trigger: ";07-sangramento-1trimestre-abortamento-e-ectopica-cnd"
+    replace: |
+      # PLANO / CONDUTA
+      1. Estabilização Hemodinâmica (se sangramento volumoso ou Ectópica Rota): 2 acessos venosos calibrosos (14G/16G), coleta de Hb/Ht, Tipagem Sanguínea + Prova Cruzada, Coagulograma e reposição cristaloide aquecida + reserva de Concentrado de Hemácias.
+      2. Imunoprofilaxia Anti-D Obrigatória em Gestantes Rh Negativo (Coombs Indireto Negativo): Administrar Imunoglobulina Anti-D 300 mcg IM até 72h após o início do sangramento ou esvaziamento uterino.
+      3. Conduta Específica conforme Classificação:
+         - Se Ameaça de Abortamento (colo fechado + BCF presente): Orientação de repouso relativo, abstinência sexual pélvica, analgesia se cólica (Escopolamina + Paracetamol) e reavaliação ultrassonográfica em 7 a 14 dias.
+         - Se Abortamento Incompleto / Retido (< 12 semanas): [Conduta Expectante / Esvaziamento Medicamentoso com Misoprostol (800 mcg vaginal se retido / 400 mcg SL ou 600 mcg VO se incompleto) / Aspiração Manual Intrauterina (AMIU) sob bloqueio paracervical e analgesia].
+         - Se Abortamento Infectado (Febre, leucocitose, dor uterina, secreção fétida): Coleta de hemoculturas + Antibioticoterapia IV imediata (Clindamicina 900 mg IV 8/8h + Gentamicina 5 mg/kg/dia IV 24/24h) + Esvaziamento uterino cirúrgico imediato após 1ª dose de antibiótico.
+         - Se Gravidez Ectópica Íntegra (Estável, massa < 3,5–4,0 cm, sem BCF ectópico, β-hCG < 5.000 mUI/mL, hemograma/TGO/TGP/creatinina normais e sem aleitamento/imunodeficiência): Tratamento clínico com Metotrexato 50 mg/m² IM em dose única (D1), dosando β-hCG no D4 e D7 (esperada queda ≥ 15% entre D4 e D7).
+         - Se Gravidez Ectópica Rota (Instabilidade hemodinâmica, abdome agudo hemorrágico, β-hCG > 5.000 ou BCF ectópico presente): Laparoscopia / Laparotomia exploradora de emergência para Salpingectomia.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (ALTA AMBULATORIAL — AMEAÇA DE ABORTO OU PÓS-ESVAZIAMENTO / AMIU SEM INFECÇÃO):
+      
+      1. Escopolamina 10 mg + Paracetamol 500 mg (comprimidos) — 1 caixa (20 comprimidos)
+         - Tomar 1 comprimido por via oral a cada 6 ou 8 horas se dor ou cólica hipogástrica.
+      
+      2. Ibuprofeno 600 mg (comprimidos) [APENAS PÓS-ABORTAMENTO COMPLETO/AMIU — NÃO USAR SE GESTAÇÃO TÓPICA VIÁVEL!] — 1 caixa (15 comprimidos)
+         - Tomar 1 comprimido por via oral a cada 8 horas por 3 a 5 dias para controle de cólica pós-esvaziamento.
+      
+      3. Sulfato Ferroso 40 mg de Fe elementar (comprimidos) — 1 frasco (30 comprimidos)
+         - Tomar 1 comprimido por via oral, 30 minutos antes do almoço, por 30 dias (reposição pós-sangramento).
+      
+      4. Orientações de Alarme e Retorno Imediato:
+         - Retornar imediatamente à emergência se sangramento intenso (encharcar > 2 absorventes noturnos por hora por 2 horas seguidas), febre (Tax ≥ 37,8°C), dor abdominal forte refratária, tontura/desmaio ou eliminação de secreção com odor fétido.
+         - Se pós-abortamento: oferecido planejamento reprodutivo imediato (iniciar anticoncepcional ou inserir DIU/Implanon antes da alta).
+
+  - trigger: ";08-sangramento-2e3trimestre-dpp-e-placenta-previa"
+    replace: |
+      ### EMERGÊNCIA OBSTÉTRICA — SANGRAMENTO DO 2º/3º TRIMESTRE ###
+      # ID: [Nome], [ ] anos | Leito: [ ]
+      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
+      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA]
+      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo]
+      # AP:
+      PAT: [Nega / HAS / Pré-eclâmpsia / DMG / Trombofilia]
+      MED: [Nega / Sulfato Ferroso / Metildopa / AAS]
+      HAB: [Nega tabagismo, etilismo ou uso de cocaína / Tabagista / Uso de cocaína]
+      CX: [Nega / Cesáreas anteriores ([ ]) / Curetagem prévia]
+      ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
+      HF: [Nega / HAS / Pré-eclâmpsia]
+      
+      # CASO: SANGRAMENTO DO 2º/3º TRIMESTRE (DPP VS. PLACENTA PRÉVIA E VASA PRÉVIA)
+      
+      HMA: Gestante admitida em emergência obstétrica por sangramento vaginal iniciado há [ ] horas, com características de [sangramento escuro/coágulos acompanhado de dor abdominal súbita e intensa (80%) ou sangramento oculto retroplacentário (20%) → Suspeita de DPP / sangramento vermelho-vivo rutilante, indolor, imotivado, recorrente e progressivo → Suspeita de Placenta Prévia]. Movimentação fetal: [Presente / Reduzida ou ausente]. Fatores desencadeantes: [Crise hipertensiva / Trauma abdominal / Cesáreas anteriores / Polidrâmnio com amniotomia brusca].
+      
+      CHECO EXAMES (COAGULOGRAMA & USG OBSTÉTRICA):
+      - Laboratório Solicitado: Hemograma, Tipagem/Prova Cruzada, Fibrinogênio de Clauss (alvo > 200 mg/dL; < 150 mg/dL prediz CIVD grave!), TP/INR, TTPa, Plaquetas, Creatinina e Teste do Coágulo à beira do leito.
+      - USG Obstétrica: [NÃO atrasar cesárea de emergência no DPP com sofrimento fetal! / Na Placenta Prévia: placenta recobrindo o orifício interno do colo (Centro-Total) ou borda a < 20 mm do OI (Inserção Baixa) + avaliar sinais de Acretismo Placentário ao Doppler].
+      
+      # EXAME CLÍNICO
+      [Estado geral comprometido / hipocorada / álgica / ou estável em observação obstétrica] (ATENÇÃO: PROIBIDO TOQUE VAGINAL ANTES DE EXCLUIR PLACENTA PRÉVIA!).
+      - Hemodinâmica Materna: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Índice de Choque (FC/PAS): [ ] | FR: [ ] irpm | SpO2: [ ]% | Diurese em SVD: [ ] mL/h.
+      - Tonometria e Dinâmica Uterina: Útero [hipertônico / taquissistolia / consistência lenhosa em "tábua" (Útero de Couvelaire — DPP!) / tônus uterino normal e indolor, feto facilmente palpável (Placenta Prévia!)].
+      - Vitalidade Fetal (BCF / Cardiotocografia): BCF: [ ] bpm — [Padrão tranquilizador Categoria I / Bradicardia fetal grave ou desacelerações tardias — Sofrimento Fetal Agudo / BCF ausente — Óbito Fetal].
+      - Exame Especular Cuidadoso: Presença de [sangramento ativo pelo orifício externo / coágulos escuros em fundo de saco / líquido amniótico sanguinolento (hemoâmnio)]. Toque vaginal [NÃO REALIZADO até confirmação placentária / realizado após exclusão de Placenta Prévia: colo dilatado para [ ] cm].
+      
+      # AVALIAÇÃO DIAGNÓSTICA:
+      1. Sangramento da segunda metade da gestação compatível com: [Descolamento Prematuro de Placenta — DPP (CID-10: O45) / Placenta Prévia (O44) / Rotura de Vasa Prévia].
+      
+      # PLANO / CONDUTA
+      1. Pacote de Ressuscitação Hemorrágica Obstétrica: 2 acessos venosos calibrosos (14G/16G), O2 suplementar, Sondagem Vesical de Demora (meta diurese ≥ 0,5 mL/kg/h), reserva imediata de Concentrado de Hemácias, Plasma Fresco e Crioprecipitado.
+      2. REGRA DE SEGURANÇA: Jamais realizar toque vaginal antes de descartar Placenta Prévia ao ultrassom.
+      3. Conduta no Descolamento Prematuro de Placenta (DPP):
+         - Se Feto Vivo (qualquer IG viável): Amniotomia imediata (reduz pressão intrauterina e passagem de tromboplastina tecidual para a circulação materna) + Cesariana de Emergência imediata (tempo porta-extração < 20 min; exceto se parto vaginal iminente em expulsivo com vitalidade monitorizada).
+         - Se Feto Morto e Mãe Hemodinamicamente Estável: Amniotomia + indução/condução de parto vaginal rápido (monitorando coagulograma e fibrinogênio a cada 2h); se instabilidade materna ou falha de progressão, realizar Cesariana.
+         - Prevenção de Atonia Pós-Parto (Útero de Couvelaire): Ocitocina IV + Ácido Tranexâmico 1 g IV em 10 min + vigilância rigorosa de CIVD (repor Crioprecipitado se Fibrinogênio < 150–200 mg/dL).
+      4. Conduta na Placenta Prévia:
+         - Se Sangramento Intenso / Instabilidade Materna ou Sofrimento Fetal: Cesariana de emergência imediata.
+         - Se Gestante Estável e Prematura (24 a 34 semanas): Internação hospitalar, Corticoterapia antenatal (Betametasona 12 mg IM a cada 24h por 2 doses), Sulfato de Magnésio para neuroproteção se < 32 semanas, Imunoglobulina Anti-D se Rh negativo e programação de interrupção eletiva entre 36s0d e 37s6d (ou 34–35s se Acretismo Placentário confirmado com equipe multidisciplinar).
+
+  - trigger: ";08-sangramento-2e3trimestre-dpp-e-placenta-previa-cnd"
+    replace: |
+      # PLANO / CONDUTA
+      1. Pacote de Ressuscitação Hemorrágica Obstétrica: 2 acessos venosos calibrosos (14G/16G), O2 suplementar, Sondagem Vesical de Demora (meta diurese ≥ 0,5 mL/kg/h), reserva imediata de Concentrado de Hemácias, Plasma Fresco e Crioprecipitado.
+      2. REGRA DE SEGURANÇA: Jamais realizar toque vaginal antes de descartar Placenta Prévia ao ultrassom.
+      3. Conduta no Descolamento Prematuro de Placenta (DPP):
+         - Se Feto Vivo (qualquer IG viável): Amniotomia imediata (reduz pressão intrauterina e passagem de tromboplastina tecidual para a circulação materna) + Cesariana de Emergência imediata (tempo porta-extração < 20 min; exceto se parto vaginal iminente em expulsivo com vitalidade monitorizada).
+         - Se Feto Morto e Mãe Hemodinamicamente Estável: Amniotomia + indução/condução de parto vaginal rápido (monitorando coagulograma e fibrinogênio a cada 2h); se instabilidade materna ou falha de progressão, realizar Cesariana.
+         - Prevenção de Atonia Pós-Parto (Útero de Couvelaire): Ocitocina IV + Ácido Tranexâmico 1 g IV em 10 min + vigilância rigorosa de CIVD (repor Crioprecipitado se Fibrinogênio < 150–200 mg/dL).
+      4. Conduta na Placenta Prévia:
+         - Se Sangramento Intenso / Instabilidade Materna ou Sofrimento Fetal: Cesariana de emergência imediata.
+         - Se Gestante Estável e Prematura (24 a 34 semanas): Internação hospitalar, Corticoterapia antenatal (Betametasona 12 mg IM a cada 24h por 2 doses), Sulfato de Magnésio para neuroproteção se < 32 semanas, Imunoglobulina Anti-D se Rh negativo e programação de interrupção eletiva entre 36s0d e 37s6d (ou 34–35s se Acretismo Placentário confirmado com equipe multidisciplinar).
+
+  - trigger: ";09-violencia-sexual-e-profilaxias-pep"
+    replace: |
+      ### EMERGÊNCIA GO — VIOLÊNCIA SEXUAL & PROFILAXIA PEP ###
+      # ID: [Nome], [ ] anos | Peso: [ ] kg
+      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
+      DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU]
+      TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção de emergência até 5 dias e profilaxia de ISTs não virais])
+      # AP:
+      PAT: [Nega / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida]]
+      MED: [Nega uso contínuo / Em uso de: [ ]]
+      HAB: [Nega tabagismo ou etilismo]
+      CX: [Nega]
+      ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
+      HF: [Nega]
+      
+      # CASO: ACOLHIMENTO E PROFILAXIA PÓS-VIOLÊNCIA SEXUAL (PORTARIA MS / PCDT)
+      
+      HMA: Paciente acolhida em ambiente privativo (NOTA: não exigir Boletim de Ocorrência para atendimento e profilaxias!). Refere exposição por penetração [vaginal / anal / oral] desprotegida com [agressor desconhecido / agressor conhecido] há [ ] horas.
+      
+      CHECO EXAMES E TESTES RÁPIDOS DE TEMPO ZERO (T0):
+      - Testes Rápidos (T0): HIV: [Não Reagente] | Sífilis: [Não Reagente] | Hepatite B (HBsAg): [Não Reagente] | Hepatite C (Anti-HCV): [Não Reagente].
+      - β-hCG Sérico / Urinário (T0): [Negativo]. Coletado hemograma, transaminases (TGO/TGP) e creatinina basal.
+      
+      # EXAME CLÍNICO
+      Bom estado geral [ou emocionalmente abalada, porém lúcida e orientada], corada, hidratada, acianótica, anictérica, afebril (exame realizado com consentimento e acompanhante).
+      - Sinais Vitais: PA: [115x75] mmHg | FC: [84] bpm | FR: [16] irpm | SpO2: [99]% AA.
+      - Exame Corporal Externo: [Ausência de lesões traumáticas graves / Presença de escoriações ou equimoses descritas topograficamente].
+      - Exame Ginecológico / Perineal: [Sem lacerações ativas ou sangramento / Presença de hiperemia ou fissura mucosa superficial sem sangramento ativo].
+      
+      # AVALIAÇÃO DIAGNÓSTICA:
+      1. Vítima de violência sexual dentro da janela de [≤ 72h / 72h–5 dias], elegível para profilaxias combinadas (contracepção de emergência, ISTs não virais, Hepatite B e PEP HIV) + Notificação Compulsória SINAN.
+      
+      # PLANO / CONDUTA
+      1. Acolhimento Multiprofissional Imediato: Garantir atendimento médico, psicológico e serviço social em sala privativa (Nota: Boletim de Ocorrência NÃO é obrigatório para realização do atendimento médico e das profilaxias; realizar Notificação Compulsória SINAN em até 24h).
+      2. Contracepção de Emergência (se exposição vaginal, β-hCG negativo e sem método seguro, idealmente até 72h, podendo ser usada até 120h / 5 dias):
+         - Levonorgestrel 1,5 mg VO em dose única (ou 2 comprimidos de 0,75 mg juntos) + antiemético prévio (Ondansetrona 8 mg VO). Se vômito < 2h, repetir dose; se peso >= 75 kg ou IMC >= 30 kg/m², preferir DIU de Cobre em até 5 dias quando disponível/aceito.
+      3. Profilaxia das ISTs Não Virais (Dose Única Supervisionada no Consultório):
+         - Sífilis: Penicilina G Benzatina 2.400.000 UI IM (1.200.000 UI em cada glúteo) [se alergia grave à penicilina: Doxiciclina 100 mg VO 12/12h por 15 dias — exceto gestante, que requer dessensibilização].
+         - Gonorreia: Ceftriaxona 500 mg IM em dose única.
+         - Clamídia e Cancro Mole: Azitromicina 1 g VO (2 comprimidos de 500 mg) em dose única.
+         - Tricomoníase: Metronidazol 2 g VO (8 comprimidos de 250 mg ou 5 de 400 mg) em dose única (postergar 48–72h para evitar intolerância gástrica junto com os antirretrovirais).
+      4. Imunoprofilaxia para Hepatite B & HPV (PCDT MS):
+         - Hepatite B (se não vacinada, esquema incompleto ou anti-HBs < 10 mUI/mL): Vacina Hepatite B (1ª dose IM no deltoide hoje, aprazar 1 e 6 meses) + Imunoglobulina Humana Anti-Hepatite B (IGHAHB) 0,06 mL/kg IM no glúteo (em grupo muscular diferente da vacina, até 14 dias da exposição).
+         - Vacina HPV (9 a 45 anos, se não vacinada ou esquema incompleto): Aplicar 1ª dose hoje e completar esquema de 3 doses (0, 2 e 6 meses) pelo SUS.
+      5. PEP para HIV (se exposição ≤ 72 horas, teste rápido de HIV Não Reagente e ClCr >= 50–60 mL/min):
+         - Tenofovir (TDF) 300 mg + Lamivudina (3TC) 300 mg (1 comprimido coformulado VO 1x/dia) + Dolutegravir (DTG) 50 mg (1 comprimido VO 1x/dia — seguro inclusive na gestação!) por 28 dias ininterruptos.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (KIT DE ALTA — PROFILAXIA PÓS-EXPOSIÇÃO SEXUAL / PEP):
+      
+      1. Levonorgestrel 1,5 mg (comprimido) — 1 caixa (1 comprimido)
+         - Tomar 1 comprimido por via oral em dose única imediata (Contracepção de Emergência; repetir se vomitar em menos de 2 horas).
+      
+      2. Tenofovir 300 mg + Lamivudina 300 mg (comprimido coformulado) — 1 frasco (30 comprimidos)
+         - Tomar 1 comprimido por via oral, 1 vez ao dia (no mesmo horário), durante 28 dias completos.
+      
+      3. Dolutegravir 50 mg (comprimidos) — 1 frasco (30 comprimidos)
+         - Tomar 1 comprimido por via oral, 1 vez ao dia (junto com o Tenofovir+Lamivudina; evitar tomar junto com antiácidos, cálcio ou sulfato ferroso — separar por 2h antes ou 6h depois), durante 28 dias completos.
+      
+      4. Metronidazol 400 mg (comprimidos) — 5 comprimidos
+         - Tomar os 5 comprimidos (total 2 g) por via oral em dose única após o almoço no 3º dia (não ingerir bebida alcoólica por 48 horas após o uso).
+      
+      5. Ondansetrona 8 mg (comprimidos) — 1 caixa (10 comprimidos)
+         - Tomar 1 comprimido por via oral até de 8 em 8 horas se náuseas ou vômitos durante a primeira semana dos medicamentos.
+      
+      6. Acompanhamento Ambulatorial e Retornos:
+         - Retorno agendado em 14 dias (avaliação clínica, β-hCG de controle e adesão à PEP), 30 dias e 90 dias para repetição de sorologias (HIV, Sífilis, Hepatites B e C) e apoio psicológico.
+
+  - trigger: ";09-violencia-sexual-e-profilaxias-pep-cnd"
+    replace: |
+      # PLANO / CONDUTA
+      1. Acolhimento Multiprofissional Imediato: Garantir atendimento médico, psicológico e serviço social em sala privativa (Nota: Boletim de Ocorrência NÃO é obrigatório para realização do atendimento médico e das profilaxias; realizar Notificação Compulsória SINAN em até 24h).
+      2. Contracepção de Emergência (se exposição vaginal, β-hCG negativo e sem método seguro, idealmente até 72h, podendo ser usada até 120h / 5 dias):
+         - Levonorgestrel 1,5 mg VO em dose única (ou 2 comprimidos de 0,75 mg juntos) + antiemético prévio (Ondansetrona 8 mg VO). Se vômito < 2h, repetir dose; se peso >= 75 kg ou IMC >= 30 kg/m², preferir DIU de Cobre em até 5 dias quando disponível/aceito.
+      3. Profilaxia das ISTs Não Virais (Dose Única Supervisionada no Consultório):
+         - Sífilis: Penicilina G Benzatina 2.400.000 UI IM (1.200.000 UI em cada glúteo) [se alergia grave à penicilina: Doxiciclina 100 mg VO 12/12h por 15 dias — exceto gestante, que requer dessensibilização].
+         - Gonorreia: Ceftriaxona 500 mg IM em dose única.
+         - Clamídia e Cancro Mole: Azitromicina 1 g VO (2 comprimidos de 500 mg) em dose única.
+         - Tricomoníase: Metronidazol 2 g VO (8 comprimidos de 250 mg ou 5 de 400 mg) em dose única (postergar 48–72h para evitar intolerância gástrica junto com os antirretrovirais).
+      4. Imunoprofilaxia para Hepatite B & HPV (PCDT MS):
+         - Hepatite B (se não vacinada, esquema incompleto ou anti-HBs < 10 mUI/mL): Vacina Hepatite B (1ª dose IM no deltoide hoje, aprazar 1 e 6 meses) + Imunoglobulina Humana Anti-Hepatite B (IGHAHB) 0,06 mL/kg IM no glúteo (em grupo muscular diferente da vacina, até 14 dias da exposição).
+         - Vacina HPV (9 a 45 anos, se não vacinada ou esquema incompleto): Aplicar 1ª dose hoje e completar esquema de 3 doses (0, 2 e 6 meses) pelo SUS.
+      5. PEP para HIV (se exposição ≤ 72 horas, teste rápido de HIV Não Reagente e ClCr >= 50–60 mL/min):
+         - Tenofovir (TDF) 300 mg + Lamivudina (3TC) 300 mg (1 comprimido coformulado VO 1x/dia) + Dolutegravir (DTG) 50 mg (1 comprimido VO 1x/dia — seguro inclusive na gestação!) por 28 dias ininterruptos.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (KIT DE ALTA — PROFILAXIA PÓS-EXPOSIÇÃO SEXUAL / PEP):
+      
+      1. Levonorgestrel 1,5 mg (comprimido) — 1 caixa (1 comprimido)
+         - Tomar 1 comprimido por via oral em dose única imediata (Contracepção de Emergência; repetir se vomitar em menos de 2 horas).
+      
+      2. Tenofovir 300 mg + Lamivudina 300 mg (comprimido coformulado) — 1 frasco (30 comprimidos)
+         - Tomar 1 comprimido por via oral, 1 vez ao dia (no mesmo horário), durante 28 dias completos.
+      
+      3. Dolutegravir 50 mg (comprimidos) — 1 frasco (30 comprimidos)
+         - Tomar 1 comprimido por via oral, 1 vez ao dia (junto com o Tenofovir+Lamivudina; evitar tomar junto com antiácidos, cálcio ou sulfato ferroso — separar por 2h antes ou 6h depois), durante 28 dias completos.
+      
+      4. Metronidazol 400 mg (comprimidos) — 5 comprimidos
+         - Tomar os 5 comprimidos (total 2 g) por via oral em dose única após o almoço no 3º dia (não ingerir bebida alcoólica por 48 horas após o uso).
+      
+      5. Ondansetrona 8 mg (comprimidos) — 1 caixa (10 comprimidos)
+         - Tomar 1 comprimido por via oral até de 8 em 8 horas se náuseas ou vômitos durante a primeira semana dos medicamentos.
+      
+      6. Acompanhamento Ambulatorial e Retornos:
+         - Retorno agendado em 14 dias (avaliação clínica, β-hCG de controle e adesão à PEP), 30 dias e 90 dias para repetição de sorologias (HIV, Sífilis, Hepatites B e C) e apoio psicológico.
 

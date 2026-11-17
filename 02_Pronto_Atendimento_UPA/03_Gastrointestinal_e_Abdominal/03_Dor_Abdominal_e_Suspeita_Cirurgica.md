@@ -17,10 +17,9 @@
   * Caráter & Intensidade: [Em cólica intermitente / Contínua em pontada / Queimação intensa], intensidade [ ]/10 na escala visual de dor.
   * Fatores de Piora/Melhora: Piora com tosse e deambulação (peritonismo); [sem alívio com analgésicos comuns].
   * Sintomas Associados: [Febre de [ ] °C / Anorexia total (recusa qualquer comida) / Náuseas e vômitos ([ ] episódios) / Parada de eliminação de flatos e fezes há [ ] horas].
-- NEGATIVAS MANDATÓRIAS / GINECO-OBSTÉTRICAS (SE MULHER EM IDADE FÉRTIL):
-  * DUM: [DD/MM/AAAA] (Afastada gravidez ectópica: beta-hCG [negativo / solicitado com urgência]).
-  * Nega corrimento vaginal fétido ou sangramento genital ativo.
-  * Nega hematêmese, melena ou enterorragia volumosa.
+- DUM: [DD/MM/AAAA] (Afastada gravidez ectópica: beta-hCG [negativo / solicitado com urgência]).
+- Nega corrimento vaginal fétido ou sangramento genital ativo.
+- Nega hematêmese, melena ou enterorragia volumosa.
 - Antecedentes: [Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida].
 - Alergias: [Nega / Sim: [ ]].
 

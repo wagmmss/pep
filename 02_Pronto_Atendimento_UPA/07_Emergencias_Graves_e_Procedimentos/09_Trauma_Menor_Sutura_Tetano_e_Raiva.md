@@ -13,7 +13,7 @@
 - Paciente: [Nome], [Idade] anos, Sala de Pequena Cirurgia, Registro: [ ]
 - Horário do Trauma: Há cerca de [ ] horas (Trauma ocorrido às [HH:MM]).
 - Mecanismo do Trauma: [Corte por vidro / Lâmina metálica / Queda da própria altura com impacto / Mordedura animal por cão ou gato / Objeto perfurocortante enferrujado / Acidente de trabalho].
-- Alergias Medicamentosas: [Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina].
+- Alergias Medicamentosas: [Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / [ ]].
 
 # AVALIAÇÃO DA LESÃO & EXAME FÍSICO DIRECIONADO:
 - Localização Anatômica: Região [face / supercílio / couro cabeludo / antebraço / mão / coxa / perna] [direita / esquerda].
@@ -79,7 +79,12 @@
 
 ---
 
-### [REGRAS DE CONDUTA EM PEQUENA CIRURGIA E PROFILAXIAS]
-- **Avaliação Neurotendínea ANTES da Anestesia:** NUNCA anestesiar uma ferida cortocontusa em mãos, punho ou pés antes de testar a mobilidade ativa de todos os tendões flexores e extensores e a sensibilidade tátil distal. A anestesia local anestesia o nervo e impede a detecção de laceração tendínea ou nervosa prévia.
-- **Vasoconstritor Proscrito em Extremidades:** Fica terminantemente proibido o uso de anestésicos locais com adrenalina/epinefrina em extremidades com circulação terminal (dedos das mãos e pés, asa nasal, pavilhão auricular e pênis), sob risco iminente de isquemia digital e necrose tecidual.
-- **Mordedura por Morcego é Sempre Acidente Grave:** Qualquer contato físico direto com morcego (mesmo arranhadura imperceptível ou paciente que acordou no mesmo quarto com morcego) é classificado pelo Ministério da Saúde como acidente grave que exige **Vacina Antirrábica (4 doses) + Soro/Imunoglobulina Antirrábica**, sem período de observação do animal.
+### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+
+### 🧠 1. Por Que Avaliar Tendões e Nervos Antes da Anestesia Local?
+- **Por Que Nunca Anestesiar Mãos, Punhos ou Pés Antes do Exame Neurotendíneo?** O bloqueio anestésico abole a dor e pode mascarar lesões parciais ou completas de nervos digitais e tendões flexores/extensores. Teste sempre **força contra resistência de cada dedo e sensibilidade distal** antes de infiltrar lidocaína.
+- **Por Que Evitar Vasoconstritor em Circulação Terminal (ou Usá-lo com Critério)?** Em extremidades com artérias terminais sem colaterais robustas (asa nasal, pavilhão auricular, pênis e dedos com vasculopatia), o uso clássico sem adrenalina evita vasoespasmo sustentado e **isquemia/necrose tecidual**.
+
+### 💉 2. Por Que Profilaxia de Tétano e Raiva Seguem Travas Rígidas?
+- **Por Que Mordedura ou Contato com Morcego é Sempre Acidente Grave?** Pelo protocolo do Ministério da Saúde, qualquer contato físico direto com morcego (inclusive arranhadura imperceptível ou acordar no mesmo ambiente) implica risco real de vírus rábico e exige **Vacina Antirrábica (4 doses) + Soro/Imunoglobulina Antirrábica**, sem observação do animal.
+- **Tétano em Ferimento Sujo/Profundo:** Se vacinação incompleta/incerta (`< 3 doses` ou `> 5 anos` em ferimento de alto risco), além da dose de reforço (`dT`), é obrigatória a aplicação de **SAT ou Imunoglobulina Antitetânica (IGHAT)** em sítio anatômico diferente.

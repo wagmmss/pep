@@ -9,17 +9,17 @@
 ```text
 ###### ADMISSÃO EM ENFERMARIA DE CLÍNICA MÉDICA ######
 # IDENTIFICAÇÃO & ORIGEM:
-- Paciente: [Nome], [Idade] anos | Sexo: [Masculino / Feminino] | Leito: [ ]
+- Paciente: [Nome], [Idade] anos | Sexo: [Masculino / Feminino][? Leito :: | Leito: [ ]]
 - Origem da Admissão: [Pronto Atendimento / UPA / Transferência Hospitalar / Ambulatório]
 - Data e Hora da Admissão: [DD/MM/AAAA] às [HH:MM]
 - Diagnóstico Sindrômico / Motivo da Internação: [ ]
 
 # SUBJETIVO (HISTÓRIA DA ADMISSÃO & ANTECEDENTES):
 - HMA: Paciente admitido(a) nesta enfermaria proveniente de [UPA / Pronto-Socorro / Ambulatório] com quadro de [ ], iniciado há [ ] dias, caracterizado por [ ]. No serviço de origem recebeu [medidas e medicações prévias: [ ]]. No momento da admissão no leito, encontra-se [estável sem queixas álgicas agudas / com queixa residual de: [ ]].
-- Negativas de Gravidade Mandatórias: Nega no momento precordialgia típica, dispneia em repouso, síncope, déficits motores focais agudos ou sangramentos francos ativos.
+- Nega no momento precordialgia típica, dispneia em repouso, síncope, déficits motores focais agudos ou sangramentos francos ativos.
 - Comorbidades Ativas: [Nega comorbidades prévias / HAS / DM tipo 2 / Dislipidemia / Insuficiência Cardíaca (FE [ ]%) / DPOC / Asma / DRC estágio [ ] / Hepatopatia crônica / Neoplasia: [ ]].
 - Cirurgias e Internações Prévias: [Nega / Sim: [ ]].
-- Alergias Medicamentosas: [Nega alergias conhecidas / Alérgico(a) a: — pulseira de alerta acionada].
+- Alergias Medicamentosas: [Nega alergias conhecidas / Alérgico(a) a: [ ] — pulseira de alerta acionada].
 - Hábitos de Vida: Tabagismo: [Nega / Ex-tabagista há [ ] anos / Ativo ([ ] maços-ano)] | Etilismo: [Nega / Etilista social / Etilista crônico: [ ]] | Uso de substâncias ilícitas: [Nega / Sim: [ ]].
 
 # RECONCILIAÇÃO MEDICAMENTOSA DE ADMISSÃO (USO PRÉVIO DOMICILIAR):

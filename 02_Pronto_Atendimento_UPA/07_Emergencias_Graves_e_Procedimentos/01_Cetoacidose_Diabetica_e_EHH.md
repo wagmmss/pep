@@ -19,9 +19,8 @@
   * [ ] Infecção aguda precipitante (Pneumonia, ITU, infecção cutânea).
   * [ ] Omissão ou suspensão inadvertida da dose de Insulina basal.
   * [ ] Infarto agudo do miocárdio silencioso ou AVC agudo.
-- Negativas Mandatórias:
-  * Nega cirurgia abdominal recente ou hematêmese.
-  * Nega uso de drogas simpatomiméticas ilícitas (cocaína).
+- Nega cirurgia abdominal recente ou hematêmese.
+- Nega uso de drogas simpatomiméticas ilícitas (cocaína).
 - Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO NA SALA VERMELHA):

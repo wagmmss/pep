@@ -26,7 +26,7 @@
   * Nega porta de entrada cutânea purulenta, úlcera infectada ou ferimento perfurante contíguo.
   * Nega uso de drogas endovenosas ou presença de prótese articular ortopédica no local.
 - Histórico: [Crises prévias idênticas de gota com hiperuricemia / Primeiro episódio da vida].
-- Alergias & Comorbidades: [Nega / DRC / HAS / DM2 / Alérgico a AINEs].
+- Alergias & Comorbidades: [Nega / DRC / HAS / DM2 / Alérgico a AINEs / [ ]].
 
 # OBJETIVO (EXAME FÍSICO ARTICULAR DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril ou febrícula álgica).

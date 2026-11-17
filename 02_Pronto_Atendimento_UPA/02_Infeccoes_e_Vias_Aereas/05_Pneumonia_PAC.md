@@ -23,12 +23,11 @@
     - CURB 0-1 ponto: Baixo risco de mortalidade -> TRATAMENTO AMBULATORIAL SEGURO EM DOMICÍLIO.
     - CURB 2 pontos: Risco intermediário -> INTERNAÇÃO EM ENFERMARIA / OBSERVAÇÃO CLÍNICA EM UPA.
     - CURB >= 3 pontos: Alto risco de gravidade -> INTERNAÇÃO HOSPITALAR COM AVALIAÇÃO DE UTI.
-- Negativas Mandatórias:
-  * Nega hemoptise volumosa ou sangramento respiratório ativo.
-  * Nega estridor respiratório, sensação de asfixia ou tiragem de fúrcula/intercostal.
-  * Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise (afastada PAC hospitalar/multirresistente).
-- Comorbidades: [Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão].
-- Alergias: [Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos].
+- Nega hemoptise volumosa ou sangramento respiratório ativo.
+- Nega estridor respiratório, sensação de asfixia ou tiragem de fúrcula/intercostal.
+- Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise (afastada PAC hospitalar/multirresistente).
+- Comorbidades: [Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / [ ]].
+- Alergias: [Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 
 # OBJETIVO (EXAME FÍSICO RESPIRATÓRIO & GERAL):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente | Tax: [ ] °C.

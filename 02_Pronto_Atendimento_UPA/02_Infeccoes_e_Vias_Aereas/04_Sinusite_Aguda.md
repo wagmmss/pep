@@ -16,12 +16,11 @@
   - Sintomas persistentes por mais de 10 dias sem sinal de melhora clínica.
   - Piora clínica secundária ("duplo agravamento"): piora importante de febre e dor após melhora de resfriado prévio.
   - Início grave com febre alta (> 38,5 °C) e secreção purulenta por mais de 3 dias consecutivos.
-- NEGATIVAS MANDATÓRIAS DE GRAVIDADE (ALERTA ORBITÁRIO & SNC):
-  * Nega inchaço, vermelhidão ou dor ao redor dos olhos (edema periorbitário).
-  * Nega olho "saltado" para fora (proptose) ou dor intensa ao movimentar os olhos.
-  * Nega visão dupla (diplopia) ou perda de visão.
-  * Nega sonolência excessiva, convulsões, rigidez de nuca ou cefaleia incapacitante em trovoada.
-- Alergias: [Nega / Alérgico a Penicilinas].
+- Nega inchaço, vermelhidão ou dor ao redor dos olhos (edema periorbitário).
+- Nega olho "saltado" para fora (proptose) ou dor intensa ao movimentar os olhos.
+- Nega visão dupla (diplopia) ou perda de visão.
+- Nega sonolência excessiva, convulsões, rigidez de nuca ou cefaleia incapacitante em trovoada.
+- Alergias: [Nega / Alérgico a Penicilinas / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.

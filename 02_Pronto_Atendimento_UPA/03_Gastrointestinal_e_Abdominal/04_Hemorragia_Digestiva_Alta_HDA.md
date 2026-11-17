@@ -15,10 +15,9 @@
 - SUSPEITA ETIOLÓGICA & ANTECEDENTES:
   * HDA NÃO-VARICOSA (ÚLCERA PÉPTICA): Histórico de queimação epigástrica, uso recente de AINEs (Diclofenaco/Cetoprofeno/Ibuprofeno), uso de AAS ou anticoagulantes, tabagismo.
   * HDA VARICOSA (HIPERTENSÃO PORTAL): Histórico de etilismo crônico pesado, cirrose hepática diagnosticada, hepatite B ou C, sangramento prévio por varizes de esôfago.
-- Negativas Mandatórias:
-  * Nega dor torácica anginosa precedente.
-  * Nega tosse com expectoração sanguinolenta (afastada hemoptise respiratória).
-  * Nega disfagia ou emagrecimento severo recente.
+- Nega dor torácica anginosa precedente.
+- Nega tosse com expectoração sanguinolenta (afastada hemoptise respiratória).
+- Nega disfagia ou emagrecimento severo recente.
 - Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA & ESTABILIDADE HEMODINÂMICA):

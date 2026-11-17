@@ -94,6 +94,7 @@ export function parseBalancedBrackets(str: string): BracketToken[] {
 export function isInternalInstructionBracket(inner: string): boolean {
   const trimmed = String(inner || '').trim();
   if (!trimmed) return false;
+  if (/^\?\s*[^:]+::/i.test(trimmed)) return true;
   return /^(?:SE\s+|Se\s+|Opcional\b|A\s+critério\b|Caso\s+|Conforme\s+|OPÇÃO\s+|MODALIDADE\s+|1ª\s*ESCOLHA|2ª\s*ESCOLHA|3ª\s*ESCOLHA|OU\s+2ª|OU\s+SE\b|Escolha\s+|NÃO\s+PRESCREVER|CONTRAINDICAD|EVITAR\s+SE|ATENÇÃO\b|ALERTA\b|NOTA\b|OBS\b)/i.test(trimmed);
 }
 

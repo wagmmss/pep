@@ -9,7 +9,7 @@
 ```text
 ###### AUDITORIA MULTIDISCIPLINAR DE LEITO — BUNDLE FAST HUG BID ######
 # IDENTIFICAÇÃO DO LEITO:
-- Leito: [ ] | Paciente: [Nome], [Idade] anos | [ ]º Dia de Internação Hospitalar (DIH)
+- [? Leito :: Leito: [ ] | ]Paciente: [Nome], [Idade] anos | [ ]º Dia de Internação Hospitalar (DIH)
 - Diagnóstico Principal: [ ]
 
 # CHECAGEM SISTEMÁTICA DOS 10 DOMINIOS (FAST HUG + BID):

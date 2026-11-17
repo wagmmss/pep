@@ -17,9 +17,8 @@
   * Presença de outros familiares, crianças ou parceiros que dormem na mesma casa apresentando quadro idêntico de coceira noturna.
 - TOPOGRAFIA HABITUAL DAS QUEIXAS:
   * Prurido e lesões concentrados entre os dedos das mãos, punhos, axilas, ao redor do umbigo, nádegas e [na bolsa escrotal/pênis no homem / aréolas na mulher].
-- Negativas Mandatórias:
-  * Nega febre, calafrios ou prostração sistêmica.
-  * Nega lesões bolhosas extensas com descolamento cutâneo (afastado pênfigo ou eritema multiforme).
+- Nega febre, calafrios ou prostração sistêmica.
+- Nega lesões bolhosas extensas com descolamento cutâneo (afastado pênfigo ou eritema multiforme).
 - Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DERMATOLÓGICO):

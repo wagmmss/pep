@@ -12,19 +12,18 @@
 # SUBJETIVO:
 - Queixa Principal: Queimação no estômago (epigastralgia) e azia que sobe para o peito há [ ] dias/horas.
 - HMA: Refere dor em queimação localizada em região epigástrica iniciada há [ ], associada a sensação de azia retroesternal ascendente (pirose), regurgitação ácida na garganta, sensação de estômago cheio logo após começar a comer (plenitude pós-prandial precoce) e eructações frequentes. Relata piora após ingestão de café, alimentos gordurosos ou ao se deitar após as refeições.
-- NEGATIVAS MANDATÓRIAS (EXCLUSÃO DE INFARTO & ALARME ONCOLÓGICO):
-  * EXCLUSÃO DE SÍNDROME CORONARIANA AGUDA (SCA):
-    - Nega dor precordial em aperto, queimação opressiva retroesternal ou peso no peito.
-    - Nega irradiação para mandíbula, pescoço, dorso ou membro superior esquerdo.
-    - Nega sudorese fria profusa, palidez, náuseas com sensação de morte iminente ou dispneia.
-    - [Se paciente com fatores de risco cardiovasculares (idade > 40 anos, DM2, HAS, tabagismo): REALIZADO ECG DE 12 DERIVAÇÕES NA ADMISSÃO: Ritmo sinusal, sem desnivelamentos de segmento ST ou inversão de onda T].
-  * EXCLUSÃO DE SINAIS DE ALARME DE NEOPLASIA / ÚLCERA COMPLICADA:
-    - Nega disfagia (dificuldade de engolir alimentos sólidos ou líquidos) ou entalo alimentar.
-    - Nega odinofagia (dor para engolir).
-    - Nega perda de peso involuntária inexplicada nos últimos meses.
-    - Nega vômitos recorrentes ou hematêmese (vômitos com sangue ou borra de café).
-    - Nega fezes pretas com cheiro podre característico (melena).
-    - Nega história familiar de câncer gástrico em parentes de 1º grau.
+- EXCLUSÃO DE SÍNDROME CORONARIANA AGUDA (SCA):
+  * Nega dor precordial em aperto, queimação opressiva retroesternal ou peso no peito.
+  * Nega irradiação para mandíbula, pescoço, dorso ou membro superior esquerdo.
+  * Nega sudorese fria profusa, palidez, náuseas com sensação de morte iminente ou dispneia.
+  * [Se paciente com fatores de risco cardiovasculares (idade > 40 anos, DM2, HAS, tabagismo): REALIZADO ECG DE 12 DERIVAÇÕES NA ADMISSÃO: Ritmo sinusal, sem desnivelamentos de segmento ST ou inversão de onda T].
+- EXCLUSÃO DE SINAIS DE ALARME DE NEOPLASIA / ÚLCERA COMPLICADA:
+  * Nega disfagia (dificuldade de engolir alimentos sólidos ou líquidos) ou entalo alimentar.
+  * Nega odinofagia (dor para engolir).
+  * Nega perda de peso involuntária inexplicada nos últimos meses.
+  * Nega vômitos recorrentes ou hematêmese (vômitos com sangue ou borra de café).
+  * Nega fezes pretas com cheiro podre característico (melena).
+  * Nega história familiar de câncer gástrico em parentes de 1º grau.
 - Alergias: [Nega / Sim: [ ]].
 - Medicações: [Nega uso recente de AINEs / Em uso crônico de AAS, Cetoprofeno, Ibuprofeno ou Diclofenaco].
 

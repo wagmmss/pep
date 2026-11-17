@@ -26,7 +26,7 @@
   [ ] Gestante em vigência de cólica nefrética.
   * STATUS: [TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: [ ]].
 - Histórico Prévio: [Episódios prévios conhecidos de litíase urinária com eliminação de cálculos / Primeiro episódio da vida].
-- Alergias: [Nega / Alérgico a Dipirona / Alérgico a AINEs].
+- Alergias: [Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO DA EMERGÊNCIA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).
