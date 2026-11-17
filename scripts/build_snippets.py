@@ -3416,9 +3416,25 @@ index_path = os.path.join(BASE_PROJECT, 'index.html')
 if os.path.exists(index_path):
     with open(index_path, 'r', encoding='utf-8') as fh:
         idx_code = fh.read()
-    idx_code = re.sub(
-        r'const allData = \[[\s\S]*?\];(?=\s*// --- Estado Global ---)',
+    idx_code, grid_count = re.subn(
+        r'(<section class="grid-cards" id="cardsGrid">)[\s\S]*?(</section>\s*</main>)',
+        lambda m: f"{m.group(1)}\n{''.join(cards_html)}\n    {m.group(2)}",
+        idx_code,
+        count=1
+    )
+    if grid_count != 1:
+        raise RuntimeError(f"Falha ao atualizar cardsGrid em {index_path} (grid_count={grid_count})")
+    idx_code, sub_count = re.subn(
+        r'const allData = \[[\s\S]*?\];(?=\s*(?:// --- Estado Global ---|const TOTAL_PEP))',
         lambda _: f'const allData = {snippets_json_payload};',
+        idx_code,
+        count=1
+    )
+    if sub_count != 1:
+        raise RuntimeError(f"Falha ao atualizar allData em {index_path} (sub_count={sub_count})")
+    idx_code = re.sub(
+        r'const TOTAL_PEP = \d+;',
+        f'const TOTAL_PEP = {len(pep_snippets)};',
         idx_code,
         count=1
     )
