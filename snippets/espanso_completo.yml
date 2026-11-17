@@ -146,7 +146,7 @@ matches:
     replace: |
       ###### CONSULTA DE PRÉ-NATAL — ADMISSÃO / 1ª CONSULTA ######
       # IDENTIFICAÇÃO & DATAÇÃO GESTACIONAL:
-      Paciente [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+      ID: [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
       - DUM: [DD/MM/AAAA] ([Certa e confiável / Incerta]) -> IG DUM: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
       - USG Precoce (1º Tri): [Solicitada hoje / Realizada em [DD/MM] com CCN de [ ] mm = IG USG: [ ]s[ ]d].
       - IG Definitiva Adotada: [ ] semanas e [ ] dias.
@@ -240,8 +240,10 @@ matches:
     replace: |
       ###### CONSULTA DE PRÉ-NATAL — SEGUIMENTO / RETORNO ######
       # IDENTIFICAÇÃO & CRONOLOGIA:
-      Paciente [Nome], [Idade] anos, G[ ] P[ ] A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda] | Risco: [Risco Habitual / Alto Risco por: [ ]].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda] | Risco: [Risco Habitual / Alto Risco por: [ ]].
       - IG Atual: [ ] semanas e [ ] dias (por [USG de 1º tri / DUM confiável]) | DPP: [DD/MM/AAAA].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (EVOLUÇÃO & ALARME OBSTÉTRICO):
       - Evolução & Movimentação Fetal: Comparece para retorno com exames. Movimentação fetal [presente e ativa / ainda não percebida (< 18–20s)]. Queixas: [Assintomática no período / Refere pirose leve / Lombalgia mecânica leve / Edema maleolar vespertino leve].
@@ -341,7 +343,7 @@ matches:
     replace: |
       ###### CONSULTA AMBULATORIAL — GINECOLOGIA GERAL & PREVENÇÃO ######
       # IDENTIFICAÇÃO & HISTÓRIA REPRODUTIVA:
-      Paciente [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / Climatério / Pós-menopausa há [ ] anos].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / Climatério / Pós-menopausa há [ ] anos].
       - DUM: [DD/MM/AAAA] | Ciclos: [Regulares 28/28d, fluxo 4–5d normal / Irregulares / Sangramento uterino aumentado com coágulos / Amenorreia].
       - Contracepção / TRH Atual: [Nenhum / ACO: [ ]/ DIU de Cobre / SIU-LNG Mirena / Implanon / Injetável mensal ou trimestral / Preservativo].
       - Rastreio Oncológico Prévio:
@@ -443,7 +445,9 @@ matches:
     replace: |
       ###### NOTA DE PROCEDIMENTO: INSERÇÃO DE IMPLANTE SUBDÉRMICO (IMPLANON NXT 68 MG) ######
       # IDENTIFICAÇÃO & ELEGIBILIDADE:
-      Paciente [Nome], [Idade] anos, G[ ] P[ ] A[ ], DUM: [DD/MM/AAAA].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], DUM: [DD/MM/AAAA].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - Indicação & Elegibilidade (OMS): Contracepção reversível de longa ação (LARC) [no menacme com β-hCG negativo / no pós-parto imediato]. Ausência de contraindicações Categoria 4 da OMS (nega câncer de mama, TVP/TEP agudo ou hepatopatia grave).
       - Consentimento & Lote: TCLE lido e assinado. Lote do dispositivo: [ ] | Validade de uso: 3 anos (até [DD/MM/AAAA]).
       
@@ -519,7 +523,9 @@ matches:
     replace: |
       ###### NOTA DE PROCEDIMENTO: RETIRADA / TROCA DE IMPLANTE SUBDÉRMICO (IMPLANON) ######
       # IDENTIFICAÇÃO & INDICAÇÃO:
-      Paciente [Nome], [Idade] anos, G[ ] P[ ] A[ ].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - Indicação: [Troca por término da validade de 3 anos / Retirada eletiva por desejo reprodutivo / Retirada por sangramento desfavorável].
       - Consentimento: TCLE lido e assinado. [Novo lote inserido: [ ] — Validade até: [DD/MM/AAAA] / Apenas retirada eletiva].
       
@@ -590,7 +596,9 @@ matches:
     replace: |
       ###### DESCRIÇÃO DE PARTO VAGINAL EUTÓCICO (ESPONTÂNEO) ######
       # IDENTIFICAÇÃO & DADOS DO NASCIMENTO:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - Equipe: Obstetra: [Dr(a). ] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr(a). ].
       - Nascimento: [DD/MM/AAAA] às [HH:MM] | Apresentação: Cefálica fletida em [OP / OEA / ODA] | Bolsa: [Rota intraparto / Amniotomia no expulsivo], LA [claro com grumos / meconial fluido], sem odor.
       - Recém-Nascido: Vivo, sexo [masculino / feminino], Peso: [ ] g, Apgar: [9/10] (1º/5º min), colocado em contato pele a pele imediato e clampeamento oportuno do cordão (após 1–3 min).
@@ -641,7 +649,8 @@ matches:
     replace: |
       ###### NOTA CIRÚRGICA: REVISÃO DE CANAL DE PARTO E PERINEORRAFIA ######
       # IDENTIFICAÇÃO & CLASSIFICAÇÃO DA LESÃO:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | Data/Hora: [DD/MM/AAAA] às [HH:MM].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | Data/Hora: [DD/MM/AAAA] às [HH:MM].
+      Alergias: [Nega / [ ]].
       - Indicação & Grau da Lesão: [Laceração perineal espontânea de 2º grau / Episiotomia médio-lateral direita seletiva / Laceração de 1º grau sangrante / Laceração de 3º grau com reparo esfincteriano (OASIS)].
       - Extensão Anatômica Verificada: Comprometimento de mucosa vaginal, fúrcula e musculatura do corpo perineal (transverso superficial e bulbocavernoso). Toque retal pré-sutura confirmando integridade do complexo do esfíncter anal externo/interno e da mucosa anorretal (afastada lesão de 3º/4º grau).
       
@@ -718,12 +727,13 @@ matches:
   - trigger: ";07-admissao-tp-e-descricao-cesariana"
     replace: |
       ### CENTRO OBSTÉTRICO — ADMISSÃO EM TP & CESARIANA ###
-      # ID: [Nome], [ ] anos | Leito: [ ]
-      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10]
-      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-]
+      # IDENTIFICAÇÃO & ADMISSÃO:
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10].
+      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-].
+      Comorbidades: [Hígida / HAS / Pré-eclâmpsia / DMG / Anemia / [ ]].
+      Alergias: [Nega / [ ]].
       # AP:
-      PAT: [Nega / HAS / Pré-eclâmpsia / DMG / Anemia]
       MED: [Nega / Sulfato Ferroso / Metildopa]
       HAB: [Nega tabagismo, etilismo ou drogas ilícitas]
       CX: [Nega / Cesáreas prévias ([ ])]
@@ -810,7 +820,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA — HEMORRAGIA PÓS-PARTO (CÓDIGO VERMELHO) ######
       # IDENTIFICAÇÃO & RECONHECIMENTO DO CHOQUE:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - Perda Sanguínea Estimada: [ ] mL ([> 500 mL pós-parto vaginal / > 1.000 mL pós-cesárea / sangramento com instabilidade hemodinâmica]).
       - Sinais Vitais & Perfusão: PA: [85x50] mmHg | FC: [118] bpm | Índice de Choque Obstétrico (FC/PAS): [1,38] (Normal < 0,9 | Alerta >= 0,9 | Transfusão maciça se >= 1,4) | FR: [22] irpm | SpO2: [98]% | TEC: [3]s | Consciência: [Lúcida / Ansiosa / Sonolenta].
       
@@ -875,7 +887,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA — PRÉ-ECLÂMPSIA GRAVE / ECLÂMPSIA / HELLP ######
       # IDENTIFICAÇÃO & QUADRO SINDRÔMICO:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
+      Comorbidades: [Hígida / HAS crônica / Pré-eclâmpsia prévia / [ ]].
+      Alergias: [Nega / [ ]].
       - Apresentação Clínica: [Pré-Eclâmpsia com sinais de gravidade / Iminência de Eclâmpsia (Tríade de cefaleia + escotomas + epigastralgia) / Eclâmpsia (Crise convulsiva TCG às HH:MM) / Síndrome HELLP].
       
       # SUBJETIVO & CRITÉRIOS DE GRAVIDADE PRESENTES:
@@ -950,7 +964,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — TRABALHO DE PARTO PREMATURO (TPP) ######
       # IDENTIFICAÇÃO & IDADE GESTACIONAL:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º trimestre) | Fatores de Risco: [Prematuridade prévia / Colo curto < 25 mm / Gemelaridade / ITU ativa / Nega fatores prévios].
       
       # SUBJETIVO (QD & EXCLUSÃO DE CONTRAINDICAÇÕES À TOCÓLISE):
@@ -1023,7 +1039,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — ROTURA PREMATURA DE MEMBRANAS (RPMO) ######
       # IDENTIFICAÇÃO & TEMPO DE BOLSA ROTA:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º tri) | Tempo de Bolsa Rota: [ ] horas (início às [HH:MM] de [DD/MM]).
       
       # SUBJETIVO (QD & RASTREIO DE CORIOAMNIONITE):
@@ -1089,8 +1107,10 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA GINECOLÓGICA — DOENÇA INFLAMATÓRIA PÉLVICA (DIP) ######
       # IDENTIFICAÇÃO & FATORES DE RISCO:
-      - Paciente: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
-      - Contexto & Alergias: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+      - Contexto: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST].
       
       # SUBJETIVO (QD & HMA):
       - Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria].
@@ -1216,8 +1236,10 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — INFECÇÕES PUERPERAIS (MASTITE vs ENDOMETRITE) ######
       # IDENTIFICAÇÃO & CONTEXTO PUERPERAL:
-      - Paciente: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], no [ ]º dia de puerpério de [Parto Normal / Cesariana].
-      - Quadro Atual: [MODALIDADE A — MASTITE PUERPERAL AGUDA / MODALIDADE B — ENDOMETRITE PUERPERAL] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], no [ ]º dia de puerpério de [Parto Normal / Cesariana].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+      - Quadro Atual: [MODALIDADE A — MASTITE PUERPERAL AGUDA / MODALIDADE B — ENDOMETRITE PUERPERAL].
       
       # SUBJETIVO (QD & HMA):
       - Queixa Principal & HMA:
@@ -1321,12 +1343,13 @@ matches:
   - trigger: ";07-sangramento-1trimestre-abortamento-e-ectopica"
     replace: |
       ### EMERGÊNCIA OBSTÉTRICA — SANGRAMENTO DO 1º TRIMESTRE ###
-      # ID: [Nome], [ ] anos
-      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/MM/AAAA]
-      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!]
+      # IDENTIFICAÇÃO & CRONOLOGIA:
+      ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/MM/AAAA].
+      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!].
+      Comorbidades: [Hígida / HAS / DM2 / DIP prévia / Endometriose / [ ]].
+      Alergias: [Nega / [ ]].
       # AP:
-      PAT: [Nega / HAS / DM2 / DIP prévia / Endometriose]
       MED: [Nega / Ácido Fólico / Progesterona]
       HAB: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
       CX: [Nega / Cesárea prévia / Ectópica anterior / Cirurgia tubária]
@@ -1408,12 +1431,13 @@ matches:
   - trigger: ";08-sangramento-2e3trimestre-dpp-e-placenta-previa"
     replace: |
       ### EMERGÊNCIA OBSTÉTRICA — SANGRAMENTO DO 2º/3º TRIMESTRE ###
-      # ID: [Nome], [ ] anos | Leito: [ ]
-      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA]
-      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo]
+      # IDENTIFICAÇÃO & CRONOLOGIA:
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
+      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo].
+      Comorbidades: [Hígida / HAS / Pré-eclâmpsia / DMG / Trombofilia / [ ]].
+      Alergias: [Nega / [ ]].
       # AP:
-      PAT: [Nega / HAS / Pré-eclâmpsia / DMG / Trombofilia]
       MED: [Nega / Sulfato Ferroso / Metildopa / AAS]
       HAB: [Nega tabagismo, etilismo ou uso de cocaína / Tabagista / Uso de cocaína]
       CX: [Nega / Cesáreas anteriores ([ ]) / Curetagem prévia]
@@ -1465,12 +1489,13 @@ matches:
   - trigger: ";09-violencia-sexual-e-profilaxias-pep"
     replace: |
       ### EMERGÊNCIA GO — VIOLÊNCIA SEXUAL & PROFILAXIA PEP ###
-      # ID: [Nome], [ ] anos | Peso: [ ] kg
-      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-      DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU]
-      TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção de emergência até 5 dias e profilaxia de ISTs não virais])
+      # IDENTIFICAÇÃO & EXPOSIÇÃO:
+      ID: [Nome], [Idade] anos, Peso: [ ] kg, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+      DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU].
+      TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção de emergência até 5 dias e profilaxia de ISTs não virais]).
+      Comorbidades: [Hígida / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida] / [ ]].
+      Alergias: [Nega / [ ]].
       # AP:
-      PAT: [Nega / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida]]
       MED: [Nega uso contínuo / Em uso de: [ ]]
       HAB: [Nega tabagismo ou etilismo]
       CX: [Nega]
@@ -1572,8 +1597,10 @@ matches:
     replace: |
       ###### PRONTO ATENDIMENTO - UPA / PRONTO-SOCORRO ######
       # IDENTIFICAÇÃO:
-      Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
       Acolhimento / Classificação de Risco: [Azul / Verde / Amarelo / Vermelho] às [HH:MM].
+      Comorbidades: [Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / [ ]].
+      Alergias: [NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A: Penicilina / ALÉRGICO(A) A: AINEs / [ ]].
       
       # SUBJETIVO:
       - Queixa Principal (QP): "[Descrever queixa principal e tempo exato de início]".
@@ -1587,9 +1614,7 @@ matches:
       - Nega sangramentos ativos (hematêmese, enterorragia, melena ou metrorragia volumosa).
       
       # ANTECEDENTES (HPP & HÁBITOS):
-      - Comorbidades: [Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / [ ]].
       - Medicações em Uso Contínuo: [Nega uso de medicações contínuas / Em uso de: [ ]].
-      - ALERGIAS MEDICAMENTOSAS: [NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A: Penicilina / ALÉRGICO(A) A: AINEs / [ ]].
       - Hábitos: [Nega tabagismo, etilismo ou substâncias ilícitas / Tabagista maços/ano / Etilista social].
       
       # OBJETIVO (EXAME FÍSICO GERAL & DIRIGIDO):
@@ -1679,7 +1704,10 @@ matches:
   - trigger: ";resfriado"
     replace: |
       ###### ATENDIMENTO UPA: RESFRIADO COMUM / RINOFARINGITE AGUDA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido / Asma / HAS / DM2 / [ ]].
+      Alergias: [Nega alergias conhecidas / Alérgico a: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Coriza, congestão nasal e dor de garganta há [ ] dias.
       - HMA: Refere quadro iniciado há cerca de [ ] dias de coriza hialina, obstrução nasal, espirros frequentes, sensação de garganta arranhando e tosse [seca / produtiva clara]. Refere febrícula baixa não aferida no início do quadro.
@@ -1687,8 +1715,6 @@ matches:
       - Nega dispneia, falta de ar, dor torácica ventilatório-dependente ou sibilos.
       - Nega dor facial intensa em peso unilateral ou secreção nasal purulenta fétida > 10 dias.
       - Nega disfagia intensa com recusa hídrica, trismo ou sialorreia.
-      - Alergias Medicamentosas: [Nega alergias conhecidas / Alérgico a: [ ]].
-      - Comorbidades: [Hígido / Asma / HAS / DM2 / [ ]].
       
       # OBJETIVO (EXAME FÍSICO DIRIGIDO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
@@ -1768,7 +1794,10 @@ matches:
   - trigger: ";amigdalite"
     replace: |
       ###### ATENDIMENTO UPA: FARINGOAMIGDALITE AGUDA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor de garganta intensa (odinofagia) e febre há [ ] dias.
       - HMA: Paciente relata dor de garganta de início súbito há [ ] dias, que piora intensamente à deglutição, associada a febre de [ ] °C aferida em domicílio e mal-estar geral.
@@ -1783,7 +1812,6 @@ matches:
       - Nega sialorreia (dificuldade para engolir a própria saliva com baba).
       - Nega estridor respiratório ou sensação de asfixia.
       - Nega dor cervical com rigidez ou abaulamento cervical lateral.
-      - Alergias: [Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / [ ]].
       
       # OBJETIVO (EXAME FÍSICO DIRIGIDO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
@@ -1879,7 +1907,10 @@ matches:
   - trigger: ";otite"
     replace: |
       ###### ATENDIMENTO UPA: OTITE MÉDIA AGUDA (OMA) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgico a Penicilinas / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor intensa no ouvido (otalgia) [direito / esquerdo / bilateral] há [ ] dias.
       - HMA: Refere otalgia contínua e pulsátil iniciada há [ ] dias, precedida por sintomas gripais (coriza e congestão nasal). Relata sensação de ouvido entupido (plenitude auricular), redução da audição e febre de [ ] °C aferida em casa. [Refere saída de secreção purulenta recente com alívio súbito da dor / Sem otorréia].
@@ -1887,7 +1918,6 @@ matches:
       - Nega protrusão ou desvio do pavilhão auricular para a frente.
       - Nega assimetria facial, desvio de rima labial ou incapacidade de fechar o olho (paralisia facial).
       - Nega vertigem incapacitante, vômitos em jato ou rigidez de nuca.
-      - Alergias: [Nega / Alérgico a Penicilinas / [ ]].
       
       # OBJETIVO (EXAME FÍSICO OTORRINOLARINGOLÓGICO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
@@ -1986,7 +2016,10 @@ matches:
   - trigger: ";sinusite"
     replace: |
       ###### ATENDIMENTO UPA: RINOSSINUSITE AGUDA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgico a Penicilinas / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor e sensação de pressão na face com secreção nasal amarelada há [ ] dias.
       - HMA: Refere quadro iniciado há cerca de [ ] dias de congestão nasal bilateral e secreção espessa amarelo-esverdeada, associada a dor e peso em região [maxilar / frontal / periorbitária] que piora intensamente ao abaixar a cabeça. Relata febre baixa, tosse que piora à noite (gotejamento pós-nasal) e dor em dentes superiores.
@@ -1998,7 +2031,6 @@ matches:
       - Nega olho "saltado" para fora (proptose) ou dor intensa ao movimentar os olhos.
       - Nega visão dupla (diplopia) ou perda de visão.
       - Nega sonolência excessiva, convulsões, rigidez de nuca ou cefaleia incapacitante em trovoada.
-      - Alergias: [Nega / Alérgico a Penicilinas / [ ]].
       
       # OBJETIVO (EXAME FÍSICO DIRIGIDO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
@@ -2092,7 +2124,10 @@ matches:
   - trigger: ";pneumonia"
     replace: |
       ###### ATENDIMENTO UPA: PNEUMONIA ADQUIRIDA NA COMUNIDADE (PAC) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / [ ]].
+      Alergias: [Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Tosse com catarro, febre e dor no peito para respirar há [ ] dias.
       - HMA: Refere tosse produtiva há cerca de [ ] dias com escarro de aspecto [amarelado / purulento / ferruginoso], associada a picos febris diários (Tax [ ] °C) acompanhados de calafrios, astenia e dor torácica ventilatório-dependente (dor pleurítica em pontada à inspiração profunda) em hemitórax [direito / esquerdo].
@@ -2110,8 +2145,6 @@ matches:
       - Nega hemoptise volumosa ou sangramento respiratório ativo.
       - Nega estridor respiratório, sensação de asfixia ou tiragem de fúrcula/intercostal.
       - Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise (afastada PAC hospitalar/multirresistente).
-      - Comorbidades: [Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / [ ]].
-      - Alergias: [Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
       
       # OBJETIVO (EXAME FÍSICO RESPIRATÓRIO & GERAL):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente | Tax: [ ] °C.
@@ -2263,7 +2296,10 @@ matches:
   - trigger: ";conjuntivite"
     replace: |
       ###### ATENDIMENTO UPA: CONJUNTIVITE AGUDA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega alergias / Alérgico a colírios: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Olho vermelho, sensação de areia e secreção há [ ] dias.
       - HMA: Relata hiperemia conjuntival iniciada há [ ] dias em olho [direito / esquerdo / bilateral], associada a sensação de corpo estranho ("areia nos olhos"), prurido, lacrimejamento e secreção de aspecto [aquoso claro / mucopurulento amarelado com pálpebras coladas ao acordar]. Relata contato recente com familiar/colega com sintomas semelhantes.
@@ -2272,7 +2308,6 @@ matches:
       - Nega enxergar halos coloridos ao redor de luzes ou cefaleia hemicraniana com náuseas (afasta Glaucoma Agudo).
       - Nega uso de lentes de contato (afasta ceratite por Pseudomonas).
       - Nega trauma ocular mecânico, químico ou respingo de substâncias cáusticas.
-      - Alergias: [Nega alergias / Alérgico a colírios: [ ]].
       
       # OBJETIVO (EXAME FÍSICO OFTALMOLÓGICO BÁSICO):
       - Ectoscopia Ocular Externa:
@@ -2399,7 +2434,10 @@ matches:
   - trigger: ";dengue"
     replace: |
       ###### ATENDIMENTO UPA: DENGUE / ARBOVIROSES (MINISTÉRIO DA SAÚDE) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso: [ ] kg.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+      Comorbidades: [Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / [ ]].
+      Alergias: [Nega / Alérgico a Dipirona / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Febre alta, dor no corpo e dor atrás dos olhos há [ ] dias.
       - HMA: Refere quadro febril de início súbito há cerca de [ ] dias (Tax máxima [ ] °C), associado a cefaleia holocraniana intensa, dor retro-orbitária que piora à movimentação ocular, mialgia difusa ("dor nos ossos"), artralgia, astenia marcante, náuseas e exantema cutâneo maculopapular [pruriginoso / ausente].
@@ -2414,8 +2452,6 @@ matches:
         - Letargia, sonolência excessiva, desorientação ou irritabilidade
         - Aumento progressivo e abrupto do hematócrito (hemoconcentração)
         * STATUS: [TODOS OS SINAIS DE ALARME NEGADOS / SINAL DE ALARME PRESENTE: [ ]].
-      - Comorbidades / Fatores de Risco: [Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / [ ]].
-      - Alergias: [Nega / Alérgico a Dipirona / [ ]].
       
       # OBJETIVO (EXAME FÍSICO DIRIGIDO):
       - SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | PA em pé (se tolerar): [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
@@ -2595,7 +2631,10 @@ matches:
   - trigger: ";geca"
     replace: |
       ###### ATENDIMENTO UPA: GASTROENTERITE AGUDA (GECA) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso: [ ] kg.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgico a Dipirona / Alérgico a Metoclopramida/Plasil / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Diarreia, vômitos e dor de barriga em cólica há [ ] dias.
       - HMA: Refere início há cerca de [ ] dias de evacuações líquidas frequentes (cerca de [ ] episódios/dia), fezes de aspecto [líquido amarelado sem restos de sangue / com restos alimentares / sanguinolento], associadas a episódios de vômitos ([ ] episódios), cólicas abdominais difusas e febre não aferida. Relata história epidemiológica de consumo de alimento suspeito ou familiares com quadro similar.
@@ -2604,7 +2643,6 @@ matches:
       - Nega vômitos incoercíveis com intolerância absoluta a qualquer líquido.
       - Nega anúria ou oligúria severa (diurese ausente há mais de 12 horas).
       - Nega síncope, hipotensão postural severa ou confusão mental.
-      - Alergias: [Nega / Alérgico a Dipirona / Alérgico a Metoclopramida/Plasil / [ ]].
       
       # OBJETIVO (EXAME FÍSICO & AVALIAÇÃO DE HIDRATAÇÃO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
@@ -2714,7 +2752,10 @@ matches:
   - trigger: ";drge"
     replace: |
       ###### ATENDIMENTO UPA: DISPEPSIA AGUDA / DRGE ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Queimação no estômago (epigastralgia) e azia que sobe para o peito há [ ] dias/horas.
       - HMA: Refere dor em queimação localizada em região epigástrica iniciada há [ ], associada a sensação de azia retroesternal ascendente (pirose), regurgitação ácida na garganta, sensação de estômago cheio logo após começar a comer (plenitude pós-prandial precoce) e eructações frequentes. Relata piora após ingestão de café, alimentos gordurosos ou ao se deitar após as refeições.
@@ -2730,7 +2771,6 @@ matches:
         * Nega vômitos recorrentes ou hematêmese (vômitos com sangue ou borra de café).
         * Nega fezes pretas com cheiro podre característico (melena).
         * Nega história familiar de câncer gástrico em parentes de 1º grau.
-      - Alergias: [Nega / Sim: [ ]].
       - Medicações: [Nega uso recente de AINEs / Em uso crônico de AAS, Cetoprofeno, Ibuprofeno ou Diclofenaco].
       
       # OBJETIVO (EXAME FÍSICO DIRIGIDO):
@@ -2824,7 +2864,10 @@ matches:
   - trigger: ";abdome-agudo"
     replace: |
       ###### ATENDIMENTO UPA: DOR ABDOMINAL AGUDA / SUSPEITA CIRÚRGICA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor de barriga intensa há [ ] horas/dias.
       - HMA: Relata dor abdominal de início [súbito / insidioso] há cerca de [ ] horas.
@@ -2836,8 +2879,7 @@ matches:
       - DUM: [DD/MM/AAAA] (Afastada gravidez ectópica: beta-hCG [negativo / solicitado com urgência]).
       - Nega corrimento vaginal fétido ou sangramento genital ativo.
       - Nega hematêmese, melena ou enterorragia volumosa.
-      - Antecedentes: [Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida].
-      - Alergias: [Nega / Sim: [ ]].
+      - Antecedentes: [Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida / [ ]].
       
       # OBJETIVO (EXAME FÍSICO ABDOMINAL COMPLETO & SEMIOLOGIA ARMADA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia) | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
@@ -2894,7 +2936,10 @@ matches:
   - trigger: ";hda"
     replace: |
       ###### ATENDIMENTO UPA / SALA VERMELHA: HEMORRAGIA DIGESTIVA ALTA (HDA) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Vômito com sangue vivo / Fezes pretas e tontura há [ ] horas.
       - HMA: Paciente relata episódio agudo de [hematêmese com sangue vermelho vivo / vômitos escuros em borra de café] e/ou [eliminação de fezes pretas, amolecidas, com odor fétido característico de piche (melena)]. Relata fraqueza intensa súbita, tontura ao se levantar (lipotímia), palpitações e sudorese fria.
@@ -2904,7 +2949,6 @@ matches:
       - Nega dor torácica anginosa precedente.
       - Nega tosse com expectoração sanguinolenta (afastada hemoptise respiratória).
       - Nega disfagia ou emagrecimento severo recente.
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA & ESTABILIDADE HEMODINÂMICA):
       - SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia compensatória) | FR: [ ] irpm | SpO2: [ ]% em AA.
@@ -2959,7 +3003,10 @@ matches:
   - trigger: ";hemorroida"
     replace: |
       ###### ATENDIMENTO UPA: DOENÇA HEMORROIDÁRIA / FISSURA ANAL ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
       - HMA: Relata quadro com início após esforço evacuatório com fezes ressecadas há cerca de [ ] dias.
@@ -2970,7 +3017,6 @@ matches:
       - Nega fezes afiladas ("fezes em fita"), perda involuntária de peso ou astenia severa.
       - Nega diarreia crônica alternada com constipação persistente.
       - Hábitos: Constipação intestinal crônica, baixa ingesta de fibras e água.
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME PROCTOLÓGICO BÁSICO DA UPA):
       - Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.
@@ -3073,7 +3119,10 @@ matches:
   - trigger: ";parasitose"
     replace: |
       ###### ATENDIMENTO UPA: PARASITOSE INTESTINAL ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
       - HMA: Paciente relata queixas gastrointestinais insidiosas:
@@ -3085,7 +3134,6 @@ matches:
       - Nega febre alta, calafrios ou fezes com sangue vivo e pus.
       - Nega desidratação, prostração grave ou perda de peso volumosa.
       - Hábitos & Saneamento: [Água encanada tratada / Água de poço; consome verduras cruas sem higienização com hipoclorito; crianças pequenas no domicílio].
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO DIRIGIDO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Afebril.
@@ -3185,6 +3233,11 @@ matches:
   - trigger: ";07-constipacao-fecaloma-e-obstrucao-intestinal"
     replace: |
       ATENDIMENTO DE PRONTO ATENDIMENTO — CONSTIPAÇÃO AGUDA, FECALOMA VS. ABDOME AGUDO OBSTRUTIVO
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
+      
       HISTÓRIA CLÍNICA DIRIGIDA:
       - Hábito Intestinal Atual: Ausência de evacuação há [ ] dias, associada a [desconforto abdominal baixo, esforço evacuatório e sensação de bloqueio anorretal / eliminação paradoxal de fezes líquidas em pequena quantidade — "diarreia paradoxal" por transbordamento ao redor do fecaloma!].
       - Pesquisa de Sinais de Obstrução Intestinal Mecânica (Red Flags): Eliminação de flatus (gases): [Presente — afasta oclusão completa / PARADA TOTAL de eliminação de gases e fezes associada a distensão importante e vômitos biliosos/fecaloides → ABDOME AGUDO OBSTRUTIVO!].
@@ -3255,7 +3308,10 @@ matches:
   - trigger: ";sca"
     replace: |
       ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: DOR TORÁCICA / SCA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega alergias / Alérgico a AAS / Alérgico a Dipirona / [ ]].
       # HORÁRIO DE CHEGADA: [HH:MM] | HORÁRIO DO ECG: [HH:MM] (Porta-ECG <= 10 minutos: ATENDIDO).
       
       # SUBJETIVO:
@@ -3273,7 +3329,6 @@ matches:
         - 4. RUPTURA ESOFÁGICA (BOERHAAVE): Nega vômitos violentos repetidos seguidos de dor torácica aguda; ausência de enfisema subcutâneo palpável em pescoço.
         - 5. SÍNDROME CORONARIANA AGUDA (SCA): Hipótese clínica prioritária em investigação.
       - Fatores de Risco Cardiovasculares: [Hipertensão Arterial / Diabetes Mellitus tipo 2 / Tabagismo ativo ( maços/ano) / Dislipidemia / Histórico familiar precoce de DAC / Infarto prévio / Sedentarismo].
-      - Alergias: [Nega alergias / Alérgico a AAS / Alérgico a Dipirona / [ ]].
       - Contraindicações ao uso de Nitratos: Nega uso de inibidores da fosfodiesterase-5 (Sildenafil nas últimas 24h ou Tadalafil nas últimas 48h).
       
       # OBJETIVO (EXAME FÍSICO DA SALA VERMELHA & ECG DE 12 DERIVAÇÕES):
@@ -3374,7 +3429,10 @@ matches:
   - trigger: ";has-crise"
     replace: |
       ###### ATENDIMENTO UPA: ELEVAÇÃO AGUDA DE PRESSÃO ARTERIAL ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SINAIS VITAIS NA TRIAGEM: PA: [ ]x[ ] mmHg (Aferida em repouso de 15 minutos em ambos os braços) | FC: [ ] bpm.
       
       # SUBJETIVO:
@@ -3389,7 +3447,6 @@ matches:
         * GESTAÇÃO: Paciente não gestante (se mulher em idade fértil).
       - Fatores Emocionais / Desencadeantes: [Histórico de estresse emocional agudo / Dor osteomuscular concomitante / Privação de sono].
       - Medicações de Uso Contínuo: [Em uso irregular de Losartana, Enalapril, Anlodipino, Hidroclorotiazida / Nega uso de anti-hipertensivos].
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO DIRIGIDO À EXCLUSÃO DE LOA):
       - SINAIS VITAIS REPETIDOS APÓS REPOUSO: PA: [ ]x[ ] mmHg (MSD) e [ ]x[ ] mmHg (MSE) (Sem assimetria pressórica significativa).
@@ -3529,7 +3586,10 @@ matches:
   - trigger: ";asma"
     replace: |
       ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: CRISE DE ASMA AGUDA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Falta de ar, chiado no peito e tosse seca há [ ] horas/dias.
       - HMA: Paciente com diagnóstico conhecido de asma brônquica [ou primeiro episódio de sibilância] relata piora progressiva da dispneia há cerca de [ ] horas, acompanhada de chiado audível sem estetoscópio, opressão torácica e tosse seca paroxística. Relata fator desencadeante: [sintomas gripais recentes / exposição a alérgenos / poeira / mudança de clima / abandono da medicação de manutenção]. Fez uso prévio de bombinha em casa ([ ] jatos) com alívio transitório e recidiva rápida.
@@ -3538,7 +3598,6 @@ matches:
         * GRAVE: Fala apenas palavras isoladas/entrecortadas, postura curvada para a frente, agitado, uso evidente de musculatura acessória (tiragem intercostal), FC > 120 bpm, FR > 30 irpm, SpO2 < 90%.
         * RISCO IMINENTE DE PARADA (ASMA QUASE FATAL): Sonolência, confusão mental, respiração paradoxal toracoabdominal, bradicardia e TÓRAX SILENCIOSO (ausência de sibilos por falta de fluxo de ar).
       - Histórico de Asma de Alto Risco: [Nega / Histórico prévio de intubação orotraqueal por asma / Internação em UTI no último ano / Múltiplas idas à UPA no último mês].
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO RESPIRATÓRIO NA ADMISSÃO):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
@@ -3694,7 +3753,10 @@ matches:
   - trigger: ";dpoc"
     replace: |
       ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: DPOC EXACERBADO ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # HISTÓRICO RESPIRATÓRIO: Tabagismo pesado prévio ([ ] anos-maço) com diagnóstico de Doença Pulmonar Obstrutiva Crônica (DPOC) / Enfisema / Bronquite crônica. Faz uso de O2 domiciliar: [Não / Sim, L/min].
       
       # SUBJETIVO:
@@ -3712,7 +3774,6 @@ matches:
       - Nega edema assimétrico de panturrilhas ou hemoptise (afastado TEP).
       - Nega piora de edema de membros inferiores ou ortopneia (afastada Insuficiência Cardíaca descompensada associada).
       - Medicações Habitual: [Em uso de Formoterol/Budesonida, Tiotrópio, Salbutamol SOS].
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO RESPIRATÓRIO DIRIGIDO):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
@@ -3854,7 +3915,10 @@ matches:
   - trigger: ";eap"
     replace: |
       ###### ATENDIMENTO UPA / SALA VERMELHA: EDEMA AGUDO DE PULMÃO (EAP) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # CLASSIFICAÇÃO HEMODINÂMICA DE STEVENSON:
       - PERFIL B: "QUENTE E ÚMIDO" (Boa perfusão periférica, porém com congestão pulmonar grave e hipertensão arterial) -> > 80% DOS CASOS DE EAP NA UPA.
       - [Se Perfil C ("Frio e Úmido"): Choque cardiogênico com hipoperfusão -> avaliar Dobutamina + Noradrenalina].
@@ -3865,7 +3929,6 @@ matches:
       - Nega dor torácica pleurítica aguda súbita com assimetria de murmúrio (afastado pneumotórax).
       - Nega febre alta, calafrios ou secreção purulenta espessa (afastada sepse pulmonar pura).
       - Nega estridor respiratório ou edema de glote anafilático.
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO DA SALA DE EMERGÊNCIA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg (acentuadamente elevada) | FC: [ ] bpm | FR: [ ] irpm (taquipneia severa) | SpO2: [ ]% em ar ambiente.
@@ -3941,6 +4004,11 @@ matches:
   - trigger: ";06-tvp-e-tromboembolismo-pulmonar-tep"
     replace: |
       ATENDIMENTO DE EMERGÊNCIA — TROMBOSE VENOSA PROFUNDA (TVP) & TROMBOEMBOLISMO PULMONAR (TEP)
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
+      
       APRESENTAÇÃO CLÍNICA PRINCIPAL:
       - Quadro Dominante: [Suspeita de TVP de Membro Inferior (edema unilateral assimétrico, dor em panturrilha e empastamento) / Suspeita de TEP Agudo (dispneia súbita inexplicada, dor torácica ventilatório-dependente, taquicardia ou síncope)].
       - Fatores de Risco Tromboembólicos (Tríade de Virchow): [Cirurgia ou trauma recente (< 4 semanas) / Imobilização prolongada (> 3 dias) ou viagem longa / Neoplasia ativa / Uso de anticoncepcional oral combinado ou TRH / Gestação ou puerpério / TEV prévio / Trombofilia].
@@ -4019,6 +4087,11 @@ matches:
   - trigger: ";07-sincope-na-emergencia"
     replace: |
       ATENDIMENTO DE EMERGÊNCIA — SÍNCOPE (PERDA TRANSITÓRIA DA CONSCIÊNCIA)
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
+      
       CARACTERIZAÇÃO DO EVENTO E PRÓDROMOS:
       - Circunstância do Evento: Episódio ocorrido [em ortostase prolongada em ambiente quente / após dor ou estresse emocional / ao levantar-se rapidamente / DURANTE o esforço físico ou em decúbito dorsal — ALERTA CARDIOGÊNICO!].
       - Pródromos: [Presentes (náuseas, sudorese fria, visão em túnel, palidez — típico reflexo/vasovagal) / Ausentes — queda súbita "em tábua" com trauma facial ou precedida de palpitações/dor torácica (Síncope Arrítmica/Cardiogênica!)].
@@ -4086,7 +4159,10 @@ matches:
   - trigger: ";cefaleia"
     replace: |
       ###### ATENDIMENTO UPA: CEFALEIA AGUDA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor de cabeça forte há [ ] horas/dias.
       - HMA: Relata cefaleia de localização [hemicraniana à direita/esquerda / holocraniana / frontal / occipital / em aperto tipo faixa].
@@ -4101,7 +4177,6 @@ matches:
         * P - PATTERN CHANGE (MUDANÇA DE PADRÃO): Nega dor que acorda o paciente de madrugada com vômitos em jato, nega piora acentuada com manobra de Valsalva (tosse, evacuação, esforço físico) e nega componente postural extremo (piora ortostática pós-raqui).
         * PÓS-TRAUMA: Nega trauma cranioencefálico (TCE) recente nos últimos dias/semanas.
       - Histórico Prévio: [Paciente com crises semelhantes prévias de enxaqueca / Primeiro episódio da vida].
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO NEUROLÓGICO DIRIGIDO DA UPA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C (afebril).
@@ -4202,7 +4277,10 @@ matches:
   - trigger: ";vertigem"
     replace: |
       ###### ATENDIMENTO UPA: SÍNDROME VERTIGINOSA AGUDA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Tontura rotatória intensa ("tudo girando"), náuseas e vômitos há [ ] horas/dias.
       - HMA: Relata episódio agudo de vertigem rotatória verdadeira iniciada há [ ] horas, acompanhada de instabilidade na marcha, náuseas e vômitos incoercíveis.
@@ -4213,7 +4291,6 @@ matches:
       - Nega fraqueza, perda de força muscular ou dormência em um dos lados do corpo.
       - Nega incoordenação motora grave (incapacidade de alcançar objetos).
       - Nega cefaleia occipital súbita de início hiperagudo.
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO NEUROLÓGICO & PROTOCOLO HINTS NA SÍNDROME CONTÍNUA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C.
@@ -4316,14 +4393,16 @@ matches:
   - trigger: ";convulsao"
     replace: |
       ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: CRISE CONVULSIVA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso estimado: [ ] kg.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # HISTÓRICO CONVULSIVO: [Epilepsia conhecida sob tratamento prévio / Primeiro episódio convulsivo da vida / Histórico de etilismo crônico].
       
       # SUBJETIVO (DADOS FORNECIDOS POR FAMILIARES / SOCORRISTAS DO SAMU):
       - Descrição da Crise: Presenciada crise convulsiva generalizada caracterizada por abalos tônico-clônicos nos 4 membros, desvio do olhar para cima, sialorreia ("espuma na boca"), mordedura de borda lateral de língua e perda súbita da consciência. Duração estimada da crise: cerca de [ ] minutos.
       - Eventos Ictais: [Liberação esfincteriana urinária e/ou fecal presente / Ausente].
       - Fatores Desencadeantes: [Abandono recente de anticonvulsivantes (Fenobarbital/Carbamazepina/Valproato) / Febre alta prévia / Abstinência alcoólica aguda há horas / Privação severa de sono / Uso de drogas ilícitas (cocaína/crack) / TCE recente].
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO NA SALA DE EMERGÊNCIA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
@@ -4398,7 +4477,10 @@ matches:
   - trigger: ";ansiedade"
     replace: |
       ###### ATENDIMENTO UPA: CRISE DE ANSIEDADE AGUDA / ATAQUE DE PÂNICO ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Falta de ar, taquicardia no peito, tremores e sensação de morte há [ ] minutos/horas.
       - HMA: Paciente relata início súbito há cerca de [ ] minutos de intensa sensação de angústia, acompanhada de palpitações rápidas no peito, sensação de sufocamento ("o ar não entra nos pulmões"), tremores difusos nos membros, sudorese fria, tontura e sensação de irrealidade / medo de perder o controle ou de morte iminente.
@@ -4409,7 +4491,6 @@ matches:
       - EXCLUSÃO DE SÍNDROME CORONARIANA AGUDA: Nega dor precordial em aperto com irradiação para mandíbula ou dorso; nega histórico de cardiopatia isquêmica.
       - EXCLUSÃO DE TEP E ASMA: Nega dor pleurítica aguda em pontada, nega tosse ou chiado no peito; nega imobilização recente ou TVP prévia.
       - EXCLUSÃO DE INTOXICAÇÃO: Nega uso de drogas simpaticomiméticas ilícitas (cocaína, ecstasy, anfetaminas) ou anorexígenos.
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg (discretamente elevada por tônus adrenérgico) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (padrão taquipneico suspiroso) | SpO2: 99% a 100% em ar ambiente | Tax: [ ] °C.
@@ -4522,7 +4603,10 @@ matches:
   - trigger: ";surto"
     replace: |
       ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: AGITAÇÃO PSICOMOTORA / SURTO ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # CONTEXTO DE ENTRADA: [Trazido por familiares / Resgatado pelo SAMU ou Polícia Militar / Descompensação aguda na sala de espera].
       
       # SUBJETIVO & HISTÓRICO PSIQUIÁTRICO / CLÍNICO:
@@ -4533,7 +4617,6 @@ matches:
         * [ ] CAUSA TÓXICA / ABSTINÊNCIA: Suspeita de intoxicação aguda por drogas de abuso estimulantes (cocaína/crack/canabinoides sintéticos) ou Síndrome de Abstinência Alcoólica (Delirium Tremens).
       - Nega histórico de trauma cranioencefálico recente ou cefaleia febril precedente.
       - Sem porte de armas ou objetos perfurocortantes (revista de segurança realizada pela equipe/guarda).
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO & ESTADO MENTAL NA SALA DE EMERGÊNCIA):
       - SINAIS VITAIS (AFERIDOS ASSIM QUE POSSÍVEL): PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
@@ -4617,7 +4700,10 @@ matches:
   - trigger: ";itu"
     replace: |
       ###### ATENDIMENTO UPA: INFECÇÃO DO TRATO URINÁRIO (ITU) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [F/M].
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Feminino / Masculino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Penicilinas / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Ardor para urinar (disúria), aumento da frequência e dor no baixo ventre há [ ] dias.
       - HMA: Relata quadro iniciado há cerca de [ ] dias de dor e ardor ao urinar, polaciúria (micções frequentes em pequenos volumes), sensação de urgência miccional, tenesmo vesical e desconforto suprapúbico. Refere urina turva com odor alterado [e hematúria terminal leve / sem sangramento visível].
@@ -4628,7 +4714,6 @@ matches:
       - Em homens: Nega secreção uretral purulenta ou dor perineal/ejaculatória (afastada uretrite e prostatite aguda).
       - Nega cólica nefrética irradiando para a virilha sem febre (afastada litíase pura).
       - Fatores de ITU Complicada: [Mulher jovem hígida / Gestante / Diabética / Idosa / Sexo masculino / Uso recente de cateter vesical de demora / Litíase conhecida].
-      - Alergias: [Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Penicilinas / [ ]].
       
       # OBJETIVO (EXAME FÍSICO DIRIGIDO DA UPA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
@@ -4777,7 +4862,10 @@ matches:
   - trigger: ";colica-renal"
     replace: |
       ###### ATENDIMENTO UPA / SALA DE MEDICAÇÃO: CÓLICA RENAL AGUDA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor lombar insuportável em cólica de início súbito há [ ] horas.
       - HMA: Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa ([testículo/bolsa escrotal no homem / grande lábio na mulher]). Intensidade [10/10] na escala analógica.
@@ -4794,7 +4882,6 @@ matches:
         [ ] Gestante em vigência de cólica nefrética.
         * STATUS: [TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: [ ]].
       - Histórico Prévio: [Episódios prévios conhecidos de litíase urinária com eliminação de cálculos / Primeiro episódio da vida].
-      - Alergias: [Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
       
       # OBJETIVO (EXAME FÍSICO DIRIGIDO DA EMERGÊNCIA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).
@@ -4908,7 +4995,10 @@ matches:
   - trigger: ";uretrite"
     replace: |
       ###### ATENDIMENTO UPA: SÍNDROME DO CORRIMENTO URETRAL (IST) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo Masculino.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: Masculino[? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Saída de pus pelo canal da urina e ardência para urinar há [ ] dias.
       - HMA: Paciente relata aparecimento há cerca de [ ] dias de secreção uretral anormal espontânea, com aspecto [purulento abundante amarelo-esverdeado (típico de Gonorreia) / mucoide esbranquiçado e escasso (típico de Clamídia)], associada a disúria intensa ("sensação de queimar/cortar ao urinar"), prurido no trajeto da uretra peniana e eritema no meato externo.
@@ -4918,7 +5008,6 @@ matches:
       - Nega dor intensa, inchaço ou vermelhidão na bolsa escrotal/testículo (afastada Orquiepididimite aguda).
       - Nega febre, calafrios, dor no períneo ("dor entre o saco e o ânus") ou dificuldade para esvaziar a bexiga (afastada Prostatite Aguda).
       - Nega feridas, úlceras dolorosas ou indolores na glande, prepúcio ou corpo do pênis (afastados Cancro Duro e Herpes genital).
-      - Alergias: [Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
       
       # OBJETIVO (EXAME FÍSICO GENITURINÁRIO DIRIGIDO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril (Tax [ ] °C).
@@ -5025,7 +5114,10 @@ matches:
   - trigger: ";lombalgia"
     replace: |
       ###### ATENDIMENTO UPA: LOMBALGIA AGUDA / LOMBOCIATALGIA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor na coluna lombar / Dor que desce para a perna há [ ] dias/horas.
       - HMA: Relata quadro de dor lombar de início após esforço físico / levantamento de carga / movimento de torção do tronco há cerca de [ ] dias.
@@ -5037,7 +5129,6 @@ matches:
         * [ ] NEOPLASIA / METÁSTASE ÓSSEA: Nega histórico pessoal prévio de câncer (mama, próstata, pulmão); nega dor contínua em repouso que piora de madrugada na cama sem alívio em qualquer posição; nega perda ponderal inexplicada.
         * [ ] INFECÇÃO DA COLUNA (ESPONDILODISCITE / ABSCESSO EPIDURAL): Nega febre, calafrios ou sudorese noturna; nega uso de drogas endovenosas ou infecção urinária/cutânea recente.
         * [ ] RISCO DE FRATURA OSTEOPORÓTICA: Idade < 65 anos, nega uso crônico prolongado de corticoides orais e nega trauma contuso de alto impacto.
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO OSTEOMUSCULAR & NEUROLÓGICO DIRIGIDO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril).
@@ -5134,7 +5225,10 @@ matches:
   - trigger: ";alergia"
     replace: |
       ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: REAÇÃO ALÉRGICA / ANAFILAXIA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso estimado: [ ] kg.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Manchas vermelhas pelo corpo que coçam muito / Inchaço nos lábios / Falta de ar há [ ] minutos.
       - HMA: Relata aparecimento agudo há cerca de [ ] minutos de placas avermelhadas na pele com intenso prurido, sensação de calor e formigamento difuso, acompanhadas de inchaço (angioedema) em [lábios / pálpebras / orelhas / face / mãos].
@@ -5151,7 +5245,6 @@ matches:
         * CLASSIFICAÇÃO:
           - [ ] URTICÁRIA AGUDA / ANGIOEDEMA ISOLADO (Sem sintomas respiratórios ou hemodinâmicos).
           - [ ] ANAFILAXIA GRAVE EM CURSO (EMERGÊNCIA MÉDICA MÁXIMA - INDICADA ADRENALINA IMEDIATA).
-      - Alergias Conhecidas Prévias: [ ].
       
       # OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
@@ -5272,7 +5365,10 @@ matches:
   - trigger: ";celulite"
     replace: |
       ###### ATENDIMENTO UPA: INFECÇÃO DE PELE E PARTES MOLES (PPM) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Vermelhidão, dor, inchaço e calor na pele [em perna / pé / braço / face] há [ ] dias.
       - HMA: Relata quadro de início há cerca de [ ] dias caracterizado por dor local progressiva, calor, edema e eritema cutâneo em [membro inferior direito/esquerdo / região periorbitária / dorso]. Refere febre alta precedente de [ ] °C e calafrios.
@@ -5286,7 +5382,6 @@ matches:
         * Nega presença de gás ou estalidos/crepitação à palpação do tecido subcutâneo.
         * Nega bolhas escuras hemorrágicas, necrose cutânea franca ou anestesia local no centro da lesão.
       - Fatores de Risco: [Diabetes Mellitus / Obesidade / Insuficiência venosa crônica / Linfedema prévio / Imunossupressão].
-      - Alergias: [Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
       
       # OBJETIVO (EXAME FÍSICO DERMATOLÓGICO DIRIGIDO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C | SpO2: [ ]%.
@@ -5404,7 +5499,10 @@ matches:
   - trigger: ";zoster"
     replace: |
       ###### ATENDIMENTO UPA: HERPES ZOSTER AGUDO ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor em queimação, fisgada e bolhinhas com água na pele há [ ] dias.
       - HMA: Relata quadro iniciado há cerca de [ ] dias com dor prodrômica em queimação intensa, sensação de "choque elétrico", alodinia (dor ao simples roçar da roupa na pele) e formigamento localizado, seguido pelo aparecimento de vesículas agrupadas sobre base avermelhada que coçam e doem intensamente.
@@ -5418,7 +5516,6 @@ matches:
           - Nega paralisia ou fraqueza na mímica facial (mímica facial simétrica).
           - Nega dor intensa no ouvido com vesículas no conduto auditivo externo ou vertigem súbita.
       - Histórico: [Passado de catapora/varicela na infância / Imunossupressão / Idade > 50 anos].
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO DERMATOLÓGICO & NEUROLÓGICO):
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril.
@@ -5542,7 +5639,10 @@ matches:
   - trigger: ";escabiose"
     replace: |
       ###### ATENDIMENTO UPA: ESCABIOSE (SARNA HUMANA) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso: [ ] kg.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # SUBJETIVO:
       - Queixa Principal: Coceira no corpo todo que piora muito à noite há [ ] dias/semanas.
       - HMA: Relata prurido cutâneo difuso de evolução progressiva, com exacerbação noturna intensa ("quase não consegue dormir ao se cobrir na cama"). Queixa-se de pequenas lesões avermelhadas e "bolhinhas" em dobras de pele.
@@ -5552,7 +5652,6 @@ matches:
         * Prurido e lesões concentrados entre os dedos das mãos, punhos, axilas, ao redor do umbigo, nádegas e [na bolsa escrotal/pênis no homem / aréolas na mulher].
       - Nega febre, calafrios ou prostração sistêmica.
       - Nega lesões bolhosas extensas com descolamento cutâneo (afastado pênfigo ou eritema multiforme).
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO DERMATOLÓGICO):
       - Ectoscopia Cutânea:
@@ -5656,7 +5755,10 @@ matches:
   - trigger: ";gota"
     replace: |
       ###### ATENDIMENTO UPA: CRISE AGUDA DE GOTA (PODAGRA) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo Masculino/Feminino.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: Masculino[? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       # SUBJETIVO:
       - Queixa Principal: Dor insuportável, vermelhidão e inchaço no "dedão do pé" / joelho iniciados de madrugada há [ ] horas.
       - HMA: Relata início hiperagudo de dor articular excruciante (intensidade [10/10]), que acordou o paciente durante a noite. Descreve dor em queimação e pontada tão intensa que até o contato suave do lençol ou meia causa sofrimento intolerável (alodinia mecânica extrema). Acompanhada de calor local, edema volumoso e vermelhidão brilhante.
@@ -5780,7 +5882,10 @@ matches:
   - trigger: ";cad"
     replace: |
       ###### ATENDIMENTO UPA / SALA VERMELHA: CETOACIDOSE DIABÉTICA (CAD) / EHH ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso: [ ] kg.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # HISTÓRICO: [Diabetes Mellitus tipo 1 / Diabetes Mellitus tipo 2 sob insulinoterapia / Primeiro diagnóstico de diabetes].
       
       # SUBJETIVO:
@@ -5792,7 +5897,6 @@ matches:
         * [ ] Infarto agudo do miocárdio silencioso ou AVC agudo.
       - Nega cirurgia abdominal recente ou hematêmese.
       - Nega uso de drogas simpatomiméticas ilícitas (cocaína).
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO NA SALA VERMELHA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg (hipotensão postural) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (hiperpneia) | SpO2: [ ]% | Tax: [ ] °C.
@@ -5884,7 +5988,10 @@ matches:
   - trigger: ";intoxicacao"
     replace: |
       ###### ATENDIMENTO UPA / SALA VERMELHA: INTOXICAÇÃO EXÓGENA AGUDA ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Sim: [ ]].
       # CONTEXTO: [Ingesta alcoólica pesada aguda / Suspeita de tentativa de autoextermínio / Acidente ocupacional com agrotóxico / Intoxicação medicamentosa acidental].
       
       # SUBJETIVO & HISTÓRIA TÓXICA (RELATO DE FAMILIARES / SOCORRISTAS DO SAMU):
@@ -5897,7 +6004,6 @@ matches:
         * [ ] 3. TOXIDROME COLINÉRGICA (Organofosforados / Carbamatos / Chumbinho): Miose puntiforme, bradicardia acentuada, sialorreia profusa ("baba contínua"), broncorreia intensa com estertores ("afogando nas próprias secreções"), sudorese, fasciculações musculares e diarreia.
         * [ ] 4. TOXIDROME SIMPATICOMIMÉTICA (Cocaína, Crack, Anfetaminas): Agitação psicomotora violenta, midríase bilateral fotorreagente, taquicardia extrema, pico hipertensivo grave, sudorese profusa e hipertermia.
         * [ ] 5. TOXIDROME ANTICOLINÉRGICA (Tricíclicos, Anti-histamínicos): Midríase paralítica fixa, pele seca e quente, taquicardia, retenção urinária aguda (bexigoma) e delírio agitado.
-      - Alergias: [Nega / Sim: [ ]].
       
       # OBJETIVO (EXAME FÍSICO DA SALA DE EMERGÊNCIA):
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
@@ -5964,7 +6070,10 @@ matches:
   - trigger: ";sri"
     replace: |
       ###### NOTA DE PROCEDIMENTO: SEQUÊNCIA RÁPIDA DE INTUBAÇÃO (SRI) ######
-      # IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso estimado: [ ] kg.
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       # INDICAÇÃO CLÍNICA DA INTUBAÇÃO OROTRAQUEAL (IOT):
       - [ ] Falência respiratória hipoxêmica ou hipercápnica refratária (SpO2 < 85% a despeito de VNI/máscara).
       - [ ] Rebaixamento do nível de consciência com perda dos reflexos protetores de via aérea (Escala de Coma de Glasgow <= 8).
@@ -6091,6 +6200,11 @@ matches:
   - trigger: ";pcr"
     replace: |
       ATENDIMENTO DE EMERGÊNCIA - PARADA CARDIORRESPIRATÓRIA (PCR) ADULTO
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
+      
       
       HORÁRIO DE INÍCIO DA RCP: [ ]h[ ]min
       LOCAL DO EVENTO: [ Sala Vermelha / Leito da Enfermaria / Box de Emergência / Pré-hospitalar ]
@@ -6183,7 +6297,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO SEPSE & CHOQUE SÉPTICO ######
       # IDENTIFICAÇÃO:
-      - Paciente: [Nome], [Idade] anos, Leito: Sala Vermelha [ ], Registro: [ ]
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - Horário de Abertura do Protocolo de Sepse: [HH:MM] do dia [DD/MM/AAAA].
       - Foco Infeccioso Suspeito: [Pulmonar (PAC grave / Broncoaspiração) / Urinário (Pielonefrite) / Abdominal (Peritonite / Colangite) / Pele e Partes Moles (Erisipela / Fasciíte) / Foco Indeterminado].
       
@@ -6277,7 +6393,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO AVC AGUDO (CÓDIGO AVC) ######
       # IDENTIFICAÇÃO:
-      - Paciente: [Nome], [Idade] anos, Leito: Sala Vermelha [ ], Registro: [ ]
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - Data e Hora do Início dos Sintomas / Última vez visto bem (Last Seen Well): [DD/MM/AAAA] às [HH:MM].
       - Tempo de Evolução dos Sintomas: [ ] horas e [ ] minutos.
       - Classificação Temporal: [JANELA DE TROMBÓLISE VÁLIDA (< 4,5 HORAS) / FORA DA JANELA (> 4,5 HORAS) / AVC DO DESPERTAR (WAKE-UP STROKE)].
@@ -6371,7 +6489,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO TAQUIARRITMIAS & FA ######
       # IDENTIFICAÇÃO:
-      - Paciente: [Nome], [Idade] anos, Leito: Sala Vermelha [ ], Registro: [ ]
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - Queixa Principal: Palpitações taquicárdicas súbitas no peito há cerca de [ ] horas.
       - Antecedentes Cardiovasculares: [Hipertensão / Insuficiência Cardíaca / DAC prévia / FA paroxística / Uso prévio de antiarrítmicos / Nega cardiopatia].
       
@@ -6485,7 +6605,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE SALA VERMELHA: DISTÚRBIOS ELETROLÍTICOS GRAVES ######
       # IDENTIFICAÇÃO:
-      - Paciente: [Nome], [Idade] anos, Leito: Sala Vermelha [ ], Registro: [ ]
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - Motivo da Avaliação na Sala Vermelha: [MODALIDADE A: HIPERCALEMIA GRAVE / MODALIDADE B: HIPONATREMIA AGUDA SINTOMÁTICA].
       
       =============================================================================
@@ -6616,10 +6738,11 @@ matches:
     replace: |
       ###### PROCEDIMENTO DE SALA DE SUTURA: FERIMENTO CONTUSO, SUTURA & PROFILAXIAS ######
       # IDENTIFICAÇÃO:
-      - Paciente: [Nome], [Idade] anos, Sala de Pequena Cirurgia, Registro: [ ]
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / [ ]].
       - Horário do Trauma: Há cerca de [ ] horas (Trauma ocorrido às [HH:MM]).
       - Mecanismo do Trauma: [Corte por vidro / Lâmina metálica / Queda da própria altura com impacto / Mordedura animal por cão ou gato / Objeto perfurocortante enferrujado / Acidente de trabalho].
-      - Alergias Medicamentosas: [Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / [ ]].
       
       # AVALIAÇÃO DA LESÃO & EXAME FÍSICO DIRECIONADO:
       - Localização Anatômica: Região [face / supercílio / couro cabeludo / antebraço / mão / coxa / perna] [direita / esquerda].
@@ -6705,6 +6828,11 @@ matches:
   - trigger: ";10-bradiarritmias-e-marcapasso-transcutaneo"
     replace: |
       ATENDIMENTO DE EMERGÊNCIA — BRADIARRITMIA SINTOMÁTICA & BLOQUEIO ATRIOVENTRICULAR (ACLS)
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
+      
       APRESENTAÇÃO CLÍNICA & SINAIS DE INSTABILIDADE (5 CRITÉRIOS DO ACLS):
       - Queixa Principal: Paciente admitido na Sala Vermelha por [síncope / pré-síncope e tontura intensa / dispneia aguda / dor torácica isquêmica / rebaixamento do nível de consciência] associado a FC < 50 bpm.
       - Critérios de Instabilidade Hemodinâmica pela Bradicardia: [1. Hipotensão (PAS < 90 mmHg) / 2. Alteração aguda do estado mental / 3. Sinais de Choque (palidez, sudorese fria, TEC > 3s) / 4. Desconforto torácico isquêmico / 5. Insuficiência cardíaca aguda (EAP)].
@@ -6752,6 +6880,11 @@ matches:
   - trigger: ";11-queimaduras-e-animais-peconhentos"
     replace: |
       ATENDIMENTO DE EMERGÊNCIA — QUEIMADURAS AGUDAS OU ACIDENTE POR ANIMAL PEÇONHENTO
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
+      
       CENÁRIO DO ATENDIMENTO: [1. Queimadura Térmica/Química/Elétrica Aguda / 2. Acidente por Animal Peçonhento (Escorpião, Serpente ou Aranha)].
       
       BLOCO A — SE QUEIMADURA AGUDA (ATLS / ABA):
@@ -7179,8 +7312,10 @@ matches:
   - trigger: ";04-controle-glicemico-e-insulinoterapia-hospitalar"
     replace: |
       EVOLUÇÃO DIÁRIA DIRECIONADA — CONTROLE GLICÊMICO HOSPITALAR (DIRETRIZ SBD / ADA)
-      PERFIL DO PACIENTE E META GLICÊMICA:
-      - Paciente: [Nome], [Idade] anos, Peso: [70] kg, TFG estimada (CKD-EPI): [ ] mL/min/1,73m².
+      # IDENTIFICAÇÃO & META GLICÊMICA:
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], Peso: [70] kg, TFG estimada (CKD-EPI): [ ] mL/min/1,73m².
+      Comorbidades: [DM2 / [ ]].
+      Alergias: [Nega / [ ]].
       - Diagnóstico Glicêmico: [DM2 prévio em uso domiciliar de antidiabéticos orais / DM2 insulinodependente prévio / Hiperglicemia de estresse hospitalar / Hiperglicemia induzida por Corticoide (Prednisona/Dexametasona/Metilprednisolona)].
       - Via de Alimentação Atual: [Dieta oral regular para diabetes (3 refeições) / Dieta enteral contínua ou intermitente por SNE / Em jejum ou dieta zero para procedimento].
       - Mapa Glicêmico das Últimas 24 Horas (HGT):
@@ -7259,8 +7394,10 @@ matches:
   - trigger: ";01-delirium-hospitalar-e-agitacao-no-idoso"
     replace: |
       AVALIAÇÃO DE INTERCORRÊNCIA EM ENFERMARIA — DELIRIUM HOSPITALAR (MÉTODO CAM)
-      IDENTIFICAÇÃO E STATUS COGNITIVO BASAL:
-      - Paciente: [Nome], [Idade] anos, Leito [ ], no [ ]º DIH por [motivo da internação].
+      # IDENTIFICAÇÃO E STATUS COGNITIVO BASAL:
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], no [ ]º DIH por [motivo da internação].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular leve/moderada / Doença de Parkinson ou Demência por Corpos de Lewy].
       
       DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2 + [3 OU 4]):
@@ -7559,9 +7696,10 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — FICHA MESTRA UNIVERSAL (TRIÂNGULO PEDIÁTRICO) ######
       # IDENTIFICAÇÃO & ANTROPOMETRIA OBRIGATÓRIA:
-      - Criança: [Nome] | Sexo: [Masculino / Feminino] | Idade: [ ] anos e [ ] meses (DN: [DD/MM/AAAA])
-      - Acompanhante / Informante: [Mãe / Pai / Avó / Responsável legal: [ ]]
-      - PESO ATUAL AFERIDO NA BALANÇA: [ ] kg | Estatura: [ ] cm | PC (< 2 anos): [ ] cm
+      ID: [Nome], [ ] anos e [ ] meses (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Avó / Responsável legal: [ ]]].
+      Estatura: [ ] cm | PC (< 2 anos): [ ] cm.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # TRIÂNGULO DE AVALIAÇÃO PEDIÁTRICA (TEP — IMPRESSÃO VISUAL NOS PRIMEIROS 15 SEGUNDOS):
       1. Aparência (Tônus, Interatividade, Consolabilidade, Olhar, Choro/Fala): [Normal — ativo, reativo, olhar focado e choro consolável no colo / Alterada — irritabilidade inconsolável / Alterada — hipoativo, prostrado ou letárgico].
@@ -7694,9 +7832,10 @@ matches:
     replace: |
       ###### CONSULTA DE PUERICULTURA & VIGILÂNCIA DO DNPM (0 A 24 MESES) ######
       # IDENTIFICAÇÃO & CRONOLOGIA:
-      - Criança: [Nome] | Sexo: [Masculino / Feminino] | DN: [DD/MM/AAAA]
-      - Idade Cronológica: [ ] meses e [ ] dias ([Nascido a termo / Prematuro de [ ] semanas -> Idade Corrigida: [ ] meses])
-      - Acompanhante: [Mãe / Pai / Ambos os pais / Cuidador(a): [ ]]
+      ID: [Nome], [ ] meses e [ ] dias (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino][? Acompanhante :: , Acompanhante: [Mãe / Pai / Ambos os pais / Cuidador(a): [ ]]].
+      Idade Corrigida / Nascimento: [Nascido a termo / Prematuro de [ ] semanas -> Idade Corrigida: [ ] meses].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (ANAMNESE DE PUERICULTURA, NUTRIÇÃO & ROTINA):
       - Intercorrências desde a última consulta: [Assintomático(a), em excelente evolução / Apresentou quadro leve de [ ]].
@@ -7817,8 +7956,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — RESFRIADO COMUM / RINOFARINGITE AGUDA ######
       # IDENTIFICAÇÃO & PESO:
-      - Paciente: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (ANAMNESE DIRIGIDA & EXCLUSÃO DE GRAVIDADE):
       - Queixa Principal (QP): Coriza, obstrução nasal e tosse há [ ] dias.
@@ -7941,8 +8081,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — BRONQUIOLITE VIRAL AGUDA (BVA NO LACTENTE < 2 ANOS) ######
       # IDENTIFICAÇÃO & FATORES DE RISCO DE GRAVIDADE:
-      - Lactente: [Nome] | Idade: [ ] meses (Faixa clássica < 24 meses; pico 2 a 6 meses) | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] meses (Faixa clássica < 24 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - Fatores de Risco para BVA Grave: [Nenhum — lactente a termo hígido > 3 meses / Idade < 12 semanas (< 3 meses) / Prematuridade (< 37 semanas) / Cardiopatia congênita hemodinamicamente significativa / Broncodisplasia pulmonar / Imunodeficiência].
       
       # SUBJETIVO (HISTÓRIA CLÍNICA & FASE EVOLUTIVA DA DOENÇA):
@@ -8083,8 +8224,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA PEDIÁTRICA — CRUPE VIRAL (LARINGOTRAQUEOBRONQUITE) ######
       # IDENTIFICAÇÃO & PESO:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] (Faixa típica: 6 meses a 3 anos) | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos] (Faixa típica: 6 meses a 3 anos), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (ANAMNESE DIRIGIDA & EXCLUSÃO DE EPIGLOTITE / CORPO ESTRANHO):
       - Queixa Principal (QP): Tosse rouca ("tosse de cachorro/foca") e barulho agudo para puxar o ar iniciados à noite há [ ] horas.
@@ -8225,8 +8367,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — OTITE MÉDIA AGUDA (OMA) ######
       # IDENTIFICAÇÃO & PESO:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgico(a) a Penicilinas / [ ]].
       
       # SUBJETIVO (ANAMNESE DIRIGIDA & FATORES DE RESISTÊNCIA BACTERIANA):
       - Queixa Principal (QP): Dor de ouvido (otalgia), febre e irritabilidade há [ ] dias.
@@ -8365,8 +8508,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — PNEUMONIA ADQUIRIDA NA COMUNIDADE (PAC) ######
       # IDENTIFICAÇÃO & PESO:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgico(a) a Penicilinas / [ ]].
       
       # SUBJETIVO (ANAMNESE DIRIGIDA & PADRÃO CLÍNICO):
       - Queixa Principal (QP): Tosse, febre persistente e respiração rápida/cansada há [ ] dias.
@@ -8496,9 +8640,10 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — GASTROENTERITE AGUDA (GECA) & PLANOS A, B E C (OMS/MS) ######
       # IDENTIFICAÇÃO & PESO DE ENTRADA:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO DE ENTRADA AFERIDO: [ ] kg
-      - Peso Prévio Conhecido (se disponível para cálculo de perda aguda): [Não informado / [ ] kg -> Perda de [ ]%]
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso de Entrada: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Peso Prévio Conhecido: [Não informado / [ ] kg -> Perda de [ ]%].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (CARACTERIZAÇÃO DA DIARREIA, VÔMITOS & RED FLAGS):
       - Queixa Principal (QP): Diarreia líquida e vômitos há [ ] dias.
@@ -8658,8 +8803,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — FEBRE SEM SINAIS LOCALIZATÓRIOS (FSSL) NO LACTENTE ######
       # IDENTIFICAÇÃO, PESO & FAIXA ETÁRIA DE RISCO:
-      - Lactente: [Nome] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-      - Idade Exata: [ ] [dias / meses] (DN: [DD/MM/AAAA])
+      ID: [Nome], [ ] [dias / meses] (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - ESTRATIFICAÇÃO ETÁRIA CRÍTICA:
         * [GRUPO 1 — RECÉM-NASCIDO (0 A 28 DIAS DE VIDA)] -> Alto risco de Infecção Bacteriana Grave (10–15%): Internação hospitalar, triagem séptica completa com líquor e ATB venoso obrigatórios.
         * [GRUPO 2 — LACTENTE JOVEM (29 A 90 DIAS / 1 A 3 MESES)] -> Estratificação por Critérios de Rochester / Step-by-Step + EAS/Urocultura por sonda e marcadores inflamatórios obrigatórios.
@@ -8793,8 +8939,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA PEDIÁTRICA — CRISE CONVULSIVA FEBRIL (6 MESES A 5 ANOS) ######
       # IDENTIFICAÇÃO & PESO:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] (Faixa de definição: 6 a 60 meses; pico aos 18 meses) | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (SEMIOLOGIA DA CRISE & CRITÉRIOS SIMPLES vs COMPLEXA):
       - Queixa Principal (QP): Episódio de crise convulsiva em vigência de febre há [ ] minutos/horas.

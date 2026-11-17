@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: RESFRIADO COMUM / RINOFARINGITE AGUDA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido / Asma / HAS / DM2 / [ ]].
+Alergias: [Nega alergias conhecidas / Alérgico a: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Coriza, congestão nasal e dor de garganta há [ ] dias.
 - HMA: Refere quadro iniciado há cerca de [ ] dias de coriza hialina, obstrução nasal, espirros frequentes, sensação de garganta arranhando e tosse [seca / produtiva clara]. Refere febrícula baixa não aferida no início do quadro.
@@ -16,8 +19,6 @@
 - Nega dispneia, falta de ar, dor torácica ventilatório-dependente ou sibilos.
 - Nega dor facial intensa em peso unilateral ou secreção nasal purulenta fétida > 10 dias.
 - Nega disfagia intensa com recusa hídrica, trismo ou sialorreia.
-- Alergias Medicamentosas: [Nega alergias conhecidas / Alérgico a: [ ]].
-- Comorbidades: [Hígido / Asma / HAS / DM2 / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: PNEUMONIA ADQUIRIDA NA COMUNIDADE (PAC) ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / [ ]].
+Alergias: [Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Tosse com catarro, febre e dor no peito para respirar há [ ] dias.
 - HMA: Refere tosse produtiva há cerca de [ ] dias com escarro de aspecto [amarelado / purulento / ferruginoso], associada a picos febris diários (Tax [ ] °C) acompanhados de calafrios, astenia e dor torácica ventilatório-dependente (dor pleurítica em pontada à inspiração profunda) em hemitórax [direito / esquerdo].
@@ -26,8 +29,6 @@
 - Nega hemoptise volumosa ou sangramento respiratório ativo.
 - Nega estridor respiratório, sensação de asfixia ou tiragem de fúrcula/intercostal.
 - Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise (afastada PAC hospitalar/multirresistente).
-- Comorbidades: [Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / [ ]].
-- Alergias: [Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 
 # OBJETIVO (EXAME FÍSICO RESPIRATÓRIO & GERAL):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente | Tax: [ ] °C.

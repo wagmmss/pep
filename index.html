@@ -8554,7 +8554,9 @@ IDENTIFICAÇÃO &amp; PESO:
     function updateInteractiveCounter() {
       const counterEl = document.getElementById('pepFillCounter');
       if (!counterEl || !interactiveRendered) return;
-      const filledInputs = interactiveRendered.querySelectorAll('.pep-inline-input.is-filled, .pill-sub-input.is-filled').length;
+      const filledInputs = Array.from(
+        interactiveRendered.querySelectorAll('.pep-inline-input.is-filled, .pill-sub-input.is-filled')
+      ).filter(el => !(typeof el.closest === 'function' && el.closest('.pep-opt-inline.is-off'))).length;
       const emptyInputs = Array.from(
         interactiveRendered.querySelectorAll('.pep-inline-input:not(.is-filled):not(.is-prefilled)')
       ).filter(el => {

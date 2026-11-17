@@ -10,7 +10,9 @@
 ```text
 ###### ATENDIMENTO DE EMERGÊNCIA — PRÉ-ECLÂMPSIA GRAVE / ECLÂMPSIA / HELLP ######
 # IDENTIFICAÇÃO & QUADRO SINDRÔMICO:
-- Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
+Comorbidades: [Hígida / HAS crônica / Pré-eclâmpsia prévia / [ ]].
+Alergias: [Nega / [ ]].
 - Apresentação Clínica: [Pré-Eclâmpsia com sinais de gravidade / Iminência de Eclâmpsia (Tríade de cefaleia + escotomas + epigastralgia) / Eclâmpsia (Crise convulsiva TCG às HH:MM) / Síndrome HELLP].
 
 # SUBJETIVO & CRITÉRIOS DE GRAVIDADE PRESENTES:

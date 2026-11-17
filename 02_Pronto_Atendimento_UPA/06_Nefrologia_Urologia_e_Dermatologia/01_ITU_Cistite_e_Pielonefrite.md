@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: INFECÇÃO DO TRATO URINÁRIO (ITU) ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [F/M].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Feminino / Masculino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Penicilinas / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Ardor para urinar (disúria), aumento da frequência e dor no baixo ventre há [ ] dias.
 - HMA: Relata quadro iniciado há cerca de [ ] dias de dor e ardor ao urinar, polaciúria (micções frequentes em pequenos volumes), sensação de urgência miccional, tenesmo vesical e desconforto suprapúbico. Refere urina turva com odor alterado [e hematúria terminal leve / sem sangramento visível].
@@ -20,7 +23,6 @@
 - Em homens: Nega secreção uretral purulenta ou dor perineal/ejaculatória (afastada uretrite e prostatite aguda).
 - Nega cólica nefrética irradiando para a virilha sem febre (afastada litíase pura).
 - Fatores de ITU Complicada: [Mulher jovem hígida / Gestante / Diabética / Idosa / Sexo masculino / Uso recente de cateter vesical de demora / Litíase conhecida].
-- Alergias: [Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Penicilinas / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO DA UPA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.

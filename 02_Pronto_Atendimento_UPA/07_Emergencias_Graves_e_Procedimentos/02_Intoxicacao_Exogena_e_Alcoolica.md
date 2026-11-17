@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA / SALA VERMELHA: INTOXICAÇÃO EXÓGENA AGUDA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # CONTEXTO: [Ingesta alcoólica pesada aguda / Suspeita de tentativa de autoextermínio / Acidente ocupacional com agrotóxico / Intoxicação medicamentosa acidental].
 
 # SUBJETIVO & HISTÓRIA TÓXICA (RELATO DE FAMILIARES / SOCORRISTAS DO SAMU):
@@ -22,7 +25,6 @@
   * [ ] 3. TOXIDROME COLINÉRGICA (Organofosforados / Carbamatos / Chumbinho): Miose puntiforme, bradicardia acentuada, sialorreia profusa ("baba contínua"), broncorreia intensa com estertores ("afogando nas próprias secreções"), sudorese, fasciculações musculares e diarreia.
   * [ ] 4. TOXIDROME SIMPATICOMIMÉTICA (Cocaína, Crack, Anfetaminas): Agitação psicomotora violenta, midríase bilateral fotorreagente, taquicardia extrema, pico hipertensivo grave, sudorese profusa e hipertermia.
   * [ ] 5. TOXIDROME ANTICOLINÉRGICA (Tricíclicos, Anti-histamínicos): Midríase paralítica fixa, pele seca e quente, taquicardia, retenção urinária aguda (bexigoma) e delírio agitado.
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DA SALA DE EMERGÊNCIA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

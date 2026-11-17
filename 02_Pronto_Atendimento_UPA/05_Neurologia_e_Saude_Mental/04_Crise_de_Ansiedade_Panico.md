@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: CRISE DE ANSIEDADE AGUDA / ATAQUE DE PÂNICO ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Falta de ar, taquicardia no peito, tremores e sensação de morte há [ ] minutos/horas.
 - HMA: Paciente relata início súbito há cerca de [ ] minutos de intensa sensação de angústia, acompanhada de palpitações rápidas no peito, sensação de sufocamento ("o ar não entra nos pulmões"), tremores difusos nos membros, sudorese fria, tontura e sensação de irrealidade / medo de perder o controle ou de morte iminente.
@@ -20,7 +23,6 @@
 - EXCLUSÃO DE SÍNDROME CORONARIANA AGUDA: Nega dor precordial em aperto com irradiação para mandíbula ou dorso; nega histórico de cardiopatia isquêmica.
 - EXCLUSÃO DE TEP E ASMA: Nega dor pleurítica aguda em pontada, nega tosse ou chiado no peito; nega imobilização recente ou TVP prévia.
 - EXCLUSÃO DE INTOXICAÇÃO: Nega uso de drogas simpaticomiméticas ilícitas (cocaína, ecstasy, anfetaminas) ou anorexígenos.
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (discretamente elevada por tônus adrenérgico) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (padrão taquipneico suspiroso) | SpO2: 99% a 100% em ar ambiente | Tax: [ ] °C.

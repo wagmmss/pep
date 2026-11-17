@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA / SALA VERMELHA: HEMORRAGIA DIGESTIVA ALTA (HDA) ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Vômito com sangue vivo / Fezes pretas e tontura há [ ] horas.
 - HMA: Paciente relata episódio agudo de [hematêmese com sangue vermelho vivo / vômitos escuros em borra de café] e/ou [eliminação de fezes pretas, amolecidas, com odor fétido característico de piche (melena)]. Relata fraqueza intensa súbita, tontura ao se levantar (lipotímia), palpitações e sudorese fria.
@@ -18,7 +21,6 @@
 - Nega dor torácica anginosa precedente.
 - Nega tosse com expectoração sanguinolenta (afastada hemoptise respiratória).
 - Nega disfagia ou emagrecimento severo recente.
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA & ESTABILIDADE HEMODINÂMICA):
 - SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia compensatória) | FR: [ ] irpm | SpO2: [ ]% em AA.

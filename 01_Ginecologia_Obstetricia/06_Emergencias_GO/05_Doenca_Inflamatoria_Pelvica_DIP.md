@@ -10,8 +10,10 @@
 ```text
 ###### ATENDIMENTO DE EMERGÊNCIA GINECOLÓGICA — DOENÇA INFLAMATÓRIA PÉLVICA (DIP) ######
 # IDENTIFICAÇÃO & FATORES DE RISCO:
-- Paciente: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
-- Contexto & Alergias: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
+Comorbidades: [Hígida / [ ]].
+Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+- Contexto: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST].
 
 # SUBJETIVO (QD & HMA):
 - Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria].

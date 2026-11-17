@@ -9,9 +9,10 @@
 ```text
 ###### ATENDIMENTO PEDIÁTRICO — FICHA MESTRA UNIVERSAL (TRIÂNGULO PEDIÁTRICO) ######
 # IDENTIFICAÇÃO & ANTROPOMETRIA OBRIGATÓRIA:
-- Criança: [Nome] | Sexo: [Masculino / Feminino] | Idade: [ ] anos e [ ] meses (DN: [DD/MM/AAAA])
-- Acompanhante / Informante: [Mãe / Pai / Avó / Responsável legal: [ ]]
-- PESO ATUAL AFERIDO NA BALANÇA: [ ] kg | Estatura: [ ] cm | PC (< 2 anos): [ ] cm
+ID: [Nome], [ ] anos e [ ] meses (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Avó / Responsável legal: [ ]]].
+Estatura: [ ] cm | PC (< 2 anos): [ ] cm.
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 
 # TRIÂNGULO DE AVALIAÇÃO PEDIÁTRICA (TEP — IMPRESSÃO VISUAL NOS PRIMEIROS 15 SEGUNDOS):
 1. Aparência (Tônus, Interatividade, Consolabilidade, Olhar, Choro/Fala): [Normal — ativo, reativo, olhar focado e choro consolável no colo / Alterada — irritabilidade inconsolável / Alterada — hipoativo, prostrado ou letárgico].

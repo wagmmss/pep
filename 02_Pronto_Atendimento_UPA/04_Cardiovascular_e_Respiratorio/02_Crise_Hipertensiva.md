@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: ELEVAÇÃO AGUDA DE PRESSÃO ARTERIAL ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SINAIS VITAIS NA TRIAGEM: PA: [ ]x[ ] mmHg (Aferida em repouso de 15 minutos em ambos os braços) | FC: [ ] bpm.
 
 # SUBJETIVO:
@@ -23,7 +26,6 @@
   * GESTAÇÃO: Paciente não gestante (se mulher em idade fértil).
 - Fatores Emocionais / Desencadeantes: [Histórico de estresse emocional agudo / Dor osteomuscular concomitante / Privação de sono].
 - Medicações de Uso Contínuo: [Em uso irregular de Losartana, Enalapril, Anlodipino, Hidroclorotiazida / Nega uso de anti-hipertensivos].
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO À EXCLUSÃO DE LOA):
 - SINAIS VITAIS REPETIDOS APÓS REPOUSO: PA: [ ]x[ ] mmHg (MSD) e [ ]x[ ] mmHg (MSE) (Sem assimetria pressórica significativa).

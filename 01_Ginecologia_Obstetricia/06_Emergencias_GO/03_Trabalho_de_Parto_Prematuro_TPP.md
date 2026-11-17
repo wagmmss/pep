@@ -10,7 +10,9 @@
 ```text
 ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — TRABALHO DE PARTO PREMATURO (TPP) ######
 # IDENTIFICAÇÃO & IDADE GESTACIONAL:
-- Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [Hígida / [ ]].
+Alergias: [Nega / [ ]].
 - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º trimestre) | Fatores de Risco: [Prematuridade prévia / Colo curto < 25 mm / Gemelaridade / ITU ativa / Nega fatores prévios].
 
 # SUBJETIVO (QD & EXCLUSÃO DE CONTRAINDICAÇÕES À TOCÓLISE):

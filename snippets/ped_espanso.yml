@@ -5,9 +5,10 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — FICHA MESTRA UNIVERSAL (TRIÂNGULO PEDIÁTRICO) ######
       # IDENTIFICAÇÃO & ANTROPOMETRIA OBRIGATÓRIA:
-      - Criança: [Nome] | Sexo: [Masculino / Feminino] | Idade: [ ] anos e [ ] meses (DN: [DD/MM/AAAA])
-      - Acompanhante / Informante: [Mãe / Pai / Avó / Responsável legal: [ ]]
-      - PESO ATUAL AFERIDO NA BALANÇA: [ ] kg | Estatura: [ ] cm | PC (< 2 anos): [ ] cm
+      ID: [Nome], [ ] anos e [ ] meses (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Avó / Responsável legal: [ ]]].
+      Estatura: [ ] cm | PC (< 2 anos): [ ] cm.
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # TRIÂNGULO DE AVALIAÇÃO PEDIÁTRICA (TEP — IMPRESSÃO VISUAL NOS PRIMEIROS 15 SEGUNDOS):
       1. Aparência (Tônus, Interatividade, Consolabilidade, Olhar, Choro/Fala): [Normal — ativo, reativo, olhar focado e choro consolável no colo / Alterada — irritabilidade inconsolável / Alterada — hipoativo, prostrado ou letárgico].
@@ -140,9 +141,10 @@ matches:
     replace: |
       ###### CONSULTA DE PUERICULTURA & VIGILÂNCIA DO DNPM (0 A 24 MESES) ######
       # IDENTIFICAÇÃO & CRONOLOGIA:
-      - Criança: [Nome] | Sexo: [Masculino / Feminino] | DN: [DD/MM/AAAA]
-      - Idade Cronológica: [ ] meses e [ ] dias ([Nascido a termo / Prematuro de [ ] semanas -> Idade Corrigida: [ ] meses])
-      - Acompanhante: [Mãe / Pai / Ambos os pais / Cuidador(a): [ ]]
+      ID: [Nome], [ ] meses e [ ] dias (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino][? Acompanhante :: , Acompanhante: [Mãe / Pai / Ambos os pais / Cuidador(a): [ ]]].
+      Idade Corrigida / Nascimento: [Nascido a termo / Prematuro de [ ] semanas -> Idade Corrigida: [ ] meses].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (ANAMNESE DE PUERICULTURA, NUTRIÇÃO & ROTINA):
       - Intercorrências desde a última consulta: [Assintomático(a), em excelente evolução / Apresentou quadro leve de [ ]].
@@ -263,8 +265,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — RESFRIADO COMUM / RINOFARINGITE AGUDA ######
       # IDENTIFICAÇÃO & PESO:
-      - Paciente: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (ANAMNESE DIRIGIDA & EXCLUSÃO DE GRAVIDADE):
       - Queixa Principal (QP): Coriza, obstrução nasal e tosse há [ ] dias.
@@ -387,8 +390,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — BRONQUIOLITE VIRAL AGUDA (BVA NO LACTENTE < 2 ANOS) ######
       # IDENTIFICAÇÃO & FATORES DE RISCO DE GRAVIDADE:
-      - Lactente: [Nome] | Idade: [ ] meses (Faixa clássica < 24 meses; pico 2 a 6 meses) | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] meses (Faixa clássica < 24 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - Fatores de Risco para BVA Grave: [Nenhum — lactente a termo hígido > 3 meses / Idade < 12 semanas (< 3 meses) / Prematuridade (< 37 semanas) / Cardiopatia congênita hemodinamicamente significativa / Broncodisplasia pulmonar / Imunodeficiência].
       
       # SUBJETIVO (HISTÓRIA CLÍNICA & FASE EVOLUTIVA DA DOENÇA):
@@ -529,8 +533,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA PEDIÁTRICA — CRUPE VIRAL (LARINGOTRAQUEOBRONQUITE) ######
       # IDENTIFICAÇÃO & PESO:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] (Faixa típica: 6 meses a 3 anos) | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos] (Faixa típica: 6 meses a 3 anos), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (ANAMNESE DIRIGIDA & EXCLUSÃO DE EPIGLOTITE / CORPO ESTRANHO):
       - Queixa Principal (QP): Tosse rouca ("tosse de cachorro/foca") e barulho agudo para puxar o ar iniciados à noite há [ ] horas.
@@ -671,8 +676,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — OTITE MÉDIA AGUDA (OMA) ######
       # IDENTIFICAÇÃO & PESO:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgico(a) a Penicilinas / [ ]].
       
       # SUBJETIVO (ANAMNESE DIRIGIDA & FATORES DE RESISTÊNCIA BACTERIANA):
       - Queixa Principal (QP): Dor de ouvido (otalgia), febre e irritabilidade há [ ] dias.
@@ -811,8 +817,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — PNEUMONIA ADQUIRIDA NA COMUNIDADE (PAC) ######
       # IDENTIFICAÇÃO & PESO:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / Alérgico(a) a Penicilinas / [ ]].
       
       # SUBJETIVO (ANAMNESE DIRIGIDA & PADRÃO CLÍNICO):
       - Queixa Principal (QP): Tosse, febre persistente e respiração rápida/cansada há [ ] dias.
@@ -942,9 +949,10 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — GASTROENTERITE AGUDA (GECA) & PLANOS A, B E C (OMS/MS) ######
       # IDENTIFICAÇÃO & PESO DE ENTRADA:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO DE ENTRADA AFERIDO: [ ] kg
-      - Peso Prévio Conhecido (se disponível para cálculo de perda aguda): [Não informado / [ ] kg -> Perda de [ ]%]
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso de Entrada: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Peso Prévio Conhecido: [Não informado / [ ] kg -> Perda de [ ]%].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (CARACTERIZAÇÃO DA DIARREIA, VÔMITOS & RED FLAGS):
       - Queixa Principal (QP): Diarreia líquida e vômitos há [ ] dias.
@@ -1104,8 +1112,9 @@ matches:
     replace: |
       ###### ATENDIMENTO PEDIÁTRICO — FEBRE SEM SINAIS LOCALIZATÓRIOS (FSSL) NO LACTENTE ######
       # IDENTIFICAÇÃO, PESO & FAIXA ETÁRIA DE RISCO:
-      - Lactente: [Nome] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-      - Idade Exata: [ ] [dias / meses] (DN: [DD/MM/AAAA])
+      ID: [Nome], [ ] [dias / meses] (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - ESTRATIFICAÇÃO ETÁRIA CRÍTICA:
         * [GRUPO 1 — RECÉM-NASCIDO (0 A 28 DIAS DE VIDA)] -> Alto risco de Infecção Bacteriana Grave (10–15%): Internação hospitalar, triagem séptica completa com líquor e ATB venoso obrigatórios.
         * [GRUPO 2 — LACTENTE JOVEM (29 A 90 DIAS / 1 A 3 MESES)] -> Estratificação por Critérios de Rochester / Step-by-Step + EAS/Urocultura por sonda e marcadores inflamatórios obrigatórios.
@@ -1239,8 +1248,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA PEDIÁTRICA — CRISE CONVULSIVA FEBRIL (6 MESES A 5 ANOS) ######
       # IDENTIFICAÇÃO & PESO:
-      - Criança: [Nome] | Idade: [ ] [meses / anos] (Faixa de definição: 6 a 60 meses; pico aos 18 meses) | PESO ATUAL: [ ] kg
-      - Acompanhante: [Mãe / Pai / Responsável: [ ]]
+      ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (SEMIOLOGIA DA CRISE & CRITÉRIOS SIMPLES vs COMPLEXA):
       - Queixa Principal (QP): Episódio de crise convulsiva em vigência de febre há [ ] minutos/horas.

@@ -9,8 +9,9 @@
 ```text
 ###### ATENDIMENTO PEDIÁTRICO — FEBRE SEM SINAIS LOCALIZATÓRIOS (FSSL) NO LACTENTE ######
 # IDENTIFICAÇÃO, PESO & FAIXA ETÁRIA DE RISCO:
-- Lactente: [Nome] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-- Idade Exata: [ ] [dias / meses] (DN: [DD/MM/AAAA])
+ID: [Nome], [ ] [dias / meses] (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 - ESTRATIFICAÇÃO ETÁRIA CRÍTICA:
   * [GRUPO 1 — RECÉM-NASCIDO (0 A 28 DIAS DE VIDA)] -> Alto risco de Infecção Bacteriana Grave (10–15%): Internação hospitalar, triagem séptica completa com líquor e ATB venoso obrigatórios.
   * [GRUPO 2 — LACTENTE JOVEM (29 A 90 DIAS / 1 A 3 MESES)] -> Estratificação por Critérios de Rochester / Step-by-Step + EAS/Urocultura por sonda e marcadores inflamatórios obrigatórios.

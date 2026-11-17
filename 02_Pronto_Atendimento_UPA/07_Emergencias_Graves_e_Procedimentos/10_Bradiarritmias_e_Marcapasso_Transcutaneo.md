@@ -5,6 +5,11 @@
 ## SNIPPET PEP
 ```text
 ATENDIMENTO DE EMERGÊNCIA — BRADIARRITMIA SINTOMÁTICA & BLOQUEIO ATRIOVENTRICULAR (ACLS)
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
+
 APRESENTAÇÃO CLÍNICA & SINAIS DE INSTABILIDADE (5 CRITÉRIOS DO ACLS):
 - Queixa Principal: Paciente admitido na Sala Vermelha por [síncope / pré-síncope e tontura intensa / dispneia aguda / dor torácica isquêmica / rebaixamento do nível de consciência] associado a FC < 50 bpm.
 - Critérios de Instabilidade Hemodinâmica pela Bradicardia: [1. Hipotensão (PAS < 90 mmHg) / 2. Alteração aguda do estado mental / 3. Sinais de Choque (palidez, sudorese fria, TEC > 3s) / 4. Desconforto torácico isquêmico / 5. Insuficiência cardíaca aguda (EAP)].

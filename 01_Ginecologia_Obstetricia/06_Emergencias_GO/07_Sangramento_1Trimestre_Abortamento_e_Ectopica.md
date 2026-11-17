@@ -5,12 +5,13 @@
 ## SNIPPET PEP
 ```text
 ### EMERGÊNCIA OBSTÉTRICA — SANGRAMENTO DO 1º TRIMESTRE ###
-# ID: [Nome], [ ] anos
-G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/MM/AAAA]
-TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!]
+# IDENTIFICAÇÃO & CRONOLOGIA:
+ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/MM/AAAA].
+TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!].
+Comorbidades: [Hígida / HAS / DM2 / DIP prévia / Endometriose / [ ]].
+Alergias: [Nega / [ ]].
 # AP:
-PAT: [Nega / HAS / DM2 / DIP prévia / Endometriose]
 MED: [Nega / Ácido Fólico / Progesterona]
 HAB: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
 CX: [Nega / Cesárea prévia / Ectópica anterior / Cirurgia tubária]

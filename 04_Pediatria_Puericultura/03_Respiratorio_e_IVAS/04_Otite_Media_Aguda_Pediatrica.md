@@ -9,8 +9,9 @@
 ```text
 ###### ATENDIMENTO PEDIÁTRICO — OTITE MÉDIA AGUDA (OMA) ######
 # IDENTIFICAÇÃO & PESO:
-- Criança: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-- Acompanhante: [Mãe / Pai / Responsável: [ ]]
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Alérgico(a) a Penicilinas / [ ]].
 
 # SUBJETIVO (ANAMNESE DIRIGIDA & FATORES DE RESISTÊNCIA BACTERIANA):
 - Queixa Principal (QP): Dor de ouvido (otalgia), febre e irritabilidade há [ ] dias.

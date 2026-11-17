@@ -10,7 +10,9 @@
 ```text
 ###### DESCRIÇÃO DE PARTO VAGINAL EUTÓCICO (ESPONTÂNEO) ######
 # IDENTIFICAÇÃO & DADOS DO NASCIMENTO:
-- Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [Hígida / [ ]].
+Alergias: [Nega / [ ]].
 - Equipe: Obstetra: [Dr(a). ] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr(a). ].
 - Nascimento: [DD/MM/AAAA] às [HH:MM] | Apresentação: Cefálica fletida em [OP / OEA / ODA] | Bolsa: [Rota intraparto / Amniotomia no expulsivo], LA [claro com grumos / meconial fluido], sem odor.
 - Recém-Nascido: Vivo, sexo [masculino / feminino], Peso: [ ] g, Apgar: [9/10] (1º/5º min), colocado em contato pele a pele imediato e clampeamento oportuno do cordão (após 1–3 min).

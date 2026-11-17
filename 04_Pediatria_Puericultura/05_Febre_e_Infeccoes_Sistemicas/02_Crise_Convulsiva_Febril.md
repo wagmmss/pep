@@ -9,8 +9,9 @@
 ```text
 ###### ATENDIMENTO DE EMERGÊNCIA PEDIÁTRICA — CRISE CONVULSIVA FEBRIL (6 MESES A 5 ANOS) ######
 # IDENTIFICAÇÃO & PESO:
-- Criança: [Nome] | Idade: [ ] [meses / anos] (Faixa de definição: 6 a 60 meses; pico aos 18 meses) | PESO ATUAL: [ ] kg
-- Acompanhante: [Mãe / Pai / Responsável: [ ]]
+ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 
 # SUBJETIVO (SEMIOLOGIA DA CRISE & CRITÉRIOS SIMPLES vs COMPLEXA):
 - Queixa Principal (QP): Episódio de crise convulsiva em vigência de febre há [ ] minutos/horas.

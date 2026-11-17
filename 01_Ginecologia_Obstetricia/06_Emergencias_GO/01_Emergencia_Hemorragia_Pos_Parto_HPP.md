@@ -10,7 +10,9 @@
 ```text
 ###### ATENDIMENTO DE EMERGÊNCIA — HEMORRAGIA PÓS-PARTO (CÓDIGO VERMELHO) ######
 # IDENTIFICAÇÃO & RECONHECIMENTO DO CHOQUE:
-- Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
+Comorbidades: [Hígida / [ ]].
+Alergias: [Nega / [ ]].
 - Perda Sanguínea Estimada: [ ] mL ([> 500 mL pós-parto vaginal / > 1.000 mL pós-cesárea / sangramento com instabilidade hemodinâmica]).
 - Sinais Vitais & Perfusão: PA: [85x50] mmHg | FC: [118] bpm | Índice de Choque Obstétrico (FC/PAS): [1,38] (Normal < 0,9 | Alerta >= 0,9 | Transfusão maciça se >= 1,4) | FR: [22] irpm | SpO2: [98]% | TEC: [3]s | Consciência: [Lúcida / Ansiosa / Sonolenta].
 

@@ -5,6 +5,11 @@
 ## SNIPPET PEP
 ```text
 ATENDIMENTO DE EMERGÊNCIA — TROMBOSE VENOSA PROFUNDA (TVP) & TROMBOEMBOLISMO PULMONAR (TEP)
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
+
 APRESENTAÇÃO CLÍNICA PRINCIPAL:
 - Quadro Dominante: [Suspeita de TVP de Membro Inferior (edema unilateral assimétrico, dor em panturrilha e empastamento) / Suspeita de TEP Agudo (dispneia súbita inexplicada, dor torácica ventilatório-dependente, taquicardia ou síncope)].
 - Fatores de Risco Tromboembólicos (Tríade de Virchow): [Cirurgia ou trauma recente (< 4 semanas) / Imobilização prolongada (> 3 dias) ou viagem longa / Neoplasia ativa / Uso de anticoncepcional oral combinado ou TRH / Gestação ou puerpério / TEV prévio / Trombofilia].

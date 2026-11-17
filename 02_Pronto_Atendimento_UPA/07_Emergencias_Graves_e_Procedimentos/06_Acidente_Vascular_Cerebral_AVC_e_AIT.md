@@ -10,7 +10,9 @@
 ```text
 ###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO AVC AGUDO (CÓDIGO AVC) ######
 # IDENTIFICAÇÃO:
-- Paciente: [Nome], [Idade] anos, Leito: Sala Vermelha [ ], Registro: [ ]
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 - Data e Hora do Início dos Sintomas / Última vez visto bem (Last Seen Well): [DD/MM/AAAA] às [HH:MM].
 - Tempo de Evolução dos Sintomas: [ ] horas e [ ] minutos.
 - Classificação Temporal: [JANELA DE TROMBÓLISE VÁLIDA (< 4,5 HORAS) / FORA DA JANELA (> 4,5 HORAS) / AVC DO DESPERTAR (WAKE-UP STROKE)].

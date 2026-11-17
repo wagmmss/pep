@@ -9,9 +9,10 @@
 ```text
 ###### ATENDIMENTO PEDIÁTRICO — GASTROENTERITE AGUDA (GECA) & PLANOS A, B E C (OMS/MS) ######
 # IDENTIFICAÇÃO & PESO DE ENTRADA:
-- Criança: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO DE ENTRADA AFERIDO: [ ] kg
-- Peso Prévio Conhecido (se disponível para cálculo de perda aguda): [Não informado / [ ] kg -> Perda de [ ]%]
-- Acompanhante: [Mãe / Pai / Responsável: [ ]]
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso de Entrada: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+Peso Prévio Conhecido: [Não informado / [ ] kg -> Perda de [ ]%].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 
 # SUBJETIVO (CARACTERIZAÇÃO DA DIARREIA, VÔMITOS & RED FLAGS):
 - Queixa Principal (QP): Diarreia líquida e vômitos há [ ] dias.

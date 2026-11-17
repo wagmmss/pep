@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: HERPES ZOSTER AGUDO ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Dor em queimação, fisgada e bolhinhas com água na pele há [ ] dias.
 - HMA: Relata quadro iniciado há cerca de [ ] dias com dor prodrômica em queimação intensa, sensação de "choque elétrico", alodinia (dor ao simples roçar da roupa na pele) e formigamento localizado, seguido pelo aparecimento de vesículas agrupadas sobre base avermelhada que coçam e doem intensamente.
@@ -23,7 +26,6 @@
     - Nega paralisia ou fraqueza na mímica facial (mímica facial simétrica).
     - Nega dor intensa no ouvido com vesículas no conduto auditivo externo ou vertigem súbita.
 - Histórico: [Passado de catapora/varicela na infância / Imunossupressão / Idade > 50 anos].
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DERMATOLÓGICO & NEUROLÓGICO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril.

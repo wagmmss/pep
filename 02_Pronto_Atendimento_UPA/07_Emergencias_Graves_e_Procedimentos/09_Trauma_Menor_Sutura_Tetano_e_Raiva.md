@@ -10,10 +10,11 @@
 ```text
 ###### PROCEDIMENTO DE SALA DE SUTURA: FERIMENTO CONTUSO, SUTURA & PROFILAXIAS ######
 # IDENTIFICAÇÃO:
-- Paciente: [Nome], [Idade] anos, Sala de Pequena Cirurgia, Registro: [ ]
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / [ ]].
 - Horário do Trauma: Há cerca de [ ] horas (Trauma ocorrido às [HH:MM]).
 - Mecanismo do Trauma: [Corte por vidro / Lâmina metálica / Queda da própria altura com impacto / Mordedura animal por cão ou gato / Objeto perfurocortante enferrujado / Acidente de trabalho].
-- Alergias Medicamentosas: [Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / [ ]].
 
 # AVALIAÇÃO DA LESÃO & EXAME FÍSICO DIRECIONADO:
 - Localização Anatômica: Região [face / supercílio / couro cabeludo / antebraço / mão / coxa / perna] [direita / esquerda].

@@ -5,8 +5,10 @@
 ## SNIPPET PEP
 ```text
 AVALIAÇÃO DE INTERCORRÊNCIA EM ENFERMARIA — DELIRIUM HOSPITALAR (MÉTODO CAM)
-IDENTIFICAÇÃO E STATUS COGNITIVO BASAL:
-- Paciente: [Nome], [Idade] anos, Leito [ ], no [ ]º DIH por [motivo da internação].
+# IDENTIFICAÇÃO E STATUS COGNITIVO BASAL:
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], no [ ]º DIH por [motivo da internação].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 - Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular leve/moderada / Doença de Parkinson ou Demência por Corpos de Lewy].
 
 DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2 + [3 OU 4]):

@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: DOENÇA HEMORROIDÁRIA / FISSURA ANAL ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
 - HMA: Relata quadro com início após esforço evacuatório com fezes ressecadas há cerca de [ ] dias.
@@ -19,7 +22,6 @@
 - Nega fezes afiladas ("fezes em fita"), perda involuntária de peso ou astenia severa.
 - Nega diarreia crônica alternada com constipação persistente.
 - Hábitos: Constipação intestinal crônica, baixa ingesta de fibras e água.
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME PROCTOLÓGICO BÁSICO DA UPA):
 - Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.

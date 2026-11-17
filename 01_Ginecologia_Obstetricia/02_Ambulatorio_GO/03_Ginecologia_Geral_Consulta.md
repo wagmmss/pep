@@ -10,7 +10,7 @@
 ```text
 ###### CONSULTA AMBULATORIAL — GINECOLOGIA GERAL & PREVENÇÃO ######
 # IDENTIFICAÇÃO & HISTÓRIA REPRODUTIVA:
-Paciente [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / Climatério / Pós-menopausa há [ ] anos].
+ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / Climatério / Pós-menopausa há [ ] anos].
 - DUM: [DD/MM/AAAA] | Ciclos: [Regulares 28/28d, fluxo 4–5d normal / Irregulares / Sangramento uterino aumentado com coágulos / Amenorreia].
 - Contracepção / TRH Atual: [Nenhum / ACO: [ ]/ DIU de Cobre / SIU-LNG Mirena / Implanon / Injetável mensal ou trimestral / Preservativo].
 - Rastreio Oncológico Prévio:

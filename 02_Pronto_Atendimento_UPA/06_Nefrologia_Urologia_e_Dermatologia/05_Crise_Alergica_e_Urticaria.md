@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: REAÇÃO ALÉRGICA / ANAFILAXIA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso estimado: [ ] kg.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Manchas vermelhas pelo corpo que coçam muito / Inchaço nos lábios / Falta de ar há [ ] minutos.
 - HMA: Relata aparecimento agudo há cerca de [ ] minutos de placas avermelhadas na pele com intenso prurido, sensação de calor e formigamento difuso, acompanhadas de inchaço (angioedema) em [lábios / pálpebras / orelhas / face / mãos].
@@ -26,7 +29,6 @@
   * CLASSIFICAÇÃO:
     - [ ] URTICÁRIA AGUDA / ANGIOEDEMA ISOLADO (Sem sintomas respiratórios ou hemodinâmicos).
     - [ ] ANAFILAXIA GRAVE EM CURSO (EMERGÊNCIA MÉDICA MÁXIMA - INDICADA ADRENALINA IMEDIATA).
-- Alergias Conhecidas Prévias: [ ].
 
 # OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

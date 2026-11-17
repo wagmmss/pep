@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: SÍNDROME DO CORRIMENTO URETRAL (IST) ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo Masculino.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: Masculino[? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Saída de pus pelo canal da urina e ardência para urinar há [ ] dias.
 - HMA: Paciente relata aparecimento há cerca de [ ] dias de secreção uretral anormal espontânea, com aspecto [purulento abundante amarelo-esverdeado (típico de Gonorreia) / mucoide esbranquiçado e escasso (típico de Clamídia)], associada a disúria intensa ("sensação de queimar/cortar ao urinar"), prurido no trajeto da uretra peniana e eritema no meato externo.
@@ -19,7 +22,6 @@
 - Nega dor intensa, inchaço ou vermelhidão na bolsa escrotal/testículo (afastada Orquiepididimite aguda).
 - Nega febre, calafrios, dor no períneo ("dor entre o saco e o ânus") ou dificuldade para esvaziar a bexiga (afastada Prostatite Aguda).
 - Nega feridas, úlceras dolorosas ou indolores na glande, prepúcio ou corpo do pênis (afastados Cancro Duro e Herpes genital).
-- Alergias: [Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 
 # OBJETIVO (EXAME FÍSICO GENITURINÁRIO DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril (Tax [ ] °C).

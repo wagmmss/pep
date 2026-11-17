@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: ESCABIOSE (SARNA HUMANA) ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso: [ ] kg.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Coceira no corpo todo que piora muito à noite há [ ] dias/semanas.
 - HMA: Relata prurido cutâneo difuso de evolução progressiva, com exacerbação noturna intensa ("quase não consegue dormir ao se cobrir na cama"). Queixa-se de pequenas lesões avermelhadas e "bolhinhas" em dobras de pele.
@@ -19,7 +22,6 @@
   * Prurido e lesões concentrados entre os dedos das mãos, punhos, axilas, ao redor do umbigo, nádegas e [na bolsa escrotal/pênis no homem / aréolas na mulher].
 - Nega febre, calafrios ou prostração sistêmica.
 - Nega lesões bolhosas extensas com descolamento cutâneo (afastado pênfigo ou eritema multiforme).
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DERMATOLÓGICO):
 - Ectoscopia Cutânea:

@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: DPOC EXACERBADO ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # HISTÓRICO RESPIRATÓRIO: Tabagismo pesado prévio ([ ] anos-maço) com diagnóstico de Doença Pulmonar Obstrutiva Crônica (DPOC) / Enfisema / Bronquite crônica. Faz uso de O2 domiciliar: [Não / Sim, L/min].
 
 # SUBJETIVO:
@@ -26,7 +29,6 @@
 - Nega edema assimétrico de panturrilhas ou hemoptise (afastado TEP).
 - Nega piora de edema de membros inferiores ou ortopneia (afastada Insuficiência Cardíaca descompensada associada).
 - Medicações Habitual: [Em uso de Formoterol/Budesonida, Tiotrópio, Salbutamol SOS].
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO RESPIRATÓRIO DIRIGIDO):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.

@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: FARINGOAMIGDALITE AGUDA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Dor de garganta intensa (odinofagia) e febre há [ ] dias.
 - HMA: Paciente relata dor de garganta de início súbito há [ ] dias, que piora intensamente à deglutição, associada a febre de [ ] °C aferida em domicílio e mal-estar geral.
@@ -23,7 +26,6 @@
 - Nega sialorreia (dificuldade para engolir a própria saliva com baba).
 - Nega estridor respiratório ou sensação de asfixia.
 - Nega dor cervical com rigidez ou abaulamento cervical lateral.
-- Alergias: [Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

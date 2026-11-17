@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: PARASITOSE INTESTINAL ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
 - HMA: Paciente relata queixas gastrointestinais insidiosas:
@@ -20,7 +23,6 @@
 - Nega febre alta, calafrios ou fezes com sangue vivo e pus.
 - Nega desidratação, prostração grave ou perda de peso volumosa.
 - Hábitos & Saneamento: [Água encanada tratada / Água de poço; consome verduras cruas sem higienização com hipoclorito; crianças pequenas no domicílio].
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Afebril.

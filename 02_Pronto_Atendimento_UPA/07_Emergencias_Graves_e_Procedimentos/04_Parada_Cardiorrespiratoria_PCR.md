@@ -8,6 +8,11 @@
 
 ```text
 ATENDIMENTO DE EMERGÊNCIA - PARADA CARDIORRESPIRATÓRIA (PCR) ADULTO
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
+
 
 HORÁRIO DE INÍCIO DA RCP: [ ]h[ ]min
 LOCAL DO EVENTO: [ Sala Vermelha / Leito da Enfermaria / Box de Emergência / Pré-hospitalar ]

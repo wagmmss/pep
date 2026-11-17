@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: DOR ABDOMINAL AGUDA / SUSPEITA CIRÚRGICA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Dor de barriga intensa há [ ] horas/dias.
 - HMA: Relata dor abdominal de início [súbito / insidioso] há cerca de [ ] horas.
@@ -20,8 +23,7 @@
 - DUM: [DD/MM/AAAA] (Afastada gravidez ectópica: beta-hCG [negativo / solicitado com urgência]).
 - Nega corrimento vaginal fétido ou sangramento genital ativo.
 - Nega hematêmese, melena ou enterorragia volumosa.
-- Antecedentes: [Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida].
-- Alergias: [Nega / Sim: [ ]].
+- Antecedentes: [Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida / [ ]].
 
 # OBJETIVO (EXAME FÍSICO ABDOMINAL COMPLETO & SEMIOLOGIA ARMADA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia) | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

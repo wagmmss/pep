@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: DISPEPSIA AGUDA / DRGE ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Queimação no estômago (epigastralgia) e azia que sobe para o peito há [ ] dias/horas.
 - HMA: Refere dor em queimação localizada em região epigástrica iniciada há [ ], associada a sensação de azia retroesternal ascendente (pirose), regurgitação ácida na garganta, sensação de estômago cheio logo após começar a comer (plenitude pós-prandial precoce) e eructações frequentes. Relata piora após ingestão de café, alimentos gordurosos ou ao se deitar após as refeições.
@@ -24,7 +27,6 @@
   * Nega vômitos recorrentes ou hematêmese (vômitos com sangue ou borra de café).
   * Nega fezes pretas com cheiro podre característico (melena).
   * Nega história familiar de câncer gástrico em parentes de 1º grau.
-- Alergias: [Nega / Sim: [ ]].
 - Medicações: [Nega uso recente de AINEs / Em uso crônico de AAS, Cetoprofeno, Ibuprofeno ou Diclofenaco].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO):

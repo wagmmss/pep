@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: DENGUE / ARBOVIROSES (MINISTÉRIO DA SAÚDE) ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso: [ ] kg.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / [ ]].
+Alergias: [Nega / Alérgico a Dipirona / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Febre alta, dor no corpo e dor atrás dos olhos há [ ] dias.
 - HMA: Refere quadro febril de início súbito há cerca de [ ] dias (Tax máxima [ ] °C), associado a cefaleia holocraniana intensa, dor retro-orbitária que piora à movimentação ocular, mialgia difusa ("dor nos ossos"), artralgia, astenia marcante, náuseas e exantema cutâneo maculopapular [pruriginoso / ausente].
@@ -23,8 +26,6 @@
   - Letargia, sonolência excessiva, desorientação ou irritabilidade
   - Aumento progressivo e abrupto do hematócrito (hemoconcentração)
   * STATUS: [TODOS OS SINAIS DE ALARME NEGADOS / SINAL DE ALARME PRESENTE: [ ]].
-- Comorbidades / Fatores de Risco: [Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / [ ]].
-- Alergias: [Nega / Alérgico a Dipirona / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO):
 - SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | PA em pé (se tolerar): [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.

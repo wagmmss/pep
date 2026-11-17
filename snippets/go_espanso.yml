@@ -146,7 +146,7 @@ matches:
     replace: |
       ###### CONSULTA DE PRÉ-NATAL — ADMISSÃO / 1ª CONSULTA ######
       # IDENTIFICAÇÃO & DATAÇÃO GESTACIONAL:
-      Paciente [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+      ID: [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
       - DUM: [DD/MM/AAAA] ([Certa e confiável / Incerta]) -> IG DUM: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
       - USG Precoce (1º Tri): [Solicitada hoje / Realizada em [DD/MM] com CCN de [ ] mm = IG USG: [ ]s[ ]d].
       - IG Definitiva Adotada: [ ] semanas e [ ] dias.
@@ -240,8 +240,10 @@ matches:
     replace: |
       ###### CONSULTA DE PRÉ-NATAL — SEGUIMENTO / RETORNO ######
       # IDENTIFICAÇÃO & CRONOLOGIA:
-      Paciente [Nome], [Idade] anos, G[ ] P[ ] A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda] | Risco: [Risco Habitual / Alto Risco por: [ ]].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda] | Risco: [Risco Habitual / Alto Risco por: [ ]].
       - IG Atual: [ ] semanas e [ ] dias (por [USG de 1º tri / DUM confiável]) | DPP: [DD/MM/AAAA].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       
       # SUBJETIVO (EVOLUÇÃO & ALARME OBSTÉTRICO):
       - Evolução & Movimentação Fetal: Comparece para retorno com exames. Movimentação fetal [presente e ativa / ainda não percebida (< 18–20s)]. Queixas: [Assintomática no período / Refere pirose leve / Lombalgia mecânica leve / Edema maleolar vespertino leve].
@@ -341,7 +343,7 @@ matches:
     replace: |
       ###### CONSULTA AMBULATORIAL — GINECOLOGIA GERAL & PREVENÇÃO ######
       # IDENTIFICAÇÃO & HISTÓRIA REPRODUTIVA:
-      Paciente [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / Climatério / Pós-menopausa há [ ] anos].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / Climatério / Pós-menopausa há [ ] anos].
       - DUM: [DD/MM/AAAA] | Ciclos: [Regulares 28/28d, fluxo 4–5d normal / Irregulares / Sangramento uterino aumentado com coágulos / Amenorreia].
       - Contracepção / TRH Atual: [Nenhum / ACO: [ ]/ DIU de Cobre / SIU-LNG Mirena / Implanon / Injetável mensal ou trimestral / Preservativo].
       - Rastreio Oncológico Prévio:
@@ -443,7 +445,9 @@ matches:
     replace: |
       ###### NOTA DE PROCEDIMENTO: INSERÇÃO DE IMPLANTE SUBDÉRMICO (IMPLANON NXT 68 MG) ######
       # IDENTIFICAÇÃO & ELEGIBILIDADE:
-      Paciente [Nome], [Idade] anos, G[ ] P[ ] A[ ], DUM: [DD/MM/AAAA].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], DUM: [DD/MM/AAAA].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - Indicação & Elegibilidade (OMS): Contracepção reversível de longa ação (LARC) [no menacme com β-hCG negativo / no pós-parto imediato]. Ausência de contraindicações Categoria 4 da OMS (nega câncer de mama, TVP/TEP agudo ou hepatopatia grave).
       - Consentimento & Lote: TCLE lido e assinado. Lote do dispositivo: [ ] | Validade de uso: 3 anos (até [DD/MM/AAAA]).
       
@@ -519,7 +523,9 @@ matches:
     replace: |
       ###### NOTA DE PROCEDIMENTO: RETIRADA / TROCA DE IMPLANTE SUBDÉRMICO (IMPLANON) ######
       # IDENTIFICAÇÃO & INDICAÇÃO:
-      Paciente [Nome], [Idade] anos, G[ ] P[ ] A[ ].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - Indicação: [Troca por término da validade de 3 anos / Retirada eletiva por desejo reprodutivo / Retirada por sangramento desfavorável].
       - Consentimento: TCLE lido e assinado. [Novo lote inserido: [ ] — Validade até: [DD/MM/AAAA] / Apenas retirada eletiva].
       
@@ -590,7 +596,9 @@ matches:
     replace: |
       ###### DESCRIÇÃO DE PARTO VAGINAL EUTÓCICO (ESPONTÂNEO) ######
       # IDENTIFICAÇÃO & DADOS DO NASCIMENTO:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - Equipe: Obstetra: [Dr(a). ] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr(a). ].
       - Nascimento: [DD/MM/AAAA] às [HH:MM] | Apresentação: Cefálica fletida em [OP / OEA / ODA] | Bolsa: [Rota intraparto / Amniotomia no expulsivo], LA [claro com grumos / meconial fluido], sem odor.
       - Recém-Nascido: Vivo, sexo [masculino / feminino], Peso: [ ] g, Apgar: [9/10] (1º/5º min), colocado em contato pele a pele imediato e clampeamento oportuno do cordão (após 1–3 min).
@@ -641,7 +649,8 @@ matches:
     replace: |
       ###### NOTA CIRÚRGICA: REVISÃO DE CANAL DE PARTO E PERINEORRAFIA ######
       # IDENTIFICAÇÃO & CLASSIFICAÇÃO DA LESÃO:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | Data/Hora: [DD/MM/AAAA] às [HH:MM].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | Data/Hora: [DD/MM/AAAA] às [HH:MM].
+      Alergias: [Nega / [ ]].
       - Indicação & Grau da Lesão: [Laceração perineal espontânea de 2º grau / Episiotomia médio-lateral direita seletiva / Laceração de 1º grau sangrante / Laceração de 3º grau com reparo esfincteriano (OASIS)].
       - Extensão Anatômica Verificada: Comprometimento de mucosa vaginal, fúrcula e musculatura do corpo perineal (transverso superficial e bulbocavernoso). Toque retal pré-sutura confirmando integridade do complexo do esfíncter anal externo/interno e da mucosa anorretal (afastada lesão de 3º/4º grau).
       
@@ -718,12 +727,13 @@ matches:
   - trigger: ";07-admissao-tp-e-descricao-cesariana"
     replace: |
       ### CENTRO OBSTÉTRICO — ADMISSÃO EM TP & CESARIANA ###
-      # ID: [Nome], [ ] anos | Leito: [ ]
-      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10]
-      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-]
+      # IDENTIFICAÇÃO & ADMISSÃO:
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10].
+      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-].
+      Comorbidades: [Hígida / HAS / Pré-eclâmpsia / DMG / Anemia / [ ]].
+      Alergias: [Nega / [ ]].
       # AP:
-      PAT: [Nega / HAS / Pré-eclâmpsia / DMG / Anemia]
       MED: [Nega / Sulfato Ferroso / Metildopa]
       HAB: [Nega tabagismo, etilismo ou drogas ilícitas]
       CX: [Nega / Cesáreas prévias ([ ])]
@@ -810,7 +820,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA — HEMORRAGIA PÓS-PARTO (CÓDIGO VERMELHO) ######
       # IDENTIFICAÇÃO & RECONHECIMENTO DO CHOQUE:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - Perda Sanguínea Estimada: [ ] mL ([> 500 mL pós-parto vaginal / > 1.000 mL pós-cesárea / sangramento com instabilidade hemodinâmica]).
       - Sinais Vitais & Perfusão: PA: [85x50] mmHg | FC: [118] bpm | Índice de Choque Obstétrico (FC/PAS): [1,38] (Normal < 0,9 | Alerta >= 0,9 | Transfusão maciça se >= 1,4) | FR: [22] irpm | SpO2: [98]% | TEC: [3]s | Consciência: [Lúcida / Ansiosa / Sonolenta].
       
@@ -875,7 +887,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA — PRÉ-ECLÂMPSIA GRAVE / ECLÂMPSIA / HELLP ######
       # IDENTIFICAÇÃO & QUADRO SINDRÔMICO:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
+      Comorbidades: [Hígida / HAS crônica / Pré-eclâmpsia prévia / [ ]].
+      Alergias: [Nega / [ ]].
       - Apresentação Clínica: [Pré-Eclâmpsia com sinais de gravidade / Iminência de Eclâmpsia (Tríade de cefaleia + escotomas + epigastralgia) / Eclâmpsia (Crise convulsiva TCG às HH:MM) / Síndrome HELLP].
       
       # SUBJETIVO & CRITÉRIOS DE GRAVIDADE PRESENTES:
@@ -950,7 +964,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — TRABALHO DE PARTO PREMATURO (TPP) ######
       # IDENTIFICAÇÃO & IDADE GESTACIONAL:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º trimestre) | Fatores de Risco: [Prematuridade prévia / Colo curto < 25 mm / Gemelaridade / ITU ativa / Nega fatores prévios].
       
       # SUBJETIVO (QD & EXCLUSÃO DE CONTRAINDICAÇÕES À TOCÓLISE):
@@ -1023,7 +1039,9 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — ROTURA PREMATURA DE MEMBRANAS (RPMO) ######
       # IDENTIFICAÇÃO & TEMPO DE BOLSA ROTA:
-      - Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega / [ ]].
       - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º tri) | Tempo de Bolsa Rota: [ ] horas (início às [HH:MM] de [DD/MM]).
       
       # SUBJETIVO (QD & RASTREIO DE CORIOAMNIONITE):
@@ -1089,8 +1107,10 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA GINECOLÓGICA — DOENÇA INFLAMATÓRIA PÉLVICA (DIP) ######
       # IDENTIFICAÇÃO & FATORES DE RISCO:
-      - Paciente: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
-      - Contexto & Alergias: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+      - Contexto: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST].
       
       # SUBJETIVO (QD & HMA):
       - Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria].
@@ -1216,8 +1236,10 @@ matches:
     replace: |
       ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — INFECÇÕES PUERPERAIS (MASTITE vs ENDOMETRITE) ######
       # IDENTIFICAÇÃO & CONTEXTO PUERPERAL:
-      - Paciente: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], no [ ]º dia de puerpério de [Parto Normal / Cesariana].
-      - Quadro Atual: [MODALIDADE A — MASTITE PUERPERAL AGUDA / MODALIDADE B — ENDOMETRITE PUERPERAL] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+      ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], no [ ]º dia de puerpério de [Parto Normal / Cesariana].
+      Comorbidades: [Hígida / [ ]].
+      Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+      - Quadro Atual: [MODALIDADE A — MASTITE PUERPERAL AGUDA / MODALIDADE B — ENDOMETRITE PUERPERAL].
       
       # SUBJETIVO (QD & HMA):
       - Queixa Principal & HMA:
@@ -1321,12 +1343,13 @@ matches:
   - trigger: ";07-sangramento-1trimestre-abortamento-e-ectopica"
     replace: |
       ### EMERGÊNCIA OBSTÉTRICA — SANGRAMENTO DO 1º TRIMESTRE ###
-      # ID: [Nome], [ ] anos
-      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/MM/AAAA]
-      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!]
+      # IDENTIFICAÇÃO & CRONOLOGIA:
+      ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/MM/AAAA].
+      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!].
+      Comorbidades: [Hígida / HAS / DM2 / DIP prévia / Endometriose / [ ]].
+      Alergias: [Nega / [ ]].
       # AP:
-      PAT: [Nega / HAS / DM2 / DIP prévia / Endometriose]
       MED: [Nega / Ácido Fólico / Progesterona]
       HAB: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
       CX: [Nega / Cesárea prévia / Ectópica anterior / Cirurgia tubária]
@@ -1408,12 +1431,13 @@ matches:
   - trigger: ";08-sangramento-2e3trimestre-dpp-e-placenta-previa"
     replace: |
       ### EMERGÊNCIA OBSTÉTRICA — SANGRAMENTO DO 2º/3º TRIMESTRE ###
-      # ID: [Nome], [ ] anos | Leito: [ ]
-      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA]
-      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo]
+      # IDENTIFICAÇÃO & CRONOLOGIA:
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+      DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
+      TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo].
+      Comorbidades: [Hígida / HAS / Pré-eclâmpsia / DMG / Trombofilia / [ ]].
+      Alergias: [Nega / [ ]].
       # AP:
-      PAT: [Nega / HAS / Pré-eclâmpsia / DMG / Trombofilia]
       MED: [Nega / Sulfato Ferroso / Metildopa / AAS]
       HAB: [Nega tabagismo, etilismo ou uso de cocaína / Tabagista / Uso de cocaína]
       CX: [Nega / Cesáreas anteriores ([ ]) / Curetagem prévia]
@@ -1465,12 +1489,13 @@ matches:
   - trigger: ";09-violencia-sexual-e-profilaxias-pep"
     replace: |
       ### EMERGÊNCIA GO — VIOLÊNCIA SEXUAL & PROFILAXIA PEP ###
-      # ID: [Nome], [ ] anos | Peso: [ ] kg
-      G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-      DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU]
-      TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção de emergência até 5 dias e profilaxia de ISTs não virais])
+      # IDENTIFICAÇÃO & EXPOSIÇÃO:
+      ID: [Nome], [Idade] anos, Peso: [ ] kg, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+      DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU].
+      TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção de emergência até 5 dias e profilaxia de ISTs não virais]).
+      Comorbidades: [Hígida / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida] / [ ]].
+      Alergias: [Nega / [ ]].
       # AP:
-      PAT: [Nega / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida]]
       MED: [Nega uso contínuo / Em uso de: [ ]]
       HAB: [Nega tabagismo ou etilismo]
       CX: [Nega]

@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: CONJUNTIVITE AGUDA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega alergias / Alérgico a colírios: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Olho vermelho, sensação de areia e secreção há [ ] dias.
 - HMA: Relata hiperemia conjuntival iniciada há [ ] dias em olho [direito / esquerdo / bilateral], associada a sensação de corpo estranho ("areia nos olhos"), prurido, lacrimejamento e secreção de aspecto [aquoso claro / mucopurulento amarelado com pálpebras coladas ao acordar]. Relata contato recente com familiar/colega com sintomas semelhantes.
@@ -17,7 +20,6 @@
 - Nega enxergar halos coloridos ao redor de luzes ou cefaleia hemicraniana com náuseas (afasta Glaucoma Agudo).
 - Nega uso de lentes de contato (afasta ceratite por Pseudomonas).
 - Nega trauma ocular mecânico, químico ou respingo de substâncias cáusticas.
-- Alergias: [Nega alergias / Alérgico a colírios: [ ]].
 
 # OBJETIVO (EXAME FÍSICO OFTALMOLÓGICO BÁSICO):
 - Ectoscopia Ocular Externa:

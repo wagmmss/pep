@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: RINOSSINUSITE AGUDA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Alérgico a Penicilinas / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Dor e sensação de pressão na face com secreção nasal amarelada há [ ] dias.
 - HMA: Refere quadro iniciado há cerca de [ ] dias de congestão nasal bilateral e secreção espessa amarelo-esverdeada, associada a dor e peso em região [maxilar / frontal / periorbitária] que piora intensamente ao abaixar a cabeça. Relata febre baixa, tosse que piora à noite (gotejamento pós-nasal) e dor em dentes superiores.
@@ -20,7 +23,6 @@
 - Nega olho "saltado" para fora (proptose) ou dor intensa ao movimentar os olhos.
 - Nega visão dupla (diplopia) ou perda de visão.
 - Nega sonolência excessiva, convulsões, rigidez de nuca ou cefaleia incapacitante em trovoada.
-- Alergias: [Nega / Alérgico a Penicilinas / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.

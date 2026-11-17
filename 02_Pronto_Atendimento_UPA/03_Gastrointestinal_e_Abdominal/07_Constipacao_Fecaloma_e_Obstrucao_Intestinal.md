@@ -5,6 +5,11 @@
 ## SNIPPET PEP
 ```text
 ATENDIMENTO DE PRONTO ATENDIMENTO — CONSTIPAÇÃO AGUDA, FECALOMA VS. ABDOME AGUDO OBSTRUTIVO
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
+
 HISTÓRIA CLÍNICA DIRIGIDA:
 - Hábito Intestinal Atual: Ausência de evacuação há [ ] dias, associada a [desconforto abdominal baixo, esforço evacuatório e sensação de bloqueio anorretal / eliminação paradoxal de fezes líquidas em pequena quantidade — "diarreia paradoxal" por transbordamento ao redor do fecaloma!].
 - Pesquisa de Sinais de Obstrução Intestinal Mecânica (Red Flags): Eliminação de flatus (gases): [Presente — afasta oclusão completa / PARADA TOTAL de eliminação de gases e fezes associada a distensão importante e vômitos biliosos/fecaloides → ABDOME AGUDO OBSTRUTIVO!].

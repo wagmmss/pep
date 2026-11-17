@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: DOR TORÁCICA / SCA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega alergias / Alérgico a AAS / Alérgico a Dipirona / [ ]].
 # HORÁRIO DE CHEGADA: [HH:MM] | HORÁRIO DO ECG: [HH:MM] (Porta-ECG <= 10 minutos: ATENDIDO).
 
 # SUBJETIVO:
@@ -26,7 +29,6 @@
   - 4. RUPTURA ESOFÁGICA (BOERHAAVE): Nega vômitos violentos repetidos seguidos de dor torácica aguda; ausência de enfisema subcutâneo palpável em pescoço.
   - 5. SÍNDROME CORONARIANA AGUDA (SCA): Hipótese clínica prioritária em investigação.
 - Fatores de Risco Cardiovasculares: [Hipertensão Arterial / Diabetes Mellitus tipo 2 / Tabagismo ativo ( maços/ano) / Dislipidemia / Histórico familiar precoce de DAC / Infarto prévio / Sedentarismo].
-- Alergias: [Nega alergias / Alérgico a AAS / Alérgico a Dipirona / [ ]].
 - Contraindicações ao uso de Nitratos: Nega uso de inibidores da fosfodiesterase-5 (Sildenafil nas últimas 24h ou Tadalafil nas últimas 48h).
 
 # OBJETIVO (EXAME FÍSICO DA SALA VERMELHA & ECG DE 12 DERIVAÇÕES):

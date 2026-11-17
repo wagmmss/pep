@@ -10,8 +10,10 @@
 ```text
 ###### CONSULTA DE PRÉ-NATAL — SEGUIMENTO / RETORNO ######
 # IDENTIFICAÇÃO & CRONOLOGIA:
-Paciente [Nome], [Idade] anos, G[ ] P[ ] A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda] | Risco: [Risco Habitual / Alto Risco por: [ ]].
+ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda] | Risco: [Risco Habitual / Alto Risco por: [ ]].
 - IG Atual: [ ] semanas e [ ] dias (por [USG de 1º tri / DUM confiável]) | DPP: [DD/MM/AAAA].
+Comorbidades: [Hígida / [ ]].
+Alergias: [Nega / [ ]].
 
 # SUBJETIVO (EVOLUÇÃO & ALARME OBSTÉTRICO):
 - Evolução & Movimentação Fetal: Comparece para retorno com exames. Movimentação fetal [presente e ativa / ainda não percebida (< 18–20s)]. Queixas: [Assintomática no período / Refere pirose leve / Lombalgia mecânica leve / Edema maleolar vespertino leve].

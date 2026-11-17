@@ -5,12 +5,13 @@
 ## SNIPPET PEP
 ```text
 ### EMERGÊNCIA GO — VIOLÊNCIA SEXUAL & PROFILAXIA PEP ###
-# ID: [Nome], [ ] anos | Peso: [ ] kg
-G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU]
-TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção de emergência até 5 dias e profilaxia de ISTs não virais])
+# IDENTIFICAÇÃO & EXPOSIÇÃO:
+ID: [Nome], [Idade] anos, Peso: [ ] kg, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU].
+TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção de emergência até 5 dias e profilaxia de ISTs não virais]).
+Comorbidades: [Hígida / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida] / [ ]].
+Alergias: [Nega / [ ]].
 # AP:
-PAT: [Nega / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida]]
 MED: [Nega uso contínuo / Em uso de: [ ]]
 HAB: [Nega tabagismo ou etilismo]
 CX: [Nega]

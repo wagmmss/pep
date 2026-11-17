@@ -5,6 +5,11 @@
 ## SNIPPET PEP
 ```text
 ATENDIMENTO DE EMERGÊNCIA — SÍNCOPE (PERDA TRANSITÓRIA DA CONSCIÊNCIA)
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
+
 CARACTERIZAÇÃO DO EVENTO E PRÓDROMOS:
 - Circunstância do Evento: Episódio ocorrido [em ortostase prolongada em ambiente quente / após dor ou estresse emocional / ao levantar-se rapidamente / DURANTE o esforço físico ou em decúbito dorsal — ALERTA CARDIOGÊNICO!].
 - Pródromos: [Presentes (náuseas, sudorese fria, visão em túnel, palidez — típico reflexo/vasovagal) / Ausentes — queda súbita "em tábua" com trauma facial ou precedida de palpitações/dor torácica (Síncope Arrítmica/Cardiogênica!)].

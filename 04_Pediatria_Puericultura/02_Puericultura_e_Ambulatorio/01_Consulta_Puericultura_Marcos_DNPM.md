@@ -9,9 +9,10 @@
 ```text
 ###### CONSULTA DE PUERICULTURA & VIGILÂNCIA DO DNPM (0 A 24 MESES) ######
 # IDENTIFICAÇÃO & CRONOLOGIA:
-- Criança: [Nome] | Sexo: [Masculino / Feminino] | DN: [DD/MM/AAAA]
-- Idade Cronológica: [ ] meses e [ ] dias ([Nascido a termo / Prematuro de [ ] semanas -> Idade Corrigida: [ ] meses])
-- Acompanhante: [Mãe / Pai / Ambos os pais / Cuidador(a): [ ]]
+ID: [Nome], [ ] meses e [ ] dias (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino][? Acompanhante :: , Acompanhante: [Mãe / Pai / Ambos os pais / Cuidador(a): [ ]]].
+Idade Corrigida / Nascimento: [Nascido a termo / Prematuro de [ ] semanas -> Idade Corrigida: [ ] meses].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 
 # SUBJETIVO (ANAMNESE DE PUERICULTURA, NUTRIÇÃO & ROTINA):
 - Intercorrências desde a última consulta: [Assintomático(a), em excelente evolução / Apresentou quadro leve de [ ]].

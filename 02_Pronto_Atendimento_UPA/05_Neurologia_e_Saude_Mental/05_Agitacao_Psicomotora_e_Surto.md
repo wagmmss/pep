@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: AGITAÇÃO PSICOMOTORA / SURTO ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # CONTEXTO DE ENTRADA: [Trazido por familiares / Resgatado pelo SAMU ou Polícia Militar / Descompensação aguda na sala de espera].
 
 # SUBJETIVO & HISTÓRICO PSIQUIÁTRICO / CLÍNICO:
@@ -20,7 +23,6 @@
   * [ ] CAUSA TÓXICA / ABSTINÊNCIA: Suspeita de intoxicação aguda por drogas de abuso estimulantes (cocaína/crack/canabinoides sintéticos) ou Síndrome de Abstinência Alcoólica (Delirium Tremens).
 - Nega histórico de trauma cranioencefálico recente ou cefaleia febril precedente.
 - Sem porte de armas ou objetos perfurocortantes (revista de segurança realizada pela equipe/guarda).
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO & ESTADO MENTAL NA SALA DE EMERGÊNCIA):
 - SINAIS VITAIS (AFERIDOS ASSIM QUE POSSÍVEL): PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.

@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: INFECÇÃO DE PELE E PARTES MOLES (PPM) ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Vermelhidão, dor, inchaço e calor na pele [em perna / pé / braço / face] há [ ] dias.
 - HMA: Relata quadro de início há cerca de [ ] dias caracterizado por dor local progressiva, calor, edema e eritema cutâneo em [membro inferior direito/esquerdo / região periorbitária / dorso]. Refere febre alta precedente de [ ] °C e calafrios.
@@ -23,7 +26,6 @@
   * Nega presença de gás ou estalidos/crepitação à palpação do tecido subcutâneo.
   * Nega bolhas escuras hemorrágicas, necrose cutânea franca ou anestesia local no centro da lesão.
 - Fatores de Risco: [Diabetes Mellitus / Obesidade / Insuficiência venosa crônica / Linfedema prévio / Imunossupressão].
-- Alergias: [Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DERMATOLÓGICO DIRIGIDO):
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C | SpO2: [ ]%.

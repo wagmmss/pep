@@ -9,8 +9,10 @@
 ```text
 ###### PRONTO ATENDIMENTO - UPA / PRONTO-SOCORRO ######
 # IDENTIFICAÇÃO:
-Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
 Acolhimento / Classificação de Risco: [Azul / Verde / Amarelo / Vermelho] às [HH:MM].
+Comorbidades: [Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / [ ]].
+Alergias: [NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A: Penicilina / ALÉRGICO(A) A: AINEs / [ ]].
 
 # SUBJETIVO:
 - Queixa Principal (QP): "[Descrever queixa principal e tempo exato de início]".
@@ -24,9 +26,7 @@ Acolhimento / Classificação de Risco: [Azul / Verde / Amarelo / Vermelho] às 
 - Nega sangramentos ativos (hematêmese, enterorragia, melena ou metrorragia volumosa).
 
 # ANTECEDENTES (HPP & HÁBITOS):
-- Comorbidades: [Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / [ ]].
 - Medicações em Uso Contínuo: [Nega uso de medicações contínuas / Em uso de: [ ]].
-- ALERGIAS MEDICAMENTOSAS: [NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A: Penicilina / ALÉRGICO(A) A: AINEs / [ ]].
 - Hábitos: [Nega tabagismo, etilismo ou substâncias ilícitas / Tabagista maços/ano / Etilista social].
 
 # OBJETIVO (EXAME FÍSICO GERAL & DIRIGIDO):

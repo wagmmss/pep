@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: CRISE AGUDA DE GOTA (PODAGRA) ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo Masculino/Feminino.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: Masculino[? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Dor insuportável, vermelhidão e inchaço no "dedão do pé" / joelho iniciados de madrugada há [ ] horas.
 - HMA: Relata início hiperagudo de dor articular excruciante (intensidade [10/10]), que acordou o paciente durante a noite. Descreve dor em queimação e pontada tão intensa que até o contato suave do lençol ou meia causa sofrimento intolerável (alodinia mecânica extrema). Acompanhada de calor local, edema volumoso e vermelhidão brilhante.

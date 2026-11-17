@@ -10,7 +10,9 @@
 ```text
 ###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO SEPSE & CHOQUE SÉPTICO ######
 # IDENTIFICAÇÃO:
-- Paciente: [Nome], [Idade] anos, Leito: Sala Vermelha [ ], Registro: [ ]
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 - Horário de Abertura do Protocolo de Sepse: [HH:MM] do dia [DD/MM/AAAA].
 - Foco Infeccioso Suspeito: [Pulmonar (PAC grave / Broncoaspiração) / Urinário (Pielonefrite) / Abdominal (Peritonite / Colangite) / Pele e Partes Moles (Erisipela / Fasciíte) / Foco Indeterminado].
 

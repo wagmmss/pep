@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA / SALA VERMELHA: CETOACIDOSE DIABÉTICA (CAD) / EHH ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Peso: [ ] kg.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # HISTÓRICO: [Diabetes Mellitus tipo 1 / Diabetes Mellitus tipo 2 sob insulinoterapia / Primeiro diagnóstico de diabetes].
 
 # SUBJETIVO:
@@ -21,7 +24,6 @@
   * [ ] Infarto agudo do miocárdio silencioso ou AVC agudo.
 - Nega cirurgia abdominal recente ou hematêmese.
 - Nega uso de drogas simpatomiméticas ilícitas (cocaína).
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO NA SALA VERMELHA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (hipotensão postural) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (hiperpneia) | SpO2: [ ]% | Tax: [ ] °C.

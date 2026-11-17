@@ -5,12 +5,13 @@
 ## SNIPPET PEP
 ```text
 ### CENTRO OBSTÉTRICO — ADMISSÃO EM TP & CESARIANA ###
-# ID: [Nome], [ ] anos | Leito: [ ]
-G[ ] P[ ] (PN [ ] / PC [ ]) A[ ]
-DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10]
-TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-]
+# IDENTIFICAÇÃO & ADMISSÃO:
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10].
+TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-].
+Comorbidades: [Hígida / HAS / Pré-eclâmpsia / DMG / Anemia / [ ]].
+Alergias: [Nega / [ ]].
 # AP:
-PAT: [Nega / HAS / Pré-eclâmpsia / DMG / Anemia]
 MED: [Nega / Sulfato Ferroso / Metildopa]
 HAB: [Nega tabagismo, etilismo ou drogas ilícitas]
 CX: [Nega / Cesáreas prévias ([ ])]

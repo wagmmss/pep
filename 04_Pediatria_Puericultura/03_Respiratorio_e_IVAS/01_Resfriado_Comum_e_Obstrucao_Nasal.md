@@ -9,8 +9,9 @@
 ```text
 ###### ATENDIMENTO PEDIÁTRICO — RESFRIADO COMUM / RINOFARINGITE AGUDA ######
 # IDENTIFICAÇÃO & PESO:
-- Paciente: [Nome] | Idade: [ ] [meses / anos] | Sexo: [Masculino / Feminino] | PESO ATUAL: [ ] kg
-- Acompanhante: [Mãe / Pai / Responsável: [ ]]
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / [ ]].
 
 # SUBJETIVO (ANAMNESE DIRIGIDA & EXCLUSÃO DE GRAVIDADE):
 - Queixa Principal (QP): Coriza, obstrução nasal e tosse há [ ] dias.

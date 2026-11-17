@@ -8,7 +8,10 @@
 
 ```text
 ###### ATENDIMENTO UPA: SÍNDROME VERTIGINOSA AGUDA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos.
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Sim: [ ]].
 # SUBJETIVO:
 - Queixa Principal: Tontura rotatória intensa ("tudo girando"), náuseas e vômitos há [ ] horas/dias.
 - HMA: Relata episódio agudo de vertigem rotatória verdadeira iniciada há [ ] horas, acompanhada de instabilidade na marcha, náuseas e vômitos incoercíveis.
@@ -19,7 +22,6 @@
 - Nega fraqueza, perda de força muscular ou dormência em um dos lados do corpo.
 - Nega incoordenação motora grave (incapacidade de alcançar objetos).
 - Nega cefaleia occipital súbita de início hiperagudo.
-- Alergias: [Nega / Sim: [ ]].
 
 # OBJETIVO (EXAME FÍSICO NEUROLÓGICO & PROTOCOLO HINTS NA SÍNDROME CONTÍNUA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C.

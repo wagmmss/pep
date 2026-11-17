@@ -10,7 +10,9 @@
 ```text
 ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — ROTURA PREMATURA DE MEMBRANAS (RPMO) ######
 # IDENTIFICAÇÃO & TEMPO DE BOLSA ROTA:
-- Paciente: [Nome], [Idade] anos, Leito: [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [Hígida / [ ]].
+Alergias: [Nega / [ ]].
 - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º tri) | Tempo de Bolsa Rota: [ ] horas (início às [HH:MM] de [DD/MM]).
 
 # SUBJETIVO (QD & RASTREIO DE CORIOAMNIONITE):

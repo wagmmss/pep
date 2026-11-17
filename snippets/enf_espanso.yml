@@ -341,8 +341,10 @@ matches:
   - trigger: ";04-controle-glicemico-e-insulinoterapia-hospitalar"
     replace: |
       EVOLUÇÃO DIÁRIA DIRECIONADA — CONTROLE GLICÊMICO HOSPITALAR (DIRETRIZ SBD / ADA)
-      PERFIL DO PACIENTE E META GLICÊMICA:
-      - Paciente: [Nome], [Idade] anos, Peso: [70] kg, TFG estimada (CKD-EPI): [ ] mL/min/1,73m².
+      # IDENTIFICAÇÃO & META GLICÊMICA:
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], Peso: [70] kg, TFG estimada (CKD-EPI): [ ] mL/min/1,73m².
+      Comorbidades: [DM2 / [ ]].
+      Alergias: [Nega / [ ]].
       - Diagnóstico Glicêmico: [DM2 prévio em uso domiciliar de antidiabéticos orais / DM2 insulinodependente prévio / Hiperglicemia de estresse hospitalar / Hiperglicemia induzida por Corticoide (Prednisona/Dexametasona/Metilprednisolona)].
       - Via de Alimentação Atual: [Dieta oral regular para diabetes (3 refeições) / Dieta enteral contínua ou intermitente por SNE / Em jejum ou dieta zero para procedimento].
       - Mapa Glicêmico das Últimas 24 Horas (HGT):
@@ -421,8 +423,10 @@ matches:
   - trigger: ";01-delirium-hospitalar-e-agitacao-no-idoso"
     replace: |
       AVALIAÇÃO DE INTERCORRÊNCIA EM ENFERMARIA — DELIRIUM HOSPITALAR (MÉTODO CAM)
-      IDENTIFICAÇÃO E STATUS COGNITIVO BASAL:
-      - Paciente: [Nome], [Idade] anos, Leito [ ], no [ ]º DIH por [motivo da internação].
+      # IDENTIFICAÇÃO E STATUS COGNITIVO BASAL:
+      ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], no [ ]º DIH por [motivo da internação].
+      Comorbidades: [Hígido(a) / [ ]].
+      Alergias: [Nega / [ ]].
       - Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular leve/moderada / Doença de Parkinson ou Demência por Corpos de Lewy].
       
       DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2 + [3 OU 4]):

@@ -9,7 +9,10 @@
 
 ```text
 ###### ATENDIMENTO UPA / SALA DE MEDICAÇÃO: CÓLICA RENAL AGUDA ######
-# IDENTIFICAÇÃO: Paciente: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [Hígido(a) / [ ]].
+Alergias: [Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
 # SUBJETIVO:
 - Queixa Principal: Dor lombar insuportável em cólica de início súbito há [ ] horas.
 - HMA: Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa ([testículo/bolsa escrotal no homem / grande lábio na mulher]). Intensidade [10/10] na escala analógica.
@@ -26,7 +29,6 @@
   [ ] Gestante em vigência de cólica nefrética.
   * STATUS: [TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: [ ]].
 - Histórico Prévio: [Episódios prévios conhecidos de litíase urinária com eliminação de cálculos / Primeiro episódio da vida].
-- Alergias: [Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
 
 # OBJETIVO (EXAME FÍSICO DIRIGIDO DA EMERGÊNCIA):
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).

@@ -10,7 +10,7 @@
 ```text
 ###### CONSULTA DE PRÉ-NATAL — ADMISSÃO / 1ª CONSULTA ######
 # IDENTIFICAÇÃO & DATAÇÃO GESTACIONAL:
-Paciente [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / Aguarda].
+ID: [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
 - DUM: [DD/MM/AAAA] ([Certa e confiável / Incerta]) -> IG DUM: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
 - USG Precoce (1º Tri): [Solicitada hoje / Realizada em [DD/MM] com CCN de [ ] mm = IG USG: [ ]s[ ]d].
 - IG Definitiva Adotada: [ ] semanas e [ ] dias.
