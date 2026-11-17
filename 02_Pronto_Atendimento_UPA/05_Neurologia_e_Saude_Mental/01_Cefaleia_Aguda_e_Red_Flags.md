@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: CEFALEIA AGUDA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor de cabeça forte há [ ] horas/dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Dor de cabeça forte há [ ] horas/dias.
+
+# HMA:
 - HMA: Relata cefaleia de localização [hemicraniana à direita/esquerda / holocraniana / frontal / occipital / em aperto tipo faixa].
   * Intensidade: [ ]/10 na escala visual analógica.
   * Caráter: [Pulsátil latejante / Em aperto contínuo / Pontada / Em queimação].
@@ -27,7 +29,7 @@ Alergias: [Nega / Sim: [ ]].
   * PÓS-TRAUMA: Nega trauma cranioencefálico (TCE) recente nos últimos dias/semanas.
 - Histórico Prévio: [Paciente com crises semelhantes prévias de enxaqueca / Primeiro episódio da vida].
 
-# OBJETIVO (EXAME FÍSICO NEUROLÓGICO DIRIGIDO DA UPA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C (afebril).
 - Ectoscopia: Bom estado geral, lúcido e orientado no tempo e espaço (Glasgow 15), corado, fácies de desconforto com a luz ambiente.
 - EXAME NEUROLÓGICO COMPLETO:
@@ -38,11 +40,11 @@ Alergias: [Nega / Sim: [ ]].
   * Coordenação & Marcha: Prova índex-nariz simétrica sem dismetria, marcha habitual estável sem ataxia.
   * Palpação Craniofacial: Têmporas simétricas, ausência de artérias temporais endurecidas ou dolorosas, ausência de dor em seios da face.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Cefaleia Primária: [Enxaqueca / Migrânea sem aura / Cefaleia Tensional episódica] (CID-10: G43.0 / G44.2).
 2. Ausência de sinais de alarme neurológicos que justifiquem neuroimagem de urgência (TC de crânio) no momento.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO - TERAPIA ABORTIVA):
 [OPÇÃO A - CRISE DE ENXAQUECA / MIGÂNEA MODERADA A FORTE]:

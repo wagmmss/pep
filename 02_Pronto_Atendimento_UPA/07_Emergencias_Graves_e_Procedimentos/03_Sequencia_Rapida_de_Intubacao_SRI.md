@@ -11,8 +11,8 @@
 ###### NOTA DE PROCEDIMENTO: SEQUÊNCIA RÁPIDA DE INTUBAÇÃO (SRI) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 # INDICAÇÃO CLÍNICA DA INTUBAÇÃO OROTRAQUEAL (IOT):
 - [ ] Falência respiratória hipoxêmica ou hipercápnica refratária (SpO2 < 85% a despeito de VNI/máscara).
 - [ ] Rebaixamento do nível de consciência com perda dos reflexos protetores de via aérea (Escala de Coma de Glasgow <= 8).
@@ -20,13 +20,13 @@ Alergias: [Nega / [ ]].
 - [ ] Obstrução iminente de vias aéreas superiores (edema de glote anafilático / queimadura inalatória / trauma cervical).
 
 # AVALIAÇÃO DE VIA AÉREA DIFÍCIL (MNEMÔNICO LEMON):
-- L (Look externally): [Sem alterações anatômicas grosseiras / Retrognatismo / Obesidade mórbida / Barba densa].
+- L (Look externally): [*Sem alterações anatômicas grosseiras / Retrognatismo / Obesidade mórbida / Barba densa].
 - E (Evaluate 3-3-2): Abertura bucal >= 3 dedos, distância tireomentoniana >= 3 dedos, distância tireohioide >= 2 dedos.
 - M (Mallampati): Classe [I / II / III / IV].
 - O (Obstruction): Ausência de massas, estridor ou corpos estranhos em orofaringe.
 - N (Neck mobility): Mobilidade cervical livre [ou restrita por colar cervical em trauma raquimedular].
 
-# PLANO / CONDUTA (PROTOCOLO CRONOMETRADO DOS 7 Ps DA SRI):
+# CONDUTA:
 
 1. P1 - PREPARAÇÃO (MATERIAL SOAP ME TESTADO):
    - Aspirador rígido de Yankauer funcionando com sucção efetiva à mão.

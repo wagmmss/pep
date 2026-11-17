@@ -11,11 +11,14 @@
 ###### ATENDIMENTO UPA / SALA VERMELHA: INTOXICAÇÃO EXÓGENA AGUDA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # CONTEXTO: [Ingesta alcoólica pesada aguda / Suspeita de tentativa de autoextermínio / Acidente ocupacional com agrotóxico / Intoxicação medicamentosa acidental].
 
-# SUBJETIVO & HISTÓRIA TÓXICA (RELATO DE FAMILIARES / SOCORRISTAS DO SAMU):
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - Substância Ingerida / Exposta: [Álcool etílico / Benzodiazepínicos / Antidepressivo Tricíclico / Agrotóxico (Organofosforado/Chumbinho) / Cocaína/Crack / Paracetamol / Desconhecida].
 - Quantidade Estimada: [ ] comprimidos / [ ] mL / [ ] garrafas.
 - Tempo Estimado da Ingestão: Há cerca de [ ] horas/minutos.
@@ -26,7 +29,7 @@ Alergias: [Nega / Sim: [ ]].
   * [ ] 4. TOXIDROME SIMPATICOMIMÉTICA (Cocaína, Crack, Anfetaminas): Agitação psicomotora violenta, midríase bilateral fotorreagente, taquicardia extrema, pico hipertensivo grave, sudorese profusa e hipertermia.
   * [ ] 5. TOXIDROME ANTICOLINÉRGICA (Tricíclicos, Anti-histamínicos): Midríase paralítica fixa, pele seca e quente, taquicardia, retenção urinária aguda (bexigoma) e delírio agitado.
 
-# OBJETIVO (EXAME FÍSICO DA SALA DE EMERGÊNCIA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 - GLICEMIA CAPILAR (HGT) IMEDIATA: [ ] mg/dL (CONFERIDA NA ADMISSÃO).
 - Ectoscopia & Nível de Consciência: [Sonolento / Em torpor / Comatoso com Glasgow / Agitado], hálito com odor etílico característico [ou odor de pesticida/solventes].
@@ -34,11 +37,11 @@ Alergias: [Nega / Sim: [ ]].
 - Vias Aéreas & Respiração: [Vias aéreas pérvias com reflexos protetores de tosse e deglutição preservados / Queda da base da língua com roncos e respiração superficial / Broncorreia exuberante difusa com estertores bolhosos].
 - Aparelho Cardiovascular: Ritmo cardíaco [sinusal / taquicárdico / bradicárdico], pulsos periféricos palpáveis; perfusão periférica com enchimento capilar < 2s.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Intoxicação Exógena Aguda por [Álcool Etílico / Benzodiazepínicos / Opióides / Organofosforados / Mista] (CID-10: T51.0 / T42.4 / T40.2 / T60.0).
 2. Paciente com [estabilidade clínica em observação / insuficiência respiratória hipóxica com risco de aspiração].
 
-# PLANO / CONDUTA POR SUBSTÂNCIA / TOXIDROME:
+# CONDUTA:
 
 >> [MODALIDADE A]: INTOXICAÇÃO ALCOÓLICA AGUDA COM REBAIXAMENTO:
 1. Posicionamento Protetor: Manter em decúbito lateral para evitar broncoaspiração em caso de vômitos; cabeceira a 30 graus.

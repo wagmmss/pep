@@ -11,8 +11,8 @@
 ###### NOTA DE PROCEDIMENTO: INSERÇÃO DE IMPLANTE SUBDÉRMICO (IMPLANON NXT 68 MG) ######
 # IDENTIFICAÇÃO & ELEGIBILIDADE:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], DUM: [DD/MM/AAAA].
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - Indicação & Elegibilidade (OMS): Contracepção reversível de longa ação (LARC) [no menacme com β-hCG negativo / no pós-parto imediato]. Ausência de contraindicações Categoria 4 da OMS (nega câncer de mama, TVP/TEP agudo ou hepatopatia grave).
 - Consentimento & Lote: TCLE lido e assinado. Lote do dispositivo: [ ] | Validade de uso: 3 anos (até [DD/MM/AAAA]).
 
@@ -27,10 +27,10 @@ Alergias: [Nega / [ ]].
    - Implante palpado integralmente em suas duas extremidades (4 cm) pelo médico executor e pela própria paciente.
 5. Curativo: Aproximação do orifício com fita estéril (*Steri-Strip*), gaze estéril e enfaixamento compressivo com atadura de crepe. Procedimento sem sangramento ou parestesias.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Inserção de implante contraceptivo subdérmico sem intercorrências (CID-10: Z30.1).
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> CONDUTA & ORIENTAÇÕES PÓS-PROCEDIMENTO:
 1. Entregue Cartão da Usuária preenchido com lote, braço de inserção, data atual e data de retirada/troca em 3 anos.
 2. Orientada sobre mudanças benignas esperadas no padrão menstrual (amenorreia, *spotting* ou escapes irregulares).

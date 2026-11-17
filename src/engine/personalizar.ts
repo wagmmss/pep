@@ -103,8 +103,22 @@ export function isSecondaryOptionBracket(inner: string): boolean {
   return /^(?:OPÇÃO\s+[2-9]|MODALIDADE\s+[2-9]|2ª\s*ESCOLHA|3ª\s*ESCOLHA|OU\s+2ª)/i.test(trimmed);
 }
 
+export interface ParsedChoiceGroup {
+  isExplicitMulti: boolean;
+  hasDefault: boolean;
+  options: Array<{ text: string; isDefault: boolean }>;
+}
+
+export function formatMultiChoices(selected: string[]): string {
+  const clean = selected.map(s => s.trim()).filter(Boolean);
+  if (clean.length === 0) return '';
+  if (clean.length === 1) return clean[0];
+  if (clean.length === 2) return `${clean[0]} e ${clean[1]}`;
+  return `${clean.slice(0, -1).join(', ')} e ${clean[clean.length - 1]}`;
+}
+
 export function splitTopLevelChoices(inner: string): string[] {
-  const trimmed = inner.trim();
+  let trimmed = inner.trim();
   if (/^(?:DD\/MM\/AAAA|DD\/MM|MM\/AAAA|HH:MM)$/i.test(trimmed)) {
     return [trimmed];
   }
@@ -112,28 +126,32 @@ export function splitTopLevelChoices(inner: string): string[] {
     return [trimmed];
   }
 
+  if (trimmed.startsWith('+ ')) {
+    trimmed = trimmed.slice(2).trim();
+  }
+
   const parts: string[] = [];
   let bDepth = 0;
   let pDepth = 0;
   let curStart = 0;
-  const n = inner.length;
+  const n = trimmed.length;
 
   for (let i = 0; i < n; i++) {
-    const ch = inner[i];
+    const ch = trimmed[i];
     if (ch === '[') bDepth++;
     else if (ch === ']' && bDepth > 0) bDepth--;
     else if (ch === '(') pDepth++;
     else if (ch === ')' && pDepth > 0) pDepth--;
 
     if (bDepth === 0 && pDepth === 0) {
-      if (inner.slice(i, i + 3) === ' / ' || inner.slice(i, i + 3) === ' | ') {
-        parts.push(inner.slice(curStart, i).trim());
+      if (trimmed.slice(i, i + 3) === ' / ' || trimmed.slice(i, i + 3) === ' | ') {
+        parts.push(trimmed.slice(curStart, i).trim());
         curStart = i + 3;
         i += 2;
       }
     }
   }
-  parts.push(inner.slice(curStart).trim());
+  parts.push(trimmed.slice(curStart).trim());
 
   const filtered = parts.filter(Boolean);
   if (filtered.length > 1) return filtered;
@@ -143,6 +161,22 @@ export function splitTopLevelChoices(inner: string): string[] {
   }
 
   return [trimmed];
+}
+
+export function parseChoiceGroupToken(inner: string): ParsedChoiceGroup {
+  const trimmed = String(inner || '').trim();
+  const isExplicitMulti = trimmed.startsWith('+ ');
+  const rawOptions = splitTopLevelChoices(trimmed);
+  let hasDefault = false;
+  const options = rawOptions.map(opt => {
+    const isDef = /^\*(?!\*)/.test(opt);
+    if (isDef) hasDefault = true;
+    return {
+      text: isDef ? opt.slice(1).trim() : opt,
+      isDefault: isDef
+    };
+  });
+  return { isExplicitMulti, hasDefault, options };
 }
 
 export function sanitizePepOutput(rawText: string, opts?: SanitizePepOptions): string {
@@ -219,7 +253,13 @@ export function sanitizePepOutput(rawText: string, opts?: SanitizePepOptions): s
         if (inner === '') {
           builtLine += keepEmpty ? '[ ]' : '___';
         } else {
-          builtLine += tok.raw;
+          const parsedGroup = parseChoiceGroupToken(inner);
+          if (parsedGroup.options.length >= 2 && parsedGroup.hasDefault) {
+            const defaults = parsedGroup.options.filter(o => o.isDefault).map(o => o.text);
+            builtLine += formatMultiChoices(defaults);
+          } else {
+            builtLine += tok.raw;
+          }
         }
       }
     }
@@ -310,11 +350,13 @@ export function detectPendingGaps(text: string): PendingGapsReport {
         continue;
       }
 
-      const choices = splitTopLevelChoices(inner);
-      if (choices.length >= 2) {
-        unresolvedChoices++;
-        const preview = inner.length > 24 ? inner.slice(0, 22) + '…' : inner;
-        pushSample(`[${preview}]`);
+      const parsedGroup = parseChoiceGroupToken(inner);
+      if (parsedGroup.options.length >= 2) {
+        if (!parsedGroup.hasDefault) {
+          unresolvedChoices++;
+          const preview = inner.length > 24 ? inner.slice(0, 22) + '…' : inner;
+          pushSample(`[${preview}]`);
+        }
       }
     }
   }

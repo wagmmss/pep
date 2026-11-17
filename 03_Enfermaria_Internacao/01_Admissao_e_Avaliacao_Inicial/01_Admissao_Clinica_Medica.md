@@ -14,7 +14,10 @@
 - Data e Hora da Admissão: [DD/MM/AAAA] às [HH:MM]
 - Diagnóstico Sindrômico / Motivo da Internação: [ ]
 
-# SUBJETIVO (HISTÓRIA DA ADMISSÃO & ANTECEDENTES):
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - HMA: Paciente admitido(a) nesta enfermaria proveniente de [UPA / Pronto-Socorro / Ambulatório] com quadro de [ ], iniciado há [ ] dias, caracterizado por [ ]. No serviço de origem recebeu [medidas e medicações prévias: [ ]]. No momento da admissão no leito, encontra-se [estável sem queixas álgicas agudas / com queixa residual de: [ ]].
 - Nega no momento precordialgia típica, dispneia em repouso, síncope, déficits motores focais agudos ou sangramentos francos ativos.
 - Comorbidades Ativas: [Nega comorbidades prévias / HAS / DM tipo 2 / Dislipidemia / Insuficiência Cardíaca (FE [ ]%) / DPOC / Asma / DRC estágio [ ] / Hepatopatia crônica / Neoplasia: [ ]].
@@ -27,7 +30,7 @@
 2. [Medicamento 2, dose e posologia] -> Conduta na internação: [Manter em prescrição / Suspender temporariamente por [ ] / Substituir por [ ]]
 3. [Medicamento 3, dose e posologia] -> Conduta na internação: [Manter em prescrição / Suspender temporariamente por [ ] / Substituir por [ ]]
 
-# OBJETIVO (EXAME FÍSICO ADMISSIONAL & DISPOSITIVOS):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob cateter nasal de O2 a [ ] L/min]) | Tax: [ ] °C | Glicemia capilar (HGT): [ ] mg/dL.
 - Ectoscopia Geral: [Bom / Regular / Mau] estado geral, lúcido(a) e orientado(a) no tempo e espaço (Glasgow 15). Mucosas [coradas / hipocoradas ((+ / ++)/4+)], [hidratadas / desidratadas ((+ / ++)/4+)], [anictéricas / ictéricas ((+ / ++)/4+)], acianóticas. Tempo de enchimento capilar < 2 segundos.
 - Aparelho Cardiovascular: Ictus cordis normoposto no 5º EIC na linha hemiclavicular esquerda. Ritmo cardíaco [regular em 2 tempos / irregular em fibrilação atrial], bulhas [normofonéticas / hipofonéticas], [sem sopros audíveis / sopro sistólico em foco]. Pulsos periféricos amplos e simétricos. Ausência de turgência jugular patológica a 45°.
@@ -39,13 +42,13 @@
   * Acesso Venoso: [Periférico em [MSD / MSE] jelco nº [ ] inserido em [DD/MM], pérvio e sem sinais flogísticos / Cateter Venoso Central em [ ] inserido em [DD/MM]].
   * Outros Dispositivos: [Sem outros dispositivos invasivos / Sonda Vesical de Demora (SVD) / Sonda Nasoenteral (SNE) / Oxigenoterapia sob cateter nasal].
 
-# AVALIAÇÃO DIAGNÓSTICA & ESTRATIFICAÇÃO DE SEGURANÇA:
+# HIPÓTESES DIAGNÓSTICAS & ESTRATIFICAÇÃO DE SEGURANÇA:
 1. Hipótese Diagnóstica Principal: [ ] (CID-10: [ ]).
 2. Diagnósticos Secundários / Comorbidades em manejo: [ ].
 3. Risco de Quedas (Escala de Morse): [Baixo risco (0–24) / Médio risco (25–50) / Alto risco (≥ 51)] -> Grades elevadas e pulseira de segurança instaladas.
 4. Risco de Tromboembolismo Venoso (Escore de Pádua): [ ] pontos ([Baixo risco (< 4 pontos) / Alto risco (≥ 4 pontos)]).
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> PRESCRIÇÃO HOSPITALAR DE ADMISSÃO (ENFERMARIA):
 1. Dieta: [Dieta geral / Dieta para diabetes (hipoglicídica) / Dieta hipossódica (2 g NaCl) / Dieta branda / Dieta por SNE [ ] mL/h / Jejum até segunda ordem].

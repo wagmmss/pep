@@ -10,9 +10,8 @@
 ATENDIMENTO DE EMERGÊNCIA - PARADA CARDIORRESPIRATÓRIA (PCR) ADULTO
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
-
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
 HORÁRIO DE INÍCIO DA RCP: [ ]h[ ]min
 LOCAL DO EVENTO: [ Sala Vermelha / Leito da Enfermaria / Box de Emergência / Pré-hospitalar ]
@@ -29,7 +28,7 @@ CICLOS DE RESSUSCITAÇÃO CARDIOPULMONAR (ACLS):
 - Monitorização conectada / Pás posicionadas.
 - RITMO INICIAL: [ FV / TV sem pulso / Assistolia / AESP ]
 
-# PLANO / CONDUTA (CICLOS DE RCP, DROGAS, CAUSAS REVERSÍVEIS & DESFECHO PÓS-RCE):
+# CONDUTA:
 * Ciclo 1 ([ ]h[ ]): Ritmo [ ] | [ Choque de 200J Bifásico / Não chocável ] | RCP 2 min.
 * Ciclo 2 ([ ]h[ ]): Ritmo [ ] | Droga: Adrenalina 1mg EV/IO + flush 20ml SF 0,9%.
 * Ciclo 3 ([ ]h[ ]): Ritmo [ ] | [ Choque 200J ] | Droga: [ Amiodarona 300mg EV / Não indicado ].
@@ -46,7 +45,7 @@ INVESTIGAÇÃO ATIVA DE CAUSAS REVERSÍVEIS (5 Hs e 5 Ts):
 - Hipóxia: [ Via aérea pérvia, FiO2 100% ]
 - Hidrogênio (acidose): [ Corrigida ventilação / Bicarbonato de sódio se acidose grave/hipercalemia ]
 - Hipo/Hipercalemia: [ Glicemia capilar: mg/dL / Gluconato de cálcio 10% administrado se suspeita de hiperK ]
-- Hipotermia: [Ausente / Temperatura axilar: [ ] °C]
+- Hipotermia: [*Ausente / Temperatura axilar: [ ] °C]
 - Tensão no tórax (Pneumotórax hipertensivo): [ Ausculta simétrica / Descompressão por toracocentese ]
 - Tamponamento cardíaco: [ FAST negativo / Sem turgência jugular ]
 - Toxinas: [ Investigado histórico de intoxicação exógena ]

@@ -10,58 +10,46 @@
 ###### PRONTO ATENDIMENTO - UPA / PRONTO-SOCORRO ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Acolhimento / Classificação de Risco: [Azul / Verde / Amarelo / Vermelho] às [HH:MM].
-Comorbidades: [Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / [ ]].
-Alergias: [NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A: Penicilina / ALÉRGICO(A) A: AINEs / [ ]].
+Acolhimento / Classificação de Risco: [Azul / *Verde / Amarelo / Vermelho] às [HH:MM].
+Comorbidades: [+ *Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / [ ]].
+Alergias: [*NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A: Penicilina / ALÉRGICO(A) A: AINEs / [ ]].
+[? Uso contínuo & Hábitos :: Medicações em uso contínuo: [*Nega / [ ]]. | Hábitos: [+ *Nega tabagismo e etilismo / Tabagismo / Etilismo / [ ]].]
 
-# SUBJETIVO:
-- Queixa Principal (QP): "[Descrever queixa principal e tempo exato de início]".
-- História da Moléstia Atual (HMA): Paciente refere [descrever início súbito/insidioso, características do sintoma, intensidade 0-10, fatores de melhora/piora e sintomas associados].
-- Nega febre alta, calafrios ou confusão mental aguda.
-- Nega dor precordial, opressão torácica ou irradiação para mandíbula/membros superiores.
-- Nega dispneia, falta de ar súbita, estridor ou ortopneia.
-- Nega síncope, lipotímia, tontura rotatória aguda ou perda de consciência.
-- Nega cefaleia em trovoada súbita (thunderclap) ou déficits neurológicos focais.
-- Nega dor abdominal em barra, vômitos incoercíveis ou parada de eliminação de flatos/fezes.
-- Nega sangramentos ativos (hematêmese, enterorragia, melena ou metrorragia volumosa).
+# QP:
+- [Descrever queixa principal] há [ ] [hora(s) / dia(s) / semana(s)].
 
-# ANTECEDENTES (HPP & HÁBITOS):
-- Medicações em Uso Contínuo: [Nega uso de medicações contínuas / Em uso de: [ ]].
-- Hábitos: [Nega tabagismo, etilismo ou substâncias ilícitas / Tabagista maços/ano / Etilista social].
+# HMA:
+- Início [*súbito / insidioso], intensidade [ ]/10, evolução [ ] e fatores de melhora/piora [ ].
+- Sintomas associados: [+ *Nega outros sintomas / Febre / Náuseas e vômitos / Dispneia / Tontura / [ ]].
+- Nega febre alta persistente, dor precordial, dispneia súbita, síncope, cefaleia em trovoada, déficits neurológicos focais, abdome em barra ou sangramentos ativos.
 
-# OBJETIVO (EXAME FÍSICO GERAL & DIRIGIDO):
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | HGT/Glicemia capilar: [ ] mg/dL.
-- Ectoscopia Geral: Bom estado geral, lúcido e orientado no tempo e espaço (Glasgow 15), corado, hidratado, anictérico, acianótico, afebril, eupneico, enchimento capilar < 2 segundos.
-- Exame Neurológico: Vigil, pupilas isocóricas e fotorreagentes, ausência de déficits motores ou sensitivos focais, sem rigidez de nuca ou sinais meníngeos (Brudzinski e Kernig negativos).
-- Aparelho Cardiovascular: Ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, ausência de sopros ou atritos audíveis. Pulsos periféricos simétricos e amplos.
-- Aparelho Respiratório: Tórax simétrico, expansibilidade preservada. Murmúrio vesicular universalmente audível, sem ruídos adventícios (sem crepitações ou sibilos).
-- Abdome: Plano, ruídos hidroaéreos presentes e normoativos, flácido, indolor à palpação superficial e profunda, sem massas ou visceromegalias, ausência de sinais de irritação peritoneal (Sinal de Blumberg negativo, Murphy negativo, Giordano negativo).
-- Extremidades: Bem perfundidas, sem edema de membros inferiores, panturrilhas livres e indolores à palpação (Sinal de Homans negativo).
+# EXAME FÍSICO:
+- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C[? HGT :: | HGT: [ ] mg/dL].
+- Ectoscopia Geral: [*BEG, LOTE (Glasgow 15), corado, hidratado, anictérico, acianótico, afebril, eupneico, TEC < 2s / REG / MEG / [ ]].
+- Neurológico: [*Vigil, pupilas isocóricas e fotorreagentes, sem déficits focais ou rigidez de nuca / [ ]].
+- Cardiovascular: [*RCR em 2T, BNF, sem sopros ou atritos; pulsos periféricos simétricos e amplos / [ ]].
+- Respiratório: [*Tórax simétrico, MV presente bilateralmente, sem ruídos adventícios / Sibilos / Crepitações / [ ]].
+- Abdome: [*Plano, RHA+, flácido, indolor à palpação, sem visceromegalias ou irritação peritoneal (Blumberg/Murphy/Giordano negativos) / [ ]].
+- Extremidades: [*Bem perfundidas, sem edema de MMII ou dor à palpação de panturrilhas / [ ]].
 
-# AVALIAÇÃO DIAGNÓSTICA:
-1. Hipótese Diagnóstica Principal: [Descrever diagnóstico sindrômico ou nosológico] (CID-10: [ ]).
-2. Paciente no momento hemodinamicamente estável, sem critérios clínicos de instabilidade ou sepse.
+# HIPÓTESES DIAGNÓSTICAS:
+1. [Descrever diagnóstico sindrômico ou nosológico] (CID-10: [ ]).
+- Estabilidade: [*Hemodinamicamente estável, sem critérios de instabilidade ou sepse / Sinais de alerta presentes].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO / OBSERVAÇÃO):
-1. Dipirona 1 g (2 mL) + AD 8 mL EV lento agora (ou Paracetamol 750 mg VO se alérgico).
-2. [Medicação específica da queixa: analgesia / antiemético / broncodilatador / hidratação cristaloide].
-3. Reavaliação clínica após medicação e checagem de sinais vitais de controle.
+1. [*Dipirona 1 g (2 mL) + AD 8 mL EV lento agora / Paracetamol 750 mg VO agora / Não medicar na unidade].
+[? Medicação extra :: 2. [Medicação específica da queixa: analgesia / antiemético / broncodilatador / SF 0,9%].]
+2. Reavaliação clínica após medicação e checagem de sinais vitais de controle.
 
 >> PRESCRIÇÃO DOMICILIAR (RECEITA MÉDICA):
-1. Dipirona 500 mg a 1 g VO de 6/6h se dor ou febre (por até 3 a 5 dias).
-2. [Medicação de uso contínuo ou sintomático específico com dose, horário e duração].
-3. Repouso relativo, hidratação oral vigorosa (2 a 3 litros de água/dia) e alimentação leve.
+1. [*Dipirona 500 mg a 1 g VO de 6/6h se dor ou febre (por até 3 a 5 dias) / Paracetamol 750 mg VO de 6/6h se dor ou febre].
+[? Medicação domiciliar :: 2. [Medicação específica com dose, horário e duração].]
+2. Repouso relativo, hidratação oral vigorosa (2 a 3 L/dia) e alimentação leve.
 
 >> ORIENTAÇÕES & SINAIS DE ALARME (RETORNO IMEDIATO À UPA):
-- Orientado(a) a retornar imediatamente ao serviço de emergência caso apresente qualquer sinal de alarme:
-  1. Febre persistente alta (>= 38,5 °C) ou que não cede com antitérmicos.
-  2. Falta de ar, dor no peito, palpitações ou lábios arroxeados.
-  3. Dor de cabeça súbita de forte intensidade ou alteração visual/fala.
-  4. Vômitos contínuos sem tolerância hídrica oral.
-  5. Dor abdominal intensa e contínua.
-  6. Sonolência excessiva, tontura ao se levantar ou desmaio.
+- Orientado(a) a retornar imediatamente à emergência se apresentar: febre persistente (>= 38,5 °C), falta de ar, dor no peito, palpitações, cefaleia súbita intensa, alteração visual/fala, vômitos incoercíveis, dor abdominal contínua, tontura ao levantar ou desmaio.
 ```
 
 ---

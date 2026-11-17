@@ -11,11 +11,14 @@
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: AGITAÇÃO PSICOMOTORA / SURTO ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # CONTEXTO DE ENTRADA: [Trazido por familiares / Resgatado pelo SAMU ou Polícia Militar / Descompensação aguda na sala de espera].
 
-# SUBJETIVO & HISTÓRICO PSIQUIÁTRICO / CLÍNICO:
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - Apresentação Clínica: Paciente admitido com quadro de intensa agitação psicomotora, inquietação motora, desinibição verbal, agressividade [verbal / física direcionada a terceiros ou objetos], com discurso [desconexo / delirante paranoide / de grandiosidade / com alucinações auditivas e visuais].
 - ETIOLOGIA DA AGITAÇÃO EM INVESTIGAÇÃO:
   * [ ] CAUSA PSIQUIÁTRICA PRIMÁRIA: Paciente com diagnóstico prévio de Esquizofrenia / Transtorno Bipolar em episódio maníaco / Transtorno de Personalidade em crise; relata abandono recente de antipsicóticos.
@@ -24,7 +27,7 @@ Alergias: [Nega / Sim: [ ]].
 - Nega histórico de trauma cranioencefálico recente ou cefaleia febril precedente.
 - Sem porte de armas ou objetos perfurocortantes (revista de segurança realizada pela equipe/guarda).
 
-# OBJETIVO (EXAME FÍSICO & ESTADO MENTAL NA SALA DE EMERGÊNCIA):
+# EXAME FÍSICO:
 - SINAIS VITAIS (AFERIDOS ASSIM QUE POSSÍVEL): PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
 - GLICEMIA CAPILAR (HGT): [ ] mg/dL (AFASTADA HIPOGLICEMIA COMO CAUSA DO DELIRIUM).
 - Exame do Estado Mental:
@@ -35,7 +38,7 @@ Alergias: [Nega / Sim: [ ]].
   * Afeto & Humor: Humor [irritado / eufórico / disfórico], afeto incongruente.
   * Risco de Auto ou Heteroagressão: [ELEVADO - RISCO IMINENTE DE VIOLÊNCIA FÍSICA].
 
-# PLANO / CONDUTA ESCALONADA DE CONTENÇÃO:
+# CONDUTA:
 
 >> ETAPA 1: DESESCALONAMENTO VERBAL & SEGURANÇA AMBIENTAL (SEMPRE A 1ª OPÇÃO):
 - Abordagem em tom calmo, firme, sem confronto de delírios e mantendo distância de segurança física (ao menos 2 passos). Retirados objetos do alcance do paciente.

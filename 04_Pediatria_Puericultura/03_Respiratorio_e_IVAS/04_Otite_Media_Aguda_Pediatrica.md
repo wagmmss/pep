@@ -10,19 +10,21 @@
 ###### ATENDIMENTO PEDIÁTRICO — OTITE MÉDIA AGUDA (OMA) ######
 # IDENTIFICAÇÃO & PESO:
 ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Alérgico(a) a Penicilinas / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico(a) a Penicilinas / [ ]].
 
-# SUBJETIVO (ANAMNESE DIRIGIDA & FATORES DE RESISTÊNCIA BACTERIANA):
-- Queixa Principal (QP): Dor de ouvido (otalgia), febre e irritabilidade há [ ] dias.
-- História da Moléstia Atual (HMA): Quadro iniciado há [ ] dias após pródromo de resfriado comum (obstrução nasal e coriza), evoluindo nas últimas [24 a 48] horas com otalgia aguda em orelha [direita / esquerda / bilateral], despertar noturno com choro intenso, [mão levada repetidamente à orelha] e febre de [ ] °C.
+# QP:
+- Dor de ouvido (otalgia), febre e irritabilidade há [ ] dias.
+
+# HMA:
+- Quadro iniciado há [ ] dias após pródromo de resfriado comum (obstrução nasal e coriza), evoluindo nas últimas [24 a 48] horas com otalgia aguda em orelha [direita / esquerda / bilateral], despertar noturno com choro intenso, [mão levada repetidamente à orelha] e febre de [ ] °C.
 - Presença de Otorreia: [Ausente / Otorreia purulenta exteriorizada no conduto auditivo externo após alívio súbito da dor (perfuração timpânica espontânea)].
 - Presença de Conjuntivite Purulenta Ipsilateral (Síndrome Otite-Conjuntivite): [Ausente / Presente — forte preditor de Haemophilus influenzae não-tipável produtor de beta-lactamase].
 - Estratificação de Risco para Pneumococo Resistente (Define Dose de Amoxicilina 50 vs 90 mg/kg/dia):
   * Idade < 2 anos: [Sim / Não] | Frequenta creche/berçário: [Sim / Não] | Uso de antibiótico nos últimos 30 dias: [Não / Sim: [ ]].
 - Nega edema, hiperemia ou dor retroauricular com deslocamento anterior do pavilhão ("orelha em abano" aguda), paralisia facial periférica, vômitos em jato ou rigidez de nuca.
 
-# OBJETIVO (EXAME FÍSICO & OTOSCOPIA DIAGNÓSTICA SBP/AAP):
+# EXAME FÍSICO:
 - Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 - Ectoscopia & Inspeção Retroauricular: Bom/Regular estado geral, corado, hidratado, acianótico. Região mastoidea bilateral sem edema, sem eritema, sulco retroauricular preservado e indolor à percussão/palpação (afastada mastoidite aguda).
 - Otoscopia Bilateral Comparativa:
@@ -30,11 +32,11 @@ Alergias: [Nega / Alérgico(a) a Penicilinas / [ ]].
   * Orelha Contralateral: [Membrana timpânica íntegra, translúcida, posição neutra e cone luminoso preservado / Também abaulada e hiperemiada (OMA bilateral)].
 - Rinoscopia, Oroscopia & Ausculta Pulmonar: Mucosa nasal congesta com rinorreia; orofaringe sem placas; murmúrio vesicular universalmente audível sem ruídos adventícios.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Otite Média Aguda Supurativa [Unilateral Direita / Unilateral Esquerda / Bilateral] (CID-10: H66.0).
 2. Classificação de Gravidade e Conduta (SBP/AAP): [Indicação de antibioticoterapia imediata (< 6 meses, ou 6–23m bilateral/grave, ou otorreia presente) / Elegível para observação vigilante por 48h com analgesia otimizada].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA TERAPÊUTICA & ESCOLHA DO ANTIMICROBIANO:
 1. Analgesia Sistêmica Otimizada (Obrigatória em 100% dos casos nas primeiras 48h):

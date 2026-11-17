@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: PNEUMONIA ADQUIRIDA NA COMUNIDADE (PAC) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / [ ]].
-Alergias: [Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Tosse com catarro, febre e dor no peito para respirar há [ ] dias.
+Comorbidades: [+ *Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / [ ]].
+Alergias: [*Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
+# QP:
+- Tosse com catarro, febre e dor no peito para respirar há [ ] dias.
+
+# HMA:
 - HMA: Refere tosse produtiva há cerca de [ ] dias com escarro de aspecto [amarelado / purulento / ferruginoso], associada a picos febris diários (Tax [ ] °C) acompanhados de calafrios, astenia e dor torácica ventilatório-dependente (dor pleurítica em pontada à inspiração profunda) em hemitórax [direito / esquerdo].
 - ESTRATIFICAÇÃO PROGNÓSTICA - ESCORE CURB-65:
   - C - Confusão mental aguda no exame (Glasgow < 15 ou desorientação) (+1)
@@ -30,7 +32,7 @@ Alergias: [Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 - Nega estridor respiratório, sensação de asfixia ou tiragem de fúrcula/intercostal.
 - Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise (afastada PAC hospitalar/multirresistente).
 
-# OBJETIVO (EXAME FÍSICO RESPIRATÓRIO & GERAL):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente | Tax: [ ] °C.
 - Ectoscopia: [Bom / Regular / Mau] estado geral, [lúcido / sonolento / confuso], corado, hidratado, acianótico, [eupneico / taquipneico com esforço respiratório leve].
 - Aparelho Respiratório:
@@ -44,11 +46,11 @@ Alergias: [Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 - Radiografia de Tórax (PA e Perfil): Evidenciando infiltrado alveolar com consolidação parenquimatosa lobar em [lobo inferior direito / lobo inferior esquerdo / língula], com presença de broncogramas aéreos. Ausência de derrame pleural volumoso associado.
 - Laboratório: Leucograma: [ ] /mm³ (com desvio à esquerda) | Ureia: [ ] mg/dL | Creatinina: [ ] mg/dL | Proteína C-Reativa (PCR): [ ] mg/L.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Pneumonia Adquirida na Comunidade (PAC) não complicada (CID-10: J18.9).
 2. Estratificação CURB-65: Grau [0 / 1 / 2], elegível para manejo [ambulatorial / hospitalar].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [MODALIDADE 1]: CONDUTA AMBULATORIAL (CURB-65 = 0 OU 1):
 1. Antibioticoterapia Oral (Duração de 5 a 7 dias):

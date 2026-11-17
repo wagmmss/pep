@@ -12,21 +12,24 @@
 # IDENTIFICAÇÃO & CRONOLOGIA:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda] | Risco: [Risco Habitual / Alto Risco por: [ ]].
 - IG Atual: [ ] semanas e [ ] dias (por [USG de 1º tri / DUM confiável]) | DPP: [DD/MM/AAAA].
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 
-# SUBJETIVO (EVOLUÇÃO & ALARME OBSTÉTRICO):
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - Evolução & Movimentação Fetal: Comparece para retorno com exames. Movimentação fetal [presente e ativa / ainda não percebida (< 18–20s)]. Queixas: [Assintomática no período / Refere pirose leve / Lombalgia mecânica leve / Edema maleolar vespertino leve].
 - Adesão Medicamentosa: Em uso regular de [Sulfato Ferroso / Ácido Fólico / AAS 100 mg + Carbonato de Cálcio / Metildopa].
 - Nega sangramento vaginal, perda de líquido amniótico, contrações rítmicas dolorosas, cefaleia, escotomas, epigastralgia em barra, disúria ou febre.
 
-# OBJETIVO (EXAME FÍSICO OBSTÉTRICO & CURVAS):
+# EXAME FÍSICO:
 - Vitais & Antropometria: PA (sentada): [110x70] mmHg | FC: [80] bpm | Peso Atual: [ ] kg (Variação no período: [+/- ] kg | Ganho total: [ ] kg).
 - Exame Geral & Cardiopulmonar: BEG, corada, hidratada, eupneica, RCR 2T BNF, MV+ bilateral limpo.
 - Abdome Gravídico (Leopold & Vitalidade):
   * Altura Uterina (AU): [ ] cm (compatível com a curva AU/IG entre P10–P90).
   * Manobras de Leopold: Feto único, situação [longitudinal], apresentação [cefálica / pélvica], dorso à [esquerda / direita].
-  * Dinâmica Uterina (DU): [Ausente / Contrações de Braxton-Hicks isoladas e indolores]. Tônus uterino fisiológico.
+  * Dinâmica Uterina (DU): [*Ausente / Contrações de Braxton-Hicks isoladas e indolores]. Tônus uterino fisiológico.
   * Ausculta Fetal (BCF): [142] bpm, rítmico, sem desacelerações audíveis (pulso materno aferido simultaneamente).
 - Extremidades: [Sem edemas / Edema maleolar fisiológico +/4+ bilateral e simétrico], panturrilhas livres.
 - Revisão de Exames & Controles Trazidos:
@@ -35,11 +38,11 @@ Alergias: [Nega / [ ]].
   * Swab EGB (35–37s): [Ainda fora da janela / Negativo / Positivo -> anotado em destaque na Caderneta para profilaxia intraparto].
   * [Se HAG/DMG]: [Curva de PA domiciliar < 135x85 mmHg / Mapa glicêmico com > 80% das medidas no alvo (Jejum < 95 e 1h pós < 140 mg/dL)].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Gestação tópica de [ ] semanas e [ ] dias, feto vital e crescimento adequado (CID-10: Z34.8).
 2. Exames e curvas [dentro da normalidade para a idade gestacional / com alteração de: [ ]].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> CONDUTA & SOLICITAÇÕES POR IDADE GESTACIONAL:
 1. Atualizada Caderneta da Gestante (gráfico de curva de AU e ganho ponderal).
 2. Vacinação & Imunoprofilaxia: [Encaminhada para dTpa (a partir de 20s) e Influenza / Prescrita Imunoglobulina Anti-D 300 mcg IM na 28ª semana (mãe Rh- com Coombs Indireto negativo) / Vacinação completa].

@@ -9,14 +9,14 @@
 ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/MM/AAAA].
 TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!].
-Comorbidades: [Hígida / HAS / DM2 / DIP prévia / Endometriose / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / HAS / DM2 / DIP prévia / Endometriose / [ ]].
+Alergias: [*Nega / [ ]].
 # AP:
-MED: [Nega / Ácido Fólico / Progesterona]
-HAB: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
-CX: [Nega / Cesárea prévia / Ectópica anterior / Cirurgia tubária]
-ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
-HF: [Nega / HAS / DM2]
+MED: [*Nega / Ácido Fólico / Progesterona]
+HAB: [*Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
+CX: [*Nega / Cesárea prévia / Ectópica anterior / Cirurgia tubária]
+ALER: [*Nega alergias medicamentosas / Alérgica a: [ ]]
+HF: [*Nega / HAS / DM2]
 
 # CASO: SANGRAMENTO DO 1º TRIMESTRE (ABORTAMENTO VS. GRAVIDEZ ECTÓPICA)
 
@@ -33,10 +33,10 @@ Bom estado geral, corada, hidratada, acianótica, anictérica, afebril [ou hipoc
 - Especular: Sangramento [discreto coletado em fundo de saco / ativo pelo OE / saída de material ovular sem odor fétido / secreção purulenta fétida].
 - Toque Vaginal Bimanual: Colo uterino [grosso, posterior e impérvio (Ameaça de Aborto ou Ectópica) / pérvio para 1 polpa digital (Aborto Inevitável ou Incompleto)]. Útero de volume [compatível com a IG / menor que a IG], mobilização do colo [indolor / intensamente dolorosa — Sinal de Proust / Grito de Douglas positivo!].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Sangramento do 1º Trimestre compatível com: [Ameaça de Abortamento / Abortamento Incompleto / Abortamento Retido / Abortamento Completo / Abortamento Infectado / Gravidez Ectópica Íntegra / Gravidez Ectópica Rota com Hemoperitônio].
 
-# PLANO / CONDUTA
+# CONDUTA:
 1. Estabilização Hemodinâmica (se sangramento volumoso ou Ectópica Rota): 2 acessos venosos calibrosos (14G/16G), coleta de Hb/Ht, Tipagem Sanguínea + Prova Cruzada, Coagulograma e reposição cristaloide aquecida + reserva de Concentrado de Hemácias.
 2. Imunoprofilaxia Anti-D Obrigatória em Gestantes Rh Negativo (Coombs Indireto Negativo): Administrar Imunoglobulina Anti-D 300 mcg IM até 72h após o início do sangramento ou esvaziamento uterino.
 3. Conduta Específica conforme Classificação:

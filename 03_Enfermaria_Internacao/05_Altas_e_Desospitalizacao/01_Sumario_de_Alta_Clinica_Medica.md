@@ -26,14 +26,14 @@
 
 # EXAMES COMPLEMENTARES RELEVANTES (ADMISSÃO vs ALTA):
 - Laboratório de Alta ([DD/MM]): Hb: [ ] g/dL | Leucócitos: [ ] /mm³ | Plaquetas: [ ] /mm³ | PCR: [ ] mg/L (em queda franca) | Creatinina: [ ] mg/dL (basal: [ ]) | Ureia: [ ] mg/dL | Na: [ ] mEq/L | K: [ ] mEq/L.
-- Culturas Microbiológicas: [Negativas / Urocultura ou Hemocultura com isolamento de [ ] sensível a [ ]].
+- Culturas Microbiológicas: [*Negativas / Urocultura ou Hemocultura com isolamento de [ ] sensível a [ ]].
 - Exames de Imagem / Gráficos: [RX de Tórax: [ ] / ECG: [ ] / Ecocardiograma: [ ] / TC/USG: [ ]].
 
 # CONDIÇÕES CLÍNICAS NO MOMENTO DA SAÍDA:
 - Paciente em bom estado geral (BEG), lúcido(a) e orientado(a) (Glasgow 15), corado(a), hidratado(a), afebril e deambulando.
 - Sinais Vitais de Alta: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente | Tax: [ ] °C.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> RECONCILIAÇÃO MEDICAMENTOSA DE ALTA (O QUE MUDOU):
 1. Medicamentos de Uso Contínuo MANTIDOS nas mesmas doses:

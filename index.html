@@ -2072,6 +2072,31 @@
       border-color: var(--primary-bright);
       color: var(--text);
     }
+    .choice-pill.is-default.active {
+      box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.45);
+    }
+    .choice-pill.is-default:not(.active) {
+      border-bottom: 1px dashed rgba(16, 185, 129, 0.55);
+    }
+    .pep-sec-normal-btn {
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.42);
+      color: #6ee7b7;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      margin-left: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      vertical-align: middle;
+      transition: all 0.12s ease;
+    }
+    .pep-sec-normal-btn:hover {
+      background: rgba(16, 185, 129, 0.25);
+    }
     .pep-line-check-label {
       display: inline-flex;
       align-items: center;
@@ -7877,8 +7902,17 @@ IDENTIFICAÇÃO &amp; PESO:
     }
     window.isSecondaryOptionBracket = isSecondaryOptionBracket;
 
+    function formatMultiChoices(selected) {
+      const clean = (selected || []).map(s => String(s || '').trim()).filter(Boolean);
+      if (clean.length === 0) return '';
+      if (clean.length === 1) return clean[0];
+      if (clean.length === 2) return `${clean[0]} e ${clean[1]}`;
+      return `${clean.slice(0, -1).join(', ')} e ${clean[clean.length - 1]}`;
+    }
+    window.formatMultiChoices = formatMultiChoices;
+
     function splitTopLevelChoices(inner) {
-      const trimmed = inner.trim();
+      let trimmed = inner.trim();
       // Nunca dividir máscaras de data/hora
       if (/^(?:DD\/MM\/AAAA|DD\/MM|MM\/AAAA|HH:MM)$/i.test(trimmed)) {
         return [trimmed];
@@ -7887,15 +7921,18 @@ IDENTIFICAÇÃO &amp; PESO:
       if (isInternalInstructionBracket(trimmed)) {
         return [trimmed];
       }
+      if (trimmed.startsWith('+ ')) {
+        trimmed = trimmed.slice(2).trim();
+      }
 
       const parts = [];
       let bDepth = 0;
       let pDepth = 0;
       let curStart = 0;
-      const n = inner.length;
+      const n = trimmed.length;
 
       for (let i = 0; i < n; i++) {
-        const ch = inner[i];
+        const ch = trimmed[i];
         if (ch === '[') bDepth++;
         else if (ch === ']' && bDepth > 0) bDepth--;
         else if (ch === '(') pDepth++;
@@ -7904,15 +7941,15 @@ IDENTIFICAÇÃO &amp; PESO:
         if (bDepth === 0 && pDepth === 0) {
           // Dividir em ' / ' ou ' | ' no nível raiz (fora de parênteses e fora de colchetes aninhados)
           if (
-            (inner.slice(i, i + 3) === ' / ' || inner.slice(i, i + 3) === ' | ')
+            (trimmed.slice(i, i + 3) === ' / ' || trimmed.slice(i, i + 3) === ' | ')
           ) {
-            parts.push(inner.slice(curStart, i).trim());
+            parts.push(trimmed.slice(curStart, i).trim());
             curStart = i + 3;
             i += 2;
           }
         }
       }
-      parts.push(inner.slice(curStart).trim());
+      parts.push(trimmed.slice(curStart).trim());
 
       const filtered = parts.filter(Boolean);
       if (filtered.length > 1) return filtered;
@@ -7926,6 +7963,23 @@ IDENTIFICAÇÃO &amp; PESO:
 
       return [trimmed];
     }
+
+    function parseChoiceGroupToken(inner) {
+      const trimmed = String(inner || '').trim();
+      const isExplicitMulti = trimmed.startsWith('+ ');
+      const rawOptions = splitTopLevelChoices(trimmed);
+      let hasDefault = false;
+      const options = rawOptions.map(opt => {
+        const isDef = /^\*(?!\*)/.test(opt);
+        if (isDef) hasDefault = true;
+        return {
+          text: isDef ? opt.slice(1).trim() : opt,
+          isDefault: isDef
+        };
+      });
+      return { isExplicitMulti, hasDefault, options };
+    }
+    window.parseChoiceGroupToken = parseChoiceGroupToken;
 
     function sanitizePepOutput(rawText, opts) {
       const keepEmpty = opts && opts.keepEmptyBrackets !== undefined ? opts.keepEmptyBrackets : interactiveKeepEmptyBrackets;
@@ -7996,7 +8050,13 @@ IDENTIFICAÇÃO &amp; PESO:
             if (inner === '') {
               builtLine += keepEmpty ? '[ ]' : '___';
             } else {
-              builtLine += tok.raw;
+              const parsedGroup = parseChoiceGroupToken(inner);
+              if (parsedGroup.options.length >= 2 && parsedGroup.hasDefault) {
+                const defaults = parsedGroup.options.filter(o => o.isDefault).map(o => o.text);
+                builtLine += formatMultiChoices(defaults);
+              } else {
+                builtLine += tok.raw;
+              }
             }
           }
         }
@@ -8083,11 +8143,13 @@ IDENTIFICAÇÃO &amp; PESO:
             continue;
           }
 
-          const choices = splitTopLevelChoices(inner);
-          if (choices.length >= 2) {
-            unresolvedChoices++;
-            const preview = inner.length > 24 ? inner.slice(0, 22) + '…' : inner;
-            pushSample(`[${preview}]`);
+          const parsedGroup = parseChoiceGroupToken(inner);
+          if (parsedGroup.options.length >= 2) {
+            if (!parsedGroup.hasDefault) {
+              unresolvedChoices++;
+              const preview = inner.length > 24 ? inner.slice(0, 22) + '…' : inner;
+              pushSample(`[${preview}]`);
+            }
           }
         }
       }
@@ -8426,9 +8488,132 @@ IDENTIFICAÇÃO &amp; PESO:
     }
     window.fillInteractiveNormalVitals = fillInteractiveNormalVitals;
 
+    const sharedPatientIdentity = {
+      nome: '',
+      idade: '',
+      sexo: '',
+      peso: '',
+      comorbidades: '',
+      alergias: ''
+    };
+    window.sharedPatientIdentity = sharedPatientIdentity;
+
+    function syncSharedIdentityFromDOM() {
+      if (!interactiveRendered) return;
+      const lines = Array.from(interactiveRendered.querySelectorAll('.pep-line'));
+      for (const line of lines) {
+        const raw = line.dataset.rawLine || '';
+        if (/^(?:#\s*)?IDENTIFICA[ÇC][ÃA]O/i.test(raw)) continue;
+        if (/^#\s+(?:SUBJETIVO|HMA|OBJETIVO|EXAME|AVALIA|HIP[ÓO]TESES|PLANO|CONDUTA)/i.test(raw)) break;
+
+        if (/^ID:/i.test(raw) || /Paciente:/i.test(raw)) {
+          line.querySelectorAll('.pep-inline-input').forEach(inp => {
+            const ph = (inp.placeholder || '').toLowerCase();
+            const val = (inp.value || '').trim();
+            if (!val) return;
+            if (ph === 'nome') sharedPatientIdentity.nome = val;
+            else if (ph === 'idade') sharedPatientIdentity.idade = val;
+            else if (inp.closest('.pep-opt-inline[data-opt-label*="Peso" i]')) sharedPatientIdentity.peso = val;
+          });
+          const sexoGroup = line.querySelector('.choice-group');
+          if (sexoGroup) {
+            const activePill = sexoGroup.querySelector('.choice-pill.active');
+            if (activePill) sharedPatientIdentity.sexo = activePill.textContent.trim();
+          }
+        } else if (/^Comorbidades:/i.test(raw)) {
+          const cg = line.querySelector('.choice-group');
+          if (cg) {
+            const actives = Array.from(cg.querySelectorAll('.choice-pill.active')).map(p => serializeChoicePill(p));
+            if (actives.length > 0) sharedPatientIdentity.comorbidades = formatMultiChoices(actives);
+          }
+        } else if (/^Alergias:/i.test(raw)) {
+          const cg = line.querySelector('.choice-group');
+          if (cg) {
+            const actives = Array.from(cg.querySelectorAll('.choice-pill.active')).map(p => serializeChoicePill(p));
+            if (actives.length > 0) sharedPatientIdentity.alergias = formatMultiChoices(actives);
+          }
+        }
+      }
+    }
+
+    function applySharedIdentityToDOM() {
+      if (!interactiveRendered) return;
+      const hasAny = Object.values(sharedPatientIdentity).some(Boolean);
+      if (!hasAny) return;
+      const lines = Array.from(interactiveRendered.querySelectorAll('.pep-line'));
+      for (const line of lines) {
+        const raw = line.dataset.rawLine || '';
+        if (/^#\s+(?:SUBJETIVO|HMA|OBJETIVO|EXAME|AVALIA|HIP[ÓO]TESES|PLANO|CONDUTA)/i.test(raw)) break;
+
+        if (/^ID:/i.test(raw) || /Paciente:/i.test(raw)) {
+          line.querySelectorAll('.pep-inline-input').forEach(inp => {
+            const ph = (inp.placeholder || '').toLowerCase();
+            if (ph === 'nome' && sharedPatientIdentity.nome && !inp.value) {
+              inp.value = sharedPatientIdentity.nome;
+              inp.classList.add('is-filled');
+              autoSizeInlineInput(inp);
+            } else if (ph === 'idade' && sharedPatientIdentity.idade && !inp.value) {
+              inp.value = sharedPatientIdentity.idade;
+              inp.classList.add('is-filled');
+              autoSizeInlineInput(inp);
+            } else if (sharedPatientIdentity.peso && !inp.value) {
+              const optPeso = inp.closest('.pep-opt-inline[data-opt-label*="Peso" i]');
+              if (optPeso) {
+                optPeso.classList.remove('is-off');
+                const chip = optPeso.querySelector('.pep-opt-chip');
+                if (chip) chip.textContent = `✓ ${optPeso.dataset.optLabel || 'Peso'}`;
+                inp.value = sharedPatientIdentity.peso;
+                inp.classList.add('is-filled');
+                autoSizeInlineInput(inp);
+              }
+            }
+          });
+          if (sharedPatientIdentity.sexo) {
+            const sexoGroup = line.querySelector('.choice-group');
+            if (sexoGroup) {
+              const pills = Array.from(sexoGroup.querySelectorAll('.choice-pill'));
+              const match = pills.find(p => p.textContent.trim().toLowerCase() === sharedPatientIdentity.sexo.toLowerCase());
+              if (match) {
+                pills.forEach(p => p.classList.remove('active'));
+                match.classList.add('active');
+              }
+            }
+          }
+        }
+      }
+    }
+
+    function applyNormalSectionPreset(headerLineDiv) {
+      if (!headerLineDiv || !interactiveRendered) return;
+      let cur = headerLineDiv.nextElementSibling;
+      let updated = 0;
+      while (cur) {
+        const raw = (cur.dataset && cur.dataset.rawLine) ? cur.dataset.rawLine.trim() : '';
+        if (/^#{1,3}\s+/.test(raw)) break;
+        if (cur.classList && cur.classList.contains('pep-line') && !cur.classList.contains('is-excluded')) {
+          cur.querySelectorAll('.choice-group').forEach(g => {
+            const pills = Array.from(g.querySelectorAll('.choice-pill'));
+            if (pills.length === 0) return;
+            const defaultPills = pills.filter(p => p.dataset.isDefault === 'true');
+            const targets = defaultPills.length > 0 ? defaultPills : [pills[0]];
+            pills.forEach(p => p.classList.toggle('active', targets.includes(p)));
+            updated++;
+          });
+        }
+        cur = cur.nextElementSibling;
+      }
+      if (updated > 0) {
+        interactiveEditCount++;
+        updateInteractiveCounter();
+        showToast(`⚡ Padrão normal aplicado em ${updated} campo(s) do exame físico.`);
+      }
+    }
+    window.applyNormalSectionPreset = applyNormalSectionPreset;
+
     function saveInteractiveSessionState(idx) {
       const targetIdx = idx !== undefined && idx !== null ? idx : currentInteractiveRenderedIdx;
       if (targetIdx === null || targetIdx === undefined || !interactiveRendered || !interactiveRendered.childNodes || interactiveRendered.childNodes.length === 0) return;
+      syncSharedIdentityFromDOM();
       if (interactiveEditCount <= 0) {
         delete interactiveSessionCache[targetIdx];
         return;
@@ -9220,12 +9405,13 @@ IDENTIFICAÇÃO &amp; PESO:
             }
 
             // 2. Verificar se é Grupo de Opções (Choice Group) com 2+ escolhas no nível raiz
-            const options = splitTopLevelChoices(inner);
+            const parsedGroup = parseChoiceGroupToken(inner);
+            const options = parsedGroup.options;
             if (options.length >= 2) {
               const groupSpan = document.createElement('span');
               groupSpan.className = 'choice-group';
 
-              const defaultMulti = isLikelyMultiGroup(beforeText, options);
+              const defaultMulti = parsedGroup.isExplicitMulti || isLikelyMultiGroup(beforeText, options.map(o => o.text));
               if (defaultMulti) {
                 groupSpan.classList.add('is-multi');
               }
@@ -9258,16 +9444,20 @@ IDENTIFICAÇÃO &amp; PESO:
                 updateInteractiveCounter();
               };
 
-              options.forEach((opt, oIdx) => {
+              options.forEach((optObj, oIdx) => {
+                const opt = optObj.text;
+                const isDef = optObj.isDefault;
+                const shouldStartActive = parsedGroup.hasDefault ? isDef : (oIdx === 0);
                 const btn = document.createElement('button');
                 btn.type = 'button';
-                btn.className = 'choice-pill' + (oIdx === 0 ? ' active' : '');
+                btn.className = 'choice-pill' + (shouldStartActive ? ' active' : '') + (isDef ? ' is-default' : '');
+                if (isDef) btn.dataset.isDefault = 'true';
 
                 function activatePill(forceActive) {
                   const isMultiMode = groupSpan.classList.contains('is-multi');
                   const isActive = btn.classList.contains('active');
                   const optLower = opt.toLowerCase();
-                  const isNegation = optLower.startsWith('nega') || optLower.startsWith('hígida') || optLower === 'hígido' || optLower === 'nenhum' || optLower === 'sem queixas' || optLower === 'ausente';
+                  const isNegation = optLower.startsWith('nega') || optLower.startsWith('hígida') || optLower.startsWith('hígido') || optLower === 'nenhum' || optLower === 'sem queixas' || optLower === 'ausente';
 
                   if (forceActive) {
                     if (!isMultiMode) {
@@ -9279,7 +9469,7 @@ IDENTIFICAÇÃO &amp; PESO:
                     } else {
                       groupSpan.querySelectorAll('.choice-pill').forEach(b => {
                         const bLow = b.textContent.toLowerCase();
-                        if (bLow.startsWith('nega') || bLow.startsWith('hígida') || bLow === 'hígido' || bLow === 'nenhum' || bLow === 'sem queixas' || bLow === 'ausente') {
+                        if (bLow.startsWith('nega') || bLow.startsWith('hígida') || bLow.startsWith('hígido') || bLow === 'nenhum' || bLow === 'sem queixas' || bLow === 'ausente') {
                           b.classList.remove('active');
                         }
                       });
@@ -9358,9 +9548,21 @@ IDENTIFICAÇÃO &amp; PESO:
 
         appendRenderedTokens(lineDiv, workingLine, line);
 
-        // P0.3: Adicionar botão [📋 Copiar seção] nos cabeçalhos de seção (# SEÇÃO ou >> SUBSEÇÃO), exceto no título ######
+        // P0.3: Adicionar botão [📋 Copiar seção] e [⚡ Normal] nos cabeçalhos de seção
         const isDocBanner = /^#{4,6}\s+.*#{4,6}$/.test(trimmedLine);
         if (!isDocBanner && (/^#{1,3}\s+/.test(trimmedLine) || /^>>\s*\S+/.test(trimmedLine))) {
+          if (/^#{1,3}\s+(?:OBJETIVO|EXAME\s+F[ÍI]SICO)/i.test(trimmedLine)) {
+            const normBtn = document.createElement('button');
+            normBtn.type = 'button';
+            normBtn.className = 'pep-sec-normal-btn';
+            normBtn.textContent = '⚡ Normal';
+            normBtn.title = 'Aplicar padrão normal em todos os grupos desta seção';
+            normBtn.onclick = (e) => {
+              e.stopPropagation();
+              applyNormalSectionPreset(lineDiv);
+            };
+            lineDiv.appendChild(normBtn);
+          }
           const secBtn = document.createElement('button');
           secBtn.type = 'button';
           secBtn.className = 'pep-sec-copy-btn';
@@ -9383,8 +9585,12 @@ IDENTIFICAÇÃO &amp; PESO:
         toggleConditionalBlockLines(lineDiv, true);
       });
 
+      let restored = false;
       if (!forceDefault && currentInteractiveRenderedIdx !== null) {
-        restoreInteractiveSessionState(currentInteractiveRenderedIdx);
+        restored = restoreInteractiveSessionState(currentInteractiveRenderedIdx);
+      }
+      if (!forceDefault && !restored) {
+        applySharedIdentityToDOM();
       }
 
       updateInteractiveCounter();
@@ -9407,7 +9613,7 @@ IDENTIFICAÇÃO &amp; PESO:
             }
             out += txt;
           } else if (child.classList) {
-            if (child.classList.contains('pep-sec-copy-btn')) {
+            if (child.classList.contains('pep-sec-copy-btn') || child.classList.contains('pep-sec-normal-btn')) {
               return;
             } else if (child.classList.contains('pep-opt-inline')) {
               justOmittedCondChip = false;
@@ -9432,7 +9638,7 @@ IDENTIFICAÇÃO &amp; PESO:
               justOmittedCondChip = false;
               const actives = Array.from(child.querySelectorAll('.choice-pill.active'));
               if (actives.length > 0) {
-                out += actives.map(a => serializeChoicePill(a)).join(', ');
+                out += formatMultiChoices(actives.map(a => serializeChoicePill(a)));
               }
             } else if (child.classList.contains('pep-date-widget')) {
               justOmittedCondChip = false;

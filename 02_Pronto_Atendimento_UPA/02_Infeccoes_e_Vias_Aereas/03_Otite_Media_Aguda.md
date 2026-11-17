@@ -10,32 +10,34 @@
 ###### ATENDIMENTO UPA: OTITE MÉDIA AGUDA (OMA) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Alérgico a Penicilinas / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor intensa no ouvido (otalgia) [direito / esquerdo / bilateral] há [ ] dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico a Penicilinas / [ ]].
+# QP:
+- Dor intensa no ouvido (otalgia) [direito / esquerdo / bilateral] há [ ] dias.
+
+# HMA:
 - HMA: Refere otalgia contínua e pulsátil iniciada há [ ] dias, precedida por sintomas gripais (coriza e congestão nasal). Relata sensação de ouvido entupido (plenitude auricular), redução da audição e febre de [ ] °C aferida em casa. [Refere saída de secreção purulenta recente com alívio súbito da dor / Sem otorréia].
 - Nega dor, vermelhidão ou inchaço atrás da orelha (região retroauricular/mastoide).
 - Nega protrusão ou desvio do pavilhão auricular para a frente.
 - Nega assimetria facial, desvio de rima labial ou incapacidade de fechar o olho (paralisia facial).
 - Nega vertigem incapacitante, vômitos em jato ou rigidez de nuca.
 
-# OBJETIVO (EXAME FÍSICO OTORRINOLARINGOLÓGICO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
 - Inspeção e Palpação Auricular:
   * Região mastoidea bilateral sem hiperemia, sem calor local, sem edema ou flutuação, e totalmente indolor à palpação/percussão óssea. Sulco retroauricular preservado.
-  * Sinal do Trago (palpação do tragus) e tração do pavilhão auricular: [Indolores (afastada otite externa) / Discreta sensibilidade].
+  * Sinal do Trago (palpação do tragus) e tração do pavilhão auricular: [*Indolores (afastada otite externa) / Discreta sensibilidade].
 - Otoscopia Direcionada:
   * Ouvido Afetado ([Direito / Esquerdo]): Conduto auditivo externo com calibre habitual. Membrana timpânica intensamente hiperemiada, opaca, espessada, com perda dos marcos anatômicos habituais (cabo do martelo e triângulo luminoso abolido).
   * Mobilidade / Abaulamento: [Abaulamento evidente da membrana timpânica com tensão miocelular / Perfuração puntiforme em quadrante anteroinferior com saída de secreção purulenta pulsátil].
   * Ouvido Contralateral: Membrana timpânica translúcida, cinza-perolada, íntegra, reflexo luminoso preservado.
 - Exame Neurológico Sumário: Nervos cranianos íntegros (VII par sem paresias, mímica facial preservada), ausência de nistagmo espontâneo.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Otite Média Aguda supurada / não supurada em ouvido [direito / esquerdo] (CID-10: H65.0 / H66.0).
 2. Ausência de sinais clínicos de mastoidite aguda ou complicações intracranianas.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (ALÍVIO IMEDIATO DA DOR):
 1. Dipirona 1 g EV lento agora + Cetoprofeno 100 mg EV ou IM (se não hipertenso ou nefropata).

@@ -9,14 +9,14 @@
 ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
 TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo].
-Comorbidades: [Hígida / HAS / Pré-eclâmpsia / DMG / Trombofilia / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Trombofilia / [ ]].
+Alergias: [*Nega / [ ]].
 # AP:
-MED: [Nega / Sulfato Ferroso / Metildopa / AAS]
-HAB: [Nega tabagismo, etilismo ou uso de cocaína / Tabagista / Uso de cocaína]
-CX: [Nega / Cesáreas anteriores ([ ]) / Curetagem prévia]
-ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
-HF: [Nega / HAS / Pré-eclâmpsia]
+MED: [*Nega / Sulfato Ferroso / Metildopa / AAS]
+HAB: [*Nega tabagismo, etilismo ou uso de cocaína / Tabagista / Uso de cocaína]
+CX: [*Nega / Cesáreas anteriores ([ ]) / Curetagem prévia]
+ALER: [*Nega alergias medicamentosas / Alérgica a: [ ]]
+HF: [*Nega / HAS / Pré-eclâmpsia]
 
 # CASO: SANGRAMENTO DO 2º/3º TRIMESTRE (DPP VS. PLACENTA PRÉVIA E VASA PRÉVIA)
 
@@ -33,10 +33,10 @@ CHECO EXAMES (COAGULOGRAMA & USG OBSTÉTRICA):
 - Vitalidade Fetal (BCF / Cardiotocografia): BCF: [ ] bpm — [Padrão tranquilizador Categoria I / Bradicardia fetal grave ou desacelerações tardias — Sofrimento Fetal Agudo / BCF ausente — Óbito Fetal].
 - Exame Especular Cuidadoso: Presença de [sangramento ativo pelo orifício externo / coágulos escuros em fundo de saco / líquido amniótico sanguinolento (hemoâmnio)]. Toque vaginal [NÃO REALIZADO até confirmação placentária / realizado após exclusão de Placenta Prévia: colo dilatado para [ ] cm].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Sangramento da segunda metade da gestação compatível com: [Descolamento Prematuro de Placenta — DPP (CID-10: O45) / Placenta Prévia (O44) / Rotura de Vasa Prévia].
 
-# PLANO / CONDUTA
+# CONDUTA:
 1. Pacote de Ressuscitação Hemorrágica Obstétrica: 2 acessos venosos calibrosos (14G/16G), O2 suplementar, Sondagem Vesical de Demora (meta diurese ≥ 0,5 mL/kg/h), reserva imediata de Concentrado de Hemácias, Plasma Fresco e Crioprecipitado.
 2. REGRA DE SEGURANÇA: Jamais realizar toque vaginal antes de descartar Placenta Prévia ao ultrassom.
 3. Conduta no Descolamento Prematuro de Placenta (DPP):

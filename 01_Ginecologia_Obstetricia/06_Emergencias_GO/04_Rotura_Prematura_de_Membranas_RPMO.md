@@ -11,17 +11,20 @@
 ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — ROTURA PREMATURA DE MEMBRANAS (RPMO) ######
 # IDENTIFICAÇÃO & TEMPO DE BOLSA ROTA:
 ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º tri) | Tempo de Bolsa Rota: [ ] horas (início às [HH:MM] de [DD/MM]).
 
-# SUBJETIVO (QD & RASTREIO DE CORIOAMNIONITE):
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - Queixa Principal & HMA: Perda súbita e contínua de líquido claro em grande volume pela vagina há [ ] horas, escorrendo pelas pernas, com odor característico de água sanitária. Movimentação fetal [presente e ativa / reduzida].
 - Triagem Clínica de Corioamnionite e Complicações: [Nega febre, calafrios, dor uterina contínua ou odor vaginal fétido (sem sinais clínicos de corioamnionite) / Apresenta febre e dor uterina (suspeita de corioamnionite)] | Nega sangramento vaginal vivo ou escuro (afastados PP e DPP). Contrações: [Nega contrações rítmicas / Refere cólicas regulares].
 
-# OBJETIVO (EXAME FÍSICO & PROPEDÊUTICA DE BOLSA ROTA):
+# EXAME FÍSICO:
 - Sinais Vitais Maternos: PA: [110x70] mmHg | FC: [82] bpm (< 100 bpm) | FR: [16] irpm | Tax: [36,5] °C (< 37,8 °C — afebril).
-- Abdome Obstétrico: AU: [ ] cm | Tônus uterino fisiológico, útero indolor à palpação fora de contração | DU: [Ausente / [ ] contrações em 10 min] | BCF: [140] bpm (basal 110–160 bpm, sem taquicardia fetal).
+- Abdome Obstétrico: AU: [ ] cm | Tônus uterino fisiológico, útero indolor à palpação fora de contração | DU: [*Ausente / [ ] contrações em 10 min] | BCF: [140] bpm (basal 110–160 bpm, sem taquicardia fetal).
 - Exame Especular Estéril (MANDATÓRIO — Sem lubrificante):
   * Visualização direta de líquido amniótico [claro com grumos / meconial fluido / purulento fétido] exteriorizando-se pelo orifício cervical externo e acumulando em fundo de saco posterior (Manobra de Tarnier / Valsalva positiva).
   * Colo visualmente [fechado e posterior / entreaberto para [ ] cm], sem prolapso de cordão umbilical.
@@ -33,10 +36,10 @@ Alergias: [Nega / [ ]].
   * CTG Basal: [Categoria I — feto reativo com variabilidade moderada 6–25 bpm / Categoria II / Categoria III].
   * Laboratório: Leucócitos: [ ]/mm³ (sem desvio), PCR: [ ] mg/L, EAS/Urocultura normais.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Rotura Prematura de Membranas Ovulares [a termo >= 37s (CID-10: O42.0) / pré-termo < 37s (O42.9)], tempo de latência de [ ]h, [sem critérios de Corioamnionite (Gibbs negativo) / complicada por Corioamnionite Clínica (O41.1)].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> [MODALIDADE A — CONDUTA ATIVA / INTERRUPÇÃO DA GESTAÇÃO (SE IG >= 34–37 SEMANAS OU CORIOAMNIONITE / SFA EM QUALQUER IG)]:
 1. Internação em Centro Obstétrico para resolução da gestação ([Indução do trabalho de parto com Ocitocina se colo favorável (Bishop >= 6) ou Misoprostol 25 mcg vaginal se colo desfavorável / Cesariana se apresentação anômala, iteratividade ou SFA]).
 2. Profilaxia Intraparto para EGB (Se IG < 37s, bolsa rota >= 18h, Tax >= 38°C ou Swab EGB positivo):

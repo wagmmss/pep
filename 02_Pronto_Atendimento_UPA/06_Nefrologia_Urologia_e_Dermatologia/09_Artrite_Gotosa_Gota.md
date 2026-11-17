@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA: CRISE AGUDA DE GOTA (PODAGRA) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: Masculino[? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor insuportável, vermelhidão e inchaço no "dedão do pé" / joelho iniciados de madrugada há [ ] horas.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
+# QP:
+- Dor insuportável, vermelhidão e inchaço no "dedão do pé" / joelho iniciados de madrugada há [ ] horas.
+
+# HMA:
 - HMA: Relata início hiperagudo de dor articular excruciante (intensidade [10/10]), que acordou o paciente durante a noite. Descreve dor em queimação e pontada tão intensa que até o contato suave do lençol ou meia causa sofrimento intolerável (alodinia mecânica extrema). Acompanhada de calor local, edema volumoso e vermelhidão brilhante.
 - ARTICULAÇÃO ACOMETIDA:
   * [ ] Primeira articulação metatarsofalângica do hálux (Podagra típica - sítio clássico em > 60% dos casos).
@@ -31,12 +33,12 @@ Alergias: [Nega / [ ]].
 - Histórico: [Crises prévias idênticas de gota com hiperuricemia / Primeiro episódio da vida].
 - Alergias & Comorbidades: [Nega / DRC / HAS / DM2 / Alérgico a AINEs / [ ]].
 
-# OBJETIVO (EXAME FÍSICO ARTICULAR DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril ou febrícula álgica).
 - Ectoscopia Articular:
   * Articulação acometida ([1ª metatarsofalângica direita/esquerda / tornozelo]): Presença de eritema violáceo vivo e brilhante, calor cutâneo intenso à palpação, tumefação e edema periarticular tenso.
   * Palpação: Sensibilidade extrema ao toque superficial; impotência funcional absoluta (incapaz de apoiar o pé no chão ou deambular).
-  * Tofos Gotosos Crônicos: [Ausentes / Presença de depósitos nodulares esbranquiçados endurecidos subcutâneos em hélice da orelha / cotovelos (Gota tofácea crônica)].
+  * Tofos Gotosos Crônicos: [*Ausentes / Presença de depósitos nodulares esbranquiçados endurecidos subcutâneos em hélice da orelha / cotovelos (Gota tofácea crônica)].
   * Demais articulações periféricas: Livres de sinovite ativa no momento (padrão de monoartrite aguda).
 
 # EXAMES LABORATORIAIS NA UPA:
@@ -44,11 +46,11 @@ Alergias: [Nega / [ ]].
   *(Atenção: O nível de ácido úrico pode estar transitoriamente NORMAL em até 30% a 40% dos pacientes durante a crise aguda, pois os cristais se precipitaram na articulação; valor normal NÃO descarta o diagnóstico de gota!).*
 - Provas Inflamatórias: VHS e PCR moderadamente elevados; Leucograma sem leucocitose exuberante.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Artrite Gotosa Aguda / Podagra por deposição de cristais de monourato de sódio (CID-10: M10.0 / M10.9).
 2. Ausência de critérios clínicos para artrite séptica bacteriana no momento.
 
-# PLANO / CONDUTA (TRATAMENTO ESCALONADO DA CRISE AGUDA):
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO - ALÍVIO RÁPIDO):
 1. Anti-inflamatório Não Esteroidal (AINE - Primeira Linha se rim normal):

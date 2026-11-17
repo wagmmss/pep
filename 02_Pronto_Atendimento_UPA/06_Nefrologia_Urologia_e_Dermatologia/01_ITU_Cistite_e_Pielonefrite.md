@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA: INFECÇÃO DO TRATO URINÁRIO (ITU) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Feminino / Masculino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Penicilinas / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Ardor para urinar (disúria), aumento da frequência e dor no baixo ventre há [ ] dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Penicilinas / [ ]].
+# QP:
+- Ardor para urinar (disúria), aumento da frequência e dor no baixo ventre há [ ] dias.
+
+# HMA:
 - HMA: Relata quadro iniciado há cerca de [ ] dias de dor e ardor ao urinar, polaciúria (micções frequentes em pequenos volumes), sensação de urgência miccional, tenesmo vesical e desconforto suprapúbico. Refere urina turva com odor alterado [e hematúria terminal leve / sem sangramento visível].
 - DIFERENCIAÇÃO CLÍNICA & PESQUISA DE SINAIS DE PIELONEFRITE:
   * [ ] CISTITE AGUDA NÃO COMPLICADA: Sintomas puramente miccionais baixos; nega febre, calafrios, dor lombar ou vômitos.
@@ -24,9 +26,9 @@ Alergias: [Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Peni
 - Nega cólica nefrética irradiando para a virilha sem febre (afastada litíase pura).
 - Fatores de ITU Complicada: [Mulher jovem hígida / Gestante / Diabética / Idosa / Sexo masculino / Uso recente de cateter vesical de demora / Litíase conhecida].
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO DA UPA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
-- Ectoscopia: [Bom estado geral, corada, afebril / Regular estado geral, prostrada, sudoreica e febril].
+- Ectoscopia: [*Bom estado geral, corada, afebril / Regular estado geral, prostrada, sudoreica e febril].
 - Exame Abdominal: Abdome plano, ruídos hidroaéreos normais, flácido, com sensibilidade e dor à palpação profunda em região suprapúbica (hipogástrio), sem defesa muscular ou descompressão dolorosa (Blumberg negativo).
 - Manobra de Punhopercussão Lombar (Sinal de Giordano):
   * Sinal de Giordano [NEGATIVO BILATERALMENTE (Sugere infecção confinada à bexiga - Cistite) / POSITIVO À DIREITA/ESQUERDA com dor intensa e sobressalto do paciente (Indicativo de Pielonefrite Aguda)].
@@ -36,10 +38,10 @@ Alergias: [Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Peni
 - Urina Tipo 1 (EAS / Fita Reativa): Leucocitúria maciça (piúria com leucócitos > 100.000/mL ou campo cheio), Esterase leucocitária positiva, Nitrito [positivo / negativo], hematúria microscópica [ ]/campo.
 - [Se suspeita de Pielonefrite]: Coletada Urocultura com Antibiograma prévia ao antibiótico + Hemograma com leucocitose de [ ] /mm³ + PCR: [ ] mg/L.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. [Cistite Aguda não complicada em mulher / Pielonefrite Aguda não complicada / ITU complicada em homem/gestante] (CID-10: N30.0 / N10 / N39.0).
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [MODALIDADE A]: CONDUTA NA CISTITE AGUDA NÃO COMPLICADA (DOMICILIAR):
 1. Antibioticoterapia de 1ª Linha (Evitar quinolonas em cistites simples pelo perfil de resistência e efeitos adversos):

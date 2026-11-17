@@ -11,7 +11,7 @@
 ###### NOTA CIRÚRGICA: REVISÃO DE CANAL DE PARTO E PERINEORRAFIA ######
 # IDENTIFICAÇÃO & CLASSIFICAÇÃO DA LESÃO:
 ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | Data/Hora: [DD/MM/AAAA] às [HH:MM].
-Alergias: [Nega / [ ]].
+Alergias: [*Nega / [ ]].
 - Indicação & Grau da Lesão: [Laceração perineal espontânea de 2º grau / Episiotomia médio-lateral direita seletiva / Laceração de 1º grau sangrante / Laceração de 3º grau com reparo esfincteriano (OASIS)].
 - Extensão Anatômica Verificada: Comprometimento de mucosa vaginal, fúrcula e musculatura do corpo perineal (transverso superficial e bulbocavernoso). Toque retal pré-sutura confirmando integridade do complexo do esfíncter anal externo/interno e da mucosa anorretal (afastada lesão de 3º/4º grau).
 
@@ -30,10 +30,10 @@ Alergias: [Nega / [ ]].
    - Toque vaginal: Vagina pérvia, linha de sutura hemostática e ausência de hematomas de parede.
    - Toque retal pós-sutura (com luva limpa): Mucosa retal livre e deslizante (ausência de pontos transfixantes acidentais na luz retal) e tônus esfincteriano preservado.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Perineorrafia pós-parto por [laceração perineal de 2º grau (CID-10: O70.1) / episiotomia (O75.9)] sem intercorrências.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> CONDUTA HOSPITALAR & CUIDADOS IMEDIATOS:
 1. Compressa de gelo protegida na região perineal por 20 minutos a cada 4–6h nas primeiras 24 horas (redução de edema e dor).
 2. Vigilância de formação de hematoma vulvoperineal (atentar se dor intensa em puxo retal).

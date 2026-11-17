@@ -10,23 +10,25 @@
 ###### ATENDIMENTO PEDIÁTRICO — FEBRE SEM SINAIS LOCALIZATÓRIOS (FSSL) NO LACTENTE ######
 # IDENTIFICAÇÃO, PESO & FAIXA ETÁRIA DE RISCO:
 ID: [Nome], [ ] [dias / meses] (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 - ESTRATIFICAÇÃO ETÁRIA CRÍTICA:
   * [GRUPO 1 — RECÉM-NASCIDO (0 A 28 DIAS DE VIDA)] -> Alto risco de Infecção Bacteriana Grave (10–15%): Internação hospitalar, triagem séptica completa com líquor e ATB venoso obrigatórios.
   * [GRUPO 2 — LACTENTE JOVEM (29 A 90 DIAS / 1 A 3 MESES)] -> Estratificação por Critérios de Rochester / Step-by-Step + EAS/Urocultura por sonda e marcadores inflamatórios obrigatórios.
   * [GRUPO 3 — LACTENTE E CRIANÇA DE 3 A 36 MESES] -> Manejo guiado pelo estado geral (TEP pós-defervescência), status vacinal (Pneumo-10/Meningo/Hib) e rastreio de ITU oculta.
 
-# SUBJETIVO (CARACTERIZAÇÃO DA FEBRE & INTERROGATÓRIO DE FOCOS OCULTOS):
-- Queixa Principal (QP): Febre aferida de até [ ] °C há [ ] [horas / dias], sem sintomas localizatórios aparentes.
-- História da Moléstia Atual (HMA): Responsável refere picos febris de até [ ] °C (aferidos com termômetro axilar) iniciados há [ ] horas/dias, a cada [ ] horas.
+# QP:
+- Febre aferida de até [ ] °C há [ ] [horas / dias], sem sintomas localizatórios aparentes.
+
+# HMA:
+- Responsável refere picos febris de até [ ] °C (aferidos com termômetro axilar) iniciados há [ ] horas/dias, a cada [ ] horas.
 - Comportamento no Intervalo Afebril (Pós-Antitérmico): [Criança reanima completamente, sorri, interage, mantém sucção vigorosa e brinca quando a febre cede / Permanece hipoativa, irritada ou gemente mesmo afebril].
 - Interrogatório Sistemático Negativo de Focos: Nega tosse, coriza, obstrução nasal, estridor, vômitos, diarreia, choro à micção ou urina fétida, lesões cutâneas ou recusa em movimentar algum membro (pseudoparalisia por artrite séptica/osteomielite).
 - Antecedentes & Vacinação: Nascido a termo ([ ] semanas) sem intercorrências neonatais; Vacinação para Pneumococo e Haemophilus B: [Completa para a idade (≥ 2 doses se > 4 meses) / Incompleta ou < 2 meses].
 
-# OBJETIVO (TRIÂNGULO PEDIÁTRICO, EXAME DA CRIANÇA DESPIDA & PROPEDÊUTICA):
+# EXAME FÍSICO:
 - Sinais Vitais (Após antitérmico): FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax atual: [ ] °C | TEC < 2s.
-- Triângulo de Avaliação Pediátrica (TEP): [Normal nos 3 lados — Aparência, Respiração e Circulação normais / Alterado — aspecto toxêmico ou letárgico].
+- Triângulo de Avaliação Pediátrica (TEP): [*Normal nos 3 lados — Aparência, Respiração e Circulação normais / Alterado — aspecto toxêmico ou letárgico].
 - Exame Físico Minucioso da Criança Totalmente Despida (Busca de Foco Oculto):
   * Pele (Vitroscopia/Digitopressão): Ausência absoluta de petéquias, equimoses ou púrpuras que não desaparecem à digitopressão (afastado rash meningocócico).
   * Fontanela Anterior & Sinais Meníngeos: Fontanela plana e normotensa; ausência de rigidez de nuca, irritabilidade paradoxal no colo (sinal de irritação meníngea do lactente) ou sinais de Kernig/Brudzinski.
@@ -38,10 +40,10 @@ Alergias: [Nega / [ ]].
   * Hemograma, PCR e Hemocultura: [Não solicitados / Leuco: [ ] /mm³ (Neutrófilos absolutos: [ ]) | PCR: [ ] mg/L | Procalcitonina: [ ] ng/mL].
   * Líquor (Punção Lombar): [Não indicada / Realizada (< 28 dias ou sinais de alto risco): [ ]].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Febre Sem Sinais Localizatórios (FSSL) em [Recém-nascido < 28d / Lactente 29–90d de Baixo Risco / Lactente 3–36m vacinado em bom estado geral] (CID-10: R50.9).
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [CENÁRIO 1 — RECÉM-NASCIDO < 28 DIAS]: INTERNAÇÃO & TRIAGEM SÉPTICA COMPLETA OBRIGATÓRIA:
 1. Internação hospitalar imediata (mesmo que o RN pareça em ótimo estado geral e com exames iniciais normais).

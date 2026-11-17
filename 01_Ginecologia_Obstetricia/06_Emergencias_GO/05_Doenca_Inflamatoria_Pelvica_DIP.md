@@ -11,17 +11,20 @@
 ###### ATENDIMENTO DE EMERGÊNCIA GINECOLÓGICA — DOENÇA INFLAMATÓRIA PÉLVICA (DIP) ######
 # IDENTIFICAÇÃO & FATORES DE RISCO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 - Contexto: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST].
 
-# SUBJETIVO (QD & HMA):
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria].
 - Nega atraso menstrual (β-hCG negativo — afastada ectópica). [Nega vômitos incoercíveis, peritonismo difuso ou instabilidade hemodinâmica (elegível para Monif I ambulatorial) / Apresenta febre alta, vômitos e peritonismo (indicada internação — Monif II/III)].
 
-# OBJETIVO (EXAME FÍSICO GINECOLÓGICO & EXAMES):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [115x70] mmHg | FC: [88] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [37,8] °C.
-- Exame Abdominal: Abdome plano, RHA+, dor à palpação profunda de hipogástrio e fossas ilíacas bilateralmente, [sem sinais de peritonite difusa (DB negativo) / com descompressão brusca dolorosa localizada em pelve]. Sinal de Murphy/dor em HCD (Síndrome de Fitz-Hugh-Curtis): [Ausente / Presente].
+- Exame Abdominal: Abdome plano, RHA+, dor à palpação profunda de hipogástrio e fossas ilíacas bilateralmente, [sem sinais de peritonite difusa (DB negativo) / com descompressão brusca dolorosa localizada em pelve]. Sinal de Murphy/dor em HCD (Síndrome de Fitz-Hugh-Curtis): [*Ausente / Presente].
 - Exame Especular: Paredes vaginais hiperemiadas, secreção mucopurulenta amarelada fluindo pelo orifício cervical externo (cervicite mucopurulenta) e colo friável ao toque do swab.
 - Toque Vaginal Bimanual (3 Critérios Maiores Presentes):
   * 1. Dor intensa à mobilização do colo uterino (Sinal de Chandelier / Frenkel positivo);
@@ -32,10 +35,10 @@ Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
   * Laboratório: Leucócitos: [ ]/mm³, PCR: [ ] mg/L, EAS: [ ].
   * USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas (Monif I/II) / Imagem complexa heterogênea retrouterina/anexial de [ ] cm compatível com Abscesso Tubo-Ovariano (Monif III)].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Doença Inflamatória Pélvica Aguda (CID-10: N73.0 / N73.9) — Estágio [Monif I (Leve — Ambulatorial) / Monif II (Moderada com peritonismo — Hospitalar) / Monif III (Abscesso Tubo-Ovariano — Hospitalar) / Monif IV (Abscesso Roto/Sepse — Cirúrgico)].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> [MODALIDADE 1 — CONDUTA AMBULATORIAL (MONIF I — APLICAR CEFTRIAXONA IM AGORA NA UNIDADE)]:
 1. Administrar AGORA na unidade: Ceftriaxona 500 mg IM profunda em dose única + Dipirona 1 g EV/VO para alívio álgico.
 2. Prescrever Doxiciclina + Metronidazol por 14 dias para casa + convocação e tratamento empírico obrigatório do(a) parceiro(a) sexual.

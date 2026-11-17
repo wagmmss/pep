@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: RINOSSINUSITE AGUDA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Alérgico a Penicilinas / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor e sensação de pressão na face com secreção nasal amarelada há [ ] dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico a Penicilinas / [ ]].
+# QP:
+- Dor e sensação de pressão na face com secreção nasal amarelada há [ ] dias.
+
+# HMA:
 - HMA: Refere quadro iniciado há cerca de [ ] dias de congestão nasal bilateral e secreção espessa amarelo-esverdeada, associada a dor e peso em região [maxilar / frontal / periorbitária] que piora intensamente ao abaixar a cabeça. Relata febre baixa, tosse que piora à noite (gotejamento pós-nasal) e dor em dentes superiores.
 - CRITÉRIOS DE RINOSSINUSITE BACTERIANA (PREENCHIMENTO DE CRITÉRIO TEMPORAL):
   - Sintomas persistentes por mais de 10 dias sem sinal de melhora clínica.
@@ -24,7 +26,7 @@ Alergias: [Nega / Alérgico a Penicilinas / [ ]].
 - Nega visão dupla (diplopia) ou perda de visão.
 - Nega sonolência excessiva, convulsões, rigidez de nuca ou cefaleia incapacitante em trovoada.
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
 - Ectoscopia Geral: Bom estado geral, corado, hidratado, afebril, eupnéico.
 - Palpação dos Seios da Face:
@@ -38,11 +40,11 @@ Alergias: [Nega / Alérgico a Penicilinas / [ ]].
   * Mucosa nasal edemaciada, com saída de secreção mucopurulenta espessa no meato médio.
   * Oroscopia evidenciando secreção purulenta escorrendo pela parede posterior da orofaringe ("gotejamento posterior" / post-nasal drip). Ausência de placas amigdalianas.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Rinossinusite Aguda Bacteriana (CID-10: J01.9).
 2. Ausência de sinais de celulite orbitária ou trombose de seio cavernoso.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO):
 1. Dipirona 1 g (2 mL) + AD 8 mL EV lento agora (ou Paracetamol 750 mg VO).

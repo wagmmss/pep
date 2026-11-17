@@ -8,15 +8,15 @@ EVOLUÇÃO DIÁRIA DIRECIONADA — CONTROLE GLICÊMICO HOSPITALAR (DIRETRIZ SBD 
 # IDENTIFICAÇÃO & META GLICÊMICA:
 ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], Peso: [70] kg, TFG estimada (CKD-EPI): [ ] mL/min/1,73m².
 Comorbidades: [DM2 / [ ]].
-Alergias: [Nega / [ ]].
+Alergias: [*Nega / [ ]].
 - Diagnóstico Glicêmico: [DM2 prévio em uso domiciliar de antidiabéticos orais / DM2 insulinodependente prévio / Hiperglicemia de estresse hospitalar / Hiperglicemia induzida por Corticoide (Prednisona/Dexametasona/Metilprednisolona)].
 - Via de Alimentação Atual: [Dieta oral regular para diabetes (3 refeições) / Dieta enteral contínua ou intermitente por SNE / Em jejum ou dieta zero para procedimento].
 - Mapa Glicêmico das Últimas 24 Horas (HGT):
   * Jejum (06h): [ ] mg/dL | Pré-Almoço (11h): [ ] mg/dL | Pré-Jantar (17h): [ ] mg/dL | 22h: [ ] mg/dL.
-  * Episódios de Hipoglicemia (< 70 mg/dL): [Ausentes nas últimas 24h / Presente às [ ]h com HGT de [ ] mg/dL — exige redução de 20% da dose total de insulina hoje!].
+  * Episódios de Hipoglicemia (< 70 mg/dL): [*Ausentes nas últimas 24h / Presente às [ ]h com HGT de [ ] mg/dL — exige redução de 20% da dose total de insulina hoje!].
   * Meta Glicêmica Hospitalar: **140 a 180 mg/dL** (aceitável 100 a 180 mg/dL em enfermaria clínica/cirúrgica estável).
 
-# PLANO / CONDUTA
+# CONDUTA:
 1. Suspensão de Antidiabéticos Orais na Internação: Suspender Metformina (risco de acidose lática na sepse, hipóxia, IRA ou uso de contraste iodado), Sulfoniureias (alto risco de hipoglicemia prolongada) e Inibidores de SGLT2 (risco de cetoacidose euglicêmica no perioperatório/sepse).
 2. Cálculo da Dose Diária Total (DDT) de Insulina Subcutânea (Proibido manter apenas "Sliding Scale" / insulina de correção isolada se HGT persistente > 180 mg/dL!):
    - 0,2 a 0,3 UI/kg/dia: Idosos (> 70 anos), TFG < 45 mL/min ou baixo peso / virgens de insulina.

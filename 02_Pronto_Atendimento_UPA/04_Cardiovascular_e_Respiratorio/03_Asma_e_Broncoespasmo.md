@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: CRISE DE ASMA AGUDA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Falta de ar, chiado no peito e tosse seca há [ ] horas/dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Falta de ar, chiado no peito e tosse seca há [ ] horas/dias.
+
+# HMA:
 - HMA: Paciente com diagnóstico conhecido de asma brônquica [ou primeiro episódio de sibilância] relata piora progressiva da dispneia há cerca de [ ] horas, acompanhada de chiado audível sem estetoscópio, opressão torácica e tosse seca paroxística. Relata fator desencadeante: [sintomas gripais recentes / exposição a alérgenos / poeira / mudança de clima / abandono da medicação de manutenção]. Fez uso prévio de bombinha em casa ([ ] jatos) com alívio transitório e recidiva rápida.
 - ESTRATIFICAÇÃO DE GRAVIDADE DA CRISE (GINA):
   * LEVE A MODERADA: Fala em frases completas, prefere ficar sentado, FR aumentada, FC 100-120 bpm, SpO2 90-95% em ar ambiente.
@@ -21,18 +23,18 @@ Alergias: [Nega / Sim: [ ]].
   * RISCO IMINENTE DE PARADA (ASMA QUASE FATAL): Sonolência, confusão mental, respiração paradoxal toracoabdominal, bradicardia e TÓRAX SILENCIOSO (ausência de sibilos por falta de fluxo de ar).
 - Histórico de Asma de Alto Risco: [Nega / Histórico prévio de intubação orotraqueal por asma / Internação em UTI no último ano / Múltiplas idas à UPA no último mês].
 
-# OBJETIVO (EXAME FÍSICO RESPIRATÓRIO NA ADMISSÃO):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
-- Ectoscopia: [Lúcido, cooperativo / Agitado com dispneia moderada a grave], corado, hidratado, sudoreico, uso de musculatura acessória da respiração (tiragem de fúrcula esternal e intercostal).
+- Ectoscopia: [*Lúcido, cooperativo / Agitado com dispneia moderada a grave], corado, hidratado, sudoreico, uso de musculatura acessória da respiração (tiragem de fúrcula esternal e intercostal).
 - Aparelho Respiratório:
   * Inspeção: Padrão respiratório taquidispneico, tempo expiratório acentuadamente prolongado.
   * Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente com tempo expiratório prolongado e presença de sibilos polifônicos difusos bilaterais [ou redução difusa grave do MV - alerta de tórax silencioso]. Ausência de crepitações focais.
 - Aparelho Cardiovascular: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas sem sopros; ausência de pulso paradoxal significativo.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Crise de Asma Aguda / Exacerbação de Broncoespasmo de intensidade [Leve a Moderada / Grave / Risco Iminente de Parada] (CID-10: J45.9).
 
-# PLANO / CONDUTA IMEDIATA NA 1ª HORA (SALA DE MEDICAÇÃO / SALA VERMELHA):
+# CONDUTA:
 
 1. OXIGENOTERAPIA CONTROLADA:
    - Administrar O2 sob cateter nasal (1 a 3 L/min) com alvo estrito de manter SpO2 entre 93% e 95% (evitar hiperóxia desnecessária).

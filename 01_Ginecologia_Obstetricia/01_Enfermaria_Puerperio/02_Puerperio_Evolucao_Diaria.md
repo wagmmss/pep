@@ -11,20 +11,20 @@
 ###### EVOLUÇÃO DIÁRIA DE ENFERMARIA — PUERPÉRIO (ALOJAMENTO CONJUNTO) ######
 # IDENTIFICAÇÃO & PARTO:
 ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]].
-TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: | TS RN: [ ] (Coombs Direto: [Negativo / Positivo])].
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega / [ ]].
+TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: | TS RN: [ ] (Coombs Direto: [*Negativo / Positivo])].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 Sorologias: [Não reagentes (HIV, VDRL, HBsAg, Toxo) / [ ]].
 Em [1º / 2º / 3º] dia de puerpério de [Parto Normal sem laceração / Parto Normal com rafia de laceração de 2º grau / Parto Normal com episiotomia / Cesárea por indicação de [ ]] realizado em [DD/MM às HH:MM] com IG de [ ]s[ ]d[? G/P/A :: , G[ ] P[ ] A[ ]].
 
-# SUBJETIVO (EVOLUÇÃO NAS 24H & AMAMENTAÇÃO):
+# EVOLUÇÃO (24H):
 Encontro puérpera no leito com RN em alojamento conjunto.
 - Evolução Geral & Dor: Passou bem nas últimas 24h, deambulando sem tontura ortostática e com boa aceitação da dieta. Dor [ausente / leve e controlada com analgesia / discreta em ferida operatória / leve em região perineal].
 - Fisiológicas & Loquiação: Diurese espontânea clara e em bom volume (sem disúria); eliminação de flatos presente, evacuação [presente sem esforço / ausente até o momento]. Lóquios [rubros fisiológicos em pequena-moderada quantidade, sem odor fétido ou coágulos / aumentados].
 - Amamentação: Aleitamento materno exclusivo em livre demanda, [boa pega e posicionamento observados (boca bem aberta, lábio inferior evertido, queixo tocando a mama e deglutição audível), sem dor mamilar / dificuldade de pega orientada à beira-leito].
 - Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, lipotímia ou dor/empastamento em panturrilhas.
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [110x70] mmHg | FC: [78] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C.
 - Ectoscopia: BEG, lúcida, corada, hidratada, anictérica, acianótica, afebril e eupneica.
 - Mamas: [Flácidas / Túrgidas fisiológicas], indolores, sem áreas de hiperemia, calor ou ingurgitamento patológico. Papilas [íntegras sem fissuras / com fissura superficial em mama]. Colostro presente à expressão bilateral.
@@ -32,12 +32,12 @@ Encontro puérpera no leito com RN em alojamento conjunto.
 - Sítio Cirúrgico / Períneo: [Períneo íntegro sem edema ou hematoma / Rafia perineal com bordas coaptadas, pontos íntegros, limpa e sem hematoma / Ferida operatória de Pfannenstiel limpa, seca, bordas coaptadas, sem flogose ou hematoma]. Lóquios rubros fisiológicos sem odor.
 - Extremidades: Aquecidas, TEC < 2s, pulsos distais simétricos, [sem edema / edema maleolar leve +/4+ simétrico], panturrilhas livres e indolores.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. [1º / 2º / 3º] dia de puerpério de [Parto Normal / Cesariana] com evolução favorável (CID-10: Z39.0).
 2. Estratificação de TEV: [Baixo risco (deambulação precoce) / Alto risco (indicada Enoxaparina profilática)].
 3. Status para Alta: [Condições de alta hospitalar / Manter internada para vigilância clínica e completar 48h].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> CONDUTA HOSPITALAR DIÁRIA:
 1. Dieta geral laxativa rica em fibras e hidratação oral vigorosa; estímulo à deambulação precoce e aleitamento materno em livre demanda.
 2. Analgesia hospitalar: Dipirona 1 g VO/EV de 6/6h se dor + [Cetoprofeno 100 mg EV/VO 12/12h se dor (evitar AINE se hipertensa/PE) / Paracetamol 750 mg VO 6/6h se dor].

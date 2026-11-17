@@ -11,16 +11,19 @@
 ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — INFECÇÕES PUERPERAIS (MASTITE vs ENDOMETRITE) ######
 # IDENTIFICAÇÃO & CONTEXTO PUERPERAL:
 ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], no [ ]º dia de puerpério de [Parto Normal / Cesariana].
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 - Quadro Atual: [MODALIDADE A — MASTITE PUERPERAL AGUDA / MODALIDADE B — ENDOMETRITE PUERPERAL].
 
-# SUBJETIVO (QD & HMA):
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - Queixa Principal & HMA:
   * [SE MASTITE]: Dor mamária localizada intensa, vermelhidão em cunha e calafrios/febre (Tax [38,5] °C) há [ ] dias, associada a fissura mamilar e ingurgitamento prévio em mama [direita / esquerda]. Nega dor hipogástrica ou lóquios fétidos.
   * [SE ENDOMETRITE]: Febre alta (Tax >= 38,0 °C), calafrios, mal-estar, dor hipogástrica progressiva e eliminação de lóquios escuros/purulentos com odor fétido intenso há [ ] dias (Fatores de risco: [cesariana / bolsa rota prolongada / múltiplos toques / anemia]). Nega queixas mamárias ou respiratórias.
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO & EXAMES):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [110x70] mmHg | FC: [98] bpm | FR: [18] irpm | SpO2: [99]% AA | Tax: [38,4] °C.
 - Exame das Mamas:
   * [SE MASTITE]: Mama [direita / esquerda] com placa eritematosa em cunha, quente, edemaciada e dolorosa no quadrante [superior externo / inferior], fissura mamilar presente, ausência de ponto de flutuação à palpação (afastado abscesso mamário franco). Linfonodo axilar homolateral palpável.
@@ -31,10 +34,10 @@ Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]].
 - Exames Complementares (se realizados):
   * [Ambulatorial sem necessidade de exames / Hemograma: Leucócitos [ ]/mm³ com [ ]% bastões, PCR: [ ] mg/L / USG Mamária: sem coleção líquida / USG Transvaginal: cavidade uterina [vazia sem restos / com conteúdo heterogêneo sugerindo restos placentários]].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. [Mastite Lactacional Aguda não complicada em mama [direita / esquerda] (CID-10: O91.2) / Endometrite Puerperal Aguda pós-[cesárea/parto] (CID-10: O85)].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> [MODALIDADE A — CONDUTA NA MASTITE PUERPERAL AGUDA (AMBULATORIAL)]:
 1. MANTER O ALEITAMENTO MATERNO (Pilar #1 do tratamento): Orientada a NÃO suspender a amamentação na mama afetada (o esvaziamento frequente previne abscesso e não faz mal ao RN a termo). Iniciar mamada pela mama sadia e ordenhar manualmente o leite residual da mama afetada após as mamadas.
 2. Prescritos Cefalexina 500 mg VO 6/6h por 10 a 14 dias (cobertura antiestafilocócica para *S. aureus*) + Ibuprofeno 600 mg VO 8/8h + Dipirona 1 g VO 6/6h SOS + compressas frias após as mamadas.

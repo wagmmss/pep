@@ -13,7 +13,7 @@
 - Prontuário / Registro: [ ] | Setor / Leito: [ ]
 - Data e Horário Exato da Constatação do Óbito: [DD/MM/AAAA] às [HH:MM]
 
-# OBJETIVO (EXAME FÍSICO CONFIRMATÓRIO DE MORTE CLÍNICA):
+# EXAME FÍSICO:
 Chamado(a) ao leito às [HH:MM] pela equipe de enfermagem por parada cardiorrespiratória / ausência de sinais vitais. Ao exame físico dirigido à beira do leito, constato:
 1. Nível de Consciência & Estímulo Central: Paciente irresponsivo(a) ao chamado verbal e ao estímulo álgico central (Escala de Coma de Glasgow = 3), com atonia muscular generalizada.
 2. Reflexos de Tronco Encefálico: Pupilas em midríase paralítica bilateral, fixas e arreativas ao estímulo fotomotor direto e consensual; reflexo corneopalpebral abolido bilateralmente.
@@ -27,7 +27,7 @@ Chamado(a) ao leito às [HH:MM] pela equipe de enfermagem por parada cardiorresp
   * [Morte Violenta ou Suspeita de Causa Externa (Acidente, queda da própria altura com fratura, trauma, intoxicação exógena, agressão ou suicídio) — NÃO emitida DO no hospital; acionado Instituto Médico Legal (IML)].
   * [Morte de Causa Natural de Etiologia Indeterminada sem diagnóstico definido — Corpo encaminhado ao Serviço de Verificação de Óbito (SVO)].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CADEIA CAUSAL REGISTRADA NA DECLARAÇÃO DE ÓBITO (CAMPO 40 — PARTE I E II):
 - PARTE I (Cadeia Causal Direta — da causa terminal na linha A até a causa básica na última linha):

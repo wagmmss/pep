@@ -11,8 +11,8 @@
 ###### NOTA DE PROCEDIMENTO: RETIRADA / TROCA DE IMPLANTE SUBDÉRMICO (IMPLANON) ######
 # IDENTIFICAÇÃO & INDICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ].
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - Indicação: [Troca por término da validade de 3 anos / Retirada eletiva por desejo reprodutivo / Retirada por sangramento desfavorável].
 - Consentimento: TCLE lido e assinado. [Novo lote inserido: [ ] — Validade até: [DD/MM/AAAA] / Apenas retirada eletiva].
 
@@ -29,10 +29,10 @@ Alergias: [Nega / [ ]].
    - Palpação confirmatória do novo bastonete de 4 cm realizada pelo médico e pela paciente.
 5. Síntese & Curativo: Hemostasia compressiva, fechamento com [fita de aproximação estéril *Steri-Strip* / 1 ponto simples de Mononylon 4-0], gaze estéril e faixa compressiva de crepe. Procedimento sem intercorrências.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. [Remoção e reinserção imediata de implante subdérmico (CID-10: Z30.5) / Remoção eletiva de implante subdérmico (Z30.5)].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> CONDUTA & ORIENTAÇÕES PÓS-PROCEDIMENTO:
 1. [Entregue novo Cartão da Usuária com validade de 3 anos (efeito contraceptivo imediato mantido sem necessidade de pausa) / Se apenas retirada: orientada sobre retorno imediato da fertilidade ovulatória e prescrito Ácido Fólico pré-concepcional ou novo método contraceptivo].
 

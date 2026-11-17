@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: CONJUNTIVITE AGUDA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega alergias / Alérgico a colírios: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Olho vermelho, sensação de areia e secreção há [ ] dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega alergias / Alérgico a colírios: [ ]].
+# QP:
+- Olho vermelho, sensação de areia e secreção há [ ] dias.
+
+# HMA:
 - HMA: Relata hiperemia conjuntival iniciada há [ ] dias em olho [direito / esquerdo / bilateral], associada a sensação de corpo estranho ("areia nos olhos"), prurido, lacrimejamento e secreção de aspecto [aquoso claro / mucopurulento amarelado com pálpebras coladas ao acordar]. Relata contato recente com familiar/colega com sintomas semelhantes.
 - Nega dor ocular profunda, contínua e latejante no bulbo ocular.
 - Nega perda ou redução súbita da acuidade visual / visão borrada.
@@ -21,21 +23,21 @@ Alergias: [Nega alergias / Alérgico a colírios: [ ]].
 - Nega uso de lentes de contato (afasta ceratite por Pseudomonas).
 - Nega trauma ocular mecânico, químico ou respingo de substâncias cáusticas.
 
-# OBJETIVO (EXAME FÍSICO OFTALMOLÓGICO BÁSICO):
+# EXAME FÍSICO:
 - Ectoscopia Ocular Externa:
   * Hiperemia conjuntival bulbar e tarsal difusa em olho [direito / esquerdo / bilateral], com injeção conjuntival periférica (ausência de injeção ciliar periquerática violácea profunda).
   * Secreção: [Serosa/aquosa abundante / Mucopurulenta espessa amarelada aderida aos cílios].
   * Córnea: Transparente, brilhante, superfície lisa sem opacidades grosseiras, leucomas ou ulcerações visíveis sob iluminação direta.
-  * Pálpebras: [Sem alterações / Edema palpebral leve sem quemose exuberante].
+  * Pálpebras: [*Sem alterações / Edema palpebral leve sem quemose exuberante].
   * Pupilas: Isocóricas, redondas, fotorreagentes ao reflexo fotomotor direto e consensual, sem deformidades pupilares ou midríase paralítica fixa.
 - Palpação Linfonodal: Presença de linfonodomegalia pré-auricular ipsilateral palpável e discretamente dolorosa [presente (sugestivo de etiologia viral por Adenovírus) / ausente].
 - Acuidade Visual Grosseira: Preservada bilateralmente (paciente lê linhas de texto e conta dedos a 5 metros sem alterações).
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Conjuntivite Aguda de provável etiologia [VIRAL (Adenovírus) / BACTERIANA / ALÉRGICA] (CID-10: H10.3 / H10.0 / H10.1).
 2. Ausência de sinais de ceratite infecciosa, úlcera de córnea ou glaucoma agudo.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [MODALIDADE A]: CONDUTA NA CONJUNTIVITE VIRAL (ADENOVÍRUS):
 1. Colírio Lubrificante (Lágrima Artificial sem vasoconstritor):

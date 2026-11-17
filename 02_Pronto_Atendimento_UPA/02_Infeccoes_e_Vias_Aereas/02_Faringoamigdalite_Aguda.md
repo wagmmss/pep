@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: FARINGOAMIGDALITE AGUDA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor de garganta intensa (odinofagia) e febre há [ ] dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / [ ]].
+# QP:
+- Dor de garganta intensa (odinofagia) e febre há [ ] dias.
+
+# HMA:
 - HMA: Paciente relata dor de garganta de início súbito há [ ] dias, que piora intensamente à deglutição, associada a febre de [ ] °C aferida em domicílio e mal-estar geral.
 - ESCORE DE CENTOR MODIFICADO (ESTRATIFICAÇÃO ESTREPTOCÓCICA):
   - Febre referida ou aferida > 38,0 °C (+1)
@@ -27,7 +29,7 @@ Alergias: [Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipir
 - Nega estridor respiratório ou sensação de asfixia.
 - Nega dor cervical com rigidez ou abaulamento cervical lateral.
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 - Estado Geral: [Bom / Regular] estado geral, corado, hidratado, lúcido e orientado, fácies de dor ao deglutir.
 - Oroscopia Detalhada:
@@ -38,11 +40,11 @@ Alergias: [Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipir
 - Palpação Cervical: Presença de linfonodomegalia submandibular e cervical anterior bilateral, móveis, fibroelásticos e dolorosos à palpação, medindo cerca de 1,5 cm. Ausência de empastamento cervical.
 - Ausculta Cardiopulmonar: Ritmo cardíaco regular em 2 tempos, sem sopros audíveis; murmúrio vesicular universalmente audível sem ruídos adventícios.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Faringoamigdalite Aguda [Eritematosa de etiologia Viral / Bacteriana Estreptocócica provável] (CID-10: J03.9 / J02.9).
 2. Ausência de sinais clínicos de abscesso periamigdaliano ou celulite cervical.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO):
 1. Dipirona 1 g (2 mL) + AD 8 mL EV lento agora (ou Paracetamol 750 mg VO se alérgico).

@@ -273,6 +273,92 @@ hab_json_path = os.path.join(SNIPPETS_DIR, "snippets_hab.json")
 with open(hab_json_path, 'w', encoding='utf-8') as fh:
     json.dump(hab_snippets, fh, indent=2, ensure_ascii=False)
 
+def _split_top_level_choices_py(inner: str) -> list:
+    trimmed = inner.strip()
+    if trimmed.startswith('+ '):
+        trimmed = trimmed[2:].strip()
+    parts = []
+    b_depth = 0
+    p_depth = 0
+    cur_start = 0
+    n = len(trimmed)
+    i = 0
+    while i < n:
+        ch = trimmed[i]
+        if ch == '[':
+            b_depth += 1
+        elif ch == ']' and b_depth > 0:
+            b_depth -= 1
+        elif ch == '(':
+            p_depth += 1
+        elif ch == ')' and p_depth > 0:
+            p_depth -= 1
+        if b_depth == 0 and p_depth == 0:
+            if trimmed[i:i + 3] in (' / ', ' | '):
+                parts.append(trimmed[cur_start:i].strip())
+                cur_start = i + 3
+                i += 3
+                continue
+        i += 1
+    parts.append(trimmed[cur_start:].strip())
+    return [p for p in parts if p]
+
+
+def _format_multi_choices_py(selected: list) -> str:
+    clean = [s.strip() for s in selected if s and s.strip()]
+    if not clean:
+        return ''
+    if len(clean) == 1:
+        return clean[0]
+    if len(clean) == 2:
+        return f"{clean[0]} e {clean[1]}"
+    return f"{', '.join(clean[:-1])} e {clean[-1]}"
+
+
+def clean_pep_for_static_export(text: str) -> str:
+    """Resolve defaults [*...] e remove marcadores de UI ([? ...], [+ ...]) para Espanso."""
+    out_lines = []
+    for raw_line in (text or '').splitlines():
+        i = 0
+        n = len(raw_line)
+        buf = []
+        while i < n:
+            if raw_line[i] == '[':
+                depth = 1
+                j = i + 1
+                while j < n and depth > 0:
+                    if raw_line[j] == '[':
+                        depth += 1
+                    elif raw_line[j] == ']':
+                        depth -= 1
+                    j += 1
+                if depth == 0:
+                    inner = raw_line[i + 1:j - 1]
+                    trimmed = inner.strip()
+                    if re.match(r'^\?\s*[^:]+::', trimmed):
+                        i = j
+                        continue
+                    opts = _split_top_level_choices_py(trimmed)
+                    if len(opts) >= 2:
+                        defaults = [o[1:].strip() for o in opts if o.startswith('*') and not o.startswith('**')]
+                        if defaults:
+                            buf.append(_format_multi_choices_py(defaults))
+                        elif trimmed.startswith('+ '):
+                            buf.append(f"[{trimmed[2:].strip()}]")
+                        else:
+                            buf.append(raw_line[i:j])
+                    else:
+                        buf.append(raw_line[i:j])
+                    i = j
+                    continue
+            buf.append(raw_line[i])
+            i += 1
+        line_str = ''.join(buf)
+        line_str = re.sub(r'\s{2,}(?!--)', ' ', line_str).rstrip()
+        out_lines.append(line_str)
+    return '\n'.join(out_lines)
+
+
 # 2. Salvar YAMLs do Espanso (APENAS os 90 snippets PEP; NUNCA incluir hab)
 for mod in modules:
     mod_snippets = [s for s in pep_snippets if s['mod_id'] == mod['id']]
@@ -280,22 +366,25 @@ for mod in modules:
     with open(yaml_path, 'w', encoding='utf-8') as fh:
         fh.write(f"# Configuração Espanso: {mod['name'].upper()}\n\nmatches:\n")
         for s in mod_snippets:
+            pep_clean = clean_pep_for_static_export(s['pep_body'])
+            cnd_clean = clean_pep_for_static_export(s['conduta_body']) if s['conduta_body'] else ''
+            rec_clean = clean_pep_for_static_export(s['receita_body']) if s['receita_body'] else ''
             for trg in s['all_triggers']:
                 fh.write(f"  - trigger: \"{trg}\"\n")
                 fh.write(f"    replace: |\n")
-                for line in s['pep_body'].splitlines():
+                for line in pep_clean.splitlines():
                     fh.write(f"      {line}\n")
                 fh.write("\n")
-                if s['has_split'] and s['conduta_body']:
+                if s['has_split'] and cnd_clean:
                     fh.write(f"  - trigger: \"{trg}-cnd\"\n")
                     fh.write(f"    replace: |\n")
-                    for line in s['conduta_body'].splitlines():
+                    for line in cnd_clean.splitlines():
                         fh.write(f"      {line}\n")
                     fh.write("\n")
-                if s['receita_body']:
+                if rec_clean:
                     fh.write(f"  - trigger: \"{trg}-rec\"\n")
                     fh.write(f"    replace: |\n")
-                    for line in s['receita_body'].splitlines():
+                    for line in rec_clean.splitlines():
                         fh.write(f"      {line}\n")
                     fh.write("\n")
 
@@ -303,22 +392,25 @@ all_yaml_path = os.path.join(SNIPPETS_DIR, "espanso_completo.yml")
 with open(all_yaml_path, 'w', encoding='utf-8') as fh:
     fh.write(f"# Configuração Completa Espanso ({len(pep_snippets)} Modelos)\n\nmatches:\n")
     for s in pep_snippets:
+        pep_clean = clean_pep_for_static_export(s['pep_body'])
+        cnd_clean = clean_pep_for_static_export(s['conduta_body']) if s['conduta_body'] else ''
+        rec_clean = clean_pep_for_static_export(s['receita_body']) if s['receita_body'] else ''
         for trg in s['all_triggers']:
             fh.write(f"  - trigger: \"{trg}\"\n")
             fh.write(f"    replace: |\n")
-            for line in s['pep_body'].splitlines():
+            for line in pep_clean.splitlines():
                 fh.write(f"      {line}\n")
             fh.write("\n")
-            if s['has_split'] and s['conduta_body']:
+            if s['has_split'] and cnd_clean:
                 fh.write(f"  - trigger: \"{trg}-cnd\"\n")
                 fh.write(f"    replace: |\n")
-                for line in s['conduta_body'].splitlines():
+                for line in cnd_clean.splitlines():
                     fh.write(f"      {line}\n")
                 fh.write("\n")
-            if s['receita_body']:
+            if rec_clean:
                 fh.write(f"  - trigger: \"{trg}-rec\"\n")
                 fh.write(f"    replace: |\n")
-                for line in s['receita_body'].splitlines():
+                for line in rec_clean.splitlines():
                     fh.write(f"      {line}\n")
                 fh.write("\n")
 
@@ -425,7 +517,7 @@ for idx, s in enumerate(cockpit_items):
 
     search_keywords = f"{s['title'].lower()} {' '.join(s['all_triggers']).lower()} {s['category'].lower()} {s['module_name'].lower()} {s['path'].lower()}"
     preview_lines = []
-    for raw_ln in s['pep_body'].splitlines():
+    for raw_ln in clean_pep_for_static_export(s['pep_body']).splitlines():
         ln = raw_ln.strip()
         if not ln or re.match(r'^[=\-#_*]{3,}$', ln):
             continue

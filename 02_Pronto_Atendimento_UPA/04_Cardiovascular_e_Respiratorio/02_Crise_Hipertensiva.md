@@ -10,12 +10,14 @@
 ###### ATENDIMENTO UPA: ELEVAÇÃO AGUDA DE PRESSÃO ARTERIAL ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # SINAIS VITAIS NA TRIAGEM: PA: [ ]x[ ] mmHg (Aferida em repouso de 15 minutos em ambos os braços) | FC: [ ] bpm.
 
-# SUBJETIVO:
-- Queixa Principal: Pressão alta aferida / Dor de cabeça / Tontura há [ ] horas.
+# QP:
+- Pressão alta aferida / Dor de cabeça / Tontura há [ ] horas.
+
+# HMA:
 - HMA: Paciente relata que comparece à UPA após aferir PA elevada em domicílio. Queixa-se de [cefaleia tensional / tontura inespecífica / ansiedade / palpitações / totalmente assintomático]. Relata abandono recente ou esquecimento das medicações de uso contínuo [ou nega diagnóstico prévio de hipertensão].
 - RASTREAMENTO SISTEMÁTICO DE LESÃO AGUDA DE ÓRGÃO-ALVO (LOA):
   * CÉREBRO: Nega cefaleia excruciante súbita ("pior dor da vida"), nega déficits motores/sensitivos focais (paresia, assimetria facial, afasia), nega confusão mental aguda ou crise convulsiva.
@@ -27,7 +29,7 @@ Alergias: [Nega / Sim: [ ]].
 - Fatores Emocionais / Desencadeantes: [Histórico de estresse emocional agudo / Dor osteomuscular concomitante / Privação de sono].
 - Medicações de Uso Contínuo: [Em uso irregular de Losartana, Enalapril, Anlodipino, Hidroclorotiazida / Nega uso de anti-hipertensivos].
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO À EXCLUSÃO DE LOA):
+# EXAME FÍSICO:
 - SINAIS VITAIS REPETIDOS APÓS REPOUSO: PA: [ ]x[ ] mmHg (MSD) e [ ]x[ ] mmHg (MSE) (Sem assimetria pressórica significativa).
 - Ectoscopia: Bom estado geral, lúcido e orientado (Glasgow 15), corado, eupnéico em ar ambiente.
 - Exame Neurológico: Pupilas isocóricas e fotorreagentes, ausência de déficits neurológicos focais (mímica facial simétrica, força motora 5/5 nos 4 membros, sensibilidade simétrica, fala articulada normal). Ausência de rigidez de nuca.
@@ -35,12 +37,12 @@ Alergias: [Nega / Sim: [ ]].
 - Aparelho Respiratório: Murmúrio vesicular presente bilateralmente, sem estertores crepitantes em bases (ausência de congestão pulmonar ou EAP).
 - Eletrocardiograma (ECG): [Realizado: Ritmo sinusal, sobrecarga ventricular esquerda crônica, sem sinais de isquemia aguda recente (sem supra ou infra de ST)].
 
-# AVALIAÇÃO DIAGNÓSTICA & CLASSIFICAÇÃO:
+# HIPÓTESES DIAGNÓSTICAS & CLASSIFICAÇÃO:
 1. PSEUDOCRISE HIPERTENSIVA (Elevação pressórica reativa a estresse, ansiedade ou dor física, sem LOA).
 2. URGÊNCIA HIPERTENSIVA (PAS >= 180 e/ou PAD >= 120 mmHg sem evidência de LOA aguda) (CID-10: I10).
 3. EMERGÊNCIA HIPERTENSIVA (Elevação pressórica com LOA aguda em evolução: Encefalopatia / EAP / SCA / AVC) (CID-10: I16.0).
 
-# PLANO / CONDUTA CONFORME A CLASSIFICAÇÃO:
+# CONDUTA:
 
 >> [SE PSEUDOCRISE HIPERTENSIVA]:
 1. Colocar o paciente em ambiente calmo de repouso na unidade.

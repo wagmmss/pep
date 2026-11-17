@@ -11,8 +11,8 @@
 ###### ATENDIMENTO DE EMERGÊNCIA — HEMORRAGIA PÓS-PARTO (CÓDIGO VERMELHO) ######
 # IDENTIFICAÇÃO & RECONHECIMENTO DO CHOQUE:
 ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - Perda Sanguínea Estimada: [ ] mL ([> 500 mL pós-parto vaginal / > 1.000 mL pós-cesárea / sangramento com instabilidade hemodinâmica]).
 - Sinais Vitais & Perfusão: PA: [85x50] mmHg | FC: [118] bpm | Índice de Choque Obstétrico (FC/PAS): [1,38] (Normal < 0,9 | Alerta >= 0,9 | Transfusão maciça se >= 1,4) | FR: [22] irpm | SpO2: [98]% | TEC: [3]s | Consciência: [Lúcida / Ansiosa / Sonolenta].
 
@@ -22,10 +22,10 @@ Alergias: [Nega / [ ]].
 - [ ] 3. TECIDO (10% — Restos Placentários): Revisão da cavidade uterina: [Cavidade vazia e limpa / Realizada curagem uterina com retirada de restos placentários/membranas].
 - [ ] 4. TROMBINA (1% — Coagulopatia): [Sem coagulopatia prévia / Coagulograma e Fibrinogênio de urgência coletados].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Hemorragia Pós-Parto Primária por [Atonia Uterina (CID-10: O72.1) / Laceração de Trajeto (O71.3) / Retenção Placentária (O72.0)] com Índice de Choque de [ ].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> 1. RESSUSCITAÇÃO & PACOTE DA HORA DE OURO (EXECUTADO IMEDIATAMENTE):
 1. Acionada equipe multidisciplinar (Obstetra Sênior, Anestesista, Enfermagem e Banco de Sangue).
 2. Oxigênio sob máscara não-reinalante a 10–15 L/min, elevação de MMII e prevenção de hipotermia (manta térmica + fluidos aquecidos).

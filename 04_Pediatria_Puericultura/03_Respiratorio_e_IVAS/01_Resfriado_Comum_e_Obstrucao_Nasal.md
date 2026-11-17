@@ -10,12 +10,14 @@
 ###### ATENDIMENTO PEDIÁTRICO — RESFRIADO COMUM / RINOFARINGITE AGUDA ######
 # IDENTIFICAÇÃO & PESO:
 ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
-# SUBJETIVO (ANAMNESE DIRIGIDA & EXCLUSÃO DE GRAVIDADE):
-- Queixa Principal (QP): Coriza, obstrução nasal e tosse há [ ] dias.
-- História da Moléstia Atual (HMA): Quadro iniciado há [ ] dias com espirros, obstrução nasal e rinorreia [hialina fluida / mucoide amarelada fisiológica da evolução viral], acompanhada de tosse [predominantemente noturna ao deitar por gotejamento pós-nasal].
+# QP:
+- Coriza, obstrução nasal e tosse há [ ] dias.
+
+# HMA:
+- Quadro iniciado há [ ] dias com espirros, obstrução nasal e rinorreia [hialina fluida / mucoide amarelada fisiológica da evolução viral], acompanhada de tosse [predominantemente noturna ao deitar por gotejamento pós-nasal].
 - Curva Térmica: [Afebril / Febre baixa a moderada (< 38,5 °C) nos primeiros 2–3 dias, cedendo rapidamente ao antitérmico].
 - Estado Geral, Aceitação e Diurese: Criança permanece ativa, brincando e sorrindo quando afebril; aceitando [bem líquidos e seio materno / com leve redução de sólidos pelo nariz entupido]. Diurese clara e preservada.
 - Nega dispneia, respiração acelerada (taquipneia), afundamento de costelas (tiragens) ou gemência.
@@ -24,7 +26,7 @@ Alergias: [Nega / [ ]].
 - Nega otalgia intensa, otorreia purulenta ou abaulamento retroauricular.
 - Nega prostração fora do período febril, vômitos incoercíveis ou petéquias.
 
-# OBJETIVO (EXAME FÍSICO PEDIÁTRICO):
+# EXAME FÍSICO:
 - Sinais Vitais: FC: [ ] bpm | FR (em 1 min, sem febre): [ ] irpm (Eupneico para a faixa etária) | SpO2: [ ]% em AA | Tax: [ ] °C | TEC < 2s.
 - Ectoscopia: Bom estado geral (BEG), ativo e reativo no colo, corado, hidratado, anictérico, acianótico, sem esforço respiratório.
 - Aparelho Respiratório: Expansibilidade simétrica, ausência de tiragem subcostal, intercostal ou de fúrcula. Murmúrio vesicular universalmente audível, sem estertores crepitantes ou sibilos (apenas roncos de transmissão de vias aéreas superiores que desaparecem após tosse/lavagem nasal).
@@ -32,10 +34,10 @@ Alergias: [Nega / [ ]].
 - Otoscopia Bilateral: Membranas timpânicas íntegras, translúcidas, sem abaulamento e com triângulo luminoso preservado bilateralmente (afastada Otite Média Aguda).
 - Cardiopulmonar e Abdome: Bulhas normofonéticas em 2T sem sopros; abdome flácido e indolor sem visceromegalias.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Rinofaringite Aguda Viral / Resfriado Comum (CID-10: J00) — evolução benigna e autolimitada, sem sinais de complicação bacteriana secundária (OMA, sinusite ou pneumonia).
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA AMBULATORIAL BASEADA EM EVIDÊNCIAS (SBP):
 1. Desobstrução mecânica das vias aéreas superiores com Lavagem Nasal de Soro Fisiológico 0,9% morno em seringa (pilar terapêutico principal).

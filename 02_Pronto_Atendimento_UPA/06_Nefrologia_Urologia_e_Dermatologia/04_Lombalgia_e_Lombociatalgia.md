@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA: LOMBALGIA AGUDA / LOMBOCIATALGIA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor na coluna lombar / Dor que desce para a perna há [ ] dias/horas.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Dor na coluna lombar / Dor que desce para a perna há [ ] dias/horas.
+
+# HMA:
 - HMA: Relata quadro de dor lombar de início após esforço físico / levantamento de carga / movimento de torção do tronco há cerca de [ ] dias.
   * Localização & Irradiação: [Dor estritamente lombar baixa sem irradiação (Lombalgia mecânica pura) / Dor irradiando para glúteo, face posterior da coxa, perna e dorso/planta do pé (direito / esquerdo) (Lombociatalgia com radiculopatia)].
   * Caráter: Dor em pontada profunda associada a sensação de espasmo/trava muscular, intensidade [ ]/10.
@@ -25,7 +27,7 @@ Alergias: [Nega / Sim: [ ]].
   * [ ] INFECÇÃO DA COLUNA (ESPONDILODISCITE / ABSCESSO EPIDURAL): Nega febre, calafrios ou sudorese noturna; nega uso de drogas endovenosas ou infecção urinária/cutânea recente.
   * [ ] RISCO DE FRATURA OSTEOPORÓTICA: Idade < 65 anos, nega uso crônico prolongado de corticoides orais e nega trauma contuso de alto impacto.
 
-# OBJETIVO (EXAME FÍSICO OSTEOMUSCULAR & NEUROLÓGICO DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril).
 - Inspeção & Palpação da Coluna Lumbossacra:
   * Inspeção estática: Postura antálgica com retificação da lordose lombar fisiológica, marcha claudicante preservada sem apoio de terceiros.
@@ -41,11 +43,11 @@ Alergias: [Nega / Sim: [ ]].
     - Raiz L5: Força motora do extensor longo do hálux (elevar o dedão do pé contra resistência) grau 5/5 bilateral. Sensibilidade preservada no dorso do pé.
     - Raiz S1: Capacidade de ficar na ponta dos pés preservada (grau 5/5 nos gastrocnêmios), reflexo aquileu presente e simétrico bilateral. Sensibilidade na borda lateral do pé normal.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. [Lombalgia Mecânico-Postural Aguda / Lombociatalgia Aguda por Radiculopatia Lumbossacra compressiva] (CID-10: M54.5 / M54.4).
 2. Ausência de sinais de Síndrome da Cauda Equina ou déficits neurológicos motores agudos progressivos.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO - ALÍVIO DO ESPASMO E DA DOR):
 1. Anti-inflamatório Endovenoso:

@@ -14,7 +14,7 @@
 - Antimicrobiano em Curso: [Sem antibioticoterapia ativa / Em uso de [ ] — D[ ] de [ ] dias programados (início em [DD/MM])]
 - Dispositivos Atuais: [Acesso venoso periférico em [MSD / MSE] D[ ] / Cateter Venoso Central D[ ] / Sonda Vesical de Demora D[ ] / Sem dispositivos invasivos]
 
-# SUBJETIVO (S — EVOLUÇÃO NAS ÚLTIMAS 24 HORAS):
+# EVOLUÇÃO (24H):
 - Intercorrências no Plantão Noturno: [Passou as últimas 24h estável, sem intercorrências agudas / Apresentou queixa de no período].
 - Controle Álgico (Escala EVA 0–10): [EVA 0 — Nega dor / Dor leve (EVA [ ]) em [ ], controlada com analgesia prescrita].
 - Sono, Apetite e Tolerância Oral: Padrão de sono [preservado / prejudicado por insônia]; Dieta por via oral [com boa aceitação plena (> 75%), sem náuseas ou vômitos / aceitação parcial / inapetência].
@@ -23,7 +23,7 @@
   * Diurese: [Presente, espontânea, límpida e sem disúria / Por SVD com débito claro e satisfatório].
   * Hábito Intestinal: [Evacuação presente nas últimas 24h, aspecto habitual (Bristol 3–4) / Ausente há [ ] dias, sem distensão ou dor abdominal].
 
-# OBJETIVO (O — SINAIS VITAIS, BALANÇO, EXAME FÍSICO & LABORATÓRIO):
+# EXAME FÍSICO:
 - Sinais Vitais & Curvas das 24h:
   * PA: [ ]x[ ] mmHg (Variação 24h: [ ] a [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob O2 a [ ] L/min]).
   * Curva Térmica (24h): Tax máxima de [ ] °C ([Afebril há > 24–48h / Apresentou pico febril de [ ] °C às [HH:MM]]).
@@ -39,12 +39,12 @@
   * Microbiologia / Culturas: [Aguardando resultado parcial / Negativas até o momento / Isolamento de [ ] sensível a [ ]].
   * Imagem / Outros: [Sem novos exames de imagem / RX de tórax: [ ] / USG: [ ]].
 
-# AVALIAÇÃO (A — IMPRESSÃO CLÍNICA POR PROBLEMAS):
+# HIPÓTESES DIAGNÓSTICAS:
 1. [Problema Principal 1]: [Evoluindo com franca melhora clínica e queda de marcadores inflamatórios / Estável clinicamente, mantida conduta / Descompensação aguda exigindo ajuste terapêutico].
 2. [Comorbidades / Equilíbrio Hidroeletrolítico]: [Função renal e eletrólitos estáveis, glicemias dentro da meta hospitalar (140–180 mg/dL) / Em correção de: [ ]].
 3. Auditoria de Antimicrobiano & Dispositivos: [Mantido esquema atual em D / Preenchidos critérios de Switch Therapy para via oral / Indicada retirada de SVD/AVP hoje].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA & METAS DO DIA (ENFERMARIA):
 1. Dieta: Manter dieta [geral / para diabetes / hipossódica / branda] por via oral; estimular ingesta hídrica oral.

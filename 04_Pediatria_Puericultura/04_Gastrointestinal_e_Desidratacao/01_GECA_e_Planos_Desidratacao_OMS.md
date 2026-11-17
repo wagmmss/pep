@@ -11,30 +11,32 @@
 # IDENTIFICAÇÃO & PESO DE ENTRADA:
 ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso de Entrada: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
 Peso Prévio Conhecido: [Não informado / [ ] kg -> Perda de [ ]%].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
-# SUBJETIVO (CARACTERIZAÇÃO DA DIARREIA, VÔMITOS & RED FLAGS):
-- Queixa Principal (QP): Diarreia líquida e vômitos há [ ] dias.
-- História da Moléstia Atual (HMA): Quadro iniciado há [ ] dias com dejeções líquidas ([ ] episódios nas últimas 24h) de aspecto [aquoso amarelado/esverdeado explosivo, sem sangue ou pus (padrão viral secretor/osmótico) / mucossanguinolento com tenesmo (padrão disentérico invasivo — Shigella/Salmonella/Campylobacter)], associado a [ ] episódios de vômitos alimentares nas últimas 24h e febre de [ ] °C.
+# QP:
+- Diarreia líquida e vômitos há [ ] dias.
+
+# HMA:
+- Quadro iniciado há [ ] dias com dejeções líquidas ([ ] episódios nas últimas 24h) de aspecto [aquoso amarelado/esverdeado explosivo, sem sangue ou pus (padrão viral secretor/osmótico) / mucossanguinolento com tenesmo (padrão disentérico invasivo — Shigella/Salmonella/Campylobacter)], associado a [ ] episódios de vômitos alimentares nas últimas 24h e febre de [ ] °C.
 - Aceitação de Líquidos & Diurese: [Aceitando líquidos sem sede ávida / Sedenta, bebendo líquidos avidamente / Incapaz de beber ou vomitando tudo o que ingere]. Última diurese há [ ] horas ([Fraldas molhadas habituais / Oligúria com urina escura / Anúria > 6–8h]).
 - Nega vômitos biliosos (verde-escuros), fezes em "geleia de morango/framboesa" com choro paroxístico e flexão das pernas, distensão abdominal tensa ou defesa peritoneal localizada.
 
-# OBJETIVO (OS 4 SINAIS CARDINAIS DE DESIDRATAÇÃO DA OMS / MINISTÉRIO DA SAÚDE):
+# EXAME FÍSICO:
 - Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Tempo de Enchimento Capilar (TEC): [< 2 segundos / 2 a 3 segundos / > 3 segundos] | Pulso radial: [Cheio e amplo / Rápido e fino / Muito fraco ou ausente].
 - Avaliação Sistemática do Estado de Hidratação (4 Parâmetros OMS):
-  1. Estado Geral / Nível de Consciência: [Alerta, ativo e bem (Plano A) / Irritado, intranquilo e choroso (Plano B) / Letárgico, hipotônico ou inconsciente (Plano C)].
+  1. Estado Geral / Nível de Consciência: [*Alerta, ativo e bem (Plano A) / Irritado, intranquilo e choroso (Plano B) / Letárgico, hipotônico ou inconsciente (Plano C)].
   2. Olhos e Lágrimas: [Olhos normais com lágrimas presentes (Plano A) / Olhos fundos, lágrimas diminuídas (Plano B) / Olhos muito fundos e secos, sem lágrimas (Plano C)].
   3. Sede / Prova do Copo d'Água: [Bebe normalmente, sem sede excessiva (Plano A) / Sedento, bebe rápida e avidamente, chora quando retira o copo (Plano B) / Bebe muito mal ou não é capaz de beber (Plano C)].
   4. Sinal da Prega Abdominal (Pinçamento longitudinal da pele lateral do abdome): [Desaparece imediatamente (Plano A) / Desaparece lentamente em < 2 segundos (Plano B) / Desaparece muito lentamente em > 2 segundos (Plano C)].
   * Mucosa Oral & Fontanela: Mucosa [úmida / seca / muito seca ("língua de papagaio")] | Fontanela anterior (< 18m): [Plana / Deprimida].
 - Exame Abdominal: Abdome flácido, indolor à palpação profunda, ruídos hidroaéreos hiperativos, sem massas palpáveis ("chouriço" de invaginação ausente) e sem irritação peritoneal (Blumberg negativo).
 
-# AVALIAÇÃO DIAGNÓSTICA & CLASSIFICAÇÃO OMS:
+# HIPÓTESES DIAGNÓSTICAS & CLASSIFICAÇÃO OMS:
 1. Gastroenterite Aguda — GECA [Viral Aquosa / Disenteria Bacteriana Aguda] (CID-10: A09).
 2. Classificação do Estado de Hidratação: [SEM DESIDRATAÇÃO — PLANO A / COM DESIDRATAÇÃO (MODERADA) — PLANO B / DESIDRATAÇÃO GRAVE OU CHOQUE — PLANO C].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [PLANO A — SEM DESIDRATAÇÃO]: TRATAMENTO DOMICILIAR (OS 4 PILARES DO MS):
 1. Oferecer mais líquidos que o habitual e Solução de Reidratação Oral (SRO 75 mEq/L) após cada evacuação líquida ou vômito (50–100 mL se < 1 ano; 100–200 mL se 1–10 anos; livre demanda se > 10 anos).

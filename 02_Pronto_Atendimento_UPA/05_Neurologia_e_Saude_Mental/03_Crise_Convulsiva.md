@@ -11,16 +11,19 @@
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: CRISE CONVULSIVA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # HISTÓRICO CONVULSIVO: [Epilepsia conhecida sob tratamento prévio / Primeiro episódio convulsivo da vida / Histórico de etilismo crônico].
 
-# SUBJETIVO (DADOS FORNECIDOS POR FAMILIARES / SOCORRISTAS DO SAMU):
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - Descrição da Crise: Presenciada crise convulsiva generalizada caracterizada por abalos tônico-clônicos nos 4 membros, desvio do olhar para cima, sialorreia ("espuma na boca"), mordedura de borda lateral de língua e perda súbita da consciência. Duração estimada da crise: cerca de [ ] minutos.
 - Eventos Ictais: [Liberação esfincteriana urinária e/ou fecal presente / Ausente].
 - Fatores Desencadeantes: [Abandono recente de anticonvulsivantes (Fenobarbital/Carbamazepina/Valproato) / Febre alta prévia / Abstinência alcoólica aguda há horas / Privação severa de sono / Uso de drogas ilícitas (cocaína/crack) / TCE recente].
 
-# OBJETIVO (EXAME FÍSICO NA SALA DE EMERGÊNCIA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
 - GLICEMIA CAPILAR (HGT) DE ADMISSÃO: [ ] mg/dL (AFASTADA HIPOGLICEMIA SEVERA).
 - Avaliação Pós-Ictal Imediata:
@@ -30,11 +33,11 @@ Alergias: [Nega / Sim: [ ]].
   * Exame Neurológico Pós-Ictal: Pupilas isocóricas e fotorreagentes, ausência de assimetria de reflexos, reflexo cutâneo-plantar em flexão bilateral [ou Paralisia de Todd transitória em hemicorpo ( ) com recuperação gradual]. Ausência de rigidez de nuca.
   * Inspeção Corporal: Ausência de estigmas de trauma cranioencefálico grave ou fraturas por queda.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Crise Convulsiva Tônico-Clônica Generalizada [Crise única autolimitada pós-ictal / Estado de Mal Epiléptico em evolução] (CID-10: G40.9 / R56.8).
 2. [Etiologia em investigação / Descompensação de epilepsia prévia / Crise por abstinência etílica].
 
-# PLANO / PROTOCOLO CRONOMETRADO EM SALA VERMELHA:
+# CONDUTA:
 
 >> ETAPA 1 (MINUTOS 0 A 5) - PROTEÇÃO DE VIAS AÉREAS & SUPORTE:
 1. Decúbito lateral esquerdo (posição de recuperação) para prevenir aspiração brônquica de saliva ou vômito.

@@ -11,8 +11,8 @@
 ###### ATENDIMENTO DE SALA VERMELHA: DISTÚRBIOS ELETROLÍTICOS GRAVES ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 - Motivo da Avaliação na Sala Vermelha: [MODALIDADE A: HIPERCALEMIA GRAVE / MODALIDADE B: HIPONATREMIA AGUDA SINTOMÁTICA].
 
 =============================================================================

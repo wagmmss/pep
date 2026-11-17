@@ -10,18 +10,20 @@
 ###### ATENDIMENTO PEDIÁTRICO — BRONQUIOLITE VIRAL AGUDA (BVA NO LACTENTE < 2 ANOS) ######
 # IDENTIFICAÇÃO & FATORES DE RISCO DE GRAVIDADE:
 ID: [Nome], [ ] meses (Faixa clássica < 24 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 - Fatores de Risco para BVA Grave: [Nenhum — lactente a termo hígido > 3 meses / Idade < 12 semanas (< 3 meses) / Prematuridade (< 37 semanas) / Cardiopatia congênita hemodinamicamente significativa / Broncodisplasia pulmonar / Imunodeficiência].
 
-# SUBJETIVO (HISTÓRIA CLÍNICA & FASE EVOLUTIVA DA DOENÇA):
-- Queixa Principal (QP): Tosse, chiado no peito e cansaço para respirar há [ ] dias.
-- História da Moléstia Atual (HMA): Lactente apresentou pródromo catarral de vias aéreas superiores há [2 a 4] dias (obstrução nasal, coriza hialina e febre baixa de [ ] °C), evoluindo nas últimas [24 a 48] horas para fase bronquiolar com tosse mais intensa, respiração rápida e sibilância ([ ]º dia total de doença — pico fisiológico de gravidade entre o 3º e 5º dia).
+# QP:
+- Tosse, chiado no peito e cansaço para respirar há [ ] dias.
+
+# HMA:
+- Lactente apresentou pródromo catarral de vias aéreas superiores há [2 a 4] dias (obstrução nasal, coriza hialina e febre baixa de [ ] °C), evoluindo nas últimas [24 a 48] horas para fase bronquiolar com tosse mais intensa, respiração rápida e sibilância ([ ]º dia total de doença — pico fisiológico de gravidade entre o 3º e 5º dia).
 - Episódio de Sibilância: [1º episódio de sibilância na vida (definição clássica de BVA) / 2º episódio viral em lactente].
 - Ingesta Alimentar e Diurese: [Mamando bem com pausas curtas para respirar (> 75% do habitual) / Redução moderada das mamadas (50 a 75% do habitual) / Recusa alimentar grave (< 50% do habitual) por fadiga respiratória]. Diurese [presente nas últimas 6h / reduzida].
 - Nega episódios de apneia ou pausas respiratórias (crucial em < 2 meses), cianose central, gemência contínua ou letargia.
 
-# OBJETIVO (EXAME FÍSICO PÓS-ASPIRAÇÃO/LAVAGEM NASAL & ESCORE CLÍNICO):
+# EXAME FÍSICO:
 - Sinais Vitais (Aferidos após desobstrução nasal e com lactente calmo):
   * Frequência Respiratória (1 min): [ ] irpm ([< 50 irpm / 50 a 59 irpm / 60 a 69 irpm / ≥ 70 irpm])
   * Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92% em ar ambiente / 90 a 91% / < 90% — hipoxemia])
@@ -35,11 +37,11 @@ Alergias: [Nega / [ ]].
   * [BVA MODERADA] (SpO2 90–92%, FR 60–69 irpm, tiragem subcostal evidente ou ingesta 50–75%) -> Observação hospitalar / Internação em enfermaria.
   * [BVA GRAVE] (SpO2 < 90% persistente, FR ≥ 70 irpm, gemência, apneia, letargia ou recusa < 50%) -> Internação hospitalar imediata / Suporte ventilatório (CNAF/VNI).
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Bronquiolite Viral Aguda — BVA no [ ]º dia de evolução (CID-10: J21.0 — provável Vírus Sincicial Respiratório / Rinovírus).
 2. Estratificação de Gravidade: [Leve — elegível para alta segura / Moderada a Grave — indicada internação hospitalar].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [MODALIDADE A] CONDUTA NA BVA LEVE (ALTA SEGURA COM REAVALIAÇÃO EM 24–48H):
 1. Realizar lavagem nasal com Soro Fisiológico 0,9% na unidade e confirmar que a tiragem e a FR melhoram após desobstrução das narinas.

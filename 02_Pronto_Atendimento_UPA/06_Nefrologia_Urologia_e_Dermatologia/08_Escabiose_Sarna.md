@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA: ESCABIOSE (SARNA HUMANA) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Coceira no corpo todo que piora muito à noite há [ ] dias/semanas.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Coceira no corpo todo que piora muito à noite há [ ] dias/semanas.
+
+# HMA:
 - HMA: Relata prurido cutâneo difuso de evolução progressiva, com exacerbação noturna intensa ("quase não consegue dormir ao se cobrir na cama"). Queixa-se de pequenas lesões avermelhadas e "bolhinhas" em dobras de pele.
 - HISTÓRIA EPIDEMIOLÓGICA POSITIVA:
   * Presença de outros familiares, crianças ou parceiros que dormem na mesma casa apresentando quadro idêntico de coceira noturna.
@@ -23,7 +25,7 @@ Alergias: [Nega / Sim: [ ]].
 - Nega febre, calafrios ou prostração sistêmica.
 - Nega lesões bolhosas extensas com descolamento cutâneo (afastado pênfigo ou eritema multiforme).
 
-# OBJETIVO (EXAME FÍSICO DERMATOLÓGICO):
+# EXAME FÍSICO:
 - Ectoscopia Cutânea:
   * Pápulas eritematosas puntiformes e pequenas vesículas com escoriações por coçadura distribuídas em sítios clássicos:
     - Espaços interdigitais das mãos e face flexora dos punhos.
@@ -32,13 +34,13 @@ Alergias: [Nega / Sim: [ ]].
     - [No sexo masculino]: Presença de nódulos escabióticos eritematosos e endurecidos em corpo peniano e bolsa escrotal (achado patognomônico altamente sugestivo).
   * Sulcos Escabióticos: Identificados trajetos serpiginosos milimétricos filiformes acinzentados na pele dos punhos e interdígitos com pequena vesícula na terminação ("eminência acarina").
   * Cabeça e Pescoço: Couro cabeludo e face totalmente poupados de lesões (padrão habitual do adulto).
-  * Infecção Secundária: [Ausente / Presença de crostas melicéricas amareladas superficiais sugestivas de impetiginização bacteriana secundária].
+  * Infecção Secundária: [*Ausente / Presença de crostas melicéricas amareladas superficiais sugestivas de impetiginização bacteriana secundária].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Escabiose / Sarna Humana (CID-10: B86).
 2. [Com impetiginização bacteriana secundária associada / Sem infecção bacteriana secundária].
 
-# PLANO / CONDUTA (TRATAMENTO COMBINADO DE ALTA EFICÁCIA):
+# CONDUTA:
 
 >> PRESCRIÇÃO DOMICILIAR:
 

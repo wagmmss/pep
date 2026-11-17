@@ -11,25 +11,28 @@
 ###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — TRABALHO DE PARTO PREMATURO (TPP) ######
 # IDENTIFICAÇÃO & IDADE GESTACIONAL:
 ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º trimestre) | Fatores de Risco: [Prematuridade prévia / Colo curto < 25 mm / Gemelaridade / ITU ativa / Nega fatores prévios].
 
-# SUBJETIVO (QD & EXCLUSÃO DE CONTRAINDICAÇÕES À TOCÓLISE):
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - Queixa Principal & HMA: Contrações uterinas dolorosas e rítmicas associadas a pressão pélvica e dor lombar há [ ] horas. Movimentação fetal presente.
 - Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido (afastada corioamnionite), nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
 
-# OBJETIVO (EXAME FÍSICO OBSTÉTRICO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [110x70] mmHg | FC: [84] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C (afebril).
 - Abdome & Dinâmica Uterina (DU): AU: [ ] cm | Leopold: Feto único, longitudinal, apresentação [cefálica / pélvica]. DU: [3 a 4] contrações regulares e dolorosas de [45] segundos em 10 minutos, com relaxamento completo do tônus uterino no intervalo.
 - Vitalidade Fetal: BCF: [142] bpm, rítmico, sem desacelerações | CTG: Categoria I (reativa).
 - Exame Especular Estéril (Realizado antes do toque): Paredes íntegras, sem sangramento ou perda de líquido pelo OE (Manobra de Tarnier negativa). Coletado Swab Vaginal e Retal para EGB.
 - Toque Vaginal: Colo [centralizado / intermediário], amolecido, apagado [80]%, dilatado para [3] cm, bolsa íntegra, polo cefálico em plano [-2] de De Lee.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Trabalho de Parto Prematuro ativo com membranas íntegras em gestação de [ ]s[ ]d (CID-10: O60.0), sem sinais de corioamnionite ou sofrimento fetal — Elegível para Tocólise e Maturação Pulmonar.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> 1. INTERNAÇÃO, EXAMES DE RASTREIO INFECCIOSO E MONITORIZAÇÃO:
 1. Internação em Centro Obstétrico / Alto Risco, repouso em DLE, acesso venoso salinizado (evitar hiper-hidratação EV que aumenta risco de EAP com tocolíticos!).
 2. Coletados: Hemograma completo, PCR, EAS + Urocultura com antibiograma (ITU é a principal causa oculta tratável de TPP!) e Swab anovaginal para EGB. Realizada USG Obstétrica + CTG.

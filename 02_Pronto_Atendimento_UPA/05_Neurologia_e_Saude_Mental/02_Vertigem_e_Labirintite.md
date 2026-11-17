@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: SÍNDROME VERTIGINOSA AGUDA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Tontura rotatória intensa ("tudo girando"), náuseas e vômitos há [ ] horas/dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Tontura rotatória intensa ("tudo girando"), náuseas e vômitos há [ ] horas/dias.
+
+# HMA:
 - HMA: Relata episódio agudo de vertigem rotatória verdadeira iniciada há [ ] horas, acompanhada de instabilidade na marcha, náuseas e vômitos incoercíveis.
   * HIPÓTESE A - VERTIGEM POSICIONAL PAROXÍSTICA BENIGNA (VPPB): Vertigem desencadeada por mudanças súbitas de posição da cabeça (ao virar de lado na cama ou olhar para cima), com episódios breves de forte intensidade durando menos de 60 segundos cada.
   * HIPÓTESE B - NEVRITE VESTIBULAR / LABIRINTITE: Vertigem contínua incapacitante iniciada há 24-48 horas, que persiste mesmo com a cabeça parada em repouso, associada a sintomas de infecção viral recente de vias aéreas superiores.
@@ -23,7 +25,7 @@ Alergias: [Nega / Sim: [ ]].
 - Nega incoordenação motora grave (incapacidade de alcançar objetos).
 - Nega cefaleia occipital súbita de início hiperagudo.
 
-# OBJETIVO (EXAME FÍSICO NEUROLÓGICO & PROTOCOLO HINTS NA SÍNDROME CONTÍNUA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C.
 - Nível de Consciência: Lúcido e orientado no tempo e espaço (Glasgow 15).
 - EXAME DOS NERVOS CRANIANOS & CEREBELO:
@@ -45,11 +47,11 @@ Alergias: [Nega / Sim: [ ]].
 - [SE SUSPEITA DE VPPB - MANOBRA DE DIX-HALLPIKE]:
   * Realizada manobra posicional: [Presença de nistagmo torsional e vertical superior com latência de 3 a 5 segundos e fadiga após 30 segundos, reproduzindo a vertigem no ouvido (direito / esquerdo) -> VPPB CONFIRMADA / Negativa].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome Vestibular Periférica Aguda: [VPPB de canal posterior / Nevrite Vestibular aguda] (CID-10: H81.1 / H81.2).
 2. Ausência de sinais de AVC de fossa posterior pelo protocolo HINTS.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO):
 1. Antiemético & Sedativo Labiríntico Venoso:

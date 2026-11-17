@@ -16,23 +16,23 @@ ID: [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] /
 - IG Definitiva Adotada: [ ] semanas e [ ] dias.
 
 # ANTECEDENTES & SUBJETIVO (HMA):
-- Antecedentes Obstétricos: [Nulípara / Gestações prévias sem intercorrências / Antecedente de Pré-eclâmpsia / DMG prévio / Parto prematuro prévio / Cesárea prévia há [ ] anos]. Último Citopatológico: [Em dia e normal / Colhido há > 1–3 anos].
-- Comorbidades, Drogas & Alergias: [Hígida, nega HAS, DM, tireoidopatia ou trombofilia / Portadora de: [ ]] | Medicações em uso: [Nega uso contínuo / Em uso de: [ ]] | Alergias: [Nega alergias conhecidas / Alérgica a: [ ]] | Hábitos: [Nega tabagismo, etilismo ou drogas ilícitas / Tabagista / Etilismo / Outros: [ ]].
+- Antecedentes Obstétricos: [Nulípara / Gestações prévias sem intercorrências / Antecedente de Pré-eclâmpsia / DMG prévio / Parto prematuro prévio / Cesárea prévia há [ ] anos]. Último Citopatológico: [*Em dia e normal / Colhido há > 1–3 anos].
+- Comorbidades, Drogas & Alergias: [Hígida, nega HAS, DM, tireoidopatia ou trombofilia / Portadora de: [ ]] | Medicações em uso: [*Nega uso contínuo / Em uso de: [ ]] | Alergias: [*Nega alergias conhecidas / Alérgica a: [ ]] | Hábitos: [*Nega tabagismo, etilismo ou drogas ilícitas / Tabagista / Etilismo / Outros: [ ]].
 - HMA: Comparece para abertura de pré-natal. Refere [ausência de queixas / náuseas matinais leves sem perda ponderal / mastalgia e sonolência fisiológicas].
 - Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
 
-# OBJETIVO (EXAME FÍSICO INICIAL):
+# EXAME FÍSICO:
 - Antropometria & Vitais: Peso Pré-Gestacional: [ ] kg | Peso Atual: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m² ([Eutrófica / Sobrepeso / Obesidade / Baixo peso]). PA (sentada): [110x70] mmHg | FC: [78] bpm | Tax: [36,4] °C.
 - Ectoscopia, Tireoide & Cardiopulmonar: BEG, corada, hidratada, anictérica. Tireoide fibroelástica sem nódulos. RCR 2T BNF sem sopros; MV+ bilateral sem ruídos adventícios.
 - Mamas: Simétricas, papilas [protrusas / semi-protrusas / planas], parênquima sem nódulos palpáveis, axilas livres.
 - Abdome & Exame Obstétrico: Normotenso, indolor, sem visceromegalias. Altura Uterina (AU): [Útero intrapélvico (< 12s) / cm]. BCF (Sonar): [Inaudível ao sonar pela IG precoce (< 10–12s) / (145) bpm, rítmico].
 - Exame Ginecológico (se realizado) & MMII: [Especular com colo epitelizado violáceo (Sinal de Jacquemier/Kluge), conteúdo fisiológico, coletado colpocitopatológico / Diferido]. MMII sem edemas ou sinais de TVP.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Gestação tópica de [ ] semanas e [ ] dias (CID-10: Z34.0 / Z34.8).
 2. Estratificação de Risco: [Pré-Natal de Risco Habitual (PNBR) / Pré-Natal de Alto Risco (PNAR) por: [ ]] | Risco de Pré-Eclâmpsia: [Baixo / Alto risco — indicada profilaxia com AAS + Cálcio].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> CONDUTA & EXAMES SOLICITADOS (ROTINA DE 1º TRIMESTRE):
 1. Preenchida Caderneta da Gestante e encaminhada para atualização vacinal (dT, Hepatite B, Influenza/Covid conforme calendário; dTpa a partir de 20 semanas).
 2. Solicitada Rotina Laboratorial de 1º Trimestre: Tipagem ABO/Rh (e Coombs Indireto se Rh-), Hemograma, Glicemia de Jejum, TSH, EAS + Urocultura com antibiograma, Testes Rápidos e Sorologias (HIV, Sífilis/VDRL, HBsAg, HCV, Toxoplasmose IgG e IgM) + Eletroforese de Hb / Ferritina.

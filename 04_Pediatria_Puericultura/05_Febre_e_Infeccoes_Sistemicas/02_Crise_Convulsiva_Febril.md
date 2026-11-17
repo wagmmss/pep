@@ -10,11 +10,13 @@
 ###### ATENDIMENTO DE EMERGÊNCIA PEDIÁTRICA — CRISE CONVULSIVA FEBRIL (6 MESES A 5 ANOS) ######
 # IDENTIFICAÇÃO & PESO:
 ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
-# SUBJETIVO (SEMIOLOGIA DA CRISE & CRITÉRIOS SIMPLES vs COMPLEXA):
-- Queixa Principal (QP): Episódio de crise convulsiva em vigência de febre há [ ] minutos/horas.
+# QP:
+- Episódio de crise convulsiva em vigência de febre há [ ] minutos/horas.
+
+# HMA:
 - Semiologia Detalhada do Evento Convulsivo:
   * Morfologia Motora: [Crise Generalizada Tônico-Clônica bilateral e simétrica, associada a perda de consciência e versão ocular / Crise Focal — abalos restritos a um hemicorpo ou desvio lateral fixo do olhar].
   * Duração Estimada da Crise: [< 5 minutos (cessou espontaneamente em domicílio/trajeto) / 5 a 14 minutos / ≥ 15 minutos (Crise Febril Prolongada)].
@@ -25,10 +27,10 @@ Alergias: [Nega / [ ]].
   * Sintomas do Foco Infeccioso: [Coriza e tosse leve (IVAS) / Dor de ouvido (OMA) / Diarreia aguda / Febre isolada (< 24h)].
   * Antecedentes Pessoais e Familiares: DNPM prévio [normal para a idade]; Crises afebris prévias: [Nega]; História familiar de convulsão febril em pais/irmãos: [Positiva / Negativa]; Vacinação (Hib, Pneumo-10, Meningo C): [Completa em dia / Incompleta].
 
-# OBJETIVO (EXAME FÍSICO NEUROLÓGICO PÓS-ICTAL & BUSCA DO FOCO FEBRIL):
+# EXAME FÍSICO:
 - Sinais Vitais & Glicemia: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Glicemia Capilar (HGT): [ ] mg/dL (Normoglicemia confirmada).
 - Exame Neurológico Pós-Ictal (Após defervescência e recuperação do pós-ictal):
-  * Nível de Consciência: [Alerta (Glasgow 15), interativo, reconhecendo os pais e consolável no colo / Ainda em sonolência pós-ictal imediata / Letárgico].
+  * Nível de Consciência: [*Alerta (Glasgow 15), interativo, reconhecendo os pais e consolável no colo / Ainda em sonolência pós-ictal imediata / Letárgico].
   * Pupilas & Pares Cranianos: Pupilas isocóricas e fotorreagentes, motricidade ocular extrínseca preservada.
   * Força Motora & Tônus: Movimentação ativa e simétrica dos 4 membros, sem déficits motores focais (Paralisia de Todd ausente).
   * Pesquisa de Sinais Meníngeos: Fontanela anterior (se aberta) plana e normotensa; nuca livre sem rigidez; Sinais de Kernig e Brudzinski negativos.
@@ -37,11 +39,11 @@ Alergias: [Nega / [ ]].
   * Otoscopia & Oroscopia: [Faringe hiperemiada (faringoamigdalite/IVAS viral) / Membrana timpânica abaulada e hiperemiada (OMA) / Sem foco aparente no exame inicial].
   * Cardiopulmonar e Abdome: MV presente bilateralmente sem ruídos adventícios; BNF 2T sem sopros; abdome flácido e indolor.
 
-# AVALIAÇÃO DIAGNÓSTICA & CLASSIFICAÇÃO (SBP / AAP / ILAE):
+# HIPÓTESES DIAGNÓSTICAS & CLASSIFICAÇÃO (SBP / AAP / ILAE):
 1. [Crise Convulsiva Febril Simples (Típica) — Generalizada, < 15 min, única em 24h e sem déficit pós-ictal / Crise Convulsiva Febril Complexa (Atípica)] (CID-10: R56.0).
 2. Etiologia da Febre: [IVAS viral / Otite Média Aguda / Exantema Súbito em fase febril / Gastroenterite].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [ETAPA 1] CONDUTA NA SALA DE EMERGÊNCIA (SE CRISE ATIVA COM DURAÇÃO > 5 MINUTOS):
 1. ABCDE: Posicionar em decúbito lateral de segurança no leito, aspirar vias aéreas superiores suavemente, ofertar O2 sob máscara não reinalante a 10 L/min, instalar monitorização e aferir Glicemia Capilar (HGT) imediatamente *(Se hipoglicemia < 60 mg/dL: administrar Glicose 10% [SG 10%] 5 mL/kg EV em bólus = 0,5 g/kg — Regra dos 50 do PALS; nunca usar SG 50% puro em veia periférica pediátrica)*.

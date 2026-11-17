@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: DOENÇA HEMORROIDÁRIA / FISSURA ANAL ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
+
+# HMA:
 - HMA: Relata quadro com início após esforço evacuatório com fezes ressecadas há cerca de [ ] dias.
   * HIPÓTESE A - TROMBOSE HEMORROIDÁRIA EXTERNA: Dor anal de início súbito, contínua, latejante, que piora ao sentar ou deambular, associada ao aparecimento de "nódulo doloroso" duro na margem do ânus.
   * HIPÓTESE B - FISSURA ANAL AGUDA: Dor anal excruciante em queimação ("sensação de cortar como caco de vidro") durante a evacuação, que persiste por várias horas após evacuar, associada a rajas de sangue vermelho vivo sobre as fezes ou no papel.
@@ -23,7 +25,7 @@ Alergias: [Nega / Sim: [ ]].
 - Nega diarreia crônica alternada com constipação persistente.
 - Hábitos: Constipação intestinal crônica, baixa ingesta de fibras e água.
 
-# OBJETIVO (EXAME PROCTOLÓGICO BÁSICO DA UPA):
+# EXAME FÍSICO:
 - Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.
 - Inspeção Perianal Estática e Dinâmica:
   * [Se Trombose Hemorroidária]: Presença de nódulo perianal arredondado, tenso, violáceo, localizado às [ ] horas na margem anal, medindo cerca de [ ] cm, doloroso à palpação, sem necrose tecidual ou sangramento ativo [ou com ulceração central e saída de coágulos escuros].
@@ -31,11 +33,11 @@ Alergias: [Nega / Sim: [ ]].
   * [Se Hemorroida Interna]: Coxins hemorroidários internos prolapsados na manobra de Valsalva [Grau II (reduzem espontaneamente) / Grau III (necessitam redução manual)].
 - Toque Retal: [Realizado com xilocaina gel: ausência de massas tumorais palpáveis no reto baixo, tônus esfincteriano normotônico / Dispensado toque retal no momento devido a hipertonia e dor intensa à tentativa de introdução por fissura anal aguda].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. [Trombose Hemorroidária Externa aguda / Fissura Anal Aguda / Crise Hemorroidária Interna com prolapso] (CID-10: I84.3 / K60.0 / I84.2).
 2. Ausência de abscesso perianal, fístula complexa ou sepse perineal (Gangrena de Fournier).
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (ALÍVIO IMEDIATO DA DOR):
 1. Dipirona 1 g EV + Cetoprofeno 100 mg EV (se não hipertenso ou contraindicado).

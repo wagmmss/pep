@@ -7,8 +7,8 @@
 ATENDIMENTO DE EMERGÊNCIA — TROMBOSE VENOSA PROFUNDA (TVP) & TROMBOEMBOLISMO PULMONAR (TEP)
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
 APRESENTAÇÃO CLÍNICA PRINCIPAL:
 - Quadro Dominante: [Suspeita de TVP de Membro Inferior (edema unilateral assimétrico, dor em panturrilha e empastamento) / Suspeita de TEP Agudo (dispneia súbita inexplicada, dor torácica ventilatório-dependente, taquicardia ou síncope)].
@@ -16,7 +16,7 @@ APRESENTAÇÃO CLÍNICA PRINCIPAL:
 
 EXAME FÍSICO DIRIGIDO:
 - Sinais Vitais: PA: [120x80] mmHg | FC: [108] bpm | FR: [24] irpm | SpO2: [91]% em ar ambiente.
-- Avaliação Cardiorrespiratória: Ausculta pulmonar [limpa — dissociação clínico-auscultatória clássica do TEP! / estertores localizados]. Turgência jugular: [Ausente / Presente com hiperfonese de B2 em foco pulmonar — sobrecarga aguda de VD].
+- Avaliação Cardiorrespiratória: Ausculta pulmonar [limpa — dissociação clínico-auscultatória clássica do TEP! / estertores localizados]. Turgência jugular: [*Ausente / Presente com hiperfonese de B2 em foco pulmonar — sobrecarga aguda de VD].
 - Exame de Membros Inferiores: [Assimetria de panturrilha > 3 cm (medida 10 cm abaixo da tuberosidade tibial) no membro [Direito / Esquerdo], edema depressível (cacifo+) unilateral, calor local e dor à palpação do trajeto venoso profundo / Membros inferiores simétricos sem sinais de TVP clínica]. Pulsos distais (pedioso e tibial posterior) [presentes e simétricos — descartada flegmasia cerulea dolens].
 
 ESTRATIFICAÇÃO DE PROBABILIDADE E GRAVIDADE:
@@ -29,7 +29,7 @@ EXAMES COMPLEMENTARES:
 - D-Dímero (se probabilidade baixa/intermediária): [ ] ng/mL (Corte ajustado para idade > 50 anos = Idade × 10 ng/mL).
 - Imagem Confirmatoria: [USG Doppler Venoso Colorido de MMII mostrando incompressibilidade da veia poplítea/femoral / Angio-TC de Artérias Pulmonares com falha de enchimento em ramo lobar/segmentar/tronco pulmonar].
 
-# PLANO / CONDUTA
+# CONDUTA:
 1. Suporte Ventilatório e Hemodinâmico (no TEP): Oxigenoterapia suplementar se SpO2 < 90%; em caso de hipotensão por sobrecarga de VD, cautela máxima na expansão volêmica (máximo 500 mL de SF 0,9%, pois hiperdistensão do VD comprime o VE e piora o choque!).
 2. Anticoagulação Plena Imediata (iniciar já na suspeita de alta probabilidade antes mesmo do laudo de imagem, se baixo risco de sangramento):
    - Opção Hospitalar / Parenteral: Enoxaparina 1 mg/kg SC a cada 12 horas (ou 1 mg/kg SC 1x/dia se ClCr < 30 mL/min; ou Heparina Não Fracionada IV se instabilidade/ClCr < 15 mL/min).

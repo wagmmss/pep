@@ -13,7 +13,7 @@
 - Procedimento Realizado: [ ] | Via de Acesso: [Videolaparoscópica / Convencional aberta / Ortopédica / Urológica]
 - Antimicrobiano Pós-Operatório: [Profilaxia cirúrgica suspensa em < 24h / Antibioticoterapia terapêutica com [ ] — D[ ] de [ ] dias]
 
-# SUBJETIVO (S — RECUPERAÇÃO FUNCIONAL & MARCOS PÓS-OPERATÓRIOS):
+# EVOLUÇÃO (24H):
 - Estado Geral no Período: Passou as últimas 24h [bem, sem intercorrências agudas / com queixa de: [ ]].
 - Controle da Dor Pós-Operatória (EVA 0–10): [EVA [0–2] restrita à ferida operatória, bem controlada com analgesia regular / Dor moderada (EVA [ ]) controlada após resgate].
 - Tolerância Alimentar & Retorno do Trânsito Intestinal:
@@ -23,7 +23,7 @@
 - Mobilidade & Deambulação: [Deambulando ativamente no quarto e corredor / Deambulação com auxílio / Restrito ao leito por recomendação cirúrgica específica].
 - Diurese: [Espontânea, clara e sem disúria após retirada de SVD / Por SVD com débito límpido].
 
-# OBJETIVO (O — EXAME FÍSICO, FERIDA OPERATÓRIA & DRENOS):
+# EXAME FÍSICO:
 - Sinais Vitais & Curvas (24h): PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax máx 24h: [ ] °C (Afebril) | Diurese 24h: [ ] mL | BH 24h: [Neutro / +[ ] mL / -[ ] mL].
 - Ectoscopia: Bom estado geral, lúcido(a) e orientado(a), corado(a), hidratado(a), anictérico(a), eupneico(a) em ar ambiente, TEC < 2 segundos.
 - Aparelho Cardiopulmonar: Ritmo cardíaco regular em 2T, bulhas normofonéticas sem sopros; murmúrio vesicular presente bilateralmente sem estertores ou atelectasias basais.
@@ -36,12 +36,12 @@
   * [Sem drenos cirúrgicos / Dreno [Portovac / Blake / Penrose] em [ ] com débito de [ ] mL/24h de aspecto [seroso claro / sero-hemático fluido], sem pus, bile ou conteúdo entérico].
 - Extremidades: Pulsos periféricos simétricos, sem edema de MMII, panturrilhas livres e indolores (Homans negativo).
 
-# AVALIAÇÃO (A — IMPRESSÃO DO PÓS-OPERATÓRIO):
+# HIPÓTESES DIAGNÓSTICAS:
 1. [ ]º DPO de [ ] evoluindo satisfatoriamente, estável hemodinamicamente e afebril.
 2. Trânsito gastrointestinal [restabelecido com boa aceitação de dieta oral / em retorno fisiológico].
 3. Ferida operatória limpa, íntegra e sem sinais de infecção de sítio cirúrgico (ISC).
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA DO DIA NA ENFERMARIA CIRÚRGICA:
 1. Dieta: [Progredir dieta para branda/geral por via oral / Manter dieta atual].

@@ -10,18 +10,20 @@
 ###### ATENDIMENTO PEDIÁTRICO — PNEUMONIA ADQUIRIDA NA COMUNIDADE (PAC) ######
 # IDENTIFICAÇÃO & PESO:
 ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Alérgico(a) a Penicilinas / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico(a) a Penicilinas / [ ]].
 
-# SUBJETIVO (ANAMNESE DIRIGIDA & PADRÃO CLÍNICO):
-- Queixa Principal (QP): Tosse, febre persistente e respiração rápida/cansada há [ ] dias.
-- História da Moléstia Atual (HMA): Criança iniciou quadro de IVAS há [ ] dias, evoluindo há [ ] dias com febre alta persistente (Tax aferida de [ ] °C), tosse produtiva, queda do estado geral e percepção materna de "respiração acelerada / peito batendo rápido".
+# QP:
+- Tosse, febre persistente e respiração rápida/cansada há [ ] dias.
+
+# HMA:
+- Criança iniciou quadro de IVAS há [ ] dias, evoluindo há [ ] dias com febre alta persistente (Tax aferida de [ ] °C), tosse produtiva, queda do estado geral e percepção materna de "respiração acelerada / peito batendo rápido".
 - Padrão Clínico-Etiológico:
   * [PAC Bacteriana Típica (*Streptococcus pneumoniae*)]: Início agudo/hiperagudo de febre alta (> 38,5–39 °C), taquipneia, tosse, dor torácica/abdominal referida e prostração.
   * [PAC Atípica (*Mycoplasma pneumoniae* / *Chlamydia* — comum em ≥ 5 anos)]: Início insidioso, febre baixa, cefaleia, mialgia, tosse seca paroxística persistente e sibilância/estertores difusos.
 - Tolerância Oral & Vacinação: Aceitação de líquidos e medicação por via oral [preservada sem vômitos / prejudicada por vômitos ou fadiga respiratória]; Vacina Pneumocócica 10-valente e Pentavalente (Hib): [Em dia / Incompleta].
 
-# OBJETIVO (EXAME FÍSICO PÓS-ANTITÉRMICO & CRITÉRIOS DA OMS):
+# EXAME FÍSICO:
 - Sinais Vitais (Contados em 1 minuto completo com criança calma e afebril):
   * FREQUÊNCIA RESPIRATÓRIA: [ ] irpm -> Critério de Taquipneia OMS: [Positivo (≥ 60 se < 2m | ≥ 50 se 2–11m | ≥ 40 se 1–4a | ≥ 30 se ≥ 5a) / Limítrofe].
   * Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92–94% — normoxêmica / < 92% — hipoxemia com indicação formal de internação]).
@@ -34,10 +36,10 @@ Alergias: [Nega / Alérgico(a) a Penicilinas / [ ]].
 - Exames Complementares (Solicitados apenas se PAC grave, internação ou dúvida diagnóstica):
   * [Manejo ambulatorial clínico sem necessidade de RX ou coleta sanguínea de rotina / Radiografia de Tórax PA mostrando consolidação alveolar em [ ] sem derrame pleural / RX com derrame pleural laminar/moderado].
 
-# AVALIAÇÃO DIAGNÓSTICA & ESTRATIFICAÇÃO DE RISCO (SBP / OMS):
+# HIPÓTESES DIAGNÓSTICAS & ESTRATIFICAÇÃO DE RISCO (SBP / OMS):
 1. Pneumonia Adquirida na Comunidade — PAC [Não Grave (elegível para tratamento ambulatorial com reavaliação obrigatória em 48h) / Grave (indicada internação hospitalar imediata)] (CID-10: J18.9).
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [MODALIDADE A] CONDUTA AMBULATORIAL NA PAC NÃO GRAVE (> 2–3 MESES, SpO2 ≥ 92%, BOA ACEITAÇÃO ORAL):
 1. **Antibioticoterapia de 1ª Escolha (Foco em *Streptococcus pneumoniae*):

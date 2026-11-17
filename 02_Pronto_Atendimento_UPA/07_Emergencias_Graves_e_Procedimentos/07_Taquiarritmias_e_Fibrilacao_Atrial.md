@@ -11,8 +11,8 @@
 ###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO TAQUIARRITMIAS & FA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 - Queixa Principal: Palpitações taquicárdicas súbitas no peito há cerca de [ ] horas.
 - Antecedentes Cardiovasculares: [Hipertensão / Insuficiência Cardíaca / DAC prévia / FA paroxística / Uso prévio de antiarrítmicos / Nega cardiopatia].
 
@@ -24,7 +24,7 @@ Alergias: [Nega / [ ]].
 [ ] 5. Desperfusão Tecidual Periférica (Tempo de enchimento capilar > 3s, extremidades frias e pálidas).
 * CLASSIFICAÇÃO CLÍNICA: [PACIENTE INSTÁVEL -> INDICAÇÃO DE CARDIOVERSÃO ELÉTRICA IMEDIATA / PACIENTE ESTÁVEL -> MANEJO FARMACOLÓGICO].
 
-# OBJETIVO (SINAIS VITAIS & ELETROCARDIOGRAMA DE 12 DERIVAÇÕES):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm (FC > 150 bpm) | FR: [ ] irpm | SpO2: [ ]% em AA.
 - Análise Sistemática do Eletrocardiograma (ECG):
   * Frequência Cardíaca no Traçado: [ ] bpm.
@@ -36,7 +36,7 @@ Alergias: [Nega / [ ]].
     - [ ] Flutter Atrial - Ritmo regular ou irregularidade proporcional, ondas F serrilhadas ("dente de serra") em derivações inferiores (DII, DIII, aVF).
     - [ ] Taquicardia Ventricular Monomórfica com Pulso (TV) - QRS largo e regular.
 
-# PLANO / CONDUTA POR MODALIDADE CLÍNICA:
+# CONDUTA:
 
 >> [MODALIDADE A]: PACIENTE INSTÁVEL (PRESENÇA DE QUALQUER UM DOS 5 SINAIS DE GRAVIDADE):
 1. Cardioversão Elétrica Sincronizada (CVE) Imediata na Sala Vermelha:

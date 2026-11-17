@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: PARASITOSE INTESTINAL ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
+
+# HMA:
 - HMA: Paciente relata queixas gastrointestinais insidiosas:
   * Prurido perianal de predomínio noturno que prejudica o sono (suspeita de Oxiuríase / Enterobius vermicularis).
   * Eliminação de espécime macroscópico nas fezes tipo "minhoca branca/rosada" (Ascaris lumbricoides).
@@ -24,17 +26,17 @@ Alergias: [Nega / Sim: [ ]].
 - Nega desidratação, prostração grave ou perda de peso volumosa.
 - Hábitos & Saneamento: [Água encanada tratada / Água de poço; consome verduras cruas sem higienização com hipoclorito; crianças pequenas no domicílio].
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Afebril.
 - Ectoscopia: Bom estado geral, corado [ou hipocorado +/4+ por provável anemia ferropriva], hidratado, anictérico, acianótico.
 - Exame Abdominal: Abdome plano a discretamente meteorizado/timpânico, ruídos hidroaéreos presentes, flácido, com sensibilidade difusa leve à palpação periumbilical, sem dor localizada, sem visceromegalias palpáveis e sem sinais de peritonismo (Blumberg negativo).
 - Inspeção Anal (se prurido intenso): Ausência de fissuras agudas ou lesões hemorroidárias trombosadas; presença de escoriações perianais superficiais por coçadura.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Parasitose Intestinal não especificada / Suspeita clínica de [Helmintíase / Giardíase / Oxiuríase] (CID-10: B82.9 / B80 / A07.1).
 2. Ausência de abdome agudo obstrutivo ou desidratação.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> PRESCRIÇÃO DOMICILIAR (ESCOLHA CONFORME O PERFIL CLÍNICO):
 

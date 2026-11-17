@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA / SALA VERMELHA: HEMORRAGIA DIGESTIVA ALTA (HDA) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Vômito com sangue vivo / Fezes pretas e tontura há [ ] horas.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Vômito com sangue vivo / Fezes pretas e tontura há [ ] horas.
+
+# HMA:
 - HMA: Paciente relata episódio agudo de [hematêmese com sangue vermelho vivo / vômitos escuros em borra de café] e/ou [eliminação de fezes pretas, amolecidas, com odor fétido característico de piche (melena)]. Relata fraqueza intensa súbita, tontura ao se levantar (lipotímia), palpitações e sudorese fria.
 - SUSPEITA ETIOLÓGICA & ANTECEDENTES:
   * HDA NÃO-VARICOSA (ÚLCERA PÉPTICA): Histórico de queimação epigástrica, uso recente de AINEs (Diclofenaco/Cetoprofeno/Ibuprofeno), uso de AAS ou anticoagulantes, tabagismo.
@@ -22,11 +24,11 @@ Alergias: [Nega / Sim: [ ]].
 - Nega tosse com expectoração sanguinolenta (afastada hemoptise respiratória).
 - Nega disfagia ou emagrecimento severo recente.
 
-# OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA & ESTABILIDADE HEMODINÂMICA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia compensatória) | FR: [ ] irpm | SpO2: [ ]% em AA.
 - ÍNDICE DE CHOQUE (FC / PAS): [ ] (Se >= 0,9: risco iminente de descompensação e hipovolemia oculta).
 - Ectoscopia Geral: [Regular / Mau] estado geral, lúcido [ou sonolento/torporoso], hipocorado [2+/4+], desidratado, perfusão periférica lentificada (enchimento capilar > 2 segundos), extremidades frias e sudoreicas.
-- Estigmas de Hepatopatia Crônica: [Ausentes / Presença de icterícia escleral, telangiectasias em tórax ("aranhas vasculares"), eritema palmar e circulação colateral visível em cabeça de medusa].
+- Estigmas de Hepatopatia Crônica: [*Ausentes / Presença de icterícia escleral, telangiectasias em tórax ("aranhas vasculares"), eritema palmar e circulação colateral visível em cabeça de medusa].
 - Exame Abdominal: Abdome flácido, com sensibilidade leve em epigástrio à palpação profunda, ausência de massas, sem sinais de peritonite (Blumberg negativo). [Presença de macicez móvel/ascite / Sem ascite].
 - Toque Retal: Luva de exame exteriorizada com presença nítida de fezes melênicas (pretas e brilhantes) de odor característico fétido, sem hemorroidas trombosadas ativas ou sangue vermelho rutilante ao toque.
 
@@ -36,11 +38,11 @@ Alergias: [Nega / Sim: [ ]].
 - Bioquímica: Ureia: [ ] mg/dL (frequentemente elevada pelo sangue reabsorvido no intestino) | Creatinina: [ ] mg/dL | Lactato arterial: [ ] mmol/L.
 - Tipagem Sanguínea ABO/Rh e Prova Cruzada solicitadas de imediato com reserva de hemocomponentes.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Hemorragia Digestiva Alta [Varicosa provável / Não-varicosa por úlcera péptica] (CID-10: K92.0 / K92.1).
 2. Paciente com [estabilidade hemodinâmica / choque hipovolêmico grau II/III compensado].
 
-# PLANO / CONDUTA IMEDIATA EM SALA VERMELHA / EMERGÊNCIA:
+# CONDUTA:
 1. DIETA ZERO ABSOLUTA; oxigenoterapia sob cateter nasal (2 a 3 L/min) se SpO2 < 93%.
 2. Puncionados 2 acessos venosos periféricos calibrosos de grosso calibre (Jelco 14G ou 16G).
 3. Ressuscitação Volêmica: Infusão rápida de 1.000 mL de Ringer Lactato ou Soro Fisiológico 0,9% (evitar sobrecarga em cirróticos para não aumentar a pressão na veia porta).

@@ -11,8 +11,8 @@
 ###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO SEPSE & CHOQUE SÉPTICO ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 - Horário de Abertura do Protocolo de Sepse: [HH:MM] do dia [DD/MM/AAAA].
 - Foco Infeccioso Suspeito: [Pulmonar (PAC grave / Broncoaspiração) / Urinário (Pielonefrite) / Abdominal (Peritonite / Colangite) / Pele e Partes Moles (Erisipela / Fasciíte) / Foco Indeterminado].
 
@@ -31,7 +31,7 @@ Alergias: [Nega / [ ]].
 - Neurológico: Rebaixamento súbito do sensório ou encefalopatia séptica.
 - Metabólico / Tecidual: Hiperlactatemia sérica > 2,0 mmol/L (> 18 mg/dL).
 
-# OBJETIVO (SINAIS VITAIS NA ABERTURA & EXAME FÍSICO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg (PAM: [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Glicemia capilar: [ ] mg/dL.
 - Ectoscopia: [Mau / Regular] estado geral, [sonolento / torporoso / confuso / lúcido], descorado, taquipneico.
 - Perfusão Periférica: Extremidades [frias e mal perfundidas / quentes com vasodilatação distributiva]. Tempo de enchimento capilar (TEC): [ ] segundos (alterado se > 3 segundos). Presença de livedo em joelhos: [Sim / Não].
@@ -40,7 +40,7 @@ Alergias: [Nega / [ ]].
 - Abdome: Flácido, [indolor / dor difusa / dor à palpação de fossa ilíaca / sinais de irritação peritoneal].
 - Pele: Ausência de lesões bolhosas, crepitação subcutânea ou áreas necróticas extensas [se presente: [ ]].
 
-# PLANO / CONDUTA (PACOTE DA 1ª HORA - BUNDLE SURVIVING SEPSIS CAMPAIGN):
+# CONDUTA:
 1. Lactato Sérico Inicial: Coletado às [HH:MM] -> Resultado: [ ] mmol/L (Alerta se > 2 mmol/L | Hipoperfusão tecidual grave se >= 4 mmol/L). Programada redosagem em 2 a 4 horas para avaliar clareamento do lactato.
 2. Hemoculturas Prévias ao Antibiótico: Coletados 2 pares de hemoculturas (frascos aeróbio e anaeróbio) de sítios de punção periférica distintos às [HH:MM] (sem atrasar a infusão do antimicrobiano).
 3. Coleta de Culturas do Foco Provável: [Urocultura com antibiograma / Cultura de escarro / Swab ou aspirado de secreção].
@@ -59,7 +59,7 @@ Alergias: [Nega / [ ]].
    - [Se disfunção miocárdica associada / baixo débito cardíaco]: Associada Dobutamina (1 ampola 250 mg/20 mL + 230 mL SF 0,9%/SG 5% = 1.000 mcg/mL -> Iniciar a 10 a 15 mL/h em BIC = 2,5 a 20 mcg/kg/min).
 7. Cateterismo Vesical de Demora com coletor graduado para mensuração do débito urinário horário (meta: >= 0,5 mL/kg/h).
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Sepse de foco [pulmonar / urinário / abdominal / indefinido] (CID-10: A41.9).
 2. [Evolução para Choque Séptico refratário a volume com necessidade de vasopressor (CID-10: R57.2) / Resposta volêmica satisfatória].
 

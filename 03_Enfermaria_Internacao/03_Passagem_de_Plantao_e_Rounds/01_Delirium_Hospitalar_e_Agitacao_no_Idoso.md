@@ -7,8 +7,8 @@
 AVALIAÇÃO DE INTERCORRÊNCIA EM ENFERMARIA — DELIRIUM HOSPITALAR (MÉTODO CAM)
 # IDENTIFICAÇÃO E STATUS COGNITIVO BASAL:
 ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], no [ ]º DIH por [motivo da internação].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 - Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular leve/moderada / Doença de Parkinson ou Demência por Corpos de Lewy].
 
 DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2 + [3 OU 4]):
@@ -27,7 +27,7 @@ RASTREIO SISTEMÁTICO DA CAUSA BASE (MNEMÔNICO DELIRIUM):
 - [U] Urinary Retention & Fecal Impaction (Bexigoma e Fecaloma — palpar hipogástrio e checar evacuação!): [Globo vesical palpável / Fecaloma há > 3 dias / Diurese e hábito intestinal preservados].
 - [M] Myocardial & Pulmonary (Hipóxia / Hipercapnia / IAM silencioso): SpO2: [ ]%, ECG: [sem isquemia aguda].
 
-# PLANO / CONDUTA
+# CONDUTA:
 1. Tratamento Imediato do Fator Precipitante: Tratar a infecção subjacente, corrigir distúrbio hidroeletrolítico (hiponatremia/desidratação), aliviar retenção urinária aguda ou fecaloma, controlar a dor e suspender imediatamente medicações delirogênicas (benzodiazepínicos, anticolinérgicos, anti-histamínicos sedativos).
 2. Pacote Multicomponente Não Farmacológico (1ª Linha para TODOS os pacientes — especialmente no Delirium Hipoativo, onde antipsicóticos não têm benefício!):
    - Reorientação cognitiva frequente (calendário, relógio visível, iluminação natural diurna e ambiente escuro/silencioso à noite para restaurar o ciclo sono-vigília).

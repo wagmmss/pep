@@ -11,8 +11,8 @@
 ###### DESCRIÇÃO DE PARTO VAGINAL EUTÓCICO (ESPONTÂNEO) ######
 # IDENTIFICAÇÃO & DADOS DO NASCIMENTO:
 ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [Hígida / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - Equipe: Obstetra: [Dr(a). ] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr(a). ].
 - Nascimento: [DD/MM/AAAA] às [HH:MM] | Apresentação: Cefálica fletida em [OP / OEA / ODA] | Bolsa: [Rota intraparto / Amniotomia no expulsivo], LA [claro com grumos / meconial fluido], sem odor.
 - Recém-Nascido: Vivo, sexo [masculino / feminino], Peso: [ ] g, Apgar: [9/10] (1º/5º min), colocado em contato pele a pele imediato e clampeamento oportuno do cordão (após 1–3 min).
@@ -28,14 +28,14 @@ Alergias: [Nega / [ ]].
    - Tração controlada do cordão umbilical associada à contrapressão suprapúbica do segmento uterino (Manobra de Brandt-Andrews) e rotação placentária sobre seu eixo na saída vulvar (Manobra de Jacob-Dublin) às [HH:MM].
    - Revisão Placentária: Faces materna (cotilédones completos) e fetal íntegras, membranas completas e cordão com 2 artérias e 1 veia. Coletado sangue de cordão para TS/Rh e Coombs Direto (se mãe Rh-).
 4. Revisão do Canal de Parto & 4º Período (Greenberg):
-   - Revisão sob válvulas: Colo uterino íntegro em 360°, paredes vaginais sem hematomas. Períneo: [Íntegro / Laceração superficial de 1º grau hemostática sem necessidade de rafia / Laceração de 2º grau suturada conforme nota de perineorrafia].
+   - Revisão sob válvulas: Colo uterino íntegro em 360°, paredes vaginais sem hematomas. Períneo: [*Íntegro / Laceração superficial de 1º grau hemostática sem necessidade de rafia / Laceração de 2º grau suturada conforme nota de perineorrafia].
    - Toque retal confirmatório: Esfíncter anal externo normotônico e mucosa retal íntegra.
    - Globo de Segurança de Pinard formado e firme, lóquios fisiológicos, PA: [115x75] mmHg, FC: [78] bpm.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Puerpério imediato de Parto Vaginal Eutócico a termo sem intercorrências (CID-10: O80.0).
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> PRESCRIÇÃO MÉDICA PÓS-PARTO IMEDIATO (CENTRO OBSTÉTRICO -> ALOJAMENTO CONJUNTO):
 1. Dieta geral livre e estímulo à hidratação oral e deambulação assistida após 2 horas.
 2. Vigilância do 4º Período de Greenberg (1ª hora pós-parto): Aferir PA, FC, tônus uterino (Globo de Pinard) e sangramento vaginal a cada 15 minutos na 1ª hora.

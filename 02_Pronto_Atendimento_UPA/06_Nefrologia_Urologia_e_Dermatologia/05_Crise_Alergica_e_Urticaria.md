@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: REAÇÃO ALÉRGICA / ANAFILAXIA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Manchas vermelhas pelo corpo que coçam muito / Inchaço nos lábios / Falta de ar há [ ] minutos.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
+# QP:
+- Manchas vermelhas pelo corpo que coçam muito / Inchaço nos lábios / Falta de ar há [ ] minutos.
+
+# HMA:
 - HMA: Relata aparecimento agudo há cerca de [ ] minutos de placas avermelhadas na pele com intenso prurido, sensação de calor e formigamento difuso, acompanhadas de inchaço (angioedema) em [lábios / pálpebras / orelhas / face / mãos].
 - FATOR DESENCADEANTE IDENTIFICADO:
   * [ ] Ingestão alimentar recente: [Frutos do mar/camarão / Amendoim/castanhas / Ovos / Leite / Outro: [ ]].
@@ -30,17 +32,17 @@ Alergias: [Nega / [ ]].
     - [ ] URTICÁRIA AGUDA / ANGIOEDEMA ISOLADO (Sem sintomas respiratórios ou hemodinâmicos).
     - [ ] ANAFILAXIA GRAVE EM CURSO (EMERGÊNCIA MÉDICA MÁXIMA - INDICADA ADRENALINA IMEDIATA).
 
-# OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 - Ectoscopia & Pele: Placas eritematosas e edematosas (urticas) confluentes de tamanhos variados, com halo eritematoso e clareamento central, pruriginosas, disseminadas em tronco e membros. Presença de angioedema assimétrico em [lábio superior/inferior, pálpebras].
 - Oroscopia & Vias Aéreas: [Úvula centrada sem edema, orofaringe pérvia sem abaulamento / Presença de edema de úvula e pilares amigdalianos - ALERTA DE OBSTRUÇÃO LARÍNGEA].
 - Aparelho Respiratório: [Murmúrio vesicular limpo sem ruídos adventícios / Presença de estridor inspiratório laríngeo e/ou sibilos difusos expiratórios].
 - Aparelho Cardiovascular: Ritmo cardíaco taquicárdico regular, pulsos [cheios / filiformes e débeis], tempo de enchimento capilar [ ] segundos.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Reação Alérgica Aguda: [Urticária Aguda e Angioedema / Choque Anafilático / Anafilaxia Grave] (CID-10: L50.0 / T78.2 / T78.0).
 
-# PLANO / CONDUTA POR GRAVIDADE:
+# CONDUTA:
 
 >> [MODALIDADE 1 - SE ANAFILAXIA PRESENTE]: SALA VERMELHA IMEDIATA:
 1. ADRENALINA 1:1.000 INTRAMUSCULAR (A MEDICAÇÃO SALVADORA DE 1ª LINHA - NÃO ATRASAR!):

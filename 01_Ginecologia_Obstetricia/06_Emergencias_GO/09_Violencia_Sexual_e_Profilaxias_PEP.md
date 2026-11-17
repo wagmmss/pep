@@ -9,13 +9,13 @@
 ID: [Nome], [Idade] anos, Peso: [ ] kg, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU].
 TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção de emergência até 5 dias e profilaxia de ISTs não virais]).
-Comorbidades: [Hígida / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida] / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígida / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida] / [ ]].
+Alergias: [*Nega / [ ]].
 # AP:
-MED: [Nega uso contínuo / Em uso de: [ ]]
+MED: [*Nega uso contínuo / Em uso de: [ ]]
 HAB: [Nega tabagismo ou etilismo]
 CX: [Nega]
-ALER: [Nega alergias medicamentosas / Alérgica a: [ ]]
+ALER: [*Nega alergias medicamentosas / Alérgica a: [ ]]
 HF: [Nega]
 
 # CASO: ACOLHIMENTO E PROFILAXIA PÓS-VIOLÊNCIA SEXUAL (PORTARIA MS / PCDT)
@@ -32,10 +32,10 @@ Bom estado geral [ou emocionalmente abalada, porém lúcida e orientada], corada
 - Exame Corporal Externo: [Ausência de lesões traumáticas graves / Presença de escoriações ou equimoses descritas topograficamente].
 - Exame Ginecológico / Perineal: [Sem lacerações ativas ou sangramento / Presença de hiperemia ou fissura mucosa superficial sem sangramento ativo].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Vítima de violência sexual dentro da janela de [≤ 72h / 72h–5 dias], elegível para profilaxias combinadas (contracepção de emergência, ISTs não virais, Hepatite B e PEP HIV) + Notificação Compulsória SINAN.
 
-# PLANO / CONDUTA
+# CONDUTA:
 1. Acolhimento Multiprofissional Imediato: Garantir atendimento médico, psicológico e serviço social em sala privativa (Nota: Boletim de Ocorrência NÃO é obrigatório para realização do atendimento médico e das profilaxias; realizar Notificação Compulsória SINAN em até 24h).
 2. Contracepção de Emergência (se exposição vaginal, β-hCG negativo e sem método seguro, idealmente até 72h, podendo ser usada até 120h / 5 dias):
    - Levonorgestrel 1,5 mg VO em dose única (ou 2 comprimidos de 0,75 mg juntos) + antiemético prévio (Ondansetrona 8 mg VO). Se vômito < 2h, repetir dose; se peso >= 75 kg ou IMC >= 30 kg/m², preferir DIU de Cobre em até 5 dias quando disponível/aceito.

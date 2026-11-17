@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: DISPEPSIA AGUDA / DRGE ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Queimação no estômago (epigastralgia) e azia que sobe para o peito há [ ] dias/horas.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Queimação no estômago (epigastralgia) e azia que sobe para o peito há [ ] dias/horas.
+
+# HMA:
 - HMA: Refere dor em queimação localizada em região epigástrica iniciada há [ ], associada a sensação de azia retroesternal ascendente (pirose), regurgitação ácida na garganta, sensação de estômago cheio logo após começar a comer (plenitude pós-prandial precoce) e eructações frequentes. Relata piora após ingestão de café, alimentos gordurosos ou ao se deitar após as refeições.
 - EXCLUSÃO DE SÍNDROME CORONARIANA AGUDA (SCA):
   * Nega dor precordial em aperto, queimação opressiva retroesternal ou peso no peito.
@@ -29,7 +31,7 @@ Alergias: [Nega / Sim: [ ]].
   * Nega história familiar de câncer gástrico em parentes de 1º grau.
 - Medicações: [Nega uso recente de AINEs / Em uso crônico de AAS, Cetoprofeno, Ibuprofeno ou Diclofenaco].
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 - Ectoscopia: Bom estado geral, corado, hidratado, lúcido e orientado, sem fácies de sofrimento agudo, acianótico, anictérico.
 - Exame Abdominal:
@@ -39,11 +41,11 @@ Alergias: [Nega / Sim: [ ]].
   * Sinais de Irritação Peritoneal: Sinal de Blumberg negativo em todo o abdome (descompressão brusca indolor), Murphy negativo, ausência de defesa involuntária ou abdome em tábua.
 - Ausculta Cardiopulmonar: Ritmo regular em 2 tempos, bulhas normofonéticas sem sopros; pulmões limpos sem estertores crepitantes.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome Dispéptica Aguda / Doença do Refluxo Gastroesofágico (DRGE) (CID-10: K30 / K21.0).
 2. Afastada síndrome coronariana aguda no atendimento de emergência.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO):
 1. Inibidor de Bomba de Prótons: Omeprazol 40 mg EV diluído em 100 mL de SF 0,9% correr em 15 minutos agora.

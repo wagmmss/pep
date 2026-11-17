@@ -7,8 +7,8 @@
 ATENDIMENTO DE EMERGÊNCIA — QUEIMADURAS AGUDAS OU ACIDENTE POR ANIMAL PEÇONHENTO
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
 CENÁRIO DO ATENDIMENTO: [1. Queimadura Térmica/Química/Elétrica Aguda / 2. Acidente por Animal Peçonhento (Escorpião, Serpente ou Aranha)].
 
@@ -27,7 +27,7 @@ BLOCO B — SE ACIDENTE POR ANIMAL PEÇONHENTO (SINAN / MINISTÉRIO DA SAÚDE):
   * [Araneísmo: Loxosceles (Aranha-marrom — placa marmórea isquêmica/necrótica horas após picada indolor ± hemólise) / Phoneutria (Aranha-armadeira — dor imediata intensa)].
 - Classificação de Gravidade para Soroterapia: [Leve / Moderado / Grave].
 
-# PLANO / CONDUTA
+# CONDUTA:
 1. CONDUTA NA QUEIMADURA AGUDA:
    - Interromper o processo de queimadura: Lavagem abundante com água corrente em temperatura ambiente por 15–20 min (nunca usar gelo!), retirar anéis, relógios, pulseiras e roupas não aderidas.
    - Via Aérea e Oxigênio: IOT precoce se sinais de lesão inalatória ou queimadura facial extensa; O2 a 100% em máscara não reinalante se suspeita de intoxicação por monóxido de carbono (CO).

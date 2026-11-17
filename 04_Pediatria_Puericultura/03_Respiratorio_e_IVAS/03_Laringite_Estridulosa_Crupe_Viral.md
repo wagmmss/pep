@@ -10,34 +10,36 @@
 ###### ATENDIMENTO DE EMERGÊNCIA PEDIÁTRICA — CRUPE VIRAL (LARINGOTRAQUEOBRONQUITE) ######
 # IDENTIFICAÇÃO & PESO:
 ID: [Nome], [ ] [meses / anos] (Faixa típica: 6 meses a 3 anos), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
-# SUBJETIVO (ANAMNESE DIRIGIDA & EXCLUSÃO DE EPIGLOTITE / CORPO ESTRANHO):
-- Queixa Principal (QP): Tosse rouca ("tosse de cachorro/foca") e barulho agudo para puxar o ar iniciados à noite há [ ] horas.
-- História da Moléstia Atual (HMA): Criança apresentou pródromo catarral leve há [1 a 3] dias (coriza hialina e febre baixa de [ ] °C), evoluindo na madrugada de hoje com início abrupto de tosse ladrante metálica, rouquidão vocal e estridor inspiratório laríngeo.
+# QP:
+- Tosse rouca ("tosse de cachorro/foca") e barulho agudo para puxar o ar iniciados à noite há [ ] horas.
+
+# HMA:
+- Criança apresentou pródromo catarral leve há [1 a 3] dias (coriza hialina e febre baixa de [ ] °C), evoluindo na madrugada de hoje com início abrupto de tosse ladrante metálica, rouquidão vocal e estridor inspiratório laríngeo.
 - Exclusão Mandatória de Epiglotite Aguda, Traqueíte Bacteriana e Aspiração de Corpo Estranho:
   * Deglutição e Saliva: [Deglutindo saliva normalmente, sem sialorreia (baba) e sem posição em tripé].
   * História de Engasgo: Nega início hiperagudo durante alimentação ou brincadeira com peças pequenas/grãos (afastada aspiração de corpo estranho).
   * Estado Toxêmico: Nega febre alta (> 39,5 °C) com aparência tóxica ou prostração extrema.
 
-# OBJETIVO (EXAME FÍSICO NO COLO DA MÃE & ESCORE DE WESTLEY):
+# EXAME FÍSICO:
 - Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | TEC < 2s.
 - Ectoscopia & Voz: [Bom / Regular] estado geral, examinada no colo materno sem forçar decúbito dorsal, [alerta e ativa / ansiosa pelo esforço respiratório], corada, acianótica. Voz/choro rouco e tosse ladrante característica.
 - Avaliação do Escore de Gravidade de Westley (0 a 17 pontos):
-  1. Estridor Inspiratório: [Ausente em repouso, audível apenas ao choro/agitação (0) / Audível em repouso com estetoscópio (+1) / Audível em repouso sem estetoscópio (+2)].
-  2. Retrações / Tiragens (Fúrcula, Intercostal e Subcostal): [Ausentes (0) / Leves (+1) / Moderadas (+2) / Graves (+3)].
-  3. Entrada de Ar (Murmúrio Vesicular): [Normal bilateralmente (0) / Diminuída (+1) / Muito diminuída (+2)].
-  4. Cianose: [Ausente (0) / Com agitação (+4) / Em repouso (+5)].
-  5. Nível de Consciência: [Normal e alerta (0) / Desorientado, agitado por hipóxia ou letárgico (+5)].
+  1. Estridor Inspiratório: [*Ausente em repouso, audível apenas ao choro/agitação (0) / Audível em repouso com estetoscópio (+1) / Audível em repouso sem estetoscópio (+2)].
+  2. Retrações / Tiragens (Fúrcula, Intercostal e Subcostal): [*Ausentes (0) / Leves (+1) / Moderadas (+2) / Graves (+3)].
+  3. Entrada de Ar (Murmúrio Vesicular): [*Normal bilateralmente (0) / Diminuída (+1) / Muito diminuída (+2)].
+  4. Cianose: [*Ausente (0) / Com agitação (+4) / Em repouso (+5)].
+  5. Nível de Consciência: [*Normal e alerta (0) / Desorientado, agitado por hipóxia ou letárgico (+5)].
   * ESCORE DE WESTLEY TOTAL: [ ] PONTOS -> Classificação: [Crupe Leve (≤ 2 pts — sem estridor em repouso) / Crupe Moderado (3 a 7 pts — estridor em repouso com tiragem) / Crupe Grave (≥ 8 pts — risco de falência respiratória)].
 - Nota de Segurança: Não realizada oroscopia forçada com espátula para evitar laringoespasmo reflexo.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Laringite Viral Aguda / Crupe Viral (CID-10: J05.0 — provável Vírus Parainfluenza tipos 1 e 2).
 2. Gravidade Clínica: [Leve (sem estridor em repouso) / Moderada a Grave (estridor em repouso presente)].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [MODALIDADE A] CONDUTA NO CRUPE LEVE (WESTLEY ≤ 2 — SEM ESTRIDOR EM REPOUSO):
 1. Dexametasona Dose Única na Unidade (Padrão-Ouro para TODOS os casos de Crupe, inclusive leves):

@@ -11,8 +11,8 @@
 ###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO AVC AGUDO (CÓDIGO AVC) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 - Data e Hora do Início dos Sintomas / Última vez visto bem (Last Seen Well): [DD/MM/AAAA] às [HH:MM].
 - Tempo de Evolução dos Sintomas: [ ] horas e [ ] minutos.
 - Classificação Temporal: [JANELA DE TROMBÓLISE VÁLIDA (< 4,5 HORAS) / FORA DA JANELA (> 4,5 HORAS) / AVC DO DESPERTAR (WAKE-UP STROKE)].
@@ -23,7 +23,7 @@ Alergias: [Nega / [ ]].
 [ ] Fala Anormal (Disartria / Afasia): [Incompreensível / Dificuldade para articular / Incapaz de falar / Normal].
 * Escore de Cincinnati: [POSITIVO (1 a 3 itens alterados) / Negativo].
 
-# OBJETIVO (SINAIS VITAIS IMEDIATOS & EXAME NEUROLÓGICO):
+# EXAME FÍSICO:
 - Sinais Vitais na Admissão: PA: [ ]x[ ] mmHg (PAM: [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 - Glicemia Capilar Imediata: [ ] mg/dL (Afastada e corrigida prontamente hipoglicemia < 60 mg/dL).
 - Escala de Coma de Glasgow: [ ]/15 pontos (Ocular: [ ], Verbal: [ ], Motora: [ ]).
@@ -38,11 +38,11 @@ Alergias: [Nega / [ ]].
 - Laboratório Urgente: Hemograma com plaquetas (Plaquetas: [ ] /mm³), TP/INR: [ ], TTPA: [ ], Creatinina, Eletrólitos.
 - Eletrocardiograma de 12 Derivações: [Ritmo sinusal / Fibrilação atrial aguda ou crônica / Isquemia miocárdica aguda associada].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Acidente Vascular Cerebral Isquêmico (AVCi) agudo em território de artéria [cerebral média / carótida / vértebro-basilar] [direita / esquerda] (CID-10: I63.9).
 2. Elegibilidade para Trombólise Química: [ELEGÍVEL (JANELA < 4,5H SEM CONTRAINDICAÇÕES) / NÃO ELEGÍVEL / AVC HEMORRÁGICO (CID-10: I61.9)].
 
-# PLANO / CONDUTA POR MODALIDADE:
+# CONDUTA:
 
 >> [MODALIDADE 1]: PACIENTE CANDIDATO À TROMBÓLISE QUÍMICA (ALTEPLASE / rt-PA):
 1. Verificação Estrita das Contraindicações Absolutas:

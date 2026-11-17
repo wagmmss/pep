@@ -2062,6 +2062,31 @@
       border-color: var(--primary-bright);
       color: var(--text);
     }
+    .choice-pill.is-default.active {
+      box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.45);
+    }
+    .choice-pill.is-default:not(.active) {
+      border-bottom: 1px dashed rgba(16, 185, 129, 0.55);
+    }
+    .pep-sec-normal-btn {
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.42);
+      color: #6ee7b7;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      margin-left: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      vertical-align: middle;
+      transition: all 0.12s ease;
+    }
+    .pep-sec-normal-btn:hover {
+      background: rgba(16, 185, 129, 0.25);
+    }
     .pep-line-check-label {
       display: inline-flex;
       align-items: center;

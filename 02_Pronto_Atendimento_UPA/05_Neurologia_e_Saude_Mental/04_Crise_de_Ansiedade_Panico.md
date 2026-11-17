@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA: CRISE DE ANSIEDADE AGUDA / ATAQUE DE PÂNICO ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Falta de ar, taquicardia no peito, tremores e sensação de morte há [ ] minutos/horas.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Falta de ar, taquicardia no peito, tremores e sensação de morte há [ ] minutos/horas.
+
+# HMA:
 - HMA: Paciente relata início súbito há cerca de [ ] minutos de intensa sensação de angústia, acompanhada de palpitações rápidas no peito, sensação de sufocamento ("o ar não entra nos pulmões"), tremores difusos nos membros, sudorese fria, tontura e sensação de irrealidade / medo de perder o controle ou de morte iminente.
 - SINTOMAS DE HIPERVENTILAÇÃO (ALCALOSE RESPIRATÓRIA):
   * Refere formigamento (parestesias) ao redor dos lábios/boca e nas pontas dos dedos das mãos e pés.
@@ -24,18 +26,18 @@ Alergias: [Nega / Sim: [ ]].
 - EXCLUSÃO DE TEP E ASMA: Nega dor pleurítica aguda em pontada, nega tosse ou chiado no peito; nega imobilização recente ou TVP prévia.
 - EXCLUSÃO DE INTOXICAÇÃO: Nega uso de drogas simpaticomiméticas ilícitas (cocaína, ecstasy, anfetaminas) ou anorexígenos.
 
-# OBJETIVO (EXAME FÍSICO DA EMERGÊNCIA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (discretamente elevada por tônus adrenérgico) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (padrão taquipneico suspiroso) | SpO2: 99% a 100% em ar ambiente | Tax: [ ] °C.
 - Ectoscopia: Estado geral preservado, lúcido e orientado no tempo e espaço (Glasgow 15), extremamente ansioso, inquieto, sudoreico frio, corado, acianótico, mucosas úmidas.
 - Aparelho Respiratório: Ausculta pulmonar com murmúrio vesicular universalmente audível, totalmente limpo, sem ruídos adventícios (sem sibilos ou estertores). Saturação de oxigênio excelente (SpO2 > 98% AA).
 - Aparelho Cardiovascular: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas sem sopros; pulsos periféricos simétricos e cheios.
 - Eletrocardiograma (ECG de 12 derivações realizado na admissão): Taquicardia sinusal regular, sem alterações isquêmicas agudas, sem arritmias ventriculares e sem distúrbios de condução.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Crise de Ansiedade Aguda / Ataque de Pânico (CID-10: F41.0).
 2. Descartadas causas cardiovasculares, respiratórias ou metabólicas agudas no pronto atendimento.
 
-# PLANO / CONDUTA NA UNIDADE:
+# CONDUTA:
 
 1. ACOLHIMENTO VERBAL & AMBIENTE TRANQUILO:
    - Paciente conduzido a um leito calmo com baixa estimulação sonora.

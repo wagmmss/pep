@@ -14,26 +14,26 @@ ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / C
 - DUM: [DD/MM/AAAA] | Ciclos: [Regulares 28/28d, fluxo 4–5d normal / Irregulares / Sangramento uterino aumentado com coágulos / Amenorreia].
 - Contracepção / TRH Atual: [Nenhum / ACO: [ ]/ DIU de Cobre / SIU-LNG Mirena / Implanon / Injetável mensal ou trimestral / Preservativo].
 - Rastreio Oncológico Prévio:
-  * Citopatológico / DNA-HPV: Último em [MM/AAAA] -> [Normal (NILM) / Alterado: [ ]/ Nunca realizou].
+  * Citopatológico / DNA-HPV: Último em [MM/AAAA] -> [*Normal (NILM) / Alterado: [ ]/ Nunca realizou].
   * Mamografia Bilateral: Última em [MM/AAAA] -> [BI-RADS 1 ou 2 / BI-RADS 0 / BI-RADS 3 / Não aplicável pela idade].
-  * USG Transvaginal: Última em [MM/AAAA] -> [Sem alterações / Miomatose uterina / Eco endometrial de mm].
+  * USG Transvaginal: Última em [MM/AAAA] -> [*Sem alterações / Miomatose uterina / Eco endometrial de mm].
 
 # ANTECEDENTES & SUBJETIVO (QD & HMA):
-- Comorbidades, HF & Alergias: [Hígida / HAS / DM2 / Dislipidemia / Hipotireoidismo] | HF Câncer (Mama < 50a / Ovário / Endométrio em 1º grau): [Nega / Positivo em: [ ]] | Alergias: [Nega alergias medicamentosas / Alérgica a: [ ]] | Tabagismo: [Nega / Sim].
+- Comorbidades, HF & Alergias: [Hígida / HAS / DM2 / Dislipidemia / Hipotireoidismo] | HF Câncer (Mama < 50a / Ovário / Endométrio em 1º grau): [*Nega / Positivo em: [ ]] | Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]] | Tabagismo: [*Nega / Sim].
 - Queixa Principal & HMA: Comparece para [rotina ginecológica preventiva anual assintomática / queixa de corrimento vaginal com prurido / queixa de corrimento com odor fétido (peixe) / sangramento uterino anormal / fogachos e ressecamento vaginal].
 - Nega sinusorragia (sangramento pós-coito), sangramento pós-menopausa, dor pélvica aguda, dispareunia profunda, febre ou perda urinária.
 
-# OBJETIVO (EXAME FÍSICO GINECOLÓGICO):
+# EXAME FÍSICO:
 - Vitais & Antropometria: PA: [115x75] mmHg | FC: [74] bpm | Peso: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m². BEG, corada, hidratada.
 - Exame Clínico das Mamas: Simétricas, sem retrações, abaulamentos ou alterações do complexo aréolo-papilar à inspeção estática e dinâmica. Palpação dos 4 quadrantes e região retroareolar sem nódulos dominantes ou espessamentos. Expressão papilar [negativa / descarga láctea bilateral]. Fossas axilares e supraclaviculares livres.
 - Abdome & Genitália Externa: Abdome flácido, indolor, sem massas. Vulva eutrófica, pilificação habitual, sem úlceras, fissuras ou lesões verrucosas (condilomas); glândulas de Bartholin e Skene livres.
 - Exame Especular: Paredes vaginais [tróficas e rugosas / hipotróficas], conteúdo vaginal [fisiológico hialino sem odor / branco grumoso aderente tipo "leite coalhado" (Candidíase) / acinzentado fluido homogêneo com teste das aminas/Whiff positivo (Vaginose) / amarelo-esverdeado bolhoso com colpite focal]. Colo uterino centrado, epitelizado, sem lesões vegetantes ou friabilidade. Coleta de Citopatológico: [Realizada hoje (Ayre + cytobrush) sem intercorrências / Não realizada por rastreio em dia].
 - Toque Bimanual: Colo fibroelástico, móvel, indolor à mobilização (Chandelier/Frenkel negativo). Útero em [AVF / RVF], tamanho normal, móvel e indolor. Anexos livres e indolores bilateralmente.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. [Rotina ginecológica preventiva (CID-10: Z01.4) / Vulvovaginite por Candidíase (B37.3) / Vaginose Bacteriana (N76.0) / Sangramento Uterino Anormal - PALM-COEIN (N93.9) / Síndrome Climatérica (N95.1)].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 >> CONDUTA AMBULATORIAL & RASTREAMENTO:
 1. Exames Solicitados: [Citopatológico de colo uterino colhido hoje / Mamografia bilateral de rastreamento / USG Pélvica Transvaginal / Sorologias ISTs (HIV, Sífilis, Hep B e C) + Perfil lipídico, glicemia e TSH].
 2. Orientada higiene íntima fisiológica (sabonete neutro apenas na vulva externa, calcinha de algodão, proscritas duchas vaginais internas), proteção contra ISTs e autoexame de conscientização mamária.

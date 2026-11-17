@@ -11,10 +11,13 @@
 # IDENTIFICAÇÃO & CRONOLOGIA:
 ID: [Nome], [ ] meses e [ ] dias (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino][? Acompanhante :: , Acompanhante: [Mãe / Pai / Ambos os pais / Cuidador(a): [ ]]].
 Idade Corrigida / Nascimento: [Nascido a termo / Prematuro de [ ] semanas -> Idade Corrigida: [ ] meses].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
-# SUBJETIVO (ANAMNESE DE PUERICULTURA, NUTRIÇÃO & ROTINA):
+# QP:
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
+
+# HMA:
 - Intercorrências desde a última consulta: [Assintomático(a), em excelente evolução / Apresentou quadro leve de [ ]].
 - Alimentação e Prática Nutricional:
   * Lactente < 6 meses: [Aleitamento Materno Exclusivo (AME) em livre demanda, boa pega e sucção efetiva / Aleitamento misto / Fórmula infantil de partida ([ ]) na diluição correta de 1 medida rasa para cada 30 mL de água].
@@ -23,7 +26,7 @@ Alergias: [Nega / [ ]].
 - Eliminações Fisiológicas: Diurese [ampla, > 5–6 fraldas molhadas/dia] | Evacuações [aspecto e frequência habituais para a idade, sem esforço doloroso ou sangue].
 - Saúde Bucal & Exposição a Telas: Higiene oral [com escova macia e pasta fluoretada ≥ 1.000 ppm (quantidade de 1 grão de arroz cru) / ainda sem erupção dentária]; Tempo de telas (celular/TV): [Zero telas conforme recomendação SBP (< 2 anos) / Exposição inadequada — orientada suspensão].
 
-# OBJETIVO (ANTROPOMETRIA OMS, TRIAGENS, EXAME FÍSICO & MARCOS DO DNPM):
+# EXAME FÍSICO:
 - Dados Antropométricos e Curvas da OMS (Caderneta da Criança):
   * Peso Atual: [ ] g ([ ] kg) | Ganho Ponderal Médio: [ ] g/dia (Alvo: 1º tri 25–30 g/d | 2º tri 20 g/d | 3º tri 15 g/d | 4º tri 10–12 g/d).
     - Escore-Z Peso/Idade: [Peso adequado para a idade (Z entre -2 e +2) / Baixo peso (Z < -2) / Peso elevado (Z > +2)].
@@ -43,11 +46,11 @@ Alergias: [Nega / [ ]].
   * Linguagem e Comunicação: [Adequado para a idade: vocaliza e sorri (2–4m) / balbucia sílabas (6–9m) / primeiras palavras com sentido (12m) / junta 2 palavras (18–24m)].
   * Pessoal-Social (Sinais de Alerta TEA / M-CHAT): [Contato visual sustentado, sorriso social recíproco, atende pelo nome e compartilha atenção apontando / Alerta identificado: [ ]].
 
-# AVALIAÇÃO DE PUERICULTURA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Criança [eutrófica com velocidade de crescimento e desenvolvimento neuropsicomotor adequados para a idade (CID-10: Z00.1) / com alerta nutricional ou de desenvolvimento em acompanhamento].
 2. Profilaxia de micronutrientes (Vitamina D e Ferro) e calendário vacinal revisados.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA DE PUERICULTURA & PREVENÇÃO DE ACIDENTES:
 1. Manter [Aleitamento Materno Exclusivo em livre demanda até o 6º mês / Aleitamento materno + alimentação complementar saudável in natura].

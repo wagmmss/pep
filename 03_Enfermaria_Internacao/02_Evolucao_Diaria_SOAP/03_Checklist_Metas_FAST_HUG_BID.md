@@ -20,8 +20,8 @@
   * Escala EVA (0–10): [EVA 0 (Sem dor) / EVA [ ] em região [ ]].
   * Esquema atual: [Analgesia multimodal eficaz sem sedação ou constipação / Ajustada posologia analgésica hoje].
 - [S] SEDATION & SENSORIUM (Nível de Consciência & Rastreio de Delirium):
-  * Sensório: [Alerta, lúcido e orientado (Glasgow 15 / RASS 0) / Sonolento / Agitado].
-  * Rastreio CAM-ICU (Delirium): [Negativo (sem delirium) / Positivo — instituído pacote não-farmacológico de prevenção/manejo de delirium].
+  * Sensório: [*Alerta, lúcido e orientado (Glasgow 15 / RASS 0) / Sonolento / Agitado].
+  * Rastreio CAM-ICU (Delirium): [*Negativo (sem delirium) / Positivo — instituído pacote não-farmacológico de prevenção/manejo de delirium].
 - [T] THROMBOPROPHYLAXIS (Profilaxia de TEV):
   * Risco (Pádua/Caprini): [Alto risco / Baixo risco] -> Conduta: [Enoxaparina 40 mg SC 1x/dia / HNF 5.000 UI SC 8/8h / Profilaxia mecânica / Deambulação assistida].
 - [H] HEAD OF BED (Cabeceira Elevada):
@@ -34,11 +34,11 @@
   * Última evacuação: [Hoje / Ontem / Ausente há [ ] dias] | Aspecto: [Fisiológico (Bristol 3–4) / Ressecado (Bristol 1–2) / Diarreico (Bristol 6–7)].
 - [I] INDWELLING CATHETERS (Auditoria de Dispositivos Invasivos):
   * Acesso Venoso: [Periférico em [MSD / MSE] D[ ] sem sinais de flebite / CVC em [ ] D[ ] com curativo limpo / Indicada retirada hoje].
-  * Sonda Vesical (SVD): [Ausente / Retirada hoje para prevenção de ITU-AC / Mantida por controle estrito de diurese horária ou obstrução urinária].
+  * Sonda Vesical (SVD): [*Ausente / Retirada hoje para prevenção de ITU-AC / Mantida por controle estrito de diurese horária ou obstrução urinária].
 - [D] DE-ESCALATION (Descalonamento de Antibióticos & Desospitalização):
   * Antimicrobianos: [Sem antibiótico / Mantido esquema em D / Descalonado guiado por cultura / Transicionado para via oral (Switch Therapy) / Suspenso hoje].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> AÇÕES IMEDIATAS RESULTANTES DO BUNDLE FAST HUG BID:
 1. Ajuste Nutricional & Hidratação: [Manter dieta atual / Progredir dieta oral / Ajustar vazão de dieta enteral para [ ] mL/h].

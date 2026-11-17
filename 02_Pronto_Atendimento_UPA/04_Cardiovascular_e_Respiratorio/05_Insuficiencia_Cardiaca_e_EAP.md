@@ -10,20 +10,22 @@
 ###### ATENDIMENTO UPA / SALA VERMELHA: EDEMA AGUDO DE PULMÃO (EAP) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # CLASSIFICAÇÃO HEMODINÂMICA DE STEVENSON:
 - PERFIL B: "QUENTE E ÚMIDO" (Boa perfusão periférica, porém com congestão pulmonar grave e hipertensão arterial) -> > 80% DOS CASOS DE EAP NA UPA.
 - [Se Perfil C ("Frio e Úmido"): Choque cardiogênico com hipoperfusão -> avaliar Dobutamina + Noradrenalina].
 
-# SUBJETIVO:
-- Queixa Principal: Falta de ar intensa e súbita, sensação de afogamento e tosse com catarro espumoso há [ ] horas.
+# QP:
+- Falta de ar intensa e súbita, sensação de afogamento e tosse com catarro espumoso há [ ] horas.
+
+# HMA:
 - HMA: Paciente com diagnóstico de Insuficiência Cardíaca / HAS grave relata início súbito de dispneia em repouso há cerca de [ ] horas. Refere ortopneia absoluta (incapaz de deitar na maca), dispneia paroxística noturna e tosse produtiva com expectoração espumosa [esbranquiçada / rósea característica]. Relata história recente de: [abandono de diuréticos / transgressão hídrica e de sal / pico hipertensivo / infecção recente / síndrome coronariana aguda desencadeante].
 - Nega dor torácica pleurítica aguda súbita com assimetria de murmúrio (afastado pneumotórax).
 - Nega febre alta, calafrios ou secreção purulenta espessa (afastada sepse pulmonar pura).
 - Nega estridor respiratório ou edema de glote anafilático.
 
-# OBJETIVO (EXAME FÍSICO DA SALA DE EMERGÊNCIA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (acentuadamente elevada) | FC: [ ] bpm | FR: [ ] irpm (taquipneia severa) | SpO2: [ ]% em ar ambiente.
 - Ectoscopia: Estado grave, ansioso, sudoreico frio profuso, cianose de extremidades e perioral, sentado com o tronco ereto e pernas pendentes, tempo de enchimento capilar [ ] segundos (perfusão quente/fria).
 - Aparelho Respiratório:
@@ -38,11 +40,11 @@ Alergias: [Nega / Sim: [ ]].
 - Radiografia de Tórax no Leito: Cardiomegalia, congestão venocapilar pulmonar bilateral com padrão em "asa de borboleta", proeminência de hilos pulmonares e linhas B de Kerley.
 - Laboratório: Gasometria arterial com acidose respiratória/mista, Troponina, Peptídeo Natriurético (BNP/NT-proBNP) elevado, Ureia, Creatinina, Eletrólitos (Sódio e Potássio).
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Edema Agudo de Pulmão (EAP) Cardiogênico Hipertensivo / IC Descompensada Perfil B (CID-10: I50.1 / J81).
 2. Paciente em insuficiência respiratória hipoxêmica aguda.
 
-# PLANO / CONDUTA IMEDIATA DA TRÍADE DE OURO (SALA VERMELHA):
+# CONDUTA:
 
 1. POSICIONAMENTO MECÂNICO IMEDIATO:
    - Manter o paciente sentado com a cabeceira elevada a 90 graus e as pernas pendentes para fora da maca (represamento gravitacional venoso, diminuindo o retorno venoso e a pré-carga em 300 a 500 mL imediatamente).

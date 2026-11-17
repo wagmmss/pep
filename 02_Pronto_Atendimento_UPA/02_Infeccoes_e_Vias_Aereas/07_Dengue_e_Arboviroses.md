@@ -10,10 +10,12 @@
 ###### ATENDIMENTO UPA: DENGUE / ARBOVIROSES (MINISTÉRIO DA SAÚDE) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / [ ]].
-Alergias: [Nega / Alérgico a Dipirona / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Febre alta, dor no corpo e dor atrás dos olhos há [ ] dias.
+Comorbidades: [+ *Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / [ ]].
+Alergias: [*Nega / Alérgico a Dipirona / [ ]].
+# QP:
+- Febre alta, dor no corpo e dor atrás dos olhos há [ ] dias.
+
+# HMA:
 - HMA: Refere quadro febril de início súbito há cerca de [ ] dias (Tax máxima [ ] °C), associado a cefaleia holocraniana intensa, dor retro-orbitária que piora à movimentação ocular, mialgia difusa ("dor nos ossos"), artralgia, astenia marcante, náuseas e exantema cutâneo maculopapular [pruriginoso / ausente].
 - FASE DA DOENÇA: [Fase Febril (dias 1 a 3) / Fase Crítica de Defervescência (dias 3 a 7 - ATENÇÃO MÁXIMA A SINAIS DE ALARME)].
 - CHECAGEM OBRIGATÓRIA DOS SINAIS DE ALARME (DIRETRIZ MS):
@@ -27,7 +29,7 @@ Alergias: [Nega / Alérgico a Dipirona / [ ]].
   - Aumento progressivo e abrupto do hematócrito (hemoconcentração)
   * STATUS: [TODOS OS SINAIS DE ALARME NEGADOS / SINAL DE ALARME PRESENTE: [ ]].
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | PA em pé (se tolerar): [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
 - Pressão de Pulso (PAS - PAD): [ ] mmHg (Normal > 20 mmHg | Convergente/Choque se <= 20 mmHg, ex: 90x75 mmHg).
 - Ectoscopia: Bom estado geral, corado, desidratado [+/4+], anictérico, acianótico, perfusão periférica com tempo de enchimento capilar < 2 segundos.
@@ -40,7 +42,7 @@ Alergias: [Nega / Alérgico a Dipirona / [ ]].
 - Hemograma Completo: Hemoglobina: [ ] g/dL | Hematócrito: [ ]% (Valor de base: [ ]%) | Leucócitos: [ ] /mm³ (leucopenia habitual) | Plaquetas: [ ] /mm³.
 - Teste Rápido / Sorologia Dengue: [Antígeno NS1: Reagente/Não reagente / IgM: Reagente / Solicitado].
 
-# AVALIAÇÃO DIAGNÓSTICA & CLASSIFICAÇÃO DE RISCO (MS):
+# HIPÓTESES DIAGNÓSTICAS & CLASSIFICAÇÃO DE RISCO (MS):
 1. Dengue Provável (CID-10: A90).
 2. CLASSIFICAÇÃO DE GRAVIDADE:
    - [ ] GRUPO A: Dengue sem sinais de alarme e sem comorbidades / sem risco social.
@@ -48,7 +50,7 @@ Alergias: [Nega / Alérgico a Dipirona / [ ]].
    - [ ] GRUPO C: Dengue COM SINAIS DE ALARME presentes (extravasamento plasmático / choque iminente).
    - [ ] GRUPO D: Dengue Grave (Choque circulatório / Hemorragia grave / Disfunção orgânica grave).
 
-# PLANO / CONDUTA POR GRUPO:
+# CONDUTA:
 
 >> [SE GRUPO A]: CONDUTA DOMICILIAR:
 1. HIDRATAÇÃO ORAL INTENSA E OBRIGATÓRIA:

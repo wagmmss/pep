@@ -10,12 +10,14 @@
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: DPOC EXACERBADO ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # HISTÓRICO RESPIRATÓRIO: Tabagismo pesado prévio ([ ] anos-maço) com diagnóstico de Doença Pulmonar Obstrutiva Crônica (DPOC) / Enfisema / Bronquite crônica. Faz uso de O2 domiciliar: [Não / Sim, L/min].
 
-# SUBJETIVO:
-- Queixa Principal: Piora da falta de ar e aumento do catarro há [ ] dias.
+# QP:
+- Piora da falta de ar e aumento do catarro há [ ] dias.
+
+# HMA:
 - HMA (CRITÉRIOS CARDINAIS DE ANTHONISEN):
   - 1. AUMENTO DA DISPNEIA (falta de ar pior que o padrão habitual do dia a dia).
   - 2. AUMENTO DO VOLUME DA SECREÇÃO (escarro aumentado em quantidade).
@@ -30,7 +32,7 @@ Alergias: [Nega / Sim: [ ]].
 - Nega piora de edema de membros inferiores ou ortopneia (afastada Insuficiência Cardíaca descompensada associada).
 - Medicações Habitual: [Em uso de Formoterol/Budesonida, Tiotrópio, Salbutamol SOS].
 
-# OBJETIVO (EXAME FÍSICO RESPIRATÓRIO DIRIGIDO):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
 - Ectoscopia: Lúcido [ou sonolento/comatoso por retenção hipercápnica de CO2], cianose perioral ausente/leve, taquidispneico, uso de musculatura acessória (tiragem intercostal e fúrcula), respiração com lábios semicerrados ("pursed-lip breathing").
 - Aparelho Respiratório:
@@ -44,11 +46,11 @@ Alergias: [Nega / Sim: [ ]].
   * [Acidose respiratória aguda com hipercapnia (pH < 7,35 e PaCO2 > 45) / Distúrbio compensado].
 - Radiografia de Tórax: Hiperinsuflação pulmonar difusa, retificação de cúpulas diafragmáticas, aumento dos espaços intercostais; ausência de pneumotórax ou consolidações lobares francas.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Doença Pulmonar Obstrutiva Crônica (DPOC) Exacerbada - Anthonisen Tipo [1 / 2] (CID-10: J44.1).
 2. Ausência de pneumotórax associado ou critérios de intubação imediata.
 
-# PLANO / CONDUTA IMEDIATA EM SALA DE EMERGÊNCIA:
+# CONDUTA:
 
 1. OXIGENOTERAPIA CONTROLADA (ALVO RESTRITIVO OBRIGATÓRIO):
    - Administrar Oxigênio em baixos fluxos sob Cateter Nasal (0,5 a 2 L/min) ou Máscara de Venturi (24% a 28%).

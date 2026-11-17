@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA / SALA DE MEDICAÇÃO: CÓLICA RENAL AGUDA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor lombar insuportável em cólica de início súbito há [ ] horas.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
+# QP:
+- Dor lombar insuportável em cólica de início súbito há [ ] horas.
+
+# HMA:
 - HMA: Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa ([testículo/bolsa escrotal no homem / grande lábio na mulher]). Intensidade [10/10] na escala analógica.
 - Sintomas Vegetativos & Urinários Associados:
   * Náuseas intensas e vômitos ([ ] episódios) desencadeados pelo reflexo autonômico celíaco.
@@ -30,7 +32,7 @@ Alergias: [Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
   * STATUS: [TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: [ ]].
 - Histórico Prévio: [Episódios prévios conhecidos de litíase urinária com eliminação de cálculos / Primeiro episódio da vida].
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO DA EMERGÊNCIA):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).
 - Ectoscopia: Estado geral regular, extremamente inquieto, fácies de sofrimento álgico agudo, sudoreico frio, lúcido e orientado, corado, anictérico.
 - Exame Abdominal:
@@ -43,11 +45,11 @@ Alergias: [Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
 - Urina Tipo 1 (EAS): Hematúria microscópica com hemácias abundantes (campo cheio), leucócitos [ ]/campo, ausência de cilindros hemáticos ou leucocitários, cristais de [oxalato de cálcio / ácido úrico] presentes.
 - Bioquímica: Creatinina: [ ] mg/dL | Ureia: [ ] mg/dL (função renal basal preservada) | Leucograma: [ ] /mm³ sem desvio.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Cólica Nefrética Aguda por Nefrolitíase / Ureterolitíase [direita / esquerda] (CID-10: N20.1 / N23).
 2. Ausência de sinais clínicos de infecção urinária alta obstrutiva associada.
 
-# PLANO / CONDUTA IMEDIATA EM SALA DE MEDICAÇÃO:
+# CONDUTA:
 
 1. PROTOCOLO DE ANALGESIA MULTIMODAL VENOSA (FASE DE ATAQUE):
    - Anti-inflamatório Endovenoso (Primeira Linha - reduz a síntese de prostaglandinas e diminui a pressão na pelve renal):

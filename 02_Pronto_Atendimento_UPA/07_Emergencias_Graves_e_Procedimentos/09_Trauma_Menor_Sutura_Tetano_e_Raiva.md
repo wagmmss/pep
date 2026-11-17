@@ -11,8 +11,8 @@
 ###### PROCEDIMENTO DE SALA DE SUTURA: FERIMENTO CONTUSO, SUTURA & PROFILAXIAS ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / [ ]].
 - Horário do Trauma: Há cerca de [ ] horas (Trauma ocorrido às [HH:MM]).
 - Mecanismo do Trauma: [Corte por vidro / Lâmina metálica / Queda da própria altura com impacto / Mordedura animal por cão ou gato / Objeto perfurocortante enferrujado / Acidente de trabalho].
 
@@ -59,7 +59,7 @@ Alergias: [Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicil
   * [ ] Iniciado Esquema de Vacina Antirrábica de cultivo celular (4 doses: Dias 0, 3, 7 e 14 via IM no deltoide).
   * [ ] Administrado Soro Antirrábico Humano (SAR 40 UI/kg) ou Imunoglobulina (IGHAR 20 UI/kg): Infiltrado ao redor da lesão o maior volume possível e o restante aplicado por via intramuscular.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> PRESCRIÇÃO DE ALTA & ORIENTAÇÕES AO PACIENTE:
 1. Antibioticoterapia Profilática para Mordedura Animal (Cão/Gato/Humana):

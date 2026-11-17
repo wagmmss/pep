@@ -7,13 +7,13 @@
 ATENDIMENTO DE PRONTO ATENDIMENTO — CONSTIPAÇÃO AGUDA, FECALOMA VS. ABDOME AGUDO OBSTRUTIVO
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
 HISTÓRIA CLÍNICA DIRIGIDA:
 - Hábito Intestinal Atual: Ausência de evacuação há [ ] dias, associada a [desconforto abdominal baixo, esforço evacuatório e sensação de bloqueio anorretal / eliminação paradoxal de fezes líquidas em pequena quantidade — "diarreia paradoxal" por transbordamento ao redor do fecaloma!].
 - Pesquisa de Sinais de Obstrução Intestinal Mecânica (Red Flags): Eliminação de flatus (gases): [Presente — afasta oclusão completa / PARADA TOTAL de eliminação de gases e fezes associada a distensão importante e vômitos biliosos/fecaloides → ABDOME AGUDO OBSTRUTIVO!].
-- Sinais de Alarme para Neoplasia Colorretal: [Nega / Idade > 50 anos sem colonoscopia prévia, afilamento das fezes ("em fita"), hematoquezia, perda ponderal inexplicada ou anemia ferropriva].
+- Sinais de Alarme para Neoplasia Colorretal: [*Nega / Idade > 50 anos sem colonoscopia prévia, afilamento das fezes ("em fita"), hematoquezia, perda ponderal inexplicada ou anemia ferropriva].
 - Fatores Precipitantes: [Idoso acamado ou institucionalizado / Uso recente de Opioides (Tramadol, Codeína, Morfina), Anticolinérgicos, Bloqueadores de Canal de Cálcio ou Carbonato de Cálcio / Baixa ingesta hídrica].
 
 EXAME FÍSICO & TOQUE RETAL OBRIGATÓRIO:
@@ -23,7 +23,7 @@ EXAME FÍSICO & TOQUE RETAL OBRIGATÓRIO:
 EXAMES DE IMAGEM (SE SUSPEITA DE OBSTRUÇÃO MECÂNICA OU MEGACÓLON):
 - Rotina de Abdome Agudo (RX em Pé e Decúbito): [Grande quantidade de resíduos fecais (aspecto em "miolo de pão") em todo o marco cólico com gás no reto, sem níveis hidroaéreos patológicos / Níveis hidroaéreos em "empilhamento de moedas" (delgado) ou distensão colônica > 6 cm (cólon) e > 12 cm (ceco) com ausência de gás no reto → Obstrução Mecânica ou Volvo de Sigmoide!].
 
-# PLANO / CONDUTA
+# CONDUTA:
 1. Regra de Ouro de Segurança: NUNCA prescrever laxativos orais estimulantes nem realizar enema sob pressão antes de excluir perfuração intestinal ou obstrução mecânica completa.
 2. Manejo do Fecaloma / Impactação Fecal Distal no Pronto Atendimento:
    - Se Fecaloma pétreo na ampola retal: Realizar fragmentação / desimpactação digital cuidadosa com luva lubrificada em Lidocaína gel 2%, seguida de enema evacuatório.

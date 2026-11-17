@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA: INFECÇÃO DE PELE E PARTES MOLES (PPM) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Vermelhidão, dor, inchaço e calor na pele [em perna / pé / braço / face] há [ ] dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
+# QP:
+- Vermelhidão, dor, inchaço e calor na pele [em perna / pé / braço / face] há [ ] dias.
+
+# HMA:
 - HMA: Relata quadro de início há cerca de [ ] dias caracterizado por dor local progressiva, calor, edema e eritema cutâneo em [membro inferior direito/esquerdo / região periorbitária / dorso]. Refere febre alta precedente de [ ] °C e calafrios.
 - IDENTIFICAÇÃO DA SÍNDROME CLÍNICA DERMATOLÓGICA:
   * [ ] ERISIPELA: Lesão cutânea eritematosa viva, brilhante, com BORDAS BEM DEMARCADAS E NÍTIDAS EM RELEVO, acometimento superficial da derme e linfáticos dérmicos.
@@ -27,7 +29,7 @@ Alergias: [Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
   * Nega bolhas escuras hemorrágicas, necrose cutânea franca ou anestesia local no centro da lesão.
 - Fatores de Risco: [Diabetes Mellitus / Obesidade / Insuficiência venosa crônica / Linfedema prévio / Imunossupressão].
 
-# OBJETIVO (EXAME FÍSICO DERMATOLÓGICO DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C | SpO2: [ ]%.
 - Ectoscopia da Lesão:
   * Localização anatômica: [Terço distal e médio de membro inferior direito/esquerdo].
@@ -36,11 +38,11 @@ Alergias: [Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
   * Pulsos periféricos distais (pedioso e tibial posterior): Palpáveis e simétricos. Panturrilha livre sem sinais de trombose venosa profunda associada. Ausência de crepitação enfisematosa.
 - Palpação Linfática: Linfangite ascendente presente com estrias avermelhadas em trajeto linfático e linfonodomegalia dolorosa satélite [inguinal / axilar].
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Infecção de Pele e Partes Moles: [Erisipela em membro inferior / Celulite infecciosa não complicada / Abscesso cutâneo purulento] (CID-10: A46 / L03.1 / L02.4).
 2. Ausência de critérios de sepse ou infecção necrosante de partes moles.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> [SE INDICAÇÃO DE TRATAMENTO HOSPITALAR / INTRAVENOSO NA UPA] (Febre alta, toxicidade sistêmica, linfangite extensa, comorbidades descompensadas ou intolerância oral):
 1. Hidratação venosa e repouso absoluto no leito com membro elevado.

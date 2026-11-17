@@ -10,12 +10,14 @@
 ###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: DOR TORÁCICA / SCA ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega alergias / Alérgico a AAS / Alérgico a Dipirona / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega alergias / Alérgico a AAS / Alérgico a Dipirona / [ ]].
 # HORÁRIO DE CHEGADA: [HH:MM] | HORÁRIO DO ECG: [HH:MM] (Porta-ECG <= 10 minutos: ATENDIDO).
 
-# SUBJETIVO:
-- Queixa Principal: Dor no peito em aperto / queimação iniciada há [ ] horas/minutos.
+# QP:
+- Dor no peito em aperto / queimação iniciada há [ ] horas/minutos.
+
+# HMA:
 - HMA (CARACTERÍSTICAS DA DOR TORÁCICA):
   * Caráter: [Dor retroesternal opressiva em aperto / Em peso / Queimação intensa / Pontada ventilatório-dependente].
   * Irradiação: [Irradiação para membro superior esquerdo / Mandíbula / Dorso interescapular / Região epigástrica / Sem irradiação].
@@ -31,9 +33,9 @@ Alergias: [Nega alergias / Alérgico a AAS / Alérgico a Dipirona / [ ]].
 - Fatores de Risco Cardiovasculares: [Hipertensão Arterial / Diabetes Mellitus tipo 2 / Tabagismo ativo ( maços/ano) / Dislipidemia / Histórico familiar precoce de DAC / Infarto prévio / Sedentarismo].
 - Contraindicações ao uso de Nitratos: Nega uso de inibidores da fosfodiesterase-5 (Sildenafil nas últimas 24h ou Tadalafil nas últimas 48h).
 
-# OBJETIVO (EXAME FÍSICO DA SALA VERMELHA & ECG DE 12 DERIVAÇÕES):
+# EXAME FÍSICO:
 - SINAIS VITAIS: PA MSD: [ ]x[ ] mmHg | PA MSE: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA.
-- Ectoscopia: [Lúcido, orientado / Ansioso, sudoreico e pálido], perfusão periférica com tempo de enchimento capilar < 2s, pulsos radiais e femorais simétricos bilateralmente.
+- Ectoscopia: [*Lúcido, orientado / Ansioso, sudoreico e pálido], perfusão periférica com tempo de enchimento capilar < 2s, pulsos radiais e femorais simétricos bilateralmente.
 - Aparelho Cardiovascular: Ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, ausência de sopros, ausência de B3 ou B4 de disfunção ventricular, ausência de atrito pericárdico. Ausência de estase jugular a 45 graus.
 - Aparelho Respiratório: Murmúrio vesicular universalmente audível bilateralmente, sem ruídos adventícios (ausência de estertores crepitantes em bases pulmonares - Killip I).
 - Abdome: Flácido, indolor à palpação, sem massas pulsáteis abdominais.
@@ -52,11 +54,11 @@ Alergias: [Nega alergias / Alérgico a AAS / Alérgico a Dipirona / [ ]].
 - T (Troponin / Troponina): [0: Normal / 1: 1 a 3x limite normal / 2: > 3x limite normal] = [ ] pts.
 * HEART SCORE TOTAL: [ ] PONTOS ([0-3: Baixo Risco / 4-6: Risco Moderado / 7-10: Alto Risco]).
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome Coronariana Aguda [COM Supra de ST em parede / SEM Supra de ST / Angina Instável] (CID-10: I21.0 / I21.4 / I20.0).
 2. Classificação Hemodinâmica de Killip-Kimball: Classe [I (sem sinais de congestão) / II / III / IV (choque cardiogênico)].
 
-# PLANO / CONDUTA IMEDIATA EM SALA VERMELHA:
+# CONDUTA:
 
 1. MONITORIZAÇÃO & SUPORTE:
    - Monitor cardíaco contínuo, oximetria de pulso, acesso venoso periférico calibroso.

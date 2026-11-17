@@ -7,28 +7,28 @@
 ATENDIMENTO DE EMERGÊNCIA — SÍNCOPE (PERDA TRANSITÓRIA DA CONSCIÊNCIA)
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
 CARACTERIZAÇÃO DO EVENTO E PRÓDROMOS:
 - Circunstância do Evento: Episódio ocorrido [em ortostase prolongada em ambiente quente / após dor ou estresse emocional / ao levantar-se rapidamente / DURANTE o esforço físico ou em decúbito dorsal — ALERTA CARDIOGÊNICO!].
 - Pródromos: [Presentes (náuseas, sudorese fria, visão em túnel, palidez — típico reflexo/vasovagal) / Ausentes — queda súbita "em tábua" com trauma facial ou precedida de palpitações/dor torácica (Síncope Arrítmica/Cardiogênica!)].
 - Duração e Recuperação: Perda do tônus postural por [< 1 minuto] com recuperação espontânea, rápida e completa da consciência ([sem confusão pós-ictal prolongada ou mordedura lateral de língua — afasta crise epiléptica]).
-- Antecedentes & Medicações: [Nega cardiopatia / Portador de IC, DAC ou sopro / História familiar de morte súbita < 40 anos / Uso de anti-hipertensivos, diuréticos, vasodilatadores, alfa-bloqueadores ou drogas que prolongam o QT].
+- Antecedentes & Medicações: [*Nega cardiopatia / Portador de IC, DAC ou sopro / História familiar de morte súbita < 40 anos / Uso de anti-hipertensivos, diuréticos, vasodilatadores, alfa-bloqueadores ou drogas que prolongam o QT].
 
 EXAME FÍSICO & TESTE DE HIPOTENSÃO ORTOSTÁTICA:
 - Sinais Vitais em Decúbito: PA: [120x75] mmHg | FC: [68] bpm | SpO2: [98]% | Glicemia Capilar: [96] mg/dL.
-- Manobra Ortostática (PA após 1 e 3 min em pé): PA em pé: [115x72] mmHg ([Negativa / Positiva: queda da PAS ≥ 20 mmHg ou PAD ≥ 10 mmHg ou PAS < 90 mmHg reproduzindo sintomas]).
-- Ausculta Cardíaca & Exame Neurológico: [RCR em 2T, BNF, sem sopros / Sopro sistólico ejetivo em foco aórtico ou que aumenta à manobra de Valsalva — descartar Estenose Aórtica grave ou CMHO!]. Exame neurológico sem déficits focais.
+- Manobra Ortostática (PA após 1 e 3 min em pé): PA em pé: [115x72] mmHg ([*Negativa / Positiva: queda da PAS ≥ 20 mmHg ou PAD ≥ 10 mmHg ou PAS < 90 mmHg reproduzindo sintomas]).
+- Ausculta Cardíaca & Exame Neurológico: [*RCR em 2T, BNF, sem sopros / Sopro sistólico ejetivo em foco aórtico ou que aumenta à manobra de Valsalva — descartar Estenose Aórtica grave ou CMHO!]. Exame neurológico sem déficits focais.
 
 ECG DE 12 DERIVAÇÕES OBRIGATÓRIO (CAÇA AOS 7 SINAIS DE MORTE SÚBITA):
 - ECG: Ritmo sinusal, FC [ ] bpm, PR [ ] ms, QRS [ ] ms, QTc [ ] ms (< 450 ms H / < 470 ms M).
-- Pesquisa Ativa de Red Flags Eletrocardiográficas: [Ausentes — ECG normal / Presença de BAV de 2º grau Mobitz II ou BAVT / Bradicardia < 40 bpm ou pausa sinusal > 3s / Bloqueio bifascicular ou BRE novo / Intervalo QT Longo ou Curto / Padrão de Brugada em V1-V2 / Pré-excitação (Onda Delta — WPW) / Onda Epsilon ou inversão de T em V1-V3 (Displasia Arritmogênica de VD) / Sinais de isquemia aguda ou sobrecarga de VD (TEP)].
+- Pesquisa Ativa de Red Flags Eletrocardiográficas: [*Ausentes — ECG normal / Presença de BAV de 2º grau Mobitz II ou BAVT / Bradicardia < 40 bpm ou pausa sinusal > 3s / Bloqueio bifascicular ou BRE novo / Intervalo QT Longo ou Curto / Padrão de Brugada em V1-V2 / Pré-excitação (Onda Delta — WPW) / Onda Epsilon ou inversão de T em V1-V3 (Displasia Arritmogênica de VD) / Sinais de isquemia aguda ou sobrecarga de VD (TEP)].
 
 ESTRATIFICAÇÃO DE RISCO (CRITÉRIOS DE SAN FRANCISCO — CHESS / ESC):
 - Classificação Final: [Síncope Reflexa (Vasovagal) ou Ortostática de Baixo Risco (CHESS = 0, ECG normal, sem cardiopatia estrutural) / Síncope de Alto Risco Cardiogênico (indicação formal de internação monitorizada!)].
 
-# PLANO / CONDUTA
+# CONDUTA:
 1. Avaliação Imediata na Admissão: Glicemia capilar + ECG de 12 derivações em até 10 minutos + Medida de PA em decúbito e após 1 e 3 minutos de ortostase.
 2. Conduta na Síncope de Alto Risco (Qualquer Red Flag clínica, estrutural ou no ECG, ou CHESS ≥ 1: IC, Ht < 30%, ECG anormal, Dispneia ou PAS < 90 mmHg):
    - Internação em leito com monitorização cardíaca contínua (telemetria), coleta de Troponina, Eletrólitos, Hemograma, BNP/D-Dímero conforme suspeita, realização de Ecocardiograma Transtorácico e Holter 24h / estudo eletrofisiológico.

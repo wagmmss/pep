@@ -11,16 +11,18 @@
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
 Comorbidades: [Hígido / Asma / HAS / DM2 / [ ]].
-Alergias: [Nega alergias conhecidas / Alérgico a: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Coriza, congestão nasal e dor de garganta há [ ] dias.
+Alergias: [*Nega alergias conhecidas / Alérgico a: [ ]].
+# QP:
+- Coriza, congestão nasal e dor de garganta há [ ] dias.
+
+# HMA:
 - HMA: Refere quadro iniciado há cerca de [ ] dias de coriza hialina, obstrução nasal, espirros frequentes, sensação de garganta arranhando e tosse [seca / produtiva clara]. Refere febrícula baixa não aferida no início do quadro.
 - Nega febre alta persistente (> 38,5 °C) ou piora após melhora inicial (sem duplo agravamento).
 - Nega dispneia, falta de ar, dor torácica ventilatório-dependente ou sibilos.
 - Nega dor facial intensa em peso unilateral ou secreção nasal purulenta fétida > 10 dias.
 - Nega disfagia intensa com recusa hídrica, trismo ou sialorreia.
 
-# OBJETIVO (EXAME FÍSICO DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 - Estado Geral: Bom estado geral, corado, hidratado, afebril no momento, eupnéico sem tiragens.
 - Oroscopia: Orofaringe com hiperemia difusa de pilares e parede posterior, sem exsudatos purulentos ou placas em amígdalas, úvula centrada sem abaulamentos periamigdalianos.
@@ -29,11 +31,11 @@ Alergias: [Nega alergias conhecidas / Alérgico a: [ ]].
 - Cadeias Linfonodais: Ausência de linfonodomegalias cervicais dolorosas volumosas.
 - Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente, sem ruídos adventícios (ausência de estertores ou sibilos).
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Rinofaringite Aguda / Resfriado Comum de provável etiologia viral (CID-10: J00).
 2. Quadro clínico de evolução benigna e autolimitada, sem critérios de complicação bacteriana no momento.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (SE SINTOMAS INTENSOS):
 1. Dipirona 1 g (2 mL) + AD 8 mL EV lento agora (ou Paracetamol 750 mg VO se alérgico).

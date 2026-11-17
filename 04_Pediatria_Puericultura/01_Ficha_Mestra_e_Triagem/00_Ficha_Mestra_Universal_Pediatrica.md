@@ -8,47 +8,41 @@
 
 ```text
 ###### ATENDIMENTO PEDIÁTRICO — FICHA MESTRA UNIVERSAL (TRIÂNGULO PEDIÁTRICO) ######
-# IDENTIFICAÇÃO & ANTROPOMETRIA OBRIGATÓRIA:
-ID: [Nome], [ ] anos e [ ] meses (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Avó / Responsável legal: [ ]]].
-Estatura: [ ] cm | PC (< 2 anos): [ ] cm.
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / [ ]].
+# IDENTIFICAÇÃO:
+ID: [Nome], [ ] anos e [ ] meses[? DN :: (DN: [DD/MM/AAAA])], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Avó / Responsável: [ ]]].
+Comorbidades: [+ *Hígido(a) / Asma / Sibilância recorrente / APLV / Prematuridade / [ ]].
+Alergias: [*Nega alergias conhecidas / Alérgico(a) a: [ ]].
+[? Antropometria & Vacinas :: Estatura: [ ] cm | PC (< 2 anos): [ ] cm | Vacinação (PNI): [*Em dia / Atraso: [ ]].]
 
-# TRIÂNGULO DE AVALIAÇÃO PEDIÁTRICA (TEP — IMPRESSÃO VISUAL NOS PRIMEIROS 15 SEGUNDOS):
-1. Aparência (Tônus, Interatividade, Consolabilidade, Olhar, Choro/Fala): [Normal — ativo, reativo, olhar focado e choro consolável no colo / Alterada — irritabilidade inconsolável / Alterada — hipoativo, prostrado ou letárgico].
-2. Trabalho Respiratório (Ruídos audíveis, Posição, Tiragens, Batimento de asa nasal): [Normal — respiração silenciosa sem tiragens / Aumentado — taquipneia e tiragem subcostal/intercostal / Grave — gemência, estridor ou balanço toracoabdominal].
-3. Circulação Cutânea (Palidez, Livedo reticular, Cianose): [Normal — pele corada e extremidades quentes / Alterada — palidez cutânea, extremidades frias ou livedo].
-- Classificação Inicial pelo TEP: [Paciente Estável / Desconforto Respiratório / Falência Respiratória / Choque Compensado / Choque Descompensado].
+# QP:
+- [ ] há [ ] [hora(s) / dia(s)].
 
-# SUBJETIVO (ANAMNESE PEDIÁTRICA DIRIGIDA):
-- Queixa Principal (QP) & Tempo de Evolução: [ ] há [ ] [dias / horas].
-- História da Moléstia Atual (HMA): Informa o(a) responsável que a criança iniciou quadro de [ ], evoluindo com [ ]. Medicações administradas em casa: [Nenhuma / Dipirona [ ] gotas há [ ]h / Paracetamol [ ] gotas há [ ]h / Ibuprofeno [ ] gotas há [ ]h].
-- Interrogatório Fisiológico de Segurança:
-  * Comportamento quando afebril: [Criança reanima, brinca, sorri e interage após baixar a febre / Permanece prostrada e cabisbaixa mesmo sem febre].
-  * Aceitação de Líquidos e Dieta: [Mantendo aceitação plena de seio materno e líquidos / Aceitando líquidos com redução parcial de sólidos / Recusa alimentar e hídrica importante].
-  * Diurese: [Preservada (> 4–6 fraldas molhadas/dia, urina clara) / Reduzida com urina concentrada / Sem diurese há > 6–8 horas].
-  * Hábito Intestinal: [Normal / Diarreia líquida ([ ] episódios/24h, sem sangue ou muco) / Constipação há [ ] dias].
-- Nega crises convulsivas, gemência contínua, cianose perioral, vômitos incoercíveis/biliosos, petéquias ou manchas arroxeadas que não somem à digitopressão, abaulamento de fontanela ou rigidez de nuca.
-- Antecedentes & Vacinação:
-  * Perinatal: Parto [Normal / Cesárea] com [ ] semanas, Peso ao nascer: [ ] g, [sem intercorrências neonatais / intercorrência: [ ]].
-  * Vacinação (Caderneta PNI): [Rigorasamente em dia para a idade / Atraso vacinal: [ ]] | Comorbidades: [Hígido(a) / Asma / Sibilância recorrente / APLV / Prematuridade / Outra: [ ]] | Alergias: [Nega alergias conhecidas / Alérgico(a) a: [ ]].
+# HMA:
+- Responsável informa que a criança iniciou quadro de [ ], evoluindo com [ ].
+- Medicações prévias em casa: [*Nenhuma / Dipirona [ ] gotas há [ ]h / Paracetamol [ ] gotas há [ ]h / Ibuprofeno [ ] gotas há [ ]h].
+- Comportamento quando afebril: [*Reanima, brinca e interage / Permanece prostrada mesmo sem febre].
+- Aceitação de líquidos/dieta: [*Mantendo aceitação plena de seio materno e líquidos / Aceitando líquidos com redução de sólidos / Recusa importante].
+- Diurese: [*Preservada (> 4–6 fraldas/dia, clara) / Reduzida / Sem diurese há > 6–8h].
+- Hábito intestinal: [*Normal / Diarreia ([ ] ep./24h) / Constipação há [ ] dias].
+- Nega crises convulsivas, gemência contínua, cianose, vômitos incoercíveis/biliosos, petéquias, abaulamento de fontanela ou rigidez de nuca.
+[? Antecedentes Perinatais :: Parto [*Normal / Cesárea] com [ ] semanas, PN: [ ] g, [*sem intercorrências neonatais / [ ]].]
 
-# OBJETIVO (EXAME FÍSICO PEDIÁTRICO):
-- Sinais Vitais Ajustados para a Idade: FC: [ ] bpm | FR (contada em 1 minuto): [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Tempo de Enchimento Capilar (TEC): [< 2 segundos / [ ] segundos].
-- Ectoscopia & Pele: [Bom / Regular / Mau] estado geral, [ativo e reativo no colo / irritado / prostrado], corado, [hidratado (olhos normais, lágrimas presentes, mucosa oral úmida e sinal da prega imediato) / desidratado leve a moderado], anictérico, acianótico. Pele sem petéquias ou púrpuras. Fontanela anterior (se < 18m): [Plana e normotensa / Deprimida / Abaulada].
-- Aparelho Respiratório: Tórax sem tiragens subcostais, intercostais ou de fúrcula. Murmúrio vesicular presente e simétrico bilateralmente, [sem ruídos adventícios / com sibilos expiratórios / com estertores crepitantes em [ ]].
-- Aparelho Cardiovascular: Ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, sem sopros patológicos. Pulsos periféricos e femorais cheios e simétricos.
-- Abdome & Genitália: Abdome [plano / globoso fisiológico], flácido, depressível e indolor à palpação; sem visceromegalias ou irritação peritoneal. Genitália externa sem alterações flogísticas.
-- Oroscopia & Otoscopia (Realizadas por último):
-  * Oroscopia: Mucosa oral úmida, faringe e amígdalas [normocoradas sem exsudatos / hiperemiadas sem placas / com exsudato purulento / com microvesículas em pilares anteriores].
-  * Otoscopia Bilateral: Condutos livres; membranas timpânicas [íntegras, translúcidas e com triângulo luminoso preservado bilateralmente / hiperemiada e abaulada à (direita / esquerda)].
-- Exame Neurológico: Alerta, pupilas isocóricas e fotorreagentes, tônus e força preservados, sinais meníngeos ausentes (Kernig e Brudzinski negativos).
+# EXAME FÍSICO:
+- TEP (Triângulo Pediátrico): Aparência [*Normal (ativo, reativo, consolável) / Irritabilidade inconsolável / Hipoativo/prostrado]; Trabalho Respiratório [*Normal, sem tiragens / Taquipneia e tiragem / Grave (gemência/estridor)]; Circulação [*Corada, extremidades quentes / Palidez ou livedo]. Classificação: [*Estável / Desconforto Respiratório / Falência Respiratória / Choque].
+- Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | TEC: [*< 2s / [ ]s].
+- Geral & Pele: [*BEG, ativo e reativo, corado, hidratado, anictérico, acianótico, sem petéquias / REG / Desidratado leve-moderado / [ ]][? Fontanela (< 18m) :: | Fontanela: [*Plana e normotensa / Deprimida / Abaulada]].
+- Respiratório: [*Sem tiragens, MV presente e simétrico, sem ruídos adventícios / Sibilos expiratórios / Estertores crepitantes em [ ]].
+- Cardiovascular: [*RCR em 2T, BNF, sem sopros; pulsos periféricos e femorais cheios e simétricos / [ ]].
+- Abdome & Genitália: [*Plano/globoso fisiológico, flácido, indolor, sem visceromegalias; genitália sem alterações / [ ]].
+- Oroscopia: [*Mucosa úmida, faringe e amígdalas normocoradas sem exsudatos / Hiperemiadas sem placas / Exsudato purulento / Microvesículas].
+- Otoscopia Bilateral: [*Condutos livres, MTs íntegras, translúcidas e com triângulo luminoso preservado / MT hiperemiada e abaulada à [direita / esquerda]].
+- Neurológico: [*Alerta, pupilas isofotorreagentes, tônus preservado, sem sinais meníngeos / [ ]].
 
-# AVALIAÇÃO DIAGNÓSTICA:
-1. Hipótese Diagnóstica Principal: [ ] (CID-10: [ ]).
-2. Estado de Hidratação e Nutrição: [Eutrófico e hidratado (Plano A) / Desidratação leve a moderada (Plano B)].
+# HIPÓTESES DIAGNÓSTICAS:
+1. [ ] (CID-10: [ ]).
+- Hidratação e Nutrição: [*Eutrófico e hidratado (Plano A) / Desidratação leve a moderada (Plano B)].
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA IMEDIATA NA UNIDADE (SE NECESSÁRIO):
 1. [Sem necessidade de medicação na sala de observação — alta com receita orientada / Administrado antitérmico oral na unidade para reavaliação após defervescência / Iniciada Terapia de Reidratação Oral (Plano B) / Realizado resgate inalatório].

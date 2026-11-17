@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA: HERPES ZOSTER AGUDO ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega / Sim: [ ]].
-# SUBJETIVO:
-- Queixa Principal: Dor em queimação, fisgada e bolhinhas com água na pele há [ ] dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
+# QP:
+- Dor em queimação, fisgada e bolhinhas com água na pele há [ ] dias.
+
+# HMA:
 - HMA: Relata quadro iniciado há cerca de [ ] dias com dor prodrômica em queimação intensa, sensação de "choque elétrico", alodinia (dor ao simples roçar da roupa na pele) e formigamento localizado, seguido pelo aparecimento de vesículas agrupadas sobre base avermelhada que coçam e doem intensamente.
 - DISTRIBUIÇÃO ANATÔMICA DERMATÔMICA:
   * Lesão estritamente UNILATERAL respeitando com precisão a linha média do corpo, localizada no dermátomo [Torácico (T3 a T10) / Lombar (L1 a L3) / Cervical / Oftálmico (ramo V1 do trigêmeo)].
@@ -27,7 +29,7 @@ Alergias: [Nega / Sim: [ ]].
     - Nega dor intensa no ouvido com vesículas no conduto auditivo externo ou vertigem súbita.
 - Histórico: [Passado de catapora/varicela na infância / Imunossupressão / Idade > 50 anos].
 
-# OBJETIVO (EXAME FÍSICO DERMATOLÓGICO & NEUROLÓGICO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril.
 - Ectoscopia Cutânea:
   * Presença de múltiplas vesículas de conteúdo líquido claro e translúcido, agrupadas em placas sobre base eritematosa viva, com algumas áreas em fase de crosta melicérica inicial.
@@ -38,11 +40,11 @@ Alergias: [Nega / Sim: [ ]].
   * Movimentação ocular extrínseca normal; reflexo fotomotor preservado bilateralmente.
   * [Se afetação de V1]: Inspeção ocular com conjuntiva limpa, ausência de hiperemia ciliar profunda ou opacidades na córnea.
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Herpes Zoster agudo em dermátomo [ ] (CID-10: B02.9).
 2. Ausência de sinais de ceratite herpética ou síndrome de Ramsay Hunt no momento.
 
-# PLANO / CONDUTA:
+# CONDUTA:
 
 >> CONDUTA MEDICAMENTOSA (JANELA DE OURO NAS PRIMEIRAS 72 HORAS):
 1. Antiviral Oral de Alta Dose (OBRIGATÓRIO PRESCREVER A DOSE CORRETA DE 800 MG):

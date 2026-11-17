@@ -739,6 +739,76 @@ test('Padronização Global de Prontuário: zero rótulos "Negativas Mandatória
   }
 });
 
+test('Motor PEP v3.2: Multi-select [+ ...], Defaults [*...], junção gramatical, formato HMA/Exame Físico/Conduta e exportação limpa no build_snippets.py', async () => {
+  const enginePersonalizar = await import('../src/engine/personalizar.ts');
+  const { sandbox } = extractScriptAndRun();
+
+  // 1. formatMultiChoices em TS e DOM
+  for (const fmt of [enginePersonalizar.formatMultiChoices, sandbox.window.formatMultiChoices]) {
+    assert.equal(fmt([]), '');
+    assert.equal(fmt(['HAS']), 'HAS');
+    assert.equal(fmt(['HAS', 'DM2']), 'HAS e DM2');
+    assert.equal(fmt(['HAS', 'DM2', 'DPOC']), 'HAS, DM2 e DPOC');
+  }
+
+  // 2. parseChoiceGroupToken em TS e DOM
+  for (const parseFn of [enginePersonalizar.parseChoiceGroupToken, sandbox.window.parseChoiceGroupToken]) {
+    const multiDef = parseFn('+ *Nega / HAS / DM2 / [ ]');
+    assert.equal(multiDef.isExplicitMulti, true);
+    assert.equal(multiDef.hasDefault, true);
+    assert.equal(multiDef.options[0].text, 'Nega');
+    assert.equal(multiDef.options[0].isDefault, true);
+    assert.equal(multiDef.options[1].text, 'HAS');
+    assert.equal(multiDef.options[1].isDefault, false);
+
+    const singleNoDef = parseFn('Masculino / Feminino');
+    assert.equal(singleNoDef.isExplicitMulti, false);
+    assert.equal(singleNoDef.hasDefault, false);
+  }
+
+  // 3. sanitizePepOutput resolve defaults [*...] e remove [? ...]
+  const sampleTemplate = [
+    '# IDENTIFICAÇÃO:',
+    'ID: Maria, 42 anos, Sexo: Feminino[? Peso :: , Peso: [ ] kg].',
+    'Comorbidades: [+ *Nega / HAS / DM2 / [ ]].',
+    'Alergias: [*Nega alergias conhecidas / Dipirona / [ ]].',
+    '# HMA:',
+    '- Dor abdominal há 2 dias.',
+    '# EXAME FÍSICO:',
+    '- Estado geral: [*BEG, LOTE, corada / REG].',
+    '# HIPÓTESES DIAGNÓSTICAS:',
+    '- Gastroenterite aguda.',
+    '# CONDUTA:',
+    '- Sintomáticos e hidratação oral.'
+  ].join('\n');
+
+  for (const fnSanitize of [enginePersonalizar.sanitizePepOutput, sandbox.window.sanitizePepOutput]) {
+    const cleaned = fnSanitize(sampleTemplate);
+    assert.ok(cleaned.includes('Comorbidades: Nega.'), 'sanitizePepOutput must resolve [+ *Nega / ...] to Nega');
+    assert.ok(cleaned.includes('Alergias: Nega alergias conhecidas.'), 'sanitizePepOutput must resolve [*...] default');
+    assert.ok(cleaned.includes('Estado geral: BEG, LOTE, corada.'), 'sanitizePepOutput must resolve EXAME FÍSICO default');
+    assert.equal(cleaned.includes('[? Peso'), false, 'Optional [? Peso] must be stripped by default');
+  }
+
+  // 4. detectPendingGaps não acusa lacuna para grupos com * default
+  for (const fnGaps of [enginePersonalizar.detectPendingGaps, sandbox.window.detectPendingGaps]) {
+    const report = fnGaps(sampleTemplate);
+    assert.equal(report.total, 0, 'Groups with explicit * default must not count as pending gaps');
+  }
+
+  // 5. extractBodiesFromCustomPep reconhece HMA / EXAME FÍSICO / HIPÓTESES DIAGNÓSTICAS / CONDUTA
+  const bodies = enginePersonalizar.extractBodiesFromCustomPep(sampleTemplate);
+  assert.ok(bodies.evolucao_body.includes('HMA:'), 'evolucao_body must preserve HMA');
+  assert.ok(bodies.evolucao_body.includes('HIPÓTESES DIAGNÓSTICAS:'), 'evolucao_body must preserve HIPÓTESES DIAGNÓSTICAS');
+  assert.equal(bodies.evolucao_body.includes('CONDUTA:'), false, 'evolucao_body must stop before CONDUTA');
+  assert.ok(bodies.conduta_body.includes('CONDUTA:'), 'conduta_body must start at CONDUTA');
+
+  // 6. build_snippets.py possui clean_pep_for_static_export
+  const pyPath = path.resolve(process.cwd(), 'scripts/build_snippets.py');
+  const pyContent = fs.readFileSync(pyPath, 'utf-8');
+  assert.ok(pyContent.includes('def clean_pep_for_static_export('), 'build_snippets.py must define clean_pep_for_static_export');
+});
+
 
 
 

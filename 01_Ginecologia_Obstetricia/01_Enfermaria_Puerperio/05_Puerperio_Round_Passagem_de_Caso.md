@@ -11,7 +11,7 @@
 ###### PASSAGEM DE CASO / ROUND OBSTÉTRICO DE PUERPÉRIO (5 TEMPOS) ######
 # 1. MANCHETE OBSTÉTRICA (IDENTIFICAÇÃO + PARTO + RISCO):
 "Preceptor(a), [? Leito :: Leito [ ], ][Nome], [Idade] anos[? G/P/A :: , G[ ] P[ ] A[ ]], no [1º / 2º / 3º] DPO de [Parto Normal sem intercorrências / Parto Normal com laceração de [2º] grau / Cesariana por [indicação]] com IG de [ ]s[ ]d.
-- Antecedentes: [Hígida / HAG / Pré-eclâmpsia / DMG em dieta / Anemia / [ ]] | Alergias: [Nega alergias / Alérgica a: [ ]].
+- Antecedentes: [Hígida / HAG / Pré-eclâmpsia / DMG em dieta / Anemia / [ ]] | Alergias: [*Nega alergias / Alérgica a: [ ]].
 - Intraparto: [Sem intercorrências / Apresentou HPP por atonia revertida com ocitocina + ácido tranexâmico]."
 
 # 2. SUBJETIVO & AMAMENTAÇÃO (ÚLTIMAS 24H):
@@ -33,7 +33,7 @@
 - Controles Específicos: [Curva pressórica normotensa < 140x90 mmHg / Glicemias capilares normais após suspensão de insulina/dieta / Hb de controle pós-HPP: g/dL]."
 
 # 5. AVALIAÇÃO & PLANO / CONDUTA PROPOSTA:
-# PLANO / CONDUTA:
+# CONDUTA:
 1. Risco de TEV: [Baixo -> manter deambulação precoce / Alto -> manter Enoxaparina 40 mg SC/dia por 10–15 dias].
 2. Analgesia & Suporte: Manter Dipirona 1 g 6/6h SOS [sem AINEs por ser hipertensa / + Ibuprofeno 600 mg 8/8h] + Sulfato Ferroso 40 mg Fe elementar/dia.
 3. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / [ ]].

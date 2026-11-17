@@ -11,10 +11,12 @@
 ###### ATENDIMENTO UPA: SÍNDROME DO CORRIMENTO URETRAL (IST) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: Masculino[? Peso :: , Peso: [ ] kg].
-Comorbidades: [Hígido(a) / [ ]].
-Alergias: [Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
-# SUBJETIVO:
-- Queixa Principal: Saída de pus pelo canal da urina e ardência para urinar há [ ] dias.
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
+# QP:
+- Saída de pus pelo canal da urina e ardência para urinar há [ ] dias.
+
+# HMA:
 - HMA: Paciente relata aparecimento há cerca de [ ] dias de secreção uretral anormal espontânea, com aspecto [purulento abundante amarelo-esverdeado (típico de Gonorreia) / mucoide esbranquiçado e escasso (típico de Clamídia)], associada a disúria intensa ("sensação de queimar/cortar ao urinar"), prurido no trajeto da uretra peniana e eritema no meato externo.
 - HISTÓRIA SEXUAL:
   * Histórico de relação sexual desprotegida (sem uso consistente de preservativo) há cerca de [ ] dias [relação vaginal / anal / oral receptiva ou insertiva].
@@ -23,7 +25,7 @@ Alergias: [Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / 
 - Nega febre, calafrios, dor no períneo ("dor entre o saco e o ânus") ou dificuldade para esvaziar a bexiga (afastada Prostatite Aguda).
 - Nega feridas, úlceras dolorosas ou indolores na glande, prepúcio ou corpo do pênis (afastados Cancro Duro e Herpes genital).
 
-# OBJETIVO (EXAME FÍSICO GENITURINÁRIO DIRIGIDO):
+# EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril (Tax [ ] °C).
 - Ectoscopia: Bom estado geral, corado, lúcido e orientado, sem lesões cutâneas exantemáticas em palmas ou plantas (sem estigmas de Sífilis secundária).
 - Exame da Genitália Externa:
@@ -38,11 +40,11 @@ Alergias: [Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / 
 - Teste Rápido para Hepatite B (HBsAg): [Não Reagente]
 - Teste Rápido para Hepatite C (Anti-HCV): [Não Reagente]
 
-# AVALIAÇÃO DIAGNÓSTICA:
+# HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome do Corrimento Uretral Masculino / Uretrite Infecciosa (CID-10: N34.1).
 2. Alta probabilidade clínica de infecção mista por *Neisseria gonorrhoeae* e *Chlamydia trachomatis*.
 
-# PLANO / CONDUTA (TRATAMENTO SINDRÔMICO DO MINISTÉRIO DA SAÚDE):
+# CONDUTA:
 
 >> CONDUTA NA UNIDADE (TERAPIA DE DOSE ÚNICA SUPERVISIONADA):
 1. TRATAMENTO PARA GONORREIA (Neisseria gonorrhoeae):
