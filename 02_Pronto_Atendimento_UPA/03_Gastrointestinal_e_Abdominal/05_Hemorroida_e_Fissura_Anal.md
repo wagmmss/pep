@@ -12,6 +12,7 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
 Comorbidades: [+ *Hígido(a) / [ ]].
 Alergias: [*Nega / Sim: [ ]].
+Hábitos: [*Constipação intestinal crônica, baixa ingesta de fibras e água / [ ]].
 # QP:
 - Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
 
@@ -23,7 +24,6 @@ Alergias: [*Nega / Sim: [ ]].
 - Nega febre, calafrios ou secreção purulenta fétida anal contínua (afasta Abscesso Isquiorretal).
 - Nega fezes afiladas ("fezes em fita"), perda involuntária de peso ou astenia severa.
 - Nega diarreia crônica alternada com constipação persistente.
-- Hábitos: Constipação intestinal crônica, baixa ingesta de fibras e água.
 
 # EXAME FÍSICO:
 - Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.

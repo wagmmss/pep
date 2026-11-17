@@ -114,7 +114,7 @@ matches:
       - Dor & Eliminações: Dor [ausente / leve controlada com dipirona], diurese espontânea clara, flatos presentes, evacuação [presente / ausente] e lóquios fisiológicos sem odor. Nega cefaleia, escotomas, epigastralgia ou dispneia.
       - Amamentação: RN em AME sob livre demanda, com [boa pega, posicionamento adequado e papilas íntegras / ajuste de pega realizado]."
       
-      # 3. EXAME FÍSICO DIRIGIDO (ACHADOS OBJETIVOS):
+      # 3. EXAME FÍSICO DIRIGIDO:
       "Ao exame físico hoje:
       - Vitais: PA [110x70] mmHg | FC [76] bpm | FR [16] irpm | Tax [36,5] °C | Corada e hidratada.
       - Mamas: [Túrgidas fisiológicas / Flácidas], sem mastite ou fissuras, colostro presente bilateralmente.
@@ -2895,6 +2895,7 @@ matches:
       ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
       Comorbidades: Hígido(a).
       Alergias: Nega.
+      Antecedentes Cirúrgicos/Pessoais: Nega cirurgias prévias.
       # QP:
       - Dor de barriga intensa há [ ] horas/dias.
       
@@ -2908,7 +2909,6 @@ matches:
       - DUM: [DD/MM/AAAA] (Afastada gravidez ectópica: beta-hCG [negativo / solicitado com urgência]).
       - Nega corrimento vaginal fétido ou sangramento genital ativo.
       - Nega hematêmese, melena ou enterorragia volumosa.
-      - Antecedentes: [Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida / [ ]].
       
       # EXAME FÍSICO:
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia) | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
@@ -3038,6 +3038,7 @@ matches:
       ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
       Comorbidades: Hígido(a).
       Alergias: Nega.
+      Hábitos: Constipação intestinal crônica, baixa ingesta de fibras e água.
       # QP:
       - Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
       
@@ -3049,7 +3050,6 @@ matches:
       - Nega febre, calafrios ou secreção purulenta fétida anal contínua (afasta Abscesso Isquiorretal).
       - Nega fezes afiladas ("fezes em fita"), perda involuntária de peso ou astenia severa.
       - Nega diarreia crônica alternada com constipação persistente.
-      - Hábitos: Constipação intestinal crônica, baixa ingesta de fibras e água.
       
       # EXAME FÍSICO:
       - Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.
@@ -3156,6 +3156,7 @@ matches:
       ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
       Comorbidades: Hígido(a).
       Alergias: Nega.
+      Hábitos & Saneamento: Água encanada tratada.
       # QP:
       - Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
       
@@ -3168,7 +3169,6 @@ matches:
       - Nega vômitos fecaloides ou parada de eliminação de flatos e fezes (afasta suboclusão por bolo de áscaris).
       - Nega febre alta, calafrios ou fezes com sangue vivo e pus.
       - Nega desidratação, prostração grave ou perda de peso volumosa.
-      - Hábitos & Saneamento: [Água encanada tratada / Água de poço; consome verduras cruas sem higienização com hipoclorito; crianças pequenas no domicílio].
       
       # EXAME FÍSICO:
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Afebril.
@@ -5850,7 +5850,6 @@ matches:
        * Nega porta de entrada cutânea purulenta, úlcera infectada ou ferimento perfurante contíguo.
        * Nega uso de drogas endovenosas ou presença de prótese articular ortopédica no local.
       - Histórico: [Crises prévias idênticas de gota com hiperuricemia / Primeiro episódio da vida].
-      - Alergias & Comorbidades: [Nega / DRC / HAS / DM2 / Alérgico a AINEs / [ ]].
       
       # EXAME FÍSICO:
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril ou febrícula álgica).
@@ -7059,17 +7058,17 @@ matches:
       - Origem da Admissão: [Pronto Atendimento / UPA / Transferência Hospitalar / Ambulatório]
       - Data e Hora da Admissão: [DD/MM/AAAA] às [HH:MM]
       - Diagnóstico Sindrômico / Motivo da Internação: [ ]
+      - Comorbidades Ativas: Nega comorbidades prévias.
+      - Alergias Medicamentosas: Nega alergias conhecidas.
+      - Cirurgias e Internações Prévias: Nega.
+      - Hábitos de Vida: Tabagismo: Nega | Etilismo: Nega | Substâncias ilícitas: Nega.
       
       # QP:
       - [Queixa principal] há [ ] [hora(s) / dia(s)].
       
       # HMA:
-      - HMA: Paciente admitido(a) nesta enfermaria proveniente de [UPA / Pronto-Socorro / Ambulatório] com quadro de [ ], iniciado há [ ] dias, caracterizado por [ ]. No serviço de origem recebeu [medidas e medicações prévias: [ ]]. No momento da admissão no leito, encontra-se [estável sem queixas álgicas agudas / com queixa residual de: [ ]].
+      - Paciente admitido(a) nesta enfermaria proveniente de [UPA / Pronto-Socorro / Ambulatório] com quadro de [ ], iniciado há [ ] dias, caracterizado por [ ]. No serviço de origem recebeu [medidas e medicações prévias: [ ]]. No momento da admissão no leito, encontra-se [estável sem queixas álgicas agudas / com queixa residual de: [ ]].
       - Nega no momento precordialgia típica, dispneia em repouso, síncope, déficits motores focais agudos ou sangramentos francos ativos.
-      - Comorbidades Ativas: [Nega comorbidades prévias / HAS / DM tipo 2 / Dislipidemia / Insuficiência Cardíaca (FE [ ]%) / DPOC / Asma / DRC estágio [ ] / Hepatopatia crônica / Neoplasia: [ ]].
-      - Cirurgias e Internações Prévias: [Nega / Sim: [ ]].
-      - Alergias Medicamentosas: [Nega alergias conhecidas / Alérgico(a) a: [ ] — pulseira de alerta acionada].
-      - Hábitos de Vida: Tabagismo: [Nega / Ex-tabagista há [ ] anos / Ativo ([ ] maços-ano)] | Etilismo: [Nega / Etilista social / Etilista crônico: [ ]] | Uso de substâncias ilícitas: [Nega / Sim: [ ]].
       
       # RECONCILIAÇÃO MEDICAMENTOSA DE ADMISSÃO (USO PRÉVIO DOMICILIAR):
       1. [Medicamento 1, dose e posologia] -> Conduta na internação: [Manter em prescrição / Suspender temporariamente por [ ] / Substituir por [ ]]
@@ -8897,6 +8896,7 @@ matches:
       ID: [Nome], [ ] [dias / meses] (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg.
       Comorbidades: Hígido(a).
       Alergias: Nega.
+      - Antecedentes & Vacinação: Nascido a termo ([ ] semanas) sem intercorrências neonatais; Vacinação para Pneumococo e Haemophilus B: Completa para a idade (≥ 2 doses se > 4 meses).
       - ESTRATIFICAÇÃO ETÁRIA CRÍTICA:
        * [GRUPO 1 — RECÉM-NASCIDO (0 A 28 DIAS DE VIDA)] -> Alto risco de Infecção Bacteriana Grave (10–15%): Internação hospitalar, triagem séptica completa com líquor e ATB venoso obrigatórios.
        * [GRUPO 2 — LACTENTE JOVEM (29 A 90 DIAS / 1 A 3 MESES)] -> Estratificação por Critérios de Rochester / Step-by-Step + EAS/Urocultura por sonda e marcadores inflamatórios obrigatórios.
@@ -8909,7 +8909,6 @@ matches:
       - Responsável refere picos febris de até [ ] °C (aferidos com termômetro axilar) iniciados há [ ] horas/dias, a cada [ ] horas.
       - Comportamento no Intervalo Afebril (Pós-Antitérmico): [Criança reanima completamente, sorri, interage, mantém sucção vigorosa e brinca quando a febre cede / Permanece hipoativa, irritada ou gemente mesmo afebril].
       - Interrogatório Sistemático Negativo de Focos: Nega tosse, coriza, obstrução nasal, estridor, vômitos, diarreia, choro à micção ou urina fétida, lesões cutâneas ou recusa em movimentar algum membro (pseudoparalisia por artrite séptica/osteomielite).
-      - Antecedentes & Vacinação: Nascido a termo ([ ] semanas) sem intercorrências neonatais; Vacinação para Pneumococo e Haemophilus B: [Completa para a idade (≥ 2 doses se > 4 meses) / Incompleta ou < 2 meses].
       
       # EXAME FÍSICO:
       - Sinais Vitais (Após antitérmico): FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax atual: [ ] °C | TEC < 2s.

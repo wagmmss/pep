@@ -12,6 +12,7 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
 Comorbidades: [+ *Hígido(a) / [ ]].
 Alergias: [*Nega / Sim: [ ]].
+Hábitos & Saneamento: [*Água encanada tratada / Água de poço; consome verduras cruas sem higienização com hipoclorito; crianças pequenas no domicílio].
 # QP:
 - Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
 
@@ -24,7 +25,6 @@ Alergias: [*Nega / Sim: [ ]].
 - Nega vômitos fecaloides ou parada de eliminação de flatos e fezes (afasta suboclusão por bolo de áscaris).
 - Nega febre alta, calafrios ou fezes com sangue vivo e pus.
 - Nega desidratação, prostração grave ou perda de peso volumosa.
-- Hábitos & Saneamento: [Água encanada tratada / Água de poço; consome verduras cruas sem higienização com hipoclorito; crianças pequenas no domicílio].
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Afebril.

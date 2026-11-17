@@ -1124,6 +1124,7 @@ matches:
       ID: [Nome], [ ] [dias / meses] (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg.
       Comorbidades: Hígido(a).
       Alergias: Nega.
+      - Antecedentes & Vacinação: Nascido a termo ([ ] semanas) sem intercorrências neonatais; Vacinação para Pneumococo e Haemophilus B: Completa para a idade (≥ 2 doses se > 4 meses).
       - ESTRATIFICAÇÃO ETÁRIA CRÍTICA:
        * [GRUPO 1 — RECÉM-NASCIDO (0 A 28 DIAS DE VIDA)] -> Alto risco de Infecção Bacteriana Grave (10–15%): Internação hospitalar, triagem séptica completa com líquor e ATB venoso obrigatórios.
        * [GRUPO 2 — LACTENTE JOVEM (29 A 90 DIAS / 1 A 3 MESES)] -> Estratificação por Critérios de Rochester / Step-by-Step + EAS/Urocultura por sonda e marcadores inflamatórios obrigatórios.
@@ -1136,7 +1137,6 @@ matches:
       - Responsável refere picos febris de até [ ] °C (aferidos com termômetro axilar) iniciados há [ ] horas/dias, a cada [ ] horas.
       - Comportamento no Intervalo Afebril (Pós-Antitérmico): [Criança reanima completamente, sorri, interage, mantém sucção vigorosa e brinca quando a febre cede / Permanece hipoativa, irritada ou gemente mesmo afebril].
       - Interrogatório Sistemático Negativo de Focos: Nega tosse, coriza, obstrução nasal, estridor, vômitos, diarreia, choro à micção ou urina fétida, lesões cutâneas ou recusa em movimentar algum membro (pseudoparalisia por artrite séptica/osteomielite).
-      - Antecedentes & Vacinação: Nascido a termo ([ ] semanas) sem intercorrências neonatais; Vacinação para Pneumococo e Haemophilus B: [Completa para a idade (≥ 2 doses se > 4 meses) / Incompleta ou < 2 meses].
       
       # EXAME FÍSICO:
       - Sinais Vitais (Após antitérmico): FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax atual: [ ] °C | TEC < 2s.

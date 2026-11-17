@@ -1276,6 +1276,7 @@ matches:
       ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
       Comorbidades: Hígido(a).
       Alergias: Nega.
+      Antecedentes Cirúrgicos/Pessoais: Nega cirurgias prévias.
       # QP:
       - Dor de barriga intensa há [ ] horas/dias.
       
@@ -1289,7 +1290,6 @@ matches:
       - DUM: [DD/MM/AAAA] (Afastada gravidez ectópica: beta-hCG [negativo / solicitado com urgência]).
       - Nega corrimento vaginal fétido ou sangramento genital ativo.
       - Nega hematêmese, melena ou enterorragia volumosa.
-      - Antecedentes: [Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida / [ ]].
       
       # EXAME FÍSICO:
       - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia) | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
@@ -1419,6 +1419,7 @@ matches:
       ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
       Comorbidades: Hígido(a).
       Alergias: Nega.
+      Hábitos: Constipação intestinal crônica, baixa ingesta de fibras e água.
       # QP:
       - Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
       
@@ -1430,7 +1431,6 @@ matches:
       - Nega febre, calafrios ou secreção purulenta fétida anal contínua (afasta Abscesso Isquiorretal).
       - Nega fezes afiladas ("fezes em fita"), perda involuntária de peso ou astenia severa.
       - Nega diarreia crônica alternada com constipação persistente.
-      - Hábitos: Constipação intestinal crônica, baixa ingesta de fibras e água.
       
       # EXAME FÍSICO:
       - Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.
@@ -1537,6 +1537,7 @@ matches:
       ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
       Comorbidades: Hígido(a).
       Alergias: Nega.
+      Hábitos & Saneamento: Água encanada tratada.
       # QP:
       - Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
       
@@ -1549,7 +1550,6 @@ matches:
       - Nega vômitos fecaloides ou parada de eliminação de flatos e fezes (afasta suboclusão por bolo de áscaris).
       - Nega febre alta, calafrios ou fezes com sangue vivo e pus.
       - Nega desidratação, prostração grave ou perda de peso volumosa.
-      - Hábitos & Saneamento: [Água encanada tratada / Água de poço; consome verduras cruas sem higienização com hipoclorito; crianças pequenas no domicílio].
       
       # EXAME FÍSICO:
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Afebril.
@@ -4231,7 +4231,6 @@ matches:
        * Nega porta de entrada cutânea purulenta, úlcera infectada ou ferimento perfurante contíguo.
        * Nega uso de drogas endovenosas ou presença de prótese articular ortopédica no local.
       - Histórico: [Crises prévias idênticas de gota com hiperuricemia / Primeiro episódio da vida].
-      - Alergias & Comorbidades: [Nega / DRC / HAS / DM2 / Alérgico a AINEs / [ ]].
       
       # EXAME FÍSICO:
       - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril ou febrícula álgica).

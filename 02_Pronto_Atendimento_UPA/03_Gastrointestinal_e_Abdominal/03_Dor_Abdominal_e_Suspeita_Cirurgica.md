@@ -12,6 +12,7 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
 Comorbidades: [+ *Hígido(a) / [ ]].
 Alergias: [*Nega / Sim: [ ]].
+Antecedentes Cirúrgicos/Pessoais: [*Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida / [ ]].
 # QP:
 - Dor de barriga intensa há [ ] horas/dias.
 
@@ -25,7 +26,6 @@ Alergias: [*Nega / Sim: [ ]].
 - DUM: [DD/MM/AAAA] (Afastada gravidez ectópica: beta-hCG [negativo / solicitado com urgência]).
 - Nega corrimento vaginal fétido ou sangramento genital ativo.
 - Nega hematêmese, melena ou enterorragia volumosa.
-- Antecedentes: [Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida / [ ]].
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia) | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

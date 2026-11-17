@@ -11,8 +11,8 @@
 ###### ATENDIMENTO UPA: CRISE AGUDA DE GOTA (PODAGRA) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: Masculino[? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / DRC / HAS / DM2 / [ ]].
+Alergias: [*Nega / Alérgico a AINEs / [ ]].
 # QP:
 - Dor insuportável, vermelhidão e inchaço no "dedão do pé" / joelho iniciados de madrugada há [ ] horas.
 
@@ -31,7 +31,6 @@ Alergias: [*Nega / [ ]].
   * Nega porta de entrada cutânea purulenta, úlcera infectada ou ferimento perfurante contíguo.
   * Nega uso de drogas endovenosas ou presença de prótese articular ortopédica no local.
 - Histórico: [Crises prévias idênticas de gota com hiperuricemia / Primeiro episódio da vida].
-- Alergias & Comorbidades: [Nega / DRC / HAS / DM2 / Alérgico a AINEs / [ ]].
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril ou febrícula álgica).
