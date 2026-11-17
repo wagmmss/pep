@@ -3057,6 +3057,9 @@
       </div>
 
       <div class="top-tools">
+        <button class="btn-palette-trigger" onclick="openRemumeCalcModal('remume')" title="REMUME & Calculadoras UBS/UPA">
+          <span>💊 REMUME &amp; Calc</span>
+        </button>
         <button class="btn-palette-trigger" onclick="openCmdPalette()" title="Atalho Ctrl+K">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <span>Buscar</span>
@@ -3133,6 +3136,10 @@
       </div>
 
       <div class="ws-sidebar-footer">
+        <button type="button" class="ws-sidebar-cmd-btn" onclick="openRemumeCalcModal('remume')" style="margin-bottom:6px;">
+          <span>💊 REMUME &amp; Calc</span>
+          <span class="kbd-shortcut">255</span>
+        </button>
         <button type="button" class="ws-sidebar-cmd-btn" onclick="openShortcutsModal()">
           <span>Mapa de Atalhos</span>
           <span class="kbd-shortcut">?</span>
@@ -11388,16 +11395,31 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
     }
     window.navigateProtocolList = navigateProtocolList;
 
+    let __clinicalSearchIndex = null;
+    function getClinicalSearchIndex() {
+      if (__clinicalSearchIndex) return __clinicalSearchIndex;
+      if (window.__ClinicoEngine && typeof window.__ClinicoEngine.createClinicalSearchIndex === 'function') {
+        __clinicalSearchIndex = window.__ClinicoEngine.createClinicalSearchIndex(allData);
+      }
+      return __clinicalSearchIndex;
+    }
+
     // Filtragem Principal (Aba Geral mostra APENAS os PEP; aba Habilidades mostra os cartões hab)
     function filterCards() {
       const qRaw = searchInput.value.toLowerCase().trim();
       const qNorm = normalizeSearchText(qRaw);
+      let miniMatchedIndices = null;
+      if (qNorm && window.__ClinicoEngine && typeof window.__ClinicoEngine.searchClinicalProtocols === 'function') {
+        const hits = window.__ClinicoEngine.searchClinicalProtocols(getClinicalSearchIndex(), allData, qRaw, allData.length);
+        miniMatchedIndices = new Set(hits.map(h => h.index));
+      }
       let visible = 0;
       const visibleList = [];
       cards.forEach((c, idx) => {
         const item = allData[idx];
         const symMatch = (qNorm && item) ? findMatchedSymptom(item, qNorm) : null;
         const matchSearch = !qNorm ||
+          (miniMatchedIndices ? miniMatchedIndices.has(idx) : false) ||
           c.dataset.search.includes(qRaw) ||
           (c.dataset.searchNorm && c.dataset.searchNorm.includes(qNorm)) ||
           Boolean(symMatch);
@@ -11506,6 +11528,16 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
     }
 
     function activateCmdItem(item, forceOpen) {
+      if (item && item.isRemume) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(item.title).catch(() => {});
+        }
+        if (typeof showToast === 'function') {
+          showToast(`💊 Copiado da REMUME: ${item.title}`);
+        }
+        closeCmdPalette();
+        return;
+      }
       const idx = allData.indexOf(item);
       openInspector(idx);
       if (item.mod_id !== 'hab' && !forceOpen) {
@@ -11520,6 +11552,24 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
 
       if (!qNorm) {
         cmdMatches = allData.slice(0, 15).map(item => ({ item, matchedSymptom: null, isTopHighlight: false }));
+      } else if (window.__ClinicoEngine && typeof window.__ClinicoEngine.searchClinicalProtocols === 'function') {
+        cmdMatches = window.__ClinicoEngine.searchClinicalProtocols(getClinicalSearchIndex(), allData, qRaw, 15);
+        if (qNorm.length >= 2 && typeof window.__ClinicoEngine.searchRemume === 'function') {
+          const remumeHits = window.__ClinicoEngine.searchRemume(qRaw, 5);
+          remumeHits.forEach((r) => {
+            cmdMatches.push({
+              item: {
+                isRemume: true,
+                mod_id: 'remume',
+                title: r.name,
+                module_name: 'REMUME Ribeirão Preto',
+                category: 'Farmácia Municipal'
+              },
+              matchedSymptom: null,
+              isTopHighlight: false
+            });
+          });
+        }
       } else {
         const scored = [];
         for (let i = 0; i < allData.length; i++) {
@@ -11577,17 +11627,24 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
           (idx === 0 ? ' active' : '') +
           (entry.isTopHighlight ? ' cmd-item-top-match' : '');
 
+        const isRemume = item.mod_id === 'remume';
         const isHab = item.mod_id === 'hab';
-        const dotEl = `<span class="mod-dot mod-dot-${escapeHtml(item.mod_id)}"></span>`;
-        const subtitle = isHab
-          ? `${item.module_name} • ${item.category}${item.time_goal ? ' • ' + item.time_goal : ''}`
-          : `${item.module_name} • ${item.category}`;
+        const dotEl = isRemume
+          ? '<span class="mod-dot" style="background:#10b981;"></span>'
+          : `<span class="mod-dot mod-dot-${escapeHtml(item.mod_id)}"></span>`;
+        const subtitle = isRemume
+          ? 'Disponível na Rede Municipal (clique/Enter para copiar)'
+          : isHab
+            ? `${item.module_name} • ${item.category}${item.time_goal ? ' • ' + item.time_goal : ''}`
+            : `${item.module_name} • ${item.category}`;
         const symptomBadgeHtml = matchedSymptom
           ? `<span class="cmd-symptom-badge">🏷️ Queixa: ${escapeHtml(matchedSymptom)}</span>`
           : '';
-        const rightTag = isHab
-          ? '<span class="cmd-item-trig cmd-item-hab-trig">Habilidade</span>'
-          : `<span class="cmd-item-trig">${escapeHtml(item.category)}</span>`;
+        const rightTag = isRemume
+          ? '<span class="cmd-item-trig" style="background:rgba(16,185,129,0.14);color:#047857;">💊 REMUME</span>'
+          : isHab
+            ? '<span class="cmd-item-trig cmd-item-hab-trig">Habilidade</span>'
+            : `<span class="cmd-item-trig">${escapeHtml(item.category)}</span>`;
 
         div.innerHTML = `
           <div class="cmd-item-left">
@@ -11883,6 +11940,305 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
     filterCards();
     syncAllHabCardBadges();
     openInspector(0, null, { scrollCard: false, silentMobileOverlay: true });
+  </script>
+  <!-- Modal Leve: REMUME & Kit Calculadoras UBS/UPA -->
+  <div class="cmd-overlay" id="remumeCalcOverlay" onclick="closeRemumeCalcModal()">
+    <div class="cmd-modal" style="max-width:720px; width:94vw; max-height:86vh; display:flex; flex-direction:column;" onclick="event.stopPropagation()">
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid var(--border); gap:10px;">
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" id="rcTabRemume" class="tab-btn active" style="padding:6px 12px; font-size:0.84rem;" onclick="switchRemumeCalcTab('remume')">💊 REMUME (255)</button>
+          <button type="button" id="rcTabCalc" class="tab-btn" style="padding:6px 12px; font-size:0.84rem;" onclick="switchRemumeCalcTab('calc')">🧮 Calculadoras UBS/UPA</button>
+        </div>
+        <button type="button" class="close-btn" onclick="closeRemumeCalcModal()" aria-label="Fechar">✕</button>
+      </div>
+
+      <div id="rcPaneRemume" style="padding:14px 16px; overflow-y:auto; flex:1;">
+        <input type="text" id="rcRemumeInput" class="cmd-search-input" style="width:100%; border:1px solid var(--border); border-radius:8px; padding:8px 12px; margin-bottom:10px;" placeholder="Filtrar medicamento REMUME (ex.: amoxicilina, losartana, enoxaparina)..." autocomplete="off">
+        <div id="rcRemumeCount" style="font-size:0.78rem; color:var(--text-dim); margin-bottom:8px;">255 itens padronizados</div>
+        <div id="rcRemumeList" style="display:flex; flex-direction:column; gap:6px;"></div>
+      </div>
+
+      <div id="rcPaneCalc" style="padding:14px 16px; overflow-y:auto; flex:1; display:none;">
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px;">
+          <button type="button" class="subcat-chip active" data-calc="renal" onclick="selectRcCalc('renal', this)">Renal (CKD-EPI / CG)</button>
+          <button type="button" class="subcat-chip" data-calc="ig" onclick="selectRcCalc('ig', this)">IG / DPP (DUM / USG)</button>
+          <button type="button" class="subcat-chip" data-calc="elec" onclick="selectRcCalc('elec', this)">IMC / Na+ / Ca++</button>
+          <button type="button" class="subcat-chip" data-calc="curb" onclick="selectRcCalc('curb', this)">CURB-65</button>
+          <button type="button" class="subcat-chip" data-calc="centor" onclick="selectRcCalc('centor', this)">Centor/McIsaac</button>
+          <button type="button" class="subcat-chip" data-calc="wells" onclick="selectRcCalc('wells', this)">Wells TVP</button>
+          <button type="button" class="subcat-chip" data-calc="chads" onclick="selectRcCalc('chads', this)">CHA₂DS₂-VASc</button>
+        </div>
+
+        <div id="rcCalcForm" style="display:flex; flex-direction:column; gap:10px; font-size:0.86rem;"></div>
+        <div id="rcCalcOutput" style="margin-top:14px; padding:12px; border-radius:10px; border:1px solid var(--border); background:var(--bg-subtle, rgba(2,132,199,0.06)); display:none;">
+          <div id="rcCalcVal" style="font-size:1.05rem; font-weight:700;"></div>
+          <div id="rcCalcDesc" style="font-size:0.84rem; color:var(--text-secondary); margin-top:4px;"></div>
+          <button type="button" id="rcCalcCopyBtn" class="btn-palette-trigger" style="margin-top:10px;" onclick="copyRcCalcSnippet()">📋 Copiar resultado p/ PEP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const overlay = document.getElementById('remumeCalcOverlay');
+      const tabRemume = document.getElementById('rcTabRemume');
+      const tabCalc = document.getElementById('rcTabCalc');
+      const paneRemume = document.getElementById('rcPaneRemume');
+      const paneCalc = document.getElementById('rcPaneCalc');
+      const remumeInput = document.getElementById('rcRemumeInput');
+      const remumeList = document.getElementById('rcRemumeList');
+      const remumeCount = document.getElementById('rcRemumeCount');
+      const calcForm = document.getElementById('rcCalcForm');
+      const calcOut = document.getElementById('rcCalcOutput');
+      const calcVal = document.getElementById('rcCalcVal');
+      const calcDesc = document.getElementById('rcCalcDesc');
+      let lastPepSnippet = '';
+      let activeCalc = 'renal';
+
+      function renderRemumeList(q) {
+        const engine = window.__ClinicoEngine;
+        if (!engine || typeof engine.searchRemume !== 'function') return;
+        const items = engine.searchRemume(q || '', 60);
+        remumeCount.textContent = `${items.length}${!q ? ' primeiros de 255' : ' encontrados'}`;
+        remumeList.innerHTML = '';
+        items.forEach((it) => {
+          const row = document.createElement('div');
+          row.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:0.86rem;';
+          const span = document.createElement('span');
+          span.textContent = it.name;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn-palette-trigger';
+          btn.textContent = 'Copiar';
+          btn.onclick = () => {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(it.name).catch(() => {});
+            }
+            if (typeof showToast === 'function') showToast(`💊 Copiado: ${it.name}`);
+          };
+          row.appendChild(span);
+          row.appendChild(btn);
+          remumeList.appendChild(row);
+        });
+      }
+
+      function showCalcResult(res) {
+        lastPepSnippet = res.pepSnippet;
+        calcVal.textContent = res.valueText;
+        calcDesc.textContent = res.classification;
+        calcOut.style.display = 'block';
+      }
+
+      function renderCalcForm(kind) {
+        activeCalc = kind;
+        calcOut.style.display = 'none';
+        const rowStyle = 'display:flex;gap:8px;flex-wrap:wrap;align-items:center;';
+        const inpStyle = 'padding:6px 8px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card,inherit);color:inherit;width:110px;';
+
+        if (kind === 'renal') {
+          calcForm.innerHTML = `
+            <div style="${rowStyle}">
+              <label>Cr (mg/dL): <input id="rcCr" type="number" step="0.1" value="1.0" style="${inpStyle}"></label>
+              <label>Idade: <input id="rcIdade" type="number" value="55" style="${inpStyle}"></label>
+              <label>Peso (kg): <input id="rcPeso" type="number" step="0.5" value="70" style="${inpStyle}"></label>
+              <label>Sexo: <select id="rcSexo" style="${inpStyle}"><option value="M">Masculino</option><option value="F">Feminino</option></select></label>
+            </div>
+            <div style="${rowStyle}">
+              <button type="button" class="btn-palette-trigger" id="rcBtnCkd">Calcular CKD-EPI 2021</button>
+              <button type="button" class="btn-palette-trigger" id="rcBtnCg">Calcular Cockcroft-Gault</button>
+            </div>`;
+          document.getElementById('rcBtnCkd').onclick = () => {
+            const e = window.__ClinicoEngine;
+            showCalcResult(e.calcCkdEpi2021({
+              creatinina: parseFloat(document.getElementById('rcCr').value),
+              idade: parseFloat(document.getElementById('rcIdade').value),
+              sexo: document.getElementById('rcSexo').value
+            }));
+          };
+          document.getElementById('rcBtnCg').onclick = () => {
+            const e = window.__ClinicoEngine;
+            showCalcResult(e.calcCockcroftGault({
+              creatinina: parseFloat(document.getElementById('rcCr').value),
+              idade: parseFloat(document.getElementById('rcIdade').value),
+              pesoKg: parseFloat(document.getElementById('rcPeso').value),
+              sexo: document.getElementById('rcSexo').value
+            }));
+          };
+        } else if (kind === 'ig') {
+          const today = new Date().toISOString().slice(0, 10);
+          calcForm.innerHTML = `
+            <div style="${rowStyle}">
+              <label>DUM: <input id="rcDum" type="date" style="${inpStyle}width:145px;"></label>
+              <button type="button" class="btn-palette-trigger" id="rcBtnDum">Calcular por DUM</button>
+            </div>
+            <div style="${rowStyle}">
+              <label>Data USG: <input id="rcUsgDt" type="date" value="${today}" style="${inpStyle}width:145px;"></label>
+              <label>Sem: <input id="rcUsgW" type="number" value="12" style="${inpStyle}width:70px;"></label>
+              <label>Dias: <input id="rcUsgD" type="number" min="0" max="6" value="0" style="${inpStyle}width:70px;"></label>
+              <button type="button" class="btn-palette-trigger" id="rcBtnUsg">Calcular por USG</button>
+            </div>`;
+          document.getElementById('rcBtnDum').onclick = () => {
+            try {
+              showCalcResult(window.__ClinicoEngine.calcIdadeGestacionalDum({ dumIso: document.getElementById('rcDum').value }));
+            } catch (err) { if (typeof showToast === 'function') showToast(err.message); }
+          };
+          document.getElementById('rcBtnUsg').onclick = () => {
+            try {
+              showCalcResult(window.__ClinicoEngine.calcIdadeGestacionalUsg({
+                usgDateIso: document.getElementById('rcUsgDt').value,
+                usgWeeks: parseInt(document.getElementById('rcUsgW').value || '0', 10),
+                usgDays: parseInt(document.getElementById('rcUsgD').value || '0', 10)
+              }));
+            } catch (err) { if (typeof showToast === 'function') showToast(err.message); }
+          };
+        } else if (kind === 'elec') {
+          calcForm.innerHTML = `
+            <div style="${rowStyle}">
+              <label>Peso (kg): <input id="rcImcP" type="number" step="0.5" value="70" style="${inpStyle}"></label>
+              <label>Altura (cm): <input id="rcImcA" type="number" value="170" style="${inpStyle}"></label>
+              <button type="button" class="btn-palette-trigger" id="rcBtnImc">Calcular IMC</button>
+            </div>
+            <div style="${rowStyle}">
+              <label>Na+ medido: <input id="rcNa" type="number" step="0.5" value="128" style="${inpStyle}"></label>
+              <label>Glicemia: <input id="rcGli" type="number" value="450" style="${inpStyle}"></label>
+              <button type="button" class="btn-palette-trigger" id="rcBtnNa">Corrigir Na+</button>
+            </div>
+            <div style="${rowStyle}">
+              <label>Ca++ total: <input id="rcCa" type="number" step="0.1" value="7.8" style="${inpStyle}"></label>
+              <label>Albumina: <input id="rcAlb" type="number" step="0.1" value="2.5" style="${inpStyle}"></label>
+              <button type="button" class="btn-palette-trigger" id="rcBtnCa">Corrigir Ca++</button>
+            </div>`;
+          document.getElementById('rcBtnImc').onclick = () => showCalcResult(window.__ClinicoEngine.calcImc({
+            pesoKg: parseFloat(document.getElementById('rcImcP').value),
+            alturaCm: parseFloat(document.getElementById('rcImcA').value)
+          }));
+          document.getElementById('rcBtnNa').onclick = () => showCalcResult(window.__ClinicoEngine.calcSodioCorrigido({
+            sodioMedido: parseFloat(document.getElementById('rcNa').value),
+            glicemiaMgDl: parseFloat(document.getElementById('rcGli').value)
+          }));
+          document.getElementById('rcBtnCa').onclick = () => showCalcResult(window.__ClinicoEngine.calcCalcioCorrigido({
+            calcioTotal: parseFloat(document.getElementById('rcCa').value),
+            albuminaGdl: parseFloat(document.getElementById('rcAlb').value)
+          }));
+        } else if (kind === 'curb') {
+          calcForm.innerHTML = `
+            <label><input type="checkbox" id="cConf"> Confusão mental</label>
+            <label><input type="checkbox" id="cUre"> Ureia &gt; 43 mg/dL (ou BUN &gt; 19)</label>
+            <label><input type="checkbox" id="cFr"> FR &ge; 30 irpm</label>
+            <label><input type="checkbox" id="cPa"> PAS &lt; 90 ou PAD &le; 60 mmHg</label>
+            <label><input type="checkbox" id="cId"> Idade &ge; 65 anos</label>
+            <button type="button" class="btn-palette-trigger" id="rcBtnCurb" style="align-self:flex-start;">Calcular CURB-65</button>`;
+          document.getElementById('rcBtnCurb').onclick = () => showCalcResult(window.__ClinicoEngine.calcCurb65({
+            confusao: document.getElementById('cConf').checked,
+            ureiaAlta: document.getElementById('cUre').checked,
+            fr30: document.getElementById('cFr').checked,
+            paBaixa: document.getElementById('cPa').checked,
+            idade65: document.getElementById('cId').checked
+          }));
+        } else if (kind === 'centor') {
+          calcForm.innerHTML = `
+            <label><input type="checkbox" id="mFeb"> Febre (&gt; 38 °C)</label>
+            <label><input type="checkbox" id="mTos"> Ausência de tosse</label>
+            <label><input type="checkbox" id="mLin"> Linfonodomegalia cervical anterior dolorosa</label>
+            <label><input type="checkbox" id="mExs"> Exsudato ou edema tonsilar</label>
+            <label>Idade (anos): <input id="mId" type="number" value="22" style="${inpStyle}"></label>
+            <button type="button" class="btn-palette-trigger" id="rcBtnCentor" style="align-self:flex-start;">Calcular Centor/McIsaac</button>`;
+          document.getElementById('rcBtnCentor').onclick = () => showCalcResult(window.__ClinicoEngine.calcCentorMcIsaac({
+            febre: document.getElementById('mFeb').checked,
+            ausenciaTosse: document.getElementById('mTos').checked,
+            linfonodoCervical: document.getElementById('mLin').checked,
+            exsudatoTonsilar: document.getElementById('mExs').checked,
+            idadeAnos: parseInt(document.getElementById('mId').value || '20', 10)
+          }));
+        } else if (kind === 'wells') {
+          calcForm.innerHTML = `
+            <label><input type="checkbox" id="w1"> Câncer ativo (+1)</label>
+            <label><input type="checkbox" id="w2"> Paresia/paralisia ou imobilização recente de MMII (+1)</label>
+            <label><input type="checkbox" id="w3"> Acamado &ge; 3 dias ou cirurgia de grande porte &lt; 12 sem (+1)</label>
+            <label><input type="checkbox" id="w4"> Dor localizada ao longo do trajeto venoso profundo (+1)</label>
+            <label><input type="checkbox" id="w5"> Edema de todo o membro (+1)</label>
+            <label><input type="checkbox" id="w6"> Panturrilha &gt; 3 cm em relação ao lado contralateral (+1)</label>
+            <label><input type="checkbox" id="w7"> Edema com cacifo restrito ao membro sintomático (+1)</label>
+            <label><input type="checkbox" id="w8"> Veias colaterais superficiais não varicosas (+1)</label>
+            <label><input type="checkbox" id="w9"> TVP prévia documentada (+1)</label>
+            <label><input type="checkbox" id="w10"> Diagnóstico alternativo tão ou mais provável (-2)</label>
+            <button type="button" class="btn-palette-trigger" id="rcBtnWells" style="align-self:flex-start;">Calcular Wells TVP</button>`;
+          document.getElementById('rcBtnWells').onclick = () => showCalcResult(window.__ClinicoEngine.calcWellsTvp({
+            cancerAtivo: document.getElementById('w1').checked,
+            imobilizacaoParesia: document.getElementById('w2').checked,
+            acamado3dOuCirurgia: document.getElementById('w3').checked,
+            dorTrajetoVenoso: document.getElementById('w4').checked,
+            edemaTodoMembro: document.getElementById('w5').checked,
+            panturrilhaMaior3cm: document.getElementById('w6').checked,
+            cacifoSintomatico: document.getElementById('w7').checked,
+            colateraisSuperficiais: document.getElementById('w8').checked,
+            tvpPrevia: document.getElementById('w9').checked,
+            diagnosticoAlternativoProvavel: document.getElementById('w10').checked
+          }));
+        } else if (kind === 'chads') {
+          calcForm.innerHTML = `
+            <label><input type="checkbox" id="ch1"> ICC / Disfunção VE (+1)</label>
+            <label><input type="checkbox" id="ch2"> Hipertensão Arterial (+1)</label>
+            <label><input type="checkbox" id="ch3"> Idade &ge; 75 anos (+2)</label>
+            <label><input type="checkbox" id="ch4"> Diabetes Mellitus (+1)</label>
+            <label><input type="checkbox" id="ch5"> AVC / AIT / Tromboembolismo prévio (+2)</label>
+            <label><input type="checkbox" id="ch6"> Doença vascular (IAM, DAP, placa aórtica) (+1)</label>
+            <label><input type="checkbox" id="ch7"> Idade 65–74 anos (+1)</label>
+            <label><input type="checkbox" id="ch8"> Sexo feminino (+1)</label>
+            <button type="button" class="btn-palette-trigger" id="rcBtnChads" style="align-self:flex-start;">Calcular CHA₂DS₂-VASc</button>`;
+          document.getElementById('rcBtnChads').onclick = () => showCalcResult(window.__ClinicoEngine.calcCha2ds2Vasc({
+            icc: document.getElementById('ch1').checked,
+            has: document.getElementById('ch2').checked,
+            idade75: document.getElementById('ch3').checked,
+            diabetes: document.getElementById('ch4').checked,
+            avcAitTrombo: document.getElementById('ch5').checked,
+            doencaVascular: document.getElementById('ch6').checked,
+            idade65a74: document.getElementById('ch7').checked,
+            sexoFeminino: document.getElementById('ch8').checked
+          }));
+        }
+      }
+
+      window.switchRemumeCalcTab = function (tab) {
+        const isRem = tab === 'remume';
+        tabRemume.classList.toggle('active', isRem);
+        tabCalc.classList.toggle('active', !isRem);
+        paneRemume.style.display = isRem ? 'block' : 'none';
+        paneCalc.style.display = isRem ? 'none' : 'block';
+        if (isRem) {
+          renderRemumeList(remumeInput.value);
+          setTimeout(() => remumeInput.focus(), 20);
+        } else {
+          renderCalcForm(activeCalc);
+        }
+      };
+
+      window.selectRcCalc = function (kind, btnEl) {
+        document.querySelectorAll('#rcPaneCalc .subcat-chip').forEach((b) => b.classList.remove('active'));
+        if (btnEl) btnEl.classList.add('active');
+        renderCalcForm(kind);
+      };
+
+      window.copyRcCalcSnippet = function () {
+        if (!lastPepSnippet) return;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(lastPepSnippet).catch(() => {});
+        }
+        if (typeof showToast === 'function') showToast('📋 Resultado copiado para o PEP!');
+      };
+
+      window.openRemumeCalcModal = function (tab) {
+        overlay.classList.add('open');
+        window.switchRemumeCalcTab(tab || 'remume');
+      };
+
+      window.closeRemumeCalcModal = function () {
+        overlay.classList.remove('open');
+      };
+
+      remumeInput.addEventListener('input', (e) => renderRemumeList(e.target.value));
+    })();
   </script>
   <script type="module" src="/src/engine/index.ts"></script>
 </body>

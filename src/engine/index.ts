@@ -6,12 +6,14 @@ import * as PersonalizarEngine from './personalizar.ts';
 import * as WorkstationEngine from './workstation.ts';
 import * as SearchEngine from './search.ts';
 import * as DiretrizesEngine from './diretrizes.ts';
+import * as CalculadorasEngine from './calculadoras.ts';
 
 export {
   PersonalizarEngine,
   WorkstationEngine,
   SearchEngine,
-  DiretrizesEngine
+  DiretrizesEngine,
+  CalculadorasEngine
 };
 
 if (typeof window !== 'undefined') {
@@ -19,6 +21,7 @@ if (typeof window !== 'undefined') {
     ...PersonalizarEngine,
     ...WorkstationEngine,
     ...SearchEngine,
-    ...DiretrizesEngine
+    ...DiretrizesEngine,
+    ...CalculadorasEngine
   };
 }
