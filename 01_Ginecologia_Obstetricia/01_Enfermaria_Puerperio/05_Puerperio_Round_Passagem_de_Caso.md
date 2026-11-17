@@ -14,7 +14,7 @@
 - Antecedentes: [Hígida / HAG / Pré-eclâmpsia / DMG em dieta / Anemia / [ ]] | Alergias: [*Nega alergias / Alérgica a: [ ]].
 - Intraparto: [Sem intercorrências / Apresentou HPP por atonia revertida com ocitocina + ácido tranexâmico]."
 
-# 2. SUBJETIVO & AMAMENTAÇÃO (ÚLTIMAS 24H):
+# 2. EVOLUÇÃO (24H) & AMAMENTAÇÃO:
 "Passou as últimas 24h estável, afebril, deambulando sem ortostatismo e aceitando bem a dieta.
 - Dor & Eliminações: Dor [ausente / leve controlada com dipirona], diurese espontânea clara, flatos presentes, evacuação [presente / ausente] e lóquios fisiológicos sem odor. Nega cefaleia, escotomas, epigastralgia ou dispneia.
 - Amamentação: RN em AME sob livre demanda, com [boa pega, posicionamento adequado e papilas íntegras / ajuste de pega realizado]."
@@ -32,7 +32,6 @@
 - Sorologias & Vacinas: HIV, VDRL e HBsAg [não reagentes / [ ]], Toxo [imune / suscetível orientada].
 - Controles Específicos: [Curva pressórica normotensa < 140x90 mmHg / Glicemias capilares normais após suspensão de insulina/dieta / Hb de controle pós-HPP: g/dL]."
 
-# 5. AVALIAÇÃO & PLANO / CONDUTA PROPOSTA:
 # CONDUTA:
 1. Risco de TEV: [Baixo -> manter deambulação precoce / Alto -> manter Enoxaparina 40 mg SC/dia por 10–15 dias].
 2. Analgesia & Suporte: Manter Dipirona 1 g 6/6h SOS [sem AINEs por ser hipertensa / + Ibuprofeno 600 mg 8/8h] + Sulfato Ferroso 40 mg Fe elementar/dia.
