@@ -19,8 +19,10 @@ export interface RodizioConfig {
   microHabitoSugerido: string;
 }
 
+export type MarchaId = '4_sprint' | '3_normal' | '2_pesada' | '1_sobrevivencia';
+
 export interface MarchaConfig {
-  id: '3_normal' | '2_pesada' | '1_sobrevivencia';
+  id: MarchaId;
   nome: string;
   badge: string;
   metaMin: number;
@@ -40,6 +42,8 @@ export interface TimelineStep {
   corCategoria: string;
   atalhoSecao?: string;
   atalhoLabel?: string;
+  atalhoTeoriaMod?: string;
+  atalhoFerramentaTab?: 'gaso' | 'lr' | 'travas' | 'madrugada';
 }
 
 export interface CurriculoAuditItem {
@@ -53,7 +57,7 @@ export interface CurriculoAuditItem {
 export interface Central6AnoState {
   rodizioId: string;
   feriasSemana: string;
-  marchaId: '3_normal' | '2_pesada' | '1_sobrevivencia';
+  marchaId: MarchaId;
   arquetipoId: 'ferias_4h' | 'dia_cheio' | 'pe_vespera' | 'plantao_12h' | 'pos_plantao' | 'fds';
   diaSemana: 'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab' | 'dom';
   microHabitoSemanal: string;
@@ -63,6 +67,9 @@ export interface Central6AnoState {
   semanasConcluidas: number;
   ultimoDiaConcluidoIso: string;
   checkedTimelineIds: Record<string, boolean>;
+  checkedTimelineByDate?: Record<string, Record<string, boolean>>;
+  ankiDoneByDate?: Record<string, boolean>;
+  autoSyncDiaSemana?: boolean;
   curriculoDoneIds: Record<string, boolean>;
   ritualDomingoDoneIds: Record<string, boolean>;
   teoriaStatusById?: Record<string, 'nao_iniciado' | 'estudado' | 'dominado'>;
@@ -243,7 +250,18 @@ export const FERIAS_SEMANAS: { id: string; label: string; focoConteudo: string; 
   }
 ];
 
-export const MARCHAS_6ANO: Record<'3_normal' | '2_pesada' | '1_sobrevivencia', MarchaConfig> = {
+export const MARCHAS_6ANO: Record<MarchaId, MarchaConfig> = {
+  '4_sprint': {
+    id: '4_sprint',
+    nome: '🚀 Marcha 4 — Sprint Final R1 (Set–Dez)',
+    badge: '350+ q/sem',
+    metaMin: 350,
+    metaMax: 450,
+    metaAlvo: 380,
+    cicloDiaUtilMin: 90,
+    fdsHorasDia: 5,
+    resumo: '1 Prova na Íntegra/Semana (100–120q no Sáb) + Correção Cirúrgica + OSCE Semanal em Dupla + Anki de Erros.'
+  },
   '3_normal': {
     id: '3_normal',
     nome: '🟢 Marcha 3 — Normal (Tração Máxima)',
@@ -279,57 +297,335 @@ export const MARCHAS_6ANO: Record<'3_normal' | '2_pesada' | '1_sobrevivencia', M
   }
 };
 
-export const ROTA_DIAS_SEMANA: Record<'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab' | 'dom', { nome: string; exame25m: string; pilarTitulo: string; pilarDetalhe: string; moduloRef: string }> = {
+export const ROTA_DIAS_SEMANA: Record<
+  'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab' | 'dom',
+  {
+    nome: string;
+    exame25m: string;
+    pilarTitulo: string;
+    pilarDetalhe: string;
+    moduloRef: string;
+    moduloId: string;
+    ferramentaTab: 'gaso' | 'lr' | 'travas' | 'madrugada';
+  }
+> = {
   seg: {
     nome: 'Segunda-feira',
     exame25m: '1 ECG sistemático (10 passos) + 1 Gasometria arterial (Winter + AG)',
     pilarTitulo: 'Pilar 1A — Anamnese & Comunicação (Calgary-Cambridge)',
     pilarDetalhe: 'Treinar abertura 60s sem interromper, funil guiado por 3–5 hipóteses desde a QP, Red Flags precoces, bloco ICE e Modo Rápido (5m) vs Modo Amplo (15m).',
-    moduloRef: 'Módulo 01'
+    moduloRef: 'Módulo 01',
+    moduloId: 'mod-01',
+    ferramentaTab: 'gaso'
   },
   ter: {
     nome: 'Terça-feira',
     exame25m: '1 RX de Tórax (RIPE + ABCDE-F) ou 1 Rotina de Abdome Agudo',
     pilarTitulo: 'Pilar 1B — Exame Físico Guiado por Hipóteses (HDPE & LR+/LR-)',
     pilarDetalhe: 'Definir achados discriminatórios antes de tocar no paciente, coreografia zero ping-pong, técnica Stanford 25 e peso real dos sinais (LR+ e LR-).',
-    moduloRef: 'Módulo 02'
+    moduloRef: 'Módulo 02',
+    moduloId: 'mod-02',
+    ferramentaTab: 'lr'
   },
   qua: {
     nome: 'Quarta-feira',
     exame25m: '1 ECG isquêmico/arritmia + 1 Caso de e-FAST ou TC de Crânio/Abdome',
     pilarTitulo: 'Pilar 2 — Raciocínio Clínico, Illness Scripts, Vieses & Bayes',
     pilarDetalhe: 'Traduzir fala leiga em Qualificadores Semânticos, escrever One-Liner cirúrgico, construir/comparar 2 Illness Scripts e aplicar antídoto contra fechamento prematuro.',
-    moduloRef: 'Módulo 03'
+    moduloRef: 'Módulo 03',
+    moduloId: 'mod-03',
+    ferramentaTab: 'lr'
   },
   qui: {
     nome: 'Quinta-feira',
     exame25m: '1 Gasometria completa (AG corrigido + Delta-Delta) + 1 RX de urgência',
     pilarTitulo: 'Pilar 3 — Oratória Clínica (Pyramid, SNAPPS & SBAR) + Gravação 1–3 min',
     pilarDetalhe: 'Gravar áudio/vídeo de 90s passando caso sem ler papel, avaliar na Rubrica 0–10 (One-liner, filtro de pertinentes, comparação de diferenciais, pausa limpa) e regravar Take 2.',
-    moduloRef: 'Módulo 04'
+    moduloRef: 'Módulo 04',
+    moduloId: 'mod-04',
+    ferramentaTab: 'gaso'
   },
   sex: {
     nome: 'Sexta-feira',
     exame25m: 'Mix Rápido Cronometrado: 3 exames (ECG + Gaso + Imagem) em 15 min + 10 min revisão',
     pilarTitulo: 'Simulado Integrado Cronometrado ou OSCE em Dupla (40 min)',
     pilarDetalhe: 'Executar 1 estação completa (Anamnese 7m → HDPE → Exames 3m → Hipóteses + Prescrição 7 Travas → Apresentação SNAPPS/SBAR 2m + Debriefing).',
-    moduloRef: 'Módulos 05, 06 e 07'
+    moduloRef: 'Módulo 05 (Exames)',
+    moduloId: 'mod-05',
+    ferramentaTab: 'travas'
   },
   sab: {
     nome: 'Sábado',
     exame25m: 'Auditoria de Imagens Puras e Traçados das questões da semana',
     pilarTitulo: 'Manhã Intensiva R1 + Prática Intercalada Cumulativa',
     pilarDetalhe: '2 Ciclos Invertidos (avanço 70% Âncora) + Bateria Intercalada de 20–30 questões de estágios anteriores. Tarde e noite livres!',
-    moduloRef: 'Módulo 06 (Prescrição)'
+    moduloRef: 'Módulo 06 (Prescrição)',
+    moduloId: 'mod-06',
+    ferramentaTab: 'travas'
   },
   dom: {
     nome: 'Domingo',
     exame25m: 'Revisão dos Pontos Cegos da semana (10–15 min)',
     pilarTitulo: 'Trilha Paralela 30% + Ritual de Domingo (15 min)',
     pilarDetalhe: 'Avançar na Trilha Paralela R1 (Preventiva/Ped/CM) + Treino de casos complexos (/minicex) + calibrar Marcha e Micro-Hábito da próxima semana.',
-    moduloRef: 'Módulo 07 (Procedimentos)'
+    moduloRef: 'Módulo 07 (Procedimentos)',
+    moduloId: 'mod-07',
+    ferramentaTab: 'madrugada'
   }
 };
+
+export function resolveCalendarContextForDate(dateObj: Date): {
+  dateIso: string;
+  diaSemana: 'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab' | 'dom';
+  rodizioId: string;
+  feriasSemana: string;
+  arquetipoSugerido: Central6AnoState['arquetipoId'];
+  labelResumo: string;
+} {
+  const y = dateObj.getFullYear();
+  const m = String(dateObj.getMonth() + 1).padStart(2, '0');
+  const d = String(dateObj.getDate()).padStart(2, '0');
+  const dateIso = `${y}-${m}-${d}`;
+  const dayMap: Array<'dom' | 'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab'> = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
+  const diaSemana = dayMap[dateObj.getDay()] || 'seg';
+  const isFds = diaSemana === 'sab' || diaSemana === 'dom';
+
+  let rodizioId = 'ferias';
+  let feriasSemana = 'sem1';
+
+  if (dateIso < '2026-12-07') {
+    rodizioId = 'ferias';
+    feriasSemana = 'sem1';
+  } else if (dateIso <= '2026-12-13') {
+    rodizioId = 'ferias';
+    feriasSemana = 'sem2';
+  } else if (dateIso <= '2026-12-20') {
+    rodizioId = 'ferias';
+    feriasSemana = 'sem3';
+  } else if (dateIso <= '2026-12-27') {
+    rodizioId = 'ferias';
+    feriasSemana = 'sem4';
+  } else if (dateIso <= '2027-01-03') {
+    rodizioId = 'ferias';
+    feriasSemana = 'sem5';
+  } else if (dateIso <= '2027-01-10') {
+    rodizioId = 'ferias';
+    feriasSemana = 'sem6';
+  } else if (dateIso <= '2027-01-17') {
+    rodizioId = 'ferias';
+    feriasSemana = 'sem7';
+  } else if (dateIso <= '2027-01-24') {
+    rodizioId = 'ferias';
+    feriasSemana = 'sem8';
+  } else if (dateIso <= '2027-02-21') {
+    rodizioId = 'cirurgia';
+  } else if (dateIso <= '2027-03-21') {
+    rodizioId = 'anestesio_cti';
+  } else if (dateIso <= '2027-05-02') {
+    rodizioId = 'go';
+  } else if (dateIso <= '2027-05-16') {
+    rodizioId = 'oftalmo_orl_ccp';
+  } else if (dateIso <= '2027-06-13') {
+    rodizioId = 'mfc';
+  } else if (dateIso <= '2027-07-11') {
+    rodizioId = 'cm';
+  } else if (dateIso <= '2027-08-08') {
+    rodizioId = 'ped';
+  } else if (dateIso <= '2027-10-03') {
+    rodizioId = 'emergencia_trauma';
+  } else {
+    rodizioId = 'sprint_r1';
+  }
+
+  const arquetipoSugerido: Central6AnoState['arquetipoId'] = isFds
+    ? 'fds'
+    : (rodizioId === 'ferias' ? 'ferias_4h' : 'dia_cheio');
+
+  const rodObj = RODIZIOS_6ANO.find((r) => r.id === rodizioId) || RODIZIOS_6ANO[0];
+  const labelResumo = `${dateIso} (${ROTA_DIAS_SEMANA[diaSemana].nome}) · ${rodObj.nome}`;
+
+  return { dateIso, diaSemana, rodizioId, feriasSemana, arquetipoSugerido, labelResumo };
+}
+
+export function buildDailyTimeline(state: Central6AnoState): TimelineStep[] {
+  const rodizio = RODIZIOS_6ANO.find((r) => r.id === state.rodizioId) || RODIZIOS_6ANO[0];
+  const rotaDia = ROTA_DIAS_SEMANA[state.diaSemana] || ROTA_DIAS_SEMANA.seg;
+  const feriasSem = FERIAS_SEMANAS.find((f) => f.id === state.feriasSemana) || FERIAS_SEMANAS[0];
+  const microHab = state.microHabitoSemanal || rodizio.microHabitoSugerido;
+
+  if (state.rodizioId === 'ferias' && feriasSem.isFreeWeek) {
+    return [{
+      id: 'ferias-livre-1',
+      horario: 'Dia Inteiro',
+      titulo: '🏖️ Semana Livre Planejada (11 a 17/01/2027) — Descanso Total Inegociável',
+      detalhe: 'Zero estudo teórico novo e zero metas de questões. Aproveite a viagem para consolidar energia antes de 25/01/2027.',
+      categoria: 'BLINDAGEM BIOLÓGICA',
+      corCategoria: '#10b981'
+    }];
+  }
+
+  if (state.rodizioId === 'ferias' && (state.diaSemana === 'sab' || state.diaSemana === 'dom' || state.arquetipoId === 'fds')) {
+    const isDom = state.diaSemana === 'dom';
+    return [
+      {
+        id: 'ferias-fds-descanso',
+        horario: 'Fim de Semana das Férias (Seg–Sex = 5x/sem)',
+        titulo: isDom ? '🧘 Domingo das Férias — Descanso + Calibração Rápida (15 min)' : '☀️ Sábado Livre das Férias — Lazer, Esporte & Opcional OSCE em Dupla',
+        detalhe: isDom
+          ? 'Sem metas pesadas hoje: apenas revise em 15 min os 3 Pontos Cegos da semana e deixe a próxima semana calibrada no Ritual abaixo.'
+          : 'O Plano de Férias roda 5x/semana (Seg–Sex). Hoje é dia de recuperação — faça apenas um encontro opcional de OSCE em Dupla (40 min) se combinou com colega.',
+        categoria: 'FDS LIVRE (FÉRIAS)',
+        corCategoria: '#10b981',
+        atalhoSecao: isDom ? 'logbook' : 'preporta',
+        atalhoLabel: isDom ? 'Revisar Pontos Cegos' : 'Ver Pré-Porta OSCE'
+      },
+      {
+        id: 'ferias-fds-sono',
+        horario: 'Noite · Blindagem Biológica',
+        titulo: '🛌 Manutenção Leve de Anki (se quiser, ≤ 20 min) + Sono Reparador',
+        detalhe: 'Não acumule culpa: descansar no fim de semana protege a execução das 4h líquidas de segunda a sexta.',
+        categoria: 'SONO PROTEGIDO',
+        corCategoria: '#2dd4bf'
+      }
+    ];
+  }
+
+  if (state.rodizioId === 'ferias' || state.arquetipoId === 'ferias_4h') {
+    const focoConteudo = state.rodizioId === 'ferias' ? feriasSem.focoConteudo : rodizio.ancora70;
+    const focoExame = state.rodizioId === 'ferias' ? `${rotaDia.exame25m} · (${feriasSem.focoExames})` : rotaDia.exame25m;
+    return [
+      {
+        id: 'ferias-anki-questoes',
+        horario: 'Bloco 1 · 2h00 (50% Conteúdo Puro)',
+        titulo: '📚 Manutenção Anki (máx 30m) + Questões MedQuest & Diretrizes (1h30)',
+        detalhe: `Alvo da semana: ${focoConteudo}. Comece com 5–8 questões pré-teste → Ficha Resumo Medway → bateria de 20–30 questões comentadas.`,
+        categoria: 'CONTEÚDO PURO (50%)',
+        corCategoria: '#0284c7'
+      },
+      {
+        id: 'ferias-exames-25m',
+        horario: 'Bloco 2A · 25 min (Aquecimento de Exames)',
+        titulo: '🧪 Micro-Dose Diária de Interpretação Sistemática de Exames',
+        detalhe: `${focoExame}. Aplique o checklist fixo passo a passo antes de ver o laudo.`,
+        categoria: 'EXAMES (25 MIN)',
+        corCategoria: '#f59e0b',
+        atalhoSecao: 'ferramentas',
+        atalhoLabel: 'Abrir Ferramentas & Exames',
+        atalhoFerramentaTab: rotaDia.ferramentaTab
+      },
+      {
+        id: 'ferias-pilar-95m',
+        horario: 'Bloco 2B · 1h35 (Pilar de Habilidade do Dia)',
+        titulo: `🧠 ${rotaDia.pilarTitulo}`,
+        detalhe: `${rotaDia.pilarDetalhe}${state.rodizioId === 'ferias' ? ' · Meta da semana: ' + feriasSem.focoHabilidade : ''}`,
+        categoria: `HABILIDADE (${rotaDia.moduloRef})`,
+        corCategoria: '#2dd4bf',
+        atalhoSecao: 'teoria',
+        atalhoLabel: `Ler ${rotaDia.moduloRef}`,
+        atalhoTeoriaMod: rotaDia.moduloId
+      },
+      {
+        id: 'ferias-sono',
+        horario: 'Noite · Blindagem Biológica',
+        titulo: '🛌 Descompressão & Sono Protegido (7h30–8h)',
+        detalhe: 'Meta de 4h líquidas concluída! Feche o computador sem esticar horário.',
+        categoria: 'SONO PROTEGIDO',
+        corCategoria: '#10b981'
+      }
+    ];
+  }
+
+  if (state.arquetipoId === 'pos_plantao') {
+    return [
+      { id: 'pos-ancoragem', horario: '07h00 – 12h30', titulo: '🕶️ Saída com Óculos Escuros + Sono de Ancoragem Inegociável (5h)', detalhe: 'Quarto 100% escuro e silencioso. Proibido tentar estudar na manhã pós-plantão.', categoria: 'RECUPERAÇÃO SINÁPTICA', corCategoria: '#10b981' },
+      { id: 'pos-tarde', horario: '12h30 – 18h00', titulo: '☕ Almoço Leve + Dose Única de Café até 13h30 + Turno da Tarde', detalhe: `Proibido cafeína após 14h. No hospital, aplique apenas o Pré-Porta 30s: "${microHab}".`, categoria: 'TURNO LEVE', corCategoria: '#f59e0b', atalhoSecao: 'preporta', atalhoLabel: 'Abrir Pré-Porta 30s' },
+      { id: 'pos-noite', horario: '18h30 – 21h30', titulo: '🧘 Noite Recuperativa (Zero Ciclo Teórico de 90 min!)', detalhe: 'Faça apenas 20–25 min de Anki leve, jante cedo e durma às 21h30 (8h30 de sono reparador).', categoria: 'SONO ÀS 21H30', corCategoria: '#818cf8' }
+    ];
+  }
+
+  if (state.arquetipoId === 'plantao_12h') {
+    return [
+      { id: 'plt12-hospital', horario: '07h00 – 19h00 (No Plantão)', titulo: `🏥 Plantão Ativo (${rodizio.nome}) + Micro-Hábito & Procedimentos`, detalhe: `Micro-hábito: "${microHab}". Procedimentos-alvo: ${rodizio.procedimentosAlvo.join(' · ')}. Nos intervalos calmos, mate 25–35 min de Anki.`, categoria: 'PRÁTICA VIVA', corCategoria: '#2dd4bf', atalhoSecao: 'preporta', atalhoLabel: 'Ver Pré-Porta 30s' },
+      { id: 'plt12-noite', horario: '19h30 – 21h30', titulo: '📓 Registro de 1 Linha no Logbook + Descanso Total (Proibido Abrir Apostila)', detalhe: 'Anote em 2 minutos 1 caso/procedimento marcante do plantão, jante e durma às 21h30.', categoria: 'ZERO TEORIA PÓS-12H', corCategoria: '#10b981', atalhoSecao: 'logbook', atalhoLabel: 'Registrar no Logbook' }
+    ];
+  }
+
+  if (state.arquetipoId === 'fds' || state.diaSemana === 'sab' || state.diaSemana === 'dom') {
+    const isDom = state.diaSemana === 'dom';
+    const isSprintSab = !isDom && (state.marchaId === '4_sprint' || state.rodizioId === 'sprint_r1' || state.rodizioId === 'emergencia_trauma');
+    return [
+      {
+        id: 'fds-bloco1',
+        horario: '08h00 – 09h55 (Bloco 1)',
+        titulo: isDom
+          ? `🎯 Ciclo Invertido (90m) — Trilha Paralela 30%: ${rodizio.trilha30}`
+          : isSprintSab
+            ? '🚀 Sprint R1 — Prova Antiga na Íntegra Cronometrada (100–120 questões)'
+            : `🔥 Ciclo Invertido (90m) — Âncora 70%: ${rodizio.ancora70}`,
+        detalhe: isSprintSab
+          ? 'Simule tempo real de prova (USP-RP / USP-SP / UNICAMP / ENARE). Ao final, classifique erros em Lacuna, Armadilha ou Desatenção.'
+          : '15m Pré-teste (5–8q) → 35m Ficha Resumo Medway → 40m Bateria de 20 questões comentadas no MedQuest.',
+        categoria: isDom ? 'TRILHA PARALELA 30%' : (isSprintSab ? 'SPRINT R1 (PROVA)' : 'RODÍZIO-ÂNCORA 70%'),
+        corCategoria: isDom ? '#818cf8' : '#0284c7'
+      },
+      {
+        id: 'fds-exames',
+        horario: '09h55 – 10h20 (25 min)',
+        titulo: `🧪 Aquecimento de Exames: ${rotaDia.exame25m}`,
+        detalhe: 'Treino sistemático de traçados, gasometria e imagem antes do 2º bloco.',
+        categoria: 'EXAMES (25 MIN)',
+        corCategoria: '#f59e0b',
+        atalhoSecao: 'ferramentas',
+        atalhoLabel: 'Abrir Ferramentas',
+        atalhoFerramentaTab: rotaDia.ferramentaTab
+      },
+      {
+        id: 'fds-bloco2',
+        horario: '10h30 – 12h15 (Bloco 2)',
+        titulo: isDom ? '🧠 Simulação Prática / OSCE + Ritual de Domingo (15 min)' : '⚡ 2º Ciclo Invertido + Bateria Intercalada Cumulativa (20–30q de áreas passadas)',
+        detalhe: isDom ? `${rotaDia.pilarDetalhe} Feche com o Ritual de Domingo abaixo!` : 'Mantenha o Efeito Catraca resolvendo 20–30 questões mistas dos rodízios anteriores. Tarde e noite livres!',
+        categoria: isDom ? 'OSCE & PLANEJAMENTO' : 'EFEITO CATRACA',
+        corCategoria: '#2dd4bf',
+        atalhoSecao: 'teoria',
+        atalhoLabel: `Ler ${rotaDia.moduloRef}`,
+        atalhoTeoriaMod: rotaDia.moduloId
+      }
+    ];
+  }
+
+  if (state.arquetipoId === 'pe_vespera') {
+    return [
+      { id: 'pe-hospital', horario: 'Turno Prático (Manhã ou Tarde)', titulo: `🏥 Hospital (${rodizio.nome}) + Anki FSRS nas Micro-Janelas (25–35m)`, detalhe: `Treine seu micro-hábito da semana: "${microHab}".`, categoria: 'HOSPITAL + ANKI', corCategoria: '#2dd4bf', atalhoSecao: 'preporta', atalhoLabel: 'Pré-Porta 30s' },
+      { id: 'pe-ciclos', horario: 'Turno de PE (3h30 líquidas)', titulo: '⚡ 2 Ciclos Invertidos (1º: Âncora 70% | 2º: Trilha Paralela 30%) + 25m Exames', detalhe: `Ciclo 1: ${rodizio.ancora70} | Ciclo 2: ${rodizio.trilha30} | Exame: ${rotaDia.exame25m}.`, categoria: 'TRAÇÃO DUPLA PE', corCategoria: '#0284c7', atalhoSecao: 'ferramentas', atalhoLabel: 'Abrir Exames', atalhoFerramentaTab: rotaDia.ferramentaTab },
+      { id: 'pe-cochilo', horario: '15h45 – 17h15 (Se Véspera de Plantão Noturno)', titulo: '🛌 Cochilo Profilático de 90 min (1 Ciclo Completo de Sono) ou Noite Livre', detalhe: 'Se entrar no plantão às 19h, pare todo estudo às 15h30 e durma 90m. Se não tiver plantão, noite leve e sono às 22h.', categoria: 'BLINDAGEM DE PLANTÃO', corCategoria: '#10b981' }
+    ];
+  }
+
+  const stepsDiaCheio: TimelineStep[] = [
+    { id: 'dc-hospital-anki', horario: '07h30 – 18h00 (Hospital + Micro-Janelas)', titulo: `🏥 ${rodizio.nome}: Micro-Hábito da Semana + 100% do Anki antes das 18h`, detalhe: `Micro-hábito: "${microHab}". Mate os 25–35 min de Anki em 2–3 tiros de 12m + anote dúvidas em 1 linha.`, categoria: 'HOSPITAL & ANKI', corCategoria: '#2dd4bf', atalhoSecao: 'preporta', atalhoLabel: 'Abrir Pré-Porta 30s' },
+    { id: 'dc-descompressao', horario: '18h00 – 19h15', titulo: '🚿 Descompressão Física (Banho, Jantar, Exercício — Zero Tela de Estudo)', detalhe: 'Transição obrigatória para limpar a fadiga hospitalar antes do bloco noturno.', categoria: 'TRANSIÇÃO', corCategoria: '#6b7280' }
+  ];
+
+  if (state.marchaId === '1_sobrevivencia') {
+    stepsDiaCheio.push({ id: 'dc-marcha1-noite', horario: '19h15 – 21h30 (🔴 Marcha 1 Ativa)', titulo: '🛡️ Modo Sobrevivência: Zero Teoria Nova Hoje — Apenas Revisar 7 Travas & Dormir Cedo', detalhe: 'Em semana caótica, não force estudo exausto à noite. Garanta o Anki nas janelas e durma às 21h30.', categoria: 'MARCHA 1 (SOBREVIVÊNCIA)', corCategoria: '#fb7185', atalhoSecao: 'ferramentas', atalhoLabel: 'Checar 7 Travas', atalhoFerramentaTab: 'travas' });
+  } else if (state.marchaId === '2_pesada') {
+    stepsDiaCheio.push({ id: 'dc-marcha2-noite', horario: '19h15 – 20h25 (🟡 Marcha 2 Ativa — 70 min)', titulo: `🎯 Tiro Cirúrgico: 20m Exames (${rotaDia.exame25m}) + 45m Questões MedQuest`, detalhe: `Resolva 20–25 questões comentadas de ${rodizio.ancora70} sem ler apostila longa.`, categoria: 'MARCHA 2 (PESADA)', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Abrir Exames', atalhoFerramentaTab: rotaDia.ferramentaTab });
+  } else if (state.marchaId === '4_sprint') {
+    stepsDiaCheio.push(
+      { id: 'dc-exames-25m', horario: '19h15 – 19h40 (25 min)', titulo: `🧪 Micro-Dose Multimídia & 2ª Fase: ${rotaDia.exame25m}`, detalhe: `Treine leitura rápida sob cronômetro (${rotaDia.pilarTitulo}).`, categoria: 'MULTIMÍDIA / EXAMES', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Ferramentas & Exames', atalhoFerramentaTab: rotaDia.ferramentaTab },
+      { id: 'dc-sprint-90m', horario: '19h40 – 21h10 (🚀 Marcha 4 — Sprint R1)', titulo: '🚀 Bloco Cirúrgico de Questões (50–70q por Banca) + Correção de Erros', detalhe: `Foco direto em ${rodizio.ancora70} e revisão do Caderno de Erros das provas anteriores.`, categoria: 'SPRINT R1 (350+/SEM)', corCategoria: '#0284c7', atalhoSecao: 'teoria', atalhoLabel: `Revisar ${rotaDia.moduloRef}`, atalhoTeoriaMod: rotaDia.moduloId }
+    );
+  } else {
+    const isTrilhaDay = state.diaSemana === 'qua';
+    stepsDiaCheio.push(
+      { id: 'dc-exames-25m', horario: '19h15 – 19h40 (25 min)', titulo: `🧪 Aquecimento de Exames + Triagem Logbook: ${rotaDia.exame25m}`, detalhe: `10m fechando dúvida do dia + 15m no exame sistemático (${rotaDia.pilarTitulo}).`, categoria: 'EXAMES & LOGBOOK', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Ferramentas & Exames', atalhoFerramentaTab: rotaDia.ferramentaTab },
+      { id: 'dc-ciclo-90m', horario: '19h40 – 21h10 (🟢 Marcha 3 — Ciclo Invertido 90m)', titulo: isTrilhaDay ? `⚡ Ciclo Invertido (Trilha Paralela 30%): ${rodizio.trilha30}` : `⚡ Ciclo Invertido (Âncora 70%): ${rodizio.ancora70}`, detalhe: '15m Pré-teste (5–8q) → 35m Ficha Resumo Medway → 40m Bateria de 15–20q MedQuest + Anki cirúrgico.', categoria: isTrilhaDay ? 'TRILHA 30%' : 'ÂNCORA 70%', corCategoria: isTrilhaDay ? '#818cf8' : '#0284c7', atalhoSecao: 'teoria', atalhoLabel: `Ler ${rotaDia.moduloRef}`, atalhoTeoriaMod: rotaDia.moduloId }
+    );
+  }
+
+  stepsDiaCheio.push({ id: 'dc-sono-22h', horario: '21h30 – 22h00', titulo: '🛌 Desligamento Total de Telas → Sono das 22h00 às 06h00 (7h30–8h)', detalhe: 'Consolidação sináptica dependente do sono profundo.', categoria: 'BLINDAGEM 22H', corCategoria: '#10b981' });
+  return stepsDiaCheio;
+}
 
 // ============================================================================
 // FASE 3: GASOMETRIA EM 5 PASSOS, TABELA LR+/LR-, 7 TRAVAS & LOGBOOK MOTOR

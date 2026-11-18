@@ -3628,8 +3628,90 @@
     }
     .mq-two-col-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
       gap: 16px;
+    }
+    .mq-timeline-item.is-current-focus {
+      border-color: var(--accent);
+      border-left: 3px solid var(--accent);
+      background: var(--bg-surface-subtle);
+    }
+    .mq-focus-pill {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--accent-fg);
+    }
+    .mq-timer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-canvas);
+      border: 1px solid var(--line-subtle);
+    }
+    .mq-timer-clock {
+      font-family: var(--font-mono);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+      min-width: 64px;
+    }
+    .mq-quick-chips {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .mq-quick-chip {
+      -webkit-appearance: none;
+      appearance: none;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: var(--bg-canvas);
+      color: var(--ink-primary);
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: border-color 0.12s ease, background 0.12s ease;
+    }
+    .mq-quick-chip:hover {
+      border-color: var(--accent);
+      background: var(--bg-elevated);
+    }
+    .mq-collapsible-panel > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .mq-collapsible-panel > summary::-webkit-details-marker {
+      display: none;
+    }
+    .mq-collapsible-chevron {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      transition: transform 0.15s ease;
+    }
+    .mq-collapsible-panel[open] .mq-collapsible-chevron {
+      transform: rotate(90deg);
+      color: var(--accent);
     }
     .mq-check-row {
       display: flex;

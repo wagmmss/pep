@@ -903,6 +903,91 @@ test('Fases 1 a 4: Central do 6º Ano & MedQuest Design System (Shell, Hoje 70/3
   );
 });
 
+test('Aba Hoje (6º Ano): Blindagem Diária de Checklists, Streak Anti-Duplicação, FDS Férias, Marcha 4 Sprint, Deep-Links, Pontos Cegos & Sincronização Real', async () => {
+  const centralEngine = await import('../src/engine/central6ano.ts');
+  const { sandbox, elements } = extractScriptAndRun();
+
+  // 1. Motor TypeScript: FDS das Férias não força 4h úteis + Marcha 4 Sprint R1 + Calendário Real
+  const fdsFeriasSteps = centralEngine.buildDailyTimeline({
+    rodizioId: 'ferias',
+    feriasSemana: 'sem1',
+    marchaId: '3_normal',
+    arquetipoId: 'ferias_4h',
+    diaSemana: 'sab',
+    microHabitoSemanal: 'Anamnese',
+    questoesAncoraSem: 0,
+    questoesTrilhaSem: 0,
+    streakDias: 0,
+    semanasConcluidas: 0,
+    ultimoDiaConcluidoIso: '',
+    checkedTimelineIds: {},
+    curriculoDoneIds: {},
+    ritualDomingoDoneIds: {}
+  });
+  assert.ok(fdsFeriasSteps.some((s) => s.categoria.includes('FDS LIVRE')), 'Saturday in vacation must schedule free weekend recovery instead of 4h weekday block');
+
+  const sprintSteps = centralEngine.buildDailyTimeline({
+    rodizioId: 'sprint_r1',
+    feriasSemana: 'sem1',
+    marchaId: '4_sprint',
+    arquetipoId: 'fds',
+    diaSemana: 'sab',
+    microHabitoSemanal: 'OSCE',
+    questoesAncoraSem: 0,
+    questoesTrilhaSem: 0,
+    streakDias: 0,
+    semanasConcluidas: 0,
+    ultimoDiaConcluidoIso: '',
+    checkedTimelineIds: {},
+    curriculoDoneIds: {},
+    ritualDomingoDoneIds: {}
+  });
+  assert.ok(sprintSteps[0].titulo.includes('Prova Antiga na Íntegra'), 'Saturday in Sprint R1 (Marcha 4) must schedule full timed exam');
+
+  const calFerias = centralEngine.resolveCalendarContextForDate(new Date(2026, 11, 9, 10, 0, 0)); // 09/12/2026 (Quarta)
+  assert.equal(calFerias.rodizioId, 'ferias');
+  assert.equal(calFerias.feriasSemana, 'sem2');
+  assert.equal(calFerias.diaSemana, 'qua');
+
+  const calCir = centralEngine.resolveCalendarContextForDate(new Date(2027, 1, 1, 10, 0, 0)); // 01/02/2027 (Segunda)
+  assert.equal(calCir.rodizioId, 'cirurgia');
+  assert.equal(calCir.diaSemana, 'seg');
+
+  // 2. Streak anti-duplicação no mesmo dia & Reset semanal sem apagar checklist diário
+  sandbox.window.toggleHojeTimelineStep('dc-hospital-anki');
+  sandbox.window.toggleSundayRitualItem('rit-escala');
+  sandbox.window.addWeeklyQuestions('ancora', 25);
+  sandbox.window.addWeeklyQuestions('ancora', -5);
+  assert.equal(sandbox.window.getCentral6AnoState().questoesAncoraSem, 20, 'Fine adjustment -5 must decrement without resetting');
+
+  const st1 = sandbox.window.completeHojeDayAndIncrementStreak();
+  const st2 = sandbox.window.completeHojeDayAndIncrementStreak();
+  assert.equal(st1, st2, 'Calling completeHojeDayAndIncrementStreak twice on the same day must not double-increment streak');
+
+  sandbox.window.resetWeeklyQuestions();
+  const stateAfterReset = sandbox.window.getCentral6AnoState();
+  assert.equal(stateAfterReset.questoesAncoraSem, 0, 'Weekly reset must zero weekly question counters');
+  assert.equal(Boolean(stateAfterReset.checkedTimelineIds['dc-hospital-anki']), true, 'Weekly question reset must preserve daily timeline checkboxes');
+  assert.equal(Boolean(stateAfterReset.ritualDomingoDoneIds['rit-escala']), true, 'Weekly question reset must preserve Sunday ritual checkboxes');
+
+  // 3. Toggle Anki hoje + Blind spots preview + Deep-link direto para módulo teórico + Tela inicial configurável
+  assert.equal(sandbox.window.toggleAnkiDoneToday(), true, 'toggleAnkiDoneToday must toggle Anki completion state for today');
+  sandbox.window.addLogbookEntryUI({
+    tipo: 'ponto_cego',
+    papel: 'Feedback de Preceptor/Residente',
+    titulo: 'Esqueci de perguntar DUM em dor em FID',
+    aprendizado: 'Sempre checar atraso menstrual antes de fechar diagnóstico de apendicite.'
+  });
+  const blindHtml = elements['hojeBlindSpotsPreview'] ? elements['hojeBlindSpotsPreview'].innerHTML : '';
+  assert.ok(blindHtml.includes('Esqueci de perguntar DUM'), 'Hoje Blind Spots tile must display latest blind spots from Logbook');
+
+  sandbox.window.openTimelineShortcut('teoria', 'mod-03', '');
+  assert.equal(sandbox.window.getCentral6AnoState().activeTeoriaModId, 'mod-03', 'Timeline shortcut must jump directly to exact theory module');
+  assert.equal(sandbox.window.setDefaultStartSection('hoje'), 'hoje', 'Config must persist preferred start section');
+  assert.equal(sandbox.window.setDefaultStartSection('pep'), 'pep');
+});
+
+
 
 
 

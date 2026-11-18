@@ -3641,8 +3641,90 @@
     }
     .mq-two-col-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
       gap: 16px;
+    }
+    .mq-timeline-item.is-current-focus {
+      border-color: var(--accent);
+      border-left: 3px solid var(--accent);
+      background: var(--bg-surface-subtle);
+    }
+    .mq-focus-pill {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--accent-fg);
+    }
+    .mq-timer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-canvas);
+      border: 1px solid var(--line-subtle);
+    }
+    .mq-timer-clock {
+      font-family: var(--font-mono);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+      min-width: 64px;
+    }
+    .mq-quick-chips {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .mq-quick-chip {
+      -webkit-appearance: none;
+      appearance: none;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: var(--bg-canvas);
+      color: var(--ink-primary);
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: border-color 0.12s ease, background 0.12s ease;
+    }
+    .mq-quick-chip:hover {
+      border-color: var(--accent);
+      background: var(--bg-elevated);
+    }
+    .mq-collapsible-panel > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .mq-collapsible-panel > summary::-webkit-details-marker {
+      display: none;
+    }
+    .mq-collapsible-chevron {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      transition: transform 0.15s ease;
+    }
+    .mq-collapsible-panel[open] .mq-collapsible-chevron {
+      transform: rotate(90deg);
+      color: var(--accent);
     }
     .mq-check-row {
       display: flex;
@@ -8092,9 +8174,10 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
           <div>
             <div class="mq-eyebrow">CENTRAL DO 6º ANO · FMRP-USP &amp; R1 (&gt;80–85%)</div>
             <h2 class="mq-workspace-title">📅 Painel Hoje — Motor Dinâmico de Rotina</h2>
-            <p class="mq-workspace-sub">Rodízio Atual × Sistema de 3 Marchas × Arquétipo do Dia · Blindagem Biológica de 7h30+ de sono</p>
+            <p class="mq-workspace-sub">Rodízio Atual × Sistema de 4 Marchas × Arquétipo do Dia · Blindagem Biológica de 7h30+ de sono</p>
           </div>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button type="button" class="btn-palette-trigger" onclick="syncHojeToRealCalendar(true)" title="Ajustar Dia da Semana, Semana das Férias e Rodízio pela data real de hoje">📍 Sincronizar Hoje Real</button>
             <button type="button" class="btn-palette-trigger" onclick="copyWeeklyMarkdownReport()">📋 Copiar Resumo Semanal (.md)</button>
             <button type="button" class="btn-palette-trigger" onclick="switchAppSection('pep')">🩺 Protocolos PEP</button>
             <button type="button" class="btn-palette-trigger" onclick="switchAppSection('teoria')">📚 Formação Teórica</button>
@@ -8136,6 +8219,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
           <div class="mq-control-group">
             <label class="mq-control-label" for="selHojeMarcha">2. Marcha da Semana (Anti-Culpa)</label>
             <select id="selHojeMarcha" class="mq-select" onchange="updateHojeSelect('marchaId', this.value)">
+              <option value="4_sprint">🚀 Marcha 4: Sprint Final R1 (350+ q/sem · Set–Dez)</option>
               <option value="3_normal">🟢 Marcha 3: Normal (200–250 q/sem · 90m/dia)</option>
               <option value="2_pesada">🟡 Marcha 2: Pesada (130–170 q/sem · 40m/dia)</option>
               <option value="1_sobrevivencia">🔴 Marcha 1: Sobrevivência (60–100 q/sem · FDS)</option>
@@ -8188,7 +8272,28 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
             <div class="mq-progress-bar-fill" id="hojeProgressBarFill" style="width:0%;"></div>
           </div>
 
+          <!-- Cronômetro Clínico Discreto para Proteger Tetos (Anki 30m, Exames 25m, Ciclo Invertido 15/35/40m) -->
+          <div class="mq-timer-bar" id="hojeBlockTimerBar">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span class="mq-stat-label">⏱️ Timer do Bloco:</span>
+              <span class="mq-timer-clock" id="hojeTimerDisplay">25:00</span>
+              <span class="mq-nav-badge" id="hojeTimerModeLabel">Exames (25m)</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:5px; flex-wrap:wrap;">
+              <button type="button" class="mq-counter-btn" onclick="startHojeBlockTimer(30, 'Teto Anki (30m)')" title="Iniciar teto estrito de 30m do Anki">30m Anki</button>
+              <button type="button" class="mq-counter-btn" onclick="startHojeBlockTimer(25, 'Exames (25m)')" title="Iniciar Micro-Dose de Exames (25m)">25m Exames</button>
+              <button type="button" class="mq-counter-btn" onclick="startHojeBlockTimer(15, 'Pré-Teste (15m)')" title="Iniciar Pré-Teste de 5-8 questões">15m Pré-Teste</button>
+              <button type="button" class="mq-counter-btn" onclick="startHojeBlockTimer(35, 'Ficha Medway (35m)')" title="Iniciar Ficha Resumo Medway">35m Ficha</button>
+              <button type="button" class="mq-counter-btn" onclick="startHojeBlockTimer(40, 'Bateria MedQuest (40m)')" title="Iniciar Bateria de Questões">40m Questões</button>
+              <button type="button" class="mq-counter-btn" id="btnHojeTimerToggle" onclick="toggleHojeTimerPause()">▶ Iniciar</button>
+              <button type="button" class="mq-counter-btn" onclick="resetHojeBlockTimer()" title="Zerar cronômetro">↺</button>
+            </div>
+          </div>
+
           <div class="mq-context-strip" id="hojeContextStrip"></div>
+
+          <!-- Foco Prático Sugerido Hoje (Chips Diretos para Cartões Pré-Porta 30s, Módulo Teórico & PEP) -->
+          <div class="mq-quick-chips" id="hojeDeepLinksStrip"></div>
 
           <div class="mq-timeline-list" id="hojeTimelineList"></div>
         </div>
@@ -8197,7 +8302,10 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
         <div class="mq-stat-grid" id="hojeStatsGrid">
           <!-- StatTile 1: MedQuest 70/30 -->
           <div class="mq-stat-tile">
-            <span class="mq-stat-label">1. Questões MedQuest na Semana (70/30)</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+              <span class="mq-stat-label">1. Questões MedQuest (70/30)</span>
+              <span class="mq-nav-badge" id="statQuestoesRatioBadge">70/30</span>
+            </div>
             <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px;">
               <span class="mq-stat-val" id="statQuestoesTotal">0 / 220</span>
               <span class="mq-nav-badge" id="statQuestoesPct">0%</span>
@@ -8207,84 +8315,95 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
               <div class="mq-progress-bar-fill" id="statQuestoesBar" style="width:0%;"></div>
             </div>
             <div class="mq-counter-actions">
+              <button type="button" class="mq-counter-btn" onclick="addWeeklyQuestions('ancora', -5)" title="Corrigir -5 no Rodízio-Âncora">-5</button>
               <button type="button" class="mq-counter-btn" onclick="addWeeklyQuestions('ancora', 10)" title="Somar 10 questões no Rodízio-Âncora (70%)">+10 Âncora</button>
               <button type="button" class="mq-counter-btn" onclick="addWeeklyQuestions('ancora', 20)" title="Somar 20 questões no Rodízio-Âncora (70%)">+20 Âncora</button>
+              <button type="button" class="mq-counter-btn" onclick="addWeeklyQuestions('trilha', -5)" title="Corrigir -5 na Trilha Paralela">-5</button>
               <button type="button" class="mq-counter-btn" onclick="addWeeklyQuestions('trilha', 10)" title="Somar 10 questões na Trilha Paralela (30%)">+10 Trilha</button>
-              <button type="button" class="mq-counter-btn" onclick="resetWeeklyQuestions()" title="Zerar contagem ao iniciar nova semana">↺</button>
+              <button type="button" class="mq-counter-btn" onclick="resetWeeklyQuestions()" title="Zerar apenas a contagem semanal de questões">↺ Sem</button>
             </div>
           </div>
 
-          <!-- StatTile 2: Consistência & Anki -->
+          <!-- StatTile 2: Consistência & Teto Anki -->
           <div class="mq-stat-tile">
             <span class="mq-stat-label">2. Consistência &amp; Teto Anki FSRS</span>
             <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px;">
               <span class="mq-stat-val" id="statStreakVal">🔥 0 dias</span>
               <span class="mq-nav-badge" id="statSemanasVal">0 sem</span>
             </div>
-            <span class="mq-stat-sub">Anki: máx 25–35 min/dia (~80–120 cards nas micro-janelas) · Fonte única: Medway</span>
+            <span class="mq-stat-sub" id="statAnkiStatusText">Anki: máx 25–35 min/dia (~80–120 cards) · Hoje: pendente</span>
             <div class="mq-counter-actions">
-              <button type="button" class="mq-counter-btn" onclick="completeHojeDayAndIncrementStreak()">+1 Dia Cumprido</button>
-              <button type="button" class="mq-counter-btn" onclick="incrementCompletedWeeks()">+1 Semana Fechada</button>
+              <button type="button" class="mq-counter-btn" id="btnToggleAnkiToday" onclick="toggleAnkiDoneToday()">⏳ Anki Hoje (≤35m)</button>
+              <button type="button" class="mq-counter-btn" onclick="completeHojeDayAndIncrementStreak()">+1 Dia</button>
+              <button type="button" class="mq-counter-btn" onclick="incrementCompletedWeeks()">+1 Sem</button>
             </div>
           </div>
 
-          <!-- StatTile 3: Contagem Regressiva Currículo (30/06/2027) -->
+          <!-- StatTile 3: Últimos 3 Pontos Cegos do Logbook (Revisar Hoje) -->
           <div class="mq-stat-tile">
-            <span class="mq-stat-label">3. Corte Curricular R1 (30/06/2027)</span>
-            <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px;">
-              <span class="mq-stat-val" id="statCurrDays">225 dias</span>
-              <span class="mq-nav-badge" id="statCurrProgressBadge">4/8 itens</span>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+              <span class="mq-stat-label">3. Pontos Cegos Recentes</span>
+              <button type="button" class="mq-counter-btn" style="padding:2px 6px; font-size:0.65rem;" onclick="switchAppSection('logbook')">+ Novo</button>
             </div>
-            <span class="mq-stat-sub">Fechar Revisão Sistemática, IC Jan/27 e PDFs antes do 2º semestre</span>
+            <div id="hojeBlindSpotsPreview" style="display:flex; flex-direction:column; gap:4px; font-size:0.76rem; color:var(--ink-secondary); margin-top:2px;"></div>
+          </div>
+
+          <!-- StatTile 4: Contagens Regressivas R1 (Currículo 30/06 + 1º Ciclo 31/08) -->
+          <div class="mq-stat-tile">
+            <span class="mq-stat-label">4. Marcos R1 (2027)</span>
+            <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px;">
+              <span class="mq-stat-val" id="statCicloDays">287 dias</span>
+              <span class="mq-nav-badge">1º Ciclo 31/08</span>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; font-size:0.78rem; color:var(--ink-secondary); margin-top:2px;">
+              <span>🏅 Currículo (30/06): <strong id="statCurrDays">225 dias</strong></span>
+              <span class="mq-nav-badge" id="statCurrProgressBadge">4/8</span>
+            </div>
             <div class="mq-progress-bar-wrap">
               <div class="mq-progress-bar-fill" id="statCurrBar" style="width:50%;"></div>
             </div>
-          </div>
-
-          <!-- StatTile 4: Contagem Regressiva 1º Ciclo R1 (31/08/2027) -->
-          <div class="mq-stat-tile">
-            <span class="mq-stat-label">4. Fechamento 1º Ciclo R1 (31/08/2027)</span>
-            <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px;">
-              <span class="mq-stat-val" id="statCicloDays">287 dias</span>
-              <span class="mq-nav-badge">Meta &gt;80–85%</span>
-            </div>
-            <span class="mq-stat-sub">100% do edital base antes de Emergência/Trauma &amp; Sprint Set–Dez</span>
+            <span class="mq-stat-sub">Meta R1 &gt;80–85% · Fechar edital base até 31/08/2027</span>
           </div>
         </div>
 
-        <!-- PAINÉIS INFERIORES: RITUAL DE DOMINGO (15 MIN) + AUDITORIA CURRICULAR R1 -->
+        <!-- PAINÉIS INFERIORES RETRÁTEIS: RITUAL DE DOMINGO (Auto-aberto aos Domingos) + AUDITORIA CURRICULAR R1 -->
         <div class="mq-two-col-grid">
           <!-- Coluna Esquerda: Micro-Hábito da Semana & Ritual de Domingo -->
-          <div class="mq-card" style="display:flex; flex-direction:column; gap:12px;">
-            <div>
-              <div class="mq-eyebrow">CALIBRAÇÃO SEMANAL · REGRA DO 1 MICRO-HÁBITO</div>
-              <h3 style="font-size:1.05rem; font-weight:700;">🎯 Micro-Hábito Clínico Alvo &amp; Ritual de Domingo (15 min)</h3>
-              <p style="font-size:0.8rem; color:var(--ink-secondary); margin-top:2px;">Nunca tente corrigir 6 habilidades na mesma consulta. Treine 1 micro-hábito até rodar no piloto automático.</p>
-            </div>
-
-            <div class="mq-control-group">
-              <label class="mq-control-label" for="inpMicroHabitoSemanal">Micro-Hábito Ativo no Hospital Esta Semana:</label>
-              <div style="display:flex; gap:6px;">
-                <input type="text" id="inpMicroHabitoSemanal" class="mq-input" placeholder="Ex: Deixar o paciente falar 60s livres + aplicar ICE + resumo espelhado" onchange="saveMicroHabitoSemanal(this.value)">
-                <button type="button" class="mq-counter-btn" onclick="saveMicroHabitoSemanal(document.getElementById('inpMicroHabitoSemanal').value)">Salvar</button>
+          <details class="mq-card mq-collapsible-panel" id="detailsRitualDomingo">
+            <summary>
+              <div>
+                <div class="mq-eyebrow">CALIBRAÇÃO SEMANAL · REGRA DO 1 MICRO-HÁBITO</div>
+                <h3 style="font-size:1.02rem; font-weight:700;">🎯 Micro-Hábito &amp; Ritual de Domingo (15 min)</h3>
               </div>
+              <span class="mq-collapsible-chevron">▶</span>
+            </summary>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:12px;">
+              <p style="font-size:0.8rem; color:var(--ink-secondary);">Nunca tente corrigir 6 habilidades na mesma consulta. Treine 1 micro-hábito até rodar no piloto automático.</p>
+              <div class="mq-control-group">
+                <label class="mq-control-label" for="inpMicroHabitoSemanal">Micro-Hábito Ativo no Hospital Esta Semana:</label>
+                <div style="display:flex; gap:6px;">
+                  <input type="text" id="inpMicroHabitoSemanal" class="mq-input" placeholder="Ex: Deixar o paciente falar 60s livres + aplicar ICE + resumo espelhado" onchange="saveMicroHabitoSemanal(this.value)">
+                  <button type="button" class="mq-counter-btn" onclick="saveMicroHabitoSemanal(document.getElementById('inpMicroHabitoSemanal').value)">Salvar</button>
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:8px;" id="sundayRitualList"></div>
             </div>
-
-            <div style="display:flex; flex-direction:column; gap:8px;" id="sundayRitualList"></div>
-          </div>
+          </details>
 
           <!-- Coluna Direita: Auditoria Curricular R1 (Corte 30/06/2027) -->
-          <div class="mq-card" style="display:flex; flex-direction:column; gap:12px;">
-            <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px;">
+          <details class="mq-card mq-collapsible-panel" id="detailsAuditoriaCurriculo">
+            <summary>
               <div>
-                <div class="mq-eyebrow">ANÁLISE CURRICULAR · DATA LIMITE 30/06/2027</div>
-                <h3 style="font-size:1.05rem; font-weight:700;">🏅 Auditoria Curricular R1 (USP-RP / USP-SP / UNICAMP / ENARE)</h3>
-                <p style="font-size:0.8rem; color:var(--ink-secondary); margin-top:2px;">Nenhuma frente curricular nova após 30 de junho de 2027.</p>
+                <div class="mq-eyebrow">ANÁLISE CURRICULAR · CORTE 30/06/2027</div>
+                <h3 style="font-size:1.02rem; font-weight:700;">🏅 Auditoria Curricular R1 (USP / UNICAMP / ENARE)</h3>
               </div>
+              <span class="mq-collapsible-chevron">▶</span>
+            </summary>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
+              <p style="font-size:0.8rem; color:var(--ink-secondary);">Nenhuma frente curricular nova após 30 de junho de 2027.</p>
+              <div style="display:flex; flex-direction:column; gap:8px;" id="curriculoAuditList"></div>
             </div>
-
-            <div style="display:flex; flex-direction:column; gap:8px;" id="curriculoAuditList"></div>
-          </div>
+          </details>
         </div>
 
         <!-- Card 4: Central de Prompts Contextuais (Treinar com IA em 1 Clique) -->
@@ -8592,13 +8711,15 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
             </div>
           </div>
           <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
-            <div class="mq-stat-label">Ergonomia &amp; Layout</div>
-            <div style="font-weight:600; font-size:0.95rem;">Colunas da Workstation &amp; Modo Zen</div>
-            <p style="font-size:0.82rem; color:var(--ink-secondary);">Restaure a proporção padrão das 3 colunas ou ative o Modo Zen para estudo focado sem distrações.</p>
+            <div class="mq-stat-label">Ergonomia, Layout &amp; Tela Inicial</div>
+            <div style="font-weight:600; font-size:0.95rem;">Colunas, Modo Zen &amp; Seção ao Abrir</div>
+            <p style="font-size:0.82rem; color:var(--ink-secondary);">Escolha se o app abre direto em <strong>Hoje (6º Ano)</strong> (ideal em casa) ou em <strong>Protocolos PEP</strong> (ideal no plantão).</p>
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;">
-              <button type="button" class="btn-palette-trigger" onclick="resetColumnWidths()">↺ Restaurar Colunas (232px / 460px)</button>
-              <button type="button" class="btn-palette-trigger" onclick="toggleZenMode()">🧘 Alternar Modo Zen (Alt+Z)</button>
-              <button type="button" class="btn-palette-trigger" onclick="toggleSidebarCollapse()">⇤ Recolher/Expandir Sidebar (Alt+B)</button>
+              <button type="button" class="btn-palette-trigger" id="btnStartHoje" onclick="setDefaultStartSection('hoje')">📅 Abrir em Hoje (6º Ano)</button>
+              <button type="button" class="btn-palette-trigger" id="btnStartPep" onclick="setDefaultStartSection('pep')">🩺 Abrir em Protocolos PEP</button>
+              <button type="button" class="btn-palette-trigger" onclick="resetColumnWidths()">↺ Restaurar Colunas</button>
+              <button type="button" class="btn-palette-trigger" onclick="toggleZenMode()">🧘 Modo Zen (Alt+Z)</button>
+              <button type="button" class="btn-palette-trigger" onclick="toggleSidebarCollapse()">⇤ Sidebar (Alt+B)</button>
             </div>
           </div>
         </div>
@@ -13481,6 +13602,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
     // --- MEDQUEST SHELL V1 (Fase 1): Seções, Tema Clinical Calm, Modo Zen & Sidebar Colapsável ---
     const MQ_THEME_STORAGE_KEY = 'mq_clinical_theme_v1';
     const MQ_SIDEBAR_COLLAPSED_KEY = 'mq_sidebar_collapsed_v1';
+    const MQ_START_SECTION_KEY = 'mq_default_start_section_v1';
     let activeAppSection = 'pep';
     let currentClinicalTheme = 'dark';
     let isZenMode = false;
@@ -13602,6 +13724,16 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
     }
     window.toggleSidebarCollapse = toggleSidebarCollapse;
 
+    function setDefaultStartSection(secId) {
+      const nextSec = secId === 'hoje' ? 'hoje' : 'pep';
+      try {
+        localStorage.setItem(MQ_START_SECTION_KEY, nextSec);
+      } catch (err) {}
+      showToast(nextSec === 'hoje' ? '📅 Tela inicial definida para: Hoje (6º Ano)' : '🩺 Tela inicial definida para: Protocolos PEP');
+      return nextSec;
+    }
+    window.setDefaultStartSection = setDefaultStartSection;
+
     function initMedQuestShell() {
       try {
         const savedTheme = localStorage.getItem(MQ_THEME_STORAGE_KEY);
@@ -13611,6 +13743,10 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
         const savedCol = localStorage.getItem(MQ_SIDEBAR_COLLAPSED_KEY);
         if (savedCol === '1') {
           toggleSidebarCollapse(true);
+        }
+        const savedStart = localStorage.getItem(MQ_START_SECTION_KEY);
+        if (savedStart === 'hoje' || savedStart === 'pep') {
+          switchAppSection(savedStart);
         }
       } catch (err) {}
     }
@@ -13723,19 +13859,39 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
     };
 
     const MARCHAS_6ANO_DATA = {
+      '4_sprint': { id: '4_sprint', nome: '🚀 Marcha 4 — Sprint Final R1 (350+ q/sem)', metaMin: 350, metaMax: 450, metaAlvo: 380 },
       '3_normal': { id: '3_normal', nome: '🟢 Marcha 3 — Normal (200–250 q/sem)', metaMin: 200, metaMax: 250, metaAlvo: 220 },
       '2_pesada': { id: '2_pesada', nome: '🟡 Marcha 2 — Pesada (130–170 q/sem)', metaMin: 130, metaMax: 170, metaAlvo: 150 },
       '1_sobrevivencia': { id: '1_sobrevivencia', nome: '🔴 Marcha 1 — Sobrevivência (60–100 q/sem)', metaMin: 60, metaMax: 100, metaAlvo: 80 }
     };
 
     const ROTA_DIAS_DATA = {
-      seg: { nome: 'Segunda-feira', exame25m: '1 ECG sistemático (10 passos) + 1 Gasometria arterial (Winter + AG)', pilarTitulo: 'Pilar 1A — Anamnese & Comunicação (Calgary-Cambridge)', pilarDetalhe: 'Treinar abertura 60s sem interromper, funil guiado por 3–5 hipóteses desde a QP, Red Flags precoces, bloco ICE e Modo Rápido (5m) vs Modo Amplo (15m).', moduloRef: 'Módulo 01' },
-      ter: { nome: 'Terça-feira', exame25m: '1 RX de Tórax (RIPE + ABCDE-F) ou 1 Rotina de Abdome Agudo', pilarTitulo: 'Pilar 1B — Exame Físico Guiado por Hipóteses (HDPE & LR+/LR-)', pilarDetalhe: 'Definir achados discriminatórios antes de tocar no paciente, coreografia zero ping-pong, técnica Stanford 25 e peso real dos sinais (LR+ e LR-).', moduloRef: 'Módulo 02' },
-      qua: { nome: 'Quarta-feira', exame25m: '1 ECG isquêmico/arritmia + 1 Caso de e-FAST ou TC de Crânio/Abdome', pilarTitulo: 'Pilar 2 — Raciocínio Clínico, Illness Scripts, Vieses & Bayes', pilarDetalhe: 'Traduzir fala leiga em Qualificadores Semânticos, escrever One-Liner cirúrgico, construir/comparar 2 Illness Scripts e aplicar antídoto contra fechamento prematuro.', moduloRef: 'Módulo 03' },
-      qui: { nome: 'Quinta-feira', exame25m: '1 Gasometria completa (AG corrigido + Delta-Delta) + 1 RX de urgência', pilarTitulo: 'Pilar 3 — Oratória Clínica (Pyramid, SNAPPS & SBAR) + Gravação 1–3 min', pilarDetalhe: 'Gravar áudio/vídeo de 90s passando caso sem ler papel, avaliar na Rubrica 0–10 (One-liner, pertinentes, diferenciais, pausa limpa) e regravar Take 2.', moduloRef: 'Módulo 04' },
-      sex: { nome: 'Sexta-feira', exame25m: 'Mix Rápido Cronometrado: 3 exames (ECG + Gaso + Imagem) em 15 min + 10 min revisão', pilarTitulo: 'Simulado Integrado Cronometrado ou OSCE em Dupla (40 min)', pilarDetalhe: 'Executar 1 estação completa (Anamnese 7m → HDPE → Exames 3m → Hipóteses + Prescrição 7 Travas → Apresentação SNAPPS/SBAR 2m + Debriefing).', moduloRef: 'Módulos 05–07' },
-      sab: { nome: 'Sábado', exame25m: 'Auditoria de Imagens Puras e Traçados das questões da semana', pilarTitulo: 'Manhã Intensiva R1 + Prática Intercalada Cumulativa', pilarDetalhe: '2 Ciclos Invertidos (avanço 70% Âncora) + Bateria Intercalada de 20–30 questões de estágios anteriores. Tarde e noite livres!', moduloRef: 'Módulo 06' },
-      dom: { nome: 'Domingo', exame25m: 'Revisão dos Pontos Cegos da semana (10–15 min)', pilarTitulo: 'Trilha Paralela 30% + Ritual de Domingo (15 min)', pilarDetalhe: 'Avançar na Trilha Paralela R1 (Preventiva/Ped/CM) + Treino de casos complexos (/minicex) + calibrar Marcha e Micro-Hábito da próxima semana.', moduloRef: 'Módulo 07' }
+      seg: { nome: 'Segunda-feira', exame25m: '1 ECG sistemático (10 passos) + 1 Gasometria arterial (Winter + AG)', pilarTitulo: 'Pilar 1A — Anamnese & Comunicação (Calgary-Cambridge)', pilarDetalhe: 'Treinar abertura 60s sem interromper, funil guiado por 3–5 hipóteses desde a QP, Red Flags precoces, bloco ICE e Modo Rápido (5m) vs Modo Amplo (15m).', moduloRef: 'Módulo 01', moduloId: 'mod-01', ferramentaTab: 'gaso' },
+      ter: { nome: 'Terça-feira', exame25m: '1 RX de Tórax (RIPE + ABCDE-F) ou 1 Rotina de Abdome Agudo', pilarTitulo: 'Pilar 1B — Exame Físico Guiado por Hipóteses (HDPE & LR+/LR-)', pilarDetalhe: 'Definir achados discriminatórios antes de tocar no paciente, coreografia zero ping-pong, técnica Stanford 25 e peso real dos sinais (LR+ e LR-).', moduloRef: 'Módulo 02', moduloId: 'mod-02', ferramentaTab: 'lr' },
+      qua: { nome: 'Quarta-feira', exame25m: '1 ECG isquêmico/arritmia + 1 Caso de e-FAST ou TC de Crânio/Abdome', pilarTitulo: 'Pilar 2 — Raciocínio Clínico, Illness Scripts, Vieses & Bayes', pilarDetalhe: 'Traduzir fala leiga em Qualificadores Semânticos, escrever One-Liner cirúrgico, construir/comparar 2 Illness Scripts e aplicar antídoto contra fechamento prematuro.', moduloRef: 'Módulo 03', moduloId: 'mod-03', ferramentaTab: 'lr' },
+      qui: { nome: 'Quinta-feira', exame25m: '1 Gasometria completa (AG corrigido + Delta-Delta) + 1 RX de urgência', pilarTitulo: 'Pilar 3 — Oratória Clínica (Pyramid, SNAPPS & SBAR) + Gravação 1–3 min', pilarDetalhe: 'Gravar áudio/vídeo de 90s passando caso sem ler papel, avaliar na Rubrica 0–10 (One-liner, pertinentes, diferenciais, pausa limpa) e regravar Take 2.', moduloRef: 'Módulo 04', moduloId: 'mod-04', ferramentaTab: 'gaso' },
+      sex: { nome: 'Sexta-feira', exame25m: 'Mix Rápido Cronometrado: 3 exames (ECG + Gaso + Imagem) em 15 min + 10 min revisão', pilarTitulo: 'Simulado Integrado Cronometrado ou OSCE em Dupla (40 min)', pilarDetalhe: 'Executar 1 estação completa (Anamnese 7m → HDPE → Exames 3m → Hipóteses + Prescrição 7 Travas → Apresentação SNAPPS/SBAR 2m + Debriefing).', moduloRef: 'Módulo 05 (Exames)', moduloId: 'mod-05', ferramentaTab: 'travas' },
+      sab: { nome: 'Sábado', exame25m: 'Auditoria de Imagens Puras e Traçados das questões da semana', pilarTitulo: 'Manhã Intensiva R1 + Prática Intercalada Cumulativa', pilarDetalhe: '2 Ciclos Invertidos (avanço 70% Âncora) + Bateria Intercalada de 20–30 questões de estágios anteriores. Tarde e noite livres!', moduloRef: 'Módulo 06 (Prescrição)', moduloId: 'mod-06', ferramentaTab: 'travas' },
+      dom: { nome: 'Domingo', exame25m: 'Revisão dos Pontos Cegos da semana (10–15 min)', pilarTitulo: 'Trilha Paralela 30% + Ritual de Domingo (15 min)', pilarDetalhe: 'Avançar na Trilha Paralela R1 (Preventiva/Ped/CM) + Treino de casos complexos (/minicex) + calibrar Marcha e Micro-Hábito da próxima semana.', moduloRef: 'Módulo 07 (Procedimentos)', moduloId: 'mod-07', ferramentaTab: 'madrugada' }
+    };
+
+    const HOJE_DEEP_LINKS_MAP = {
+      'ferias:sem1': [{ id: 'hab-7', label: '🧠 HDPE Abdome Agudo' }, { id: 'upa-30', label: '🩺 Dor Abdominal / Abdome Agudo' }, { id: 'hab-12', label: '🧠 ECG 10 Passos' }, { id: 'hab-13', label: '🧠 RX Tórax' }],
+      'ferias:sem2': [{ id: 'hab-18', label: '🧠 ABCDE & RUSH' }, { id: 'hab-4', label: '🧠 SBAR & SNAPPS' }, { id: 'hab-14', label: '🧠 Gasometria 5 Passos' }, { id: 'upa-30', label: '🩺 Abdome Agudo' }],
+      'ferias:sem3': [{ id: 'hab-22', label: '🧠 Via Aérea LEMON & VM' }, { id: 'upa-60', label: '🩺 Sepse 1ª Hora' }, { id: 'hab-14', label: '🧠 Gasometria 5 Passos' }, { id: 'hab-17', label: '🧠 7 Travas Prescrição' }],
+      'ferias:sem4': [{ id: 'hab-22', label: '🧠 VM Protetora' }, { id: 'hab-14', label: '🧠 Gasometria & Eletrólitos' }, { id: 'hab-12', label: '🧠 ECG Eletrolítico' }, { id: 'hab-16', label: '🧠 SPIKES / NURSE' }],
+      'ferias:sem5': [{ id: 'hab-3', label: '🧠 Anamnese/EF em GO' }, { id: 'hab-1', label: '🧠 Calgary-Cambridge' }, { id: 'hab-4', label: '🧠 SNAPPS Ambulatorial' }],
+      'ferias:sem6': [{ id: 'go-12', label: '🩺 Pré-Eclâmpsia / Eclâmpsia' }, { id: 'go-11', label: '🩺 Hemorragia Pós-Parto' }, { id: 'hab-15', label: '🧠 CTG & Partograma' }, { id: 'go-1', label: '🩺 Puerpério' }],
+      'ferias:sem8': [{ id: 'upa-35', label: '🩺 Dor Torácica & SCA' }, { id: 'upa-61', label: '🩺 AVC / AIT' }, { id: 'hab-20', label: '🧠 ORL & Olho Vermelho' }, { id: 'hab-9', label: '🧠 Exame Neurológico' }],
+      cirurgia: [{ id: 'hab-7', label: '🧠 Abdome Agudo' }, { id: 'upa-30', label: '🩺 PEP Abdome Agudo' }, { id: 'hab-21', label: '🧠 Sutura & Anestesia Local' }, { id: 'hab-4', label: '🧠 SBAR Cirúrgico' }],
+      anestesio_cti: [{ id: 'hab-22', label: '🧠 Via Aérea & VM' }, { id: 'upa-60', label: '🩺 Sepse & Choque' }, { id: 'hab-18', label: '🧠 ABCDE + RUSH' }, { id: 'hab-17', label: '🧠 7 Travas Prescrição' }],
+      go: [{ id: 'hab-3', label: '🧠 Pré-Porta GO' }, { id: 'go-12', label: '🩺 Pré-Eclâmpsia/HELLP' }, { id: 'go-11', label: '🩺 HPP Código Vermelho' }, { id: 'hab-15', label: '🧠 CTG & Partograma' }],
+      oftalmo_orl_ccp: [{ id: 'hab-20', label: '🧠 ORL, Otoscopia & Olho Vermelho' }, { id: 'hab-9', label: '🧠 Neuro (HINTS / NIHSS)' }, { id: 'upa-61', label: '🩺 AVC / AIT' }, { id: 'upa-23', label: '🩺 Otite Média Aguda' }],
+      mfc: [{ id: 'hab-1', label: '🧠 Anamnese + ICE' }, { id: 'hab-16', label: '🧠 Teach-Back & Comunicação' }, { id: 'upa-36', label: '🩺 Crise Hipertensiva' }, { id: 'go-3', label: '🩺 Pré-Natal 1ª Consulta' }],
+      cm: [{ id: 'hab-11', label: '🧠 Diagnóstico Diferencial & Vieses' }, { id: 'hab-5', label: '🧠 Cardiovascular Avançado' }, { id: 'hab-19', label: '🧠 Paracentese / Toracocentese / PL' }, { id: 'upa-38', label: '🩺 DPOC Exacerbado' }],
+      ped: [{ id: 'hab-10', label: '🧠 Pediatria Anti-Choro + TEP' }, { id: 'ped-79', label: '🩺 Bronquiolite (BVA)' }, { id: 'ped-84', label: '🩺 Lactente Febril' }, { id: 'ped-81', label: '🩺 OMA Pediátrica' }],
+      emergencia_trauma: [{ id: 'hab-18', label: '🧠 ABCDE + POCUS RUSH' }, { id: 'upa-35', label: '🩺 SCA Protocolo 10m' }, { id: 'upa-60', label: '🩺 Sepse 1ª Hora' }, { id: 'hab-22', label: '🧠 Via Aérea & IOT' }],
+      sprint_r1: [{ id: 'hab-4', label: '🧠 Oratória OSCE (SNAPPS/SBAR)' }, { id: 'hab-11', label: '🧠 Raciocínio & DDx' }, { id: 'hab-17', label: '🧠 7 Travas Prescrição' }, { id: 'hab-12', label: '🧠 ECG 10 Passos' }]
     };
 
     const CURRICULO_ITEMS_DATA = [
@@ -13769,6 +13925,9 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       semanasConcluidas: 0,
       ultimoDiaConcluidoIso: '',
       checkedTimelineIds: {},
+      checkedTimelineByDate: {},
+      ankiDoneByDate: {},
+      autoSyncDiaSemana: true,
       curriculoDoneIds: {
         'curr-ic-2anos': true,
         'curr-2-artigos': true,
@@ -13778,11 +13937,187 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       ritualDomingoDoneIds: {}
     };
 
+    function getTodayIsoLocal(dateRef) {
+      const d = dateRef instanceof Date ? dateRef : new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+
+    function getCheckedMapForToday() {
+      const todayIso = getTodayIsoLocal();
+      if (!central6AnoState.checkedTimelineByDate || typeof central6AnoState.checkedTimelineByDate !== 'object') {
+        central6AnoState.checkedTimelineByDate = {};
+      }
+      if (!central6AnoState.checkedTimelineByDate[todayIso]) {
+        central6AnoState.checkedTimelineByDate[todayIso] = {};
+      }
+      central6AnoState.checkedTimelineIds = central6AnoState.checkedTimelineByDate[todayIso];
+      return central6AnoState.checkedTimelineByDate[todayIso];
+    }
+
     function saveCentral6AnoState() {
       try {
         localStorage.setItem(CENTRAL_6ANO_STORAGE_KEY, JSON.stringify(central6AnoState));
       } catch (err) {}
     }
+
+    function syncHojeToRealCalendar(showFeedback, customDate) {
+      const now = customDate instanceof Date ? customDate : new Date();
+      let ctx = null;
+      if (window.__ClinicoEngine && typeof window.__ClinicoEngine.resolveCalendarContextForDate === 'function') {
+        ctx = window.__ClinicoEngine.resolveCalendarContextForDate(now);
+      } else {
+        const iso = getTodayIsoLocal(now);
+        const dayMap = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
+        const diaSemana = dayMap[now.getDay()] || 'seg';
+        const isFds = diaSemana === 'sab' || diaSemana === 'dom';
+        let rodizioId = 'ferias';
+        let feriasSemana = 'sem1';
+        if (iso < '2026-12-07') { rodizioId = 'ferias'; feriasSemana = 'sem1'; }
+        else if (iso <= '2026-12-13') { rodizioId = 'ferias'; feriasSemana = 'sem2'; }
+        else if (iso <= '2026-12-20') { rodizioId = 'ferias'; feriasSemana = 'sem3'; }
+        else if (iso <= '2026-12-27') { rodizioId = 'ferias'; feriasSemana = 'sem4'; }
+        else if (iso <= '2027-01-03') { rodizioId = 'ferias'; feriasSemana = 'sem5'; }
+        else if (iso <= '2027-01-10') { rodizioId = 'ferias'; feriasSemana = 'sem6'; }
+        else if (iso <= '2027-01-17') { rodizioId = 'ferias'; feriasSemana = 'sem7'; }
+        else if (iso <= '2027-01-24') { rodizioId = 'ferias'; feriasSemana = 'sem8'; }
+        else if (iso <= '2027-02-21') { rodizioId = 'cirurgia'; }
+        else if (iso <= '2027-03-21') { rodizioId = 'anestesio_cti'; }
+        else if (iso <= '2027-05-02') { rodizioId = 'go'; }
+        else if (iso <= '2027-05-16') { rodizioId = 'oftalmo_orl_ccp'; }
+        else if (iso <= '2027-06-13') { rodizioId = 'mfc'; }
+        else if (iso <= '2027-07-11') { rodizioId = 'cm'; }
+        else if (iso <= '2027-08-08') { rodizioId = 'ped'; }
+        else if (iso <= '2027-10-03') { rodizioId = 'emergencia_trauma'; }
+        else { rodizioId = 'sprint_r1'; }
+        const rodObj = RODIZIOS_6ANO_DATA.find((r) => r.id === rodizioId) || RODIZIOS_6ANO_DATA[0];
+        ctx = {
+          dateIso: iso,
+          diaSemana,
+          rodizioId,
+          feriasSemana,
+          arquetipoSugerido: isFds ? 'fds' : (rodizioId === 'ferias' ? 'ferias_4h' : 'dia_cheio'),
+          labelResumo: `${iso} (${ROTA_DIAS_DATA[diaSemana].nome}) · ${rodObj.nome}`
+        };
+      }
+      central6AnoState.diaSemana = ctx.diaSemana;
+      central6AnoState.rodizioId = ctx.rodizioId;
+      central6AnoState.feriasSemana = ctx.feriasSemana;
+      central6AnoState.arquetipoId = ctx.arquetipoSugerido;
+      const rod = RODIZIOS_6ANO_DATA.find((r) => r.id === ctx.rodizioId);
+      if (rod && !central6AnoState.microHabitoSemanal) {
+        central6AnoState.microHabitoSemanal = rod.microHabitoSugerido;
+      }
+      saveCentral6AnoState();
+      renderHojeSection();
+      if (showFeedback) {
+        showToast(`📍 Sincronizado com hoje: ${ctx.labelResumo}`);
+      }
+      return ctx;
+    }
+    window.syncHojeToRealCalendar = syncHojeToRealCalendar;
+
+    function openProtocolOrHabById(targetId) {
+      const idx = allData.findIndex((d) => d.id === targetId);
+      if (idx < 0) return false;
+      const item = allData[idx];
+      if (item.mod_id === 'hab') {
+        switchAppSection('preporta');
+        openInspector(idx, 'preporta', { scrollCard: true });
+      } else {
+        switchAppSection('pep');
+        openInspector(idx, null, { scrollCard: true });
+      }
+      return true;
+    }
+    window.openProtocolOrHabById = openProtocolOrHabById;
+
+    function openTimelineShortcut(secId, teoriaModId, ferramentaTab) {
+      switchAppSection(secId);
+      if (secId === 'teoria' && teoriaModId && typeof selectTeoriaModule === 'function') {
+        selectTeoriaModule(teoriaModId);
+      } else if (secId === 'ferramentas' && ferramentaTab && typeof switchFerramentasSubtab === 'function') {
+        switchFerramentasSubtab(ferramentaTab);
+      }
+    }
+    window.openTimelineShortcut = openTimelineShortcut;
+
+    // Cronômetro Clínico Discreto para Proteger Tetos (Anki 30m, Exames 25m, Ciclo Invertido)
+    let hojeTimerRemainingSec = 25 * 60;
+    let hojeTimerRunning = false;
+    let hojeTimerIntervalId = null;
+
+    function renderHojeTimerDisplay() {
+      const dispEl = document.getElementById('hojeTimerDisplay');
+      if (dispEl) {
+        const mins = Math.floor(Math.max(0, hojeTimerRemainingSec) / 60);
+        const secs = Math.max(0, hojeTimerRemainingSec) % 60;
+        dispEl.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+      const btnTgl = document.getElementById('btnHojeTimerToggle');
+      if (btnTgl) {
+        btnTgl.textContent = hojeTimerRunning ? '⏸ Pausar' : '▶ Iniciar';
+      }
+    }
+
+    function stopHojeTimerInterval() {
+      if (hojeTimerIntervalId && typeof clearInterval === 'function') {
+        clearInterval(hojeTimerIntervalId);
+      }
+      hojeTimerIntervalId = null;
+      hojeTimerRunning = false;
+      renderHojeTimerDisplay();
+    }
+
+    function tickHojeTimer() {
+      if (hojeTimerRemainingSec > 0) {
+        hojeTimerRemainingSec -= 1;
+        renderHojeTimerDisplay();
+      } else {
+        stopHojeTimerInterval();
+        showToast('⏰ Tempo do bloco concluído! Proteja a transição/teto.');
+      }
+    }
+
+    function startHojeBlockTimer(minutes, label) {
+      stopHojeTimerInterval();
+      hojeTimerRemainingSec = Math.max(1, Number(minutes) || 25) * 60;
+      const lblEl = document.getElementById('hojeTimerModeLabel');
+      if (lblEl && label) lblEl.textContent = label;
+      hojeTimerRunning = true;
+      if (typeof setInterval === 'function') {
+        hojeTimerIntervalId = setInterval(tickHojeTimer, 1000);
+      }
+      renderHojeTimerDisplay();
+      return hojeTimerRemainingSec;
+    }
+    window.startHojeBlockTimer = startHojeBlockTimer;
+
+    function toggleHojeTimerPause() {
+      if (hojeTimerRunning) {
+        stopHojeTimerInterval();
+      } else {
+        if (hojeTimerRemainingSec <= 0) hojeTimerRemainingSec = 25 * 60;
+        hojeTimerRunning = true;
+        if (typeof setInterval === 'function') {
+          hojeTimerIntervalId = setInterval(tickHojeTimer, 1000);
+        }
+        renderHojeTimerDisplay();
+      }
+      return hojeTimerRunning;
+    }
+    window.toggleHojeTimerPause = toggleHojeTimerPause;
+
+    function resetHojeBlockTimer() {
+      stopHojeTimerInterval();
+      hojeTimerRemainingSec = 25 * 60;
+      const lblEl = document.getElementById('hojeTimerModeLabel');
+      if (lblEl) lblEl.textContent = 'Exames (25m)';
+      renderHojeTimerDisplay();
+    }
+    window.resetHojeBlockTimer = resetHojeBlockTimer;
 
     function computeTimelineSteps(state) {
       if (window.__ClinicoEngine && typeof window.__ClinicoEngine.buildDailyTimeline === 'function') {
@@ -13801,6 +14136,32 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
           categoria: 'BLINDAGEM BIOLÓGICA',
           corCategoria: '#10b981'
         }];
+      }
+
+      if (state.rodizioId === 'ferias' && (state.diaSemana === 'sab' || state.diaSemana === 'dom' || state.arquetipoId === 'fds')) {
+        const isDom = state.diaSemana === 'dom';
+        return [
+          {
+            id: 'ferias-fds-descanso',
+            horario: 'Fim de Semana das Férias (Seg–Sex = 5x/sem)',
+            titulo: isDom ? '🧘 Domingo das Férias — Descanso + Calibração Rápida (15 min)' : '☀️ Sábado Livre das Férias — Lazer, Esporte & Opcional OSCE em Dupla',
+            detalhe: isDom
+              ? 'Sem metas pesadas hoje: apenas revise em 15 min os 3 Pontos Cegos da semana e deixe a próxima semana calibrada no Ritual abaixo.'
+              : 'O Plano de Férias roda 5x/semana (Seg–Sex). Hoje é dia de recuperação — faça apenas um encontro opcional de OSCE em Dupla (40 min) se combinou com colega.',
+            categoria: 'FDS LIVRE (FÉRIAS)',
+            corCategoria: '#10b981',
+            atalhoSecao: isDom ? 'logbook' : 'preporta',
+            atalhoLabel: isDom ? 'Revisar Pontos Cegos' : 'Ver Pré-Porta OSCE'
+          },
+          {
+            id: 'ferias-fds-sono',
+            horario: 'Noite · Blindagem Biológica',
+            titulo: '🛌 Manutenção Leve de Anki (se quiser, ≤ 20 min) + Sono Reparador',
+            detalhe: 'Não acumule culpa: descansar no fim de semana protege a execução das 4h líquidas de segunda a sexta.',
+            categoria: 'SONO PROTEGIDO',
+            corCategoria: '#2dd4bf'
+          }
+        ];
       }
 
       if (state.rodizioId === 'ferias' || state.arquetipoId === 'ferias_4h') {
@@ -13823,7 +14184,8 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
             categoria: 'EXAMES (25 MIN)',
             corCategoria: '#f59e0b',
             atalhoSecao: 'ferramentas',
-            atalhoLabel: 'Abrir Ferramentas & Exames'
+            atalhoLabel: 'Abrir Ferramentas & Exames',
+            atalhoFerramentaTab: rotaDia.ferramentaTab
           },
           {
             id: 'ferias-pilar-95m',
@@ -13833,7 +14195,8 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
             categoria: `HABILIDADE (${rotaDia.moduloRef})`,
             corCategoria: '#2dd4bf',
             atalhoSecao: 'teoria',
-            atalhoLabel: `Ler ${rotaDia.moduloRef}`
+            atalhoLabel: `Ler ${rotaDia.moduloRef}`,
+            atalhoTeoriaMod: rotaDia.moduloId
           },
           {
             id: 'ferias-sono',
@@ -13863,17 +14226,18 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
 
       if (state.arquetipoId === 'fds' || state.diaSemana === 'sab' || state.diaSemana === 'dom') {
         const isDom = state.diaSemana === 'dom';
+        const isSprintSab = !isDom && (state.marchaId === '4_sprint' || state.rodizioId === 'sprint_r1' || state.rodizioId === 'emergencia_trauma');
         return [
-          { id: 'fds-bloco1', horario: '08h00 – 09h55 (Bloco 1)', titulo: isDom ? `🎯 Ciclo Invertido (90m) — Trilha Paralela 30%: ${rodizio.trilha30}` : `🔥 Ciclo Invertido (90m) — Âncora 70%: ${rodizio.ancora70}`, detalhe: '15m Pré-teste (5–8q) → 35m Ficha Resumo Medway → 40m Bateria de 20 questões comentadas no MedQuest.', categoria: isDom ? 'TRILHA PARALELA 30%' : 'RODÍZIO-ÂNCORA 70%', corCategoria: isDom ? '#818cf8' : '#0284c7' },
-          { id: 'fds-exames', horario: '09h55 – 10h20 (25 min)', titulo: `🧪 Aquecimento de Exames: ${rotaDia.exame25m}`, detalhe: 'Treino sistemático de traçados, gasometria e imagem antes do 2º bloco.', categoria: 'EXAMES (25 MIN)', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Abrir Ferramentas' },
-          { id: 'fds-bloco2', horario: '10h30 – 12h15 (Bloco 2)', titulo: isDom ? '🧠 Simulação Prática / OSCE + Ritual de Domingo (15 min)' : '⚡ 2º Ciclo Invertido + Bateria Intercalada Cumulativa (20–30q de áreas passadas)', detalhe: isDom ? `${rotaDia.pilarDetalhe} Feche com o Ritual de Domingo abaixo!` : 'Mantenha o Efeito Catraca resolvendo 20–30 questões mistas dos rodízios anteriores. Tarde e noite livres!', categoria: isDom ? 'OSCE & PLANEJAMENTO' : 'EFEITO CATRACA', corCategoria: '#2dd4bf' }
+          { id: 'fds-bloco1', horario: '08h00 – 09h55 (Bloco 1)', titulo: isDom ? `🎯 Ciclo Invertido (90m) — Trilha Paralela 30%: ${rodizio.trilha30}` : (isSprintSab ? '🚀 Sprint R1 — Prova Antiga na Íntegra Cronometrada (100–120q)' : `🔥 Ciclo Invertido (90m) — Âncora 70%: ${rodizio.ancora70}`), detalhe: isSprintSab ? 'Simule tempo real de prova. Ao final, classifique erros em Lacuna, Armadilha ou Desatenção.' : '15m Pré-teste (5–8q) → 35m Ficha Resumo Medway → 40m Bateria de 20 questões comentadas no MedQuest.', categoria: isDom ? 'TRILHA PARALELA 30%' : (isSprintSab ? 'SPRINT R1 (PROVA)' : 'RODÍZIO-ÂNCORA 70%'), corCategoria: isDom ? '#818cf8' : '#0284c7' },
+          { id: 'fds-exames', horario: '09h55 – 10h20 (25 min)', titulo: `🧪 Aquecimento de Exames: ${rotaDia.exame25m}`, detalhe: 'Treino sistemático de traçados, gasometria e imagem antes do 2º bloco.', categoria: 'EXAMES (25 MIN)', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Abrir Ferramentas', atalhoFerramentaTab: rotaDia.ferramentaTab },
+          { id: 'fds-bloco2', horario: '10h30 – 12h15 (Bloco 2)', titulo: isDom ? '🧠 Simulação Prática / OSCE + Ritual de Domingo (15 min)' : '⚡ 2º Ciclo Invertido + Bateria Intercalada Cumulativa (20–30q de áreas passadas)', detalhe: isDom ? `${rotaDia.pilarDetalhe} Feche com o Ritual de Domingo abaixo!` : 'Mantenha o Efeito Catraca resolvendo 20–30 questões mistas dos rodízios anteriores. Tarde e noite livres!', categoria: isDom ? 'OSCE & PLANEJAMENTO' : 'EFEITO CATRACA', corCategoria: '#2dd4bf', atalhoSecao: 'teoria', atalhoLabel: `Ler ${rotaDia.moduloRef}`, atalhoTeoriaMod: rotaDia.moduloId }
         ];
       }
 
       if (state.arquetipoId === 'pe_vespera') {
         return [
           { id: 'pe-hospital', horario: 'Turno Prático (Manhã ou Tarde)', titulo: `🏥 Hospital (${rodizio.nome}) + Anki FSRS nas Micro-Janelas (25–35m)`, detalhe: `Treine seu micro-hábito da semana: "${state.microHabitoSemanal}".`, categoria: 'HOSPITAL + ANKI', corCategoria: '#2dd4bf', atalhoSecao: 'preporta', atalhoLabel: 'Pré-Porta 30s' },
-          { id: 'pe-ciclos', horario: 'Turno de PE (3h30 líquidas)', titulo: '⚡ 2 Ciclos Invertidos (1º: Âncora 70% | 2º: Trilha Paralela 30%) + 25m Exames', detalhe: `Ciclo 1: ${rodizio.ancora70} | Ciclo 2: ${rodizio.trilha30} | Exame: ${rotaDia.exame25m}.`, categoria: 'TRAÇÃO DUPLA PE', corCategoria: '#0284c7' },
+          { id: 'pe-ciclos', horario: 'Turno de PE (3h30 líquidas)', titulo: '⚡ 2 Ciclos Invertidos (1º: Âncora 70% | 2º: Trilha Paralela 30%) + 25m Exames', detalhe: `Ciclo 1: ${rodizio.ancora70} | Ciclo 2: ${rodizio.trilha30} | Exame: ${rotaDia.exame25m}.`, categoria: 'TRAÇÃO DUPLA PE', corCategoria: '#0284c7', atalhoSecao: 'ferramentas', atalhoLabel: 'Abrir Exames', atalhoFerramentaTab: rotaDia.ferramentaTab },
           { id: 'pe-cochilo', horario: '15h45 – 17h15 (Se Véspera de Plantão Noturno)', titulo: '🛌 Cochilo Profilático de 90 min (1 Ciclo Completo de Sono) ou Noite Livre', detalhe: 'Se entrar no plantão às 19h, pare todo estudo às 15h30 e durma 90m. Se não tiver plantão, noite leve e sono às 22h.', categoria: 'BLINDAGEM DE PLANTÃO', corCategoria: '#10b981' }
         ];
       }
@@ -13884,14 +14248,19 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       ];
 
       if (state.marchaId === '1_sobrevivencia') {
-        stepsDiaCheio.push({ id: 'dc-marcha1-noite', horario: '19h15 – 21h30 (🔴 Marcha 1 Ativa)', titulo: '🛡️ Modo Sobrevivência: Zero Teoria Nova Hoje — Apenas Revisar 7 Travas & Dormir Cedo', detalhe: 'Em semana caótica, não force estudo exausto à noite. Garanta o Anki nas janelas e durma às 21h30.', categoria: 'MARCHA 1 (SOBREVIVÊNCIA)', corCategoria: '#fb7185' });
+        stepsDiaCheio.push({ id: 'dc-marcha1-noite', horario: '19h15 – 21h30 (🔴 Marcha 1 Ativa)', titulo: '🛡️ Modo Sobrevivência: Zero Teoria Nova Hoje — Apenas Revisar 7 Travas & Dormir Cedo', detalhe: 'Em semana caótica, não force estudo exausto à noite. Garanta o Anki nas janelas e durma às 21h30.', categoria: 'MARCHA 1 (SOBREVIVÊNCIA)', corCategoria: '#fb7185', atalhoSecao: 'ferramentas', atalhoLabel: 'Checar 7 Travas', atalhoFerramentaTab: 'travas' });
       } else if (state.marchaId === '2_pesada') {
-        stepsDiaCheio.push({ id: 'dc-marcha2-noite', horario: '19h15 – 20h25 (🟡 Marcha 2 Ativa — 70 min)', titulo: `🎯 Tiro Cirúrgico: 20m Exames (${rotaDia.exame25m}) + 45m Questões MedQuest`, detalhe: `Resolva 20–25 questões comentadas de ${rodizio.ancora70} sem ler apostila longa.`, categoria: 'MARCHA 2 (PESADA)', corCategoria: '#f59e0b' });
+        stepsDiaCheio.push({ id: 'dc-marcha2-noite', horario: '19h15 – 20h25 (🟡 Marcha 2 Ativa — 70 min)', titulo: `🎯 Tiro Cirúrgico: 20m Exames (${rotaDia.exame25m}) + 45m Questões MedQuest`, detalhe: `Resolva 20–25 questões comentadas de ${rodizio.ancora70} sem ler apostila longa.`, categoria: 'MARCHA 2 (PESADA)', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Abrir Exames', atalhoFerramentaTab: rotaDia.ferramentaTab });
+      } else if (state.marchaId === '4_sprint') {
+        stepsDiaCheio.push(
+          { id: 'dc-exames-25m', horario: '19h15 – 19h40 (25 min)', titulo: `🧪 Micro-Dose Multimídia & 2ª Fase: ${rotaDia.exame25m}`, detalhe: `Treine leitura rápida sob cronômetro (${rotaDia.pilarTitulo}).`, categoria: 'MULTIMÍDIA / EXAMES', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Ferramentas & Exames', atalhoFerramentaTab: rotaDia.ferramentaTab },
+          { id: 'dc-sprint-90m', horario: '19h40 – 21h10 (🚀 Marcha 4 — Sprint R1)', titulo: '🚀 Bloco Cirúrgico de Questões (50–70q por Banca) + Correção de Erros', detalhe: `Foco direto em ${rodizio.ancora70} e revisão do Caderno de Erros das provas anteriores.`, categoria: 'SPRINT R1 (350+/SEM)', corCategoria: '#0284c7', atalhoSecao: 'teoria', atalhoLabel: `Revisar ${rotaDia.moduloRef}`, atalhoTeoriaMod: rotaDia.moduloId }
+        );
       } else {
         const isTrilhaDay = state.diaSemana === 'qua';
         stepsDiaCheio.push(
-          { id: 'dc-exames-25m', horario: '19h15 – 19h40 (25 min)', titulo: `🧪 Aquecimento de Exames + Triagem Logbook: ${rotaDia.exame25m}`, detalhe: `10m fechando dúvida do dia + 15m no exame sistemático (${rotaDia.pilarTitulo}).`, categoria: 'EXAMES & LOGBOOK', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Ferramentas & Exames' },
-          { id: 'dc-ciclo-90m', horario: '19h40 – 21h10 (🟢 Marcha 3 — Ciclo Invertido 90m)', titulo: isTrilhaDay ? `⚡ Ciclo Invertido (Trilha Paralela 30%): ${rodizio.trilha30}` : `⚡ Ciclo Invertido (Âncora 70%): ${rodizio.ancora70}`, detalhe: '15m Pré-teste (5–8q) → 35m Ficha Resumo Medway → 40m Bateria de 15–20q MedQuest + Anki cirúrgico.', categoria: isTrilhaDay ? 'TRILHA 30%' : 'ÂNCORA 70%', corCategoria: isTrilhaDay ? '#818cf8' : '#0284c7' }
+          { id: 'dc-exames-25m', horario: '19h15 – 19h40 (25 min)', titulo: `🧪 Aquecimento de Exames + Triagem Logbook: ${rotaDia.exame25m}`, detalhe: `10m fechando dúvida do dia + 15m no exame sistemático (${rotaDia.pilarTitulo}).`, categoria: 'EXAMES & LOGBOOK', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Ferramentas & Exames', atalhoFerramentaTab: rotaDia.ferramentaTab },
+          { id: 'dc-ciclo-90m', horario: '19h40 – 21h10 (🟢 Marcha 3 — Ciclo Invertido 90m)', titulo: isTrilhaDay ? `⚡ Ciclo Invertido (Trilha Paralela 30%): ${rodizio.trilha30}` : `⚡ Ciclo Invertido (Âncora 70%): ${rodizio.ancora70}`, detalhe: '15m Pré-teste (5–8q) → 35m Ficha Resumo Medway → 40m Bateria de 15–20q MedQuest + Anki cirúrgico.', categoria: isTrilhaDay ? 'TRILHA 30%' : 'ÂNCORA 70%', corCategoria: isTrilhaDay ? '#818cf8' : '#0284c7', atalhoSecao: 'teoria', atalhoLabel: `Ler ${rotaDia.moduloRef}`, atalhoTeoriaMod: rotaDia.moduloId }
         );
       }
 
@@ -13904,6 +14273,8 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       const marcha = MARCHAS_6ANO_DATA[central6AnoState.marchaId] || MARCHAS_6ANO_DATA['3_normal'];
       const rotaDia = ROTA_DIAS_DATA[central6AnoState.diaSemana] || ROTA_DIAS_DATA.seg;
       const feriasSem = FERIAS_SEMANAS_DATA[central6AnoState.feriasSemana] || FERIAS_SEMANAS_DATA.sem1;
+      const todayIso = getTodayIsoLocal();
+      const todayCheckedMap = getCheckedMapForToday();
 
       const selRod = document.getElementById('selHojeRodizio');
       if (selRod) selRod.value = central6AnoState.rodizioId;
@@ -13936,6 +14307,12 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
         subEl.textContent = `Marcha ativa: ${marcha.nome} · Micro-Hábito da Semana: "${central6AnoState.microHabitoSemanal}"`;
       }
 
+      const btnCompleteHoje = document.getElementById('btnCompleteHojeDay');
+      if (btnCompleteHoje) {
+        const alreadyDoneToday = central6AnoState.ultimoDiaConcluidoIso === todayIso;
+        btnCompleteHoje.textContent = alreadyDoneToday ? '✅ Dia Computado Hoje' : '✅ Concluir Dia (+1 Streak)';
+      }
+
       const ctxEl = document.getElementById('hojeContextStrip');
       if (ctxEl) {
         ctxEl.innerHTML = `
@@ -13954,23 +14331,45 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
         `;
       }
 
+      // Chips de Foco Prático Sugerido Hoje (Módulo Teórico do Dia + Cartões Pré-Porta + PEP)
+      const deepLinksEl = document.getElementById('hojeDeepLinksStrip');
+      if (deepLinksEl) {
+        const modKey = rotaDia.moduloId || 'mod-01';
+        const modStatus = (central6AnoState.teoriaStatusById && central6AnoState.teoriaStatusById[modKey]) || 'nao_iniciado';
+        const modStatusIcon = modStatus === 'dominado' ? '🏆' : (modStatus === 'estudado' ? '📖' : '⏳');
+        const mapKey = central6AnoState.rodizioId === 'ferias' ? `ferias:${central6AnoState.feriasSemana}` : central6AnoState.rodizioId;
+        const quickLinks = HOJE_DEEP_LINKS_MAP[mapKey] || HOJE_DEEP_LINKS_MAP[central6AnoState.rodizioId] || [];
+        deepLinksEl.innerHTML = `
+          <span class="mq-stat-label" style="margin-right:4px;">⚡ Foco Prático Hoje:</span>
+          <button type="button" class="mq-quick-chip" onclick="openTimelineShortcut('teoria', '${modKey}', '')">${modStatusIcon} ${escapeHtml(rotaDia.moduloRef)}</button>
+          ${quickLinks.map((ql) => `<button type="button" class="mq-quick-chip" onclick="openProtocolOrHabById('${ql.id}')">${escapeHtml(ql.label)}</button>`).join('')}
+        `;
+      }
+
       const steps = computeTimelineSteps(central6AnoState);
       let doneCount = 0;
+      let focusAssigned = false;
       const listEl = document.getElementById('hojeTimelineList');
       if (listEl) {
         listEl.innerHTML = steps.map((st) => {
-          const isDone = Boolean(central6AnoState.checkedTimelineIds && central6AnoState.checkedTimelineIds[st.id]);
+          const isDone = Boolean(todayCheckedMap[st.id]);
           if (isDone) doneCount++;
+          const isCurrentFocus = !isDone && !focusAssigned;
+          if (isCurrentFocus) focusAssigned = true;
+          const focusPillHtml = isCurrentFocus ? '<span class="mq-focus-pill">▶ AGORA</span>' : '';
           const actionBtnHtml = st.atalhoSecao
-            ? `<button type="button" class="mq-counter-btn" style="margin-top:6px;" onclick="switchAppSection('${st.atalhoSecao}')">↗ ${escapeHtml(st.atalhoLabel || 'Abrir')}</button>`
+            ? `<button type="button" class="mq-counter-btn" style="margin-top:6px;" onclick="openTimelineShortcut('${st.atalhoSecao}', '${st.atalhoTeoriaMod || ''}', '${st.atalhoFerramentaTab || ''}')">↗ ${escapeHtml(st.atalhoLabel || 'Abrir')}</button>`
             : '';
           return `
-            <div class="mq-timeline-item${isDone ? ' is-done' : ''}">
+            <div class="mq-timeline-item${isDone ? ' is-done' : ''}${isCurrentFocus ? ' is-current-focus' : ''}">
               <input type="checkbox" class="mq-timeline-chk" ${isDone ? 'checked' : ''} onchange="toggleHojeTimelineStep('${st.id}')">
               <div class="mq-timeline-body">
                 <div class="mq-timeline-top">
                   <span class="mq-timeline-time">${escapeHtml(st.horario)}</span>
-                  <span class="mq-timeline-tag" style="color:${st.corCategoria};">${escapeHtml(st.categoria)}</span>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    ${focusPillHtml}
+                    <span class="mq-timeline-tag" style="color:${st.corCategoria};">${escapeHtml(st.categoria)}</span>
+                  </div>
                 </div>
                 <div class="mq-timeline-title">${escapeHtml(st.titulo)}</div>
                 <div class="mq-timeline-detail">${escapeHtml(st.detalhe)}</div>
@@ -13987,12 +14386,21 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       const progFill = document.getElementById('hojeProgressBarFill');
       if (progFill && progFill.style) progFill.style.width = `${pctSteps}%`;
 
-      // StatTile 1: Questões MedQuest 70/30
+      // StatTile 1: Questões MedQuest 70/30 + Proporção Real
       const qAnc = Number(central6AnoState.questoesAncoraSem) || 0;
       const qTri = Number(central6AnoState.questoesTrilhaSem) || 0;
       const qTot = qAnc + qTri;
       const qMeta = marcha.metaAlvo;
       const qPct = Math.min(100, Math.round((qTot / qMeta) * 100));
+      const ancRatio = qTot > 0 ? Math.round((qAnc / qTot) * 100) : 70;
+      const triRatio = qTot > 0 ? (100 - ancRatio) : 30;
+
+      const elRatioBadge = document.getElementById('statQuestoesRatioBadge');
+      if (elRatioBadge) {
+        if (qTot === 0) elRatioBadge.textContent = 'Alvo 70/30';
+        else if (ancRatio >= 60 && ancRatio <= 80) elRatioBadge.textContent = `✅ ${ancRatio}/${triRatio}`;
+        else elRatioBadge.textContent = `⚠️ ${ancRatio}/${triRatio}`;
+      }
       const elQTot = document.getElementById('statQuestoesTotal');
       if (elQTot) elQTot.textContent = `${qTot} / ${qMeta}`;
       const elQPct = document.getElementById('statQuestoesPct');
@@ -14004,13 +14412,42 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       const navBadgeHoje = document.getElementById('navBadgeHoje');
       if (navBadgeHoje) navBadgeHoje.textContent = `${qTot}/${qMeta}q`;
 
-      // StatTile 2: Streak
+      // StatTile 2: Streak + Teto Anki Hoje
       const elStr = document.getElementById('statStreakVal');
       if (elStr) elStr.textContent = `🔥 ${Number(central6AnoState.streakDias) || 0} dias`;
       const elSem = document.getElementById('statSemanasVal');
       if (elSem) elSem.textContent = `${Number(central6AnoState.semanasConcluidas) || 0} sem`;
+      const ankiDoneToday = Boolean(central6AnoState.ankiDoneByDate && central6AnoState.ankiDoneByDate[todayIso]);
+      const elAnkiTxt = document.getElementById('statAnkiStatusText');
+      if (elAnkiTxt) {
+        elAnkiTxt.textContent = ankiDoneToday
+          ? '✅ Teto diário do Anki cumprido hoje (≤35 min) · Fonte: Medway'
+          : 'Anki: máx 25–35 min/dia (~80–120 cards nas micro-janelas) · Hoje: pendente';
+      }
+      const btnAnkiToday = document.getElementById('btnToggleAnkiToday');
+      if (btnAnkiToday) {
+        btnAnkiToday.textContent = ankiDoneToday ? '✅ Anki Hoje OK' : '⏳ Anki Hoje (≤35m)';
+      }
 
-      // StatTile 3 & 4: Contagens Regressivas e Auditoria Curricular
+      // StatTile 3: Últimos 3 Pontos Cegos do Logbook (Alça de Retenção Diária)
+      const blindPreviewEl = document.getElementById('hojeBlindSpotsPreview');
+      if (blindPreviewEl) {
+        const allLogs = Array.isArray(central6AnoState.logbookEntries) ? central6AnoState.logbookEntries : [];
+        const blindItems = allLogs.filter((l) => l.tipo === 'ponto_cego');
+        const previewList = (blindItems.length ? blindItems : allLogs).slice(0, 3);
+        if (previewList.length === 0) {
+          blindPreviewEl.innerHTML = '<span>Nenhum ponto cego registrado ainda. Ao terminar um atendimento ou bloco de questões, anote 1 ajuste cirúrgico em 60s.</span>';
+        } else {
+          blindPreviewEl.innerHTML = previewList.map((item) => `
+            <div style="padding:5px 7px; border-radius:4px; background:var(--bg-canvas); border:1px solid var(--line-subtle);">
+              <div style="font-weight:600; color:var(--ink-primary);">${item.tipo === 'ponto_cego' ? '🎯 ' : '💉 '}${escapeHtml(item.titulo)}</div>
+              <div style="font-size:0.72rem; color:var(--ink-secondary);">${escapeHtml(item.aprendizado)}</div>
+            </div>
+          `).join('');
+        }
+      }
+
+      // StatTile 4: Contagens Regressivas & Auditoria Curricular
       const now = new Date();
       const diffCurr = Math.max(0, Math.ceil((new Date('2027-06-30T23:59:59').getTime() - now.getTime()) / 86400000));
       const diffCiclo = Math.max(0, Math.ceil((new Date('2027-08-31T23:59:59').getTime() - now.getTime()) / 86400000));
@@ -14042,7 +14479,11 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       const elCurrBar = document.getElementById('statCurrBar');
       if (elCurrBar && elCurrBar.style) elCurrBar.style.width = `${currPct}%`;
 
-      // Ritual de Domingo
+      // Ritual de Domingo (Auto-abre somente aos Domingos para manter Seg-Sex limpo)
+      const detailsRitual = document.getElementById('detailsRitualDomingo');
+      if (detailsRitual) {
+        detailsRitual.open = central6AnoState.diaSemana === 'dom';
+      }
       const ritListEl = document.getElementById('sundayRitualList');
       if (ritListEl) {
         ritListEl.innerHTML = RITUAL_DOMINGO_DATA.map((r) => {
@@ -14070,6 +14511,9 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
           } else if (central6AnoState.arquetipoId === 'ferias_4h') {
             central6AnoState.arquetipoId = 'dia_cheio';
           }
+          if (val === 'sprint_r1') {
+            central6AnoState.marchaId = '4_sprint';
+          }
         }
       }
       saveCentral6AnoState();
@@ -14080,19 +14524,39 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
     window.getCentral6AnoState = function () { return central6AnoState; };
 
     function toggleHojeTimelineStep(stepId) {
-      if (!central6AnoState.checkedTimelineIds) central6AnoState.checkedTimelineIds = {};
-      central6AnoState.checkedTimelineIds[stepId] = !central6AnoState.checkedTimelineIds[stepId];
+      const todayMap = getCheckedMapForToday();
+      todayMap[stepId] = !todayMap[stepId];
       saveCentral6AnoState();
       renderHojeSection();
     }
     window.toggleHojeTimelineStep = toggleHojeTimelineStep;
 
+    function toggleAnkiDoneToday() {
+      const todayIso = getTodayIsoLocal();
+      if (!central6AnoState.ankiDoneByDate || typeof central6AnoState.ankiDoneByDate !== 'object') {
+        central6AnoState.ankiDoneByDate = {};
+      }
+      central6AnoState.ankiDoneByDate[todayIso] = !central6AnoState.ankiDoneByDate[todayIso];
+      saveCentral6AnoState();
+      renderHojeSection();
+      showToast(central6AnoState.ankiDoneByDate[todayIso] ? '✅ Teto diário de Anki concluído hoje!' : '⏳ Anki marcado como pendente hoje.');
+      return central6AnoState.ankiDoneByDate[todayIso];
+    }
+    window.toggleAnkiDoneToday = toggleAnkiDoneToday;
+
     function completeHojeDayAndIncrementStreak() {
+      const todayIso = getTodayIsoLocal();
       const steps = computeTimelineSteps(central6AnoState);
-      if (!central6AnoState.checkedTimelineIds) central6AnoState.checkedTimelineIds = {};
-      steps.forEach((s) => { central6AnoState.checkedTimelineIds[s.id] = true; });
+      const todayMap = getCheckedMapForToday();
+      steps.forEach((s) => { todayMap[s.id] = true; });
+      if (central6AnoState.ultimoDiaConcluidoIso === todayIso) {
+        saveCentral6AnoState();
+        renderHojeSection();
+        showToast(`🔥 Dia de hoje já estava computado! Streak mantido em ${central6AnoState.streakDias} dias.`);
+        return central6AnoState.streakDias;
+      }
       central6AnoState.streakDias = (Number(central6AnoState.streakDias) || 0) + 1;
-      central6AnoState.ultimoDiaConcluidoIso = new Date().toISOString().slice(0, 10);
+      central6AnoState.ultimoDiaConcluidoIso = todayIso;
       saveCentral6AnoState();
       renderHojeSection();
       showToast(`🔥 Dia concluído! Streak atual: ${central6AnoState.streakDias} dias.`);
@@ -14118,18 +14582,17 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       }
       saveCentral6AnoState();
       renderHojeSection();
-      showToast(`✅ +${num} questões registradas (${bucket === 'trilha' ? '30% Trilha' : '70% Âncora'})!`);
+      const signPrefix = num >= 0 ? `+${num}` : String(num);
+      showToast(`✅ ${signPrefix} questões (${bucket === 'trilha' ? '30% Trilha' : '70% Âncora'})`);
     }
     window.addWeeklyQuestions = addWeeklyQuestions;
 
     function resetWeeklyQuestions() {
       central6AnoState.questoesAncoraSem = 0;
       central6AnoState.questoesTrilhaSem = 0;
-      central6AnoState.checkedTimelineIds = {};
-      central6AnoState.ritualDomingoDoneIds = {};
       saveCentral6AnoState();
       renderHojeSection();
-      showToast('↺ Contadores da semana zerados para novo ciclo!');
+      showToast('↺ Contagem semanal de questões zerada (checklist do dia preservado)!');
     }
     window.resetWeeklyQuestions = resetWeeklyQuestions;
 
@@ -14229,15 +14692,26 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
     window.copyWeeklyMarkdownReport = copyWeeklyMarkdownReport;
 
     function initCentral6AnoFase2() {
+      let hasSaved = false;
       try {
         const saved = localStorage.getItem(CENTRAL_6ANO_STORAGE_KEY);
         if (saved) {
           const parsed = JSON.parse(saved);
           if (parsed && typeof parsed === 'object') {
             central6AnoState = Object.assign({}, central6AnoState, parsed);
+            hasSaved = true;
           }
         }
       } catch (err) {}
+      if (!hasSaved) {
+        syncHojeToRealCalendar(false);
+        return;
+      }
+      if (central6AnoState.autoSyncDiaSemana !== false) {
+        const dayMap = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
+        central6AnoState.diaSemana = dayMap[new Date().getDay()] || central6AnoState.diaSemana;
+      }
+      getCheckedMapForToday();
       renderHojeSection();
     }
 
@@ -14469,6 +14943,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       central6AnoState.teoriaStatusById[curId] = status;
       saveCentral6AnoState();
       renderTeoriaSection();
+      renderHojeSection();
       showToast(`📚 Status do módulo atualizado para: ${status.toUpperCase()}`);
     }
     window.setTeoriaModStatus = setTeoriaModStatus;
@@ -14850,6 +15325,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       if (aprendEl) aprendEl.value = '';
       saveCentral6AnoState();
       renderLogbookSectionUI();
+      renderHojeSection();
       showToast('📓 Registro salvo no Logbook do 6º Ano!');
       return true;
     }
