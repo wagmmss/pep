@@ -10,36 +10,37 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Sim].
-
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # QP:
-Queimação no estômago e azia que sobe para o peito há [ ] dias/horas.
+- Queimação no estômago (epigastralgia) e azia que sobe para o peito há [ ] dias/horas.
 
 # HMA:
-Refere dor em queimação localizada em região epigástrica iniciada há [ ], associada a sensação de azia retroesternal ascendente, regurgitação ácida na garganta, sensação de estômago cheio logo após começar a comer e eructações frequentes. Relata piora após ingestão de café, alimentos gordurosos ou ao se deitar após as refeições.
-Nega dor precordial em aperto, queimação opressiva retroesternal ou peso no peito.
-Nega irradiação para mandíbula, pescoço, dorso ou membro superior esquerdo.
-Nega sudorese fria profusa, palidez, náuseas com sensação de morte iminente ou dispneia.
-[Se paciente com fatores de risco].
-Nega disfagia ou entalo alimentar.
-Nega odinofagia.
-Nega perda de peso involuntária inexplicada nos últimos meses.
-Nega vômitos recorrentes ou hematêmese.
-Nega fezes pretas com cheiro podre característico.
-Nega história familiar de câncer gástrico em parentes de 1º grau.
-[Nega uso recente de AINEs / Em uso crônico de AAS].
+- HMA: Refere dor em queimação localizada em região epigástrica iniciada há [ ], associada a sensação de azia retroesternal ascendente (pirose), regurgitação ácida na garganta, sensação de estômago cheio logo após começar a comer (plenitude pós-prandial precoce) e eructações frequentes. Relata piora após ingestão de café, alimentos gordurosos ou ao se deitar após as refeições.
+- EXCLUSÃO DE SÍNDROME CORONARIANA AGUDA (SCA):
+  * Nega dor precordial em aperto, queimação opressiva retroesternal ou peso no peito.
+  * Nega irradiação para mandíbula, pescoço, dorso ou membro superior esquerdo.
+  * Nega sudorese fria profusa, palidez, náuseas com sensação de morte iminente ou dispneia.
+  * [Se paciente com fatores de risco cardiovasculares (idade > 40 anos, DM2, HAS, tabagismo): REALIZADO ECG DE 12 DERIVAÇÕES NA ADMISSÃO: Ritmo sinusal, sem desnivelamentos de segmento ST ou inversão de onda T].
+- EXCLUSÃO DE SINAIS DE ALARME DE NEOPLASIA / ÚLCERA COMPLICADA:
+  * Nega disfagia (dificuldade de engolir alimentos sólidos ou líquidos) ou entalo alimentar.
+  * Nega odinofagia (dor para engolir).
+  * Nega perda de peso involuntária inexplicada nos últimos meses.
+  * Nega vômitos recorrentes ou hematêmese (vômitos com sangue ou borra de café).
+  * Nega fezes pretas com cheiro podre característico (melena).
+  * Nega história familiar de câncer gástrico em parentes de 1º grau.
+- Medicações: [Nega uso recente de AINEs / Em uso crônico de AAS, Cetoprofeno, Ibuprofeno ou Diclofenaco].
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
-Geral: BEG, corado, hidratado, lúcido e orientado, sem fácies de sofrimento agudo, acianótico, anictérico.
-Exame Abdominal:
-Inspeção: Abdome plano, ausência de cicatrizes cirúrgicas suspeitas ou circulação colateral.
-Ausculta: Ruídos hidroaéreos normais e presentes nos quatro quadrantes.
-Palpação: Abdome flácido, compressível, com dor leve à palpação profunda estritamente em epigástrio, sem massas epigástricas palpáveis e sem megalias.
-Sinais de Irritação Peritoneal: Sinal de Blumberg negativo em todo o abdome (descompressão brusca indolor), Murphy negativo, ausência de defesa involuntária ou abdome em tábua.
-Ausculta Cardiopulmonar: Ritmo regular em 2 tempos, bulhas normofonéticas sem sopros; pulmões limpos sem estertores crepitantes.
+- Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
+- Ectoscopia: Bom estado geral, corado, hidratado, lúcido e orientado, sem fácies de sofrimento agudo, acianótico, anictérico.
+- Exame Abdominal:
+  * Inspeção: Abdome plano, ausência de cicatrizes cirúrgicas suspeitas ou circulação colateral.
+  * Ausculta: Ruídos hidroaéreos normais e presentes nos quatro quadrantes.
+  * Palpação: Abdome flácido, compressível, com dor leve à palpação profunda estritamente em epigástrio, sem massas epigástricas palpáveis e sem megalias.
+  * Sinais de Irritação Peritoneal: Sinal de Blumberg negativo em todo o abdome (descompressão brusca indolor), Murphy negativo, ausência de defesa involuntária ou abdome em tábua.
+- Ausculta Cardiopulmonar: Ritmo regular em 2 tempos, bulhas normofonéticas sem sopros; pulmões limpos sem estertores crepitantes.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome Dispéptica Aguda / Doença do Refluxo Gastroesofágico (DRGE) (CID-10: K30 / K21.0).
@@ -53,7 +54,7 @@ Ausculta Cardiopulmonar: Ritmo regular em 2 tempos, bulhas normofonéticas sem s
 3. Antiflatulento (se distensão por gases): Simeticona gotas (75 mg/mL) - 40 a 50 gotas VO agora.
 4. Reavaliação clínica após 30 a 40 minutos com alívio do sintoma antes da alta.
 
-# RECEITA:
+>> PRESCRIÇÃO DOMICILIAR:
 1. Inibidor de Bomba de Prótons (IBP):
    - Omeprazol 20 mg a 40 mg [ou Pantoprazol 40 mg] - Tomar 1 cápsula VO pela manhã, em JEJUM RIGOROSO, cerca de 30 minutos antes do café da manhã, diariamente por 4 a 8 semanas consecutivas.
 2. Antiácido para Alívio Imediato de Resgate:

@@ -10,24 +10,18 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade], Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outras].
-Alergias: [+ *Nega / Outras].
-
-ATENDIMENTO PEDIÁTRICO DE EMERGÊNCIA — CRISE DE ASMA AGUDA / BRONCOESPASMO (GINA PEDIÁTRICO)
-IDENTIFICAÇÃO & ANTROPOMETRIA:
-Criança [Nome], [Idade] anos/meses | Peso Atual: [ ] kg | Acompanhante: [Mãe / Pai].
+Criança [Nome], [Idade] anos, Peso: [ ] kg | Acompanhante: [Mãe / Pai].
 
 ANAMNESE DIRIGIDA:
 - Quadro Atual: Tosse seca persistente, "chiado no peito" e cansaço iniciados há [ ] horas/dias, desencadeados por [quadro viral de vias aéreas superiores / mudança climática / poeira ou aeroalérgenos / interrupção do corticoide inalatório].
-- Uso Prévio de Resgate em Casa: [Não realizou puffs em casa / Fez Salbutamol sem espaçador ou com resposta parcial].
+- Uso Prévio de Resgate em Casa: [Não realizou puffs em casa / Fez Salbutamol sem espaçador ou com resposta parcial transitória].
 - Histórico de Asma e Fatores de Risco para Asma Quase-Fatal: [Primeira crise sibilante / Asmático sem tratamento preventivo regular / Internação prévia em UTI ou IOT por asma / > 1 ida ao PS no último ano].
 
 EXAME FÍSICO & CLASSIFICAÇÃO DE GRAVIDADE DA CRISE (GINA):
-- Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm (Cortes de Taquipneia: < 2m ≥ 60; 2–11m ≥ 50; 1–5a ≥ 40; > 5a ≥ 30) | SpO2: [ ]% em ar ambiente | Tax: [ ]°C.
-- Esforço Respiratório e Fala: Criança [alerta, falando frases completas, tiragem subcostal / agitada, falando apenas palavras isoladas, com tiragem / sonolenta, exausta, cianótica].
-- Ausculta Pulmonar: Murmúrio vesicular [presente bilateralmente com sibilos expiratórios / globalmente reduzido com sibilos inspiratórios / Tórax silencioso].
-- Classificação da Exacerbação: [Crise Leve a Moderada (SpO2 90–95% / Crise Grave / Asma Ameaçadora à Vida].
+- Sinais Vitais: FC: [125] bpm | FR: [38] irpm (Cortes de Taquipneia: < 2m ≥ 60; 2–11m ≥ 50; 1–5a ≥ 40; > 5a ≥ 30) | SpO2: [93]% em ar ambiente | Tax: [36,8]°C.
+- Esforço Respiratório e Fala: Criança [alerta, falando frases completas, tiragem subcostal leve a moderada / agitada, falando apenas palavras isoladas, com tiragem intercostal, subcostal, de fúrcula e batimento de asa de nariz / sonolenta, exausta, cianótica].
+- Ausculta Pulmonar: Murmúrio vesicular [presente bilateralmente com sibilos expiratórios difusos / globalmente reduzido com sibilos inspiratórios e expiratórios / Tórax silencioso — iminência de parada respiratória!].
+- Classificação da Exacerbação: [Crise Leve a Moderada (SpO2 90–95%, fala frases, sem agitação) / Crise Grave (SpO2 < 90%, fala palavras, FC > 140 em > 5a ou > 180 em 0–5a, retração acentuada) / Asma Ameaçadora à Vida (sonolência, confusão ou tórax silencioso)].
 
 # PLANO / CONDUTA
 1. Oxigenoterapia Titulada (se Hipoxemia): Ofertar O2 por cateter nasal ou máscara para manter SpO2 entre 94% e 98% na criança.
@@ -41,17 +35,17 @@ EXAME FÍSICO & CLASSIFICAÇÃO DE GRAVIDADE DA CRISE (GINA):
    - Se Crise Grave sem resposta após a 1ª hora: Administrar Sulfato de Magnésio IV 50 mg/kg (máximo 2.000 mg / 2 g) diluído em SF 0,9% para correr em 20 a 30 minutos em bomba de infusão (monitorar PA e reflexos) + internação em sala de emergência/UTI.
    - Se boa resposta sustentada (SpO2 ≥ 94% em ar ambiente por > 1–2 horas após o último broncodilatador, sem esforço respiratório): Alta hospitalar com plano de ação escrito e revisão da técnica do espaçador.
 
-# RECEITA:
-USO INALATÓRIO E ORAL (RECEITA DE ALTA PEDIÁTRICA — PESO DE REFERÊNCIA: [ ] KG):
+# PRESCRIÇÃO DOMICILIAR / DE ALTA
+USO INALATÓRIO E ORAL (RECEITA DE ALTA PEDIÁTRICA — PESO DE REFERÊNCIA: [15] KG):
 
 1. Sulfato de Salbutamol 100 mcg/dose (Aerolin spray oral) — 1 frasco + Espaçador infantil com máscara/bocal
-   - Aplicar [ ] jatos (1 jato por vez no espaçador, aguardando 5 respirações ou 15 segundos entre cada jato) a cada 4 ou 6 horas nos primeiros 2 dias, espaçando para cada 6 ou 8 horas por mais 3 dias conforme melhora do cansaço e da tosse.
+   - Aplicar [4] jatos (1 jato por vez no espaçador, aguardando 5 respirações ou 15 segundos entre cada jato) a cada 4 ou 6 horas nos primeiros 2 dias, espaçando para cada 6 ou 8 horas por mais 3 dias conforme melhora do cansaço e da tosse.
 
 2. Fosfato Sódico de Prednisolona 3 mg/mL (solução oral) — 1 frasco (60 mL)
    - Dar [5 a 10] mL (1 a 2 mg/kg/dia — máx 40 mg/dia) por via oral, 1 vez ao dia pela manhã após o café, por 3 a 5 dias (não precisa de desmame se usado por ≤ 5 dias).
 
 3. Dipirona Monoidratada 500 mg/mL (gotas) — 1 frasco
-   - Dar [ ] gotas por via oral a cada 6 horas somente se febre (Tax ≥ 37,8°C) ou dor.
+   - Dar [12] gotas por via oral a cada 6 horas somente se febre (Tax ≥ 37,8°C) ou dor.
 
 4. Soro Fisiológico 0,9% para lavagem nasal — 1 frasco (250 mL)
    - Realizar lavagem nasal com seringa antes das inalações e antes de dormir.

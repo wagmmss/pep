@@ -152,14 +152,6 @@ function syncTopbarControls(): void {
   const state = cockpitStore.getState();
   applyTheme(state.theme);
 
-  document.body.dataset.wsMode = state.clinicalMode;
-
-  const modeBtn = document.getElementById('clinicalModeToggle');
-  if (modeBtn) {
-    modeBtn.textContent = state.clinicalMode === 'treino' ? '🎓 Treino' : '🩺 Consulta';
-    modeBtn.classList.toggle('active', state.clinicalMode === 'treino');
-  }
-
   const badge = document.getElementById('cartItemCountBadge');
   const count = state.prescriptionCart.length;
   if (badge) {
@@ -375,12 +367,6 @@ function bootstrap(): void {
   document.getElementById('zenExitFloatingBtn')?.addEventListener('click', () => toggleZenMode(false));
 
   document.getElementById('btnCollapseSidebar')?.addEventListener('click', () => toggleSidebarCollapse());
-
-  document.getElementById('clinicalModeToggle')?.addEventListener('click', () => {
-    const cur = cockpitStore.getState().clinicalMode;
-    cockpitStore.setClinicalMode(cur === 'consulta' ? 'treino' : 'consulta');
-    showToast(cur === 'consulta' ? '🎓 Modo Treino ativado.' : '🩺 Modo Consulta ativado.', 'info');
-  });
 
   window.addEventListener('mq:toggle-zen', () => toggleZenMode());
   window.addEventListener('mq:toggle-sidebar', () => toggleSidebarCollapse());

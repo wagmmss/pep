@@ -189,8 +189,7 @@ async function run() {
     await assertNoBrowserDefaultButtons(page, 'pep');
     await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_pep.png` });
 
-    // 4. Modo Treino, Filtro Pediatria, Peso Pediátrico, Carrinho e Novo Paciente
-    await page.locator('#clinicalModeToggle').click();
+    // 4. Filtro Pediatria, Peso Pediátrico, Carrinho e Novo Paciente
     await page.locator('#moduleTabs [data-mod="ped"]').click();
     assert.equal(await page.locator('#cardsGrid .card').count(), 13, 'Filtro Pediatria deve exibir 13 PEPs');
 
@@ -212,6 +211,32 @@ async function run() {
     await page.locator('#btnNovoPaciente').click();
     assert.equal((await page.locator('#cartItemCountBadge').textContent())?.trim(), '0', 'Novo Paciente deve zerar o carrinho');
 
+    // 4b. Modelo Padrão, Chip Opcional TS RN e Cálculo Automático USG 1º Tri
+    await page.locator('#moduleTabs [data-mod="go"]').click();
+    await page.locator('#wsSearchInput').fill(';puerp-evo');
+    await delay(120);
+    await page.locator('#cardsGrid .card').first().click();
+    await page.locator('#tabStandardBtn').click();
+    const stdText = (await page.locator('#drawerStandardPanel').textContent()) || '';
+    assert.ok(stdText.includes('Modelo Padrão'), 'Aba Modelo Padrão deve exibir o texto padrão não personalizado');
+    assert.equal(stdText.includes('TS RN:'), false, 'Modelo padrão deve omitir campos opcionais [? TS RN :: ...]');
+
+    await page.locator('#tabPepBtn').click();
+    assert.ok((await page.locator('#drawerInteractivePanel .pep-opt-inline.is-off').count()) >= 1, 'TS RN deve iniciar como chip opcional desligado (.is-off)');
+
+    await page.locator('#wsSearchInput').fill(';pn-1cons');
+    await delay(120);
+    await page.locator('#cardsGrid .card').first().click();
+    const usgCcnInp = page.locator('#drawerInteractivePanel input.pill-sub-input[data-usg-role="usg-ccn"]').first();
+    const usgDateInp = page.locator('#drawerInteractivePanel input.pill-sub-input[data-usg-role="usg-date"]').first();
+    await usgCcnInp.fill('45');
+    const today = new Date();
+    const brToday = `${String(today.getDate()).padStart(2, '0')}/${String(today.getMonth() + 1).padStart(2, '0')}/${today.getFullYear()}`;
+    await usgDateInp.fill(brToday);
+    const igDefW = await page.locator('#drawerInteractivePanel input[data-obstetric-role="ig-def-w"]').first().inputValue();
+    assert.equal(igDefW, '11', `CCN 45mm na data de hoje deve calcular IG Definitiva = 11s (obtido: ${igDefW})`);
+    await page.locator('#wsClearSearchBtn').click();
+
     // 5. Command Palette (Ctrl+K)
     await page.locator('#topbarSearchBtn').click();
     await page.locator('#cmdSearchInput').fill(';sca');
@@ -220,10 +245,47 @@ async function run() {
 
     // 6. Pré-Porta 30s
     await page.locator('#wsMainSectionNav [data-section="preporta"]').click();
-    await delay(100);
-    const wsHtmlPrePorta = await page.locator('#appSectionWorkspace').innerHTML();
-    assert.ok(wsHtmlPrePorta.includes('Pré-Porta') || wsHtmlPrePorta.includes('Técnica Profunda') || wsHtmlPrePorta.includes('CRÍTICO'));
+    await delay(120);
+    assert.equal(await page.locator('.hab-card-nav-btn').count(), 22, 'Pré-Porta deve listar os 22 cartões na barra lateral');
+    assert.ok((await page.locator('.hab-pre-step').count()) >= 1, 'Pré-Porta deve renderizar passos estruturados (.hab-pre-step)');
+    assert.ok((await page.locator('.hab-sec5-box #habCopySec5Btn').count()) === 1, 'Pré-Porta deve exibir Seção 5 com botão Copiar Registro');
+    const stepsText = (await page.locator('.hab-steps-list').textContent()) || '';
+    assert.equal(/>>>\s*COMO REGISTRAR/i.test(stepsText), false, 'Roteiro Pré-Porta não deve conter >>> COMO REGISTRAR');
     await assertNoBrowserDefaultButtons(page, 'preporta');
+    await assertVisibleInputsLabeled(page, 'preporta');
+    await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_preporta.png` });
+
+    // Aba Checklist
+    await page.locator('[data-hab-tab="checklist"]').click();
+    await delay(80);
+    const checkTexts = await page.locator('.hab-check-text').allTextContents();
+    assert.ok(checkTexts.length >= 5, 'Checklist Pré-Porta deve ter itens');
+    assert.equal(
+      checkTexts.some((t) => /^\[CR[IÍ]TICO\]/i.test(t.trim())),
+      false,
+      'Texto do checklist não deve duplicar prefixo [CRÍTICO]'
+    );
+    const firstCheck = page.locator('[data-hab-check]').first();
+    await firstCheck.check();
+    await delay(50);
+    assert.ok(((await page.locator('.hab-progress-count').textContent()) || '').startsWith('1/'), 'Contador do checklist deve atualizar ao marcar item');
+
+    // Aba Armadilhas
+    await page.locator('[data-hab-tab="armadilhas"]').click();
+    await delay(80);
+    const pfTitles = await page.locator('.hab-pitfall-title').allTextContents();
+    assert.ok(pfTitles.length >= 3, 'Armadilhas deve exibir cards');
+    assert.equal(pfTitles.length, new Set(pfTitles.map((t) => t.trim().toLowerCase())).size, 'Armadilhas não deve repetir títulos');
+    const pfVisibleText = (await page.locator('.hab-pitfalls-list').textContent()) || '';
+    assert.equal(pfVisibleText.includes('`'), false, 'Armadilhas não deve conter crases Markdown cruas');
+
+    // Aba Técnica Profunda
+    await page.locator('[data-hab-tab="tecnica"]').click();
+    await delay(80);
+    assert.ok((await page.locator('.hab-flow-diagram .hab-flow-node').count()) >= 3, 'Técnica Profunda deve renderizar fluxograma visual');
+    const techText = (await page.locator('.hab-panel').textContent()) || '';
+    assert.equal(techText.includes('```mermaid'), false, 'Técnica Profunda não deve exibir bloco ```mermaid cru');
+    await assertNoBrowserDefaultButtons(page, 'preporta-tecnica');
 
     // 7. Ferramentas & Calc (sub-abas + labels + screenshot)
     await page.locator('#wsMainSectionNav [data-section="ferramentas"]').click();

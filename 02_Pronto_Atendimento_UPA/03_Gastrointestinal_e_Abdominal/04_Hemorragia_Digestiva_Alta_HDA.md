@@ -10,29 +10,28 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Sim].
-
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # QP:
-Vômito com sangue vivo / Fezes pretas e tontura há [ ] horas.
+- Vômito com sangue vivo / Fezes pretas e tontura há [ ] horas.
 
 # HMA:
-Paciente relata episódio agudo de [hematêmese com sangue vermelho vivo / vômitos escuros em borra de café] e/ou [eliminação de fezes pretas]. Relata fraqueza intensa súbita, tontura ao se levantar, palpitações e sudorese fria.
-SUSPEITA ETIOLÓGICA & ANTECEDENTES:
-Histórico de queimação epigástrica, uso recente de AINEs, uso de AAS ou anticoagulantes, tabagismo.
-Histórico de etilismo crônico pesado, cirrose hepática diagnosticada, hepatite B ou C, sangramento prévio por varizes de esôfago.
-Nega dor torácica anginosa precedente.
-Nega tosse com expectoração sanguinolenta.
-Nega disfagia ou emagrecimento severo recente.
+- HMA: Paciente relata episódio agudo de [hematêmese com sangue vermelho vivo / vômitos escuros em borra de café] e/ou [eliminação de fezes pretas, amolecidas, com odor fétido característico de piche (melena)]. Relata fraqueza intensa súbita, tontura ao se levantar (lipotímia), palpitações e sudorese fria.
+- SUSPEITA ETIOLÓGICA & ANTECEDENTES:
+  * HDA NÃO-VARICOSA (ÚLCERA PÉPTICA): Histórico de queimação epigástrica, uso recente de AINEs (Diclofenaco/Cetoprofeno/Ibuprofeno), uso de AAS ou anticoagulantes, tabagismo.
+  * HDA VARICOSA (HIPERTENSÃO PORTAL): Histórico de etilismo crônico pesado, cirrose hepática diagnosticada, hepatite B ou C, sangramento prévio por varizes de esôfago.
+- Nega dor torácica anginosa precedente.
+- Nega tosse com expectoração sanguinolenta (afastada hemoptise respiratória).
+- Nega disfagia ou emagrecimento severo recente.
 
 # EXAME FÍSICO:
-SSVV: PA deitado: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia compensatória) | FR: [ ] irpm | SpO2: [ ]% em AA.
-ÍNDICE DE CHOQUE (FC / PAS): [ ] (Se >= 0,9: risco iminente de descompensação e hipovolemia oculta).
-Geral: [Regular / Mau] estado geral, lúcido [ou sonolento/torporoso], hipocorado [2+/4+], desidratado, perfusão periférica lentificada (enchimento capilar > 2 segundos), extremidades frias e sudoreicas.
-Estigmas de Hepatopatia Crônica: [*Ausentes / Presença de icterícia escleral].
-Exame Abdominal: Abdome flácido, com sensibilidade leve em epigástrio à palpação profunda, ausência de massas, sem sinais de peritonite (Blumberg negativo). [Presença de macicez móvel/ascite / Sem ascite].
-Toque Retal: Luva de exame exteriorizada com presença nítida de fezes melênicas (pretas e brilhantes) de odor característico fétido, sem hemorroidas trombosadas ativas ou sangue vermelho rutilante ao toque.
+- SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia compensatória) | FR: [ ] irpm | SpO2: [ ]% em AA.
+- ÍNDICE DE CHOQUE (FC / PAS): [ ] (Se >= 0,9: risco iminente de descompensação e hipovolemia oculta).
+- Ectoscopia Geral: [Regular / Mau] estado geral, lúcido [ou sonolento/torporoso], hipocorado [2+/4+], desidratado, perfusão periférica lentificada (enchimento capilar > 2 segundos), extremidades frias e sudoreicas.
+- Estigmas de Hepatopatia Crônica: [*Ausentes / Presença de icterícia escleral, telangiectasias em tórax ("aranhas vasculares"), eritema palmar e circulação colateral visível em cabeça de medusa].
+- Exame Abdominal: Abdome flácido, com sensibilidade leve em epigástrio à palpação profunda, ausência de massas, sem sinais de peritonite (Blumberg negativo). [Presença de macicez móvel/ascite / Sem ascite].
+- Toque Retal: Luva de exame exteriorizada com presença nítida de fezes melênicas (pretas e brilhantes) de odor característico fétido, sem hemorroidas trombosadas ativas ou sangue vermelho rutilante ao toque.
 
 # EXAMES LABORATORIAIS DE URGÊNCIA:
 - Hemograma Completo: Hemoglobina (Hb): [ ] g/dL | Hematócrito: [ ]% | Plaquetas: [ ] /mm³.

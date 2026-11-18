@@ -10,36 +10,35 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
 TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo].
-Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Trombofilia / Outros].
-Alergias: [*Nega / Outros].
-
+Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Trombofilia / [ ]].
+Alergias: [*Nega / [ ]].
 # AP:
 MED: [*Nega / Sulfato Ferroso / Metildopa / AAS]
 HAB: [*Nega tabagismo, etilismo ou uso de cocaína / Tabagista / Uso de cocaína]
-CX: [*Nega / Cesáreas anteriores / Curetagem prévia]
-ALER: [*Nega alergias medicamentosas / Alérgica (especificar)]
+CX: [*Nega / Cesáreas anteriores ([ ]) / Curetagem prévia]
+ALER: [*Nega alergias medicamentosas / Alérgica a: [ ]]
 HF: [*Nega / HAS / Pré-eclâmpsia]
 
 # CASO: SANGRAMENTO DO 2º/3º TRIMESTRE (DPP VS. PLACENTA PRÉVIA E VASA PRÉVIA)
 
-HMA: Gestante admitida em emergência obstétrica por sangramento vaginal iniciado há [ ] horas, com características de [sangramento escuro/coágulos acompanhado de dor / sangramento vermelho-vivo rutilante]. Movimentação fetal: [Presente / Reduzida ou ausente]. Fatores desencadeantes: [Crise hipertensiva / Trauma abdominal / Cesáreas anteriores / Polidrâmnio com amniotomia brusca].
+HMA: Gestante admitida em emergência obstétrica por sangramento vaginal iniciado há [ ] horas, com características de [sangramento escuro/coágulos acompanhado de dor abdominal súbita e intensa (80%) ou sangramento oculto retroplacentário (20%) → Suspeita de DPP / sangramento vermelho-vivo rutilante, indolor, imotivado, recorrente e progressivo → Suspeita de Placenta Prévia]. Movimentação fetal: [Presente / Reduzida ou ausente]. Fatores desencadeantes: [Crise hipertensiva / Trauma abdominal / Cesáreas anteriores / Polidrâmnio com amniotomia brusca].
 
 CHECO EXAMES (COAGULOGRAMA & USG OBSTÉTRICA):
 - Laboratório Solicitado: Hemograma, Tipagem/Prova Cruzada, Fibrinogênio de Clauss (alvo > 200 mg/dL; < 150 mg/dL prediz CIVD grave!), TP/INR, TTPa, Plaquetas, Creatinina e Teste do Coágulo à beira do leito.
-- USG Obstétrica: [NÃO atrasar cesárea de emergência no DPP / Na Placenta Prévia: placenta recobrindo o orifício].
+- USG Obstétrica: [NÃO atrasar cesárea de emergência no DPP com sofrimento fetal! / Na Placenta Prévia: placenta recobrindo o orifício interno do colo (Centro-Total) ou borda a < 20 mm do OI (Inserção Baixa) + avaliar sinais de Acretismo Placentário ao Doppler].
 
 # EXAME CLÍNICO
 [Estado geral comprometido / hipocorada / álgica / ou estável em observação obstétrica] (ATENÇÃO: PROIBIDO TOQUE VAGINAL ANTES DE EXCLUIR PLACENTA PRÉVIA!).
 - Hemodinâmica Materna: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Índice de Choque (FC/PAS): [ ] | FR: [ ] irpm | SpO2: [ ]% | Diurese em SVD: [ ] mL/h.
-- Tonometria e Dinâmica Uterina: Útero [hipertônico / taquissistolia / consistência lenhosa em "tábua" / tônus uterino normal e indolor].
-- Vitalidade Fetal (BCF / Cardiotocografia): BCF: [ ] bpm — [Padrão tranquilizador Categoria I / Bradicardia fetal grave ou desacelerações tardias / BCF ausente — Óbito Fetal].
-- Exame Especular Cuidadoso: Presença de [sangramento ativo pelo orifício externo / coágulos escuros em fundo de saco / líquido amniótico sanguinolento]. Toque vaginal [NÃO REALIZADO até confirmação placentária / realizado após exclusão de Placenta Prévia: colo].
+- Tonometria e Dinâmica Uterina: Útero [hipertônico / taquissistolia / consistência lenhosa em "tábua" (Útero de Couvelaire — DPP!) / tônus uterino normal e indolor, feto facilmente palpável (Placenta Prévia!)].
+- Vitalidade Fetal (BCF / Cardiotocografia): BCF: [ ] bpm — [Padrão tranquilizador Categoria I / Bradicardia fetal grave ou desacelerações tardias — Sofrimento Fetal Agudo / BCF ausente — Óbito Fetal].
+- Exame Especular Cuidadoso: Presença de [sangramento ativo pelo orifício externo / coágulos escuros em fundo de saco / líquido amniótico sanguinolento (hemoâmnio)]. Toque vaginal [NÃO REALIZADO até confirmação placentária / realizado após exclusão de Placenta Prévia: colo dilatado para [ ] cm].
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. Sangramento da segunda metade da gestação compatível com: [Descolamento Prematuro de Placenta / Placenta Prévia (O44) / Rotura de Vasa Prévia].
+1. Sangramento da segunda metade da gestação compatível com: [Descolamento Prematuro de Placenta — DPP (CID-10: O45) / Placenta Prévia (O44) / Rotura de Vasa Prévia].
 
 # CONDUTA:
 1. Pacote de Ressuscitação Hemorrágica Obstétrica: 2 acessos venosos calibrosos (14G/16G), O2 suplementar, Sondagem Vesical de Demora (meta diurese ≥ 0,5 mL/kg/h), reserva imediata de Concentrado de Hemácias, Plasma Fresco e Crioprecipitado.

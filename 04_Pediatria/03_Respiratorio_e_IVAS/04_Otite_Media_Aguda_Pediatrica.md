@@ -10,32 +10,32 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Alérgico a Penicilinas / Outros].
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico(a) a Penicilinas / [ ]].
 
 # QP:
-Dor de ouvido, febre e irritabilidade há [ ] dias.
+- Dor de ouvido (otalgia), febre e irritabilidade há [ ] dias.
 
 # HMA:
-Quadro iniciado há [ ] dias após pródromo de resfriado comum, evoluindo nas últimas [24 a 48] horas com otalgia aguda em orelha [direita / esquerda / bilateral], despertar noturno com choro intenso, [mão levada repetidamente à orelha] e febre de [ ] °C.
-[Ausente / Otorreia purulenta exteriorizada no conduto auditivo].
-[Ausente / Presente].
-Estratificação de Risco para Pneumococo Resistente:
-[Sim / Não] | Frequenta creche/berçário: [Sim / Não] | Uso de antibiótico nos últimos 30 dias: [Não / Sim].
-Nega edema, hiperemia ou dor retroauricular com deslocamento anterior do pavilhão, paralisia facial periférica, vômitos em jato ou rigidez de nuca.
+- Quadro iniciado há [ ] dias após pródromo de resfriado comum (obstrução nasal e coriza), evoluindo nas últimas [24 a 48] horas com otalgia aguda em orelha [direita / esquerda / bilateral], despertar noturno com choro intenso, [mão levada repetidamente à orelha] e febre de [ ] °C.
+- Presença de Otorreia: [Ausente / Otorreia purulenta exteriorizada no conduto auditivo externo após alívio súbito da dor (perfuração timpânica espontânea)].
+- Presença de Conjuntivite Purulenta Ipsilateral (Síndrome Otite-Conjuntivite): [Ausente / Presente — forte preditor de Haemophilus influenzae não-tipável produtor de beta-lactamase].
+- Estratificação de Risco para Pneumococo Resistente (Define Dose de Amoxicilina 50 vs 90 mg/kg/dia):
+  * Idade < 2 anos: [Sim / Não] | Frequenta creche/berçário: [Sim / Não] | Uso de antibiótico nos últimos 30 dias: [Não / Sim: [ ]].
+- Nega edema, hiperemia ou dor retroauricular com deslocamento anterior do pavilhão ("orelha em abano" aguda), paralisia facial periférica, vômitos em jato ou rigidez de nuca.
 
 # EXAME FÍSICO:
-SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
-Ectoscopia & Inspeção Retroauricular: Bom/Regular estado geral, corado, hidratado, acianótico. Região mastoidea bilateral sem edema, sem eritema, sulco retroauricular preservado e indolor à percussão/palpação (afastada mastoidite aguda).
-Otoscopia Bilateral Comparativa:
-Orelha Acometida ([Direita / Esquerda / Ambas]): Membrana timpânica (MT) apresentando [abaulamento moderado a grave da pars tensa (critério / opacificação difusa / otorreia purulenta aguda no conduto auditivo externo].
-Orelha Contralateral: [Membrana timpânica íntegra / Também abaulada e hiperemiada].
-Rinoscopia, Oroscopia & Ausculta Pulmonar: Mucosa nasal congesta com rinorreia; orofaringe sem placas; murmúrio vesicular universalmente audível sem ruídos adventícios.
+- Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
+- Ectoscopia & Inspeção Retroauricular: Bom/Regular estado geral, corado, hidratado, acianótico. Região mastoidea bilateral sem edema, sem eritema, sulco retroauricular preservado e indolor à percussão/palpação (afastada mastoidite aguda).
+- Otoscopia Bilateral Comparativa:
+  * Orelha Acometida ([Direita / Esquerda / Ambas]): Membrana timpânica (MT) apresentando [abaulamento moderado a grave da pars tensa (critério de maior especificidade para OMA) / opacificação difusa, perda do triângulo luminoso e hiperemia intensa (não restrita ao choro) / otorreia purulenta aguda no conduto auditivo externo não secundária a otite externa].
+  * Orelha Contralateral: [Membrana timpânica íntegra, translúcida, posição neutra e cone luminoso preservado / Também abaulada e hiperemiada (OMA bilateral)].
+- Rinoscopia, Oroscopia & Ausculta Pulmonar: Mucosa nasal congesta com rinorreia; orofaringe sem placas; murmúrio vesicular universalmente audível sem ruídos adventícios.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Otite Média Aguda Supurativa [Unilateral Direita / Unilateral Esquerda / Bilateral] (CID-10: H66.0).
-2. Classificação de Gravidade e Conduta (SBP/AAP): [Indicação de antibioticoterapia imediata (< 6 meses / Elegível para observação vigilante por 48h].
+2. Classificação de Gravidade e Conduta (SBP/AAP): [Indicação de antibioticoterapia imediata (< 6 meses, ou 6–23m bilateral/grave, ou otorreia presente) / Elegível para observação vigilante por 48h com analgesia otimizada].
 
 # CONDUTA:
 
@@ -43,24 +43,23 @@ Rinoscopia, Oroscopia & Ausculta Pulmonar: Mucosa nasal congesta com rinorreia; 
 1. Analgesia Sistêmica Otimizada (Obrigatória em 100% dos casos nas primeiras 48h):
    - Dipirona gotas (500 mg/mL) 0,8 a 1 gota/kg VO 6/6h e/ou Ibuprofeno gotas (100 mg/mL) 1 gota/kg VO 8/8h por 48 a 72 horas (o antibiótico leva 24–48h para reduzir a dor timpânica).
 2. Antibioticoterapia Dirigida pelo Perfil de Risco (Peso Atual: [ ] kg):
-   - [OPÇÃO 1 — Sem fatores de risco para resistência]:
+   - [OPÇÃO 1 — Sem fatores de risco para resistência e sem conjuntivite]:
      Amoxicilina 50 mg/kg/dia VO dividida de 8/8h (suspensão 250 mg/5 mL) ou 12/12h (suspensão 400 mg/5 mL).
-   - [OPÇÃO 2 — Risco de Pneumococo Resistente (< 2 anos]:
+   - [OPÇÃO 2 — Risco de Pneumococo Resistente (< 2 anos, creche ou ATB nos últimos 30 dias)]:
      Amoxicilina em Dose Dobrada: 90 mg/kg/dia VO dividida de 12/12h (preferir suspensão concentrada de 400 mg/5 mL).
-   - [OPÇÃO 3 — Síndrome Otite-Conjuntivite]:
-     Amoxicilina + Clavulanato na dose de 50 a 90 mg/kg/dia da amoxicilina dividida de 12/12h (Atenção farmacológica: na apresentação 7:1 de 400 + 57 mg/5 mL, respeitar o teto de ≤ 10 mg/kg/dia de clavulanato — para atingir 90 mg/kg/dia sem diarreia severa, usar formulação 14:1 de 600 + 42,9 mg/5 mL OU combinar 45 mg/kg/dia de Amox+Clav 400+57/5 mL + 45 mg/kg/dia de Amoxicilina pura 400/5 mL).
+   - [OPÇÃO 3 — Síndrome Otite-Conjuntivite, Amoxicilina nos últimos 30 dias ou Falha em 48–72h]:
+     Amoxicilina + Clavulanato na dose de 50 a 90 mg/kg/dia da amoxicilina dividida de 12/12h *(Atenção farmacológica: na apresentação 7:1 de 400 + 57 mg/5 mL, respeitar o teto de ≤ 10 mg/kg/dia de clavulanato — para atingir 90 mg/kg/dia sem diarreia severa, usar formulação 14:1 de 600 + 42,9 mg/5 mL OU combinar 45 mg/kg/dia de Amox+Clav 400+57/5 mL + 45 mg/kg/dia de Amoxicilina pura 400/5 mL)*.
    - [OPÇÃO 4 — Alergia à Penicilina/Amoxicilina]: Se reação não-IgE: Cefuroxima 30 mg/kg/dia VO de 12/12h (ou Ceftriaxona 50 mg/kg/dia IM/EV por 1–3 dias). Se anafilaxia/IgE-mediada: Claritromicina 15 mg/kg/dia VO de 12/12h ou Azitromicina 10 mg/kg/dia no D1 e 5 mg/kg/dia do D2 ao D5.
-   - Duração do Tratamento: [10 dias / 7 dias / 5 a 7 dias (≥ 6 anos leve-moderada)].
+   - Duração do Tratamento: [10 dias (obrigatório em < 2 anos, otorreia ou doença grave) / 7 dias (2 a 5 anos leve-moderada) / 5 a 7 dias (≥ 6 anos leve-moderada)].
 3. Lavagem nasal frequente com SF 0,9% para desobstruir o óstio faríngeo da tuba auditiva; proscrito uso de gotas otológicas no ouvido se houver suspeita de perfuração timpânica.
-
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO — OTITE MÉDIA AGUDA (OMA)
 Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
 
 USO ORAL E NASAL:
 1. [Amoxicilina Suspensão Oral 400 mg / 5 mL (80 mg/mL) / Amoxicilina 250 mg / 5 mL (50 mg/mL) / Amoxicilina + Clavulanato 400 + 57 mg / 5 mL] --- [ ] frasco(s)
-   Dar [ ] mL por via oral de [12 em 12 horas / 8 em 8 horas], nos horários, durante [ ] dias consecutivos.
-   *(Cálculo conferido pelo peso de [ ] kg na dose de [ ] mg/kg/dia).*
+   Dar [ ] mL por via oral de [12 em 12 horas / 8 em 8 horas], nos horários, durante [10 / 7] dias consecutivos.
+   *(Cálculo conferido pelo peso de [ ] kg na dose de [50 / 90] mg/kg/dia).*
 
 2. Ibuprofeno Solução Oral Gotas (100 mg/mL) ----------------------------------- 1 frasco
    Dar [ ] gotas (1 gota por kg de peso; máx 40 gotas) por via oral de 8 em 8 horas nos primeiros 2 a 3 dias para controle da dor e inflamação do tímpano.
@@ -71,7 +70,7 @@ USO ORAL E NASAL:
 4. Soro Fisiológico 0,9% ------------------------------------------------------- 1 frasco
    Realizar lavagem nasal com seringa de [3 a 5 / 5 a 10] mL em cada narina 4 a 6 vezes ao dia para desentupir o canal que liga o nariz ao ouvido (tuba auditiva).
 
-# ORIENTAÇÕES / SINAIS DE ALARME:
+ORIENTAÇÕES E SINAIS DE ALARME (MASTOIDITE):
 - Não pingar nenhuma gota, óleo morno ou remédio caseiro dentro do ouvido da criança. Se estiver saindo secreção (otorreia), limpe apenas a parte externa da orelha e proteja o ouvido da entrada de água do banho com algodão embebido em óleo mineral/vaselina na concha externa.
 - O antibiótico demora de 24 a 48 horas para fazer a febre e a dor desaparecerem; por isso, dê o analgésico prescrito regularmente nos primeiros 2 dias.
 - RETORNAR IMEDIATAMENTE AO PRONTO-SOCORRO SE:

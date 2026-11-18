@@ -10,47 +10,49 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] anos e [ ] meses, Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Avó / Responsável].
-Comorbidades: [+ *Hígido / Asma / Sibilância recorrente / APLV / Prematuridade / Outros].
-Alergias: [*Nega alergias conhecidas / Alérgico (especificar)].
-Estatura: [ ] cm | PC: [ ] cm | Vacinação: [*Em dia / Atraso].
+ID: [Nome], [ ] anos e [ ] meses[? DN :: (DN: [DD/MM/AAAA])], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Avó / Responsável: [ ]]].
+Comorbidades: [+ *Hígido(a) / Asma / Sibilância recorrente / APLV / Prematuridade / [ ]].
+Alergias: [*Nega alergias conhecidas / Alérgico(a) a: [ ]].
+[? Antropometria & Vacinas :: Estatura: [ ] cm | PC (< 2 anos): [ ] cm | Vacinação (PNI): [*Em dia / Atraso: [ ]].]
 
 # QP:
-[ ] há [ ] [hora / dia].
+- [ ] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-Responsável informa que a criança iniciou quadro de [ ], evoluindo com [ ].
-Em casa usou [*nenhuma medicação / dipirona gotas / paracetamol gotas / ibuprofeno gotas].
-No momento [*reanima, brinca e interage / permanece prostrada mesmo sem febre], com aceitação alimentar [*plena de seio materno e líquidos / apenas líquidos / recusa importante], diurese [*preservada / reduzida / ausente há > 6–8h] e hábito intestinal [*normal / diarreia / constipação].
-Nega crises convulsivas, gemência contínua, cianose, vômitos incoercíveis/biliosos, petéquias, abaulamento de fontanela ou rigidez de nuca.
-Parto [*Normal / Cesárea] com [ ] semanas.
+- Responsável informa que a criança iniciou quadro de [ ], evoluindo com [ ].
+- Medicações prévias em casa: [*Nenhuma / Dipirona [ ] gotas há [ ]h / Paracetamol [ ] gotas há [ ]h / Ibuprofeno [ ] gotas há [ ]h].
+- Comportamento quando afebril: [*Reanima, brinca e interage / Permanece prostrada mesmo sem febre].
+- Aceitação de líquidos/dieta: [*Mantendo aceitação plena de seio materno e líquidos / Aceitando líquidos com redução de sólidos / Recusa importante].
+- Diurese: [*Preservada (> 4–6 fraldas/dia, clara) / Reduzida / Sem diurese há > 6–8h].
+- Hábito intestinal: [*Normal / Diarreia ([ ] ep./24h) / Constipação há [ ] dias].
+- Nega crises convulsivas, gemência contínua, cianose, vômitos incoercíveis/biliosos, petéquias, abaulamento de fontanela ou rigidez de nuca.
+[? Antecedentes Perinatais :: Parto [*Normal / Cesárea] com [ ] semanas, PN: [ ] g, [*sem intercorrências neonatais / [ ]].]
 
 # EXAME FÍSICO:
-TEP (Triângulo Pediátrico): Aparência [*Normal / Irritabilidade inconsolável / Hipoativo/prostrado]; Trabalho Respiratório [*Normal, sem tiragens / Taquipneia e tiragem / Grave]; Circulação [*Corada, extremidades quentes / Palidez ou livedo]. Classificação: [*Estável / Desconforto Respiratório / Falência Respiratória / Choque].
-SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | TEC: [*< 2s / s].
-Geral & Pele: [*BEG, ativo e reativo, corado, hidratado, anictérico / REG / Desidratado leve-moderado / Outros]. Fontanela: [*Plana e normotensa / Deprimida / Abaulada].
-Respiratório: [*Sem tiragens / Sibilos expiratórios / Estertores crepitantes].
-Cardiovascular: [*RCR em 2T, BNF, sem sopros / Outros].
-Abdome & Genitália: [*Plano/globoso fisiológico / Outros].
-Oroscopia: [*Mucosa úmida / Hiperemiadas sem placas / Exsudato purulento / Microvesículas].
-Otoscopia Bilateral: [*Condutos livres / MT hiperemiada e abaulada à direita / esquerda].
-Neurológico: [*Alerta, pupilas isofotorreagentes, tônus preservado / Outros].
+- TEP (Triângulo Pediátrico): Aparência [*Normal (ativo, reativo, consolável) / Irritabilidade inconsolável / Hipoativo/prostrado]; Trabalho Respiratório [*Normal, sem tiragens / Taquipneia e tiragem / Grave (gemência/estridor)]; Circulação [*Corada, extremidades quentes / Palidez ou livedo]. Classificação: [*Estável / Desconforto Respiratório / Falência Respiratória / Choque].
+- Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | TEC: [*< 2s / [ ]s].
+- Geral & Pele: [*BEG, ativo e reativo, corado, hidratado, anictérico, acianótico, sem petéquias / REG / Desidratado leve-moderado / [ ]][? Fontanela (< 18m) :: | Fontanela: [*Plana e normotensa / Deprimida / Abaulada]].
+- Respiratório: [*Sem tiragens, MV presente e simétrico, sem ruídos adventícios / Sibilos expiratórios / Estertores crepitantes em [ ]].
+- Cardiovascular: [*RCR em 2T, BNF, sem sopros; pulsos periféricos e femorais cheios e simétricos / [ ]].
+- Abdome & Genitália: [*Plano/globoso fisiológico, flácido, indolor, sem visceromegalias; genitália sem alterações / [ ]].
+- Oroscopia: [*Mucosa úmida, faringe e amígdalas normocoradas sem exsudatos / Hiperemiadas sem placas / Exsudato purulento / Microvesículas].
+- Otoscopia Bilateral: [*Condutos livres, MTs íntegras, translúcidas e com triângulo luminoso preservado / MT hiperemiada e abaulada à [direita / esquerda]].
+- Neurológico: [*Alerta, pupilas isofotorreagentes, tônus preservado, sem sinais meníngeos / [ ]].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. [ ] (CID-10: [ ]).
-- Hidratação e Nutrição: [*Eutrófico e hidratado / Desidratação leve a moderada].
+- Hidratação e Nutrição: [*Eutrófico e hidratado (Plano A) / Desidratação leve a moderada (Plano B)].
 
 # CONDUTA:
 
 >> CONDUTA IMEDIATA NA UNIDADE (SE NECESSÁRIO):
-1. [Sem necessidade de medicação na sala de observação / Administrado antitérmico oral na unidade / Iniciada Terapia de Reidratação Oral / Realizado resgate inalatório].
+1. [Sem necessidade de medicação na sala de observação — alta com receita orientada / Administrado antitérmico oral na unidade para reavaliação após defervescência / Iniciada Terapia de Reidratação Oral (Plano B) / Realizado resgate inalatório].
 2. Reavaliação clínica após defervescência confirmando criança ativa, eupneica para a idade e aceitando líquidos por via oral.
 
 >> CONDUTA DOMICILIAR & ORIENTAÇÕES AOS PAIS:
 1. Prescrição domiciliar calculada pelo peso atual aferido ([ ] kg).
 2. Lavagem nasal frequente com Soro Fisiológico 0,9% morno e oferta fracionada de líquidos/leite materno.
-3. Explicados e entregues por escrito os sinais de alarme para retorno imediato ao Pronto Atendimento Pediátrico (confirmado entendimento pelo método Teach-Back).
-
+3. Explicados e entregues por escrito os sinais de alarme para retorno imediato ao Pronto Atendimento Pediátrico (confirmado entendimento pelo método *Teach-Back*).
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO (DOSES CALCULADAS PELO PESO)
 Paciente: [Nome] | Peso Aferido: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
@@ -59,7 +61,7 @@ USO ORAL E NASAL:
 1. Dipirona Solução Oral Gotas (500 mg/mL — 1 gota ≈ 25 mg) -------------------- 1 frasco
    Dar [ ] gotas (Dose: 15 a 25 mg/kg/dose = 0,6 a 1 gota/kg; máx 40 gotas/dose; contraindicada em < 3 meses ou < 5 kg) por via oral até de 6 em 6 horas se houver febre (temperatura axilar ≥ 37,8 °C) ou dor.
 
-2. [OU Alternativa] Paracetamol Solução Oral Gotas (200 mg/mL — 1 gota ≈ 13 a 15 mg) --- 1 frasco
+2. [OU Alternativa — 1ª escolha se < 3 meses ou < 5 kg] Paracetamol Solução Oral Gotas (200 mg/mL — 1 gota ≈ 13 a 15 mg) --- 1 frasco
    Dar [ ] gotas (Dose: 10 a 15 mg/kg/dose = 1 gota/kg; máx 35 a 50 gotas/dose) por via oral até de 6 em 6 horas se houver febre ou dor (Não alternar dois antitérmicos de rotina).
 
 3. Soro Fisiológico 0,9% (0,9% sem conservantes) ------------------------------- 1 frasco (250 mL ou 500 mL)

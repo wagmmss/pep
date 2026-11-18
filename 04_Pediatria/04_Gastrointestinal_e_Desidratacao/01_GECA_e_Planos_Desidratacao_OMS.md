@@ -10,32 +10,32 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso de Entrada: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
-Peso Prévio Conhecido: [Não informado / kg -> Perda de %].
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Outros].
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso de Entrada: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+Peso Prévio Conhecido: [Não informado / [ ] kg -> Perda de [ ]%].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
 # QP:
-Diarreia líquida e vômitos há [ ] dias.
+- Diarreia líquida e vômitos há [ ] dias.
 
 # HMA:
-Quadro iniciado há [ ] dias com dejeções líquidas de aspecto [aquoso amarelado/esverdeado explosivo / mucossanguinolento com tenesmo], associado a [ ] episódios de vômitos alimentares nas últimas 24h e febre de [ ] °C.
-[Aceitando líquidos sem sede ávida / Sedenta, bebendo líquidos avidamente / Incapaz de beber ou vomitando tudo o que ingere]. Última diurese há [ ] horas.
-Nega vômitos biliosos, fezes em "geleia de morango/framboesa" com choro paroxístico e flexão das pernas, distensão abdominal tensa ou defesa peritoneal localizada.
+- Quadro iniciado há [ ] dias com dejeções líquidas ([ ] episódios nas últimas 24h) de aspecto [aquoso amarelado/esverdeado explosivo, sem sangue ou pus (padrão viral secretor/osmótico) / mucossanguinolento com tenesmo (padrão disentérico invasivo — Shigella/Salmonella/Campylobacter)], associado a [ ] episódios de vômitos alimentares nas últimas 24h e febre de [ ] °C.
+- Aceitação de Líquidos & Diurese: [Aceitando líquidos sem sede ávida / Sedenta, bebendo líquidos avidamente / Incapaz de beber ou vomitando tudo o que ingere]. Última diurese há [ ] horas ([Fraldas molhadas habituais / Oligúria com urina escura / Anúria > 6–8h]).
+- Nega vômitos biliosos (verde-escuros), fezes em "geleia de morango/framboesa" com choro paroxístico e flexão das pernas, distensão abdominal tensa ou defesa peritoneal localizada.
 
 # EXAME FÍSICO:
-SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Tempo de Enchimento Capilar (TEC): [< 2 segundos / 2 a 3 segundos / > 3 segundos] | Pulso radial: [Cheio e amplo / Rápido e fino / Muito fraco ou ausente].
-Avaliação Sistemática do Estado de Hidratação (4 Parâmetros OMS):
-1. Estado Geral / Nível de Consciência: [*Alerta, ativo e bem / Irritado, intranquilo e choroso / Letárgico, hipotônico ou inconsciente].
-2. Olhos e Lágrimas: [Olhos normais com lágrimas presentes / Olhos fundos, lágrimas diminuídas / Olhos muito fundos e secos, sem lágrimas].
-3. Sede / Prova do Copo d'Água: [Bebe normalmente, sem sede excessiva / Sedento, bebe rápida e avidamente, chora quando retira / Bebe muito mal ou não é capaz de beber].
-4. Sinal da Prega Abdominal (Pinçamento longitudinal da pele lateral do abdome): [Desaparece imediatamente / Desaparece lentamente em < 2 segundos / Desaparece muito lentamente em > 2 segundos].
-Mucosa Oral & Fontanela: Mucosa [úmida / seca / muito seca] | Fontanela anterior (< 18m): [Plana / Deprimida].
-Exame Abdominal: Abdome flácido, indolor à palpação profunda, ruídos hidroaéreos hiperativos, sem massas palpáveis ("chouriço" de invaginação ausente) e sem irritação peritoneal (Blumberg negativo).
+- Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Tempo de Enchimento Capilar (TEC): [< 2 segundos / 2 a 3 segundos / > 3 segundos] | Pulso radial: [Cheio e amplo / Rápido e fino / Muito fraco ou ausente].
+- Avaliação Sistemática do Estado de Hidratação (4 Parâmetros OMS):
+  1. Estado Geral / Nível de Consciência: [*Alerta, ativo e bem (Plano A) / Irritado, intranquilo e choroso (Plano B) / Letárgico, hipotônico ou inconsciente (Plano C)].
+  2. Olhos e Lágrimas: [Olhos normais com lágrimas presentes (Plano A) / Olhos fundos, lágrimas diminuídas (Plano B) / Olhos muito fundos e secos, sem lágrimas (Plano C)].
+  3. Sede / Prova do Copo d'Água: [Bebe normalmente, sem sede excessiva (Plano A) / Sedento, bebe rápida e avidamente, chora quando retira o copo (Plano B) / Bebe muito mal ou não é capaz de beber (Plano C)].
+  4. Sinal da Prega Abdominal (Pinçamento longitudinal da pele lateral do abdome): [Desaparece imediatamente (Plano A) / Desaparece lentamente em < 2 segundos (Plano B) / Desaparece muito lentamente em > 2 segundos (Plano C)].
+  * Mucosa Oral & Fontanela: Mucosa [úmida / seca / muito seca ("língua de papagaio")] | Fontanela anterior (< 18m): [Plana / Deprimida].
+- Exame Abdominal: Abdome flácido, indolor à palpação profunda, ruídos hidroaéreos hiperativos, sem massas palpáveis ("chouriço" de invaginação ausente) e sem irritação peritoneal (Blumberg negativo).
 
 # HIPÓTESES DIAGNÓSTICAS & CLASSIFICAÇÃO OMS:
 1. Gastroenterite Aguda — GECA [Viral Aquosa / Disenteria Bacteriana Aguda] (CID-10: A09).
-2. Classificação do Estado de Hidratação: [SEM DESIDRATAÇÃO / COM DESIDRATAÇÃO — PLANO B / DESIDRATAÇÃO GRAVE OU CHOQUE — PLANO C].
+2. Classificação do Estado de Hidratação: [SEM DESIDRATAÇÃO — PLANO A / COM DESIDRATAÇÃO (MODERADA) — PLANO B / DESIDRATAÇÃO GRAVE OU CHOQUE — PLANO C].
 
 # CONDUTA:
 
@@ -49,8 +49,8 @@ Exame Abdominal: Abdome flácido, indolor à palpação profunda, ruídos hidroa
 1. Administrar SRO sob supervisão na unidade: volume estimado de 50 a 100 mL/kg ao longo de 4 a 6 horas (Peso: [ ] kg -> Volume alvo de [ ] a [ ] mL ofertado em pequenas colheres/seringa a cada 2–3 minutos). Manter aleitamento materno durante a TRO.
 2. Se vômitos persistentes dificultando a TRO: Administrar dose única de Ondansetrona 0,15 mg/kg VO (2 mg se 8–15 kg; 4 mg se 15–30 kg; 8 mg se > 30 kg), aguardar 20 minutos e reiniciar SRO lentamente.
 3. Reavaliar e repesar a criança a cada 1 a 2 horas:
-   - [Reavaliação após h: Criança calma].
-   - [Se falha da TRO por vômitos]: Passar SNG para gastróclise (20 a 30 mL/kg/h de SRO) ou converter para PLANO C venoso.
+   - [Reavaliação após [ ]h: Criança calma, olhos normais, mucosa úmida, diurese presente e ganho ponderal para [ ] kg -> Reclassificada como PLANO A; alta com SRO e Zinco].
+   - [Se falha da TRO por vômitos incoercíveis/distensão]: Passar SNG para gastróclise (20 a 30 mL/kg/h de SRO) ou converter para PLANO C venoso.
 
 >> [PLANO C — DESIDRATAÇÃO GRAVE / CHOQUE]: EXPANSÃO VENOSA IMEDIATA EM SALA VERMELHA:
 1. Garantir 1 ou 2 acessos venosos periféricos calibrosos (ou punção intraóssea tibial se falha em 90 segundos). Coletar glicemia capilar imediata (tratar se < 60 mg/dL).
@@ -58,9 +58,8 @@ Exame Abdominal: Abdome flácido, indolor à palpação profunda, ruídos hidroa
    - Diretriz Ministério da Saúde / OMS (100 mL/kg divididos em 2 etapas):
      * Menores de 1 ano (Total em 6 horas): 30 mL/kg em 1 hora (ou 30 min se choque) + 70 mL/kg em 5 horas.
      * Maiores de 1 ano (Total em 3 horas): 30 mL/kg em 30 minutos + 70 mL/kg em 2 horas e 30 minutos.
-   - (No Choque Hipovolêmico PALS: Bólus de 20 mL/kg de SF 0,9% ou RL em 5 a 20 minutos, repetindo até restauração da perfusão e nível de consciência).
+   - *(No Choque Hipovolêmico PALS: Bólus de 20 mL/kg de SF 0,9% ou RL em 5 a 20 minutos, repetindo até restauração da perfusão e nível de consciência).*
 3. Assim que a criança estiver consciente e capaz de deglutir, iniciar SRO concomitante (5 mL/kg/h) e reavaliar de hora em hora até transição para Plano B e Plano A.
-
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO — GASTROENTERITE AGUDA (PLANO A — OMS / MINISTÉRIO DA SAÚDE)
 Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
@@ -68,7 +67,7 @@ Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
 USO ORAL:
 1. Sais para Reidratação Oral (SRO — Envelope Padrão OMS/MS) ------------------- [4 a 6] envelopes
    Dissolver 1 envelope inteiro em exatamente 1 litro de água filtrada ou fervida fria (não adicionar açúcar nem sal; desprezar a sobra após 24 horas).
-   Oferecer [50 a 100 mL / 100 a 200 mL] em pequenos goles ou colheradas APÓS CADA evacuação líquida ou episódio de vômito.
+   Oferecer [50 a 100 mL (meio copo — menores de 1 ano) / 100 a 200 mL (1 copo — maiores de 1 ano)] em pequenos goles ou colheradas APÓS CADA evacuação líquida ou episódio de vômito.
 
 2. Sulfato de Zinco Solução Oral (4 mg/mL) ou Gotas ---------------------------- 1 frasco
    Dar [10 mg (= 2,5 mL se < 6 meses) / 20 mg (= 5 mL se ≥ 6 meses)] por via oral, 1 vez ao dia, durante 10 a 14 dias consecutivos (mesmo após a diarreia parar, pois o Zinco regenera a parede do intestino e evita nova diarreia nos próximos 3 meses).
@@ -83,7 +82,7 @@ REGRAS DE OURO DA ALIMENTAÇÃO E MEDICAMENTOS PROIBIDOS:
 - NUNCA deixar a criança de jejum e NUNCA diluir o leite/fórmula com mais água: mantenha o leite materno em livre demanda e a alimentação habitual saudável (arroz, caldo de feijão, frango/carne magra cozida, batata, banana, maçã, cenoura). Evitar apenas refrigerantes, sucos industrializados muito doces e frituras (o excesso de açúcar puxa mais água para o intestino e piora a diarreia).
 - ESTRITAMENTE PROIBIDO dar remédios para "travar o intestino" (Loperamida / Imosec, Elixir Paregórico) ou refrigerante sem gás.
 
-# ORIENTAÇÕES / SINAIS DE ALARME:
+SINAIS DE ALARME PARA RETORNO IMEDIATO AO PRONTO-SOCORRO:
 1. Criança muito irritada bebendo água com sede desesperada, ou criança muito molinha/sonolenta que não quer beber nada.
 2. Olhos fundos, choro sem lágrimas, boca seca ou ausência de xixi na fralda por mais de 6 horas.
 3. Vômitos repetidos que não param mesmo após o remédio de enjoo, ou vômito verde-escuro (bilioso).

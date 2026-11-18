@@ -1,9 +1,8 @@
 // ============================================================================
 // STORE REATIVO CENTRAL (localStorage Retrocompatível + sessionStorage Clínica
-// + Backup v2 + Modo Consulta/Treino + Validação Anti-PII LGPD)
+// + Backup v2 + Validação Anti-PII LGPD)
 // ============================================================================
 
-export type ClinicalMode = 'consulta' | 'treino';
 export type ClinicalTheme = 'dark' | 'light';
 
 export const STORAGE_KEYS = {
@@ -12,7 +11,6 @@ export const STORAGE_KEYS = {
   PRESCRIPTION_CART: 'mq_prescription_cart_v1',
   WS_COL_WIDTHS: 'ws_col_widths_v1',
   CLINICAL_THEME: 'mq_clinical_theme_v1',
-  CLINICAL_MODE: 'mq_clinical_mode_v1',
   SESSION_PATIENT_DRAFT: 'mq_patient_session_v1',
 } as const;
 
@@ -62,7 +60,6 @@ export interface PiiWarning {
 }
 
 export interface CockpitStoreState {
-  clinicalMode: ClinicalMode;
   theme: ClinicalTheme;
   colWidths: WsColumnWidths;
   prescriptionCart: PrescriptionCartItem[];
@@ -79,7 +76,6 @@ export interface BackupV2Payload {
   habChecklists: Record<string, Record<string, boolean>>;
   wsColWidths: WsColumnWidths;
   clinicalTheme: ClinicalTheme;
-  clinicalMode: ClinicalMode;
 }
 
 type StoreListener = (state: CockpitStoreState) => void;
@@ -259,9 +255,6 @@ class ClinicalCockpitStore {
     const rawTheme = ls.getItem(STORAGE_KEYS.CLINICAL_THEME);
     const theme: ClinicalTheme = rawTheme === 'light' ? 'light' : 'dark';
 
-    const rawMode = ls.getItem(STORAGE_KEYS.CLINICAL_MODE);
-    const clinicalMode: ClinicalMode = rawMode === 'treino' ? 'treino' : 'consulta';
-
     const colWidths = safeJsonParse<WsColumnWidths>(ls.getItem(STORAGE_KEYS.WS_COL_WIDTHS), {});
     const prescriptionCart = safeJsonParse<PrescriptionCartItem[]>(ls.getItem(STORAGE_KEYS.PRESCRIPTION_CART), []);
     const central6AnoRaw = safeJsonParse<Record<string, unknown> | null>(ls.getItem(STORAGE_KEYS.CENTRAL_6ANO), null);
@@ -278,7 +271,6 @@ class ClinicalCockpitStore {
       : createEmptyPatientSession();
 
     return {
-      clinicalMode,
       theme,
       colWidths,
       prescriptionCart: Array.isArray(prescriptionCart) ? prescriptionCart : [],
@@ -313,12 +305,6 @@ class ClinicalCockpitStore {
 
   private persistSession(): void {
     getSessionStore().setItem(STORAGE_KEYS.SESSION_PATIENT_DRAFT, JSON.stringify(this.state.patientSession));
-  }
-
-  public setClinicalMode(mode: ClinicalMode): void {
-    this.state = { ...this.state, clinicalMode: mode };
-    getLocalStore().setItem(STORAGE_KEYS.CLINICAL_MODE, mode);
-    this.emit();
   }
 
   public setTheme(theme: ClinicalTheme): void {
@@ -444,7 +430,6 @@ class ClinicalCockpitStore {
       habChecklists: mergedHab,
       wsColWidths: this.state.colWidths,
       clinicalTheme: this.state.theme,
-      clinicalMode: this.state.clinicalMode,
     };
   }
 
@@ -471,9 +456,6 @@ class ClinicalCockpitStore {
     }
     if (payload.clinicalTheme === 'light' || payload.clinicalTheme === 'dark') {
       ls.setItem(STORAGE_KEYS.CLINICAL_THEME, payload.clinicalTheme);
-    }
-    if (payload.clinicalMode === 'consulta' || payload.clinicalMode === 'treino') {
-      ls.setItem(STORAGE_KEYS.CLINICAL_MODE, payload.clinicalMode);
     }
 
     this.reload();

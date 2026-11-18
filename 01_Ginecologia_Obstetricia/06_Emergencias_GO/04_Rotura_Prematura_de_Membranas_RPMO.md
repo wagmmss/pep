@@ -10,44 +10,44 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [+ *Hígida / Outros].
-Alergias: [*Nega / Outros].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º tri) | Tempo de Bolsa Rota: [ ] horas (início às [HH:MM] de [DD/MM]).
 
 # QP:
-[Queixa principal] há [ ] [hora / dia].
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-Perda súbita e contínua de líquido claro em grande volume pela vagina há [ ] horas, escorrendo pelas pernas, com odor característico de água sanitária. Movimentação fetal [presente e ativa / reduzida].
-[Nega febre, calafrios, dor uterina contínua ou odor / Apresenta febre e dor uterina] | Nega sangramento vaginal vivo ou escuro. Contrações: [Nega contrações rítmicas / Refere cólicas regulares].
+- Queixa Principal & HMA: Perda súbita e contínua de líquido claro em grande volume pela vagina há [ ] horas, escorrendo pelas pernas, com odor característico de água sanitária. Movimentação fetal [presente e ativa / reduzida].
+- Triagem Clínica de Corioamnionite e Complicações: [Nega febre, calafrios, dor uterina contínua ou odor vaginal fétido (sem sinais clínicos de corioamnionite) / Apresenta febre e dor uterina (suspeita de corioamnionite)] | Nega sangramento vaginal vivo ou escuro (afastados PP e DPP). Contrações: [Nega contrações rítmicas / Refere cólicas regulares].
 
 # EXAME FÍSICO:
-SSVV: PA: [ ] mmHg | FC: [ ] bpm (< 100 bpm) | FR: [ ] irpm | Tax: [ ] °C (< 37,8 °C — afebril).
-Abdome Obstétrico: AU: [ ] cm | Tônus uterino fisiológico, útero indolor à palpação fora de contração | DU: [*Ausente / contrações em 10 min] | BCF: [ ] bpm (basal 110–160 bpm, sem taquicardia fetal).
-Exame Especular Estéril (MANDATÓRIO — Sem lubrificante):
-Visualização direta de líquido amniótico [claro com grumos / meconial fluido / purulento fétido] exteriorizando-se pelo orifício cervical externo e acumulando em fundo de saco posterior (Manobra de Tarnier / Valsalva positiva).
-Colo visualmente [fechado e posterior / entreaberto para cm], sem prolapso de cordão umbilical.
-Testes Acessórios (se dúvida): [pH vaginal alcalino >= 7,0 / Cristalização em folha de samambaia na lâmina positiva].
-Coletado Swab Vaginal e Retal para Streptococcus agalactiae (EGB).
-Toque Vaginal: [NÃO REALIZADO / Realizado apenas por trabalho de parto ativo franco].
-Exames Complementares:
-USG Obstétrica: Apresentação [cefálica / pélvica], PFE: [ ] g, MBV (Maior Bolsão Vertical): [ ] cm / ILA: [ ] cm ([Oligoidrâmnio / Normodrâmnio]).
-CTG Basal: [Categoria I / Categoria II / Categoria III].
-Laboratório: Leucócitos: [ ]/mm³ (sem desvio), PCR: [ ] mg/L, EAS/Urocultura normais.
+- Sinais Vitais Maternos: PA: [110x70] mmHg | FC: [82] bpm (< 100 bpm) | FR: [16] irpm | Tax: [36,5] °C (< 37,8 °C — afebril).
+- Abdome Obstétrico: AU: [ ] cm | Tônus uterino fisiológico, útero indolor à palpação fora de contração | DU: [*Ausente / [ ] contrações em 10 min] | BCF: [140] bpm (basal 110–160 bpm, sem taquicardia fetal).
+- Exame Especular Estéril (MANDATÓRIO — Sem lubrificante):
+  * Visualização direta de líquido amniótico [claro com grumos / meconial fluido / purulento fétido] exteriorizando-se pelo orifício cervical externo e acumulando em fundo de saco posterior (Manobra de Tarnier / Valsalva positiva).
+  * Colo visualmente [fechado e posterior / entreaberto para [ ] cm], sem prolapso de cordão umbilical.
+  * Testes Acessórios (se dúvida): [pH vaginal alcalino >= 7,0 (Nitrazina azul) / Cristalização em folha de samambaia na lâmina positiva].
+  * Coletado Swab Vaginal e Retal para Streptococcus agalactiae (EGB).
+- Toque Vaginal: [NÃO REALIZADO (proscrito na RPMO fora de trabalho de parto ativo para proteger o período de latência e prevenir corioamnionite!) / Realizado apenas por trabalho de parto ativo franco: colo [ ] cm, apagado [ ]%, De Lee [ ]].
+- Exames Complementares:
+  * USG Obstétrica: Apresentação [cefálica / pélvica], PFE: [ ] g, MBV (Maior Bolsão Vertical): [ ] cm / ILA: [ ] cm ([Oligoidrâmnio / Normodrâmnio]).
+  * CTG Basal: [Categoria I — feto reativo com variabilidade moderada 6–25 bpm / Categoria II / Categoria III].
+  * Laboratório: Leucócitos: [ ]/mm³ (sem desvio), PCR: [ ] mg/L, EAS/Urocultura normais.
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. Rotura Prematura de Membranas Ovulares [a termo >= 37s (CID-10: O42.0) / pré-termo < 37s (O42.9)], tempo de latência de [ ]h, [sem critérios de Corioamnionite / complicada por Corioamnionite Clínica (O41.1)].
+1. Rotura Prematura de Membranas Ovulares [a termo >= 37s (CID-10: O42.0) / pré-termo < 37s (O42.9)], tempo de latência de [ ]h, [sem critérios de Corioamnionite (Gibbs negativo) / complicada por Corioamnionite Clínica (O41.1)].
 
 # CONDUTA:
->> [MODALIDADE A — CONDUTA ATIVA / INTERRUPÇÃO DA GESTAÇÃO (SE IG >= 34–37 SEMANAS / SFA EM QUALQUER IG)]:
-1. Internação em Centro Obstétrico para resolução da gestação ([Indução do trabalho de parto com Ocitocina se colo / Cesariana se apresentação anômala]).
+>> [MODALIDADE A — CONDUTA ATIVA / INTERRUPÇÃO DA GESTAÇÃO (SE IG >= 34–37 SEMANAS OU CORIOAMNIONITE / SFA EM QUALQUER IG)]:
+1. Internação em Centro Obstétrico para resolução da gestação ([Indução do trabalho de parto com Ocitocina se colo favorável (Bishop >= 6) ou Misoprostol 25 mcg vaginal se colo desfavorável / Cesariana se apresentação anômala, iteratividade ou SFA]).
 2. Profilaxia Intraparto para EGB (Se IG < 37s, bolsa rota >= 18h, Tax >= 38°C ou Swab EGB positivo):
    - Penicilina G Cristalina 5.000.000 UI EV (ataque) + 2.500.000 UI EV de 4/4 horas até o parto (ou Ampicilina 2 g EV ataque + 1 g EV de 4/4h).
-3. [SE CORIOAMNIONITE CONFIRMADA]:
-   - Ampicilina 2 g EV de 6/6h + Gentamicina 5 mg/kg EV 1x/dia (24/24h) [associar Clindamicina 900 mg EV de 8/8h].
+3. [SE CORIOAMNIONITE CONFIRMADA — Resolver parto (via obstétrica) + Antibiótico Terapêutico Imediato]:
+   - Ampicilina 2 g EV de 6/6h + Gentamicina 5 mg/kg EV 1x/dia (24/24h) [associar Clindamicina 900 mg EV de 8/8h ou Metronidazol 500 mg EV de 8/8h se for submetida a Cesariana, mantendo até 24–48h afebril pós-parto].
 
->> [MODALIDADE B]:
+>> [MODALIDADE B — CONDUTA CONSERVADORA HOSPITALAR (SE IG ENTRE 24s0d E 33s6d SEM CORIOAMNIONITE E SEM SFA)]:
 1. Internação em Alto Risco Obstétrico, repouso relativo, hidratação oral vigorosa, absorvente estéril e PROIBIÇÃO ESTRITA DE TOQUES VAGINAIS.
 2. Curva Clínica e Laboratorial de Infecção: Sinais vitais maternos (PA, FC, Tax) e BCF a cada 4–6 horas; CTG diária; Hemograma + PCR a cada 48–72 horas.
 3. Corticoterapia para Maturação Pulmonar Fetal:

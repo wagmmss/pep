@@ -10,29 +10,29 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: Masculino, Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / Outros].
-
+ID: [Nome], [Idade] anos, Sexo: Masculino[? Peso :: , Peso: [ ] kg].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 # QP:
-Saída de pus pelo canal da urina e ardência para urinar há [ ] dias.
+- Saída de pus pelo canal da urina e ardência para urinar há [ ] dias.
 
 # HMA:
-Paciente relata aparecimento há cerca de [ ] dias de secreção uretral anormal espontânea, com aspecto [purulento abundante amarelo-esverdeado / mucoide esbranquiçado e escasso], associada a disúria intensa, prurido no trajeto da uretra peniana e eritema no meato externo.
-Histórico de relação sexual desprotegida há cerca de [ ] dias [relação vaginal / anal / oral receptiva ou insertiva].
-[Estável / Eventual].
-Nega dor intensa, inchaço ou vermelhidão na bolsa escrotal/testículo.
-Nega febre, calafrios, dor no períneo ou dificuldade para esvaziar a bexiga.
-Nega feridas, úlceras dolorosas ou indolores na glande, prepúcio ou corpo do pênis.
+- HMA: Paciente relata aparecimento há cerca de [ ] dias de secreção uretral anormal espontânea, com aspecto [purulento abundante amarelo-esverdeado (típico de Gonorreia) / mucoide esbranquiçado e escasso (típico de Clamídia)], associada a disúria intensa ("sensação de queimar/cortar ao urinar"), prurido no trajeto da uretra peniana e eritema no meato externo.
+- HISTÓRIA SEXUAL:
+  * Histórico de relação sexual desprotegida (sem uso consistente de preservativo) há cerca de [ ] dias [relação vaginal / anal / oral receptiva ou insertiva].
+  * Parcerias sexuais: [Estável / Eventual].
+- Nega dor intensa, inchaço ou vermelhidão na bolsa escrotal/testículo (afastada Orquiepididimite aguda).
+- Nega febre, calafrios, dor no períneo ("dor entre o saco e o ânus") ou dificuldade para esvaziar a bexiga (afastada Prostatite Aguda).
+- Nega feridas, úlceras dolorosas ou indolores na glande, prepúcio ou corpo do pênis (afastados Cancro Duro e Herpes genital).
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril (Tax [ ] °C).
-Geral: BEG, corado, lúcido e orientado, sem lesões cutâneas exantemáticas em palmas ou plantas (sem estigmas de Sífilis secundária).
-Exame da Genitália Externa:
-Pênis: Prepúcio retrátil sem fimose; glande íntegra, sem úlceras, cancros, erosões ou verrugas/condilomas. Meato uretral externo com hiperemia e edema de bordos.
-Manobra de Ordenha Uretral: Realizada compressão e deslizamento suave da base do pênis em direção à glande: constatada saída imediata de exsudato purulento abundante pelo meato uretral externo.
-Bolsa Escrotal & Testículos: Testículos tópicos, simétricos, consistência habitual, indolores à palpação; epidídimos bilaterais sem espessamentos e totalmente indolores (Sinal de Prehn negativo / ausência de orquiepididimite).
-Região Inguinal: Linfonodos inguinais bilaterais discretamente aumentados (1,0 cm), móveis e fibroelásticos, pouco dolorosos, sem fistulização ou supuração (afastado Linfogranuloma venéreo).
+- Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril (Tax [ ] °C).
+- Ectoscopia: Bom estado geral, corado, lúcido e orientado, sem lesões cutâneas exantemáticas em palmas ou plantas (sem estigmas de Sífilis secundária).
+- Exame da Genitália Externa:
+  * Pênis: Prepúcio retrátil sem fimose; glande íntegra, sem úlceras, cancros, erosões ou verrugas/condilomas. Meato uretral externo com hiperemia e edema de bordos.
+  * Manobra de Ordenha Uretral: Realizada compressão e deslizamento suave da base do pênis em direção à glande: constatada saída imediata de exsudato purulento abundante pelo meato uretral externo.
+  * Bolsa Escrotal & Testículos: Testículos tópicos, simétricos, consistência habitual, indolores à palpação; epidídimos bilaterais sem espessamentos e totalmente indolores (Sinal de Prehn negativo / ausência de orquiepididimite).
+  * Região Inguinal: Linfonodos inguinais bilaterais discretamente aumentados (1,0 cm), móveis e fibroelásticos, pouco dolorosos, sem fistulização ou supuração (afastado Linfogranuloma venéreo).
 
 # TESTES RÁPIDOS REALIZADOS NA UPA:
 - Teste Rápido para HIV: [Não Reagente / Reagente]
@@ -42,14 +42,14 @@ Região Inguinal: Linfonodos inguinais bilaterais discretamente aumentados (1,0 
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome do Corrimento Uretral Masculino / Uretrite Infecciosa (CID-10: N34.1).
-2. Alta probabilidade clínica de infecção mista por Neisseria gonorrhoeae e Chlamydia trachomatis.
+2. Alta probabilidade clínica de infecção mista por *Neisseria gonorrhoeae* e *Chlamydia trachomatis*.
 
 # CONDUTA:
 
 >> CONDUTA NA UNIDADE (TERAPIA DE DOSE ÚNICA SUPERVISIONADA):
 1. TRATAMENTO PARA GONORREIA (Neisseria gonorrhoeae):
    - Ceftriaxona 500 mg INTRAMUSCULAR profunda em glúteo, em DOSE ÚNICA agora.
-   (Diluir a Ceftriaxona em 2 mL de Lidocaína 1% sem vasoconstritor para minimizar a dor local da injeção).
+   *(Diluir a Ceftriaxona em 2 mL de Lidocaína 1% sem vasoconstritor para minimizar a dor local da injeção).*
 2. TRATAMENTO PARA CLAMÍDIA (Chlamydia trachomatis):
    - Azitromicina 1 g (dois comprimidos de 500 mg juntos) VIA ORAL, em DOSE ÚNICA agora, deglutidos na frente da equipe de saúde.
    - [OU alternativa se intolerância]: Doxiciclina 100 mg VO de 12/12h por 7 dias consecutivos.
@@ -61,7 +61,6 @@ Região Inguinal: Linfonodos inguinais bilaterais discretamente aumentados (1,0 
 - TRATAMENTO OBRIGATÓRIO DE TODAS AS PARCERIAS SEXUAIS: Todas as pessoas com quem o paciente se relacionou sexualmente nos últimos 60 dias DEVEM comparecer à unidade de saúde para receber a mesma medicação (Ceftriaxona + Azitromicina), mesmo que estejam totalmente sem sintomas (a infecção em mulheres é assintomática em até 80% dos casos e pode causar infertilidade por DIP se não tratada).
 - Preservativos entregues; orientado uso contínuo de preservativo masculino/feminino em todas as relações futuras.
 - Notificação Compulsória formal da IST realizada via ficha de notificação do SINAN.
-
 # RECEITA:
 USO INTRAMUSCULAR E ORAL (TRATAMENTO DUPLO GONOCOCO + CLAMÍDIA — PCDT IST/MS):
 

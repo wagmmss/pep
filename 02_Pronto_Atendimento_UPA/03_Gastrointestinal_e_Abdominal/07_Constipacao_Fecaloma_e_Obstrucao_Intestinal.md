@@ -10,24 +10,23 @@
 
 ```text
 ATENDIMENTO DE PRONTO ATENDIMENTO — CONSTIPAÇÃO AGUDA, FECALOMA VS. ABDOME AGUDO OBSTRUTIVO
-
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Outros].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
 HISTÓRIA CLÍNICA DIRIGIDA:
-- Hábito Intestinal Atual: Ausência de evacuação há [ ] dias, associada a [desconforto abdominal baixo / eliminação paradoxal de fezes líquidas em pequena].
-- Pesquisa de Sinais de Obstrução Intestinal Mecânica (Red Flags): Eliminação de flatus (gases): [Presente — afasta oclusão completa / PARADA TOTAL de eliminação de gases e fezes associada].
-- Sinais de Alarme para Neoplasia Colorretal: [*Nega / Idade > 50 anos sem colonoscopia prévia].
-- Fatores Precipitantes: [Idoso acamado ou institucionalizado / Uso recente de Opioides, Anticolinérgicos / Baixa ingesta hídrica].
+- Hábito Intestinal Atual: Ausência de evacuação há [ ] dias, associada a [desconforto abdominal baixo, esforço evacuatório e sensação de bloqueio anorretal / eliminação paradoxal de fezes líquidas em pequena quantidade — "diarreia paradoxal" por transbordamento ao redor do fecaloma!].
+- Pesquisa de Sinais de Obstrução Intestinal Mecânica (Red Flags): Eliminação de flatus (gases): [Presente — afasta oclusão completa / PARADA TOTAL de eliminação de gases e fezes associada a distensão importante e vômitos biliosos/fecaloides → ABDOME AGUDO OBSTRUTIVO!].
+- Sinais de Alarme para Neoplasia Colorretal: [*Nega / Idade > 50 anos sem colonoscopia prévia, afilamento das fezes ("em fita"), hematoquezia, perda ponderal inexplicada ou anemia ferropriva].
+- Fatores Precipitantes: [Idoso acamado ou institucionalizado / Uso recente de Opioides (Tramadol, Codeína, Morfina), Anticolinérgicos, Bloqueadores de Canal de Cálcio ou Carbonato de Cálcio / Baixa ingesta hídrica].
 
 EXAME FÍSICO & TOQUE RETAL OBRIGATÓRIO:
-- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | Tax: [ ]°C | Abdome: [Globoso, RHA presentes, massa fecal moldável palpável / Distendido, timpânico, RHA metálicos de luta, dor].
-- Inspeção Anal e Toque Retal: Esfíncter normotônico, sem fissuras agudas ou trombose hemorroidária; ampola retal [preenchida por grande massa fecal endurecida e pétrea / ampola retal vazia e sem sangue em dedo de luva].
+- Sinais Vitais: PA: [125x80] mmHg | FC: [78] bpm | Tax: [36,5]°C | Abdome: [Globoso, RHA presentes, massa fecal moldável palpável em topografia de sigmoide (FIE), sem peritonismo / Distendido, timpânico, RHA metálicos de luta, dor difusa].
+- Inspeção Anal e Toque Retal: Esfíncter normotônico, sem fissuras agudas ou trombose hemorroidária; ampola retal [preenchida por grande massa fecal endurecida e pétrea — FECALOMA CONFIRMADO / ampola retal vazia e sem sangue em dedo de luva — suspeitar de impactação alta ou obstrução mecânica proximal!].
 
 EXAMES DE IMAGEM (SE SUSPEITA DE OBSTRUÇÃO MECÂNICA OU MEGACÓLON):
-- Rotina de Abdome Agudo (RX em Pé e Decúbito): [Grande quantidade de resíduos fecais em todo / Níveis hidroaéreos em "empilhamento de moedas"].
+- Rotina de Abdome Agudo (RX em Pé e Decúbito): [Grande quantidade de resíduos fecais (aspecto em "miolo de pão") em todo o marco cólico com gás no reto, sem níveis hidroaéreos patológicos / Níveis hidroaéreos em "empilhamento de moedas" (delgado) ou distensão colônica > 6 cm (cólon) e > 12 cm (ceco) com ausência de gás no reto → Obstrução Mecânica ou Volvo de Sigmoide!].
 
 # CONDUTA:
 1. Regra de Ouro de Segurança: NUNCA prescrever laxativos orais estimulantes nem realizar enema sob pressão antes de excluir perfuração intestinal ou obstrução mecânica completa.
@@ -39,7 +38,7 @@ EXAMES DE IMAGEM (SE SUSPEITA DE OBSTRUÇÃO MECÂNICA OU MEGACÓLON):
    - Dieta zero + Sondagem Nasogástrica (SNG) aberta em drenagem + Hidratação venosa com Ringer Lactato + Correção de K+ e Mg2+ + TC de Abdome e Pelve + Avaliação da Cirurgia Geral.
 4. Alta após Desimpactação Efetiva: Prescrever regime de manutenção domiciliar com laxativo osmótico (Polietilenoglicol ou Lactulose) para prevenir reimpactação precoce + encaminhar para colonoscopia ambulatorial se ≥ 45–50 anos ou sinais de alarme.
 
-# RECEITA:
+# PRESCRIÇÃO DOMICILIAR / DE ALTA
 USO ORAL (PREVENÇÃO DE REIMPACTAÇÃO E MANEJO DOMICILIAR DA CONSTIPAÇÃO):
 
 1. Polietilenoglicol 4000 (Macrogol — Muvinlax ou PEG 4000 sem eletrólitos) pó para solução oral — 1 caixa/pote

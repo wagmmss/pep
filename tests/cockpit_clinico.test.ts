@@ -100,6 +100,22 @@ test('Pipeline JSON puro: 88 PEPs + 22 Pré-Porta em protocols.generated.json, c
   );
   assert.ok(critItemsCount >= 22, `Cartões Pré-Porta devem ter itens [CRÍTICO] parseados (encontrados: ${critItemsCount})`);
 
+  assert.ok(
+    habItems.every((h) => typeof h.pep_body === 'string' && h.pep_body.trim().length > 0),
+    'Todos os 22 cartões Pré-Porta devem ter Seção 5 (pep_body) extraída'
+  );
+  assert.ok(
+    habItems.every((h) => !/>>>\s*COMO REGISTRAR NO PRONTU[ÁA]RIO/i.test(h.pre_porta || '')),
+    'pre_porta não deve embutir >>> COMO REGISTRAR NO PRONTUÁRIO'
+  );
+  assert.ok(
+    habItems.every((h) => {
+      const titles = (h.pitfalls || []).map((p: any) => String(p.title || '').toLowerCase().trim());
+      return titles.length === new Set(titles).size;
+    }),
+    'Armadilhas (pitfalls) dos 22 cartões Pré-Porta não podem ter títulos duplicados'
+  );
+
   const pyContent = fs.readFileSync(path.join(ROOT, 'scripts/build_snippets.py'), 'utf8');
   assert.equal(pyContent.includes('painel_rapido_snippets.html'), false);
   assert.equal(pyContent.includes('_espanso.yml'), false);
@@ -140,17 +156,17 @@ test('REMUME 252 + Guia HSL 976: searchRemumeHsl, aviso Sem ficha HSL, formatPre
   assert.ok(previewPed.editableText.length > 10);
 });
 
-test('Store & Router: sessionStorage, clearPatientSession(), Backup v2, modo Consulta/Treino, anti-PII LGPD e navigateTo()', () => {
+test('Store & Router: sessionStorage, clearPatientSession(), Backup v2, anti-PII LGPD e navigateTo()', () => {
   cockpitStore.clearPatientSession();
-  cockpitStore.setClinicalMode('consulta');
-  assert.equal(cockpitStore.getState().clinicalMode, 'consulta');
+  cockpitStore.setTheme('light');
+  assert.equal(cockpitStore.getState().theme, 'light');
 
   let notified = 0;
   const unsub = cockpitStore.subscribe(() => {
     notified++;
   });
 
-  cockpitStore.setClinicalMode('treino');
+  cockpitStore.setTheme('dark');
   cockpitStore.updateSharedIdentity({ nome: 'Maria', pesoKg: '18' });
   cockpitStore.savePepDraft(';bva', { fieldValues: { peso: '18' } });
   cockpitStore.setTravaChecked('trava-A', true);
@@ -162,7 +178,7 @@ test('Store & Router: sessionStorage, clearPatientSession(), Backup v2, modo Con
 
   const backup = cockpitStore.exportBackupV2();
   assert.equal(backup.version, 2);
-  assert.equal(backup.clinicalMode, 'treino');
+  assert.equal(backup.clinicalTheme, 'dark');
   assert.equal(backup.prescriptionCart.length, 1);
 
   cockpitStore.clearPatientSession();
@@ -173,7 +189,7 @@ test('Store & Router: sessionStorage, clearPatientSession(), Backup v2, modo Con
   assert.equal(cockpitStore.getState().prescriptionCart.length, 0);
 
   cockpitStore.importBackupV2(backup);
-  assert.equal(cockpitStore.getState().clinicalMode, 'treino');
+  assert.equal(cockpitStore.getState().theme, 'dark');
   assert.equal(cockpitStore.getState().prescriptionCart.length, 1);
 
   const pii = detectPiiWarnings('Paciente CPF 123.456.789-00, Tel (16) 99123-4567, email teste@usp.br');

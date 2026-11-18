@@ -10,41 +10,41 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] meses (Faixa clássica < 24 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Outros].
+ID: [Nome], [ ] meses (Faixa clássica < 24 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 - Fatores de Risco para BVA Grave: [Nenhum — lactente a termo hígido > 3 meses / Idade < 12 semanas (< 3 meses) / Prematuridade (< 37 semanas) / Cardiopatia congênita hemodinamicamente significativa / Broncodisplasia pulmonar / Imunodeficiência].
 
 # QP:
-Tosse, chiado no peito e cansaço para respirar há [ ] dias.
+- Tosse, chiado no peito e cansaço para respirar há [ ] dias.
 
 # HMA:
-Lactente apresentou pródromo catarral de vias aéreas superiores há [2 a 4] dias, evoluindo nas últimas [24 a 48] horas para fase bronquiolar com tosse mais intensa, respiração rápida e sibilância.
-[1º episódio de sibilância na vida / 2º episódio viral em lactente].
-[Mamando bem com pausas curtas para respirar (> 75% / Redução moderada das mamadas (50 a 75% do habitual) / Recusa alimentar grave (< 50% do habitual) por fadiga]. Diurese [presente nas últimas 6h / reduzida].
-Nega episódios de apneia ou pausas respiratórias, cianose central, gemência contínua ou letargia.
+- Lactente apresentou pródromo catarral de vias aéreas superiores há [2 a 4] dias (obstrução nasal, coriza hialina e febre baixa de [ ] °C), evoluindo nas últimas [24 a 48] horas para fase bronquiolar com tosse mais intensa, respiração rápida e sibilância ([ ]º dia total de doença — pico fisiológico de gravidade entre o 3º e 5º dia).
+- Episódio de Sibilância: [1º episódio de sibilância na vida (definição clássica de BVA) / 2º episódio viral em lactente].
+- Ingesta Alimentar e Diurese: [Mamando bem com pausas curtas para respirar (> 75% do habitual) / Redução moderada das mamadas (50 a 75% do habitual) / Recusa alimentar grave (< 50% do habitual) por fadiga respiratória]. Diurese [presente nas últimas 6h / reduzida].
+- Nega episódios de apneia ou pausas respiratórias (crucial em < 2 meses), cianose central, gemência contínua ou letargia.
 
 # EXAME FÍSICO:
-SSVV:
-Frequência Respiratória (1 min): [ ] irpm ([< 50 irpm / 50 a 59 irpm / 60 a 69 irpm / ≥ 70 irpm])
-Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92% em ar ambiente / 90 a 91% / < 90% — hipoxemia])
-FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / segundos].
-Geral: [Bom / Regular / Mau] estado geral, [alerta e reativo / irritado / hipoativo], corado, [hidratado / desidratação leve], acianótico.
-Exame Respiratório Detalhado:
-Inspeção Torácica: [Sem tiragens ou tiragem subcostal muito leve / Tiragem subcostal e intercostal moderada / Tiragem subcostal, intercostal].
-Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente com tempo expiratório prolongado, presença de [sibilos expiratórios difusos e estertores / redução difusa do murmúrio vesicular].
-Classificação de Gravidade (Wood-Downes Modificado / Diretriz SBP):
-[BVA LEVE] (SpO2 ≥ 92% em AA, FR < 50–60 irpm, tiragem ausente ou leve, mamando > 75%, sem fatores de risco) -> Manejo domiciliar com reavaliação em 24–48h.
-[BVA MODERADA] (SpO2 90–92%, FR 60–69 irpm, tiragem subcostal evidente ou ingesta 50–75%) -> Observação hospitalar / Internação em enfermaria.
-[BVA GRAVE] (SpO2 < 90% persistente, FR ≥ 70 irpm, gemência, apneia, letargia ou recusa < 50%) -> Internação hospitalar imediata / Suporte ventilatório (CNAF/VNI).
+- Sinais Vitais (Aferidos após desobstrução nasal e com lactente calmo):
+  * Frequência Respiratória (1 min): [ ] irpm ([< 50 irpm / 50 a 59 irpm / 60 a 69 irpm / ≥ 70 irpm])
+  * Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92% em ar ambiente / 90 a 91% / < 90% — hipoxemia])
+  * FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / [ ] segundos].
+- Ectoscopia: [Bom / Regular / Mau] estado geral, [alerta e reativo / irritado / hipoativo], corado, [hidratado / desidratação leve], acianótico.
+- Exame Respiratório Detalhado:
+  * Inspeção Torácica: [Sem tiragens ou tiragem subcostal muito leve / Tiragem subcostal e intercostal moderada / Tiragem subcostal, intercostal, supraclavicular, batimento de asa nasal e balanço toracoabdominal].
+  * Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente com tempo expiratório prolongado, presença de [sibilos expiratórios difusos e estertores subcrepitantes finos bilaterais / redução difusa do murmúrio vesicular].
+- Classificação de Gravidade (Wood-Downes Modificado / Diretriz SBP):
+  * [BVA LEVE] (SpO2 ≥ 92% em AA, FR < 50–60 irpm, tiragem ausente ou leve, mamando > 75%, sem fatores de risco) -> Manejo domiciliar com reavaliação em 24–48h.
+  * [BVA MODERADA] (SpO2 90–92%, FR 60–69 irpm, tiragem subcostal evidente ou ingesta 50–75%) -> Observação hospitalar / Internação em enfermaria.
+  * [BVA GRAVE] (SpO2 < 90% persistente, FR ≥ 70 irpm, gemência, apneia, letargia ou recusa < 50%) -> Internação hospitalar imediata / Suporte ventilatório (CNAF/VNI).
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Bronquiolite Viral Aguda — BVA no [ ]º dia de evolução (CID-10: J21.0 — provável Vírus Sincicial Respiratório / Rinovírus).
-2. Estratificação de Gravidade: [Leve — elegível para alta segura / Moderada a Grave].
+2. Estratificação de Gravidade: [Leve — elegível para alta segura / Moderada a Grave — indicada internação hospitalar].
 
 # CONDUTA:
 
->> [MODALIDADE] CONDUTA NA BVA LEVE (ALTA SEGURA COM REAVALIAÇÃO EM 24–48H):
+>> [MODALIDADE A] CONDUTA NA BVA LEVE (ALTA SEGURA COM REAVALIAÇÃO EM 24–48H):
 1. Realizar lavagem nasal com Soro Fisiológico 0,9% na unidade e confirmar que a tiragem e a FR melhoram após desobstrução das narinas.
 2. Prescrever lavagem nasal domiciliar antes de cada mamada, fracionamento das mamadas (volumes menores mais vezes ao dia) e cabeceira elevada a 30°.
 3. Stewardship (O que NÃO prescrever conforme SBP/AAP): Não prescritos corticoides sistêmicos/inalatórios, broncodilatadores orais, antibióticos ou xaropes mucolíticos.
@@ -60,7 +60,6 @@ Classificação de Gravidade (Wood-Downes Modificado / Diretriz SBP):
 3. Higiene de Vias Aéreas: Lavagem nasal com SF 0,9% e aspiração nasal superficial suave antes das dietas e se desconforto (Evitar fisioterapia respiratória convencional de tapotagem).
 4. Nebulização com Salina Hipertônica 3% (apenas para pacientes internados): 4 mL de NaCl 3% por nebulização de 8/8h se hipersecreção importante.
 5. Monitorização contínua (oximetria, FC, FR) e precaução de contato e gotículas no leito.
-
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO — BRONQUIOLITE VIRAL AGUDA LEVE (MANEJO DOMICILIAR)
 Lactente: [Nome] | Peso Atual: [ ] kg | Idade: [ ] meses | Data: [DD/MM/AAAA]
@@ -78,7 +77,7 @@ CUIDADOS ESSENCIAIS EM CASA & POR QUE NÃO USAR CORTICOIDE/ANTIBIÓTICO:
 - Esclarecimento Importante: Na bronquiolite, o "chiado" é causado por catarro e inchaço viral nos bronquíolos finos, e não por falta de antibiótico ou crise de asma. Por isso, corticoides (Prednisolona), antibióticos (Amoxicilina) e xaropes NÃO ajudam e podem fazer mal ao bebê.
 - Atenção ao 3º a 5º dia: O pico de cansaço da bronquiolite costuma acontecer entre o 3º e o 5º dia do início do quadro.
 
-# ORIENTAÇÕES / SINAIS DE ALARME:
+SINAIS DE ALARME PARA RETORNO IMEDIATO AO PRONTO-SOCORRO:
 1. Afundamento visível da barriga abaixo das costelas ou na furculinha do pescoço a cada respiração (tiragem).
 2. Respiração muito rápida (mais de 60 respirações por minuto contadas com o bebê calmo) ou gemido constante.
 3. Bebê que não consegue mamar (aceitando menos da metade do normal) ou que fica sem molhar a fralda por mais de 6 horas.

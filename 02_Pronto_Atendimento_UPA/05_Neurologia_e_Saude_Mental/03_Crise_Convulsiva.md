@@ -11,28 +11,27 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Sim].
-
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # HISTÓRICO CONVULSIVO: [Epilepsia conhecida sob tratamento prévio / Primeiro episódio convulsivo da vida / Histórico de etilismo crônico].
 
 # QP:
-[Queixa principal] há [ ] [hora / dia].
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-Presenciada crise convulsiva generalizada caracterizada por abalos tônico-clônicos nos 4 membros, desvio do olhar para cima, sialorreia, mordedura de borda lateral de língua e perda súbita da consciência. Duração estimada da crise: cerca de [ ] minutos.
-[Liberação esfincteriana urinária e/ou fecal presente / Ausente].
-[Abandono recente de anticonvulsivantes / Febre alta prévia / Abstinência alcoólica aguda há horas / Privação severa de sono / Uso de drogas ilícitas / TCE recente].
+- Descrição da Crise: Presenciada crise convulsiva generalizada caracterizada por abalos tônico-clônicos nos 4 membros, desvio do olhar para cima, sialorreia ("espuma na boca"), mordedura de borda lateral de língua e perda súbita da consciência. Duração estimada da crise: cerca de [ ] minutos.
+- Eventos Ictais: [Liberação esfincteriana urinária e/ou fecal presente / Ausente].
+- Fatores Desencadeantes: [Abandono recente de anticonvulsivantes (Fenobarbital/Carbamazepina/Valproato) / Febre alta prévia / Abstinência alcoólica aguda há horas / Privação severa de sono / Uso de drogas ilícitas (cocaína/crack) / TCE recente].
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
-GLICEMIA CAPILAR (HGT) DE ADMISSÃO: [ ] mg/dL (AFASTADA HIPOGLICEMIA SEVERA).
-Avaliação Pós-Ictal Imediata:
-Nível de Consciência: [Sonolento, despertável ao chamado verbal / Confuso / Em torpor / Lúcido].
-Escala de Coma de Glasgow: [ ] / 15 pontos.
-Oroscopia: Presença de ferimento cortocontuso recente na borda lateral da língua com estrias hemáticas (sinal característico de crise epiléptica motora generalizada).
-Exame Neurológico Pós-Ictal: Pupilas isocóricas e fotorreagentes, ausência de assimetria de reflexos, reflexo cutâneo-plantar em flexão bilateral [ou Paralisia de Todd transitória em hemicorpo]. Ausência de rigidez de nuca.
-Inspeção Corporal: Ausência de estigmas de trauma cranioencefálico grave ou fraturas por queda.
+- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
+- GLICEMIA CAPILAR (HGT) DE ADMISSÃO: [ ] mg/dL (AFASTADA HIPOGLICEMIA SEVERA).
+- Avaliação Pós-Ictal Imediata:
+  * Nível de Consciência: [Sonolento, despertável ao chamado verbal / Confuso / Em torpor / Lúcido].
+  * Escala de Coma de Glasgow: [ ] / 15 pontos.
+  * Oroscopia: Presença de ferimento cortocontuso recente na borda lateral da língua com estrias hemáticas (sinal característico de crise epiléptica motora generalizada).
+  * Exame Neurológico Pós-Ictal: Pupilas isocóricas e fotorreagentes, ausência de assimetria de reflexos, reflexo cutâneo-plantar em flexão bilateral [ou Paralisia de Todd transitória em hemicorpo ( ) com recuperação gradual]. Ausência de rigidez de nuca.
+  * Inspeção Corporal: Ausência de estigmas de trauma cranioencefálico grave ou fraturas por queda.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Crise Convulsiva Tônico-Clônica Generalizada [Crise única autolimitada pós-ictal / Estado de Mal Epiléptico em evolução] (CID-10: G40.9 / R56.8).
@@ -45,7 +44,7 @@ Inspeção Corporal: Ausência de estigmas de trauma cranioencefálico grave ou 
 2. Oxigenoterapia sob máscara facial a 10 L/min.
 3. PROIBIÇÃO ABSOLUTA: NUNCA colocar objetos (colheres, panos) ou dedos na boca do paciente durante a crise.
 4. Puncionado acesso venoso periférico calibroso e coleta de sangue (Hemograma, Eletrólitos: Sódio/Potássio/Cálcio/Magnésio, Ureia, Creatinina, Gasometria e CPK).
-5. [SE HGT < 70 MG/DL]:
+5. [SE HGT < 70 MG/DL (HIPOGLICEMIA)]:
    - [Se etilista/desnutrido]: TIAMINA (Vitamina B1) 100 mg EV lento ANTES DA GLICOSE (prevenção mandatória de Encefalopatia de Wernicke).
    - Glicose a 50%: 4 ampolas (40 mL) EV em bólus direto de imediato.
 

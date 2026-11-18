@@ -10,37 +10,38 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / Outros].
-Alergias: [*Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / Outros].
-
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [+ *Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / [ ]].
+Alergias: [*Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 # QP:
-Tosse com catarro, febre e dor no peito para respirar há [ ] dias.
+- Tosse com catarro, febre e dor no peito para respirar há [ ] dias.
 
 # HMA:
-Refere tosse produtiva há cerca de [ ] dias com escarro de aspecto [amarelado / purulento / ferruginoso], associada a picos febris diários acompanhados de calafrios, astenia e dor torácica ventilatório-dependente em hemitórax [direito / esquerdo].
-C - Confusão mental aguda no exame (Glasgow < 15 ou desorientação)
-U - Ureia sérica > 50 mg/dL (BUN > 19 mg/dL)
-R - Respiração acelerada com FR >= 30 irpm
-PAS < 90 mmHg ou PAD <= 60 mmHg
-65 - Idade >= 65 anos
-[ ] PONTOS
-Baixo risco de mortalidade -> TRATAMENTO AMBULATORIAL SEGURO EM DOMICÍLIO.
-Risco intermediário -> INTERNAÇÃO EM ENFERMARIA / OBSERVAÇÃO CLÍNICA EM UPA.
-Alto risco de gravidade -> INTERNAÇÃO HOSPITALAR COM AVALIAÇÃO DE UTI.
-Nega hemoptise volumosa ou sangramento respiratório ativo.
-Nega estridor respiratório, sensação de asfixia ou tiragem de fúrcula/intercostal.
-Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise.
+- HMA: Refere tosse produtiva há cerca de [ ] dias com escarro de aspecto [amarelado / purulento / ferruginoso], associada a picos febris diários (Tax [ ] °C) acompanhados de calafrios, astenia e dor torácica ventilatório-dependente (dor pleurítica em pontada à inspiração profunda) em hemitórax [direito / esquerdo].
+- ESTRATIFICAÇÃO PROGNÓSTICA - ESCORE CURB-65:
+  - C - Confusão mental aguda no exame (Glasgow < 15 ou desorientação) (+1)
+  - U - Ureia sérica > 50 mg/dL (BUN > 19 mg/dL) (+1)
+  - R - Respiração acelerada com FR >= 30 irpm (+1)
+  - B - Blood Pressure baixa: PAS < 90 mmHg ou PAD <= 60 mmHg (+1)
+  - 65 - Idade >= 65 anos (+1)
+  * PONTUAÇÃO CURB-65: [ ] PONTOS
+  * CONDUTA DEFINIDA PELO ESCORE:
+    - CURB 0-1 ponto: Baixo risco de mortalidade -> TRATAMENTO AMBULATORIAL SEGURO EM DOMICÍLIO.
+    - CURB 2 pontos: Risco intermediário -> INTERNAÇÃO EM ENFERMARIA / OBSERVAÇÃO CLÍNICA EM UPA.
+    - CURB >= 3 pontos: Alto risco de gravidade -> INTERNAÇÃO HOSPITALAR COM AVALIAÇÃO DE UTI.
+- Nega hemoptise volumosa ou sangramento respiratório ativo.
+- Nega estridor respiratório, sensação de asfixia ou tiragem de fúrcula/intercostal.
+- Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise (afastada PAC hospitalar/multirresistente).
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente | Tax: [ ] °C.
-Geral: [Bom / Regular / Mau] estado geral, [lúcido / sonolento / confuso], corado, hidratado, acianótico, [eupneico / taquipneico com esforço respiratório leve].
-AR:
-Inspeção: Tórax simétrico, expansibilidade [preservada / discretamente diminuída em base do hemitórax acometido].
-Palpação: Frêmito toracovocal (FTV) aumentado em [terço inferior do hemitórax direito / esquerdo].
-Percussão: Som claro pulmonar fisiológico [ou macicez / submacicez localizada em base].
-Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente, com presença de estertores crepitantes teleinspiratórios em [base pulmonar direita / esquerda / terço médio], associados a broncofonia aumentada. Ausência de sibilos difusos.
-ACV: RCR 2T, BNF, sem sopros audíveis. Extremidades perfundidas, TEC < 2s.
+- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente | Tax: [ ] °C.
+- Ectoscopia: [Bom / Regular / Mau] estado geral, [lúcido / sonolento / confuso], corado, hidratado, acianótico, [eupneico / taquipneico com esforço respiratório leve].
+- Aparelho Respiratório:
+  * Inspeção: Tórax simétrico, expansibilidade [preservada / discretamente diminuída em base do hemitórax acometido].
+  * Palpação: Frêmito toracovocal (FTV) aumentado em [terço inferior do hemitórax direito / esquerdo].
+  * Percussão: Som claro pulmonar fisiológico [ou macicez / submacicez localizada em base].
+  * Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente, com presença de estertores crepitantes teleinspiratórios em [base pulmonar direita / esquerda / terço médio], associados a broncofonia aumentada. Ausência de sibilos difusos.
+- Aparelho Cardiovascular: Ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, sem sopros audíveis. Extremidades perfundidas, tempo de enchimento capilar < 2s.
 
 # EXAMES COMPLEMENTARES NA UPA:
 - Radiografia de Tórax (PA e Perfil): Evidenciando infiltrado alveolar com consolidação parenquimatosa lobar em [lobo inferior direito / lobo inferior esquerdo / língula], com presença de broncogramas aéreos. Ausência de derrame pleural volumoso associado.
@@ -54,12 +55,12 @@ ACV: RCR 2T, BNF, sem sopros audíveis. Extremidades perfundidas, TEC < 2s.
 
 >> [MODALIDADE 1]: CONDUTA AMBULATORIAL (CURB-65 = 0 OU 1):
 1. Antibioticoterapia Oral (Duração de 5 a 7 dias):
-   - [PACIENTE HÍGIDO SEM COMORBIDADES]:
+   - [PACIENTE HÍGIDO SEM COMORBIDADES (DIRETRIZ SBPT - MONOTERAPIA)]:
      [Opção A - Beta-lactâmico]: Amoxicilina 500 mg VO de 8/8 horas (ou 1 g VO de 8/8 horas) por 5 a 7 dias.
      [OU Opção B - Macrolídeo isolado]: Azitromicina 500 mg VO 1x/dia por 5 dias (ou Claritromicina 500 mg VO de 12/12h por 5 a 7 dias).
-   - [PACIENTE COM COMORBIDADES]:
+   - [PACIENTE COM COMORBIDADES (HAS/DM/DPOC/IDOSO OU USO RECENTE DE ATB - TERAPIA COMBINADA)]:
      Amoxicilina + Clavulanato 875/125 mg VO de 12/12h por 7 dias + Azitromicina 500 mg VO 1x/dia por 5 dias.
-     [OU Opção B - Macrolídeo isolado]: Levofloxacino 750 mg VO 1x/dia por 5 dias (ou Moxifloxacino 400 mg VO 1x/dia por 5 a 7 dias).
+     [OU]: Levofloxacino 750 mg VO 1x/dia por 5 dias (ou Moxifloxacino 400 mg VO 1x/dia por 5 a 7 dias).
 2. Analgesia & Antitérmico: Dipirona 1 g VO de 6/6h SOS se febre ou dor pleurítica.
 3. Hidratação oral vigorosa (mínimo 2 a 3 L/dia) e repouso.
 4. Reavaliação clínica obrigatória em 48 a 72 horas na UBS ou UPA se não houver melhora da febre.
@@ -73,19 +74,18 @@ ACV: RCR 2T, BNF, sem sopros audíveis. Extremidades perfundidas, TEC < 2s.
 5. Dipirona 1 g EV de 6/6h se febre > 37,8 °C.
 6. Solicitação de vaga de internação hospitalar via Central de Regulação (CROSS/SISREG).
 
-# ORIENTAÇÕES / SINAIS DE ALARME:
+>> SINAIS DE ALARME PARA RETORNO IMEDIATO:
 - Orientado(a) a procurar a emergência imediatamente se apresentar falta de ar progressiva, lábios azulados, vômitos que impeçam tomar o antibiótico ou sonolência e desorientação.
-
 # RECEITA:
 RECEITUÁRIO MÉDICO — PNEUMONIA ADQUIRIDA NA COMUNIDADE (MANEJO AMBULATORIAL — CURB-65 = 0 OU 1)
 Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
 
-[OPÇÃO A — PACIENTE HÍGIDO SEM COMORBIDADES E SEM USO]:
+[OPÇÃO A — PACIENTE HÍGIDO SEM COMORBIDADES E SEM USO DE ATB NOS ÚLTIMOS 90 DIAS]:
 1. Amoxicilina 500 mg (ou Amoxicilina 875 mg de 12/12h) ---------------------- 21 cápsulas
    Tomar 1 cápsula (ou 2 cápsulas = 1 g) por via oral de 8 em 8 horas durante 7 dias.
    *[OU Se suspeita de germe atípico / alergia leve]*: Azitromicina 500 mg — Tomar 1 comprimido VO 1x/dia por 5 dias (ou Claritromicina 500 mg VO 12/12h por 7 dias).
 
-[OPÇÃO B — PACIENTE COM COMORBIDADES OU USO]:
+[OPÇÃO B — PACIENTE COM COMORBIDADES (HAS, DM, DPOC, IC, DRC, IDOSO) OU USO RECENTE DE ATB]:
 1. Amoxicilina + Clavulanato 875/125 mg -------------------------------------- 14 comprimidos
    Tomar 1 comprimido por via oral de 12 em 12 horas, junto às refeições, durante 7 dias.
 2. ASSOCIADO A: Azitromicina 500 mg ------------------------------------------ 5 comprimidos
@@ -96,7 +96,7 @@ Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
 3. Dipirona Monoidratada 1 g ------------------------------------------------- 1 caixa
    Tomar 1 comprimido por via oral de 6 em 6 horas se febre (Tax ≥ 37,8 °C) ou dor no peito ao respirar.
 
-# ORIENTAÇÕES / SINAIS DE ALARME:
+ORIENTAÇÕES E SINAIS DE ALARME (REAVALIAÇÃO OBRIGATÓRIA EM 48–72H):
 - Manter repouso domiciliar, alimentação nutritiva e hidratação oral vigorosa (mínimo de 2 a 2,5 litros de água por dia para fluidificar a secreção pulmonar).
 - REAVALIAÇÃO MÉDICA EM 48 A 72 HORAS: A febre deve ceder e o cansaço deve melhorar em até 48 a 72 horas do início do antibiótico.
 - RETORNAR IMEDIATAMENTE À UPA SE APRESENTAR: Falta de ar em repouso, respiração muito rápida, lábios arroxeados, tontura/queda da pressão, confusão mental/sonolência, vômitos que impeçam tomar o antibiótico ou febre persistente após 72 horas.

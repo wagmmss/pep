@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], DUM: [DD/MM/AAAA].
-Comorbidades: [+ *Hígida / Outros].
-Alergias: [*Nega / Outros].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - Indicação & Elegibilidade (OMS): Contracepção reversível de longa ação (LARC) [no menacme com β-hCG negativo / no pós-parto imediato]. Ausência de contraindicações Categoria 4 da OMS (nega câncer de mama, TVP/TEP agudo ou hepatopatia grave).
 - Consentimento & Lote: TCLE lido e assinado. Lote do dispositivo: [ ] | Validade de uso: 3 anos (até [DD/MM/AAAA]).
 
@@ -21,11 +21,11 @@ Alergias: [*Nega / Outros].
 2. Antissepsia & Anestesia: Antissepsia com Clorexidina Alcoólica 2%, colocação de campo estéril e botão anestésico + infiltração subdérmica de 2 mL de Lidocaína 2% sem vasoconstritor ao longo do trajeto de 4 cm.
 3. Inserção Subdérmica Superficial:
    - Perfuração da pele com a ponta da agulha do aplicador em ângulo < 30° com bisel para cima.
-   - Horizontalização imediata do aplicador paralelamente à pele, elevando suavemente a derme (tenting) durante toda a progressão até a marca limite da cânula.
+   - Horizontalização imediata do aplicador paralelamente à pele, elevando suavemente a derme (*tenting*) durante toda a progressão até a marca limite da cânula.
    - Acionamento completo do cursor roxo para trás, retraindo a agulha e liberando o implante radiopaco no plano subdérmico.
 4. Palpação Confirmatória Dupla (Obrigatória):
    - Implante palpado integralmente em suas duas extremidades (4 cm) pelo médico executor e pela própria paciente.
-5. Curativo: Aproximação do orifício com fita estéril (Steri-Strip), gaze estéril e enfaixamento compressivo com atadura de crepe. Procedimento sem sangramento ou parestesias.
+5. Curativo: Aproximação do orifício com fita estéril (*Steri-Strip*), gaze estéril e enfaixamento compressivo com atadura de crepe. Procedimento sem sangramento ou parestesias.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Inserção de implante contraceptivo subdérmico sem intercorrências (CID-10: Z30.1).
@@ -33,14 +33,14 @@ Alergias: [*Nega / Outros].
 # CONDUTA:
 >> CONDUTA & ORIENTAÇÕES PÓS-PROCEDIMENTO:
 1. Entregue Cartão da Usuária preenchido com lote, braço de inserção, data atual e data de retirada/troca em 3 anos.
-2. Orientada sobre mudanças benignas esperadas no padrão menstrual (amenorreia, spotting ou escapes irregulares).
+2. Orientada sobre mudanças benignas esperadas no padrão menstrual (amenorreia, *spotting* ou escapes irregulares).
 3. Uso de método de barreira (preservativo) por 7 dias se inserido fora dos primeiros 5 dias do ciclo menstrual.
 
 # RECEITA:
 USO ORAL:
 1. [Dipirona Monoidratada 500 mg / Paracetamol 750 mg] ---------------- 1 caixa
    Tomar 1 comprimido via oral de 6 em 6 horas se dor no local da aplicação nos primeiros 2 dias.
-2. [Se surgirem escapes/spotting prolongados incômodos nos]:
+2. [Se surgirem escapes/spotting prolongados incômodos nos primeiros meses]:
    [Ácido Mefenâmico 500 mg / Ibuprofeno 600 mg] ------------------------- 1 caixa
    Tomar 1 comprimido via oral de 8 em 8 horas, após as refeições, por 5 dias.
 

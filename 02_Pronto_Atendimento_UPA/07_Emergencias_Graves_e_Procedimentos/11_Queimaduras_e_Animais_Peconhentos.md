@@ -10,27 +10,26 @@
 
 ```text
 ATENDIMENTO DE EMERGÊNCIA — QUEIMADURAS AGUDAS OU ACIDENTE POR ANIMAL PEÇONHENTO
-
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Outros].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
-CENÁRIO DO ATENDIMENTO: [1. Queimadura Térmica/Química/Elétrica Aguda / 2. Acidente por Animal Peçonhento].
+CENÁRIO DO ATENDIMENTO: [1. Queimadura Térmica/Química/Elétrica Aguda / 2. Acidente por Animal Peçonhento (Escorpião, Serpente ou Aranha)].
 
 BLOCO A — SE QUEIMADURA AGUDA (ATLS / ABA):
-- Agente e Circunstância: Queimadura há [ ] horas por [líquido superaquecido / chama direta em ambiente fechado / contato / choque elétrico de alta tensão / agente químico]. Peso estimado: [ ] kg.
-- Avaliação de Via Aérea (Queimadura Inalatória): [Ausência de sinais inalatórios / Presença de rouquidão].
+- Agente e Circunstância: Queimadura há [ ] horas por [líquido superaquecido (escaldo) / chama direta em ambiente fechado / contato / choque elétrico de alta tensão / agente químico]. Peso estimado: [70] kg.
+- Avaliação de Via Aérea (Queimadura Inalatória): [Ausência de sinais inalatórios / Presença de rouquidão, estridor, vibrissas nasais chamuscadas, escarro carbonáceo ou queimadura de face/pescoço circunferencial → INDICAÇÃO DE IOT PRECOCE!].
 - Profundidade e Extensão (Regra dos 9 de Wallace — NÃO contabilizar eritema de 1º grau no cálculo de SCQ!):
-  * Grau da Lesão: [1º Grau / 2º Grau Superficial / 2º Grau Profundo / 3º Grau].
+  * Grau da Lesão: [1º Grau (epiderme: eritema doloroso sem bolhas) / 2º Grau Superficial (bolhas/flictenas, base rósea úmida e muito dolorosa) / 2º Grau Profundo (base pálida/mosqueada, menor dor) / 3º Grau (espessura total: placa coriácea nacarada/carbonizada e indolor)].
   * Superfície Corporal Queimada (SCQ 2º e 3º graus): [ ]% SCQ (Cabeça 9%, Tronco Ant 18%, Tronco Post 18%, cada MMSS 9%, cada MMII 18%, Períneo 1%; palma da mão do paciente = 1%).
 
 BLOCO B — SE ACIDENTE POR ANIMAL PEÇONHENTO (SINAN / MINISTÉRIO DA SAÚDE):
 - Agente Identificado / Síndrome Clínica:
-  * [Escorpionismo: Dor local lancinante imediata + avaliar].
-  * [Acidente Botrópico: Ação proteolítica].
-  * [Acidente Crotálico: Ação neurotóxica + miotóxica].
-  * [Araneísmo: Loxosceles / Phoneutria].
+  * [Escorpionismo (Tityus serrulatus): Dor local lancinante imediata + avaliar sinais sistêmicos adrenérgicos/colinérgicos: vômitos profusos (principal preditor de gravidade em crianças!), sudorese, taquicardia, agitação, priapismo ou edema agudo de pulmão].
+  * [Acidente Botrópico (Jararaca — 90% dos ofídicos): Ação proteolítica, coagulante e hemorrágica → edema tenso ascendente, equimose/bolhas locais, gengivorragia e Tempo de Coagulação prolongado/incoagulável].
+  * [Acidente Crotálico (Cascavel): Ação neurotóxica (fácies miastênica de Rosenfeld — ptose palpebral, diplopia) + miotóxica (rabdomiólise com CPK muito elevada e mioglobinúria escura cor de "Coca-Cola")].
+  * [Araneísmo: Loxosceles (Aranha-marrom — placa marmórea isquêmica/necrótica horas após picada indolor ± hemólise) / Phoneutria (Aranha-armadeira — dor imediata intensa)].
 - Classificação de Gravidade para Soroterapia: [Leve / Moderado / Grave].
 
 # CONDUTA:
@@ -50,7 +49,7 @@ BLOCO B — SE ACIDENTE POR ANIMAL PEÇONHENTO (SINAN / MINISTÉRIO DA SAÚDE):
    - Acidente Botrópico (Soro Antibotrópico — SAB IV): Leve = 2 a 4 ampolas | Moderado = 4 a 8 ampolas | Grave = 12 ampolas (NUNCA fazer torniquete e manter membro elevado; doses de soro são IGUAIS para adultos e crianças!).
    - Acidente Crotálico (Soro Anticrotálico — SAC IV): Leve = 5 ampolas | Moderado = 10 ampolas | Grave = 20 ampolas + hiper-hidratação e alcalinização urinária (pH > 6,5) para proteger o rim da rabdomiólise.
 
-# RECEITA:
+# PRESCRIÇÃO DOMICILIAR / DE ALTA
 USO ORAL E TÓPICO (ALTA AMBULATORIAL — QUEIMADURA PEQUENA DE 1º OU 2º GRAU SUPERFICIAL < 10% SCQ):
 
 1. Sulfadiazina de Prata 10 mg/g (1%) creme dermatológico — 1 bisnaga ou pote (50 g a 400 g)

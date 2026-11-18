@@ -10,33 +10,32 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10].
 TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-].
-Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Anemia / Outros].
-Alergias: [*Nega / Outros].
-
+Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Anemia / [ ]].
+Alergias: [*Nega / [ ]].
 # AP:
 MED: [*Nega / Sulfato Ferroso / Metildopa]
 HAB: [Nega tabagismo, etilismo ou drogas ilícitas]
-CX: [*Nega / Cesáreas prévias]
-ALER: [*Nega alergias medicamentosas / Alérgica (especificar)]
+CX: [*Nega / Cesáreas prévias ([ ])]
+ALER: [*Nega alergias medicamentosas / Alérgica a: [ ]]
 HF: [*Nega / HAS / DM2]
 
 # CASO: [DESCRIÇÃO CIRÚRGICA DE CESARIANA / ADMISSÃO EM FASE ATIVA DE TRABALHO DE PARTO]
 
-HMA: Gestante admitida no Centro Obstétrico com indicação de cesariana por [desproporção cefalopélvica / falha de indução / sofrimento fetal agudo / apresentação pélvica / iteratividade (≥ 2 cesáreas prévias) / pré-eclâmpsia grave sem condições de parto imediato]. Caderneta de Pré-Natal: HIV/Sífilis/Hep B/Toxoplasmose 3º tri [Não reagentes]; Cultura EGB (35–37s): [*Negativa / Positiva].
+HMA: Gestante admitida no Centro Obstétrico com indicação de cesariana por [desproporção cefalopélvica / falha de indução / sofrimento fetal agudo / apresentação pélvica / iteratividade (≥ 2 cesáreas prévias) / pré-eclâmpsia grave sem condições de parto imediato]. Caderneta de Pré-Natal: HIV/Sífilis/Hep B/Toxoplasmose 3º tri [Não reagentes]; Cultura EGB (35–37s): [*Negativa / Positiva — realizada profilaxia com Penicilina Cristalina 5 milhões UI IV ataque + 2,5 milhões UI 4/4h].
 
 # EXAME CLÍNICO
 Bom estado geral, corada, hidratada, acianótica, anictérica, afebril; encaminhada à RPA lúcida, estável e com útero firmemente contraído abaixo da cicatriz umbilical.
-- Sinais Vitais Pós-Operatórios: PA: [ ] mmHg | FC: [ ] bpm | SpO2: [ ]% AA | SVD com diurese clara.
+- Sinais Vitais Pós-Operatórios: PA: [115x75] mmHg | FC: [80] bpm | SpO2: [99]% AA | SVD com diurese clara.
 - DESCRIÇÃO CIRÚRGICA DA CESARIANA (TÉCNICA DE PFANNENSTIEL / KERR):
   1. Anestesia & Profilaxia: Raquianestesia hiperbárica + Antibioticoprofilaxia cirúrgica com Cefazolina 2 g IV (ou 3 g se peso ≥ 120 kg) administrada 30–60 minutos antes da incisão cutânea + Sondagem vesical de demora com urina clara.
   2. Diérese: Antissepsia com clorexidina alcoólica, aposição de campos estéreis. Incisão abdominal transversa suprapúbica a Pfannenstiel (ou Joel-Cohen), abertura da aponeurose dos retos abdominais, divulsão muscular na linha média e abertura do peritônio parietal.
   3. Histerotomia & Extração Fetal: Abertura do peritônio visceral vesicouterino, rebatimento vesical e histerotomia segmentar transversa arciforme (Kerr). Amniotomia com saída de líquido amniótico [claro com grumos / meconial fluido / meconial espesso].
-  4. Nascimento: Extração fetal em apresentação [cefálica / pélvica] às [HH:MM]h, RN do sexo [Masculino / Feminino], Peso: [ ] g, Apgar [ ]/[ ]. Clampeamento oportuno do cordão umbilical em [ ] segundos e entrega ao pediatra.
+  4. Nascimento: Extração fetal em apresentação [cefálica / pélvica] às [HH:MM]h, RN do sexo [Masculino / Feminino], Peso: [ ] g, Apgar [ ]/[ ]. Clampeamento oportuno do cordão umbilical em [60] segundos e entrega ao pediatra.
   5. Dequitação & Histerorrafia: Dequitação placentária completa (Baudelocque-Schultze) sob tração controlada do cordão + Ocitocina 3 a 5 UI IV muito lento (em 3–5 min, NUNCA 10 UI em bolus direto!) ou 10 UI IM + manutenção em infusão. Revisão e limpeza da cavidade uterina com compressa montada. Histerorrafia em plano [único contínuo / duplo plano não ancorado] com fio absorvível Vicryl 0.
-  6. Revisão & Síntese: Revisão da hemostasia da linha de sutura e anexos normais. Contagem de compressas conferida e correta. Síntese da aponeurose dos retos abdominais de forma contínua com Vicryl 1, aproximação do subcutâneo (se espessura > 2 cm) e sutura intradérmica da pele com Monocryl / Nylon 3-0. Perda sanguínea estimada: [ ] mL.
+  6. Revisão & Síntese: Revisão da hemostasia da linha de sutura e anexos normais. Contagem de compressas conferida e correta. Síntese da aponeurose dos retos abdominais de forma contínua com Vicryl 1, aproximação do subcutâneo (se espessura > 2 cm) e sutura intradérmica da pele com Monocryl / Nylon 3-0. Perda sanguínea estimada: [600] mL.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Pós-operatório imediato de Cesariana (indicação: [ ]) sem intercorrências intraoperatórias.
@@ -45,11 +44,11 @@ Bom estado geral, corada, hidratada, acianótica, anictérica, afebril; encaminh
 1. Prescrição Pós-Operatória Imediata (Centro Obstétrico / Alojamento Conjunto):
    - Dieta livre precoce após recuperação motora do bloqueio raquidiano (2 a 4 horas pós-operatório).
    - Ocitocina 10 a 20 UI diluídas em 500 mL de SF 0,9% ou Ringer Lactato IV a 125 mL/h nas primeiras 4–6 horas para manutenção do tônus uterino.
-   - Analgesia Multimodal Fixa: Dipirona 1 g IV 6/6h + [Cetoprofeno 100 mg IV 12/12h por 48h (CONTRAINDICADO / PRÉ-ECLÂMPSIA / NEFROPATA!) / Paracetamol 750 mg VO 6/6h] + Morfina 2 mg IV de resgate se dor intensa (ou conforme morfina intratecal).
+   - Analgesia Multimodal Fixa: Dipirona 1 g IV 6/6h + [Cetoprofeno 100 mg IV 12/12h por 48h (CONTRAINDICADO SE HIPERTENSA / PRÉ-ECLÂMPSIA / NEFROPATA!) / Paracetamol 750 mg VO 6/6h] + Morfina 2 mg IV de resgate se dor intensa (ou conforme morfina intratecal).
    - Antiemético e Simeticona: Ondansetrona 4 a 8 mg IV 8/8h se náuseas/prurido + Simeticona 40 a 80 gotas VO 8/8h.
    - Retirada precoce da Sonda Vesical de Demora e estímulo à deambulação assistida após 6 a 8 horas (prevenção de TEV e íleo paralítico); Enoxaparina 40 mg SC/dia se alto risco de TEV (iniciar >= 12h após bloqueio raquidiano e hemostasia segura).
 
-# RECEITA:
+# PRESCRIÇÃO DOMICILIAR / DE ALTA
 USO ORAL (RECEITA DE ALTA PÓS-CESARIANA):
 
 1. Dipirona Monoidratada 1.000 mg (comprimidos) — 1 caixa (20 comprimidos)

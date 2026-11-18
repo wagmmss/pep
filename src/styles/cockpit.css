@@ -272,70 +272,6 @@
     .ws-status-block {
       display: none;
     }
-    .ws-mode-section {
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-    }
-    .ws-section-label {
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-dim);
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .ws-mode-switcher {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      background: var(--surface-inset);
-      padding: 2px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-    }
-    .ws-mode-btn {
-      -webkit-appearance: none;
-      appearance: none;
-      border: 1px solid transparent;
-      background: transparent;
-      color: var(--text-dim);
-      font-size: 0.73rem;
-      font-weight: 600;
-      padding: 6px 8px;
-      border-radius: 3px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      white-space: nowrap;
-      transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
-    }
-    .ws-mode-btn:hover {
-      color: var(--text);
-    }
-    .ws-mode-btn.active[data-ws-mode="consulta"] {
-      background: var(--surface-hover);
-      color: var(--text);
-      border-color: rgba(2, 132, 199, 0.5);
-    }
-    .ws-mode-btn.active[data-ws-mode="treino"] {
-      background: rgba(245, 158, 11, 0.14);
-      color: #fde68a;
-      border-color: rgba(245, 158, 11, 0.45);
-    }
-    .ws-mode-caption {
-      margin-top: 6px;
-      font-size: 0.69rem;
-      color: var(--text-dim);
-      font-family: var(--font-mono);
-      line-height: 1.35;
-    }
 
     .ws-nav-section {
       display: flex;
@@ -1070,23 +1006,6 @@
       color: var(--text);
     }
 
-    /* Banner de Modo Treino no Cockpit */
-    .training-mode-banner {
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 8px 20px;
-      background: rgba(245, 158, 11, 0.1);
-      border-bottom: 1px solid rgba(245, 158, 11, 0.28);
-      color: #fde68a;
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-    }
-    body[data-ws-mode="treino"] .training-mode-banner {
-      display: flex;
-    }
-
     .drawer-tabs {
       display: flex;
       border-bottom: 1px solid var(--border);
@@ -1184,8 +1103,9 @@
     }
 
     .hab-anchor-box {
-      background: var(--surface);
+      background: var(--bg-canvas);
       border: 1px solid var(--border-strong);
+      border-left: 3px solid var(--accent);
       border-radius: var(--radius-sm);
       padding: 11px 14px;
     }
@@ -1411,8 +1331,10 @@
       gap: 4px;
     }
     .hab-sec-title {
-      font-size: 0.79rem;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
       font-weight: 600;
+      letter-spacing: 0;
       color: var(--primary-bright);
       padding-bottom: 6px;
       margin-bottom: 2px;
@@ -1420,6 +1342,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 8px;
     }
     .hab-sec-progress {
       font-family: var(--font-mono);
@@ -4480,12 +4403,6 @@
   cursor: pointer;
 }
 
-#clinicalModeToggle.is-treino {
-  background: #7c3aed;
-  border-color: #8b5cf6;
-  color: #fff;
-}
-
 .card-cid-badge {
   display: inline-block;
   font-size: 11px;
@@ -5392,6 +5309,164 @@ body.light-theme .pep-section-heading {
 }
 
 /* Pré-Porta 30s & Técnica Profunda */
+.hab-workspace-shell {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.hab-nav-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 140px);
+}
+
+.hab-nav-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hab-filter-input {
+  width: 100%;
+  padding: 8px 11px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  background: var(--bg-surface);
+  color: var(--ink-primary);
+  font-size: 0.82rem;
+}
+
+.hab-filter-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.hab-cat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.hab-cat-chip {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line-subtle);
+  background: var(--bg-surface);
+  color: var(--ink-secondary);
+  font-size: 0.71rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.hab-cat-chip:hover {
+  background: var(--bg-elevated);
+  border-color: var(--line-strong);
+  color: var(--ink-primary);
+}
+
+.hab-cat-chip.active {
+  background: rgba(45, 212, 191, 0.14);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hab-card-nav-list {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 4px;
+}
+
+.hab-card-nav-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-subtle);
+  background: var(--bg-surface);
+  color: var(--ink-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+
+.hab-card-nav-btn:hover {
+  background: var(--bg-elevated);
+  border-color: var(--line-strong);
+}
+
+.hab-card-nav-btn.active {
+  background: var(--bg-elevated);
+  border-color: var(--accent);
+  border-left: 4px solid var(--accent);
+}
+
+.hab-card-nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.hab-card-nav-num {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hab-card-nav-title {
+  font-size: 0.83rem;
+  font-weight: 600;
+  line-height: 1.32;
+  color: var(--ink-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hab-card-nav-meta {
+  font-size: 0.71rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.hab-card-nav-meta code {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+}
+
+@media (max-width: 960px) {
+  .hab-workspace-shell {
+    grid-template-columns: 1fr;
+  }
+  .hab-nav-sidebar {
+    position: static;
+    max-height: none;
+  }
+  .hab-card-nav-list {
+    max-height: 220px;
+  }
+}
+
 .hab-detail-card {
   background: var(--bg-surface);
   border: 1px solid var(--line-subtle);
@@ -5408,6 +5483,138 @@ body.light-theme .pep-section-heading {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.hab-detail-title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-top: 6px;
+  line-height: 1.28;
+}
+
+.hab-inner-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 1px solid var(--line-subtle);
+  padding-bottom: 10px;
+}
+
+.hab-inner-tab {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-subtle);
+  background: var(--bg-canvas);
+  color: var(--ink-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.hab-inner-tab:hover {
+  background: var(--bg-elevated);
+  border-color: var(--line-strong);
+  color: var(--ink-primary);
+}
+
+.hab-inner-tab.active {
+  background: rgba(45, 212, 191, 0.14);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hab-tab-count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.14);
+  color: inherit;
+}
+
+.hab-flow-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+.hab-flow-node {
+  flex: 1 1 150px;
+  min-width: 140px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-canvas);
+  border: 1px solid var(--line-strong);
+  border-top: 3px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hab-flow-title {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.3;
+}
+
+.hab-flow-desc {
+  font-size: 0.75rem;
+  color: var(--ink-secondary);
+  line-height: 1.4;
+}
+
+.hab-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent);
+  padding: 0 2px;
+}
+
+.hab-deep-guide-head {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-subtle);
+  margin-bottom: 6px;
+}
+
+.hab-deep-sub {
+  margin-top: 8px;
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--bg-canvas);
+  padding: 10px 14px;
+}
+
+.hab-deep-sub > summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.87rem;
+  color: var(--accent);
+  list-style: none;
+}
+
+.hab-deep-prose {
+  font-size: 0.92rem;
+  line-height: 1.62;
+  max-width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line-subtle);
 }
 
 .hab-streak-pill {
@@ -5451,13 +5658,6 @@ body.light-theme .pep-section-heading {
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
-}
-
-.hab-deep-sub {
-  margin-top: 8px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--primary-bright);
 }
 
 .hab-deep-body {
@@ -5857,4 +6057,76 @@ html.light .ensaio-clock,
 body.light-theme .ensaio-clock {
   color: #0369a1;
 }
+
+html.light .hab-inner-tab.active,
+body.light-theme .hab-inner-tab.active,
+html.light .hab-cat-chip.active,
+body.light-theme .hab-cat-chip.active {
+  background: #ccfbf1;
+  border-color: #0a7572;
+  color: #0f524f;
+}
+
+html.light .hab-card-nav-btn.active,
+body.light-theme .hab-card-nav-btn.active {
+  background: #e2e8f1;
+  border-color: #0a7572;
+}
+
+html.light .hab-flow-node,
+body.light-theme .hab-flow-node,
+html.light .hab-anchor-box,
+body.light-theme .hab-anchor-box,
+html.light .hab-pre-step,
+body.light-theme .hab-pre-step,
+html.light .hab-pre-substep,
+body.light-theme .hab-pre-substep,
+html.light .hab-pre-group-title,
+body.light-theme .hab-pre-group-title,
+html.light .hab-deep-sub,
+body.light-theme .hab-deep-sub {
+  background: #f0f4f8;
+  border-color: #c5d0de;
+  color: #142238;
+}
+
+html.light .hab-anchor-box,
+body.light-theme .hab-anchor-box {
+  border-left-color: #0a7572;
+}
+
+html.light .hab-flow-node,
+body.light-theme .hab-flow-node {
+  border-top-color: #0a7572;
+}
+
+.pep-date-input {
+  font-variant-numeric: tabular-nums;
+}
+
+.pill-text-seg {
+  display: inline;
+}
+
+.pep-standard-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+html.light .pep-standard-banner,
+body.light-theme .pep-standard-banner {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e3a8a;
+}
+
 

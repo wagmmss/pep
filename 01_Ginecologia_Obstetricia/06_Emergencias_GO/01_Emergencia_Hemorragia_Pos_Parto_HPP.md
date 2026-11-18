@@ -10,23 +10,23 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
-Comorbidades: [+ *Hígida / Outros].
-Alergias: [*Nega / Outros].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - Perda Sanguínea Estimada: [ ] mL ([> 500 mL pós-parto vaginal / > 1.000 mL pós-cesárea / sangramento com instabilidade hemodinâmica]).
-- Sinais Vitais & Perfusão: PA: [ ] mmHg | FC: [ ] bpm | Índice de Choque Obstétrico (FC/PAS): [ ] (Normal < 0,9 | Alerta >= 0,9 | Transfusão maciça se >= 1,4) | FR: [ ] irpm | SpO2: [ ]% | TEC: [ ]s | Consciência: [Lúcida / Ansiosa / Sonolenta].
+- Sinais Vitais & Perfusão: PA: [85x50] mmHg | FC: [118] bpm | Índice de Choque Obstétrico (FC/PAS): [1,38] (Normal < 0,9 | Alerta >= 0,9 | Transfusão maciça se >= 1,4) | FR: [22] irpm | SpO2: [98]% | TEC: [3]s | Consciência: [Lúcida / Ansiosa / Sonolenta].
 
 # REVISÃO ETIOLÓGICA IMEDIATA DOS "4 Ts" (AO EXAME FÍSICO):
-- [x] 1. TÔNUS (70% — Atonia Uterina): [Útero hipotônico / Tônus firme preservado].
+- [x] 1. TÔNUS (70% — Atonia Uterina): [Útero hipotônico, amolecido e acima da cicatriz umbilical -> iniciada Manobra de Compressão Uterina Bimanual de Hamilton + esvaziamento vesical / Tônus firme preservado].
 - [ ] 2. TRAUMA (20% — Canal/Rotura/Inversão): Revisão sob válvulas: [Ausência de lacerações cervicais ou vaginais ativas / Suturada laceração de colo/vagina sangrante / Drenado hematoma puerperal / Afastada inversão ou rotura uterina].
-- [ ] 3. TECIDO (10% — Restos Placentários): Revisão da cavidade uterina: [Cavidade vazia e limpa / Realizada curagem uterina com retirada de restos].
+- [ ] 3. TECIDO (10% — Restos Placentários): Revisão da cavidade uterina: [Cavidade vazia e limpa / Realizada curagem uterina com retirada de restos placentários/membranas].
 - [ ] 4. TROMBINA (1% — Coagulopatia): [Sem coagulopatia prévia / Coagulograma e Fibrinogênio de urgência coletados].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Hemorragia Pós-Parto Primária por [Atonia Uterina (CID-10: O72.1) / Laceração de Trajeto (O71.3) / Retenção Placentária (O72.0)] com Índice de Choque de [ ].
 
 # CONDUTA:
->> 1. RESSUSCITAÇÃO & PACOTE DA HORA DE OURO ([Executado / Não executado]):
+>> 1. RESSUSCITAÇÃO & PACOTE DA HORA DE OURO (executado imediatamente):
 1. Acionada equipe multidisciplinar (Obstetra Sênior, Anestesista, Enfermagem e Banco de Sangue).
 2. Oxigênio sob máscara não-reinalante a 10–15 L/min, elevação de MMII e prevenção de hipotermia (manta térmica + fluidos aquecidos).
 3. Puncionados 2 acessos venosos calibrosos (Jelco 14G ou 16G) e coletados: Hemograma, Tipagem/Prova Cruzada (reservar 2 a 4 CH), Fibrinogênio sérico, TP/INR, TTPa, Gasometria com Lactato e Cálcio iônico.
@@ -45,7 +45,7 @@ Alergias: [*Nega / Outros].
 1. [ ] Balão de Tamponamento Intrauterino (Bakri / Artesanal): Inserido na cavidade uterina e insuflado com [300 a 500] mL de SF 0,9% morno + ocitocina contínua e Cefazolina 2 g EV profilática (Teste do Tamponamento positivo em 15 min).
 2. [ ] Traje Anti-Choque Não-Pneumático (TAN): Posicionado dos tornozelos ao abdome (segmentos 1 a 6).
 3. [ ] Hemotransfusão / Coagulopatia: Transfundidos [ ] CH + [ ] PFC + Crioprecipitado 1 UI/10 kg (ou Concentrado de Fibrinogênio 2–4 g EV se Fibrinogênio < 200 mg/dL) + Gluconato de Cálcio 10% 10 mL EV se Ca++ iônico baixo.
-4. [ ] Abordagem Cirúrgica (Laparotomia): [Sutura compressiva de B-Lynch / Cho / Hayman / Ligadura bilateral das artérias uterinas / Histerectomia subtotal hemostática].
+4. [ ] Abordagem Cirúrgica (Laparotomia): [Sutura compressiva de B-Lynch / Cho / Hayman | Ligadura bilateral das artérias uterinas (O'Leary) ou hipogástricas | Histerectomia subtotal hemostática].
 5. Desfecho pós-estabilização: Útero contraído, sangramento controlado, PA [ ]x[ ] mmHg, FC [ ] bpm -> encaminhada à UTI / Recuperação para vigilância intensiva.
 ```
 

@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet" />
 </head>
-<body data-ws-mode="consulta" data-active-section="pep">
+<body data-active-section="pep">
   <!-- Banner PWA Update -->
   <div id="pwaUpdateBanner" class="pwa-update-banner" style="display:none;" role="status" aria-live="polite"></div>
 
@@ -91,9 +91,6 @@
             <button type="button" class="btn-palette-trigger" id="btnNovoPaciente" title="Limpar campos do paciente atual para novo atendimento">
               <span>🧹 Novo</span>
             </button>
-            <button type="button" class="btn-palette-trigger" id="clinicalModeToggle" title="Alternar Modo Consulta vs. Modo Treino">
-              <span>🩺 Consulta</span>
-            </button>
           </div>
         </div>
       </div>
@@ -131,12 +128,16 @@
         </div>
 
         <div class="drawer-tabs" role="tablist">
-          <button type="button" class="drawer-tab active" id="tabPepBtn" role="tab" aria-selected="true">⚡ Personalizar PEP</button>
+          <button type="button" class="drawer-tab" id="tabStandardBtn" role="tab" aria-selected="false">📄 Modelo Padrão</button>
+          <button type="button" class="drawer-tab active" id="tabPepBtn" role="tab" aria-selected="true">⚡ Personalizar</button>
+          <button type="button" class="drawer-tab" id="tabCondutaBtn" role="tab" aria-selected="false">📋 Conduta</button>
+          <button type="button" class="drawer-tab" id="tabReceitaBtn" role="tab" aria-selected="false">💊 Receita</button>
           <button type="button" class="drawer-tab" id="tabGuiaBtn" role="tab" aria-selected="false">📖 Diretrizes &amp; 7 Travas</button>
           <button type="button" class="drawer-tab" id="tabCartBtn" role="tab" aria-selected="false">🛒 Carrinho <span id="tabCartBadge">(0)</span></button>
         </div>
 
         <div class="drawer-body">
+          <div class="drawer-code-block" id="drawerStandardPanel" style="display:none;"></div>
           <div class="interactive-panel" id="drawerInteractivePanel"></div>
           <div class="guia-panel" id="drawerGuiaPanel" style="display:none;"></div>
           <div class="guia-panel" id="drawerCartPanel" style="display:none;"></div>

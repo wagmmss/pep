@@ -11,15 +11,15 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ].
-Comorbidades: [+ *Hígida / Outros].
-Alergias: [*Nega / Outros].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
 - Indicação: [Troca por término da validade de 3 anos / Retirada eletiva por desejo reprodutivo / Retirada por sangramento desfavorável].
-- Consentimento: TCLE lido e assinado. [Novo lote inserido / Apenas retirada eletiva].
+- Consentimento: TCLE lido e assinado. [Novo lote inserido: [ ] — Validade até: [DD/MM/AAAA] / Apenas retirada eletiva].
 
 # DESCRIÇÃO TÉCNICA DO PROCEDIMENTO:
 1. Posicionamento & Palpação Prévia Obrigatória: Paciente em decúbito dorsal, braço [esquerdo / direito] abduzido com cotovelo fletido. Implante prévio facilmente localizado por palpação bimanual no plano subdérmico superficial, móvel e íntegro.
 2. Antissepsia & Anestesia Sob a Ponta Distal: Antissepsia com Clorexidina Alcoólica 2% e campo estéril. Infiltração de 0,5 a 1 mL de Lidocaína 2% sem vasoconstritor exatamente ABAIXO da extremidade distal do implante (para elevar a ponta contra a derme, evitando hidrodissecção acima do implante que o esconderia).
-3. Incisão Longitudinal & Extração (Técnica Pop-Out):
+3. Incisão Longitudinal & Extração (*Técnica Pop-Out*):
    - Pressão digital firme na extremidade proximal do implante para projetar a ponta distal contra a pele.
    - Incisão longitudinal de 2 a 3 mm com lâmina nº 11 sobre a extremidade distal.
    - Divulsão delicada da cápsula fibrosa com gaze/lâmina até exteriorização da ponta branca; apreensão com pinça Mosquito curva e extração completa de bastonete íntegro medindo 4,0 cm (apresentado à paciente).
@@ -30,11 +30,11 @@ Alergias: [*Nega / Outros].
 5. Síntese & Curativo: Hemostasia compressiva, fechamento com [fita de aproximação estéril *Steri-Strip* / 1 ponto simples de Mononylon 4-0], gaze estéril e faixa compressiva de crepe. Procedimento sem intercorrências.
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. [Remoção e reinserção imediata de implante subdérmico / Remoção eletiva de implante subdérmico (Z30.5)].
+1. [Remoção e reinserção imediata de implante subdérmico (CID-10: Z30.5) / Remoção eletiva de implante subdérmico (Z30.5)].
 
 # CONDUTA:
 >> CONDUTA & ORIENTAÇÕES PÓS-PROCEDIMENTO:
-1. [Entregue novo Cartão da Usuária com validade de 3 anos / Se apenas retirada: orientada sobre retorno imediato].
+1. [Entregue novo Cartão da Usuária com validade de 3 anos (efeito contraceptivo imediato mantido sem necessidade de pausa) / Se apenas retirada: orientada sobre retorno imediato da fertilidade ovulatória e prescrito Ácido Fólico pré-concepcional ou novo método contraceptivo].
 
 # RECEITA:
 USO ORAL:

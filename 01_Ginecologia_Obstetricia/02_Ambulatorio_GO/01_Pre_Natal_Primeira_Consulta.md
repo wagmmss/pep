@@ -10,32 +10,32 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Profissão: [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [+ *Hígida / Outros].
-Alergias: [*Nega alergias conhecidas / Alérgica (especificar)].
-Antecedentes Obstétricos: [*Nulípara / Gestações prévias sem intercorrências / Pré-eclâmpsia prévia / DMG prévio / Parto prematuro prévio / Cesárea prévia há anos]. Último Citopatológico: [*Em dia e normal / Colhido há > 1–3 anos].
-Medicações em uso: [*Nega uso contínuo / Outros]. Hábitos: [+ *Nega tabagismo / Tabagista / Etilismo / Outros].
+ID: [Nome], [Idade] anos[? Profissão :: , Profissão: [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [+ *Hígida (nega HAS, DM, tireoidopatia ou trombofilia) / [ ]].
+Alergias: [*Nega alergias conhecidas / Alérgica a: [ ]].
+Antecedentes Obstétricos: [*Nulípara / Gestações prévias sem intercorrências / Pré-eclâmpsia prévia / DMG prévio / Parto prematuro prévio / Cesárea prévia há [ ] anos]. Último Citopatológico: [*Em dia e normal / Colhido há > 1–3 anos].
+[? Medicações & Hábitos :: Medicações em uso: [*Nega uso contínuo / [ ]] | Hábitos: [+ *Nega tabagismo, etilismo ou drogas ilícitas / Tabagista / Etilismo / [ ]].]
 - DUM: [DD/MM/AAAA] ([Certa e confiável / Incerta]) -> IG DUM: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
-- USG Precoce (1º Tri): [Solicitada hoje / Realizada em DD/MM com CCN de mm = IG USG s d].
+- USG Precoce (1º Tri): [Solicitada hoje / Realizada em [DD/MM/AAAA] com CCN de [ ] mm (IG na USG: [ ]s[ ]d) -> IG USG hoje: [ ]s[ ]d].
 - IG Definitiva Adotada: [ ] semanas e [ ] dias.
 
 # QP:
-Abertura de pré-natal.
+- Abertura de pré-natal.
 
 # HMA:
-Comparece para abertura de pré-natal, referindo [*ausência de queixas / náuseas matinais leves sem perda ponderal / mastalgia e sonolência fisiológicas / Outros].
-Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
+- Comparece para abertura de pré-natal, referindo [*ausência de queixas / náuseas matinais leves sem perda ponderal / mastalgia e sonolência fisiológicas / [ ]].
+- Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
 
 # EXAME FÍSICO:
-Antropometria & Vitais: Peso Pré-Gestacional: [ ] kg | Peso Atual: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m² ([Eutrófica / Sobrepeso / Obesidade / Baixo peso]). PA (sentada): [ ] mmHg | FC: [ ] bpm | Tax: [ ] °C.
-Ectoscopia, Tireoide & Cardiopulmonar: BEG, corada, hidratada, anictérica. Tireoide fibroelástica sem nódulos. RCR 2T BNF sem sopros; MV+ bilateral sem ruídos adventícios.
-Mamas: Simétricas, papilas [protrusas / semi-protrusas / planas], parênquima sem nódulos palpáveis, axilas livres.
-Abdome & Exame Obstétrico: Normotenso, indolor, sem visceromegalias. Altura Uterina (AU): [Útero intrapélvico (< 12s) / cm]. BCF (Sonar): [Inaudível ao sonar pela IG precoce (< 10–12s) / (145) bpm, rítmico].
-Exame Ginecológico (se realizado) & MMII: [Especular com colo epitelizado violáceo / Diferido]. MMII sem edemas ou sinais de TVP.
+- Antropometria & Vitais: Peso Pré-Gestacional: [ ] kg | Peso Atual: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m² ([Eutrófica / Sobrepeso / Obesidade / Baixo peso]). PA (sentada): [110x70] mmHg | FC: [78] bpm | Tax: [36,4] °C.
+- Ectoscopia, Tireoide & Cardiopulmonar: BEG, corada, hidratada, anictérica. Tireoide fibroelástica sem nódulos. RCR 2T BNF sem sopros; MV+ bilateral sem ruídos adventícios.
+- Mamas: Simétricas, papilas [protrusas / semi-protrusas / planas], parênquima sem nódulos palpáveis, axilas livres.
+- Abdome & Exame Obstétrico: Normotenso, indolor, sem visceromegalias. Altura Uterina (AU): [Útero intrapélvico (< 12s) / cm]. BCF (Sonar): [Inaudível ao sonar pela IG precoce (< 10–12s) / (145) bpm, rítmico].
+- Exame Ginecológico (se realizado) & MMII: [Especular com colo epitelizado violáceo (Sinal de Jacquemier/Kluge), conteúdo fisiológico, coletado colpocitopatológico / Diferido]. MMII sem edemas ou sinais de TVP.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Gestação tópica de [ ] semanas e [ ] dias (CID-10: Z34.0 / Z34.8).
-2. Estratificação de Risco: [Pré-Natal de Risco Habitual / Pré-Natal de Alto Risco] | Risco de Pré-Eclâmpsia: [Baixo / Alto risco].
+2. Estratificação de Risco: [Pré-Natal de Risco Habitual (PNBR) / Pré-Natal de Alto Risco (PNAR) por: [ ]] | Risco de Pré-Eclâmpsia: [Baixo / Alto risco — indicada profilaxia com AAS + Cálcio].
 
 # CONDUTA:
 >> CONDUTA & EXAMES SOLICITADOS (ROTINA DE 1º TRIMESTRE):
@@ -50,7 +50,7 @@ USO ORAL:
    Tomar 1 comprimido via oral, 1 vez ao dia, continuamente até a 14ª semana (Obs: prescrever Ácido Fólico 5 mg/dia se epilepsia, DNT prévio ou IMC > 35).
 2. Sulfato Ferroso 40 mg de ferro elementar (200 mg) ------------------- 60 comprimidos
    Tomar 1 comprimido via oral, 1 vez ao dia (30 min antes do almoço com suco de laranja), até o final da gestação e puerpério.
-3. [Se Alto/Moderado Risco para Pré-Eclâmpsia]:
+3. [Se Alto/Moderado Risco para Pré-Eclâmpsia — iniciar entre 12 e 16 sem até 36 sem]:
    - Ácido Acetilsalicílico (AAS) [100 mg / 150 mg] ---------------------- 60 comprimidos
      Tomar 1 comprimido via oral à noite (ao deitar), todos os dias, da 12ª até a 36ª semana.
    - Carbonato de Cálcio 500 mg de cálcio elementar (1.250 mg) --------- 60 comprimidos

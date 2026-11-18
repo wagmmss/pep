@@ -10,35 +10,34 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Sim].
-
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Sim: [ ]].
 # CLASSIFICAÇÃO HEMODINÂMICA DE STEVENSON:
 - PERFIL B: "QUENTE E ÚMIDO" (Boa perfusão periférica, porém com congestão pulmonar grave e hipertensão arterial) -> > 80% DOS CASOS DE EAP NA UPA.
-- [Se Perfil C: Choque cardiogênico com hipoperfusão].
+- [Se Perfil C ("Frio e Úmido"): Choque cardiogênico com hipoperfusão -> avaliar Dobutamina + Noradrenalina].
 
 # QP:
-Falta de ar intensa e súbita, sensação de afogamento e tosse com catarro espumoso há [ ] horas.
+- Falta de ar intensa e súbita, sensação de afogamento e tosse com catarro espumoso há [ ] horas.
 
 # HMA:
-Paciente com diagnóstico de Insuficiência Cardíaca / HAS grave relata início súbito de dispneia em repouso há cerca de [ ] horas. Refere ortopneia absoluta, dispneia paroxística noturna e tosse produtiva com expectoração espumosa [esbranquiçada / rósea característica]. Relata história recente de: [abandono de diuréticos / transgressão hídrica e de sal / pico hipertensivo / infecção recente / síndrome coronariana aguda desencadeante].
-Nega dor torácica pleurítica aguda súbita com assimetria de murmúrio.
-Nega febre alta, calafrios ou secreção purulenta espessa.
-Nega estridor respiratório ou edema de glote anafilático.
+- HMA: Paciente com diagnóstico de Insuficiência Cardíaca / HAS grave relata início súbito de dispneia em repouso há cerca de [ ] horas. Refere ortopneia absoluta (incapaz de deitar na maca), dispneia paroxística noturna e tosse produtiva com expectoração espumosa [esbranquiçada / rósea característica]. Relata história recente de: [abandono de diuréticos / transgressão hídrica e de sal / pico hipertensivo / infecção recente / síndrome coronariana aguda desencadeante].
+- Nega dor torácica pleurítica aguda súbita com assimetria de murmúrio (afastado pneumotórax).
+- Nega febre alta, calafrios ou secreção purulenta espessa (afastada sepse pulmonar pura).
+- Nega estridor respiratório ou edema de glote anafilático.
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg (acentuadamente elevada) | FC: [ ] bpm | FR: [ ] irpm (taquipneia severa) | SpO2: [ ]% em ar ambiente.
-Geral: Estado grave, ansioso, sudoreico frio profuso, cianose de extremidades e perioral, sentado com o tronco ereto e pernas pendentes, TEC [ ] segundos (perfusão quente/fria).
-AR:
-Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente, com presença de estertores crepitantes bolhosos difusos subindo das bases até terço médio e ápices pulmonares ("em maré montante"), associados a sibilos expiratórios de estase ("asma cardíaca").
-ACV:
-Ritmo cardíaco taquicárdico com presença de terceira bulha audível (B3 de galope ventricular), sopro sistólico mitral de regurgitação funcional; turgência jugular patológica evidente a 45 graus com refluxo hepatojugular positivo.
-ABD: Flácido, sensibilidade dolorosa leve em hipocôndrio direito por congestão hepática aguda.
-Membros Inferiores: Edema bilateral com cacifo presente (+/4+) em membros inferiores até joelhos.
+- SINAIS VITAIS: PA: [ ]x[ ] mmHg (acentuadamente elevada) | FC: [ ] bpm | FR: [ ] irpm (taquipneia severa) | SpO2: [ ]% em ar ambiente.
+- Ectoscopia: Estado grave, ansioso, sudoreico frio profuso, cianose de extremidades e perioral, sentado com o tronco ereto e pernas pendentes, tempo de enchimento capilar [ ] segundos (perfusão quente/fria).
+- Aparelho Respiratório:
+  * Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente, com presença de estertores crepitantes bolhosos difusos subindo das bases até terço médio e ápices pulmonares ("em maré montante"), associados a sibilos expiratórios de estase ("asma cardíaca").
+- Aparelho Cardiovascular:
+  * Ritmo cardíaco taquicárdico com presença de terceira bulha audível (B3 de galope ventricular), sopro sistólico mitral de regurgitação funcional; turgência jugular patológica evidente a 45 graus com refluxo hepatojugular positivo.
+- Abdome: Flácido, sensibilidade dolorosa leve em hipocôndrio direito por congestão hepática aguda.
+- Membros Inferiores: Edema bilateral com cacifo presente (+/4+) em membros inferiores até joelhos.
 
 # EXAMES COMPLEMENTARES NA UPA:
-- Eletrocardiograma (ECG): [Realizado imediatamente: Ritmo sinusal com sobrecarga / Fibrilação Atrial com alta resposta ventricular / Sem supra de ST evidente].
+- Eletrocardiograma (ECG): [Realizado imediatamente: Ritmo sinusal com sobrecarga ventricular esquerda / Fibrilação Atrial com alta resposta ventricular / Sem supra de ST evidente].
 - Radiografia de Tórax no Leito: Cardiomegalia, congestão venocapilar pulmonar bilateral com padrão em "asa de borboleta", proeminência de hilos pulmonares e linhas B de Kerley.
 - Laboratório: Gasometria arterial com acidose respiratória/mista, Troponina, Peptídeo Natriurético (BNP/NT-proBNP) elevado, Ureia, Creatinina, Eletrólitos (Sódio e Potássio).
 

@@ -10,11 +10,11 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg, Leito: Sala Vermelha [ ], Registro: [ ].
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Outros].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 - Horário de Abertura do Protocolo de Sepse: [HH:MM] do dia [DD/MM/AAAA].
-- Foco Infeccioso Suspeito: [Pulmonar (PAC grave / Broncoaspiração) / Urinário / Abdominal (Peritonite / Colangite) / Pele e Partes Moles (Erisipela / Fasciíte) / Foco Indeterminado].
+- Foco Infeccioso Suspeito: [Pulmonar (PAC grave / Broncoaspiração) / Urinário (Pielonefrite) / Abdominal (Peritonite / Colangite) / Pele e Partes Moles (Erisipela / Fasciíte) / Foco Indeterminado].
 
 # CRITÉRIOS DE TRIAGEM RÁPIDA (ESCORE qSOFA - >= 2 PONTOS SUGERE GRAVIDADE):
 [ ] Frequência Respiratória >= 22 irpm (Aferida FR: [ ] irpm).
@@ -32,13 +32,13 @@ Alergias: [*Nega / Outros].
 - Metabólico / Tecidual: Hiperlactatemia sérica > 2,0 mmol/L (> 18 mg/dL).
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg (PAM: [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Glicemia capilar: [ ] mg/dL.
-Geral: [Mau / Regular] estado geral, [sonolento / torporoso / confuso / lúcido], descorado, taquipneico.
-Perfusão Periférica: Extremidades [frias e mal perfundidas / quentes com vasodilatação distributiva]. Tempo de enchimento capilar (TEC): [ ] segundos (alterado se > 3 segundos). Presença de livedo em joelhos: [Sim / Não].
-ACV: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas, sem sopros.
-AR: Murmúrio vesicular [reduzido em bases / com presença de estertores crepitantes / sem ruídos adventícios].
-ABD: Flácido, [indolor / dor difusa / dor à palpação de fossa ilíaca / sinais de irritação peritoneal].
-Pele: Ausência de lesões bolhosas, crepitação subcutânea ou áreas necróticas extensas [se presente].
+- Sinais Vitais: PA: [ ]x[ ] mmHg (PAM: [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Glicemia capilar: [ ] mg/dL.
+- Ectoscopia: [Mau / Regular] estado geral, [sonolento / torporoso / confuso / lúcido], descorado, taquipneico.
+- Perfusão Periférica: Extremidades [frias e mal perfundidas / quentes com vasodilatação distributiva]. Tempo de enchimento capilar (TEC): [ ] segundos (alterado se > 3 segundos). Presença de livedo em joelhos: [Sim / Não].
+- Aparelho Cardiovascular: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas, sem sopros.
+- Aparelho Respiratório: Murmúrio vesicular [reduzido em bases / com presença de estertores crepitantes em [ ] / sem ruídos adventícios].
+- Abdome: Flácido, [indolor / dor difusa / dor à palpação de fossa ilíaca / sinais de irritação peritoneal].
+- Pele: Ausência de lesões bolhosas, crepitação subcutânea ou áreas necróticas extensas [se presente: [ ]].
 
 # CONDUTA:
 1. Lactato Sérico Inicial: Coletado às [HH:MM] -> Resultado: [ ] mmol/L (Alerta se > 2 mmol/L | Hipoperfusão tecidual grave se >= 4 mmol/L). Programada redosagem em 2 a 4 horas para avaliar clareamento do lactato.
@@ -61,7 +61,7 @@ Pele: Ausência de lesões bolhosas, crepitação subcutânea ou áreas necróti
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Sepse de foco [pulmonar / urinário / abdominal / indefinido] (CID-10: A41.9).
-2. [Evolução para Choque Séptico refratário a volume / Resposta volêmica satisfatória].
+2. [Evolução para Choque Séptico refratário a volume com necessidade de vasopressor (CID-10: R57.2) / Resposta volêmica satisfatória].
 
 # METAS TERAPÊUTICAS DAS PRIMEIRAS 6 HORAS:
 - Pressão Arterial Média (PAM) >= 65 mmHg.

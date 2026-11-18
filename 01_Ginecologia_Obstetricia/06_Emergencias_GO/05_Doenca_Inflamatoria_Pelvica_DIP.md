@@ -11,47 +11,47 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
-Comorbidades: [+ *Hígida / Outros].
-Alergias: [*Nega alergias medicamentosas / Alérgica (especificar)].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 - Contexto: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST].
 
 # QP:
-[Queixa principal] há [ ] [hora / dia].
+- [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de °C / calafrios / disúria].
-Nega atraso menstrual. [Nega vômitos incoercíveis / Apresenta febre alta, vômitos e peritonismo].
+- Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria].
+- Nega atraso menstrual (β-hCG negativo — afastada ectópica). [Nega vômitos incoercíveis, peritonismo difuso ou instabilidade hemodinâmica (elegível para Monif I ambulatorial) / Apresenta febre alta, vômitos e peritonismo (indicada internação — Monif II/III)].
 
 # EXAME FÍSICO:
-SSVV: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C.
-Exame Abdominal: Abdome plano, RHA+, dor à palpação profunda de hipogástrio e fossas ilíacas bilateralmente, [sem sinais de peritonite difusa / com descompressão brusca dolorosa localizada em pelve]. Sinal de Murphy/dor em HCD (Síndrome de Fitz-Hugh-Curtis): [*Ausente / Presente].
-Exame Especular: Paredes vaginais hiperemiadas, secreção mucopurulenta amarelada fluindo pelo orifício cervical externo (cervicite mucopurulenta) e colo friável ao toque do swab.
-Toque Vaginal Bimanual (3 Critérios Maiores Presentes):
-1. Dor intensa à mobilização do colo uterino (Sinal de Chandelier / Frenkel positivo);
-2. Dor à palpação uterina em hipogástrio;
-3. Dor à palpação das regiões anexiais bilateralmente, [sem massas anexiais palpáveis / com espessamento/massa anexial palpável sugerindo].
-Exames Complementares:
-Teste Rápido / β-hCG sérico: NEGATIVO | Testes Rápidos (HIV, Sífilis, Hep B e C): [Não reagentes].
-Laboratório: Leucócitos: [ ]/mm³, PCR: [ ] mg/L, EAS: [ ].
-USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas / Imagem complexa heterogênea].
+- Sinais Vitais: PA: [115x70] mmHg | FC: [88] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [37,8] °C.
+- Exame Abdominal: Abdome plano, RHA+, dor à palpação profunda de hipogástrio e fossas ilíacas bilateralmente, [sem sinais de peritonite difusa (DB negativo) / com descompressão brusca dolorosa localizada em pelve]. Sinal de Murphy/dor em HCD (Síndrome de Fitz-Hugh-Curtis): [*Ausente / Presente].
+- Exame Especular: Paredes vaginais hiperemiadas, secreção mucopurulenta amarelada fluindo pelo orifício cervical externo (cervicite mucopurulenta) e colo friável ao toque do swab.
+- Toque Vaginal Bimanual (3 Critérios Maiores Presentes):
+  * 1. Dor intensa à mobilização do colo uterino (Sinal de Chandelier / Frenkel positivo);
+  * 2. Dor à palpação uterina em hipogástrio;
+  * 3. Dor à palpação das regiões anexiais bilateralmente, [sem massas anexiais palpáveis (Monif I) / com espessamento/massa anexial palpável sugerindo abscesso tubo-ovariano (Monif III)].
+- Exames Complementares:
+  * Teste Rápido / β-hCG sérico: NEGATIVO | Testes Rápidos (HIV, Sífilis, Hep B e C): [Não reagentes].
+  * Laboratório: Leucócitos: [ ]/mm³, PCR: [ ] mg/L, EAS: [ ].
+  * USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas (Monif I/II) / Imagem complexa heterogênea retrouterina/anexial de [ ] cm compatível com Abscesso Tubo-Ovariano (Monif III)].
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. Doença Inflamatória Pélvica Aguda (CID-10: N73.0 / N73.9) — Estágio [Monif I / Monif II / Monif III / Monif IV].
+1. Doença Inflamatória Pélvica Aguda (CID-10: N73.0 / N73.9) — Estágio [Monif I (Leve — Ambulatorial) / Monif II (Moderada com peritonismo — Hospitalar) / Monif III (Abscesso Tubo-Ovariano — Hospitalar) / Monif IV (Abscesso Roto/Sepse — Cirúrgico)].
 
 # CONDUTA:
->> [MODALIDADE 1 — CONDUTA AMBULATORIAL]:
+>> [MODALIDADE 1 — CONDUTA AMBULATORIAL (MONIF I — APLICAR CEFTRIAXONA IM AGORA NA UNIDADE)]:
 1. Administrar AGORA na unidade: Ceftriaxona 500 mg IM profunda em dose única + Dipirona 1 g EV/VO para alívio álgico.
 2. Prescrever Doxiciclina + Metronidazol por 14 dias para casa + convocação e tratamento empírico obrigatório do(a) parceiro(a) sexual.
 3. Agendar Reavaliação Médica Obrigatória em 48 a 72 horas (se não houver melhora clínica substancial em 72h -> internar para esquema EV!).
 
->> [MODALIDADE 2 — CONDUTA HOSPITALAR]:
+>> [MODALIDADE 2 — CONDUTA HOSPITALAR (SE MONIF II, III, IV, GESTANTE, VÔMITOS OU FALHA EM 72H)]:
 1. Internação hospitalar, dieta zero se vômitos/possibilidade cirúrgica, hidratação venosa e analgesia EV.
 2. Esquema Antibiótico Hospitalar (1ª Linha — MS/CDC):
    - Ceftriaxona 1 g EV de 24/24 horas (ou 2 g EV 1x/dia)
    - + Doxiciclina 100 mg VO (ou EV) de 12/12 horas
    - + Metronidazol 400 mg VO de 12/12h (ou 500 mg EV de 8/8h)
-   (Manter EV até 24–48h após melhora clínica e defervescência; em seguida, transicionar para Doxiciclina 100 mg VO 12/12h + Metronidazol 400–500 mg VO 12/12h até completar 14 dias totais).
-3. *[OU Esquema Hospitalar Alternativo]*:
+   *(Manter EV até 24–48h após melhora clínica e defervescência; em seguida, transicionar para Doxiciclina 100 mg VO 12/12h + Metronidazol 400–500 mg VO 12/12h até completar 14 dias totais)*.
+3. *[OU Esquema Hospitalar Alternativo (Preferencial no Abscesso Tubo-Ovariano — Monif III)]*:
    - Clindamicina 900 mg EV de 8/8 horas + Gentamicina 5 mg/kg EV 1x/dia (ou 2 mg/kg ataque + 1,5 mg/kg 8/8h) + transição oral após 24–48h de melhora até completar 14 dias.
 4. Abordagem Cirúrgica (Laparoscopia / Laparotomia / Drenagem): Imediata se Monif IV (abscesso roto / choque séptico) ou se abscesso tubo-ovariano > 8 cm sem resposta após 48–72h de ATB EV.
 
@@ -65,7 +65,7 @@ USO ORAL (PARA A PACIENTE — TRATAMENTO COMPLETO DE 14 DIAS):
    Tomar 1 comprimido via oral de 12 em 12 horas (após o café e o jantar, com 1 copo cheio de água e sem deitar por 30 min), durante 14 dias consecutivos.
 3. Metronidazol [250 mg (56 cp) / 400 mg (28 cp)] ---------------------- 14 dias
    Tomar 2 comprimidos de 250 mg (500 mg) via oral de 12 em 12 horas, durante 14 dias consecutivos.
-   (Atenção: Proibido ingerir bebida alcoólica durante os 14 dias e até 48h após o término — risco de reação grave com vômitos e mal-estar).
+   *(Atenção: Proibido ingerir bebida alcoólica durante os 14 dias e até 48h após o término — risco de reação grave com vômitos e mal-estar)*.
 4. Ibuprofeno 600 mg --------------------------------------------------- 1 caixa
    Tomar 1 comprimido via oral de 8 em 8 horas após as refeições por 5 dias se dor.
 

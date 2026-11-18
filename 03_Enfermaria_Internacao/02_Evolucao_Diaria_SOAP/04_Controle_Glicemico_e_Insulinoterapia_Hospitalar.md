@@ -10,20 +10,15 @@
 
 ```text
 EVOLUÇÃO DIÁRIA DIRECIONADA — CONTROLE GLICÊMICO HOSPITALAR (DIRETRIZ SBD / ADA)
-
-# HISTÓRIA / RESUMO DA INTERNAÇÃO:
-[ ]
-[DD/MM/AAAA] | Evolução prévia até ontem: [ ]
-
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Leito [ ], Peso: [ ] kg, TFG estimada (CKD-EPI): [ ] mL/min/1,73m².
-Comorbidades: [DM2 / Outros].
-Alergias: [*Nega / Outros].
-- Diagnóstico Glicêmico: [DM2 prévio em uso domiciliar de antidiabéticos orais / DM2 insulinodependente prévio / Hiperglicemia de estresse hospitalar / Hiperglicemia induzida por Corticoide].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], Peso: [70] kg, TFG estimada (CKD-EPI): [ ] mL/min/1,73m².
+Comorbidades: [DM2 / [ ]].
+Alergias: [*Nega / [ ]].
+- Diagnóstico Glicêmico: [DM2 prévio em uso domiciliar de antidiabéticos orais / DM2 insulinodependente prévio / Hiperglicemia de estresse hospitalar / Hiperglicemia induzida por Corticoide (Prednisona/Dexametasona/Metilprednisolona)].
 - Via de Alimentação Atual: [Dieta oral regular para diabetes (3 refeições) / Dieta enteral contínua ou intermitente por SNE / Em jejum ou dieta zero para procedimento].
 - Mapa Glicêmico das Últimas 24 Horas (HGT):
   * Jejum (06h): [ ] mg/dL | Pré-Almoço (11h): [ ] mg/dL | Pré-Jantar (17h): [ ] mg/dL | 22h: [ ] mg/dL.
-  * Episódios de Hipoglicemia (< 70 mg/dL): [*Ausentes nas últimas 24h / Presente às h com HGT de mg/dL].
+  * Episódios de Hipoglicemia (< 70 mg/dL): [*Ausentes nas últimas 24h / Presente às [ ]h com HGT de [ ] mg/dL — exige redução de 20% da dose total de insulina hoje!].
   * Meta Glicêmica Hospitalar: 140 a 180 mg/dL (aceitável 100 a 180 mg/dL em enfermaria clínica/cirúrgica estável).
 
 # CONDUTA:
@@ -38,16 +33,16 @@ Alergias: [*Nega / Outros].
    - Componente PRANDIAL / BOLUS (50% da DDT dividida em 3 partes iguais — 1/3 antes do café, 1/3 antes do almoço e 1/3 antes do jantar):
      * Insulina Regular SC (aplicar 30 min antes da refeição) ou Lispro/Asparte/Glulisina SC (aplicar imediatamente antes da refeição). Se o paciente estiver em JEJUM, suspender a dose prandial fixa e manter a dose basal reduzida em 20–25%!
    - Escala de CORREÇÃO Suplementar (Insulina Regular ou Rápida SC pré-prandial conforme sensibilidade):
-     * HGT 141 a 180 mg/dL: +[ ] UI (Padrão) | +[ ] UI (Sensível/Idoso/IRC) | +[ ] UI (Resistente/Corticoide)
-     * HGT 181 a 220 mg/dL: +[ ] UI (Padrão) | +[ ] UI (Sensível) | +[ ] UI (Resistente)
-     * HGT 221 a 260 mg/dL: +[ ] UI (Padrão) | +[ ] UI (Sensível) | +[ ] UI (Resistente)
-     * HGT 261 a 300 mg/dL: +[ ] UI (Padrão) | +[ ] UI (Sensível) | +[ ] UI (Resistente)
-     * HGT > 300 mg/dL: +[ ] UI (Padrão) e avisar plantonista para checar cetonemia/hidratação.
+     * HGT 141 a 180 mg/dL: +[2] UI (Padrão) | +[1] UI (Sensível/Idoso/IRC) | +[4] UI (Resistente/Corticoide)
+     * HGT 181 a 220 mg/dL: +[4] UI (Padrão) | +[2] UI (Sensível) | +[6] UI (Resistente)
+     * HGT 221 a 260 mg/dL: +[6] UI (Padrão) | +[3] UI (Sensível) | +[8] UI (Resistente)
+     * HGT 261 a 300 mg/dL: +[8] UI (Padrão) | +[4] UI (Sensível) | +[10] UI (Resistente)
+     * HGT > 300 mg/dL: +[10] UI (Padrão) e avisar plantonista para checar cetonemia/hidratação.
 4. Protocolo de Hipoglicemia Hospitalar (Prescrever SEMPRE junto com qualquer insulina!):
    - Se HGT < 70 mg/dL e paciente consciente c/ via oral: Oferecer 15 g de carboidrato rápido (150 mL de suco de laranja/refrigerante comum ou 1 colher de sopa de açúcar em água) e repetir HGT em 15 minutos.
    - Se HGT < 70 mg/dL e paciente sonolento, em jejum ou inconsciente: Administrar 30 a 40 mL de Glicose a 50% IV em bolus (3 a 4 ampolas de 10 mL) + instalar SG 5% ou 10% contínuo e repetir HGT em 15 minutos.
 
-# RECEITA:
+# PRESCRIÇÃO DOMICILIAR / DE ALTA
 USO SUBCUTÂNEO E ORAL (TRANSIÇÃO DO CONTROLE GLICÊMICO NA ALTA HOSPITALAR — CONFORME HbA1c):
 
 1. Cloridrato de Metformina 850 mg (ou XR 500 mg) comprimidos (se TFG ≥ 30–45 mL/min e sem contraindicação) — Uso contínuo
@@ -58,6 +53,10 @@ USO SUBCUTÂNEO E ORAL (TRANSIÇÃO DO CONTROLE GLICÊMICO NA ALTA HOSPITALAR �
 
 3. Orientações de Automonitorização e Segurança contra Hipoglicemia:
    - Caso apresente suor frio, tremores, coração acelerado, fome súbita ou tontura (glicemia < 70 mg/dL), ingerir imediatamente 1 copo (150 mL) de suco adoçado ou 1 colher de sopa de açúcar diluída em água, aguardar 15 minutos e fazer um lanche com pão ou biscoito.
+
+# HISTÓRIA / RESUMO DA INTERNAÇÃO:
+Motivo da internação / Diagnóstico de base: [ ]
+Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 ```
 
 ---

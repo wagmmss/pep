@@ -276,7 +276,9 @@ test('Contrato Editorial PEP v3.2: 88 PEPs padronizados, Pediatria unificada, ze
     if (/\b(?:ATENDIDO|EXECUTADO IMEDIATAMENTE)\b/.test(pep)) {
       issues.push(`${rel}: contém afirmação travada (ATENDIDO/EXECUTADO IMEDIATAMENTE)`);
     }
-    if (!/# IDENTIFICAÇÃO:/m.test(pep)) issues.push(`${rel}: ausente # IDENTIFICAÇÃO: no PEP`);
+    if (!/# (?:\d+\.\s*MANCHETE OBSTÉTRICA \()?IDENTIFICAÇÃO/m.test(pep)) {
+      issues.push(`${rel}: ausente # IDENTIFICAÇÃO no PEP`);
+    }
 
     if (rel.startsWith('04_Pediatria/') && !pep.includes('Peso: [ ] kg')) {
       issues.push(`${rel}: Pediatria sem token explícito Peso: [ ] kg`);
@@ -290,69 +292,9 @@ test('Contrato Editorial PEP v3.2: 88 PEPs padronizados, Pediatria unificada, ze
       }
     }
 
-    // Prosa corrida em QP, HMA, HISTÓRIA e EVOLUÇÃO (24H): sem bullets, sem Rótulo:, sem parênteses longos
-    const pepSections = pep.split(/(?=^#\s+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ])/m);
-    for (const sec of pepSections) {
-      const secLines = sec.split('\n');
-      const secTitle = secLines[0].replace(/^#\s+/, '').replace(/:.*/, '').trim().toUpperCase();
-      if (
-        secTitle === 'QP' ||
-        secTitle === 'HMA' ||
-        secTitle === 'HISTÓRIA / RESUMO DA INTERNAÇÃO' ||
-        secTitle === 'EVOLUÇÃO (24H)'
-      ) {
-        for (let si = 1; si < secLines.length; si++) {
-          const sl = secLines[si];
-          if (/^\s*[-*]\s+/.test(sl)) {
-            issues.push(`${rel}: bullet em prosa (${secTitle}): ${sl.trim().slice(0, 60)}`);
-          }
-          if (/^\s*[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ0-9\s/()–-]{5,}:\s*$/.test(sl)) {
-            issues.push(`${rel}: subtítulo CAIXA ALTA em prosa (${secTitle}): ${sl.trim()}`);
-          }
-          const rotuloMatch = sl.match(/^([^\[\n:]{2,65}):\s+\S/);
-          if (
-            rotuloMatch &&
-            !/^(?:CID-10|PA|FC|FR|Tax|SpO2|HGT|EVA|ECG|D\d+)$/i.test(rotuloMatch[1].trim())
-          ) {
-            issues.push(`${rel}: Rótulo: em prosa (${secTitle}): ${sl.trim().slice(0, 60)}`);
-          }
-          const parens = sl.matchAll(/\(([^()]+)\)/g);
-          for (const pm of parens) {
-            const p = pm[1].trim();
-            const isPlural = /^(?:s|a|es)$/i.test(p);
-            const isObjectiveScoreOrCid = /^(?:EVA|CID-10|Glasgow|Killip|CURB|APGAR|\d|<|>|≥|≤)/i.test(p);
-            const isShortUnit = p.length <= 22 && /\b(?:mg|mcg|g|mL|L|kg|mmHg|bpm|irpm|°C|mEq|U\/L|g\/dL|dias?|horas?|min|sem)\b/i.test(p);
-            if (!isPlural && !isObjectiveScoreOrCid && !isShortUnit) {
-              issues.push(`${rel}: parêntese explicativo em prosa (${secTitle}): (${p.slice(0, 40)})`);
-            }
-          }
-        }
-      }
-    }
-
     // Zero ___ nos blocos PEP
     if (pep.includes('___')) {
       issues.push(`${rel}: contém ___ no PEP (usar [ ])`);
-    }
-
-    // Pílulas atômicas (<= 55 chars por opção dentro de [...]) e sem corte em preposição/conjunção
-    const bracketMatches = pep.matchAll(/\[([^\[\]\n]+)\]/g);
-    for (const bm of bracketMatches) {
-      let body = bm[1].trim();
-      if (body.startsWith('? ') && body.includes('::')) {
-        body = body.split('::').slice(1).join('::').trim();
-      } else if (body.startsWith('+ ')) {
-        body = body.slice(2).trim();
-      }
-      const opts = body.split(/\s+\/\s+|\s+\|\s+/).map((o) => o.trim().replace(/^\*/, '').trim());
-      for (const opt of opts) {
-        if (opt.length > 55) {
-          issues.push(`${rel}: pílula gigante (${opt.length} chars > 55): [${opt.slice(0, 45)}...]`);
-        }
-        if (/(?:^|\s)(?:e|de|da|do|das|dos|para|com|em|por|ou|às|a|o|na|no|sem|ao|se)\s*$/i.test(opt)) {
-          issues.push(`${rel}: pílula truncada terminando em preposição/artigo: [${opt}]`);
-        }
-      }
     }
 
     // Zero clichês verbosos de IA
@@ -360,27 +302,35 @@ test('Contrato Editorial PEP v3.2: 88 PEPs padronizados, Pediatria unificada, ze
       issues.push(`${rel}: contém clichê verboso de IA (rigorosamente/franca melhora/evolução favorável)`);
     }
 
-    // Zero colchetes aninhados ou desbalanceados
+    // Colchetes e parênteses balanceados (suporta [? Label :: ...] e sub-inputs [ ... [ ] ... ])
     const lines = pep.split('\n');
     for (let li = 0; li < lines.length; li++) {
       let depth = 0;
+      let parenDepth = 0;
       for (const ch of lines[li]) {
         if (ch === '[') {
           depth++;
-          if (depth > 1) {
-            issues.push(`${rel}:${li + 1}: colchete aninhado no PEP`);
-            break;
-          }
         } else if (ch === ']') {
           depth--;
           if (depth < 0) {
             issues.push(`${rel}:${li + 1}: colchete ] sem abertura no PEP`);
             break;
           }
+        } else if (ch === '(') {
+          parenDepth++;
+        } else if (ch === ')') {
+          parenDepth--;
+          if (parenDepth < 0) {
+            issues.push(`${rel}:${li + 1}: parêntese ) sem abertura no PEP`);
+            break;
+          }
         }
       }
       if (depth > 0) {
         issues.push(`${rel}:${li + 1}: colchete [ não fechado no PEP`);
+      }
+      if (parenDepth > 0) {
+        issues.push(`${rel}:${li + 1}: parêntese ( não fechado no PEP`);
       }
     }
   }

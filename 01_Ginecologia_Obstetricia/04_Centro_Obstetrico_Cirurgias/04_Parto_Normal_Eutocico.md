@@ -10,15 +10,15 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [+ *Hígida / Outros].
-Alergias: [*Nega / Outros].
-- Equipe: Obstetra: [Dr.] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr.].
+ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [+ *Hígida / [ ]].
+Alergias: [*Nega / [ ]].
+- Equipe: Obstetra: [Dr(a). ] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr(a). ].
 - Nascimento: [DD/MM/AAAA] às [HH:MM] | Apresentação: Cefálica fletida em [OP / OEA / ODA] | Bolsa: [Rota intraparto / Amniotomia no expulsivo], LA [claro com grumos / meconial fluido], sem odor.
-- Recém-Nascido: Vivo, sexo [masculino / feminino], Peso: [ ] g, Apgar: [ ] (1º/5º min), colocado em contato pele a pele imediato e clampeamento oportuno do cordão (após 1–3 min).
+- Recém-Nascido: Vivo, sexo [masculino / feminino], Peso: [ ] g, Apgar: [9/10] (1º/5º min), colocado em contato pele a pele imediato e clampeamento oportuno do cordão (após 1–3 min).
 
 # DESCRIÇÃO TÉCNICA DA ASSISTÊNCIA (2º E 3º PERÍODOS):
-1. Posição & Antissepsia: Parturiente em posição [semissentada / verticalizada / litotomia a 45°], antissepsia vulvoperineal com Clorexidina Aquosa 0,5% e campos estéreis. BCF monitorizado no expulsivo entre [ ] bpm sem desacelerações patológicas.
+1. Posição & Antissepsia: Parturiente em posição [semissentada / verticalizada / litotomia a 45°], antissepsia vulvoperineal com Clorexidina Aquosa 0,5% e campos estéreis. BCF monitorizado no expulsivo entre [120–155] bpm sem desacelerações patológicas.
 2. Desprendimento Cefálico & Corporal:
    - Puxos espontâneos coordenados às contrações; proteção perineal ativa pela Manobra de Ritgen modificada com deflexão cefálica controlada (sem episiotomia).
    - Checada região cervical: [ausência de circular de cordão / circular frouxa reduzida sobre o polo cefálico].
@@ -28,9 +28,9 @@ Alergias: [*Nega / Outros].
    - Tração controlada do cordão umbilical associada à contrapressão suprapúbica do segmento uterino (Manobra de Brandt-Andrews) e rotação placentária sobre seu eixo na saída vulvar (Manobra de Jacob-Dublin) às [HH:MM].
    - Revisão Placentária: Faces materna (cotilédones completos) e fetal íntegras, membranas completas e cordão com 2 artérias e 1 veia. Coletado sangue de cordão para TS/Rh e Coombs Direto (se mãe Rh-).
 4. Revisão do Canal de Parto & 4º Período (Greenberg):
-   - Revisão sob válvulas: Colo uterino íntegro em 360°, paredes vaginais sem hematomas. Períneo: [*Íntegro / Laceração superficial de 1º grau hemostática / Laceração de 2º grau suturada].
+   - Revisão sob válvulas: Colo uterino íntegro em 360°, paredes vaginais sem hematomas. Períneo: [*Íntegro / Laceração superficial de 1º grau hemostática sem necessidade de rafia / Laceração de 2º grau suturada conforme nota de perineorrafia].
    - Toque retal confirmatório: Esfíncter anal externo normotônico e mucosa retal íntegra.
-   - Globo de Segurança de Pinard formado e firme, lóquios fisiológicos, PA: [ ] mmHg, FC: [ ] bpm.
+   - Globo de Segurança de Pinard formado e firme, lóquios fisiológicos, PA: [115x75] mmHg, FC: [78] bpm.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Puerpério imediato de Parto Vaginal Eutócico a termo sem intercorrências (CID-10: O80.0).
@@ -39,7 +39,7 @@ Alergias: [*Nega / Outros].
 >> PRESCRIÇÃO MÉDICA PÓS-PARTO IMEDIATO (CENTRO OBSTÉTRICO -> ALOJAMENTO CONJUNTO):
 1. Dieta geral livre e estímulo à hidratação oral e deambulação assistida após 2 horas.
 2. Vigilância do 4º Período de Greenberg (1ª hora pós-parto): Aferir PA, FC, tônus uterino (Globo de Pinard) e sangramento vaginal a cada 15 minutos na 1ª hora.
-3. Estímulo ao aleitamento materno na 1ª hora de vida (Golden Hour).
+3. Estímulo ao aleitamento materno na 1ª hora de vida (*Golden Hour*).
 4. Dipirona 1 g EV/VO de 6/6h se dor ou febre.
 5. Cetoprofeno 100 mg EV/VO de 12/12h se dor perineal/cólica uterina [NÃO PRESCREVER SE HIPERTENSA / PRÉ-ECLÂMPSIA].
 6. Simeticona 40 gotas VO de 8/8h se desconforto abdominal.

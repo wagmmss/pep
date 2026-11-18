@@ -10,36 +10,36 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / Outros].
-
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
 # QP:
-Dor lombar insuportável em cólica de início súbito há [ ] horas.
+- Dor lombar insuportável em cólica de início súbito há [ ] horas.
 
 # HMA:
-Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa. Intensidade [ ] na escala analógica.
-Sintomas Vegetativos & Urinários Associados:
-Náuseas intensas e vômitos desencadeados pelo reflexo autonômico celíaco.
-Paciente inquieto, move-se constantemente e não encontra posição de alívio na maca.
-Polaciúria, disúria e sensação de urgência miccional.
-Hematúria [macroscópica com urina cor de refrigerante de cola / microscópica na fita reativa].
-[ ] Febre ou calafrios referidos.
-[ ] Rim único funcionante ou rim transplantado.
-[ ] Anúria persistente ou oligúria severa.
-[ ] Dor intratável refratária à analgesia venosa potente na UPA.
-[ ] Gestante em vigência de cólica nefrética.
-[TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE].
-[Episódios prévios conhecidos de litíase urinária / Primeiro episódio da vida].
+- HMA: Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa ([testículo/bolsa escrotal no homem / grande lábio na mulher]). Intensidade [10/10] na escala analógica.
+- Sintomas Vegetativos & Urinários Associados:
+  * Náuseas intensas e vômitos ([ ] episódios) desencadeados pelo reflexo autonômico celíaco.
+  * Agitação psicomotora evidente: paciente inquieto, move-se constantemente e não encontra posição de alívio na maca.
+  * Sintomas de irritação ureterovesical distal: Polaciúria, disúria e sensação de urgência miccional.
+  * Hematúria [macroscópica com urina cor de refrigerante de cola / microscópica na fita reativa].
+- RASTREAMENTO OBRIGATÓRIO DE SINAIS DE ALARME (URGÊNCIA UROLÓGICA):
+  [ ] Febre (Tax >= 37,8 °C) ou calafrios referidos (ALERTA MÁXIMO DE RIM OBSTRUÍDO INFECTADO / SEPSE).
+  [ ] Rim único funcionante ou rim transplantado (risco de anúria obstrutiva aguda).
+  [ ] Anúria persistente ou oligúria severa.
+  [ ] Dor intratável refratária à analgesia venosa potente na UPA.
+  [ ] Gestante em vigência de cólica nefrética.
+  * STATUS: [TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: [ ]].
+- Histórico Prévio: [Episódios prévios conhecidos de litíase urinária com eliminação de cálculos / Primeiro episódio da vida].
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).
-Geral: Estado geral regular, extremamente inquieto, fácies de sofrimento álgico agudo, sudoreico frio, lúcido e orientado, corado, anictérico.
-Exame Abdominal:
-Abdome plano, flácido, RHA+, com sensibilidade e dor reflexa à palpação profunda em flanco e fossa ilíaca [direita / esquerda], sem massas palpáveis.
-Ausência de peritonismo: Sinal de Blumberg negativo em todo o abdome (descompressão indolor), Murphy negativo.
-Punhopercussão Lombar (Sinal de Giordano):
-Sinal de Giordano FRANCAMENTE POSITIVO no hemidorso [direito / esquerdo], com desencadeamento de dor viva e sobressalto imediato do paciente; negativo contralateralmente.
+- SINAIS VITAIS: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).
+- Ectoscopia: Estado geral regular, extremamente inquieto, fácies de sofrimento álgico agudo, sudoreico frio, lúcido e orientado, corado, anictérico.
+- Exame Abdominal:
+  * Abdome plano, flácido, ruídos hidroaéreos presentes, com sensibilidade e dor reflexa à palpação profunda em flanco e fossa ilíaca [direita / esquerda], sem massas palpáveis.
+  * Ausência de peritonismo: Sinal de Blumberg negativo em todo o abdome (descompressão indolor), Murphy negativo.
+- Punhopercussão Lombar (Sinal de Giordano):
+  * Sinal de Giordano FRANCAMENTE POSITIVO no hemidorso [direito / esquerdo], com desencadeamento de dor viva e sobressalto imediato do paciente; negativo contralateralmente.
 
 # EXAMES LABORATORIAIS NA UPA:
 - Urina Tipo 1 (EAS): Hematúria microscópica com hemácias abundantes (campo cheio), leucócitos [ ]/campo, ausência de cilindros hemáticos ou leucocitários, cristais de [oxalato de cálcio / ácido úrico] presentes.
@@ -61,14 +61,14 @@ Sinal de Giordano FRANCAMENTE POSITIVO no hemidorso [direito / esquerdo], com de
    - Antiemético:
      * Ondansetrona 4 a 8 mg EV lento (ou Metoclopramida 10 mg EV se náuseas persistentes).
 
-2. [SE DOR REFRATÁRIA OU INTENSA APÓS 30 MINUTOS]:
+2. [SE DOR REFRATÁRIA OU INTENSA APÓS 30 MINUTOS (SEGUNDA LINHA)]:
    - Cloridrato de Tramadol 50 a 100 mg EV diluído em 100 mL de SF 0,9% correr em 20 minutos (ou Morfina 2 a 4 mg EV lento).
 
 3. HIDRATAÇÃO EQUILIBRADA:
    - Soro Fisiológico 0,9% 500 mL EV lento.
-   (Nota: NÃO realizar hiperidratação venosa forçada de 2 a 3 litros durante a crise aguda, pois o aumento súbito da diurese contra o ureter obstruído eleva a pressão pielocalicial e PIORA a dor).
+   *(Nota: NÃO realizar hiperidratação venosa forçada de 2 a 3 litros durante a crise aguda, pois o aumento súbito da diurese contra o ureter obstruído eleva a pressão pielocalicial e PIORA a dor).*
 
-# RECEITA:
+>> PRESCRIÇÃO DOMICILIAR & TERAPIA EXPULSIVA MÉDICA (MET):
 1. Terapia Expulsiva Médica (Para cálculos ureterais de 5 a 10 mm no ureter distal):
    - Cloridrato de Tansulosina 0,4 mg - Tomar 1 cápsula VO 1x/dia, à noite após o jantar, por 14 a 28 dias (promove o relaxamento da musculatura lisa do ureter distal e facilita a expulsão do cálculo).
 2. Anti-inflamatório Oral:
@@ -78,7 +78,7 @@ Sinal de Giordano FRANCAMENTE POSITIVO no hemidorso [direito / esquerdo], com de
 4. Antiespasmódico de Resgate:
    - Hioscina + Dipirona (Buscopan Composto) - Tomar 1 a 2 comprimidos VO 8/8h se cólica.
 
-# ORIENTAÇÕES / SINAIS DE ALARME:
+>> ORIENTAÇÕES & SINAIS DE ALARME DE RETORNO IMEDIATO:
 - Urinar em filtro de café ou peneira fina para capturar o cálculo caso seja expelido (para posterior análise bioquímica).
 - Ingesta hídrica moderada de cerca de 2 litros/dia após a crise álgica.
 - ALERTA ABSOLUTO: Retornar à UPA IMEDIATAMENTE se apresentar febre (Tax >= 37,8 °C), tremores de frio, vômitos que impeçam tomar água ou parada completa de eliminação de urina (anúria).

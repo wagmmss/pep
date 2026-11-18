@@ -11,31 +11,30 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Alérgico a Dipirona / Alérgico a Metoclopramida/Plasil / Outros].
-
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico a Dipirona / Alérgico a Metoclopramida/Plasil / [ ]].
 # QP:
-Diarreia, vômitos e dor de barriga em cólica há [ ] dias.
+- Diarreia, vômitos e dor de barriga em cólica há [ ] dias.
 
 # HMA:
-Refere início há cerca de [ ] dias de evacuações líquidas frequentes, fezes de aspecto [líquido amarelado sem restos de sangue / com restos alimentares / sanguinolento], associadas a episódios de vômitos, cólicas abdominais difusas e febre não aferida. Relata história epidemiológica de consumo de alimento suspeito ou familiares com quadro similar.
-Nega disenteria grave.
-Nega dor abdominal contínua localizada em fossa ilíaca direita ou hipocôndrio direito.
-Nega vômitos incoercíveis com intolerância absoluta a qualquer líquido.
-Nega anúria ou oligúria severa.
-Nega síncope, hipotensão postural severa ou confusão mental.
+- HMA: Refere início há cerca de [ ] dias de evacuações líquidas frequentes (cerca de [ ] episódios/dia), fezes de aspecto [líquido amarelado sem restos de sangue / com restos alimentares / sanguinolento], associadas a episódios de vômitos ([ ] episódios), cólicas abdominais difusas e febre não aferida. Relata história epidemiológica de consumo de alimento suspeito ou familiares com quadro similar.
+- Nega disenteria grave (fezes com sangue vivo abundante, muco e pus com tenesmo retal intenso).
+- Nega dor abdominal contínua localizada em fossa ilíaca direita ou hipocôndrio direito.
+- Nega vômitos incoercíveis com intolerância absoluta a qualquer líquido.
+- Nega anúria ou oligúria severa (diurese ausente há mais de 12 horas).
+- Nega síncope, hipotensão postural severa ou confusão mental.
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
-AVALIAÇÃO DO ESTADO DE HIDRATAÇÃO:
-Olhos: [Normais / Fundos].
-Lágrimas: [Presentes / Ausentes].
-Boca e Língua: [Úmidas / Secas / Muito secas].
-Sede: [Bebe normalmente / Sedento, bebe sofregamente / Incapaz de beber].
-Sinal da Prega Cutânea (Turgor): [Desaparece rapidamente / Desaparece lentamente (> 2s)].
-Tempo de Enchimento Capilar: [*Normal < 2 segundos / Lentificado > 2 segundos].
-CLASSIFICAÇÃO: [SEM DESIDRATAÇÃO / DESIDRATAÇÃO CLÍNICA MODERADA / DESIDRATAÇÃO GRAVE COM CHOQUE].
-Exame Abdominal: Abdome plano/globoso, ruídos hidroaéreos aumentados difusamente (borborigmos), flácido, difusamente doloroso à palpação sem ponto doloroso fixo, ausência de massas, ausência de sinais de irritação peritoneal (Sinal de Blumberg negativo, Murphy negativo).
+- Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
+- AVALIAÇÃO DO ESTADO DE HIDRATAÇÃO:
+  * Olhos: [Normais / Fundos].
+  * Lágrimas: [Presentes / Ausentes].
+  * Boca e Língua: [Úmidas / Secas / Muito secas].
+  * Sede: [Bebe normalmente / Sedento, bebe sofregamente / Incapaz de beber].
+  * Sinal da Prega Cutânea (Turgor): [Desaparece rapidamente / Desaparece lentamente (> 2s)].
+  * Tempo de Enchimento Capilar: [*Normal < 2 segundos / Lentificado > 2 segundos].
+  * CLASSIFICAÇÃO: [SEM DESIDRATAÇÃO (PLANO A) / DESIDRATAÇÃO CLÍNICA MODERADA (PLANO B) / DESIDRATAÇÃO GRAVE COM CHOQUE (PLANO C)].
+- Exame Abdominal: Abdome plano/globoso, ruídos hidroaéreos aumentados difusamente (borborigmos), flácido, difusamente doloroso à palpação sem ponto doloroso fixo, ausência de massas, ausência de sinais de irritação peritoneal (Sinal de Blumberg negativo, Murphy negativo).
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Gastroenterite Aguda Infecciosa de provável etiologia viral/toxigênica (CID-10: A09).
@@ -50,7 +49,7 @@ Exame Abdominal: Abdome plano/globoso, ruídos hidroaéreos aumentados difusamen
    - Hioscina (Escopolamina/Buscopan) 20 mg (1 ampola) + Dipirona 1 g (Buscopan Composto) diluídos em 100 mL de SF 0,9% EV correr em 20 minutos.
 4. Teste de Tolerância Oral: Oferecer 200 mL de água ou SRO na unidade após 30-40 minutos da medicação venosa antes da liberação.
 
-# RECEITA:
+>> PRESCRIÇÃO DOMICILIAR:
 1. Sais de Reidratação Oral (SRO em envelopes da OMS):
    - Diluir 1 envelope em exatamente 1 litro de água filtrada ou fervida.
    - Tomar 1 copo (150 a 250 mL) após cada evacuação líquida ou episódio de vômito, ingerindo aos goles lentos.

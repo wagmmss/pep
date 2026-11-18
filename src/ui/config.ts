@@ -19,7 +19,7 @@ export function initConfig(): (container: HTMLElement) => void {
           <div>
             <div class="mq-eyebrow">PREFERÊNCIAS DA WORKSTATION &amp; DADOS LOCAIS</div>
             <h2 class="mq-workspace-title">⚙️ Configurações, Tema Clinical Calm &amp; Backup</h2>
-            <p class="mq-workspace-sub">Tema Claro (papel fosco) / Escuro (grafite), Modo Consulta vs. Treino, Layout e Backup JSON v2 anti-PII</p>
+            <p class="mq-workspace-sub">Tema Claro (papel fosco) / Escuro (grafite), Layout e Backup JSON v2 anti-PII</p>
           </div>
         </header>
 
@@ -31,16 +31,6 @@ export function initConfig(): (container: HTMLElement) => void {
             <div class="mq-btn-row" style="margin-top:4px;">
               <button type="button" class="btn-palette-trigger${state.theme === 'dark' ? ' active' : ''}" id="cfgThemeDark">🌙 Modo Escuro</button>
               <button type="button" class="btn-palette-trigger${state.theme === 'light' ? ' active' : ''}" id="cfgThemeLight">☀️ Modo Claro</button>
-            </div>
-          </div>
-
-          <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
-            <div class="mq-stat-label">Densidade da Interface PEP</div>
-            <div style="font-weight:700; font-size:0.95rem;">Modo Consulta vs. Modo Treino</div>
-            <p class="mq-hint">No Modo Consulta apenas protocolos críticos mostram pré-porta; no Modo Treino todos links teóricos aparecem.</p>
-            <div class="mq-btn-row" style="margin-top:4px;">
-              <button type="button" class="btn-palette-trigger${state.clinicalMode === 'consulta' ? ' active' : ''}" id="cfgModeConsulta">🩺 Modo Consulta</button>
-              <button type="button" class="btn-palette-trigger${state.clinicalMode === 'treino' ? ' active' : ''}" id="cfgModeTreino">🎓 Modo Treino</button>
             </div>
           </div>
 
@@ -92,15 +82,6 @@ export function initConfig(): (container: HTMLElement) => void {
     });
     container.querySelector('#cfgThemeLight')?.addEventListener('click', () => {
       cockpitStore.setTheme('light');
-      render(container);
-    });
-
-    container.querySelector('#cfgModeConsulta')?.addEventListener('click', () => {
-      cockpitStore.setClinicalMode('consulta');
-      render(container);
-    });
-    container.querySelector('#cfgModeTreino')?.addEventListener('click', () => {
-      cockpitStore.setClinicalMode('treino');
       render(container);
     });
 

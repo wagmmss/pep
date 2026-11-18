@@ -2,6 +2,7 @@ import glob
 import json
 import os
 import re
+import unicodedata
 
 BASE_PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SNIPPETS_DIR = os.path.join(BASE_PROJECT, 'snippets')
@@ -112,6 +113,13 @@ def extract_section_body(content, heading_pattern):
     return re.sub(r'\n+---\s*$', '', body).strip()
 
 
+def _norm_dedup_key(text: str) -> str:
+    nfkd = unicodedata.normalize('NFKD', text or '')
+    no_accents = ''.join(ch for ch in nfkd if not unicodedata.combining(ch))
+    cleaned = re.sub(r'[^a-z0-9 ]+', ' ', no_accents.lower())
+    return re.sub(r'\s+', ' ', cleaned).strip()
+
+
 def _parse_bullet_items(section_text, default_title='Armadilha Crítica'):
     items = []
     for raw_line in (section_text or '').splitlines():
@@ -218,6 +226,10 @@ def parse_hab_card(file_path, seq_num):
     time_goal = extract_md_meta(content, ['Meta de Tempo', 'Tempo Alvo de Revisão Pré-Porta', 'Tempo Alvo', 'Tempo']) or '30s Pré-Porta'
     anchor = extract_md_meta(content, ['Âncora', 'Ancora'])
 
+    sec5 = extract_section_body(content, r'(?:📝\s*)?5\.\s*COMO REGISTRAR NO PRONTUÁRIO')
+    sec5_code = re.search(r'```(?:text|markdown|md)?\s*\n(.*?)\n```', sec5, re.DOTALL)
+    sec5_clean = sec5_code.group(1).strip() if sec5_code else sec5.strip()
+
     legacy_pre = extract_section_body(content, r'(?:⚡\s*)?Pr[eé]-Porta(?:\s*30s)?')
     if legacy_pre:
         pre_block = re.search(r'```(?:text|markdown|md)?\s*\n(.*?)\n```', legacy_pre, re.DOTALL)
@@ -226,10 +238,6 @@ def parse_hab_card(file_path, seq_num):
         sec1 = extract_section_body(content, r'(?:🎯\s*)?1\.\s*O QUE NÃO ESQUECER')
         sec2 = extract_section_body(content, r'(?:🧠\s*)?2\.\s*MNEMÔNICO')
         sec3 = extract_section_body(content, r'(?:🛠️\s*)?3\.\s*COREOGRAFIA')
-        sec4 = extract_section_body(content, r'(?:🚨\s*)?4\.\s*RED FLAGS')
-        sec5 = extract_section_body(content, r'(?:📝\s*)?5\.\s*COMO REGISTRAR NO PRONTUÁRIO')
-        sec5_code = re.search(r'```(?:text|markdown|md)?\s*\n(.*?)\n```', sec5, re.DOTALL)
-        sec5_clean = sec5_code.group(1).strip() if sec5_code else sec5
 
         if not anchor and sec2:
             anchor = re.sub(r'^>\s*', '', sec2.splitlines()[0]).strip().strip('*')
@@ -238,14 +246,15 @@ def parse_hab_card(file_path, seq_num):
         if sec1:
             parts.append(f"1. O QUE NÃO ESQUECER (Visão 5s):\n{sec1}")
         if sec2:
-            clean_s2 = re.sub(r'^>\s*', '', sec2, flags=re.M).strip()
-            parts.append(f"2. REGRA DE OURO:\n{clean_s2}")
+            clean_s2 = re.sub(r'^>\s?', '', sec2, flags=re.M).strip()
+            s2_non_empty_lines = [ln.strip() for ln in clean_s2.splitlines() if ln.strip()]
+            has_rich_s2 = len(s2_non_empty_lines) > 1 or (
+                bool(clean_s2) and _norm_dedup_key(clean_s2) != _norm_dedup_key(anchor)
+            )
+            if has_rich_s2:
+                parts.append(f"2. MNEMÔNICO / REGRA DE OURO:\n{clean_s2}")
         if sec3:
             parts.append(f"3. COREOGRAFIA / PASSO A PASSO TÉCNICO:\n{sec3}")
-        if sec4:
-            parts.append(f"4. RED FLAGS (Sinais de Alarme):\n{sec4}")
-        if sec5_clean:
-            parts.append(f">>> COMO REGISTRAR NO PRONTUÁRIO:\n{sec5_clean}")
         pre_porta = '\n\n'.join(parts).strip()
 
     chk_section = extract_section_body(content, r'(?:✅\s*)?(?:\d+\.\s*)?Checklist(?:\s+P[oó]s-Atendimento)?')
@@ -285,7 +294,16 @@ def parse_hab_card(file_path, seq_num):
 
     rf_section = extract_section_body(content, r'(?:[^\w\s]+\s*)?(?:\d+\.\s*)?RED FLAGS')
     pit_section = extract_section_body(content, r'(?:[^\w\s]+\s*)?(?:\d+\.\s*)?Armadilhas(?:\s+(?:DO\s+INTERNO|&\s*Erros(?:\s+Fatais)?))?')
-    pitfalls = _parse_bullet_items(rf_section, 'Red Flag') + _parse_bullet_items(pit_section, 'Erro Crítico')
+    raw_pitfalls = _parse_bullet_items(rf_section, 'Red Flag') + _parse_bullet_items(pit_section, 'Erro Crítico')
+    pitfalls = []
+    seen_pitfalls = set()
+    for pf in raw_pitfalls:
+        dedup_key = _norm_dedup_key(pf.get('title', '')) or _norm_dedup_key(pf.get('detail', ''))
+        if dedup_key and dedup_key in seen_pitfalls:
+            continue
+        if dedup_key:
+            seen_pitfalls.add(dedup_key)
+        pitfalls.append(pf)
 
     rel_path = os.path.relpath(file_path, BASE_PROJECT)
 
@@ -309,7 +327,7 @@ def parse_hab_card(file_path, seq_num):
         'pitfalls': pitfalls,
         'pitfalls_raw': '\n\n'.join(p for p in [rf_section, pit_section] if p).strip(),
         'path': rel_path,
-        'pep_body': '',
+        'pep_body': sec5_clean,
         'has_split': False,
         'evolucao_body': '',
         'conduta_body': '',
@@ -319,7 +337,7 @@ def parse_hab_card(file_path, seq_num):
         'orientacoes_body': '',
         'has_guia': False,
         'guia_body': '',
-        'sections': {},
+        'sections': {'Texto Pronto': sec5_clean} if sec5_clean else {},
     }
 
 

@@ -9,17 +9,10 @@
 ## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-# HISTÓRIA / RESUMO DA INTERNAÇÃO:
-[ ]
-[DD/MM/AAAA] | Evolução prévia até ontem: [ ]
-
-# IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Leito: [ ].
-
 # 1. MANCHETE OBSTÉTRICA (IDENTIFICAÇÃO + PARTO + RISCO):
-"Preceptor(a), Leito [ ],[Nome], [Idade] anos, G [ ] P [ ], no [1º / 2º / 3º] DPO de [Parto Normal sem intercorrências / Parto Normal com laceração de 2º grau / Cesariana por indicação] com IG de [ ]s[ ]d.
-- Antecedentes: [Hígida / HAG / Pré-eclâmpsia / DMG em dieta / Anemia / Outros] | Alergias: [*Nega alergias / Alérgica (especificar)].
-- Intraparto: [Sem intercorrências / Apresentou HPP por atonia revertida]."
+"Preceptor(a), [? Leito :: Leito [ ], ][Nome], [Idade] anos[? G/P/A :: , G[ ] P[ ] A[ ]], no [1º / 2º / 3º] DPO de [Parto Normal sem intercorrências / Parto Normal com laceração de [2º] grau / Cesariana por [indicação]] com IG de [ ]s[ ]d.
+- Antecedentes: [Hígida / HAG / Pré-eclâmpsia / DMG em dieta / Anemia / [ ]] | Alergias: [*Nega alergias / Alérgica a: [ ]].
+- Intraparto: [Sem intercorrências / Apresentou HPP por atonia revertida com ocitocina + ácido tranexâmico]."
 
 # 2. EVOLUÇÃO (24H) & AMAMENTAÇÃO:
 "Passou as últimas 24h estável, afebril, deambulando sem ortostatismo e aceitando bem a dieta.
@@ -28,22 +21,26 @@ ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Leito: [ ].
 
 # 3. EXAME FÍSICO DIRIGIDO:
 "Ao exame físico hoje:
-- Vitais: PA [ ] mmHg | FC [ ] bpm | FR [ ] irpm | Tax [ ] °C | Corada e hidratada.
+- Vitais: PA [110x70] mmHg | FC [76] bpm | FR [16] irpm | Tax [36,5] °C | Corada e hidratada.
 - Mamas: [Túrgidas fisiológicas / Flácidas], sem mastite ou fissuras, colostro presente bilateralmente.
-- Abdome & Útero: Flácido, sem bexigoma, útero contraído (Globo de Pinard presente) a [ ] cm abaixo da cicatriz umbilical, indolor.
+- Abdome & Útero: Flácido, sem bexigoma, útero contraído (Globo de Pinard presente) a [2] cm abaixo da cicatriz umbilical, indolor.
 - Períneo / FO: [Períneo íntegro / Rafia perineal coaptada e limpa / FO de Pfannenstiel limpa, seca e sem flogose], lóquios rubros fisiológicos.
 - Extremidades: Sem edemas assimétricos, panturrilhas livres e indolores."
 
 # 4. AUDITORIA DE PRONTUÁRIO (DADOS MANDATÓRIOS DA CHEFIA):
-"- Imuno-hematologia: Mãe TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-], RN TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-], Coombs Direto [*negativo / positivo].
-- Sorologias & Vacinas: HIV, VDRL e HBsAg [não reagentes / Outros], Toxo [imune / suscetível orientada].
-- Controles Específicos: [Curva pressórica normotensa < 140x90 mmHg / Glicemias capilares normais sem insulina / Hb de controle pós-HPP: g/dL]."
+"- Imuno-hematologia: Mãe TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: , RN TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-], Coombs Direto [negativo -> sem indicação de Anti-D / Mãe Rh- com RN Rh+ -> Anti-D 300 mcg IM já administrada]].
+- Sorologias & Vacinas: HIV, VDRL e HBsAg [não reagentes / [ ]], Toxo [imune / suscetível orientada].
+- Controles Específicos: [Curva pressórica normotensa < 140x90 mmHg / Glicemias capilares normais após suspensão de insulina/dieta / Hb de controle pós-HPP: g/dL]."
 
 # CONDUTA:
 1. Risco de TEV: [Baixo -> manter deambulação precoce / Alto -> manter Enoxaparina 40 mg SC/dia por 10–15 dias].
 2. Analgesia & Suporte: Manter Dipirona 1 g 6/6h SOS [sem AINEs por ser hipertensa / + Ibuprofeno 600 mg 8/8h] + Sulfato Ferroso 40 mg Fe elementar/dia.
-3. Planejamento Reprodutivo: [Ponte c/ Desogestrel 75 mcg/dia / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / Outros].
-4. Desfecho Proposto: [Em condições de alta hoje com receita e retorno UBS 7d / Manter internada por mais 24h para vigilância]."
+3. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / [ ]].
+4. Desfecho Proposto: [Condições de alta hospitalar hoje com receita, cartão de puerpério e retorno agendado na UBS em 7 dias / Manter internada por mais 24h para vigilância pressórica]."
+
+# HISTÓRIA / RESUMO DA INTERNAÇÃO:
+Motivo da internação / Diagnóstico de base: [ ]
+Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 ```
 
 ---

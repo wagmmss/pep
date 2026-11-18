@@ -10,46 +10,46 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
 Acolhimento / Classificação de Risco: [Azul / *Verde / Amarelo / Vermelho] às [HH:MM].
-Comorbidades: [+ *Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / Outros].
-Alergias: [*NEGA ALERGIAS CONHECIDAS / ALÉRGICO A: Dipirona / ALÉRGICO A: Penicilina / ALÉRGICO A: AINEs / Outros].
-Medicações em uso contínuo: [*Nega / Outros]. Hábitos: [+ *Nega tabagismo e etilismo / Tabagismo / Etilismo / Outros].
+Comorbidades: [+ *Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / [ ]].
+Alergias: [*NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A: Penicilina / ALÉRGICO(A) A: AINEs / [ ]].
+[? Uso contínuo & Hábitos :: Medicações em uso contínuo: [*Nega / [ ]]. | Hábitos: [+ *Nega tabagismo e etilismo / Tabagismo / Etilismo / [ ]].]
 
 # QP:
-[Descrever queixa principal] há [ ] [hora / dia / semana].
+- [Descrever queixa principal] há [ ] [hora(s) / dia(s) / semana(s)].
 
 # HMA:
-Início [*súbito / insidioso], intensidade [ ]/10, evolução [ ] e fatores de melhora/piora [ ].
-[+ *Nega outros sintomas / Febre / Náuseas e vômitos / Dispneia / Tontura / Outros].
-Nega febre alta persistente, dor precordial, dispneia súbita, síncope, cefaleia em trovoada, déficits neurológicos focais, abdome em barra ou sangramentos ativos.
+- Início [*súbito / insidioso], intensidade [ ]/10, evolução [ ] e fatores de melhora/piora [ ].
+- Sintomas associados: [+ *Nega outros sintomas / Febre / Náuseas e vômitos / Dispneia / Tontura / [ ]].
+- Nega febre alta persistente, dor precordial, dispneia súbita, síncope, cefaleia em trovoada, déficits neurológicos focais, abdome em barra ou sangramentos ativos.
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C| HGT: [ ] mg/dL.
-Geral: [*BEG, LOTE (Glasgow 15), corado, hidratado, anictérico / REG / MEG / Outros].
-Neurológico: [*Vigil, pupilas isocóricas e fotorreagentes / Outros].
-Cardiovascular: [*RCR em 2T, BNF, sem sopros ou atritos / Outros].
-Respiratório: [*Tórax simétrico / Sibilos / Crepitações / Outros].
-ABD: [*Plano, RHA+, flácido, indolor à palpação / Outros].
-EXT: [*Bem perfundidas / Outros].
+- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C[? HGT :: | HGT: [ ] mg/dL].
+- Ectoscopia Geral: [*BEG, LOTE (Glasgow 15), corado, hidratado, anictérico, acianótico, afebril, eupneico, TEC < 2s / REG / MEG / [ ]].
+- Neurológico: [*Vigil, pupilas isocóricas e fotorreagentes, sem déficits focais ou rigidez de nuca / [ ]].
+- Cardiovascular: [*RCR em 2T, BNF, sem sopros ou atritos; pulsos periféricos simétricos e amplos / [ ]].
+- Respiratório: [*Tórax simétrico, MV presente bilateralmente, sem ruídos adventícios / Sibilos / Crepitações / [ ]].
+- Abdome: [*Plano, RHA+, flácido, indolor à palpação, sem visceromegalias ou irritação peritoneal (Blumberg/Murphy/Giordano negativos) / [ ]].
+- Extremidades: [*Bem perfundidas, sem edema de MMII ou dor à palpação de panturrilhas / [ ]].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. [Descrever diagnóstico sindrômico ou nosológico] (CID-10: [ ]).
-- Estabilidade: [*Hemodinamicamente estável / Sinais de alerta presentes].
+- Estabilidade: [*Hemodinamicamente estável, sem critérios de instabilidade ou sepse / Sinais de alerta presentes].
 
 # CONDUTA:
 
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO / OBSERVAÇÃO):
 1. [*Dipirona 1 g (2 mL) + AD 8 mL EV lento agora / Paracetamol 750 mg VO agora / Não medicar na unidade].
-[? Medicação extra :: 2. Medicação específica da queixa: analgesia / antiemético / broncodilatador / SF 0,9%.]
+[? Medicação extra :: 2. [Medicação específica da queixa: analgesia / antiemético / broncodilatador / SF 0,9%].]
 2. Reavaliação clínica após medicação e checagem de sinais vitais de controle.
 
-# RECEITA:
-1. [*Dipirona 500 mg a 1 g VO de 6/6h se dor ou febre / Paracetamol 750 mg VO de 6/6h se dor ou febre].
-[? Medicação domiciliar :: 2. Medicação específica com dose]
+>> PRESCRIÇÃO DOMICILIAR (RECEITA MÉDICA):
+1. [*Dipirona 500 mg a 1 g VO de 6/6h se dor ou febre (por até 3 a 5 dias) / Paracetamol 750 mg VO de 6/6h se dor ou febre].
+[? Medicação domiciliar :: 2. [Medicação específica com dose, horário e duração].]
 2. Repouso relativo, hidratação oral vigorosa (2 a 3 L/dia) e alimentação leve.
 
-# ORIENTAÇÕES / SINAIS DE ALARME:
+>> ORIENTAÇÕES & SINAIS DE ALARME (RETORNO IMEDIATO À UPA):
 - Orientado(a) a retornar imediatamente à emergência se apresentar: febre persistente (>= 38,5 °C), falta de ar, dor no peito, palpitações, cefaleia súbita intensa, alteração visual/fala, vômitos incoercíveis, dor abdominal contínua, tontura ao levantar ou desmaio.
 ```
 

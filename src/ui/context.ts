@@ -38,7 +38,7 @@ for (const item of ALL_PROTOCOLS) {
 export const GLOBAL_SEARCH_INDEX: MiniSearch = createClinicalSearchIndex(ALL_PROTOCOLS);
 
 export interface UIBridge {
-  openPepDrawer: (protocolId: string, initialTab?: 'pep' | 'guia' | 'cart') => void;
+  openPepDrawer: (protocolId: string, initialTab?: 'standard' | 'pep' | 'conduta' | 'receita' | 'guia' | 'cart') => void;
   closePepDrawer: () => void;
   insertTextIntoActivePep: (text: string) => boolean;
   hasActivePep: () => boolean;

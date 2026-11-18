@@ -10,15 +10,14 @@
 
 ```text
 ATENDIMENTO DE EMERGÊNCIA - PARADA CARDIORRESPIRATÓRIA (PCR) ADULTO
-
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg, Leito: Sala Vermelha [ ].
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Outros].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / [ ]].
 
 HORÁRIO DE INÍCIO DA RCP: [ ]h[ ]min
-LOCAL DO EVENTO: [Sala Vermelha / Leito da Enfermaria / Box de Emergência / Pré-hospitalar]
-TEMPO ESTIMADO DE PARADA ATÉ INÍCIO DA RCP: [Imediato / < 3 minutos / Desconhecido]
+LOCAL DO EVENTO: [ Sala Vermelha / Leito da Enfermaria / Box de Emergência / Pré-hospitalar ]
+TEMPO ESTIMADO DE PARADA ATÉ INÍCIO DA RCP: [ Imediato / < 3 minutos / Desconhecido ]
 
 CONSTATAÇÃO DO EVENTO:
 - Paciente em colapso agudo, irresponsivo ao chamado vigoroso.
@@ -29,31 +28,31 @@ CONSTATAÇÃO DO EVENTO:
 CICLOS DE RESSUSCITAÇÃO CARDIOPULMONAR (ACLS):
 - Compressões torácicas de alta qualidade iniciadas imediatamente (frequência 100-120/min, profundidade 5-6 cm, retorno completo do tórax, rotação do compressor a cada 2 minutos).
 - Monitorização conectada / Pás posicionadas.
-- RITMO INICIAL: [FV / TV sem pulso / Assistolia / AESP]
+- RITMO INICIAL: [ FV / TV sem pulso / Assistolia / AESP ]
 
 # CONDUTA:
-* Ciclo 1 ([ ]h[ ]): Ritmo [ ] | [Choque de 200J Bifásico / Não chocável] | RCP 2 min.
+* Ciclo 1 ([ ]h[ ]): Ritmo [ ] | [ Choque de 200J Bifásico / Não chocável ] | RCP 2 min.
 * Ciclo 2 ([ ]h[ ]): Ritmo [ ] | Droga: Adrenalina 1mg EV/IO + flush 20ml SF 0,9%.
-* Ciclo 3 ([ ]h[ ]): Ritmo [ ] | [Choque 200J] | Droga: [Amiodarona 300mg EV / Não indicado].
+* Ciclo 3 ([ ]h[ ]): Ritmo [ ] | [ Choque 200J ] | Droga: [ Amiodarona 300mg EV / Não indicado ].
 * Ciclo 4 ([ ]h[ ]): Ritmo [ ] | Droga: Adrenalina 1mg EV/IO + flush.
-* Ciclo 5 ([ ]h[ ]): Ritmo [ ] | [Choque 200J] | Droga: [Amiodarona 150mg EV / Não indicado].
+* Ciclo 5 ([ ]h[ ]): Ritmo [ ] | [ Choque 200J ] | Droga: [ Amiodarona 150mg EV / Não indicado ].
 * Ciclos adicionais: [ ]
 
 MANEJO DA VIA AÉREA E ACESSO:
-- Acesso vascular obtido: [Venoso periférico calibroso MSD / MSE / Intraósseo tibial].
-- Via aérea avançada: [IOT tubo nº fixado em cm rima labial / Capnografia com ETCO2 = mmHg / Bolsa-Válvula-Máscara com reservatório a 15 L/min]. Ventilações 1 a cada 6 segundos após IOT (sem interromper compressões).
+- Acesso vascular obtido: [ Venoso periférico calibroso MSD / MSE / Intraósseo tibial ].
+- Via aérea avançada: [ IOT tubo nº [ ] fixado em [ ] cm rima labial / Capnografia com ETCO2 = [ ] mmHg / Bolsa-Válvula-Máscara com reservatório a 15 L/min ]. Ventilações 1 a cada 6 segundos após IOT (sem interromper compressões).
 
 INVESTIGAÇÃO ATIVA DE CAUSAS REVERSÍVEIS (5 Hs e 5 Ts):
-- Hipovolemia: [Descartada / Infundido 1000ml SF 0,9%]
-- Hipóxia: [Via aérea pérvia, FiO2 100%]
-- Hidrogênio (acidose): [Corrigida ventilação / Bicarbonato de sódio se acidose]
-- Hipo/Hipercalemia: [Glicemia capilar: mg/dL / Gluconato de cálcio 10% administrado se suspeita]
-- Hipotermia: [*Ausente / Temperatura axilar °C]
-- Tensão no tórax (Pneumotórax hipertensivo): [Ausculta simétrica / Descompressão por toracocentese]
-- Tamponamento cardíaco: [FAST negativo / Sem turgência jugular]
-- Toxinas: [Investigado histórico de intoxicação exógena]
-- Trombose coronária (IAM): [Suspeita clínica de SCA prévia]
-- Tromboembolismo pulmonar (TEP): [Avaliada probabilidade clínica]
+- Hipovolemia: [ Descartada / Infundido 1000ml SF 0,9% ]
+- Hipóxia: [ Via aérea pérvia, FiO2 100% ]
+- Hidrogênio (acidose): [ Corrigida ventilação / Bicarbonato de sódio se acidose grave/hipercalemia ]
+- Hipo/Hipercalemia: [ Glicemia capilar: mg/dL / Gluconato de cálcio 10% administrado se suspeita de hiperK ]
+- Hipotermia: [*Ausente / Temperatura axilar: [ ] °C]
+- Tensão no tórax (Pneumotórax hipertensivo): [ Ausculta simétrica / Descompressão por toracocentese ]
+- Tamponamento cardíaco: [ FAST negativo / Sem turgência jugular ]
+- Toxinas: [ Investigado histórico de intoxicação exógena ]
+- Trombose coronária (IAM): [ Suspeita clínica de SCA prévia ]
+- Tromboembolismo pulmonar (TEP): [ Avaliada probabilidade clínica ]
 
 DESFECHO DO ATENDIMENTO:
 [ ] RETORNO À CIRCULAÇÃO ESPONTÂNEA (RCE):

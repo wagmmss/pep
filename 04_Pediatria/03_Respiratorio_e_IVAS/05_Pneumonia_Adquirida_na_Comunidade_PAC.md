@@ -10,42 +10,42 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega / Alérgico a Penicilinas / Outros].
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg[? Acompanhante :: , Acompanhante: [Mãe / Pai / Responsável: [ ]]].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega / Alérgico(a) a Penicilinas / [ ]].
 
 # QP:
-Tosse, febre persistente e respiração rápida/cansada há [ ] dias.
+- Tosse, febre persistente e respiração rápida/cansada há [ ] dias.
 
 # HMA:
-Criança iniciou quadro de IVAS há [ ] dias, evoluindo há [ ] dias com febre alta persistente, tosse produtiva, queda do estado geral e percepção materna de "respiração acelerada / peito batendo rápido".
-Padrão Clínico-Etiológico:
-[PAC Bacteriana Típica]: Início agudo/hiperagudo de febre alta (> 38,5–39 °C), taquipneia, tosse, dor torácica/abdominal referida e prostração.
-[PAC Atípica]: Início insidioso, febre baixa, cefaleia, mialgia, tosse seca paroxística persistente e sibilância/estertores difusos.
-Aceitação de líquidos e medicação por via oral [preservada sem vômitos / prejudicada por vômitos ou fadiga respiratória]; Vacina Pneumocócica 10-valente e Pentavalente: [Em dia / Incompleta].
+- Criança iniciou quadro de IVAS há [ ] dias, evoluindo há [ ] dias com febre alta persistente (Tax aferida de [ ] °C), tosse produtiva, queda do estado geral e percepção materna de "respiração acelerada / peito batendo rápido".
+- Padrão Clínico-Etiológico:
+  * [PAC Bacteriana Típica (*Streptococcus pneumoniae*)]: Início agudo/hiperagudo de febre alta (> 38,5–39 °C), taquipneia, tosse, dor torácica/abdominal referida e prostração.
+  * [PAC Atípica (*Mycoplasma pneumoniae* / *Chlamydia* — comum em ≥ 5 anos)]: Início insidioso, febre baixa, cefaleia, mialgia, tosse seca paroxística persistente e sibilância/estertores difusos.
+- Tolerância Oral & Vacinação: Aceitação de líquidos e medicação por via oral [preservada sem vômitos / prejudicada por vômitos ou fadiga respiratória]; Vacina Pneumocócica 10-valente e Pentavalente (Hib): [Em dia / Incompleta].
 
 # EXAME FÍSICO:
-SSVV:
-FREQUÊNCIA RESPIRATÓRIA: [ ] irpm -> Critério de Taquipneia OMS: [Positivo (≥ 60 se < 2m / ≥ 50 se 2–11m / ≥ 40 se 1–4a / ≥ 30 se ≥ 5a) / Limítrofe].
-Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92–94% — normoxêmica / < 92% — hipoxemia com indicação formal de internação]).
-FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / segundos].
-Geral: [Bom / Regular / Mau] estado geral, [alerta e reativa após defervescência / prostrada mesmo afebril], corada, hidratada, acianótica.
-Exame do Aparelho Respiratório:
-Inspeção: [Eupneica sem tiragens / Taquipneica sem retrações graves / Tiragem subcostal].
-Palpação & Percussão: Expansibilidade [simétrica / reduzida em base (direita / esquerda)]; percussão [clara pulmonar / submaciça em base / maciça sugerindo derrame pleural].
-Ausculta Pulmonar: Murmúrio vesicular [presente bilateralmente com estertores crepitantes / base esquerda / terço médio / reduzido em base com sopro tubário / abolido na base sugerindo derrame pleural].
-Exames Complementares (Solicitados apenas se PAC grave, internação ou dúvida diagnóstica):
-[Manejo ambulatorial clínico sem necessidade de RX / Radiografia de Tórax PA mostrando consolidação / RX com derrame pleural laminar/moderado].
+- Sinais Vitais (Contados em 1 minuto completo com criança calma e afebril):
+  * FREQUÊNCIA RESPIRATÓRIA: [ ] irpm -> Critério de Taquipneia OMS: [Positivo (≥ 60 se < 2m | ≥ 50 se 2–11m | ≥ 40 se 1–4a | ≥ 30 se ≥ 5a) / Limítrofe].
+  * Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92–94% — normoxêmica / < 92% — hipoxemia com indicação formal de internação]).
+  * FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / [ ] segundos].
+- Ectoscopia: [Bom / Regular / Mau] estado geral, [alerta e reativa após defervescência / prostrada mesmo afebril], corada, hidratada, acianótica.
+- Exame do Aparelho Respiratório:
+  * Inspeção: [Eupneica sem tiragens / Taquipneica sem retrações graves / Tiragem subcostal, intercostal, batimento de asa nasal ou gemência presentes].
+  * Palpação & Percussão: Expansibilidade [simétrica / reduzida em base (direita / esquerda)]; percussão [clara pulmonar / submaciça em base / maciça sugerindo derrame pleural].
+  * Ausculta Pulmonar: Murmúrio vesicular [presente bilateralmente com estertores crepitantes finos localizados em [base direita / base esquerda / terço médio] / reduzido em base [ ] com sopro tubário / abolido na base sugerindo derrame pleural parapneumônico].
+- Exames Complementares (Solicitados apenas se PAC grave, internação ou dúvida diagnóstica):
+  * [Manejo ambulatorial clínico sem necessidade de RX ou coleta sanguínea de rotina / Radiografia de Tórax PA mostrando consolidação alveolar em [ ] sem derrame pleural / RX com derrame pleural laminar/moderado].
 
 # HIPÓTESES DIAGNÓSTICAS & ESTRATIFICAÇÃO DE RISCO (SBP / OMS):
-1. Pneumonia Adquirida na Comunidade — PAC [Não Grave / Grave] (CID-10: J18.9).
+1. Pneumonia Adquirida na Comunidade — PAC [Não Grave (elegível para tratamento ambulatorial com reavaliação obrigatória em 48h) / Grave (indicada internação hospitalar imediata)] (CID-10: J18.9).
 
 # CONDUTA:
 
->> [MODALIDADE] CONDUTA AMBULATORIAL NA PAC NÃO GRAVE (> 2–3 MESES, SpO2 ≥ 92%, BOA ACEITAÇÃO ORAL):
-1. Antibioticoterapia de 1ª Escolha (Foco em Streptococcus pneumoniae):
+>> [MODALIDADE A] CONDUTA AMBULATORIAL NA PAC NÃO GRAVE (> 2–3 MESES, SpO2 ≥ 92%, BOA ACEITAÇÃO ORAL):
+1. Antibioticoterapia de 1ª Escolha (Foco em *Streptococcus pneumoniae*):
    - Amoxicilina por via oral na dose de 50 a 90 mg/kg/dia dividida de 8/8h (formulação 250 mg/5 mL) ou de 12/12h (formulação 400 mg/5 mL) durante 7 dias (ou 10 dias se quadro extenso).
-   - *[Se ≥ 5 anos com quadro clínico clássico de PAC Atípica]*: Azitromicina 10 mg/kg/dia VO no D1 (máx 500 mg) seguido de 5 mg/kg/dia do D2 ao D5 (ou Claritromicina 15 mg/kg/dia de 12/12h por 7–10 dias).
+   - *[Se ≥ 5 anos com quadro clínico clássico de PAC Atípica por Mycoplasma]*: Azitromicina 10 mg/kg/dia VO no D1 (máx 500 mg) seguido de 5 mg/kg/dia do D2 ao D5 (ou Claritromicina 15 mg/kg/dia de 12/12h por 7–10 dias).
 2. Antitérmico/analgésico se febre ou dor pleurítica (Dipirona ou Paracetamol gotas) e hidratação oral vigorosa.
 3. REAVALIAÇÃO MÉDICA OBRIGATÓRIA EM 48 A 72 HORAS: Orientada a família que a criança DEVE ser reexaminada em 48–72h para confirmar defervescência e melhora da taquipneia (se mantiver febre em 48–72h, realizar RX de tórax para investigar derrame pleural parapneumônico ou resistência).
 
@@ -54,8 +54,7 @@ Exames Complementares (Solicitados apenas se PAC grave, internação ou dúvida 
 2. Solicitar Radiografia de Tórax, Hemograma, PCR e Hemocultura.
 3. Antibioticoterapia Venosa Empírica:
    - Criança vacinada sem sepse/derrame extenso: Ampicilina 200 mg/kg/dia EV de 6/6h (ou Penicilina Cristalina 200.000 UI/kg/dia EV de 4/4h ou 6/6h).
-   - Criança grave, vacinação incompleta ou derrame pleural complicado: Ceftriaxona 50 a 100 mg/kg/dia EV (+ Oxacilina 200 mg/kg/dia ou Clindamicina se suspeita de S. aureus/pneumatocele).
-
+   - Criança grave, vacinação incompleta ou derrame pleural complicado: Ceftriaxona 50 a 100 mg/kg/dia EV (+ Oxacilina 200 mg/kg/dia ou Clindamicina se suspeita de *S. aureus*/pneumatocele).
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO — PNEUMONIA COMUNITÁRIA (TRATAMENTO AMBULATORIAL)
 Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
@@ -63,7 +62,7 @@ Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
 USO ORAL E NASAL:
 1. [Amoxicilina Suspensão Oral 250 mg / 5 mL (50 mg/mL) / Amoxicilina Suspensão Oral 400 mg / 5 mL (80 mg/mL)] --- [ ] frasco(s)
    Dar [ ] mL por via oral de [8 em 8 horas / 12 em 12 horas], nos horários, durante 7 dias completos (Não interromper o antibiótico mesmo que a febre desapareça no 2º dia).
-   *(Dose calculada para [ ] kg: [ ] mg/kg/dia).*
+   *(Dose calculada para [ ] kg: [50 / 90] mg/kg/dia).*
 
 2. Dipirona Solução Oral Gotas (500 mg/mL) (ou Paracetamol 200 mg/mL) ---------- 1 frasco
    Dar [ ] gotas por via oral até de 6 em 6 horas se houver febre (≥ 37,8 °C) ou dor no peito/barriga para respirar.
@@ -71,7 +70,7 @@ USO ORAL E NASAL:
 3. Soro Fisiológico 0,9% ------------------------------------------------------- 1 frasco
    Lavar as narinas com seringa de [3 a 5 / 5 a 10] mL em cada narina 4 a 6 vezes ao dia e oferecer bastante líquido (água, leite materno, sucos naturais ou água de coco).
 
-# ORIENTAÇÕES / SINAIS DE ALARME:
+COMPROMISSO OBRIGATÓRIO DE RETORNO EM 48 HORAS & SINAIS DE ALARME:
 - RETORNO AGENDADO EM 48 HORAS ([DD/MM/AAAA]): Toda criança em tratamento de pneumonia em casa precisa ser reavaliada pelo médico em 48 a 72 horas para confirmar que a febre cedeu e que a respiração desacelerou.
 - VOLTAR IMEDIATAMENTE AO PRONTO-SOCORRO (ANTES DE 48H) SE:
   1. A febre continuar alta após 48 horas do início da Amoxicilina ou o cansaço para respirar aumentar.

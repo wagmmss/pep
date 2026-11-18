@@ -10,38 +10,37 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido / Outros].
-Alergias: [*Nega alergias / Alérgico a colírios].
-
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
+Comorbidades: [+ *Hígido(a) / [ ]].
+Alergias: [*Nega alergias / Alérgico a colírios: [ ]].
 # QP:
-Olho vermelho, sensação de areia e secreção há [ ] dias.
+- Olho vermelho, sensação de areia e secreção há [ ] dias.
 
 # HMA:
-Relata hiperemia conjuntival iniciada há [ ] dias em olho [direito / esquerdo / bilateral], associada a sensação de corpo estranho, prurido, lacrimejamento e secreção de aspecto [aquoso claro / mucopurulento amarelado com pálpebras coladas]. Relata contato recente com familiar/colega com sintomas semelhantes.
-Nega dor ocular profunda, contínua e latejante no bulbo ocular.
-Nega perda ou redução súbita da acuidade visual / visão borrada.
-Nega enxergar halos coloridos ao redor de luzes ou cefaleia hemicraniana com náuseas.
-Nega uso de lentes de contato.
-Nega trauma ocular mecânico, químico ou respingo de substâncias cáusticas.
+- HMA: Relata hiperemia conjuntival iniciada há [ ] dias em olho [direito / esquerdo / bilateral], associada a sensação de corpo estranho ("areia nos olhos"), prurido, lacrimejamento e secreção de aspecto [aquoso claro / mucopurulento amarelado com pálpebras coladas ao acordar]. Relata contato recente com familiar/colega com sintomas semelhantes.
+- Nega dor ocular profunda, contínua e latejante no bulbo ocular.
+- Nega perda ou redução súbita da acuidade visual / visão borrada.
+- Nega enxergar halos coloridos ao redor de luzes ou cefaleia hemicraniana com náuseas (afasta Glaucoma Agudo).
+- Nega uso de lentes de contato (afasta ceratite por Pseudomonas).
+- Nega trauma ocular mecânico, químico ou respingo de substâncias cáusticas.
 
 # EXAME FÍSICO:
-Ectoscopia Ocular Externa:
-Hiperemia conjuntival bulbar e tarsal difusa em olho [direito / esquerdo / bilateral], com injeção conjuntival periférica (ausência de injeção ciliar periquerática violácea profunda).
-Secreção: [Serosa/aquosa abundante / Mucopurulenta espessa amarelada aderida aos cílios].
-Córnea: Transparente, brilhante, superfície lisa sem opacidades grosseiras, leucomas ou ulcerações visíveis sob iluminação direta.
-Pálpebras: [*Sem alterações / Edema palpebral leve sem quemose exuberante].
-Pupilas: Isocóricas, redondas, fotorreagentes ao reflexo fotomotor direto e consensual, sem deformidades pupilares ou midríase paralítica fixa.
-Palpação Linfonodal: Presença de linfonodomegalia pré-auricular ipsilateral palpável e discretamente dolorosa [presente / ausente].
-Acuidade Visual Grosseira: Preservada bilateralmente (paciente lê linhas de texto e conta dedos a 5 metros sem alterações).
+- Ectoscopia Ocular Externa:
+  * Hiperemia conjuntival bulbar e tarsal difusa em olho [direito / esquerdo / bilateral], com injeção conjuntival periférica (ausência de injeção ciliar periquerática violácea profunda).
+  * Secreção: [Serosa/aquosa abundante / Mucopurulenta espessa amarelada aderida aos cílios].
+  * Córnea: Transparente, brilhante, superfície lisa sem opacidades grosseiras, leucomas ou ulcerações visíveis sob iluminação direta.
+  * Pálpebras: [*Sem alterações / Edema palpebral leve sem quemose exuberante].
+  * Pupilas: Isocóricas, redondas, fotorreagentes ao reflexo fotomotor direto e consensual, sem deformidades pupilares ou midríase paralítica fixa.
+- Palpação Linfonodal: Presença de linfonodomegalia pré-auricular ipsilateral palpável e discretamente dolorosa [presente (sugestivo de etiologia viral por Adenovírus) / ausente].
+- Acuidade Visual Grosseira: Preservada bilateralmente (paciente lê linhas de texto e conta dedos a 5 metros sem alterações).
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. Conjuntivite Aguda de provável etiologia [VIRAL / BACTERIANA / ALÉRGICA] (CID-10: H10.3 / H10.0 / H10.1).
+1. Conjuntivite Aguda de provável etiologia [VIRAL (Adenovírus) / BACTERIANA / ALÉRGICA] (CID-10: H10.3 / H10.0 / H10.1).
 2. Ausência de sinais de ceratite infecciosa, úlcera de córnea ou glaucoma agudo.
 
 # CONDUTA:
 
->> [MODALIDADE]: CONDUTA NA CONJUNTIVITE VIRAL (ADENOVÍRUS):
+>> [MODALIDADE A]: CONDUTA NA CONJUNTIVITE VIRAL (ADENOVÍRUS):
 1. Colírio Lubrificante (Lágrima Artificial sem vasoconstritor):
    - Carmelose Sódica 0,5% [ou Lacribell / Hyabak]: Pingar 1 gota no olho afetado de 4 a 6 vezes ao dia por 10 a 14 dias para conforto ocular.
 2. Compressas Oculares: Compressas com gaze embebida em Soro Fisiológico 0,9% gelado aplicadas sobre as pálpebras fechadas 3 a 4x/dia por 10 minutos.
@@ -61,7 +60,6 @@ Acuidade Visual Grosseira: Preservada bilateralmente (paciente lê linhas de tex
 - Suspender imediatamente o uso de lentes de contato até 1 semana após a cura completa.
 - Descarte imediato de maquiagens oculares usadas recentemente.
 - ALERTA: Procurar atendimento oftalmológico com urgência se a visão ficar embaçada, se surgir dor de cabeça muito forte no olho ou se não houver melhora após 4 a 5 dias.
-
 # RECEITA:
 RECEITUÁRIO MÉDICO — CONJUNTIVITE AGUDA
 Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
@@ -73,7 +71,7 @@ Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
 2. Soro Fisiológico 0,9% (Frasco pequeno mantido na geladeira) --------------- 1 frasco
    Realizar compressas frias sobre as pálpebras fechadas com gaze estéril embebida em soro fisiológico gelado por 10 minutos, 4 a 6 vezes ao dia, e limpar delicadamente as secreções.
 
-[ADICIONAR APENAS SE CONJUNTIVITE BACTERIANA]:
+[ADICIONAR APENAS SE CONJUNTIVITE BACTERIANA — SECREÇÃO PURULENTA AMARELO-ESVERDEADA]:
 3. Tobramicina 0,3% Colírio (Tobrex) (ou Moxifloxacino 0,5% / Ofloxacino 0,3% Colírio) --- 1 frasco
    Pingar 1 gota no(s) olho(s) afetado(s) de 4 em 4 horas (durante o dia) por 7 dias (sem encostar a ponta do frasco nos cílios).
 
