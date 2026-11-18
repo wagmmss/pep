@@ -13,34 +13,34 @@
 ID: [Nome], [ ] meses (Faixa clássica < 24 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável: ___].
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Outros: ___].
-- Fatores de Risco para BVA Grave: [Nenhum — lactente a termo hígido > 3 meses / Idade < 12 semanas (< 3 meses) / Prematuridade (< 37 semanas) / Cardiopatia congênita hemodinamicamente significativa / Broncodisplasia pulmonar / Imunodeficiência].
+- Fatores de Risco para BVA Grave: [Nenhum — lactente a termo hígido > 3 meses / Idade < 12 semanas (< 3 meses) / Prematuridade (< 37 semanas) / Cardiopatia congênita hemodinamicamente / Broncodisplasia pulmonar / Imunodeficiência].
 
 # QP:
-- Tosse, chiado no peito e cansaço para respirar há [ ] dias.
+Tosse, chiado no peito e cansaço para respirar há [ ] dias.
 
 # HMA:
-- Lactente apresentou pródromo catarral de vias aéreas superiores há [2 a 4] dias (obstrução nasal, coriza hialina e febre baixa de [ ] °C), evoluindo nas últimas [24 a 48] horas para fase bronquiolar com tosse mais intensa, respiração rápida e sibilância ([ ]º dia total de doença — pico fisiológico de gravidade entre o 3º e 5º dia).
-- Episódio de Sibilância: [1º episódio de sibilância na vida (definição clássica de BVA) / 2º episódio viral em lactente].
-- Ingesta Alimentar e Diurese: [Mamando bem com pausas curtas para respirar (> 75% do habitual) / Redução moderada das mamadas (50 a 75% do habitual) / Recusa alimentar grave (< 50% do habitual) por fadiga respiratória]. Diurese [presente nas últimas 6h / reduzida].
-- Nega episódios de apneia ou pausas respiratórias (crucial em < 2 meses), cianose central, gemência contínua ou letargia.
+Lactente apresentou pródromo catarral de vias aéreas superiores há [2 a 4] dias (obstrução nasal, coriza hialina e febre baixa de [ ] °C), evoluindo nas últimas [24 a 48] horas para fase bronquiolar com tosse mais intensa, respiração rápida e sibilância.
+[1º episódio de sibilância na vida / 2º episódio viral em lactente].
+[Mamando bem com pausas curtas para respirar (> / Redução moderada das mamadas (50 a 75% do / Recusa alimentar grave (< 50% do habitual) por]. Diurese [presente nas últimas 6h / reduzida].
+Nega episódios de apneia ou pausas respiratórias (crucial em < 2 meses), cianose central, gemência contínua ou letargia.
 
 # EXAME FÍSICO:
-- Sinais Vitais (Aferidos após desobstrução nasal e com lactente calmo):
-  * Frequência Respiratória (1 min): [ ] irpm ([< 50 irpm / 50 a 59 irpm / 60 a 69 irpm / ≥ 70 irpm])
-  * Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92% em ar ambiente / 90 a 91% / < 90% — hipoxemia])
-  * FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / ___ segundos].
-- Ectoscopia: [Bom / Regular / Mau] estado geral, [alerta e reativo / irritado / hipoativo], corado, [hidratado / desidratação leve], acianótico.
-- Exame Respiratório Detalhado:
-  * Inspeção Torácica: [Sem tiragens ou tiragem subcostal muito leve / Tiragem subcostal e intercostal moderada / Tiragem subcostal, intercostal, supraclavicular, batimento de asa nasal e balanço toracoabdominal].
-  * Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente com tempo expiratório prolongado, presença de [sibilos expiratórios difusos e estertores subcrepitantes finos bilaterais / redução difusa do murmúrio vesicular].
-- Classificação de Gravidade (Wood-Downes Modificado / Diretriz SBP):
-  * [BVA LEVE] (SpO2 ≥ 92% em AA, FR < 50–60 irpm, tiragem ausente ou leve, mamando > 75%, sem fatores de risco) -> Manejo domiciliar com reavaliação em 24–48h.
-  * [BVA MODERADA] (SpO2 90–92%, FR 60–69 irpm, tiragem subcostal evidente ou ingesta 50–75%) -> Observação hospitalar / Internação em enfermaria.
-  * [BVA GRAVE] (SpO2 < 90% persistente, FR ≥ 70 irpm, gemência, apneia, letargia ou recusa < 50%) -> Internação hospitalar imediata / Suporte ventilatório (CNAF/VNI).
+SSVV:
+Frequência Respiratória (1 min): [ ] irpm ([< 50 irpm / 50 a 59 irpm / 60 a 69 irpm / ≥ 70 irpm])
+Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92% em ar ambiente / 90 a 91% / < 90% — hipoxemia])
+FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / ___ segundos].
+Geral: [Bom / Regular / Mau] estado geral, [alerta e reativo / irritado / hipoativo], corado, [hidratado / desidratação leve], acianótico.
+Exame Respiratório Detalhado:
+Inspeção Torácica: [Sem tiragens ou tiragem subcostal muito leve / Tiragem subcostal e intercostal moderada / Tiragem subcostal, intercostal].
+Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente com tempo expiratório prolongado, presença de [sibilos expiratórios difusos e estertores / redução difusa do murmúrio vesicular].
+Classificação de Gravidade (Wood-Downes Modificado / Diretriz SBP):
+[BVA LEVE] (SpO2 ≥ 92% em AA, FR < 50–60 irpm, tiragem ausente ou leve, mamando > 75%, sem fatores de risco) -> Manejo domiciliar com reavaliação em 24–48h.
+[BVA MODERADA] (SpO2 90–92%, FR 60–69 irpm, tiragem subcostal evidente ou ingesta 50–75%) -> Observação hospitalar / Internação em enfermaria.
+[BVA GRAVE] (SpO2 < 90% persistente, FR ≥ 70 irpm, gemência, apneia, letargia ou recusa < 50%) -> Internação hospitalar imediata / Suporte ventilatório (CNAF/VNI).
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Bronquiolite Viral Aguda — BVA no [ ]º dia de evolução (CID-10: J21.0 — provável Vírus Sincicial Respiratório / Rinovírus).
-2. Estratificação de Gravidade: [Leve — elegível para alta segura / Moderada a Grave — indicada internação hospitalar].
+2. Estratificação de Gravidade: [Leve — elegível para alta segura / Moderada a Grave].
 
 # CONDUTA:
 
@@ -60,6 +60,7 @@ Alergias: [*Nega / Outros: ___].
 3. Higiene de Vias Aéreas: Lavagem nasal com SF 0,9% e aspiração nasal superficial suave antes das dietas e se desconforto (Evitar fisioterapia respiratória convencional de tapotagem).
 4. Nebulização com Salina Hipertônica 3% (apenas para pacientes internados): 4 mL de NaCl 3% por nebulização de 8/8h se hipersecreção importante.
 5. Monitorização contínua (oximetria, FC, FR) e precaução de contato e gotículas no leito.
+
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO — BRONQUIOLITE VIRAL AGUDA LEVE (MANEJO DOMICILIAR)
 Lactente: [Nome] | Peso Atual: [ ] kg | Idade: [ ] meses | Data: [DD/MM/AAAA]

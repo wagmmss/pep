@@ -20,17 +20,17 @@ Criança [Nome], [Idade] meses/anos | Peso Atual: [ ] kg | Controle esfincterian
 
 APRESENTAÇÃO CLÍNICA POR FAIXA ETÁRIA:
 - Quadro Clínico:
-  * [Lactente / < 2 anos: Febre sem sinais localizatórios (Tax ≥ 38°C, especialmente se ≥ 39°C por > 24–48h — a ITU é a infecção bacteriana oculta mais comum nessa faixa!), irritabilidade, vômitos, recusa alimentar ou baixo ganho ponderal].
-  * [Criança maior com controle esfincteriano: Disúria, polaciúria, urgência miccional, enurese secundária, dor suprapúbica (Cistite afebril) ou febre alta + dor lombar/flanco + vômitos (Pielonefrite aguda)].
-- Antecedentes Nefrourológicos: [Primeiro episódio de ITU / ITU de repetição / Hidronefrose antenatal na USG gestacional / Constipação intestinal associada e retenção urinária funcional — Disfunção das Eliminações!].
+  * [Lactente / < 2 anos: Febre sem sinais localizatórios (Tax].
+  * [Criança maior com controle esfincteriano].
+- Antecedentes Nefrourológicos: [Primeiro episódio de ITU / ITU de repetição / Hidronefrose antenatal na USG gestacional / Constipação intestinal associada e retenção].
 
 EXAME FÍSICO & MÉTODO DE COLETA URINÁRIA (ATENÇÃO À REGRA DO SACO COLETOR!):
 - Sinais Vitais: Tax: [ ]°C | FC: [ ] bpm | FR: [ ] irpm. Estado Geral: [BEG, ativa, hidratada, aceitando bem via oral / Toxemiada, prostrada, vomitando ou desidratada].
-- Abdome e Genitália: Abdome flácido, sem massas ou bexigoma; genitália externa [sem vulvovaginite, sinéquia labial ou balanopostite / fimose fisiológica].
+- Abdome e Genitália: Abdome flácido, sem massas ou bexigoma; genitália externa [sem vulvovaginite, sinéquia labial ou / fimose fisiológica].
 - Método de Coleta de EAS + Urocultura (OBRIGATÓRIO ANTES DA 1ª DOSE DE ANTIBIÓTICO!):
-  * [Criança com controle esfincteriano: Jato médio após higiene íntima].
-  * [Lactente SEM controle esfincteriano: Cateterismo vesical de alívio estéril ou Punção Suprapúbica — NOTA: Saco coletor positivo tem até 85% de falso-positivo por contaminação perineal e NUNCA serve para confirmar ITU nem iniciar antibiótico sem confirmação por sondagem!].
-- Resultado do EAS / Fita Reagente: Leucocitúria [presente (> 10.000/mL ou ≥ 5–10/campo)] | Esterase leucocitária: [Positiva] | Nitrito: [Positivo (altamente específico, mas pode ser negativo no lactente que urina com frequência!) / Negativo] | Bacterioscopia (Gram): [Presença de bacilos Gram-negativos].
+  * [Criança com controle esfincteriano: Jato médio].
+  * [Lactente SEM controle esfincteriano].
+- Resultado do EAS / Fita Reagente: Leucocitúria [presente (> 10.000/mL ou ≥ 5–10/campo)] | Esterase leucocitária: [Positiva] | Nitrito: [Positivo / Negativo] | Bacterioscopia (Gram): [Presença de bacilos Gram-negativos].
 
 # PLANO / CONDUTA
 1. Regra de Ouro Diagnóstica: Em lactentes febris sem controle esfincteriano, o saco coletor só tem valor se vier NEGATIVO (para excluir ITU). Se o saco coletor vier alterado ou se a criança for iniciar antibiótico, colher obrigatoriamente Urocultura por Cateterismo Vesical ou Punção Suprapúbica antes da 1ª dose do antimicrobiano.

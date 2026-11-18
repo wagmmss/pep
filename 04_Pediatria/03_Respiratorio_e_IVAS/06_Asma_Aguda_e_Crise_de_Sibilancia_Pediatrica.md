@@ -20,14 +20,14 @@ Criança [Nome], [Idade] anos/meses | Peso Atual: [ ] kg | Acompanhante: [Mãe /
 
 ANAMNESE DIRIGIDA:
 - Quadro Atual: Tosse seca persistente, "chiado no peito" e cansaço iniciados há [ ] horas/dias, desencadeados por [quadro viral de vias aéreas superiores / mudança climática / poeira ou aeroalérgenos / interrupção do corticoide inalatório].
-- Uso Prévio de Resgate em Casa: [Não realizou puffs em casa / Fez Salbutamol sem espaçador ou com resposta parcial transitória].
+- Uso Prévio de Resgate em Casa: [Não realizou puffs em casa / Fez Salbutamol sem espaçador ou com resposta].
 - Histórico de Asma e Fatores de Risco para Asma Quase-Fatal: [Primeira crise sibilante / Asmático sem tratamento preventivo regular / Internação prévia em UTI ou IOT por asma / > 1 ida ao PS no último ano].
 
 EXAME FÍSICO & CLASSIFICAÇÃO DE GRAVIDADE DA CRISE (GINA):
 - Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm (Cortes de Taquipneia: < 2m ≥ 60; 2–11m ≥ 50; 1–5a ≥ 40; > 5a ≥ 30) | SpO2: [ ]% em ar ambiente | Tax: [ ]°C.
-- Esforço Respiratório e Fala: Criança [alerta, falando frases completas, tiragem subcostal leve a moderada / agitada, falando apenas palavras isoladas, com tiragem intercostal, subcostal, de fúrcula e batimento de asa de nariz / sonolenta, exausta, cianótica].
-- Ausculta Pulmonar: Murmúrio vesicular [presente bilateralmente com sibilos expiratórios difusos / globalmente reduzido com sibilos inspiratórios e expiratórios / Tórax silencioso — iminência de parada respiratória!].
-- Classificação da Exacerbação: [Crise Leve a Moderada (SpO2 90–95%, fala frases, sem agitação) / Crise Grave (SpO2 < 90%, fala palavras, FC > 140 em > 5a ou > 180 em 0–5a, retração acentuada) / Asma Ameaçadora à Vida (sonolência, confusão ou tórax silencioso)].
+- Esforço Respiratório e Fala: Criança [alerta, falando frases completas, tiragem / agitada, falando apenas palavras isoladas, com / sonolenta, exausta, cianótica].
+- Ausculta Pulmonar: Murmúrio vesicular [presente bilateralmente com sibilos / globalmente reduzido com sibilos inspiratórios / Tórax silencioso].
+- Classificação da Exacerbação: [Crise Leve a Moderada (SpO2 90–95%, fala / Crise Grave / Asma Ameaçadora à Vida].
 
 # PLANO / CONDUTA
 1. Oxigenoterapia Titulada (se Hipoxemia): Ofertar O2 por cateter nasal ou máscara para manter SpO2 entre 94% e 98% na criança.

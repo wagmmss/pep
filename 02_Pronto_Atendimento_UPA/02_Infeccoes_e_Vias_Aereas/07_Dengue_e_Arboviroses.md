@@ -13,31 +13,31 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / Outros: ___].
 Alergias: [*Nega / Alérgico a Dipirona / Outros: ___].
+
 # QP:
-- Febre alta, dor no corpo e dor atrás dos olhos há [ ] dias.
+Febre alta, dor no corpo e dor atrás dos olhos há [ ] dias.
 
 # HMA:
-- HMA: Refere quadro febril de início súbito há cerca de [ ] dias (Tax máxima [ ] °C), associado a cefaleia holocraniana intensa, dor retro-orbitária que piora à movimentação ocular, mialgia difusa ("dor nos ossos"), artralgia, astenia marcante, náuseas e exantema cutâneo maculopapular [pruriginoso / ausente].
-- FASE DA DOENÇA: [Fase Febril (dias 1 a 3) / Fase Crítica de Defervescência (dias 3 a 7 - ATENÇÃO MÁXIMA A SINAIS DE ALARME)].
-- CHECAGEM OBRIGATÓRIA DOS SINAIS DE ALARME (DIRETRIZ MS):
-  - Dor abdominal intensa e contínua ou dor à palpação do abdome
-  - Vômitos persistentes (>= 3 episódios em 1 hora ou >= 4 em 6 horas)
-  - Acúmulo de líquidos (ascite, derrame pleural ou pericárdico)
-  - Hipotensão postural (queda > 20 mmHg na PAS) ou lipotímia/tontura ao se levantar
-  - Hepatomegalia dolorosa > 2 cm abaixo do rebordo costal direito
-  - Sangramento de mucosas (gengivorragia, epistaxe, metrorragia volumosa ou hematêmese)
-  - Letargia, sonolência excessiva, desorientação ou irritabilidade
-  - Aumento progressivo e abrupto do hematócrito (hemoconcentração)
-  * STATUS: [TODOS OS SINAIS DE ALARME NEGADOS / SINAL DE ALARME PRESENTE: ___].
+Refere quadro febril de início súbito há cerca de [ ] dias (Tax máxima [ ] °C), associado a cefaleia holocraniana intensa, dor retro-orbitária que piora à movimentação ocular, mialgia difusa ("dor nos ossos"), artralgia, astenia marcante, náuseas e exantema cutâneo maculopapular [pruriginoso / ausente].
+[Fase Febril (dias 1 a 3) / Fase Crítica de Defervescência (dias 3 a 7].
+Dor abdominal intensa e contínua ou dor à palpação do abdome
+Vômitos persistentes (>= 3 episódios em 1 hora ou >= 4 em 6 horas)
+Acúmulo de líquidos
+Hipotensão postural (queda > 20 mmHg na PAS) ou lipotímia/tontura ao se levantar
+Hepatomegalia dolorosa > 2 cm abaixo do rebordo costal direito
+Sangramento de mucosas
+Letargia, sonolência excessiva, desorientação ou irritabilidade
+Aumento progressivo e abrupto do hematócrito (hemoconcentração)
+[TODOS OS SINAIS DE ALARME NEGADOS / SINAL DE ALARME PRESENTE: ___].
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | PA em pé (se tolerar): [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
-- Pressão de Pulso (PAS - PAD): [ ] mmHg (Normal > 20 mmHg | Convergente/Choque se <= 20 mmHg, ex: 90x75 mmHg).
-- Ectoscopia: Bom estado geral, corado, desidratado [+/4+], anictérico, acianótico, perfusão periférica com tempo de enchimento capilar < 2 segundos.
-- Exame Dermatológico: [Exantema maculopapular difuso poupando palmas e plantas / Petéquias isoladas em membros / Pele íntegra sem lesões].
-- Prova do Laço: [Realizada: Negativa / Positiva com petéquias em área de 2,5x2,5 cm / Dispensada por sangramento espontâneo].
-- Exame Abdominal: Abdome plano, flácido, ruídos hidroaéreos presentes, indolor à palpação superficial e profunda, sem ascite clínica e sem visceromegalias (fígado impalpável).
-- Ausculta Cardiopulmonar: Ritmo cardíaco regular em 2 tempos, sem sopros; murmúrio vesicular universalmente audível sem ruídos adventícios ou sinais de derrame pleural.
+SSVV: PA deitado: [ ]x[ ] mmHg | PA em pé (se tolerar): [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
+Pressão de Pulso (PAS - PAD): [ ] mmHg (Normal > 20 mmHg | Convergente/Choque se <= 20 mmHg, ex: 90x75 mmHg).
+Geral: BEG, corado, desidratado [+/4+], anictérico, acianótico, perfusão periférica com TEC < 2 segundos.
+Exame Dermatológico: [Exantema maculopapular difuso poupando palmas e / Petéquias isoladas em membros / Pele íntegra sem lesões].
+Prova do Laço: [Realizada: Negativa / Positiva com petéquias em área de 2,5x2,5 cm / Dispensada por sangramento espontâneo].
+Exame Abdominal: Abdome plano, flácido, RHA+, indolor à palpação superficial e profunda, sem ascite clínica e sem visceromegalias (fígado impalpável).
+Ausculta Cardiopulmonar: Ritmo cardíaco regular em 2 tempos, sem sopros; murmúrio vesicular universalmente audível sem ruídos adventícios ou sinais de derrame pleural.
 
 # EXAMES LABORATORIAIS NA UPA:
 - Hemograma Completo: Hemoglobina: [ ] g/dL | Hematócrito: [ ]% (Valor de base: [ ]%) | Leucócitos: [ ] /mm³ (leucopenia habitual) | Plaquetas: [ ] /mm³.
@@ -75,6 +75,7 @@ Alergias: [*Nega / Alérgico a Dipirona / Outros: ___].
 
 >> SINAIS DE ALARME EXPLICADOS À FAMÍLIA (RETORNO IMEDIATO):
 - Atenção extrema nos dias em que a febre começar a ceder (período de maior risco de choque). Retornar correndo se tiver vômitos que não param, dor de barriga muito forte, sangramentos no nariz ou gengiva, tontura ao sentar ou sonolência extrema.
+
 # RECEITA:
 RECEITUÁRIO MÉDICO & PLANO DE HIDRATAÇÃO — DENGUE (GRUPOS A E B — MINISTÉRIO DA SAÚDE)
 Paciente: [Nome] | Peso Atual: [ ] kg | Dia de Doença: [ ]º dia | Data: [DD/MM/AAAA]

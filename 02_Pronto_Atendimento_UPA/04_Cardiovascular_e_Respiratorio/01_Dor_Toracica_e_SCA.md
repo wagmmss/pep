@@ -13,38 +13,34 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega alergias / Alérgico a AAS / Alérgico a Dipirona / Outros: ___].
+
 # HORÁRIO DE CHEGADA: [HH:MM] | HORÁRIO DO ECG: [HH:MM] (Porta-ECG <= 10 minutos: [Atendido / Não atendido]).
 
 # QP:
-- Dor no peito em aperto / queimação iniciada há [ ] horas/minutos.
+Dor no peito em aperto / queimação iniciada há [ ] horas/minutos.
 
 # HMA:
-- HMA (CARACTERÍSTICAS DA DOR TORÁCICA):
-  * Caráter: [Dor retroesternal opressiva em aperto / Em peso / Queimação intensa / Pontada ventilatório-dependente].
-  * Irradiação: [Irradiação para membro superior esquerdo / Mandíbula / Dorso interescapular / Região epigástrica / Sem irradiação].
-  * Intensidade: [ ]/10 na escala visual analógica.
-  * Fatores Desencadeantes: [Aos esforços físicos / Em repouso súbito / Após estresse emocional intenso].
-  * Sintomas Adrenérgicos Associados: [Sudorese fria profusa, náuseas, vômitos, palidez, sensação de morte iminente e dispneia aguda associada / Ausentes].
-- DIAGNÓSTICO DIFERENCIAL DAS 5 CAUSAS FATAIS DE DOR TORÁCICA:
-  - 1. DISSECÇÃO AGUDA DE AORTA: Nega dor excruciante "em rasgadura" de início hiperagudo irradiando para dorso; pulsos periféricos simétricos nos 4 membros; diferença de PA entre membros < 15 mmHg.
-  - 2. TROMBOEMBOLISMO PULMONAR (TEP): Nega dispneia súbita com dor pleurítica em pontada, nega imobilização recente, nega edema assimétrico de MMII (Score de Wells baixo).
-  - 3. PNEUMOTÓRAX HIPERTENSIVO: Ausculta simétrica bilateral, ausência de turgência jugular patológica ou desvio de traqueia.
-  - 4. RUPTURA ESOFÁGICA (BOERHAAVE): Nega vômitos violentos repetidos seguidos de dor torácica aguda; ausência de enfisema subcutâneo palpável em pescoço.
-  - 5. SÍNDROME CORONARIANA AGUDA (SCA): Hipótese clínica prioritária em investigação.
-- Fatores de Risco Cardiovasculares: [Hipertensão Arterial / Diabetes Mellitus tipo 2 / Tabagismo ativo ( maços/ano) / Dislipidemia / Histórico familiar precoce de DAC / Infarto prévio / Sedentarismo].
-- Contraindicações ao uso de Nitratos: Nega uso de inibidores da fosfodiesterase-5 (Sildenafil nas últimas 24h ou Tadalafil nas últimas 48h).
+[Dor retroesternal opressiva em aperto / Em peso / Queimação intensa / Pontada ventilatório-dependente].
+[Irradiação para membro superior esquerdo / Mandíbula / Dorso interescapular / Região epigástrica / Sem irradiação].
+[ ]/10 na escala visual analógica.
+[Aos esforços físicos / Em repouso súbito / Após estresse emocional intenso].
+[Sudorese fria profusa, náuseas, vômitos / Ausentes].
+Nega dor em rasgadura irradiada para dorso, assimetria de pulsos ou diferença de PA entre membros.
+Nega dispneia súbita, imobilização recente, vômitos repetidos ou enfisema subcutâneo cervical.
+[Hipertensão Arterial / Diabetes Mellitus tipo 2 / Tabagismo ativo ( maços/ano) / Dislipidemia / Histórico familiar precoce de DAC / Infarto prévio / Sedentarismo].
+Nega uso de inibidores da fosfodiesterase-5.
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA MSD: [ ]x[ ] mmHg | PA MSE: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA.
-- Ectoscopia: [*Lúcido, orientado / Ansioso, sudoreico e pálido], perfusão periférica com tempo de enchimento capilar < 2s, pulsos radiais e femorais simétricos bilateralmente.
-- Aparelho Cardiovascular: Ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, ausência de sopros, ausência de B3 ou B4 de disfunção ventricular, ausência de atrito pericárdico. Ausência de estase jugular a 45 graus.
-- Aparelho Respiratório: Murmúrio vesicular universalmente audível bilateralmente, sem ruídos adventícios (ausência de estertores crepitantes em bases pulmonares - Killip I).
-- Abdome: Flácido, indolor à palpação, sem massas pulsáteis abdominais.
+SSVV: PA MSD: [ ]x[ ] mmHg | PA MSE: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA.
+Geral: [*Lúcido, orientado / Ansioso, sudoreico e pálido], perfusão periférica com TEC < 2s, pulsos radiais e femorais simétricos bilateralmente.
+ACV: RCR 2T, BNF, ausência de sopros, ausência de B3 ou B4 de disfunção ventricular, ausência de atrito pericárdico. Ausência de estase jugular a 45 graus.
+AR: Murmúrio vesicular universalmente audível bilateralmente, sem ruídos adventícios (ausência de estertores crepitantes em bases pulmonares - Killip I).
+ABD: Flácido, indolor à palpação, sem massas pulsáteis abdominais.
 
 # LAUDO DO ELETROCARDIOGRAMA DE 12 DERIVAÇÕES (REALIZADO EM < 10 MINUTOS):
 - Ritmo: [Sinusal regular], FC: [ ] bpm.
 - Análise de Isquemia / Lesão / Necrose:
-  * IAM COM SUPRADESNIVELAMENTO DO SEGMENTO ST (IAMCSST): Supradesnivelamento de ST >= 1 mm em duas derivações contíguas em parede: [Anterior (V1-V4) / Inferior (DII, DIII, aVF - conferidas derivações direitas V3R/V4R) / Lateral (DI, aVL, V5, V6) / Dorsal].
+  * IAM COM SUPRADESNIVELAMENTO DO SEGMENTO ST (IAMCSST): Supradesnivelamento de ST >= 1 mm em duas derivações contíguas em parede: [Anterior (V1-V4) / Inferior / Lateral (DI, aVL, V5, V6) / Dorsal].
   * IAM SEM SUPRADESNIVELAMENTO DO SEGMENTO ST (IAMSSST) / ANGINA INSTÁVEL: [Infradesnivelamento de segmento ST >= 0,5 mm / Inversão simétrica de onda T / ECG sem alterações isquêmicas agudas evidentes].
 
 # ESTRATIFICAÇÃO DE RISCO (HEART SCORE PARA DOR TORÁCICA NA UPA):
@@ -70,16 +66,16 @@ Alergias: [*Nega alergias / Alérgico a AAS / Alérgico a Dipirona / Outros: ___
    - + Inibidor de P2Y12 conforme a estratégia de reperfusão:
      * SE ANGIOPLASTIA PRIMÁRIA / CATETERISMO PLANEJADO (OU SEM SUPRA DE ST):
        - Ticagrelor 90 mg: 2 comprimidos (180 mg) VO de ataque [PREFERENCIAL].
-       - [OU Clopidogrel 75 mg: 4 a 8 comprimidos (300 a 600 mg) VO de ataque se contraindicação ao Ticagrelor].
+       - [OU Clopidogrel 75 mg: 4 a 8 comprimidos (300 a].
      * SE TROMBÓLISE QUÍMICA NA UPA (TENECTEPLASE / ALTEPLASE):
-       - [ATENÇÃO: TICAGRELOR É PROIBIDO COM FIBRINOLÍTICO. USAR EXCLUSIVAMENTE CLOPIDOGREL]:
+       - [ATENÇÃO: TICAGRELOR É PROIBIDO COM]:
        - Clopidogrel 75 mg se idade <= 75 anos: 4 comprimidos (300 mg) VO de ataque imediato.
        - Clopidogrel 75 mg se idade > 75 anos: 1 comprimido (75 mg) VO de manutenção SEM dose de ataque.
 
 3. VASODILATADOR CORONARIANO / CONTROLE DA DOR:
    - Dinitrato de Isossorbida 5 mg sublingual agora (pode repetir a cada 5 min, até 3 doses, se PAS > 100 mmHg).
    - [OU]: Nitroglicerina EV contínua em bomba de infusão se dor refratária ou congestão pulmonar.
-   - [CONTRAINDICADO SE PAS < 90 MMHG OU INFARTO DE VENTRÍCULO DIREITO].
+   - [CONTRAINDICADO SE PAS < 90 MMHG OU INFARTO DE].
 
 4. ANTICOAGULAÇÃO PARENTERAL PLENA (ENOXAPARINA):
    - Se idade < 75 anos: Bólus de 30 mg EV + 1 mg/kg SC de 12/12 horas (iniciar dose SC 15 min após o bólus).

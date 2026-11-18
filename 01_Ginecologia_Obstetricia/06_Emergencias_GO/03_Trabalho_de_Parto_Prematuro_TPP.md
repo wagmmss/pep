@@ -16,18 +16,18 @@ Alergias: [*Nega / Outros: ___].
 - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º trimestre) | Fatores de Risco: [Prematuridade prévia / Colo curto < 25 mm / Gemelaridade / ITU ativa / Nega fatores prévios].
 
 # QP:
-- [Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Queixa Principal & HMA: Contrações uterinas dolorosas e rítmicas associadas a pressão pélvica e dor lombar há [ ] horas. Movimentação fetal presente.
-- Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido (afastada corioamnionite), nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
+Queixa Principal & HMA: Contrações uterinas dolorosas e rítmicas associadas a pressão pélvica e dor lombar há [ ] horas. Movimentação fetal presente.
+Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido, nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C (afebril).
-- Abdome & Dinâmica Uterina (DU): AU: [ ] cm | Leopold: Feto único, longitudinal, apresentação [cefálica / pélvica]. DU: [3 a 4] contrações regulares e dolorosas de [ ] segundos em 10 minutos, com relaxamento completo do tônus uterino no intervalo.
-- Vitalidade Fetal: BCF: [ ] bpm, rítmico, sem desacelerações | CTG: Categoria I (reativa).
-- Exame Especular Estéril (Realizado antes do toque): Paredes íntegras, sem sangramento ou perda de líquido pelo OE (Manobra de Tarnier negativa). Coletado Swab Vaginal e Retal para EGB.
-- Toque Vaginal: Colo [centralizado / intermediário], amolecido, apagado [ ]%, dilatado para [ ] cm, bolsa íntegra, polo cefálico em plano [ ] de De Lee.
+SSVV: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C (afebril).
+Abdome & Dinâmica Uterina (DU): AU: [ ] cm | Leopold: Feto único, longitudinal, apresentação [cefálica / pélvica]. DU: [3 a 4] contrações regulares e dolorosas de [ ] segundos em 10 minutos, com relaxamento completo do tônus uterino no intervalo.
+Vitalidade Fetal: BCF: [ ] bpm, rítmico, sem desacelerações | CTG: Categoria I (reativa).
+Exame Especular Estéril (Realizado antes do toque): Paredes íntegras, sem sangramento ou perda de líquido pelo OE (Manobra de Tarnier negativa). Coletado Swab Vaginal e Retal para EGB.
+Toque Vaginal: Colo [centralizado / intermediário], amolecido, apagado [ ]%, dilatado para [ ] cm, bolsa íntegra, polo cefálico em plano [ ] de De Lee.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Trabalho de Parto Prematuro ativo com membranas íntegras em gestação de [ ]s[ ]d (CID-10: O60.0), sem sinais de corioamnionite ou sofrimento fetal — Elegível para Tocólise e Maturação Pulmonar.
@@ -42,12 +42,12 @@ Alergias: [*Nega / Outros: ___].
 - *[OU Alternativa]*: Dexametasona 6 mg IM profunda de 12/12 horas por 4 doses (Total = 24 mg em 48h).
 
 >> 3. TOCÓLISE FARMACOLÓGICA POR 48 HORAS (PARA COMPLETAR CORTICOIDE E NEUROPROTEÇÃO):
-[1ª ESCOLHA — NIFEDIPINO ORAL (BLOQUEADOR DE CANAL DE CÁLCIO — 24 A 34 SEMANAS)]:
+[1ª ESCOLHA]:
 - Ataque: Nifedipino 20 mg VO (comprimido deglutido) agora; reavaliar DU e PA em 20–30 min -> se persistirem contrações, administrar 10 a 20 mg VO a cada 20–30 minutos (Dose máxima na 1ª hora = 40 mg).
 - Manutenção (por 48 horas): Nifedipino 10 a 20 mg VO de 6/6h ou 8/8h até completar 24h após a 2ª dose de Betametasona (suspender após 48h!).
 - *Trava de segurança:* Aferir PA e FC a cada 20 min no ataque (suspender se PAS < 90 mmHg) e NUNCA associar Nifedipino com Sulfato de Magnésio em bolus rápido sem monitorização de bloqueio neuromuscular/hipotensão.
 
-[OU 2ª ESCOLHA (SE CARDIOPATA / GESTAÇÃO MÚLTIPLA) — ATOSIBAN EV (ANTAGONISTA DA OCITOCINA)]:
+[OU 2ª ESCOLHA (SE CARDIOPATA / GESTAÇÃO MÚLTIPLA) — ATOSIBAN EV]:
 - Etapa 1: Bólus de 6,75 mg (0,9 mL) EV direto em 1 minuto; Etapa 2: 18 mg/h (300 mcg/min) EV em BIC por 3 horas; Etapa 3: 6 mg/h (100 mcg/min) EV em BIC por até 45 horas.
 
 >> 4. NEUROPROTEÇÃO FETAL COM SULFATO DE MAGNÉSIO (SE IG < 32 SEMANAS E PARTO IMINENTE):

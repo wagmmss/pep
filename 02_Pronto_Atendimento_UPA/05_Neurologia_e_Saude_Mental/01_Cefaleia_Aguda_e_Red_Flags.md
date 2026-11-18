@@ -13,33 +13,33 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # QP:
-- Dor de cabeça forte há [ ] horas/dias.
+Dor de cabeça forte há [ ] horas/dias.
 
 # HMA:
-- HMA: Relata cefaleia de localização [hemicraniana à direita/esquerda / holocraniana / frontal / occipital / em aperto tipo faixa].
-  * Intensidade: [ ]/10 na escala visual analógica.
-  * Caráter: [Pulsátil latejante / Em aperto contínuo / Pontada / Em queimação].
-  * Sintomas Acompanhantes: [Náuseas e vômitos / Fotofobia e fonofobia / Piora importante com atividade física habitual / Presença de aura visual prévia com escotomas cintilantes e pontos brilhantes / Ausentes].
-- RASTREAMENTO MANDATÓRIO DE SINAIS DE ALARME (RED FLAGS - MNEMÔNICO SNOOP10):
-  * S - SINTOMAS SISTÊMICOS: Nega febre, calafrios, sudorese noturna ou perda ponderal inexplicada; nega histórico de neoplasia prévia ou imunossupressão (HIV).
-  * N - SINAIS NEUROLÓGICOS: Nega déficits motores focais (fraqueza em membros, boca torta), nega dormência assimétrica, nega alteração da fala, nega crise convulsiva e nega confusão mental.
-  * O - ONSET SÚBITO (CEFALEIA EM TROVOADA / THUNDERCLAP): Nega início hiperagudo que atingiu intensidade máxima em menos de 1 minuto ("pior dor de cabeça de toda a vida" - afasta Hemorragia Subaracnoide por rotura de aneurisma).
-  * O - OLDER AGE (IDADE DE INÍCIO): Idade < 50 anos [se > 50 anos: nega dor em couro cabeludo ao pentear o cabelo, nega claudicação de mandíbula ao mastigar - afasta Arterite Temporal].
-  * P - PATTERN CHANGE (MUDANÇA DE PADRÃO): Nega dor que acorda o paciente de madrugada com vômitos em jato, nega piora acentuada com manobra de Valsalva (tosse, evacuação, esforço físico) e nega componente postural extremo (piora ortostática pós-raqui).
-  * PÓS-TRAUMA: Nega trauma cranioencefálico (TCE) recente nos últimos dias/semanas.
-- Histórico Prévio: [Paciente com crises semelhantes prévias de enxaqueca / Primeiro episódio da vida].
+Relata cefaleia de localização [hemicraniana à direita/esquerda / holocraniana / frontal / occipital / em aperto tipo faixa].
+[ ]/10 na escala visual analógica.
+[Pulsátil latejante / Em aperto contínuo / Pontada / Em queimação].
+[Náuseas e vômitos / Fotofobia e fonofobia / Piora importante com atividade física habitual / Presença de aura visual prévia com escotomas / Ausentes].
+Nega febre, calafrios, sudorese noturna ou perda ponderal inexplicada; nega histórico de neoplasia prévia ou imunossupressão (HIV).
+Nega déficits motores focais, nega dormência assimétrica, nega alteração da fala, nega crise convulsiva e nega confusão mental.
+O - ONSET SÚBITO: Nega início hiperagudo que atingiu intensidade máxima em menos de 1 minuto.
+Idade < 50 anos [se > 50 anos: nega dor em couro cabeludo ao].
+Nega dor que acorda o paciente de madrugada com vômitos em jato, nega piora acentuada com manobra de Valsalva (tosse, evacuação, esforço físico) e nega componente postural extremo.
+Nega trauma cranioencefálico (TCE) recente nos últimos dias/semanas.
+[Paciente com crises semelhantes prévias de / Primeiro episódio da vida].
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C (afebril).
-- Ectoscopia: Bom estado geral, lúcido e orientado no tempo e espaço (Glasgow 15), corado, fácies de desconforto com a luz ambiente.
-- EXAME NEUROLÓGICO COMPLETO:
-  * Nível de Consciência: Vigil, escala de coma de Glasgow 15/15.
-  * Sinais Meníngeos: Rigidez de nuca ausente (pescoço totalmente flexível e móvel em todas as direções sem resistência); Sinal de Brudzinski negativo e Sinal de Kernig negativo (afastada meningite e irritação meníngea).
-  * Nervos Cranianos: Pupilas isocóricas e fotorreagentes, motilidade ocular extrínseca normal sem diplopia, ausência de nistagmo patológico; mímica facial perfeitamente simétrica (VII par normal), fala e articulação preservadas.
-  * Força Motora & Sensibilidade: Força muscular grau 5/5 nos quatro membros simetricamente, sensibilidade tátil e térmica preservadas, reflexos osteotendíneos normorreflexos, reflexo cutâneo-plantar em flexão bilateral (Sinal de Babinski ausente).
-  * Coordenação & Marcha: Prova índex-nariz simétrica sem dismetria, marcha habitual estável sem ataxia.
-  * Palpação Craniofacial: Têmporas simétricas, ausência de artérias temporais endurecidas ou dolorosas, ausência de dor em seios da face.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C (afebril).
+Geral: BEG, LOTE (Glasgow 15), corado, fácies de desconforto com a luz ambiente.
+EXAME NEUROLÓGICO COMPLETO:
+Nível de Consciência: Vigil, escala de coma de Glasgow 15/15.
+Sinais Meníngeos: Rigidez de nuca ausente (pescoço totalmente flexível e móvel em todas as direções sem resistência); Sinal de Brudzinski negativo e Sinal de Kernig negativo (afastada meningite e irritação meníngea).
+Nervos Cranianos: Pupilas isocóricas e fotorreagentes, motilidade ocular extrínseca normal sem diplopia, ausência de nistagmo patológico; mímica facial perfeitamente simétrica (VII par normal), fala e articulação preservadas.
+Força Motora & Sensibilidade: Força muscular grau 5/5 nos quatro membros simetricamente, sensibilidade tátil e térmica preservadas, reflexos osteotendíneos normorreflexos, reflexo cutâneo-plantar em flexão bilateral (Sinal de Babinski ausente).
+Coordenação & Marcha: Prova índex-nariz simétrica sem dismetria, marcha habitual estável sem ataxia.
+Palpação Craniofacial: Têmporas simétricas, ausência de artérias temporais endurecidas ou dolorosas, ausência de dor em seios da face.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Cefaleia Primária: [Enxaqueca / Migrânea sem aura / Cefaleia Tensional episódica] (CID-10: G43.0 / G44.2).
@@ -65,7 +65,7 @@ Alergias: [*Nega / Sim: ___].
 1. Dipirona 1 g VO de 6/6h se dor (máximo 4 g/dia por até 3 dias).
 2. Naproxeno 500 mg VO de 12/12h após refeições por 3 dias [OU Ibuprofeno 600 mg VO 8/8h].
 3. [Se enxaqueca com sintomas náuseos]: Ondansetrona 4 a 8 mg VO ou Bromoprida 10 mg VO 8/8h SOS.
-4. [Triptano se paciente com enxaqueca diagnóstica prévia]:
+4. [Triptano se paciente com enxaqueca diagnóstica]:
    - Succinato de Sumatriptana 50 mg - Tomar 1 comprimido VO logo ao início da fase de dor da enxaqueca (pode repetir 1 cp após 2 horas se persistência; máximo 200 mg/dia. CONTRAINDICADO SE CORONARIOPATIA OU HAS NÃO CONTROLADA).
 
 # ORIENTAÇÕES / SINAIS DE ALARME:

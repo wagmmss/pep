@@ -13,32 +13,31 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # QP:
-- Dor em queimação, fisgada e bolhinhas com água na pele há [ ] dias.
+Dor em queimação, fisgada e bolhinhas com água na pele há [ ] dias.
 
 # HMA:
-- HMA: Relata quadro iniciado há cerca de [ ] dias com dor prodrômica em queimação intensa, sensação de "choque elétrico", alodinia (dor ao simples roçar da roupa na pele) e formigamento localizado, seguido pelo aparecimento de vesículas agrupadas sobre base avermelhada que coçam e doem intensamente.
-- DISTRIBUIÇÃO ANATÔMICA DERMATÔMICA:
-  * Lesão estritamente UNILATERAL respeitando com precisão a linha média do corpo, localizada no dermátomo [Torácico (T3 a T10) / Lombar (L1 a L3) / Cervical / Oftálmico (ramo V1 do trigêmeo)].
-- RASTREAMENTO OBRIGATÓRIO DE COMPLICAÇÕES GRAVES:
-  * [ ] ZOSTER OFTÁLMICO (RAMO V1):
-    - Sinal de Hutchinson: [Pesquisado: Ausência de vesículas na ponta ou asa do nariz / PRESENÇA DE VESÍCULAS NA PONTA DO NARIZ (Sinal de Hutchinson positivo - risco iminente de ceratite herpética e cegueira)].
-    - Nega dor ocular profunda, fotofobia intensa, olho vermelho ou turvação visual.
-  * [ ] SÍNDROME DE RAMSAY HUNT (ZOSTER ÓTICO):
-    - Nega paralisia ou fraqueza na mímica facial (mímica facial simétrica).
-    - Nega dor intensa no ouvido com vesículas no conduto auditivo externo ou vertigem súbita.
-- Histórico: [Passado de catapora/varicela na infância / Imunossupressão / Idade > 50 anos].
+Relata quadro iniciado há cerca de [ ] dias com dor prodrômica em queimação intensa, sensação de "choque elétrico", alodinia e formigamento localizado, seguido pelo aparecimento de vesículas agrupadas sobre base avermelhada que coçam e doem intensamente.
+Lesão estritamente UNILATERAL respeitando com precisão a linha média do corpo, localizada no dermátomo [Torácico (T3 a T10) / Lombar (L1 a L3) / Cervical / Oftálmico (ramo V1 do trigêmeo)].
+[ ] ZOSTER OFTÁLMICO (RAMO V1):
+[Pesquisado: Ausência de vesículas na ponta ou / PRESENÇA DE VESÍCULAS NA PONTA DO NARIZ (Sinal].
+Nega dor ocular profunda, fotofobia intensa, olho vermelho ou turvação visual.
+[ ] SÍNDROME DE RAMSAY HUNT (ZOSTER ÓTICO):
+Nega paralisia ou fraqueza na mímica facial.
+Nega dor intensa no ouvido com vesículas no conduto auditivo externo ou vertigem súbita.
+[Passado de catapora/varicela na infância / Imunossupressão / Idade > 50 anos].
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril.
-- Ectoscopia Cutânea:
-  * Presença de múltiplas vesículas de conteúdo líquido claro e translúcido, agrupadas em placas sobre base eritematosa viva, com algumas áreas em fase de crosta melicérica inicial.
-  * Distribuição em faixa contínua linear estritamente unilateral em dermátomo [ ], sem cruzar a linha média sagital anterior ou posterior.
-  * Alodinia mecânica evidente à palpação leve da pele perilesional com gaze.
-- Exame de Pares Cranianos (se lesão na cabeça/face):
-  * Mímica facial íntegra e simétrica bilateralmente (VII par preservado).
-  * Movimentação ocular extrínseca normal; reflexo fotomotor preservado bilateralmente.
-  * [Se afetação de V1]: Inspeção ocular com conjuntiva limpa, ausência de hiperemia ciliar profunda ou opacidades na córnea.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril.
+Ectoscopia Cutânea:
+Presença de múltiplas vesículas de conteúdo líquido claro e translúcido, agrupadas em placas sobre base eritematosa viva, com algumas áreas em fase de crosta melicérica inicial.
+Distribuição em faixa contínua linear estritamente unilateral em dermátomo [ ], sem cruzar a linha média sagital anterior ou posterior.
+Alodinia mecânica evidente à palpação leve da pele perilesional com gaze.
+Exame de Pares Cranianos (se lesão na cabeça/face):
+Mímica facial íntegra e simétrica bilateralmente (VII par preservado).
+Movimentação ocular extrínseca normal; reflexo fotomotor preservado bilateralmente.
+[Se afetação de V1]: Inspeção ocular com conjuntiva limpa, ausência de hiperemia ciliar profunda ou opacidades na córnea.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Herpes Zoster agudo em dermátomo [ ] (CID-10: B02.9).
@@ -64,6 +63,7 @@ Alergias: [*Nega / Sim: ___].
 - Não manipular ou estourar as vesículas.
 - Alerta de Contágio: O líquido das vesículas contém o vírus vivo da catapora. Evitar contato direto com gestantes suscetíveis, recém-nascidos e pessoas imunossuprimidas até que todas as bolhas tenham virado crostas secas.
 - [SE SINAL DE HUTCHINSON PRESENTE]: Encaminhamento IMEDIATO ao Oftalmologista no mesmo dia para exame com lâmpada de fenda e fluoresceína.
+
 # RECEITA:
 USO ORAL (INICIAR PREFERENCIALMENTE EM ATÉ 72H DO SURGIMENTO DAS VESÍCULAS):
 

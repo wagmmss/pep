@@ -15,25 +15,25 @@ Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Outros: ___].
 
 # QP:
-- Coriza, obstrução nasal e tosse há [ ] dias.
+Coriza, obstrução nasal e tosse há [ ] dias.
 
 # HMA:
-- Quadro iniciado há [ ] dias com espirros, obstrução nasal e rinorreia [hialina fluida / mucoide amarelada fisiológica da evolução viral], acompanhada de tosse [predominantemente noturna ao deitar por gotejamento pós-nasal].
-- Curva Térmica: [Afebril / Febre baixa a moderada (< 38,5 °C) nos primeiros 2–3 dias, cedendo rapidamente ao antitérmico].
-- Estado Geral, Aceitação e Diurese: Criança permanece ativa, brincando e sorrindo quando afebril; aceitando [bem líquidos e seio materno / com leve redução de sólidos pelo nariz entupido]. Diurese clara e preservada.
-- Nega dispneia, respiração acelerada (taquipneia), afundamento de costelas (tiragens) ou gemência.
-- Nega sibilância (chiado no peito) ou estridor laríngeo inspiratório.
-- Nega febre alta persistente (> 39 °C) por mais de 72 horas ou "dupla curva" (piora após o 5º dia).
-- Nega otalgia intensa, otorreia purulenta ou abaulamento retroauricular.
-- Nega prostração fora do período febril, vômitos incoercíveis ou petéquias.
+Quadro iniciado há [ ] dias com espirros, obstrução nasal e rinorreia [hialina fluida / mucoide amarelada fisiológica da evolução viral], acompanhada de tosse [predominantemente noturna ao deitar por].
+[Afebril / Febre baixa a moderada (< 38,5 °C) nos].
+Estado Geral, Aceitação e Diurese: Criança permanece ativa, brincando e sorrindo quando afebril; aceitando [bem líquidos e seio materno / com leve redução de sólidos pelo nariz entupido]. Diurese clara e preservada.
+Nega dispneia, respiração acelerada (taquipneia), afundamento de costelas (tiragens) ou gemência.
+Nega sibilância (chiado no peito) ou estridor laríngeo inspiratório.
+Nega febre alta persistente (> 39 °C) por mais de 72 horas ou "dupla curva" (piora após o 5º dia).
+Nega otalgia intensa, otorreia purulenta ou abaulamento retroauricular.
+Nega prostração fora do período febril, vômitos incoercíveis ou petéquias.
 
 # EXAME FÍSICO:
-- Sinais Vitais: FC: [ ] bpm | FR (em 1 min, sem febre): [ ] irpm (Eupneico para a faixa etária) | SpO2: [ ]% em AA | Tax: [ ] °C | TEC < 2s.
-- Ectoscopia: Bom estado geral (BEG), ativo e reativo no colo, corado, hidratado, anictérico, acianótico, sem esforço respiratório.
-- Aparelho Respiratório: Expansibilidade simétrica, ausência de tiragem subcostal, intercostal ou de fúrcula. Murmúrio vesicular universalmente audível, sem estertores crepitantes ou sibilos (apenas roncos de transmissão de vias aéreas superiores que desaparecem após tosse/lavagem nasal).
-- Rinoscopia & Oroscopia: Mucosa nasal hiperemiada e edemaciada com secreção [hialina / mucoide] sem corpo estranho; orofaringe com hiperemia difusa leve e gotejamento pós-nasal, amígdalas sem placas ou exsudato purulento.
-- Otoscopia Bilateral: Membranas timpânicas íntegras, translúcidas, sem abaulamento e com triângulo luminoso preservado bilateralmente (afastada Otite Média Aguda).
-- Cardiopulmonar e Abdome: Bulhas normofonéticas em 2T sem sopros; abdome flácido e indolor sem visceromegalias.
+SSVV: FC: [ ] bpm | FR (em 1 min, sem febre): [ ] irpm (Eupneico para a faixa etária) | SpO2: [ ]% em AA | Tax: [ ] °C | TEC < 2s.
+Geral: BEG (BEG), ativo e reativo no colo, corado, hidratado, anictérico, acianótico, sem esforço respiratório.
+AR: Expansibilidade simétrica, ausência de tiragem subcostal, intercostal ou de fúrcula. Murmúrio vesicular universalmente audível, sem estertores crepitantes ou sibilos (apenas roncos de transmissão de vias aéreas superiores que desaparecem após tosse/lavagem nasal).
+Rinoscopia & Oroscopia: Mucosa nasal hiperemiada e edemaciada com secreção [hialina / mucoide] sem corpo estranho; orofaringe com hiperemia difusa leve e gotejamento pós-nasal, amígdalas sem placas ou exsudato purulento.
+Otoscopia Bilateral: Membranas timpânicas íntegras, translúcidas, sem abaulamento e com triângulo luminoso preservado bilateralmente (afastada Otite Média Aguda).
+Cardiopulmonar e Abdome: Bulhas normofonéticas em 2T sem sopros; abdome flácido e indolor sem visceromegalias.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Rinofaringite Aguda Viral / Resfriado Comum (CID-10: J00) — evolução benigna e autolimitada, sem sinais de complicação bacteriana secundária (OMA, sinusite ou pneumonia).
@@ -46,6 +46,7 @@ Alergias: [*Nega / Outros: ___].
 3. Hidratação oral abundante e fracionamento das mamadas/refeições.
 4. Proscrição formal e explicação aos pais sobre a proibição de antibióticos, xaropes antitussígenos/mucolíticos e descongestionantes nasais tópicos ou sistêmicos.
 5. Orientados sinais de alarme para retorno imediato (taquipneia, tiragem subcostal, febre > 72h, otalgia ou prostração sem febre).
+
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO — RESFRIADO COMUM / IVAS
 Paciente: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
@@ -57,7 +58,7 @@ USO NASAL E ORAL:
 2. Dipirona Solução Oral Gotas (500 mg/mL) ------------------------------------- 1 frasco
    Dar [ ] gotas (0,8 a 1 gota/kg; máx 35 gotas) por via oral até de 6 em 6 horas APENAS se houver febre (Tax ≥ 37,8 °C) com desconforto ou dor.
 
-3. [Se Criança > 1 ano de idade com tosse noturna irritativa]:
+3. [Se Criança > 1 ano de idade com tosse noturna]:
    Mel de abelhas puro --------------------------------------------------------- Uso oral
    Oferecer meia a 1 colher de chá (2,5 a 5 mL) de mel puro 30 minutos antes de dormir (Atenção: ESTRITAMENTE PROIBIDO para menores de 1 ano de idade pelo risco de botulismo).
 

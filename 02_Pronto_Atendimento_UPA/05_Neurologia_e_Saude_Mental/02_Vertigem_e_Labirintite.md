@@ -13,40 +13,39 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # QP:
-- Tontura rotatória intensa ("tudo girando"), náuseas e vômitos há [ ] horas/dias.
+Tontura rotatória intensa ("tudo girando"), náuseas e vômitos há [ ] horas/dias.
 
 # HMA:
-- HMA: Relata episódio agudo de vertigem rotatória verdadeira iniciada há [ ] horas, acompanhada de instabilidade na marcha, náuseas e vômitos incoercíveis.
-  * HIPÓTESE A - VERTIGEM POSICIONAL PAROXÍSTICA BENIGNA (VPPB): Vertigem desencadeada por mudanças súbitas de posição da cabeça (ao virar de lado na cama ou olhar para cima), com episódios breves de forte intensidade durando menos de 60 segundos cada.
-  * HIPÓTESE B - NEVRITE VESTIBULAR / LABIRINTITE: Vertigem contínua incapacitante iniciada há 24-48 horas, que persiste mesmo com a cabeça parada em repouso, associada a sintomas de infecção viral recente de vias aéreas superiores.
-- Nega diplopia (visão dupla) ou perda visual transitória.
-- Nega disfagia (dificuldade de engolir) ou disartria (fala enrolada/pastosa).
-- Nega fraqueza, perda de força muscular ou dormência em um dos lados do corpo.
-- Nega incoordenação motora grave (incapacidade de alcançar objetos).
-- Nega cefaleia occipital súbita de início hiperagudo.
+Relata episódio agudo de vertigem rotatória verdadeira iniciada há [ ] horas, acompanhada de instabilidade na marcha, náuseas e vômitos incoercíveis.
+HIPÓTESE A - VERTIGEM POSICIONAL PAROXÍSTICA BENIGNA (VPPB): Vertigem desencadeada por mudanças súbitas de posição da cabeça, com episódios breves de forte intensidade durando menos de 60 segundos cada.
+HIPÓTESE B - NEVRITE VESTIBULAR / LABIRINTITE: Vertigem contínua incapacitante iniciada há 24-48 horas, que persiste mesmo com a cabeça parada em repouso, associada a sintomas de infecção viral recente de vias aéreas superiores.
+Nega diplopia (visão dupla) ou perda visual transitória.
+Nega disfagia (dificuldade de engolir) ou disartria (fala enrolada/pastosa).
+Nega fraqueza, perda de força muscular ou dormência em um dos lados do corpo.
+Nega incoordenação motora grave.
+Nega cefaleia occipital súbita de início hiperagudo.
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C.
-- Nível de Consciência: Lúcido e orientado no tempo e espaço (Glasgow 15).
-- EXAME DOS NERVOS CRANIANOS & CEREBELO:
-  * Pupilas isocóricas e fotorreagentes; simetria facial preservada (VII par normal).
-  * Ausência de dismetria na prova índex-nariz bilateral (função cerebelar hemisférica normal).
-  * Marcha e Estática: Sinal de Romberg com instabilidade/queda direcionada para o lado do labirinto lesionado [ou paciente incapaz de ficar de pé sem apoio].
-
-- PROTOCOLO HINTS (HEAD IMPULSE, NYSTAGMUS, TEST OF SKEW):
-  * [H] - HEAD IMPULSE TEST (Impulso Cefálico Rápido com fixação ocular):
-    - [ ] POSITIVO COM SACADA DE REFIXAÇÃO OCULAR (Indica lesão periférica do reflexo vestíbulo-ocular - FAVORÁVEL A LABIRINTITE/NEVRITE).
-    - [ ] NORMAL SEM SACADA DE REFIXAÇÃO (ALERTA VERMELHO: Padrão normal na presença de vertigem contínua é altamente sugestivo de AVC CEREBELAR CENTRAL).
-  * [N] - PADRÃO DO NISTAGMO:
-    - [ ] UNIDIRECIONAL HORIZONTA-ROTATÓRIO que bate para o lado não acometido, não inverte de direção ao mudar o olhar (PADRÃO PERIFÉRICO BENIGNO).
-    - [ ] BIDIRECIONAL (muda de direção dependendo do lado para onde olha), VERTICAL PURO ou TORSIONAL PURO (ALERTA: PADRÃO CENTRAL DE AVC).
-  * [TS] - TEST OF SKEW (Oclusão ocular alternada):
-    - [ ] Alinhamento ocular estável sem desvio vertical (PADRÃO PERIFÉRICO).
-    - [ ] Presença de desvio vertical de alinhamento ao desocluir o olho (PADRÃO CENTRAL DE AVC).
-
-- [SE SUSPEITA DE VPPB - MANOBRA DE DIX-HALLPIKE]:
-  * Realizada manobra posicional: [Presença de nistagmo torsional e vertical superior com latência de 3 a 5 segundos e fadiga após 30 segundos, reproduzindo a vertigem no ouvido (direito / esquerdo) -> VPPB CONFIRMADA / Negativa].
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C.
+Nível de Consciência: Lúcido e orientado no tempo e espaço (Glasgow 15).
+EXAME DOS NERVOS CRANIANOS & CEREBELO:
+Pupilas isocóricas e fotorreagentes; simetria facial preservada (VII par normal).
+Ausência de dismetria na prova índex-nariz bilateral (função cerebelar hemisférica normal).
+Marcha e Estática: Sinal de Romberg com instabilidade/queda direcionada para o lado do labirinto lesionado [ou paciente incapaz de ficar de pé sem apoio].
+PROTOCOLO HINTS (HEAD IMPULSE, NYSTAGMUS, TEST OF SKEW):
+[H] - HEAD IMPULSE TEST (Impulso Cefálico Rápido com fixação ocular):
+[ ] POSITIVO COM SACADA DE REFIXAÇÃO OCULAR (Indica lesão periférica do reflexo vestíbulo-ocular - FAVORÁVEL A LABIRINTITE/NEVRITE).
+[ ] NORMAL SEM SACADA DE REFIXAÇÃO (ALERTA VERMELHO: Padrão normal na presença de vertigem contínua é altamente sugestivo de AVC CEREBELAR CENTRAL).
+[N] - PADRÃO DO NISTAGMO:
+[ ] UNIDIRECIONAL HORIZONTA-ROTATÓRIO que bate para o lado não acometido, não inverte de direção ao mudar o olhar (PADRÃO PERIFÉRICO BENIGNO).
+[ ] BIDIRECIONAL (muda de direção dependendo do lado para onde olha), VERTICAL PURO ou TORSIONAL PURO (ALERTA: PADRÃO CENTRAL DE AVC).
+[TS] - TEST OF SKEW (Oclusão ocular alternada):
+[ ] Alinhamento ocular estável sem desvio vertical (PADRÃO PERIFÉRICO).
+[ ] Presença de desvio vertical de alinhamento ao desocluir o olho (PADRÃO CENTRAL DE AVC).
+[SE SUSPEITA DE VPPB - MANOBRA DE DIX-HALLPIKE]:
+Realizada manobra posicional: [Presença de nistagmo torsional e vertical / esquerdo) -> VPPB CONFIRMADA / Negativa].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome Vestibular Periférica Aguda: [VPPB de canal posterior / Nevrite Vestibular aguda] (CID-10: H81.1 / H81.2).
@@ -67,7 +66,7 @@ Alergias: [*Nega / Sim: ___].
 1. Sedativo Labiríntico (Apenas nos Primeiros 3 a 5 Dias na Fase Aguda):
    - Cinarizina 25 mg a 75 mg - Tomar 1 comprimido VO à noite ao deitar por até 5 dias (o uso prolongado por semanas retarda a compensação labiríntica central e pode causar parkinsonismo medicamentoso em idosos).
    - [OU]: Dimenidrinato 50 mg VO de 8/8h SOS se náuseas ou crises agudas por 3 dias.
-2. [Se suspeita de Síndrome de Ménière com zumbido e hipoacusia flutuante]:
+2. [Se suspeita de Síndrome de Ménière com zumbido]:
    - Dicloridrato de Betaistina 16 mg a 24 mg - Tomar 1 comprimido VO de 12/12 horas após as refeições.
 
 # ORIENTAÇÕES / SINAIS DE ALARME:

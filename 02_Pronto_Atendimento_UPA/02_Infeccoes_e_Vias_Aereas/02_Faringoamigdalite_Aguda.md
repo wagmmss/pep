@@ -13,33 +13,33 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / Outros: ___].
+
 # QP:
-- Dor de garganta intensa (odinofagia) e febre há [ ] dias.
+Dor de garganta intensa (odinofagia) e febre há [ ] dias.
 
 # HMA:
-- HMA: Paciente relata dor de garganta de início súbito há [ ] dias, que piora intensamente à deglutição, associada a febre de [ ] °C aferida em domicílio e mal-estar geral.
-- ESCORE DE CENTOR MODIFICADO (ESTRATIFICAÇÃO ESTREPTOCÓCICA):
-  - Febre referida ou aferida > 38,0 °C (+1)
-  - Ausência de tosse (+1)
-  - Linfonodomegalia cervical anterior dolorosa à palpação (+1)
-  - Exsudato amigdaliano ou placas purulentas visíveis (+1)
-  - Idade: [3-14 anos (+1) / 15-44 anos (0) / >= 45 anos (-1)]
-  * PONTUAÇÃO DE CENTOR TOTAL: [ ] PONTOS ([0-1: Baixo risco/viral / 2-3: Intermediário / >= 4: Alta probabilidade de S. pyogenes]).
-- Nega trismo (dificuldade ou dor intensa ao tentar abrir a boca).
-- Nega sialorreia (dificuldade para engolir a própria saliva com baba).
-- Nega estridor respiratório ou sensação de asfixia.
-- Nega dor cervical com rigidez ou abaulamento cervical lateral.
+Paciente relata dor de garganta de início súbito há [ ] dias, que piora intensamente à deglutição, associada a febre de [ ] °C aferida em domicílio e mal-estar geral.
+Febre referida ou aferida > 38,0 °C (+1)
+Ausência de tosse (+1)
+Linfonodomegalia cervical anterior dolorosa à palpação (+1)
+Exsudato amigdaliano ou placas purulentas visíveis (+1)
+[3-14 anos (+1) / 15-44 anos (0) / >= 45 anos (-1)]
+[ ] PONTOS.
+Nega trismo.
+Nega sialorreia.
+Nega estridor respiratório ou sensação de asfixia.
+Nega dor cervical com rigidez ou abaulamento cervical lateral.
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
-- Estado Geral: [Bom / Regular] estado geral, corado, hidratado, lúcido e orientado, fácies de dor ao deglutir.
-- Oroscopia Detalhada:
-  * Amígdalas hiperemiadas, tumefeitas (aumento de volume bilateral [grau II/III]), com presença de exsudato purulento fibrinoso em criptas [ou apenas hiperemia difusa sem placas].
-  * Úvula centrada na linha média, com mobilidade preservada, sem desvios anatômicos.
-  * Pilares amigdalianos simétricos, sem abaulamentos unilaterais ou flutuação à inspeção.
-  * Palato mole sem petéquias ou lesões vesiculares (afastada herpangina).
-- Palpação Cervical: Presença de linfonodomegalia submandibular e cervical anterior bilateral, móveis, fibroelásticos e dolorosos à palpação, medindo cerca de 1,5 cm. Ausência de empastamento cervical.
-- Ausculta Cardiopulmonar: Ritmo cardíaco regular em 2 tempos, sem sopros audíveis; murmúrio vesicular universalmente audível sem ruídos adventícios.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
+Estado Geral: [Bom / Regular] estado geral, corado, hidratado, lúcido e orientado, fácies de dor ao deglutir.
+Oroscopia Detalhada:
+Amígdalas hiperemiadas, tumefeitas (aumento de volume bilateral [grau II/III]), com presença de exsudato purulento fibrinoso em criptas [ou apenas hiperemia difusa sem placas].
+Úvula centrada na linha média, com mobilidade preservada, sem desvios anatômicos.
+Pilares amigdalianos simétricos, sem abaulamentos unilaterais ou flutuação à inspeção.
+Palato mole sem petéquias ou lesões vesiculares (afastada herpangina).
+Palpação Cervical: Presença de linfonodomegalia submandibular e cervical anterior bilateral, móveis, fibroelásticos e dolorosos à palpação, medindo cerca de 1,5 cm. Ausência de empastamento cervical.
+Ausculta Cardiopulmonar: Ritmo cardíaco regular em 2 tempos, sem sopros audíveis; murmúrio vesicular universalmente audível sem ruídos adventícios.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Faringoamigdalite Aguda [Eritematosa de etiologia Viral / Bacteriana Estreptocócica provável] (CID-10: J03.9 / J02.9).

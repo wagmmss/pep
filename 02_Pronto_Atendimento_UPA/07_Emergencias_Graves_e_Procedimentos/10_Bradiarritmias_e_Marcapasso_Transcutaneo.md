@@ -10,6 +10,7 @@
 
 ```text
 ATENDIMENTO DE EMERGÊNCIA — BRADIARRITMIA SINTOMÁTICA & BLOQUEIO ATRIOVENTRICULAR (ACLS)
+
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___].
 Comorbidades: [+ *Hígido(a) / Outros: ___].
@@ -17,15 +18,15 @@ Alergias: [*Nega / Outros: ___].
 
 APRESENTAÇÃO CLÍNICA & SINAIS DE INSTABILIDADE (5 CRITÉRIOS DO ACLS):
 - Queixa Principal: Paciente admitido na Sala Vermelha por [síncope / pré-síncope e tontura intensa / dispneia aguda / dor torácica isquêmica / rebaixamento do nível de consciência] associado a FC < 50 bpm.
-- Critérios de Instabilidade Hemodinâmica pela Bradicardia: [1. Hipotensão (PAS < 90 mmHg) / 2. Alteração aguda do estado mental / 3. Sinais de Choque (palidez, sudorese fria, TEC > 3s) / 4. Desconforto torácico isquêmico / 5. Insuficiência cardíaca aguda (EAP)].
-- Causas Reversíveis Investigadas (Hs e Ts / Drogas): Uso de [Betabloqueador / Bloqueador de Canal de Cálcio (Verapamil/Diltiazem) / Digoxina / Amiodarona] | [Hipercalemia / Hipotireoidismo grave / IAM de Parede Inferior (CD) / Hipóxia].
+- Critérios de Instabilidade Hemodinâmica pela Bradicardia: [1. Hipotensão (PAS < 90 mmHg) / 2. Alteração aguda do estado mental / 3. Sinais de Choque / 4. Desconforto torácico isquêmico / 5. Insuficiência cardíaca aguda (EAP)].
+- Causas Reversíveis Investigadas (Hs e Ts / Drogas): Uso de [Betabloqueador / Bloqueador de Canal de Cálcio / Digoxina / Amiodarona] | [Hipercalemia / Hipotireoidismo grave / IAM de Parede Inferior (CD) / Hipóxia].
 
 EXAME FÍSICO & MONITORIZAÇÃO MULTIPARAMÉTRICA:
 - Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Glicemia Capilar: [ ] mg/dL.
-- Exame Cardiovascular: Pulso arterial lento, presença de [ondas "a" em canhão no pulso venoso jugular — dissociação atrioventricular do BAVT!], ausculta com B1 de intensidade variável e pulmões [limpos / com estertores crepitantes bibasais].
+- Exame Cardiovascular: Pulso arterial lento, presença de [ondas "a" em canhão no pulso venoso jugular], ausculta com B1 de intensidade variável e pulmões [limpos / com estertores crepitantes bibasais].
 
 LAUDO DO ECG DE 12 DERIVAÇÕES:
-- Ritmo e Condução AV: [Bradicardia Sinusal sintomática / BAV de 1º Grau (PR > 200 ms fixo) / BAV de 2º Grau Mobitz Tipo I — Wenckebach (alargamento progressivo do PR até onda P bloqueada, QRS estreito) / BAV de 2º Grau Mobitz Tipo II (intervalo PR constante com ondas P subitamente bloqueadas, bloqueio infranodal de alto risco!) / BAV de 3º Grau — BAV Total (dissociação AV completa: frequência atrial > frequência ventricular de escape) / IAM Inferior associado (supra em DII, DIII, aVF)].
+- Ritmo e Condução AV: [Bradicardia Sinusal sintomática / BAV de 1º Grau (PR > 200 ms fixo) / BAV de 2º Grau Mobitz Tipo I — Wenckebach / BAV de 2º Grau Mobitz Tipo II / BAV de 3º Grau — BAV Total / IAM Inferior associado].
 
 # CONDUTA:
 1. Pacote Inicial de Sala Vermelha (MOV): Monitorização cardíaca contínua + Pás adesivas do desfibrilador/marcapasso já posicionadas no tórax (anteroposterior ou anterolateral) + Oxigênio se SpO2 < 90% + 2 acessos venosos + ECG de 12 derivações + coleta de Eletrólitos (K+, Mg2+, Ca2+), Função Renal e Troponina.

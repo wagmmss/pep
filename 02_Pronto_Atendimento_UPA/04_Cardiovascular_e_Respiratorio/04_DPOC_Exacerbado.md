@@ -13,38 +13,37 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # HISTÓRICO RESPIRATÓRIO: Tabagismo pesado prévio ([ ] anos-maço) com diagnóstico de Doença Pulmonar Obstrutiva Crônica (DPOC) / Enfisema / Bronquite crônica. Faz uso de O2 domiciliar: [Não / Sim, L/min].
 
 # QP:
-- Piora da falta de ar e aumento do catarro há [ ] dias.
+Piora da falta de ar e aumento do catarro há [ ] dias.
 
 # HMA:
-- HMA (CRITÉRIOS CARDINAIS DE ANTHONISEN):
-  - 1. AUMENTO DA DISPNEIA (falta de ar pior que o padrão habitual do dia a dia).
-  - 2. AUMENTO DO VOLUME DA SECREÇÃO (escarro aumentado em quantidade).
-  - 3. AUMENTO DA PURULÊNCIA DO ESCARRO (catarro tornou-se espesso, amarelado ou esverdeado).
-  * CLASSIFICAÇÃO DE ANTHONISEN:
-    - [ ] Tipo 1 (Exacerbação Grave): 3 sintomas cardinais presentes -> INDICAÇÃO FORMAL DE ANTIBIOTICOTERAPIA.
-    - [ ] Tipo 2 (Exacerbação Moderada): 2 sintomas cardinais presentes (indicado antibiótico se houver purulência).
-    - [ ] Tipo 3 (Exacerbação Leve): 1 sintoma cardinal associado a tosse, febre ou sintomas gripais.
-- Nega dor torácica pleurítica aguda súbita (afastado Pneumotórax espontâneo por rotura de bolha).
-- Nega dor precordial em aperto (afastada Síndrome Coronariana Aguda associada).
-- Nega edema assimétrico de panturrilhas ou hemoptise (afastado TEP).
-- Nega piora de edema de membros inferiores ou ortopneia (afastada Insuficiência Cardíaca descompensada associada).
-- Medicações Habitual: [Em uso de Formoterol/Budesonida, Tiotrópio, Salbutamol SOS].
+1. AUMENTO DA DISPNEIA.
+2. AUMENTO DO VOLUME DA SECREÇÃO.
+3. AUMENTO DA PURULÊNCIA DO ESCARRO.
+[ ] Tipo 1 (Exacerbação Grave): 3 sintomas cardinais presentes -> INDICAÇÃO FORMAL DE ANTIBIOTICOTERAPIA.
+[ ] Tipo 2 (Exacerbação Moderada): 2 sintomas cardinais presentes.
+[ ] Tipo 3 (Exacerbação Leve): 1 sintoma cardinal associado a tosse, febre ou sintomas gripais.
+Nega dor torácica pleurítica aguda súbita.
+Nega dor precordial em aperto.
+Nega edema assimétrico de panturrilhas ou hemoptise (afastado TEP).
+Nega piora de edema de membros inferiores ou ortopneia.
+[Em uso de Formoterol/Budesonida, Tiotrópio].
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
-- Ectoscopia: Lúcido [ou sonolento/comatoso por retenção hipercápnica de CO2], cianose perioral ausente/leve, taquidispneico, uso de musculatura acessória (tiragem intercostal e fúrcula), respiração com lábios semicerrados ("pursed-lip breathing").
-- Aparelho Respiratório:
-  * Inspeção: Tórax em tonel (aumento do diâmetro anteroposterior), hiperinsuflação pulmonar.
-  * Percussão: Hipersonoridade pulmonar difusa bilateral, rebaixamento das cúpulas diafragmáticas.
-  * Ausculta Pulmonar: Murmúrio vesicular difusamente diminuído com tempo expiratório prolongado, presença de sibilos polifônicos e roncos difusos bilaterais, com estertores subcrepitantes em bases.
-- Aparelho Cardiovascular: Bulhas abafadas pelo enfisema pulmonar, ritmo cardíaco regular, ausência de sopros; ausência de turgência jugular a 45 graus.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
+Geral: Lúcido [ou sonolento/comatoso por retenção hipercápnica], cianose perioral ausente/leve, taquidispneico, uso de musculatura acessória (tiragem intercostal e fúrcula), respiração com lábios semicerrados ("pursed-lip breathing").
+AR:
+Inspeção: Tórax em tonel (aumento do diâmetro anteroposterior), hiperinsuflação pulmonar.
+Percussão: Hipersonoridade pulmonar difusa bilateral, rebaixamento das cúpulas diafragmáticas.
+Ausculta Pulmonar: Murmúrio vesicular difusamente diminuído com tempo expiratório prolongado, presença de sibilos polifônicos e roncos difusos bilaterais, com estertores subcrepitantes em bases.
+ACV: Bulhas abafadas pelo enfisema pulmonar, ritmo cardíaco regular, ausência de sopros; ausência de turgência jugular a 45 graus.
 
 # EXAMES COMPLEMENTARES NA UPA:
 - Gasometria Arterial: pH: [ ] | PaO2: [ ] mmHg | PaCO2: [ ] mmHg | HCO3: [ ] mEq/L | BE: [ ] | SatO2: [ ]%.
-  * [Acidose respiratória aguda com hipercapnia (pH < 7,35 e PaCO2 > 45) / Distúrbio compensado].
+  * [Acidose respiratória aguda com hipercapnia (pH / Distúrbio compensado].
 - Radiografia de Tórax: Hiperinsuflação pulmonar difusa, retificação de cúpulas diafragmáticas, aumento dos espaços intercostais; ausência de pneumotórax ou consolidações lobares francas.
 
 # HIPÓTESES DIAGNÓSTICAS:
@@ -67,10 +66,11 @@ Alergias: [*Nega / Sim: ___].
 4. ANTIBIOTICOTERAPIA (SE ANTHONISEN TIPO 1 OU TIPO 2 COM ESCARRO PURULENTO):
    - Amoxicilina + Clavulanato de Potássio 875/125 mg VO de 12/12h por 5 a 7 dias.
    - [OU]: Azitromicina 500 mg VO 1x/dia por 5 dias consecutivos.
-   - [Se risco de Pseudomonas (múltiplas exacerbações/bronquiectasias)]: Levofloxacino 500 mg VO 1x/dia por 7 dias.
+   - [Se risco de Pseudomonas]: Levofloxacino 500 mg VO 1x/dia por 7 dias.
 
-5. [SE ACIDOSE RESPIRATÓRIA NA GASOMETRIA (pH < 7,35 e PaCO2 > 45 mmHg)]:
+5. [SE ACIDOSE RESPIRATÓRIA NA GASOMETRIA (pH <]:
    - Indicação Imediata de VENTILAÇÃO NÃO INVASIVA (VNI com BiPAP): Modo Spontaneous/Timed (S/T), IPAP 10-12 cmH2O e EPAP 4-5 cmH2O. Reduz a mortalidade e o esforço ventilatório em mais de 50%.
+
 # RECEITA:
 RECEITUÁRIO MÉDICO — ALTA DE EXACERBAÇÃO AGUDA DE DPOC (GOLD)
 Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
@@ -79,14 +79,14 @@ USO ORAL (ESQUEMA CURTO DE 5 DIAS — DIRETRIZ GOLD):
 1. Prednisona 20 mg ----------------------------------------------------------- 1 caixa (10 comprimidos)
    Tomar 2 comprimidos (total de 40 mg) por via oral, 1 vez ao dia, pela manhã após o café, durante exatamente 5 dias (Estudo REDUCE: 5 dias têm a mesma eficácia que 14 dias, com metade dos efeitos colaterais).
 
-2. [SE PRESENÇA DE ESCARRO PURULENTO (CRITÉRIOS DE ANTHONISEN) — ANTIBIÓTICO POR 5 A 7 DIAS]:
+2. [SE PRESENÇA DE ESCARRO PURULENTO]:
    Amoxicilina + Clavulanato 875/125 mg --------------------------------------- 14 comprimidos
    Tomar 1 comprimido por via oral de 12 em 12 horas, junto às refeições, durante 5 a 7 dias.
    *[OU Alternativa]*: Azitromicina 500 mg — Tomar 1 comprimido VO 1x/dia por 5 dias (ou Levofloxacino 750 mg VO 1x/dia por 5 dias se DPOC muito grave/bronquiectasias).
 
 USO INALATÓRIO (BRONCODILATADORES DE LONGA DURAÇÃO E RESGATE):
 3. Manter (ou iniciar) broncodilatador de longa duração de uso contínuo:
-   [Brometo de Tiotrópio 2,5 mcg (Spiriva Respimat — 2 jatos 1x/dia) + Formoterol/Budesonida 12/400 mcg de 12/12h / Dupla broncodilatação LAMA + LABA].
+   [Brometo de Tiotrópio 2,5 mcg + / Dupla broncodilatação LAMA + LABA].
 
 4. Salbutamol 100 mcg Spray + Brometo de Ipratrópio 20 mcg Spray (ou Combivent / Duovent):
    Aplicar 2 a 4 jatos por via inalatória (com espaçador) de 6 em 6 horas nos primeiros 3 a 5 dias ou se falta de ar.

@@ -12,7 +12,7 @@
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] A[ ] | Data/Hora: [DD/MM/AAAA] às [HH:MM].
 Alergias: [*Nega / Outros: ___].
-- Indicação & Grau da Lesão: [Laceração perineal espontânea de 2º grau / Episiotomia médio-lateral direita seletiva / Laceração de 1º grau sangrante / Laceração de 3º grau com reparo esfincteriano (OASIS)].
+- Indicação & Grau da Lesão: [Laceração perineal espontânea de 2º grau / Episiotomia médio-lateral direita seletiva / Laceração de 1º grau sangrante / Laceração de 3º grau com reparo esfincteriano].
 - Extensão Anatômica Verificada: Comprometimento de mucosa vaginal, fúrcula e musculatura do corpo perineal (transverso superficial e bulbocavernoso). Toque retal pré-sutura confirmando integridade do complexo do esfíncter anal externo/interno e da mucosa anorretal (afastada lesão de 3º/4º grau).
 
 # TEMPOS TÉCNICOS DA REVISÃO E PERINEORRAFIA:

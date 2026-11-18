@@ -13,36 +13,37 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
-Antecedentes Cirúrgicos/Pessoais: [*Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de bridas) / Hérnia inguinal conhecida / Litíase biliar conhecida / Outros: ___].
+Antecedentes Cirúrgicos/Pessoais: [*Nega cirurgias prévias / Relata laparotomia/cesárea prévia (risco de / Hérnia inguinal conhecida / Litíase biliar conhecida / Outros: ___].
+
 # QP:
-- Dor de barriga intensa há [ ] horas/dias.
+Dor de barriga intensa há [ ] horas/dias.
 
 # HMA:
-- HMA: Relata dor abdominal de início [súbito / insidioso] há cerca de [ ] horas.
-  * Localização inicial: [Epigástrio / Periumbilical / Hipogástrio / Fossa ilíaca direita / Fossa ilíaca esquerda / Flanco].
-  * Migração da dor: [Dor iniciou periumbilical e migrou para fossa ilíaca direita após horas (cronologia de Murphy da apendicite) / Fixa sem migração].
-  * Caráter & Intensidade: [Em cólica intermitente / Contínua em pontada / Queimação intensa], intensidade [ ]/10 na escala visual de dor.
-  * Fatores de Piora/Melhora: Piora com tosse e deambulação (peritonismo); [sem alívio com analgésicos comuns].
-  * Sintomas Associados: [Febre de ___ °C / Anorexia total (recusa qualquer comida) / Náuseas e vômitos ( ___ episódios) / Parada de eliminação de flatos e fezes há ___ horas].
-- DUM: [DD/MM/AAAA] (Afastada gravidez ectópica: beta-hCG [negativo / solicitado com urgência]).
-- Nega corrimento vaginal fétido ou sangramento genital ativo.
-- Nega hematêmese, melena ou enterorragia volumosa.
+Relata dor abdominal de início [súbito / insidioso] há cerca de [ ] horas.
+[Epigástrio / Periumbilical / Hipogástrio / Fossa ilíaca direita / Fossa ilíaca esquerda / Flanco].
+[Dor iniciou periumbilical e migrou para fossa / Fixa sem migração].
+Caráter & Intensidade: [Em cólica intermitente / Contínua em pontada / Queimação intensa], intensidade [ ]/10 na escala visual de dor.
+Piora com tosse e deambulação (peritonismo); [sem alívio com analgésicos comuns].
+[Febre de ___ °C / Anorexia total (recusa qualquer comida) / Náuseas e vômitos ( ___ episódios) / Parada de eliminação de flatos e fezes há ___].
+[DD/MM/AAAA].
+Nega corrimento vaginal fétido ou sangramento genital ativo.
+Nega hematêmese, melena ou enterorragia volumosa.
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia) | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
-- Ectoscopia: [Regular / Mau] estado geral, fácies álgica, posição antálgica com flexão das coxas sobre o tronco, corado, desidratado [+/4+], perfusão periférica com enchimento capilar < 2s.
-- EXAME FÍSICO ABDOMINAL DETALHADO:
-  * Inspeção: Abdome [plano / globoso e distendido], [presença de cicatriz cirúrgica prévia em linha média / ausência de cicatrizes]. Ausência de equimoses periumbilicais (Sinal de Cullen) ou em flancos (Sinal de Grey-Turner). Regiões inguinais e femorais inspecionadas: livres de hérnias estranguladas ou encarceradas.
-  * Ausculta: Ruídos hidroaéreos [diminuídos / abolidos (íleo paralítico) / aumentados com ruídos metálicos de luta obstrutiva].
-  * Percussão: [Timpanismo difuso aumentado por gases / Presença de macicez em flancos / Espaço de Traube livre / Macicez hepática preservada (Sinal de Jobert ausente - sem pneumoperitônio)].
-  * Palpação Superficial e Profunda:
-    - Resistência muscular: [*Flácido / Defesa muscular voluntária à palpação / Defesa muscular involuntária localizada / Abdome em tábua com contratura generalizada].
-    - MANOBRAS SEMIOLÓGICAS ESPECÍFICAS TESTADAS:
-      - Sinal de Blumberg (Descompressão brusca dolorosa em ponto de McBurney em FID): [POSITIVO (Peritonite em FID) / Negativo].
-      - Sinal de Rovsing (Dor em FID à compressão contínua retrógrada da FIE): [POSITIVO / Negativo].
-      - Sinal de Murphy (Pausa na inspiração profunda à palpação do ponto cístico sob o rebordo costal direito): [POSITIVO (Colecistite aguda) / Negativo].
-      - Sinal de Giordano (Punhopercussão lombar): [*Negativo bilateral / Positivo à direita/esquerda].
-      - Sinal do Psoas e Obturador: [Positivo / Negativo].
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia) | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
+Geral: [Regular / Mau] estado geral, fácies álgica, posição antálgica com flexão das coxas sobre o tronco, corado, desidratado [+/4+], perfusão periférica com enchimento capilar < 2s.
+EXAME FÍSICO ABDOMINAL DETALHADO:
+Inspeção: Abdome [plano / globoso e distendido], [presença de cicatriz cirúrgica prévia em linha / ausência de cicatrizes]. Ausência de equimoses periumbilicais (Sinal de Cullen) ou em flancos (Sinal de Grey-Turner). Regiões inguinais e femorais inspecionadas: livres de hérnias estranguladas ou encarceradas.
+Ausculta: Ruídos hidroaéreos [diminuídos / abolidos (íleo paralítico) / aumentados com ruídos metálicos de luta].
+Percussão: [Timpanismo difuso aumentado por gases / Presença de macicez em flancos / Espaço de Traube livre / Macicez hepática preservada (Sinal de Jobert].
+Palpação Superficial e Profunda:
+Resistência muscular: [*Flácido / Defesa muscular voluntária à palpação / Defesa muscular involuntária localizada / Abdome em tábua com contratura generalizada].
+MANOBRAS SEMIOLÓGICAS ESPECÍFICAS TESTADAS:
+Sinal de Blumberg (Descompressão brusca dolorosa em ponto de McBurney em FID): [POSITIVO (Peritonite em FID) / Negativo].
+Sinal de Rovsing (Dor em FID à compressão contínua retrógrada da FIE): [POSITIVO / Negativo].
+Sinal de Murphy (Pausa na inspiração profunda à palpação do ponto cístico sob o rebordo costal direito): [POSITIVO (Colecistite aguda) / Negativo].
+Sinal de Giordano (Punhopercussão lombar): [*Negativo bilateral / Positivo à direita/esquerda].
+Sinal do Psoas e Obturador: [Positivo / Negativo].
 
 # EXAMES COMPLEMENTARES SOLICITADOS NA UPA:
 1. Laboratório de Urgência:
@@ -52,7 +53,7 @@ Antecedentes Cirúrgicos/Pessoais: [*Nega cirurgias prévias / Relata laparotomi
    - EAS / Urina 1: [Sem leucocitúria ou hematúria / Alterado: ___].
    - Beta-hCG sérico (se mulher): [*Negativo / Positivo: ___].
 2. Rotina Radiológica de Abdome Agudo (3 Incidências: Tórax PA + Abdome em pé + Decúbito):
-   - [Sem pneumoperitônio sob cúpulas diafragmáticas / Sem níveis hidroaéreos patológicos / Presença de distensão de alças com níveis hidroaéreos em escada / Presença de lâmina de ar subdiafragmática (pneumoperitônio)].
+   - [Sem pneumoperitônio sob cúpulas diafragmáticas / Sem níveis hidroaéreos patológicos / Presença de distensão de alças com níveis / Presença de lâmina de ar subdiafragmática].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome de Abdome Agudo [INFLAMATÓRIO (Suspeita de Apendicite Aguda / Colecistite) / PERFURATIVO / OBSTRUTIVO / ISQUÊMICO] (CID-10: R10.0).
@@ -64,7 +65,7 @@ Antecedentes Cirúrgicos/Pessoais: [*Nega cirurgias prévias / Relata laparotomi
 3. Hidratação Venosa: Ringer Lactato ou Soro Fisiológico 0,9% 1.000 a 1.500 mL EV em infusão contínua.
 4. Analgesia Venosa Não-Sedativa: Dipirona 1 g EV + Tramadol 50 a 100 mg EV diluído em 100 mL de SF (administrado após avaliação médica, garantindo alívio do sofrimento do paciente sem mascarar o exame do cirurgião).
 5. Antiemético: Ondansetrona 8 mg EV se náuseas ou vômitos.
-6. [Se distensão abdominal importante ou vômitos fecaloide]: Passagem de Sonda Nasogástrica (SNG) nº 16 aberta em frasco para descompressão gástrica.
+6. [Se distensão abdominal importante ou vômitos]: Passagem de Sonda Nasogástrica (SNG) nº 16 aberta em frasco para descompressão gástrica.
 7. [Se sepse ou peritonite evidente]: Coletadas hemoculturas e iniciada antibioticoterapia venosa empírica ampla (Ceftriaxona 2 g EV + Metronidazol 500 mg EV).
 8. ACIONAMENTO URGENTE DO CIRURGIÃO GERAL DE PLANTÃO / SOLICITAÇÃO DE VAGA CIRÚRGICA VIA CENTRAL DE REGULAÇÃO.
 ```

@@ -16,27 +16,27 @@ Comorbidades: [+ *Hígida / Outros: ___].
 Alergias: [*Nega / Outros: ___].
 
 # QP:
-- [Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Evolução & Movimentação Fetal: Comparece para retorno com exames. Movimentação fetal [presente e ativa / ainda não percebida (< 18–20s)]. Queixas: [Assintomática no período / Refere pirose leve / Lombalgia mecânica leve / Edema maleolar vespertino leve].
-- Adesão Medicamentosa: Em uso regular de [Sulfato Ferroso / Ácido Fólico / AAS 100 mg + Carbonato de Cálcio / Metildopa].
-- Nega sangramento vaginal, perda de líquido amniótico, contrações rítmicas dolorosas, cefaleia, escotomas, epigastralgia em barra, disúria ou febre.
+Evolução & Movimentação Fetal: Comparece para retorno com exames. Movimentação fetal [presente e ativa / ainda não percebida (< 18–20s)]. Queixas: [Assintomática no período / Refere pirose leve / Lombalgia mecânica leve / Edema maleolar vespertino leve].
+Em uso regular de [Sulfato Ferroso / Ácido Fólico / AAS 100 mg + Carbonato de Cálcio / Metildopa].
+Nega sangramento vaginal, perda de líquido amniótico, contrações rítmicas dolorosas, cefaleia, escotomas, epigastralgia em barra, disúria ou febre.
 
 # EXAME FÍSICO:
-- Vitais & Antropometria: PA (sentada): [ ] mmHg | FC: [ ] bpm | Peso Atual: [ ] kg (Variação no período: [+/- ] kg | Ganho total: [ ] kg).
-- Exame Geral & Cardiopulmonar: BEG, corada, hidratada, eupneica, RCR 2T BNF, MV+ bilateral limpo.
-- Abdome Gravídico (Leopold & Vitalidade):
-  * Altura Uterina (AU): [ ] cm (compatível com a curva AU/IG entre P10–P90).
-  * Manobras de Leopold: Feto único, situação [longitudinal], apresentação [cefálica / pélvica], dorso à [esquerda / direita].
-  * Dinâmica Uterina (DU): [*Ausente / Contrações de Braxton-Hicks isoladas e indolores]. Tônus uterino fisiológico.
-  * Ausculta Fetal (BCF): [ ] bpm, rítmico, sem desacelerações audíveis (pulso materno aferido simultaneamente).
-- Extremidades: [Sem edemas / Edema maleolar fisiológico +/4+ bilateral e simétrico], panturrilhas livres.
-- Revisão de Exames & Controles Trazidos:
-  * Laboratório / TOTG-75g (24–28s): [Hemograma Hb ___ g/dL, Urocultura negativa, Sorologias NR / TOTG-75g: Jejum ___ , 1h ___ , 2h ___ mg/dL -> Normal].
-  * USG Obstétrica / Morfológica: [Feto normodramnia (ILA/MBV normal), placenta corporal sem sinais de prévia, PFE: ___ g (Percentil ___ )].
-  * Swab EGB (35–37s): [Ainda fora da janela / Negativo / Positivo -> anotado em destaque na Caderneta para profilaxia intraparto].
-  * [Se HAG/DMG]: [Curva de PA domiciliar < 135x85 mmHg / Mapa glicêmico com > 80% das medidas no alvo (Jejum < 95 e 1h pós < 140 mg/dL)].
+Vitais & Antropometria: PA (sentada): [ ] mmHg | FC: [ ] bpm | Peso Atual: [ ] kg (Variação no período: [+/-] kg | Ganho total: [ ] kg).
+Exame Geral & Cardiopulmonar: BEG, corada, hidratada, eupneica, RCR 2T BNF, MV+ bilateral limpo.
+Abdome Gravídico (Leopold & Vitalidade):
+Altura Uterina (AU): [ ] cm (compatível com a curva AU/IG entre P10–P90).
+Manobras de Leopold: Feto único, situação [longitudinal], apresentação [cefálica / pélvica], dorso à [esquerda / direita].
+Dinâmica Uterina (DU): [*Ausente / Contrações de Braxton-Hicks isoladas e indolores]. Tônus uterino fisiológico.
+Ausculta Fetal (BCF): [ ] bpm, rítmico, sem desacelerações audíveis (pulso materno aferido simultaneamente).
+EXT: [Sem edemas / Edema maleolar fisiológico +/4+ bilateral e], panturrilhas livres.
+Revisão de Exames & Controles Trazidos:
+Laboratório / TOTG-75g (24–28s): [Hemograma Hb ___ g/dL, Urocultura negativa / TOTG-75g: Jejum ___ , 1h ___ , 2h ___ mg/dL].
+USG Obstétrica / Morfológica: [Feto normodramnia (ILA/MBV normal), placenta].
+Swab EGB (35–37s): [Ainda fora da janela / Negativo / Positivo].
+[Se HAG/DMG]: [Curva de PA domiciliar < 135x85 mmHg / Mapa glicêmico com > 80% das medidas no alvo].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Gestação tópica de [ ] semanas e [ ] dias, feto vital e crescimento adequado (CID-10: Z34.8).
@@ -45,16 +45,16 @@ Alergias: [*Nega / Outros: ___].
 # CONDUTA:
 >> CONDUTA & SOLICITAÇÕES POR IDADE GESTACIONAL:
 1. Atualizada Caderneta da Gestante (gráfico de curva de AU e ganho ponderal).
-2. Vacinação & Imunoprofilaxia: [Encaminhada para dTpa (a partir de 20s) e Influenza / Prescrita Imunoglobulina Anti-D 300 mcg IM na 28ª semana (mãe Rh- com Coombs Indireto negativo) / Vacinação completa].
-3. Exames Solicitados Hoje: [Nenhum pendente / TOTG-75g + Coombs Indireto (24–28s) / Rotina de 3º Trimestre (Hemograma, EAS, Urocultura, HIV, VDRL, HBsAg, Toxo) / Swab vaginal e retal para Streptococcus agalactiae (EGB entre 35–37s)].
+2. Vacinação & Imunoprofilaxia: [Encaminhada para dTpa (a partir de 20s) e / Prescrita Imunoglobulina Anti-D 300 mcg IM na / Vacinação completa].
+3. Exames Solicitados Hoje: [Nenhum pendente / TOTG-75g + Coombs Indireto (24–28s) / Rotina de 3º Trimestre / Swab vaginal e retal para Streptococcus].
 4. Orientações de sinais de trabalho de parto ativo (2–3 contrações fortes de 40–60s em 10 min) e mobilograma fetal.
-5. Retorno agendado em: [4 semanas (até 28s) / 2 semanas (28 a 36s) / 1 semana (a partir de 36s até o parto)].
+5. Retorno agendado em: [4 semanas (até 28s) / 2 semanas (28 a 36s) / 1 semana].
 
 # RECEITA:
 USO ORAL:
 1. Sulfato Ferroso 40 mg de ferro elementar (200 mg) ------------------- 60 comprimidos
    Tomar 1 comprimido via oral, 1 vez ao dia, 30 minutos antes do almoço (com suco cítrico), uso contínuo.
-2. [Se mantida profilaxia de Pré-Eclâmpsia até 36 semanas]:
+2. [Se mantida profilaxia de Pré-Eclâmpsia até 36]:
    - Ácido Acetilsalicílico (AAS) [100 mg / 150 mg] ---------------------- 30 comprimidos
      Tomar 1 comprimido via oral à noite (ao deitar) até completar 36 semanas.
    - Carbonato de Cálcio 500 mg (1.250 mg) ----------------------------- 60 comprimidos

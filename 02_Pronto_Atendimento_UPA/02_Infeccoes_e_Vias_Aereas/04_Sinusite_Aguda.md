@@ -13,33 +13,33 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Alérgico a Penicilinas / Outros: ___].
+
 # QP:
-- Dor e sensação de pressão na face com secreção nasal amarelada há [ ] dias.
+Dor e sensação de pressão na face com secreção nasal amarelada há [ ] dias.
 
 # HMA:
-- HMA: Refere quadro iniciado há cerca de [ ] dias de congestão nasal bilateral e secreção espessa amarelo-esverdeada, associada a dor e peso em região [maxilar / frontal / periorbitária] que piora intensamente ao abaixar a cabeça. Relata febre baixa, tosse que piora à noite (gotejamento pós-nasal) e dor em dentes superiores.
-- CRITÉRIOS DE RINOSSINUSITE BACTERIANA (PREENCHIMENTO DE CRITÉRIO TEMPORAL):
-  - Sintomas persistentes por mais de 10 dias sem sinal de melhora clínica.
-  - Piora clínica secundária ("duplo agravamento"): piora importante de febre e dor após melhora de resfriado prévio.
-  - Início grave com febre alta (> 38,5 °C) e secreção purulenta por mais de 3 dias consecutivos.
-- Nega inchaço, vermelhidão ou dor ao redor dos olhos (edema periorbitário).
-- Nega olho "saltado" para fora (proptose) ou dor intensa ao movimentar os olhos.
-- Nega visão dupla (diplopia) ou perda de visão.
-- Nega sonolência excessiva, convulsões, rigidez de nuca ou cefaleia incapacitante em trovoada.
+Refere quadro iniciado há cerca de [ ] dias de congestão nasal bilateral e secreção espessa amarelo-esverdeada, associada a dor e peso em região [maxilar / frontal / periorbitária] que piora intensamente ao abaixar a cabeça. Relata febre baixa, tosse que piora à noite (gotejamento pós-nasal) e dor em dentes superiores.
+Sintomas persistentes por mais de 10 dias sem sinal de melhora clínica.
+Piora clínica secundária ("duplo agravamento"): piora importante de febre e dor após melhora de resfriado prévio.
+Início grave com febre alta (> 38,5 °C) e secreção purulenta por mais de 3 dias consecutivos.
+Nega inchaço, vermelhidão ou dor ao redor dos olhos (edema periorbitário).
+Nega olho "saltado" para fora (proptose) ou dor intensa ao movimentar os olhos.
+Nega visão dupla (diplopia) ou perda de visão.
+Nega sonolência excessiva, convulsões, rigidez de nuca ou cefaleia incapacitante em trovoada.
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
-- Ectoscopia Geral: Bom estado geral, corado, hidratado, afebril, eupnéico.
-- Palpação dos Seios da Face:
-  * Dor intensa à palpação e percussão digital dos seios maxilares [bilateral / unilateral à direita/esquerda].
-  * Sensibilidade aumentada na fossa frontal bilateral; ausência de tumefação externa ou edema cutâneo.
-- Inspeção Ocular e Orbitária:
-  * Pálpebras e região periorbitária livres de edema ou hiperemia.
-  * Motilidade ocular extrínseca completamente preservada em todas as direções, sem dor ou diplopia.
-  * Pupilas isocóricas e fotorreagentes, acuidade visual grosseira preservada.
-- Rinoscopia Anterior & Oroscopia:
-  * Mucosa nasal edemaciada, com saída de secreção mucopurulenta espessa no meato médio.
-  * Oroscopia evidenciando secreção purulenta escorrendo pela parede posterior da orofaringe ("gotejamento posterior" / post-nasal drip). Ausência de placas amigdalianas.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
+Geral: BEG, corado, hidratado, afebril, eupnéico.
+Palpação dos Seios da Face:
+Dor intensa à palpação e percussão digital dos seios maxilares [bilateral / unilateral à direita/esquerda].
+Sensibilidade aumentada na fossa frontal bilateral; ausência de tumefação externa ou edema cutâneo.
+Inspeção Ocular e Orbitária:
+Pálpebras e região periorbitária livres de edema ou hiperemia.
+Motilidade ocular extrínseca completamente preservada em todas as direções, sem dor ou diplopia.
+Pupilas isocóricas e fotorreagentes, acuidade visual grosseira preservada.
+Rinoscopia Anterior & Oroscopia:
+Mucosa nasal edemaciada, com saída de secreção mucopurulenta espessa no meato médio.
+Oroscopia evidenciando secreção purulenta escorrendo pela parede posterior da orofaringe ("gotejamento posterior" / post-nasal drip). Ausência de placas amigdalianas.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Rinossinusite Aguda Bacteriana (CID-10: J01.9).

@@ -40,7 +40,7 @@ Alergias: [*Nega / Outros: ___].
 USO ORAL:
 1. [Dipirona Monoidratada 500 mg / Paracetamol 750 mg] ---------------- 1 caixa
    Tomar 1 comprimido via oral de 6 em 6 horas se dor no local da aplicação nos primeiros 2 dias.
-2. [Se surgirem escapes/spotting prolongados incômodos nos primeiros meses]:
+2. [Se surgirem escapes/spotting prolongados]:
    [Ácido Mefenâmico 500 mg / Ibuprofeno 600 mg] ------------------------- 1 caixa
    Tomar 1 comprimido via oral de 8 em 8 horas, após as refeições, por 5 dias.
 

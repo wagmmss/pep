@@ -16,42 +16,42 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: ___].
 - Contexto: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST].
 
 # QP:
-- [Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de ___ °C / calafrios / disúria].
-- Nega atraso menstrual (β-hCG negativo — afastada ectópica). [Nega vômitos incoercíveis, peritonismo difuso ou instabilidade hemodinâmica (elegível para Monif I ambulatorial) / Apresenta febre alta, vômitos e peritonismo (indicada internação — Monif II/III)].
+Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de ___ °C / calafrios / disúria].
+Nega atraso menstrual. [Nega vômitos incoercíveis, peritonismo difuso / Apresenta febre alta, vômitos e peritonismo].
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C.
-- Exame Abdominal: Abdome plano, RHA+, dor à palpação profunda de hipogástrio e fossas ilíacas bilateralmente, [sem sinais de peritonite difusa (DB negativo) / com descompressão brusca dolorosa localizada em pelve]. Sinal de Murphy/dor em HCD (Síndrome de Fitz-Hugh-Curtis): [*Ausente / Presente].
-- Exame Especular: Paredes vaginais hiperemiadas, secreção mucopurulenta amarelada fluindo pelo orifício cervical externo (cervicite mucopurulenta) e colo friável ao toque do swab.
-- Toque Vaginal Bimanual (3 Critérios Maiores Presentes):
-  * 1. Dor intensa à mobilização do colo uterino (Sinal de Chandelier / Frenkel positivo);
-  * 2. Dor à palpação uterina em hipogástrio;
-  * 3. Dor à palpação das regiões anexiais bilateralmente, [sem massas anexiais palpáveis (Monif I) / com espessamento/massa anexial palpável sugerindo abscesso tubo-ovariano (Monif III)].
-- Exames Complementares:
-  * Teste Rápido / β-hCG sérico: NEGATIVO | Testes Rápidos (HIV, Sífilis, Hep B e C): [Não reagentes].
-  * Laboratório: Leucócitos: [ ]/mm³, PCR: [ ] mg/L, EAS: [ ].
-  * USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas (Monif I/II) / Imagem complexa heterogênea retrouterina/anexial de ___ cm compatível com Abscesso Tubo-Ovariano (Monif III)].
+SSVV: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C.
+Exame Abdominal: Abdome plano, RHA+, dor à palpação profunda de hipogástrio e fossas ilíacas bilateralmente, [sem sinais de peritonite difusa (DB negativo) / com descompressão brusca dolorosa localizada em]. Sinal de Murphy/dor em HCD (Síndrome de Fitz-Hugh-Curtis): [*Ausente / Presente].
+Exame Especular: Paredes vaginais hiperemiadas, secreção mucopurulenta amarelada fluindo pelo orifício cervical externo (cervicite mucopurulenta) e colo friável ao toque do swab.
+Toque Vaginal Bimanual (3 Critérios Maiores Presentes):
+1. Dor intensa à mobilização do colo uterino (Sinal de Chandelier / Frenkel positivo);
+2. Dor à palpação uterina em hipogástrio;
+3. Dor à palpação das regiões anexiais bilateralmente, [sem massas anexiais palpáveis (Monif I) / com espessamento/massa anexial palpável].
+Exames Complementares:
+Teste Rápido / β-hCG sérico: NEGATIVO | Testes Rápidos (HIV, Sífilis, Hep B e C): [Não reagentes].
+Laboratório: Leucócitos: [ ]/mm³, PCR: [ ] mg/L, EAS: [ ].
+USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas (Monif / Imagem complexa heterogênea].
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. Doença Inflamatória Pélvica Aguda (CID-10: N73.0 / N73.9) — Estágio [Monif I (Leve — Ambulatorial) / Monif II (Moderada com peritonismo — Hospitalar) / Monif III (Abscesso Tubo-Ovariano — Hospitalar) / Monif IV (Abscesso Roto/Sepse — Cirúrgico)].
+1. Doença Inflamatória Pélvica Aguda (CID-10: N73.0 / N73.9) — Estágio [Monif I (Leve — Ambulatorial) / Monif II / Monif III / Monif IV].
 
 # CONDUTA:
->> [MODALIDADE 1 — CONDUTA AMBULATORIAL (MONIF I — APLICAR CEFTRIAXONA IM AGORA NA UNIDADE)]:
+>> [MODALIDADE 1 — CONDUTA AMBULATORIAL]:
 1. Administrar AGORA na unidade: Ceftriaxona 500 mg IM profunda em dose única + Dipirona 1 g EV/VO para alívio álgico.
 2. Prescrever Doxiciclina + Metronidazol por 14 dias para casa + convocação e tratamento empírico obrigatório do(a) parceiro(a) sexual.
 3. Agendar Reavaliação Médica Obrigatória em 48 a 72 horas (se não houver melhora clínica substancial em 72h -> internar para esquema EV!).
 
->> [MODALIDADE 2 — CONDUTA HOSPITALAR (SE MONIF II, III, IV, GESTANTE, VÔMITOS OU FALHA EM 72H)]:
+>> [MODALIDADE 2 — CONDUTA HOSPITALAR]:
 1. Internação hospitalar, dieta zero se vômitos/possibilidade cirúrgica, hidratação venosa e analgesia EV.
 2. Esquema Antibiótico Hospitalar (1ª Linha — MS/CDC):
    - Ceftriaxona 1 g EV de 24/24 horas (ou 2 g EV 1x/dia)
    - + Doxiciclina 100 mg VO (ou EV) de 12/12 horas
    - + Metronidazol 400 mg VO de 12/12h (ou 500 mg EV de 8/8h)
    *(Manter EV até 24–48h após melhora clínica e defervescência; em seguida, transicionar para Doxiciclina 100 mg VO 12/12h + Metronidazol 400–500 mg VO 12/12h até completar 14 dias totais)*.
-3. *[OU Esquema Hospitalar Alternativo (Preferencial no Abscesso Tubo-Ovariano — Monif III)]*:
+3. *[OU Esquema Hospitalar Alternativo]*:
    - Clindamicina 900 mg EV de 8/8 horas + Gentamicina 5 mg/kg EV 1x/dia (ou 2 mg/kg ataque + 1,5 mg/kg 8/8h) + transição oral após 24–48h de melhora até completar 14 dias.
 4. Abordagem Cirúrgica (Laparoscopia / Laparotomia / Drenagem): Imediata se Monif IV (abscesso roto / choque séptico) ou se abscesso tubo-ovariano > 8 cm sem resposta após 48–72h de ATB EV.
 

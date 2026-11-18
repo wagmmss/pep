@@ -290,6 +290,61 @@ test('Contrato Editorial PEP v3.2: 88 PEPs padronizados, Pediatria unificada, ze
       }
     }
 
+    // Prosa corrida em QP, HMA, HISTÓRIA e EVOLUÇÃO (24H): sem bullets, sem Rótulo:, sem parênteses longos
+    const pepSections = pep.split(/(?=^#\s+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ])/m);
+    for (const sec of pepSections) {
+      const secLines = sec.split('\n');
+      const secTitle = secLines[0].replace(/^#\s+/, '').replace(/:.*/, '').trim().toUpperCase();
+      if (
+        secTitle === 'QP' ||
+        secTitle === 'HMA' ||
+        secTitle === 'HISTÓRIA / RESUMO DA INTERNAÇÃO' ||
+        secTitle === 'EVOLUÇÃO (24H)'
+      ) {
+        for (let si = 1; si < secLines.length; si++) {
+          const sl = secLines[si];
+          if (/^\s*[-*]\s+/.test(sl)) {
+            issues.push(`${rel}: bullet em prosa (${secTitle}): ${sl.trim().slice(0, 60)}`);
+          }
+          if (/^\s*[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ0-9\s/()–-]{5,}:\s*$/.test(sl)) {
+            issues.push(`${rel}: subtítulo CAIXA ALTA em prosa (${secTitle}): ${sl.trim()}`);
+          }
+          const parens = sl.matchAll(/\(([^()]+)\)/g);
+          for (const pm of parens) {
+            const p = pm[1].trim();
+            if (
+              p.length > 25 &&
+              !/EVA|CID-10|Glasgow|Killip|CURB|APGAR|mg|mcg|mL|kg|mmHg|bpm|irpm|°C|dias|horas|min|sem|DIH|mEq|U\/L|g\/dL/i.test(p)
+            ) {
+              issues.push(`${rel}: parêntese explicativo longo em prosa (${secTitle}): (${p.slice(0, 40)}...)`);
+            }
+          }
+        }
+      }
+    }
+
+    // Pílulas atômicas (<= 55 chars por opção dentro de [...])
+    const bracketMatches = pep.matchAll(/\[([^\[\]\n]+)\]/g);
+    for (const bm of bracketMatches) {
+      let body = bm[1].trim();
+      if (body.startsWith('? ') && body.includes('::')) {
+        body = body.split('::').slice(1).join('::').trim();
+      } else if (body.startsWith('+ ')) {
+        body = body.slice(2).trim();
+      }
+      const opts = body.split(/\s+\/\s+|\s+\|\s+/).map((o) => o.trim().replace(/^\*/, '').trim());
+      for (const opt of opts) {
+        if (opt.length > 55) {
+          issues.push(`${rel}: pílula gigante (${opt.length} chars > 55): [${opt.slice(0, 45)}...]`);
+        }
+      }
+    }
+
+    // Zero clichês verbosos de IA
+    if (/\b(?:rigorosamente|franca melhora|evolução favorável)\b/i.test(pep)) {
+      issues.push(`${rel}: contém clichê verboso de IA (rigorosamente/franca melhora/evolução favorável)`);
+    }
+
     // Zero colchetes aninhados ou desbalanceados
     const lines = pep.split('\n');
     for (let li = 0; li < lines.length; li++) {

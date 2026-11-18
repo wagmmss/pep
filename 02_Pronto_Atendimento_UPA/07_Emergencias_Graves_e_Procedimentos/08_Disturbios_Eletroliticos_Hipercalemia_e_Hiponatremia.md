@@ -22,7 +22,7 @@ Alergias: [*Nega / Outros: ___].
 # DADOS LABORATORIAIS & HISTÓRIA:
 - Potássio Sérico (K+): [ ] mEq/L (Normal: 3,5 a 5,0 mEq/L | Hipercalemia Grave se K+ > 6,0 a 6,5 mEq/L ou com alterações ao ECG).
 - Contexto Clínico: [Doença Renal Crônica dialítica / Injúria Renal Aguda oligúrica / Rabdomiólise / Uso de IECA, BRA, Espironolactona / Acidose grave].
-- Sintomas: [Fraqueza muscular proximal intensa, parestesias, palpitações / Assintomático com achado laboratorial].
+- Sintomas: [Fraqueza muscular proximal intensa / Assintomático com achado laboratorial].
 
 # ALTERAÇÕES NO ELETROCARDIOGRAMA DE 12 DERIVAÇÕES:
 [ ] Ondas T pontiagudas, simétricas e de base estreita ("T em tenda" - alteração precoce).
@@ -72,7 +72,7 @@ Alergias: [*Nega / Outros: ___].
 # CONDUTA DE EMERGÊNCIA NA HIPONATREMIA GRAVE SINTOMÁTICA:
 1. Alvo Inicial de Segurança: Elevar a natremia sérica em 4 a 6 mEq/L nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
 2. Infusão de Solução Salina Hipertônica a 3% (NaCl 3%):
-   - [Como preparar 500 mL de NaCl 3% na UPA se não houver bolsa pronta]:
+   - [Como preparar 500 mL de NaCl 3% na UPA se não]:
      445 mL de Soro Fisiológico a 0,9% + 55 mL de NaCl a 20% (volume total = 500 mL a 3%).
    - Prescrição do Bólus de Ataque:
      Administrar 100 a 150 mL de NaCl a 3% EV em infusão rápida em 10 a 20 minutos (ou 2 mL/kg de peso).

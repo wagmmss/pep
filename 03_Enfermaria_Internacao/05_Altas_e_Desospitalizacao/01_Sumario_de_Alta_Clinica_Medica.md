@@ -21,13 +21,13 @@
 # RESUMO CLÍNICO DA INTERNAÇÃO & TRATAMENTO REALIZADO:
 - História da Admissão: Paciente admitido(a) em [DD/MM/AAAA] com quadro clínico de [ ], iniciado há [ ] dias da internação.
 - Condutas e Tratamentos Instituídos na Enfermaria:
-  * Terapia Antimicrobiana / Específica: [Recebeu ___ por ___ dias (de DD/MM a DD/MM), com transição segura para via oral / Recebeu compensação clínica com ___].
-  * Intervenções e Procedimentos: [Tratamento clínico exclusivo sem intercorrências / Realizado procedimento de ___ em DD/MM sem complicações].
+  * Terapia Antimicrobiana / Específica: [Recebeu ___ por ___ dias (de DD/MM a DD/MM) / Recebeu compensação clínica com ___].
+  * Intervenções e Procedimentos: [Tratamento clínico exclusivo sem intercorrências / Realizado procedimento de ___ em DD/MM sem].
   * Evolução Clínica: Evoluiu com melhora clínica e laboratorial sustentada, permanecendo afebril há mais de 48 horas, hemodinamicamente estável, eupneico(a) em ar ambiente e com plena aceitação da dieta e medicações por via oral. Todos os dispositivos invasivos foram retirados sem intercorrências.
 
 # EXAMES COMPLEMENTARES RELEVANTES (ADMISSÃO vs ALTA):
 - Laboratório de Alta ([DD/MM]): Hb: [ ] g/dL | Leucócitos: [ ] /mm³ | Plaquetas: [ ] /mm³ | PCR: [ ] mg/L (em queda franca) | Creatinina: [ ] mg/dL (basal: [ ]) | Ureia: [ ] mg/dL | Na: [ ] mEq/L | K: [ ] mEq/L.
-- Culturas Microbiológicas: [*Negativas / Urocultura ou Hemocultura com isolamento de ___ sensível a ___].
+- Culturas Microbiológicas: [*Negativas / Urocultura ou Hemocultura com isolamento de ___].
 - Exames de Imagem / Gráficos: [RX de Tórax: ___ / ECG: ___ / Ecocardiograma: ___ / TC/USG: ___].
 
 # CONDIÇÕES CLÍNICAS NO MOMENTO DA SAÍDA:
@@ -40,21 +40,22 @@
 1. Medicamentos de Uso Contínuo MANTIDOS nas mesmas doses:
    - [Listar medicações prévias mantidas]
 2. Medicamentos NOVOS INICIADOS ou com DOSE AJUSTADA na internação:
-   - [Medicamento novo/ajustado, dose, posologia e motivo clínico]
+   - [Medicamento novo/ajustado, dose, posologia e]
 3. Medicamentos SUSPENSOS DEFINITIVAMENTE (NÃO TOMAR MAIS):
-   - [Medicamento suspenso e motivo clínico da suspensão: ___ / Nenhuma medicação prévia suspensa]
+   - [Medicamento suspenso e motivo clínico da / Nenhuma medicação prévia suspensa]
 
 >> PLANO DE SEGUIMENTO AMBULATORIAL (CONTRARREFERÊNCIA):
 1. Encaminhado(a) com cópia impressa deste Sumário de Alta para a Unidade Básica de Saúde (UBS / ESF) de referência para consulta médica de reavaliação em [7 a 14] dias.
-2. Seguimento Especializado: [Agendado retorno no Ambulatório de ___ em ___ dias / Não necessita de ambulatório terciário].
-3. Exames para levar na consulta de retorno: [Solicitados Creatinina, Ureia, Potássio e Hemograma de controle em 7 dias / Sem exames pendentes].
+2. Seguimento Especializado: [Agendado retorno no Ambulatório de ___ em ___ / Não necessita de ambulatório terciário].
+3. Exames para levar na consulta de retorno: [Solicitados Creatinina, Ureia, Potássio e / Sem exames pendentes].
 4. Sinais de Alarme Explicados (Teach-back confirmado com paciente e familiar): Retornar imediatamente ao Pronto Atendimento se febre (≥ 37,8 °C), falta de ar, dor no peito, vômitos persistentes, confusão mental ou redução importante da urina.
+
 # RECEITA:
 RECEITUÁRIO MÉDICO DE ALTA HOSPITALAR — CLÍNICA MÉDICA
 Paciente: [Nome] | Data da Alta: [DD/MM/AAAA]
 
 1. MEDICAÇÃO PARA TERMINAR O TRATAMENTO AGUDO (COM PRAZO DE TÉRMINO):
-   - [Amoxicilina + Clavulanato 875/125 mg (ou outro antimicrobiano em transição oral)]
+   - [Amoxicilina + Clavulanato 875/125 mg]
      Tomar 1 comprimido por via oral de [12 em 12] horas durante mais [ ] dias corridos (Último dia de tomada: [DD/MM/AAAA]). Não interromper antes desta data.
 
 2. MEDICAÇÕES DE USO CONTÍNUO DIÁRIO (TOMAR TODOS OS DIAS):

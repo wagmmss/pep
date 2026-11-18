@@ -13,31 +13,29 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Outros: ___].
+
 # QP:
-- Manchas vermelhas pelo corpo que coçam muito / Inchaço nos lábios / Falta de ar há [ ] minutos.
+Manchas vermelhas pelo corpo que coçam muito / Inchaço nos lábios / Falta de ar há [ ] minutos.
 
 # HMA:
-- HMA: Relata aparecimento agudo há cerca de [ ] minutos de placas avermelhadas na pele com intenso prurido, sensação de calor e formigamento difuso, acompanhadas de inchaço (angioedema) em [lábios / pálpebras / orelhas / face / mãos].
-- FATOR DESENCADEANTE IDENTIFICADO:
-  * [ ] Ingestão alimentar recente: [Frutos do mar/camarão / Amendoim/castanhas / Ovos / Leite / Outro: ___].
-  * [ ] Medicamentos recentes: [Uso de anti-inflamatórios (AAS/Diclofenaco/Ibuprofeno) / Antibióticos (Amoxicilina/Penicilina) / Dipirona / IECA].
-  * [ ] Picada de inseto: [Abelha / Vespa / Formiga de fogo].
-  * [ ] Contato com látex ou substância química tópica.
-- CRITÉRIOS DIAGNÓSTICOS DE ANAFILAXIA (ENVOLVIMENTO DE 2 OU MAIS SISTEMAS COM RISCO DE MORTE):
-  [ ] PELE & MUCOSA: Urticária difusa, prurido, rubor e/ou angioedema de lábios, língua ou úvula.
-  [ ] APARELHO RESPIRATÓRIO: Dispneia, estridor laríngeo inspiratório, sensação de garganta fechando, voz rouca súbita, sibilos difusos ou SpO2 < 92%.
-  [ ] APARELHO CARDIOVASCULAR: Hipotensão arterial (PAS < 90 mmHg ou queda > 30% da basal), síncope, tontura severa com lipotímia, extremidades frias e pulso filiforme.
-  [ ] TRATO GASTROINTESTINAL: Dor abdominal em cólica intensa súbita, vômitos em jato repetidos ou diarreia aguda incoercível.
-  * CLASSIFICAÇÃO:
-    - [ ] URTICÁRIA AGUDA / ANGIOEDEMA ISOLADO (Sem sintomas respiratórios ou hemodinâmicos).
-    - [ ] ANAFILAXIA GRAVE EM CURSO (EMERGÊNCIA MÉDICA MÁXIMA - INDICADA ADRENALINA IMEDIATA).
+Relata aparecimento agudo há cerca de [ ] minutos de placas avermelhadas na pele com intenso prurido, sensação de calor e formigamento difuso, acompanhadas de inchaço (angioedema) em [lábios / pálpebras / orelhas / face / mãos].
+[ ] Ingestão alimentar recente: [Frutos do mar/camarão / Amendoim/castanhas / Ovos / Leite / Outro: ___].
+[ ] Medicamentos recentes: [Uso de anti-inflamatórios / Antibióticos (Amoxicilina/Penicilina) / Dipirona / IECA].
+[ ] Picada de inseto: [Abelha / Vespa / Formiga de fogo].
+[ ] Contato com látex ou substância química tópica.
+[ ] PELE & MUCOSA: Urticária difusa, prurido, rubor e/ou angioedema de lábios, língua ou úvula.
+[ ] APARELHO RESPIRATÓRIO: Dispneia, estridor laríngeo inspiratório, sensação de garganta fechando, voz rouca súbita, sibilos difusos ou SpO2 < 92%.
+[ ] APARELHO CARDIOVASCULAR: Hipotensão arterial (PAS < 90 mmHg ou queda > 30% da basal), síncope, tontura severa com lipotímia, extremidades frias e pulso filiforme.
+[ ] TRATO GASTROINTESTINAL: Dor abdominal em cólica intensa súbita, vômitos em jato repetidos ou diarreia aguda incoercível.
+[ ] URTICÁRIA AGUDA / ANGIOEDEMA ISOLADO (Sem sintomas respiratórios ou hemodinâmicos).
+[ ] ANAFILAXIA GRAVE EM CURSO.
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
-- Ectoscopia & Pele: Placas eritematosas e edematosas (urticas) confluentes de tamanhos variados, com halo eritematoso e clareamento central, pruriginosas, disseminadas em tronco e membros. Presença de angioedema assimétrico em [lábio superior/inferior, pálpebras].
-- Oroscopia & Vias Aéreas: [Úvula centrada sem edema, orofaringe pérvia sem abaulamento / Presença de edema de úvula e pilares amigdalianos - ALERTA DE OBSTRUÇÃO LARÍNGEA].
-- Aparelho Respiratório: [Murmúrio vesicular limpo sem ruídos adventícios / Presença de estridor inspiratório laríngeo e/ou sibilos difusos expiratórios].
-- Aparelho Cardiovascular: Ritmo cardíaco taquicárdico regular, pulsos [cheios / filiformes e débeis], tempo de enchimento capilar [ ] segundos.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
+Ectoscopia & Pele: Placas eritematosas e edematosas (urticas) confluentes de tamanhos variados, com halo eritematoso e clareamento central, pruriginosas, disseminadas em tronco e membros. Presença de angioedema assimétrico em [lábio superior/inferior, pálpebras].
+Oroscopia & Vias Aéreas: [Úvula centrada sem edema, orofaringe pérvia sem / Presença de edema de úvula e pilares].
+AR: [Murmúrio vesicular limpo sem ruídos adventícios / Presença de estridor inspiratório laríngeo e/ou].
+ACV: Ritmo cardíaco taquicárdico regular, pulsos [cheios / filiformes e débeis], TEC [ ] segundos.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Reação Alérgica Aguda: [Urticária Aguda e Angioedema / Choque Anafilático / Anafilaxia Grave] (CID-10: L50.0 / T78.2 / T78.0).
@@ -72,6 +70,7 @@ Alergias: [*Nega / Outros: ___].
    - Corticoide Oral (para desmame rápido):
      * Prednisona 20 mg - Tomar 2 comprimidos (40 mg) VO 1x/dia pela manhã por 3 a 5 dias (interrupção direta sem desmame).
 3. Orientações: Identificar e afastar o agente causal suspeito; evitar banhos muito quentes.
+
 # RECEITA:
 USO ORAL:
 

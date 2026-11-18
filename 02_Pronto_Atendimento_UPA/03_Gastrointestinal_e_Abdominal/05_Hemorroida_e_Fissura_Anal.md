@@ -13,26 +13,27 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
-Hábitos: [*Constipação intestinal crônica, baixa ingesta de fibras e água / Outros: ___].
+Hábitos: [*Constipação intestinal crônica, baixa ingesta / Outros: ___].
+
 # QP:
-- Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
+Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
 
 # HMA:
-- HMA: Relata quadro com início após esforço evacuatório com fezes ressecadas há cerca de [ ] dias.
-  * HIPÓTESE A - TROMBOSE HEMORROIDÁRIA EXTERNA: Dor anal de início súbito, contínua, latejante, que piora ao sentar ou deambular, associada ao aparecimento de "nódulo doloroso" duro na margem do ânus.
-  * HIPÓTESE B - FISSURA ANAL AGUDA: Dor anal excruciante em queimação ("sensação de cortar como caco de vidro") durante a evacuação, que persiste por várias horas após evacuar, associada a rajas de sangue vermelho vivo sobre as fezes ou no papel.
-  * HIPÓTESE C - HEMORROIDA INTERNA SANGRANTE: Sangramento indolor vermelho rutilante gotejando no vaso sanitário ao término da evacuação, associado a sensação de peso e prolapso mucoso redutível.
-- Nega febre, calafrios ou secreção purulenta fétida anal contínua (afasta Abscesso Isquiorretal).
-- Nega fezes afiladas ("fezes em fita"), perda involuntária de peso ou astenia severa.
-- Nega diarreia crônica alternada com constipação persistente.
+Relata quadro com início após esforço evacuatório com fezes ressecadas há cerca de [ ] dias.
+HIPÓTESE A - TROMBOSE HEMORROIDÁRIA EXTERNA: Dor anal de início súbito, contínua, latejante, que piora ao sentar ou deambular, associada ao aparecimento de "nódulo doloroso" duro na margem do ânus.
+Dor anal excruciante em queimação durante a evacuação, que persiste por várias horas após evacuar, associada a rajas de sangue vermelho vivo sobre as fezes ou no papel.
+Sangramento indolor vermelho rutilante gotejando no vaso sanitário ao término da evacuação, associado a sensação de peso e prolapso mucoso redutível.
+Nega febre, calafrios ou secreção purulenta fétida anal contínua.
+Nega fezes afiladas ("fezes em fita"), perda involuntária de peso ou astenia severa.
+Nega diarreia crônica alternada com constipação persistente.
 
 # EXAME FÍSICO:
-- Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.
-- Inspeção Perianal Estática e Dinâmica:
-  * [Se Trombose Hemorroidária]: Presença de nódulo perianal arredondado, tenso, violáceo, localizado às [ ] horas na margem anal, medindo cerca de [ ] cm, doloroso à palpação, sem necrose tecidual ou sangramento ativo [ou com ulceração central e saída de coágulos escuros].
-  * [Se Fissura Anal]: Presença de solução de continuidade longitudinal linear na borda anal, localizada tipicamente na linha média posterior às 6 horas [ou anterior às 12 horas], com fundo avermelhado recente e plicoma sentinela ausente/presente.
-  * [Se Hemorroida Interna]: Coxins hemorroidários internos prolapsados na manobra de Valsalva [Grau II (reduzem espontaneamente) / Grau III (necessitam redução manual)].
-- Toque Retal: [Realizado com xilocaina gel: ausência de massas tumorais palpáveis no reto baixo, tônus esfincteriano normotônico / Dispensado toque retal no momento devido a hipertonia e dor intensa à tentativa de introdução por fissura anal aguda].
+Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.
+Inspeção Perianal Estática e Dinâmica:
+[Se Trombose Hemorroidária]: Presença de nódulo perianal arredondado, tenso, violáceo, localizado às [ ] horas na margem anal, medindo cerca de [ ] cm, doloroso à palpação, sem necrose tecidual ou sangramento ativo [ou com ulceração central e saída de coágulos].
+[Se Fissura Anal]: Presença de solução de continuidade longitudinal linear na borda anal, localizada tipicamente na linha média posterior às 6 horas [ou anterior às 12 horas], com fundo avermelhado recente e plicoma sentinela ausente/presente.
+[Se Hemorroida Interna]: Coxins hemorroidários internos prolapsados na manobra de Valsalva [Grau II / Grau III].
+Toque Retal: [Realizado com xilocaina gel: ausência de massas / Dispensado toque retal no momento devido a].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. [Trombose Hemorroidária Externa aguda / Fissura Anal Aguda / Crise Hemorroidária Interna com prolapso] (CID-10: I84.3 / K60.0 / I84.2).
@@ -42,7 +43,7 @@ Hábitos: [*Constipação intestinal crônica, baixa ingesta de fibras e água /
 
 >> CONDUTA NA UNIDADE (ALÍVIO IMEDIATO DA DOR):
 1. Dipirona 1 g EV + Cetoprofeno 100 mg EV (se não hipertenso ou contraindicado).
-2. [SE TROMBOSE HEMORROIDÁRIA < 72H COM DOR SEVERA E TENSÃO INTENSA]:
+2. [SE TROMBOSE HEMORROIDÁRIA < 72H COM DOR SEVERA]:
    - Trombectomia Externa na UPA: Assepsia local com clorexidina aquosa, infiltração com 1 a 2 mL de Lidocaína 2% com vasoconstritor na base do nódulo, incisão elíptica radial na pele com bisturi lâmina 11 e ordenha/extração dos trombos hemostáticos com alívio imediato da dor. Hemostasia por compressão local; sem sutura.
 
 # RECEITA:

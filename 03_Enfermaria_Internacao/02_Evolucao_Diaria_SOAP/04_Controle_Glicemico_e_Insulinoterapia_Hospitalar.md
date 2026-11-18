@@ -12,18 +12,18 @@
 EVOLUÇÃO DIÁRIA DIRECIONADA — CONTROLE GLICÊMICO HOSPITALAR (DIRETRIZ SBD / ADA)
 
 # HISTÓRIA / RESUMO DA INTERNAÇÃO:
-- Motivo da internação / Diagnóstico de base: [ ]
-- Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
+[ ]
+[DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos[? Leito :: , Leito ___], Peso: [ ] kg, TFG estimada (CKD-EPI): [ ] mL/min/1,73m².
 Comorbidades: [DM2 / Outros: ___].
 Alergias: [*Nega / Outros: ___].
-- Diagnóstico Glicêmico: [DM2 prévio em uso domiciliar de antidiabéticos orais / DM2 insulinodependente prévio / Hiperglicemia de estresse hospitalar / Hiperglicemia induzida por Corticoide (Prednisona/Dexametasona/Metilprednisolona)].
+- Diagnóstico Glicêmico: [DM2 prévio em uso domiciliar de antidiabéticos / DM2 insulinodependente prévio / Hiperglicemia de estresse hospitalar / Hiperglicemia induzida por Corticoide].
 - Via de Alimentação Atual: [Dieta oral regular para diabetes (3 refeições) / Dieta enteral contínua ou intermitente por SNE / Em jejum ou dieta zero para procedimento].
 - Mapa Glicêmico das Últimas 24 Horas (HGT):
   * Jejum (06h): [ ] mg/dL | Pré-Almoço (11h): [ ] mg/dL | Pré-Jantar (17h): [ ] mg/dL | 22h: [ ] mg/dL.
-  * Episódios de Hipoglicemia (< 70 mg/dL): [*Ausentes nas últimas 24h / Presente às ___ h com HGT de ___ mg/dL — exige redução de 20% da dose total de insulina hoje!].
+  * Episódios de Hipoglicemia (< 70 mg/dL): [*Ausentes nas últimas 24h / Presente às ___ h com HGT de ___ mg/dL].
   * Meta Glicêmica Hospitalar: 140 a 180 mg/dL (aceitável 100 a 180 mg/dL em enfermaria clínica/cirúrgica estável).
 
 # CONDUTA:

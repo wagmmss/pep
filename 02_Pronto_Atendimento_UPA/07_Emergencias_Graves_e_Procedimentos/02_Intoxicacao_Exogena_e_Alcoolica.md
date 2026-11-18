@@ -13,33 +13,33 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # CONTEXTO: [Ingesta alcoólica pesada aguda / Suspeita de tentativa de autoextermínio / Acidente ocupacional com agrotóxico / Intoxicação medicamentosa acidental].
 
 # QP:
-- [Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Substância Ingerida / Exposta: [Álcool etílico / Benzodiazepínicos / Antidepressivo Tricíclico / Agrotóxico (Organofosforado/Chumbinho) / Cocaína/Crack / Paracetamol / Desconhecida].
-- Quantidade Estimada: [ ] comprimidos / [ ] mL / [ ] garrafas.
-- Tempo Estimado da Ingestão: Há cerca de [ ] horas/minutos.
-- QUADRO CLÍNICO E RECONHECIMENTO DA TOXIDROME:
-  * [ ] 1. TOXIDROME SEDATIVO-HIPNÓTICA / ALCOÓLICA (Álcool, Benzodiazepínicos): Rebaixamento do nível de consciência, fala pastosa/arrastada, ataxia da marcha, hiporreflexia, pupilas de tamanho habitual ou discretamente midriáticas.
-  * [ ] 2. TOXIDROME OPIÓIDE (Morfina, Fentanil, Metadona, Tramadol em megadose): Tríade clássica: Miose puntiforme bilateral + Depressão respiratória severa (FR < 8-10 irpm) + Coma.
-  * [ ] 3. TOXIDROME COLINÉRGICA (Organofosforados / Carbamatos / Chumbinho): Miose puntiforme, bradicardia acentuada, sialorreia profusa ("baba contínua"), broncorreia intensa com estertores ("afogando nas próprias secreções"), sudorese, fasciculações musculares e diarreia.
-  * [ ] 4. TOXIDROME SIMPATICOMIMÉTICA (Cocaína, Crack, Anfetaminas): Agitação psicomotora violenta, midríase bilateral fotorreagente, taquicardia extrema, pico hipertensivo grave, sudorese profusa e hipertermia.
-  * [ ] 5. TOXIDROME ANTICOLINÉRGICA (Tricíclicos, Anti-histamínicos): Midríase paralítica fixa, pele seca e quente, taquicardia, retenção urinária aguda (bexigoma) e delírio agitado.
+[Álcool etílico / Benzodiazepínicos / Antidepressivo Tricíclico / Agrotóxico / Cocaína/Crack / Paracetamol / Desconhecida].
+[ ] comprimidos / [ ] mL / [ ] garrafas.
+Há cerca de [ ] horas/minutos.
+[ ] 1. TOXIDROME SEDATIVO-HIPNÓTICA / ALCOÓLICA: Rebaixamento do nível de consciência, fala pastosa/arrastada, ataxia da marcha, hiporreflexia, pupilas de tamanho habitual ou discretamente midriáticas.
+[ ] 2. TOXIDROME OPIÓIDE: Tríade clássica: Miose puntiforme bilateral + Depressão respiratória severa (FR < 8-10 irpm) + Coma.
+[ ] 3. TOXIDROME COLINÉRGICA: Miose puntiforme, bradicardia acentuada, sialorreia profusa ("baba contínua"), broncorreia intensa com estertores, sudorese, fasciculações musculares e diarreia.
+[ ] 4. TOXIDROME SIMPATICOMIMÉTICA (Cocaína, Crack, Anfetaminas): Agitação psicomotora violenta, midríase bilateral fotorreagente, taquicardia extrema, pico hipertensivo grave, sudorese profusa e hipertermia.
+[ ] 5. TOXIDROME ANTICOLINÉRGICA: Midríase paralítica fixa, pele seca e quente, taquicardia, retenção urinária aguda (bexigoma) e delírio agitado.
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
-- GLICEMIA CAPILAR (HGT) IMEDIATA: [ ] mg/dL (CONFERIDA NA ADMISSÃO).
-- Ectoscopia & Nível de Consciência: [Sonolento / Em torpor / Comatoso com Glasgow / Agitado], hálito com odor etílico característico [ou odor de pesticida/solventes].
-- Pupilas: [Isocóricas e fotorreagentes / Mióticas puntiformes bilaterais / Midriáticas bilaterais].
-- Vias Aéreas & Respiração: [Vias aéreas pérvias com reflexos protetores de tosse e deglutição preservados / Queda da base da língua com roncos e respiração superficial / Broncorreia exuberante difusa com estertores bolhosos].
-- Aparelho Cardiovascular: Ritmo cardíaco [sinusal / taquicárdico / bradicárdico], pulsos periféricos palpáveis; perfusão periférica com enchimento capilar < 2s.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
+GLICEMIA CAPILAR (HGT) IMEDIATA: [ ] mg/dL (CONFERIDA NA ADMISSÃO).
+Ectoscopia & Nível de Consciência: [Sonolento / Em torpor / Comatoso com Glasgow / Agitado], hálito com odor etílico característico [ou odor de pesticida/solventes].
+Pupilas: [Isocóricas e fotorreagentes / Mióticas puntiformes bilaterais / Midriáticas bilaterais].
+Vias Aéreas & Respiração: [Vias aéreas pérvias com reflexos protetores de / Queda da base da língua com roncos e respiração / Broncorreia exuberante difusa com estertores].
+ACV: Ritmo cardíaco [sinusal / taquicárdico / bradicárdico], pulsos periféricos palpáveis; perfusão periférica com enchimento capilar < 2s.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Intoxicação Exógena Aguda por [Álcool Etílico / Benzodiazepínicos / Opióides / Organofosforados / Mista] (CID-10: T51.0 / T42.4 / T40.2 / T60.0).
-2. Paciente com [estabilidade clínica em observação / insuficiência respiratória hipóxica com risco de aspiração].
+2. Paciente com [estabilidade clínica em observação / insuficiência respiratória hipóxica com risco].
 
 # CONDUTA:
 

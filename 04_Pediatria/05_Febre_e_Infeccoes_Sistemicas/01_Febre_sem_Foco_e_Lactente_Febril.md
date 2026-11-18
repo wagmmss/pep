@@ -20,26 +20,26 @@ Alergias: [*Nega / Outros: ___].
   * [GRUPO 3 — LACTENTE E CRIANÇA DE 3 A 36 MESES] -> Manejo guiado pelo estado geral (TEP pós-defervescência), status vacinal (Pneumo-10/Meningo/Hib) e rastreio de ITU oculta.
 
 # QP:
-- Febre aferida de até [ ] °C há [ ] [horas / dias], sem sintomas localizatórios aparentes.
+Febre aferida de até [ ] °C há [ ] [horas / dias], sem sintomas localizatórios aparentes.
 
 # HMA:
-- Responsável refere picos febris de até [ ] °C (aferidos com termômetro axilar) iniciados há [ ] horas/dias, a cada [ ] horas.
-- Comportamento no Intervalo Afebril (Pós-Antitérmico): [Criança reanima completamente, sorri, interage, mantém sucção vigorosa e brinca quando a febre cede / Permanece hipoativa, irritada ou gemente mesmo afebril].
-- Interrogatório Sistemático Negativo de Focos: Nega tosse, coriza, obstrução nasal, estridor, vômitos, diarreia, choro à micção ou urina fétida, lesões cutâneas ou recusa em movimentar algum membro (pseudoparalisia por artrite séptica/osteomielite).
+Responsável refere picos febris de até [ ] °C iniciados há [ ] horas/dias, a cada [ ] horas.
+Comportamento no Intervalo Afebril (Pós-Antitérmico): [Criança reanima completamente, sorri, interage / Permanece hipoativa, irritada ou gemente mesmo].
+Interrogatório Sistemático Negativo de Focos: Nega tosse, coriza, obstrução nasal, estridor, vômitos, diarreia, choro à micção ou urina fétida, lesões cutâneas ou recusa em movimentar algum membro.
 
 # EXAME FÍSICO:
-- Sinais Vitais (Após antitérmico): FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax atual: [ ] °C | TEC < 2s.
-- Triângulo de Avaliação Pediátrica (TEP): [*Normal nos 3 lados — Aparência, Respiração e Circulação normais / Alterado — aspecto toxêmico ou letárgico].
-- Exame Físico Minucioso da Criança Totalmente Despida (Busca de Foco Oculto):
-  * Pele (Vitroscopia/Digitopressão): Ausência absoluta de petéquias, equimoses ou púrpuras que não desaparecem à digitopressão (afastado rash meningocócico).
-  * Fontanela Anterior & Sinais Meníngeos: Fontanela plana e normotensa; ausência de rigidez de nuca, irritabilidade paradoxal no colo (sinal de irritação meníngea do lactente) ou sinais de Kernig/Brudzinski.
-  * Otoscopia & Oroscopia: Membranas timpânicas translúcidas e sem abaulamento bilateralmente; orofaringe e mucosa oral sem hiperemia exsudativa, vesículas (herpangina) ou úlceras.
-  * Cardiopulmonar & Abdome: MV presente sem crepitações e sem taquipneia; RCR 2T BNF sem sopros; abdome flácido e indolor.
-  * Osteoarticular: Mobilização passiva e ativa indolor de todas as articulações (quadris, joelhos, tornozelos, ombros).
-- Exames Complementares Realizados na Emergência:
-  * Urina Tipo 1 (EAS) + Urocultura colhida por Cateterismo Vesical / Punção Suprapúbica (NUNCA usar saco coletor para urocultura!): [Não indicada (< 24–48h de febre em > 3m bem e vacinado) / EAS normal (Leucócitos < 10.000/mL, Esterase e Nitrito negativos) / EAS alterado compatível com ITU].
-  * Hemograma, PCR e Hemocultura: [Não solicitados / Leuco: ___ /mm³ (Neutrófilos absolutos: ___ ) | PCR: ___ mg/L | Procalcitonina: ___ ng/mL].
-  * Líquor (Punção Lombar): [Não indicada / Realizada (< 28 dias ou sinais de alto risco): ___].
+SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax atual: [ ] °C | TEC < 2s.
+Triângulo de Avaliação Pediátrica (TEP): [*Normal nos 3 lados / Alterado — aspecto toxêmico ou letárgico].
+Exame Físico Minucioso da Criança Totalmente Despida (Busca de Foco Oculto):
+Pele (Vitroscopia/Digitopressão): Ausência absoluta de petéquias, equimoses ou púrpuras que não desaparecem à digitopressão (afastado rash meningocócico).
+Fontanela Anterior & Sinais Meníngeos: Fontanela plana e normotensa; ausência de rigidez de nuca, irritabilidade paradoxal no colo (sinal de irritação meníngea do lactente) ou sinais de Kernig/Brudzinski.
+Otoscopia & Oroscopia: Membranas timpânicas translúcidas e sem abaulamento bilateralmente; orofaringe e mucosa oral sem hiperemia exsudativa, vesículas (herpangina) ou úlceras.
+Cardiopulmonar & Abdome: MV presente sem crepitações e sem taquipneia; RCR 2T BNF sem sopros; abdome flácido e indolor.
+Osteoarticular: Mobilização passiva e ativa indolor de todas as articulações (quadris, joelhos, tornozelos, ombros).
+Exames Complementares Realizados na Emergência:
+Urina Tipo 1 (EAS) + Urocultura colhida por Cateterismo Vesical / Punção Suprapúbica (NUNCA usar saco coletor para urocultura!): [Não indicada / EAS normal (Leucócitos < 10.000/mL, Esterase e / EAS alterado compatível com ITU].
+Hemograma, PCR e Hemocultura: [Não solicitados / Leuco: ___ /mm³ / PCR: ___ mg/L / Procalcitonina: ___ ng/mL].
+Líquor (Punção Lombar): [Não indicada / Realizada (< 28 dias ou sinais de alto risco)].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Febre Sem Sinais Localizatórios (FSSL) em [Recém-nascido < 28d / Lactente 29–90d de Baixo Risco / Lactente 3–36m vacinado em bom estado geral] (CID-10: R50.9).
@@ -56,9 +56,10 @@ Alergias: [*Nega / Outros: ___].
 2. Se Alto Risco (TEP alterado, prematuro, leucócitos < 5.000 ou > 15.000/mm³, bastonetes > 1.500/mm³, PCR > 20 mg/L ou piúria no EAS): Internar, realizar Punção Lombar e iniciar Ceftriaxona 50 a 100 mg/kg/dia EV.
 3. Se Baixo Risco Completo (Termo hígido, TEP normal, EAS normal, Leuco 5.000–15.000/mm³ e PCR normal): Alta vigiada com reavaliação médica presencial obrigatória em 24 horas e checagem da urocultura/hemocultura.
 
->> [CENÁRIO 3 — CRIANÇA DE 3 A 36 MESES VACINADA E EM BOM ESTADO GERAL (TEP NORMAL)]:
+>> [CENÁRIO 3]:
 1. Se febre ≥ 39 °C ou duração > 24–48h em menina < 24 meses ou menino < 6–12 meses (ou < 24m não circuncidado): Coletar EAS + Urocultura por cateterismo vesical (ITU responde por > 80% das infecções bacterianas ocultas nesta faixa!).
 2. Com EAS normal (ou febre < 24h em criança ativa e bem vacinada): Alta segura com antitérmico sintomático e reavaliação médica programada em 24 a 48 horas (frequentemente surge o exantema do Exantema Súbito / Roséola após 72h quando a febre cede!).
+
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO — FEBRE SEM FOCO (CRITÉRIOS DE BAIXO RISCO COM REAVALIAÇÃO EM 24–48H)
 Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]

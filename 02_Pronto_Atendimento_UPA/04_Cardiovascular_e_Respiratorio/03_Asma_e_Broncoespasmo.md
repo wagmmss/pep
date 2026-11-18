@@ -13,24 +13,24 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # QP:
-- Falta de ar, chiado no peito e tosse seca há [ ] horas/dias.
+Falta de ar, chiado no peito e tosse seca há [ ] horas/dias.
 
 # HMA:
-- HMA: Paciente com diagnóstico conhecido de asma brônquica [ou primeiro episódio de sibilância] relata piora progressiva da dispneia há cerca de [ ] horas, acompanhada de chiado audível sem estetoscópio, opressão torácica e tosse seca paroxística. Relata fator desencadeante: [sintomas gripais recentes / exposição a alérgenos / poeira / mudança de clima / abandono da medicação de manutenção]. Fez uso prévio de bombinha em casa ([ ] jatos) com alívio transitório e recidiva rápida.
-- ESTRATIFICAÇÃO DE GRAVIDADE DA CRISE (GINA):
-  * LEVE A MODERADA: Fala em frases completas, prefere ficar sentado, FR aumentada, FC 100-120 bpm, SpO2 90-95% em ar ambiente.
-  * GRAVE: Fala apenas palavras isoladas/entrecortadas, postura curvada para a frente, agitado, uso evidente de musculatura acessória (tiragem intercostal), FC > 120 bpm, FR > 30 irpm, SpO2 < 90%.
-  * RISCO IMINENTE DE PARADA (ASMA QUASE FATAL): Sonolência, confusão mental, respiração paradoxal toracoabdominal, bradicardia e TÓRAX SILENCIOSO (ausência de sibilos por falta de fluxo de ar).
-- Histórico de Asma de Alto Risco: [Nega / Histórico prévio de intubação orotraqueal por asma / Internação em UTI no último ano / Múltiplas idas à UPA no último mês].
+Paciente com diagnóstico conhecido de asma brônquica [ou primeiro episódio de sibilância] relata piora progressiva da dispneia há cerca de [ ] horas, acompanhada de chiado audível sem estetoscópio, opressão torácica e tosse seca paroxística. Relata fator desencadeante: [sintomas gripais recentes / exposição a alérgenos / poeira / mudança de clima / abandono da medicação de manutenção]. Fez uso prévio de bombinha em casa ([ ] jatos) com alívio transitório e recidiva rápida.
+Fala em frases completas, prefere ficar sentado, FR aumentada, FC 100-120 bpm, SpO2 90-95% em ar ambiente.
+Fala apenas palavras isoladas/entrecortadas, postura curvada para a frente, agitado, uso evidente de musculatura acessória (tiragem intercostal), FC > 120 bpm, FR > 30 irpm, SpO2 < 90%.
+RISCO IMINENTE DE PARADA (ASMA QUASE FATAL): Sonolência, confusão mental, respiração paradoxal toracoabdominal, bradicardia e TÓRAX SILENCIOSO.
+[Nega / Histórico prévio de intubação orotraqueal por / Internação em UTI no último ano / Múltiplas idas à UPA no último mês].
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
-- Ectoscopia: [*Lúcido, cooperativo / Agitado com dispneia moderada a grave], corado, hidratado, sudoreico, uso de musculatura acessória da respiração (tiragem de fúrcula esternal e intercostal).
-- Aparelho Respiratório:
-  * Inspeção: Padrão respiratório taquidispneico, tempo expiratório acentuadamente prolongado.
-  * Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente com tempo expiratório prolongado e presença de sibilos polifônicos difusos bilaterais [ou redução difusa grave do MV - alerta de tórax silencioso]. Ausência de crepitações focais.
-- Aparelho Cardiovascular: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas sem sopros; ausência de pulso paradoxal significativo.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
+Geral: [*Lúcido, cooperativo / Agitado com dispneia moderada a grave], corado, hidratado, sudoreico, uso de musculatura acessória da respiração (tiragem de fúrcula esternal e intercostal).
+AR:
+Inspeção: Padrão respiratório taquidispneico, tempo expiratório acentuadamente prolongado.
+Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente com tempo expiratório prolongado e presença de sibilos polifônicos difusos bilaterais [ou redução difusa grave do MV - alerta de tórax]. Ausência de crepitações focais.
+ACV: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas sem sopros; ausência de pulso paradoxal significativo.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Crise de Asma Aguda / Exacerbação de Broncoespasmo de intensidade [Leve a Moderada / Grave / Risco Iminente de Parada] (CID-10: J45.9).
@@ -53,23 +53,24 @@ Alergias: [*Nega / Sim: ___].
    - Prednisona 40 a 60 mg VO de imediato (via oral é rápida e tem a mesma eficácia que a via venosa).
    - [OU se paciente grave/vomitando]: Metilprednisolona 60 mg a 125 mg EV [ou Hidrocortisona 200 mg a 300 mg EV].
 
-4. [SE CRISE GRAVE OU REFRATÁRIA APÓS 3 CICLOS DE BRONCODILATADOR]:
+4. [SE CRISE GRAVE OU REFRATÁRIA APÓS 3 CICLOS DE]:
    - Sulfato de Magnésio 50% (4 mL = 2 g) diluídos em 100 mL de SF 0,9% EV correr em 20 minutos (potente broncodilatador que relaxa a musculatura lisa brônquica e previne intubação).
 
 5. REAVALIAÇÃO CLÍNICA APÓS 1 HORA:
    - Sinais vitais de controle: PA: [ ]x[ ] mmHg, FC: [ ] bpm, FR: [ ] irpm, SpO2: [ ]% em AA.
-   - Ausculta: [Melhora acentuada com diminuição dos sibilos, prolongamento expiratório resolvido e paciente conversando confortavelmente -> CRITÉRIO DE ALTA].
+   - Ausculta: [Melhora acentuada com diminuição dos sibilos].
 
 # RECEITA:
 1. Corticoide Oral (prevenção precoce de recaída):
    - Prednisona 40 mg a 50 mg - Tomar 1 comprimido VO pela manhã por 5 a 7 dias (não necessita de desmame se <= 7 dias).
 2. Terapia de Manutenção & Alívio com Corticoide Inalatório (Diretriz GINA - contraindicado uso de broncodilatador isolado sem corticoide inalatório):
-   - [OPÇÃO PREFERENCIAL GINA - LABA + CORTICOIDE INALATÓRIO]:
+   - [OPÇÃO PREFERENCIAL GINA - LABA + CORTICOIDE]:
      * Fumarato de Formoterol + Budesonida (200/6 mcg ou 400/12 mcg): Inalar 1 cápsula/jato de 12 em 12 horas de uso contínuo + 1 inalação de resgate se falta de ar.
    - [OPÇÃO ALTERNATIVA DA REDE BÁSICA]:
      * Budesonida spray 200 mcg: Inalar 1 a 2 jatos de 12/12h de uso contínuo.
      * Salbutamol spray 100 mcg: Inalar 2 a 4 jatos com espaçador apenas de resgate se sintomas agudos, associado à Budesonida.
 3. Encaminhamento para UBS / Programa de Asma para seguimento ambulatorial e plano de ação por escrito.
+
 # RECEITA:
 RECEITUÁRIO MÉDICO — ALTA PÓS-CRISE DE ASMA / BRONCOESPASMO (PLANO DE AÇÃO GINA)
 Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]

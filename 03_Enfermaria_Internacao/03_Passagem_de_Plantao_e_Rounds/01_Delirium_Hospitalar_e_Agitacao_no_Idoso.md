@@ -10,25 +10,26 @@
 
 ```text
 AVALIAÇÃO DE INTERCORRÊNCIA EM ENFERMARIA — DELIRIUM HOSPITALAR (MÉTODO CAM)
+
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos[? Leito :: , Leito ___], no [ ]º DIH por [motivo da internação].
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Outros: ___].
-- Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular leve/moderada / Doença de Parkinson ou Demência por Corpos de Lewy].
+- Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular / Doença de Parkinson ou Demência por Corpos de].
 
 DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2 + [3 OU 4]):
 1. Início Agudo e Curso Flutuante (mudança súbita em horas/dias que piora à noite — *sundowning*): [Presente].
 2. Inatenção (incapaz de dizer os dias da semana de trás para frente ou soletrar MUNDO ao contrário): [Presente].
 3. Pensamento Desorganizado (discurso incoerente, ilógico ou fluxo imprevisível de ideias): [Presente / Ausente].
-4. Alteração do Nível de Consciência (RASS diferente de 0): [Delirium Hiperativo (RASS +1 a +4: agitado, tentando arrancar acessos/sondas) / Delirium Hipoativo (RASS -1 a -3: sonolento, apático, letárgico — mais comum e de pior prognóstico!) / Delirium Misto].
+4. Alteração do Nível de Consciência (RASS diferente de 0): [Delirium Hiperativo / Delirium Hipoativo / Delirium Misto].
 
 RASTREIO SISTEMÁTICO DA CAUSA BASE (MNEMÔNICO DELIRIUM):
-- [D] Drugs (Conciliação medicamentosa): Uso recente de [Benzodiazepínicos (Diazepam/Clonazepam) / Anti-histamínicos 1ª geração (Prometazina/Dexclorfeniramina) / Anticolinérgicos (Escopolamina, Amitriptilina, Ciclobenzaprina) / Opioides / Corticoides].
+- [D] Drugs (Conciliação medicamentosa): Uso recente de [Benzodiazepínicos (Diazepam/Clonazepam) / Anti-histamínicos 1ª geração / Anticolinérgicos (Escopolamina, Amitriptilina / Opioides / Corticoides].
 - [E] Electrolyte & Metabolic: Na+: [ ] mEq/L, Ca2+: [ ], Ureia/Creatinina: [ ], Glicemia Capilar: [ ] mg/dL, Função Hepática/Tireoidiana.
-- [L] Lack of Drugs (Abstinência): [Abstinência alcoólica ou suspensão abrupta de benzodiazepínico crônico] | Lack of Sleep / Dor não tratada.
+- [L] Lack of Drugs (Abstinência): [Abstinência alcoólica ou suspensão abrupta de] | Lack of Sleep / Dor não tratada.
 - [I] Infection (Sepse oculta): [ITU / Pneumonia aspirativa / Celulite ou infecção de cateter].
 - [R] Reduced Sensory Input: Paciente sem seus [óculos / aparelho auditivo], restrito ao leito sem luz natural.
-- [I] Intracranial: Exame neurológico [sem sinais focais ou meningismo — afasta AVC ou hematoma subdural pós-queda].
+- [I] Intracranial: Exame neurológico [sem sinais focais ou meningismo].
 - [U] Urinary Retention & Fecal Impaction (Bexigoma e Fecaloma — palpar hipogástrio e checar evacuação!): [Globo vesical palpável / Fecaloma há > 3 dias / Diurese e hábito intestinal preservados].
 - [M] Myocardial & Pulmonary (Hipóxia / Hipercapnia / IAM silencioso): SpO2: [ ]%, ECG: [sem isquemia aguda].
 

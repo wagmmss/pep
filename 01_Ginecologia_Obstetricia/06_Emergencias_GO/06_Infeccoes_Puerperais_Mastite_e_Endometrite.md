@@ -16,34 +16,34 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: ___].
 - Quadro Atual: [MODALIDADE A — MASTITE PUERPERAL AGUDA / MODALIDADE B — ENDOMETRITE PUERPERAL].
 
 # QP:
-- [Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Queixa Principal & HMA:
-  * [SE MASTITE]: Dor mamária localizada intensa, vermelhidão em cunha e calafrios/febre (Tax [ ] °C) há [ ] dias, associada a fissura mamilar e ingurgitamento prévio em mama [direita / esquerda]. Nega dor hipogástrica ou lóquios fétidos.
-  * [SE ENDOMETRITE]: Febre alta (Tax >= 38,0 °C), calafrios, mal-estar, dor hipogástrica progressiva e eliminação de lóquios escuros/purulentos com odor fétido intenso há [ ] dias (Fatores de risco: [cesariana / bolsa rota prolongada / múltiplos toques / anemia]). Nega queixas mamárias ou respiratórias.
+Queixa Principal & HMA:
+[SE MASTITE]: Dor mamária localizada intensa, vermelhidão em cunha e calafrios/febre (Tax [ ] °C) há [ ] dias, associada a fissura mamilar e ingurgitamento prévio em mama [direita / esquerda]. Nega dor hipogástrica ou lóquios fétidos.
+[SE ENDOMETRITE]: Febre alta (Tax >= 38,0 °C), calafrios, mal-estar, dor hipogástrica progressiva e eliminação de lóquios escuros/purulentos com odor fétido intenso há [ ] dias. Nega queixas mamárias ou respiratórias.
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C.
-- Exame das Mamas:
-  * [SE MASTITE]: Mama [direita / esquerda] com placa eritematosa em cunha, quente, edemaciada e dolorosa no quadrante [superior externo / inferior], fissura mamilar presente, ausência de ponto de flutuação à palpação (afastado abscesso mamário franco). Linfonodo axilar homolateral palpável.
-  * [SE ENDOMETRITE]: Mamas lactantes flácidas/túrgidas fisiológicas, indolores, sem hiperemia ou sinais de mastite.
-- Exame Abdominal, Obstétrico & Especular (Tríade de Bumm):
-  * [SE MASTITE]: Abdome flácido, útero bem involuído e indolor, ferida/períneo íntegros, lóquios fisiológicos sem odor.
-  * [SE ENDOMETRITE — Tríade de Bumm Positiva]: Abdome doloroso em hipogástrio (DB negativo); ferida operatória [íntegra sem coleção / com celulite perilesional]. Ao exame especular e toque bimanual: (1) Febre puerperal + (2) Útero subinvoluído, amolecido e intensamente doloroso à mobilização + (3) Lóquios achocolatados/purulentos de odor fétido fluindo pelo colo.
-- Exames Complementares (se realizados):
-  * [Ambulatorial sem necessidade de exames / Hemograma: Leucócitos ___ /mm³ com ___ % bastões, PCR: ___ mg/L / USG Mamária: sem coleção líquida / USG Transvaginal: cavidade uterina vazia sem restos / com conteúdo heterogêneo sugerindo restos placentários].
+SSVV: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C.
+Exame das Mamas:
+[SE MASTITE]: Mama [direita / esquerda] com placa eritematosa em cunha, quente, edemaciada e dolorosa no quadrante [superior externo / inferior], fissura mamilar presente, ausência de ponto de flutuação à palpação (afastado abscesso mamário franco). Linfonodo axilar homolateral palpável.
+[SE ENDOMETRITE]: Mamas lactantes flácidas/túrgidas fisiológicas, indolores, sem hiperemia ou sinais de mastite.
+Exame Abdominal, Obstétrico & Especular (Tríade de Bumm):
+[SE MASTITE]: Abdome flácido, útero bem involuído e indolor, ferida/períneo íntegros, lóquios fisiológicos sem odor.
+[SE ENDOMETRITE — Tríade de Bumm Positiva]: Abdome doloroso em hipogástrio (DB negativo); ferida operatória [íntegra sem coleção / com celulite perilesional]. Ao exame especular e toque bimanual: (1) Febre puerperal + (2) Útero subinvoluído, amolecido e intensamente doloroso à mobilização + (3) Lóquios achocolatados/purulentos de odor fétido fluindo pelo colo.
+Exames Complementares (se realizados):
+[Ambulatorial sem necessidade de exames / Hemograma: Leucócitos ___ /mm³ com ___ % / USG Mamária: sem coleção líquida / USG Transvaginal: cavidade uterina vazia sem / com conteúdo heterogêneo sugerindo restos].
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. [Mastite Lactacional Aguda não complicada em mama direita / esquerda (CID-10: O91.2) / Endometrite Puerperal Aguda pós-cesárea/parto (CID-10: O85)].
+1. [Mastite Lactacional Aguda não complicada em / esquerda (CID-10: O91.2) / Endometrite Puerperal Aguda pós-cesárea/parto].
 
 # CONDUTA:
->> [MODALIDADE A — CONDUTA NA MASTITE PUERPERAL AGUDA (AMBULATORIAL)]:
+>> [MODALIDADE A]:
 1. MANTER O ALEITAMENTO MATERNO (Pilar #1 do tratamento): Orientada a NÃO suspender a amamentação na mama afetada (o esvaziamento frequente previne abscesso e não faz mal ao RN a termo). Iniciar mamada pela mama sadia e ordenhar manualmente o leite residual da mama afetada após as mamadas.
 2. Prescritos Cefalexina 500 mg VO 6/6h por 10 a 14 dias (cobertura antiestafilocócica para *S. aureus*) + Ibuprofeno 600 mg VO 8/8h + Dipirona 1 g VO 6/6h SOS + compressas frias após as mamadas.
 3. Reavaliação Obrigatória em 48 a 72 horas: Se persistir febre após 48–72h de ATB ou surgir área de flutuação -> solicitar USG de Mamas e realizar punção aspirativa por agulha grossa / drenagem de Abscesso Mamário (mantendo amamentação).
 
->> [MODALIDADE B — CONDUTA NA ENDOMETRITE PUERPERAL (INTERNAÇÃO HOSPITALAR OBRIGATÓRIA)]:
+>> [MODALIDADE B — CONDUTA NA ENDOMETRITE PUERPERAL]:
 1. Internação hospitalar, hidratação venosa, antitérmico/analgesia EV e coleta de Hemograma, PCR, EAS/Urocultura e Hemoculturas (se sepse/calafrios).
 2. Antibioticoterapia Endovenosa Padrão-Ouro (Cobertura Polimicrobiana Aeróbia/Anaeróbia):
    - Clindamicina 900 mg EV de 8/8 horas
@@ -56,8 +56,8 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: ___].
 # RECEITA:
 USO ORAL:
 1. Cefalexina 500 mg --------------------------------------------------- 40 comprimidos
-   Tomar 1 comprimido via oral de 6 em 6 horas, rigorosamente nos horários, durante 10 dias consecutivos.
-   *[Se alergia a betalactâmicos: Clindamicina 300 mg — Tomar 1 cápsula VO de 6/6h por 10 dias]*.
+   Tomar 1 comprimido via oral de 6 em 6 horas, nos horários, durante 10 dias consecutivos.
+   *[Se alergia a betalactâmicos: Clindamicina 300 mg]*.
 2. Ibuprofeno 600 mg [NÃO PRESCREVER SE HIPERTENSA / PRÉ-ECLÂMPSIA] ----- 1 caixa
    Tomar 1 comprimido via oral de 8 em 8 horas, após as refeições, durante 5 dias (reduz o inchaço dos ductos mamários).
 3. [Dipirona Monoidratada 1 g / Paracetamol 750 mg] -------------------- 1 caixa

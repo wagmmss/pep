@@ -10,29 +10,30 @@
 
 ```text
 ATENDIMENTO DE EMERGÊNCIA — TROMBOSE VENOSA PROFUNDA (TVP) & TROMBOEMBOLISMO PULMONAR (TEP)
+
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Outros: ___].
 
 APRESENTAÇÃO CLÍNICA PRINCIPAL:
-- Quadro Dominante: [Suspeita de TVP de Membro Inferior (edema unilateral assimétrico, dor em panturrilha e empastamento) / Suspeita de TEP Agudo (dispneia súbita inexplicada, dor torácica ventilatório-dependente, taquicardia ou síncope)].
-- Fatores de Risco Tromboembólicos (Tríade de Virchow): [Cirurgia ou trauma recente (< 4 semanas) / Imobilização prolongada (> 3 dias) ou viagem longa / Neoplasia ativa / Uso de anticoncepcional oral combinado ou TRH / Gestação ou puerpério / TEV prévio / Trombofilia].
+- Quadro Dominante: [Suspeita de TVP de Membro Inferior / Suspeita de TEP Agudo].
+- Fatores de Risco Tromboembólicos (Tríade de Virchow): [Cirurgia ou trauma recente (< 4 semanas) / Imobilização prolongada (> 3 dias) ou viagem / Neoplasia ativa / Uso de anticoncepcional oral combinado ou TRH / Gestação ou puerpério / TEV prévio / Trombofilia].
 
 EXAME FÍSICO DIRIGIDO:
 - Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
-- Avaliação Cardiorrespiratória: Ausculta pulmonar [limpa — dissociação clínico-auscultatória clássica do TEP! / estertores localizados]. Turgência jugular: [*Ausente / Presente com hiperfonese de B2 em foco pulmonar — sobrecarga aguda de VD].
-- Exame de Membros Inferiores: [Assimetria de panturrilha > 3 cm (medida 10 cm abaixo da tuberosidade tibial) no membro Direito / Esquerdo, edema depressível (cacifo+) unilateral, calor local e dor à palpação do trajeto venoso profundo / Membros inferiores simétricos sem sinais de TVP clínica]. Pulsos distais (pedioso e tibial posterior) [presentes e simétricos — descartada flegmasia cerulea dolens].
+- Avaliação Cardiorrespiratória: Ausculta pulmonar [limpa — dissociação clínico-auscultatória / estertores localizados]. Turgência jugular: [*Ausente / Presente com hiperfonese de B2 em foco pulmonar].
+- Exame de Membros Inferiores: [Assimetria de panturrilha > 3 cm no membro / Esquerdo, edema depressível (cacifo+) / Membros inferiores simétricos sem sinais de TVP]. Pulsos distais (pedioso e tibial posterior) [presentes e simétricos].
 
 ESTRATIFICAÇÃO DE PROBABILIDADE E GRAVIDADE:
 - Escore de Wells para TVP: [Baixa probabilidade (≤ 0 pts) / Moderada (1–2 pts) / Alta probabilidade (≥ 3 pts)].
-- Escore de Wells para TEP: [TEP Improvável (≤ 4 pts) — aplicar PERC ou dosar D-Dímero ajustado por idade / TEP Provável (> 4 pts) — Angio-TC de Tórax direta + anticoagulação empírica imediata se sem contraindicação].
-- Escore sPESI (Gravidade do TEP): [0 pontos — Baixo Risco (mortalidade < 1%, candidato a tratamento domiciliar com DOAC) / ≥ 1 ponto — Risco Intermediário ou Alto (Idade > 80a, Câncer, IC/DPOC, FC ≥ 110, PAS < 100 ou SpO2 < 90%)].
+- Escore de Wells para TEP: [TEP Improvável (≤ 4 pts) / TEP Provável (> 4 pts)].
+- Escore sPESI (Gravidade do TEP): [0 pontos — Baixo Risco / ≥ 1 ponto — Risco Intermediário ou Alto].
 
 EXAMES COMPLEMENTARES:
-- ECG: [Taquicardia sinusal / Padrão S1Q3T3 / Inversão de onda T de V1 a V4 (sobrecarga aguda de VD) / BRD novo].
+- ECG: [Taquicardia sinusal / Padrão S1Q3T3 / Inversão de onda T de V1 a V4 (sobrecarga aguda / BRD novo].
 - D-Dímero (se probabilidade baixa/intermediária): [ ] ng/mL (Corte ajustado para idade > 50 anos = Idade × 10 ng/mL).
-- Imagem Confirmatoria: [USG Doppler Venoso Colorido de MMII mostrando incompressibilidade da veia poplítea/femoral / Angio-TC de Artérias Pulmonares com falha de enchimento em ramo lobar/segmentar/tronco pulmonar].
+- Imagem Confirmatoria: [USG Doppler Venoso Colorido de MMII mostrando / Angio-TC de Artérias Pulmonares com falha de].
 
 # CONDUTA:
 1. Suporte Ventilatório e Hemodinâmico (no TEP): Oxigenoterapia suplementar se SpO2 < 90%; em caso de hipotensão por sobrecarga de VD, cautela máxima na expansão volêmica (máximo 500 mL de SF 0,9%, pois hiperdistensão do VD comprime o VE e piora o choque!).

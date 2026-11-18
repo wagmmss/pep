@@ -13,38 +13,38 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # QP:
-- Dor na coluna lombar / Dor que desce para a perna há [ ] dias/horas.
+Dor na coluna lombar / Dor que desce para a perna há [ ] dias/horas.
 
 # HMA:
-- HMA: Relata quadro de dor lombar de início após esforço físico / levantamento de carga / movimento de torção do tronco há cerca de [ ] dias.
-  * Localização & Irradiação: [Dor estritamente lombar baixa sem irradiação (Lombalgia mecânica pura) / Dor irradiando para glúteo, face posterior da coxa, perna e dorso/planta do pé (direito / esquerdo) (Lombociatalgia com radiculopatia)].
-  * Caráter: Dor em pontada profunda associada a sensação de espasmo/trava muscular, intensidade [ ]/10.
-  * Fatores de Piora/Melhora: Piora ao fletir a coluna para a frente, permanecer sentado ou tossir; alívio parcial em decúbito dorsal com pernas dobradas sobre travesseiros.
-- RASTREAMENTO OBRIGATÓRIO DE SINAIS DE ALARME (RED FLAGS DA COLUNA):
-  * [ ] SÍNDROME DA CAUDA EQUINA (EMERGÊNCIA CIRÚRGICA): Nega anestesia ou perda de sensibilidade em "sela" (região perianal, nádegas e períneo); nega perda de controle dos esfíncteres (incontinência fecal ou retenção urinária aguda com perda involuntária de urina por transbordamento); nega fraqueza bilateral progressiva nos pés/pernas.
-  * [ ] NEOPLASIA / METÁSTASE ÓSSEA: Nega histórico pessoal prévio de câncer (mama, próstata, pulmão); nega dor contínua em repouso que piora de madrugada na cama sem alívio em qualquer posição; nega perda ponderal inexplicada.
-  * [ ] INFECÇÃO DA COLUNA (ESPONDILODISCITE / ABSCESSO EPIDURAL): Nega febre, calafrios ou sudorese noturna; nega uso de drogas endovenosas ou infecção urinária/cutânea recente.
-  * [ ] RISCO DE FRATURA OSTEOPORÓTICA: Idade < 65 anos, nega uso crônico prolongado de corticoides orais e nega trauma contuso de alto impacto.
+Relata quadro de dor lombar de início após esforço físico / levantamento de carga / movimento de torção do tronco há cerca de [ ] dias.
+Localização & Irradiação: [Dor estritamente lombar baixa sem irradiação / Dor irradiando para glúteo, face posterior da / esquerdo)].
+Dor em pontada profunda associada a sensação de espasmo/trava muscular, intensidade [ ]/10.
+Piora ao fletir a coluna para a frente, permanecer sentado ou tossir; alívio parcial em decúbito dorsal com pernas dobradas sobre travesseiros.
+[ ] SÍNDROME DA CAUDA EQUINA (EMERGÊNCIA CIRÚRGICA): Nega anestesia ou perda de sensibilidade em "sela"; nega perda de controle dos esfíncteres; nega fraqueza bilateral progressiva nos pés/pernas.
+[ ] NEOPLASIA / METÁSTASE ÓSSEA: Nega histórico pessoal prévio de câncer (mama, próstata, pulmão); nega dor contínua em repouso que piora de madrugada na cama sem alívio em qualquer posição; nega perda ponderal inexplicada.
+[ ] INFECÇÃO DA COLUNA: Nega febre, calafrios ou sudorese noturna; nega uso de drogas endovenosas ou infecção urinária/cutânea recente.
+[ ] RISCO DE FRATURA OSTEOPORÓTICA: Idade < 65 anos, nega uso crônico prolongado de corticoides orais e nega trauma contuso de alto impacto.
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril).
-- Inspeção & Palpação da Coluna Lumbossacra:
-  * Inspeção estática: Postura antálgica com retificação da lordose lombar fisiológica, marcha claudicante preservada sem apoio de terceiros.
-  * Palpação Muscular: Presença de hipertonia e contratura dolorosa evidente da musculatura paravertebral lumbossacra [unilateral à direita/esquerda / bilateral].
-  * Percussão das Apófises Espinhosas: Ausência de dor à percussão óssea direta das vértebras lombares (afasta fratura óssea aguda ou espondilodiscite).
-  * Mobilidade: Limitação da flexo-extensão do tronco pela dor muscular.
-- MANOBRAS NEUROLÓGICAS RADICULARES:
-  * Manobra de Lasègue (Elevação da perna reta estendida):
-    - [ ] Lasègue NEGATIVO bilateralmente (ausência de radiculopatia compressiva ciática).
-    - [ ] Lasègue POSITIVO à [direita / esquerda] a [ ] graus de elevação (desencadeamento de dor viva em choque/queimação irradiada para baixo do joelho no trajeto da raiz nervosa; positivo típico entre 30 e 70 graus).
-  * Exame Neurológico Segmentar dos Membros Inferiores:
-    - Raiz L4: Força motora do músculo tibial anterior (dorsiflexão do pé) preservada (grau 5/5), reflexo patelar normorreflexo simétrico bilateral.
-    - Raiz L5: Força motora do extensor longo do hálux (elevar o dedão do pé contra resistência) grau 5/5 bilateral. Sensibilidade preservada no dorso do pé.
-    - Raiz S1: Capacidade de ficar na ponta dos pés preservada (grau 5/5 nos gastrocnêmios), reflexo aquileu presente e simétrico bilateral. Sensibilidade na borda lateral do pé normal.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril).
+Inspeção & Palpação da Coluna Lumbossacra:
+Inspeção estática: Postura antálgica com retificação da lordose lombar fisiológica, marcha claudicante preservada sem apoio de terceiros.
+Palpação Muscular: Presença de hipertonia e contratura dolorosa evidente da musculatura paravertebral lumbossacra [unilateral à direita/esquerda / bilateral].
+Percussão das Apófises Espinhosas: Ausência de dor à percussão óssea direta das vértebras lombares (afasta fratura óssea aguda ou espondilodiscite).
+Mobilidade: Limitação da flexo-extensão do tronco pela dor muscular.
+MANOBRAS NEUROLÓGICAS RADICULARES:
+Manobra de Lasègue (Elevação da perna reta estendida):
+[ ] Lasègue NEGATIVO bilateralmente (ausência de radiculopatia compressiva ciática).
+[ ] Lasègue POSITIVO à [direita / esquerda] a [ ] graus de elevação (desencadeamento de dor viva em choque/queimação irradiada para baixo do joelho no trajeto da raiz nervosa; positivo típico entre 30 e 70 graus).
+Exame Neurológico Segmentar dos Membros Inferiores:
+Raiz L4: Força motora do músculo tibial anterior (dorsiflexão do pé) preservada (grau 5/5), reflexo patelar normorreflexo simétrico bilateral.
+Raiz L5: Força motora do extensor longo do hálux (elevar o dedão do pé contra resistência) grau 5/5 bilateral. Sensibilidade preservada no dorso do pé.
+Raiz S1: Capacidade de ficar na ponta dos pés preservada (grau 5/5 nos gastrocnêmios), reflexo aquileu presente e simétrico bilateral. Sensibilidade na borda lateral do pé normal.
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. [Lombalgia Mecânico-Postural Aguda / Lombociatalgia Aguda por Radiculopatia Lumbossacra compressiva] (CID-10: M54.5 / M54.4).
+1. [Lombalgia Mecânico-Postural Aguda / Lombociatalgia Aguda por Radiculopatia] (CID-10: M54.5 / M54.4).
 2. Ausência de sinais de Síndrome da Cauda Equina ou déficits neurológicos motores agudos progressivos.
 
 # CONDUTA:

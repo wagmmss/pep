@@ -254,7 +254,10 @@ export function initPepDrawer(): void {
 
     tokens.forEach((tok, idx) => {
       if (tok.type === 'text') {
-        formHtml += escapeHtml(tok.raw).replace(/\n/g, '<br>');
+        const formattedText = escapeHtml(tok.raw)
+          .replace(/(^|\n)#{1,6}\s+([^\n]+)/g, '$1<strong class="pep-section-heading">$2</strong>')
+          .replace(/\n/g, '<br>');
+        formHtml += formattedText;
         return;
       }
 

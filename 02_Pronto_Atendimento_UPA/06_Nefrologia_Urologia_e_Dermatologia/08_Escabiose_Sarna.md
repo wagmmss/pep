@@ -13,32 +13,31 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # QP:
-- Coceira no corpo todo que piora muito à noite há [ ] dias/semanas.
+Coceira no corpo todo que piora muito à noite há [ ] dias/semanas.
 
 # HMA:
-- HMA: Relata prurido cutâneo difuso de evolução progressiva, com exacerbação noturna intensa ("quase não consegue dormir ao se cobrir na cama"). Queixa-se de pequenas lesões avermelhadas e "bolhinhas" em dobras de pele.
-- HISTÓRIA EPIDEMIOLÓGICA POSITIVA:
-  * Presença de outros familiares, crianças ou parceiros que dormem na mesma casa apresentando quadro idêntico de coceira noturna.
-- TOPOGRAFIA HABITUAL DAS QUEIXAS:
-  * Prurido e lesões concentrados entre os dedos das mãos, punhos, axilas, ao redor do umbigo, nádegas e [na bolsa escrotal/pênis no homem / aréolas na mulher].
-- Nega febre, calafrios ou prostração sistêmica.
-- Nega lesões bolhosas extensas com descolamento cutâneo (afastado pênfigo ou eritema multiforme).
+Relata prurido cutâneo difuso de evolução progressiva, com exacerbação noturna intensa. Queixa-se de pequenas lesões avermelhadas e "bolhinhas" em dobras de pele.
+Presença de outros familiares, crianças ou parceiros que dormem na mesma casa apresentando quadro idêntico de coceira noturna.
+Prurido e lesões concentrados entre os dedos das mãos, punhos, axilas, ao redor do umbigo, nádegas e [na bolsa escrotal/pênis no homem / aréolas na mulher].
+Nega febre, calafrios ou prostração sistêmica.
+Nega lesões bolhosas extensas com descolamento cutâneo.
 
 # EXAME FÍSICO:
-- Ectoscopia Cutânea:
-  * Pápulas eritematosas puntiformes e pequenas vesículas com escoriações por coçadura distribuídas em sítios clássicos:
-    - Espaços interdigitais das mãos e face flexora dos punhos.
-    - Pregas axilares anteriores e região periumbilical.
-    - Região glútea e face interna das coxas.
-    - [No sexo masculino]: Presença de nódulos escabióticos eritematosos e endurecidos em corpo peniano e bolsa escrotal (achado patognomônico altamente sugestivo).
-  * Sulcos Escabióticos: Identificados trajetos serpiginosos milimétricos filiformes acinzentados na pele dos punhos e interdígitos com pequena vesícula na terminação ("eminência acarina").
-  * Cabeça e Pescoço: Couro cabeludo e face totalmente poupados de lesões (padrão habitual do adulto).
-  * Infecção Secundária: [*Ausente / Presença de crostas melicéricas amareladas superficiais sugestivas de impetiginização bacteriana secundária].
+Ectoscopia Cutânea:
+Pápulas eritematosas puntiformes e pequenas vesículas com escoriações por coçadura distribuídas em sítios clássicos:
+Espaços interdigitais das mãos e face flexora dos punhos.
+Pregas axilares anteriores e região periumbilical.
+Região glútea e face interna das coxas.
+[No sexo masculino]: Presença de nódulos escabióticos eritematosos e endurecidos em corpo peniano e bolsa escrotal (achado patognomônico altamente sugestivo).
+Sulcos Escabióticos: Identificados trajetos serpiginosos milimétricos filiformes acinzentados na pele dos punhos e interdígitos com pequena vesícula na terminação ("eminência acarina").
+Cabeça e Pescoço: Couro cabeludo e face totalmente poupados de lesões (padrão habitual do adulto).
+Infecção Secundária: [*Ausente / Presença de crostas melicéricas amareladas].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Escabiose / Sarna Humana (CID-10: B86).
-2. [Com impetiginização bacteriana secundária associada / Sem infecção bacteriana secundária].
+2. [Com impetiginização bacteriana secundária / Sem infecção bacteriana secundária].
 
 # CONDUTA:
 
@@ -62,7 +61,7 @@ Alergias: [*Nega / Sim: ___].
 3. CONTROLE DO PRURIDO NOTURNO (ANTI-HISTAMÍNICO SEDATIVO):
    - Hidroxizina 25 mg [ou Maleato de Dexclorfeniramina 2 mg] - Tomar 1 comprimido VO à noite ao deitar por 5 a 7 dias (alivia a coceira alérgica e melhora o sono).
 
-4. [SE PRESENÇA DE INFECÇÃO BACTERIANA SECUNDÁRIA (IMPETIGO)]:
+4. [SE PRESENÇA DE INFECÇÃO BACTERIANA SECUNDÁRIA]:
    - Cefalexina 500 mg VO de 6/6h por 7 dias.
 
 >> ORIENTAÇÕES SANITÁRIAS & DESCONTAMINAÇÃO DO AMBIENTE (SE NÃO FIZER, NÃO CURA!):

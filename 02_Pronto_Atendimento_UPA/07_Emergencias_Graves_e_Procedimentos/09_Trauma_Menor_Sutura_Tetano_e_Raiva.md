@@ -34,7 +34,7 @@ Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penici
    - (Nota de segurança: Ausência de vasoconstritor em extremidades como dedos, dorso nasal, orelha ou pênis).
 3. Preparo Cirúrgico: Realizado desbridamento mínimo econômico de bordas teciduais desvitalizadas e hemostasia local por compressão e eletrocautério / pinçamento simples.
 4. Síntese Cirúrgica:
-   - [SE MORDEDURA ANIMAL (CÃO/GATO) OU FERIMENTO PUNTIFORME/CONTAMINADO EM EXTREMIDADE]:
+   - [SE MORDEDURA ANIMAL (CÃO/GATO) OU FERIMENTO]:
      * NÃO REALIZADA SUTURA PRIMÁRIA OCLUSIVA HERMÉTICA (risco altíssimo de infecção profunda/flegmão).
      * Realizada irrigação abundante e desbridamento; ferida mantida aberta para cicatrização por 2ª intenção ou apenas aproximação frouxa com fita/pontos simples espaçados (exceto se ferimento em face, onde se admite síntese cuidadosa após lavagem vigorosa).
    - [SE FERIMENTO CORTOCONTUSO LIMPO / NÃO MORDEDURA]:
@@ -44,16 +44,16 @@ Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penici
 5. Curativo: Limpeza final, aplicação de fina camada de pomada de Neomicina/Bacitracina e oclusão com gaze estéril e micropore.
 
 # PROFILAXIA ANTITETÂNICA (DIRETRIZ MINISTÉRIO DA SAÚDE):
-- Tipo de Ferimento: [Ferimento com baixo risco de tétano (limpo, superficial, < 6 horas) / Ferimento de alto risco (contaminado com terra, fezes, corpos estranhos, perfurante ou com tecido desvitalizado)].
-- Status Vacinal Prévio: [Vacinado completo com 3 doses (última dose há < 5 anos) / Vacinado completo (última há 5 a 10 anos) / Vacinado completo (última há > 10 anos) / Incerto ou < 3 doses].
+- Tipo de Ferimento: [Ferimento com baixo risco de tétano (limpo / Ferimento de alto risco (contaminado com terra].
+- Status Vacinal Prévio: [Vacinado completo com 3 doses / Vacinado completo (última há 5 a 10 anos) / Vacinado completo (última há > 10 anos) / Incerto ou < 3 doses].
 - CONDUTA DE TÉTANO DEFINIDA:
   * [ ] Nenhuma intervenção antitetânica necessária no momento (vacinado há menos de 5 anos).
   * [ ] Administrada Vacina Dupla Adulto (dT) 0,5 mL IM no deltoide (reforço vacinal indicado).
-  * [ ] Administrada Vacina dT 0,5 mL IM + Imunoglobulina Humana Antitetânica (IGHAT) 250 UI IM profunda em sítio separado (ferimento grave em paciente não vacinado ou incerto) [OU Soro Antitetânico (SAT) 5.000 UI IM se IGHAT indisponível].
+  * [ ] Administrada Vacina dT 0,5 mL IM + Imunoglobulina Humana Antitetânica (IGHAT) 250 UI IM profunda em sítio separado (ferimento grave em paciente não vacinado ou incerto) [OU Soro Antitetânico (SAT) 5.000 UI IM se IGHAT].
 
 # PROFILAXIA DA RAIVA HUMANA (SE MORDEDURA OU ARRANHADURA ANIMAL):
 - Animal Agressor: [Cão ou Gato passível de observação por 10 dias / Animal raivoso, desaparecido ou morto / Animal silvestre: morcego, macaco, raposa / Não se aplica (trauma não animal)].
-- Tipo de Exposição: [Leve (arranhadura superficial) / Grave (mordedura profunda em mãos, face, pés ou mucosas, ou qualquer contato com morcego)].
+- Tipo de Exposição: [Leve / Grave].
 - CONDUTA DE RAIVA DEFINIDA:
   * [ ] Animal (cão/gato) domiciliado e sadio: Paciente orientado a manter o animal em observação domiciliar por 10 dias. Não iniciado soro/vacina no momento. Se o animal adoecer ou morrer em 10 dias, retornar imediatamente para vacinação.
   * [ ] Iniciado Esquema de Vacina Antirrábica de cultivo celular (4 doses: Dias 0, 3, 7 e 14 via IM no deltoide).
@@ -63,7 +63,7 @@ Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penici
 
 # RECEITA:
 1. Antibioticoterapia Profilática para Mordedura Animal (Cão/Gato/Humana):
-   - [SE MORDEDURA ANIMAL/HUMANA OU TRAUMA PERFURANTE CONTAMINADO]:
+   - [SE MORDEDURA ANIMAL/HUMANA OU TRAUMA PERFURANTE]:
      Amoxicilina + Clavulanato de Potássio 875/125 mg - Tomar 1 comprimido VO de 12/12 horas às refeições por 5 a 7 dias (cobertura obrigatória para Pasteurella multocida, Capnocytophaga, S. aureus e anaeróbios).
      [OU SE ALERGIA A PENICILINAS]: Doxiciclina 100 mg VO 12/12h + Metronidazol 500 mg VO 8/8h por 5 a 7 dias.
 2. Analgesia: Dipirona 1 g VO de 6/6 horas SOS dor por 2 a 3 dias.

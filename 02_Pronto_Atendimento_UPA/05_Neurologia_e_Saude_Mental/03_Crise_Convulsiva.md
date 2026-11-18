@@ -13,25 +13,26 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # HISTÓRICO CONVULSIVO: [Epilepsia conhecida sob tratamento prévio / Primeiro episódio convulsivo da vida / Histórico de etilismo crônico].
 
 # QP:
-- [Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Descrição da Crise: Presenciada crise convulsiva generalizada caracterizada por abalos tônico-clônicos nos 4 membros, desvio do olhar para cima, sialorreia ("espuma na boca"), mordedura de borda lateral de língua e perda súbita da consciência. Duração estimada da crise: cerca de [ ] minutos.
-- Eventos Ictais: [Liberação esfincteriana urinária e/ou fecal presente / Ausente].
-- Fatores Desencadeantes: [Abandono recente de anticonvulsivantes (Fenobarbital/Carbamazepina/Valproato) / Febre alta prévia / Abstinência alcoólica aguda há horas / Privação severa de sono / Uso de drogas ilícitas (cocaína/crack) / TCE recente].
+Presenciada crise convulsiva generalizada caracterizada por abalos tônico-clônicos nos 4 membros, desvio do olhar para cima, sialorreia ("espuma na boca"), mordedura de borda lateral de língua e perda súbita da consciência. Duração estimada da crise: cerca de [ ] minutos.
+[Liberação esfincteriana urinária e/ou fecal / Ausente].
+[Abandono recente de anticonvulsivantes / Febre alta prévia / Abstinência alcoólica aguda há horas / Privação severa de sono / Uso de drogas ilícitas (cocaína/crack) / TCE recente].
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
-- GLICEMIA CAPILAR (HGT) DE ADMISSÃO: [ ] mg/dL (AFASTADA HIPOGLICEMIA SEVERA).
-- Avaliação Pós-Ictal Imediata:
-  * Nível de Consciência: [Sonolento, despertável ao chamado verbal / Confuso / Em torpor / Lúcido].
-  * Escala de Coma de Glasgow: [ ] / 15 pontos.
-  * Oroscopia: Presença de ferimento cortocontuso recente na borda lateral da língua com estrias hemáticas (sinal característico de crise epiléptica motora generalizada).
-  * Exame Neurológico Pós-Ictal: Pupilas isocóricas e fotorreagentes, ausência de assimetria de reflexos, reflexo cutâneo-plantar em flexão bilateral [ou Paralisia de Todd transitória em hemicorpo ( ) com recuperação gradual]. Ausência de rigidez de nuca.
-  * Inspeção Corporal: Ausência de estigmas de trauma cranioencefálico grave ou fraturas por queda.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
+GLICEMIA CAPILAR (HGT) DE ADMISSÃO: [ ] mg/dL (AFASTADA HIPOGLICEMIA SEVERA).
+Avaliação Pós-Ictal Imediata:
+Nível de Consciência: [Sonolento, despertável ao chamado verbal / Confuso / Em torpor / Lúcido].
+Escala de Coma de Glasgow: [ ] / 15 pontos.
+Oroscopia: Presença de ferimento cortocontuso recente na borda lateral da língua com estrias hemáticas (sinal característico de crise epiléptica motora generalizada).
+Exame Neurológico Pós-Ictal: Pupilas isocóricas e fotorreagentes, ausência de assimetria de reflexos, reflexo cutâneo-plantar em flexão bilateral [ou Paralisia de Todd transitória em hemicorpo (]. Ausência de rigidez de nuca.
+Inspeção Corporal: Ausência de estigmas de trauma cranioencefálico grave ou fraturas por queda.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Crise Convulsiva Tônico-Clônica Generalizada [Crise única autolimitada pós-ictal / Estado de Mal Epiléptico em evolução] (CID-10: G40.9 / R56.8).

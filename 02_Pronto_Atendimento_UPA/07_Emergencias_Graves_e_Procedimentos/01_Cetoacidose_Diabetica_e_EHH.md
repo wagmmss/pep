@@ -13,27 +13,27 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # HISTÓRICO: [Diabetes Mellitus tipo 1 / Diabetes Mellitus tipo 2 sob insulinoterapia / Primeiro diagnóstico de diabetes].
 
 # QP:
-- Fraqueza extrema, vômitos, dor na barriga e respiração ofegante há [ ] horas/dias.
+Fraqueza extrema, vômitos, dor na barriga e respiração ofegante há [ ] horas/dias.
 
 # HMA:
-- HMA: Relata quadro de descompensação há cerca de [ ] dias caracterizado pela tétrade de hiperglicemia clássica: poliúria (micção em grandes volumes), polidipsia intensa (sede insaciável), polifagia e perda ponderal rápida, evoluindo nas últimas 24 horas com náuseas, vômitos repetidos, dor abdominal difusa em cólica e respiração profunda e cansada.
-- FATORES PRECIPITANTES IDENTIFICADOS:
-  * [ ] Infecção aguda precipitante (Pneumonia, ITU, infecção cutânea).
-  * [ ] Omissão ou suspensão inadvertida da dose de Insulina basal.
-  * [ ] Infarto agudo do miocárdio silencioso ou AVC agudo.
-- Nega cirurgia abdominal recente ou hematêmese.
-- Nega uso de drogas simpatomiméticas ilícitas (cocaína).
+Relata quadro de descompensação há cerca de [ ] dias caracterizado pela tétrade de hiperglicemia clássica: poliúria, polidipsia intensa (sede insaciável), polifagia e perda ponderal rápida, evoluindo nas últimas 24 horas com náuseas, vômitos repetidos, dor abdominal difusa em cólica e respiração profunda e cansada.
+[ ] Infecção aguda precipitante.
+[ ] Omissão ou suspensão inadvertida da dose de Insulina basal.
+[ ] Infarto agudo do miocárdio silencioso ou AVC agudo.
+Nega cirurgia abdominal recente ou hematêmese.
+Nega uso de drogas simpatomiméticas ilícitas (cocaína).
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg (hipotensão postural) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (hiperpneia) | SpO2: [ ]% | Tax: [ ] °C.
-- GLICEMIA CAPILAR (HGT) NA ADMISSÃO: [ > 300 / > 500 / "HI" ] mg/dL.
-- Ectoscopia Geral: Estado geral regular a grave, [lúcido / sonolento / torporoso], mucosas orais intensamente secas, saliva espessa, olhos encovados, turgor cutâneo muito diminuído (> 2s), hálito cetônico característico ("aroma adocicado de maçã passada").
-- Aparelho Respiratório: Padrão respiratório de Kussmaul evidente (inspirações e expirações rápidas, profundas e ruidosas para expirar CO2 e compensar a acidose metabólica). Ausculta pulmonar limpa sem estertores.
-- Aparelho Cardiovascular: Taquicardia regular em 2 tempos, bulhas normofonéticas, pulsos periféricos finos/filiformes, tempo de enchimento capilar [ ] segundos (sinais de choque hipovolêmico por diurese osmótica).
-- Exame Abdominal: Abdome flácido, difusamente doloroso à palpação profunda ("pseudoperitonite diabética"), sem massas e sem descompressão dolorosa (Blumberg negativo).
+SSVV: PA: [ ]x[ ] mmHg (hipotensão postural) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (hiperpneia) | SpO2: [ ]% | Tax: [ ] °C.
+GLICEMIA CAPILAR (HGT) NA ADMISSÃO: [> 300 / > 500 / "HI"] mg/dL.
+Geral: Estado geral regular a grave, [lúcido / sonolento / torporoso], mucosas orais intensamente secas, saliva espessa, olhos encovados, turgor cutâneo muito diminuído (> 2s), hálito cetônico característico ("aroma adocicado de maçã passada").
+AR: Padrão respiratório de Kussmaul evidente (inspirações e expirações rápidas, profundas e ruidosas para expirar CO2 e compensar a acidose metabólica). Ausculta pulmonar limpa sem estertores.
+ACV: Taquicardia regular em 2 tempos, bulhas normofonéticas, pulsos periféricos finos/filiformes, TEC [ ] segundos (sinais de choque hipovolêmico por diurese osmótica).
+Exame Abdominal: Abdome flácido, difusamente doloroso à palpação profunda ("pseudoperitonite diabética"), sem massas e sem descompressão dolorosa (Blumberg negativo).
 
 # CRITÉRIOS DIAGNÓSTICOS LABORATORIAIS DA CAD / EHH:
 - Gasometria Arterial/Venosa: pH: [ ] (< 7,30) | Bicarbonato (HCO3): [ ] mEq/L (< 18 mEq/L) | PaCO2: [ ] mmHg.

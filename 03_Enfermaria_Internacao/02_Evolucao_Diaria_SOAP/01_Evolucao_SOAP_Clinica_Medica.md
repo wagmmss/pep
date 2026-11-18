@@ -12,50 +12,50 @@
 # IDENTIFICAÇÃO:
 - Paciente: [Nome], [Idade] anos[? Leito :: | Leito: ___] | [ ]º Dia de Internação Hospitalar (DIH)
 - Diagnóstico Principal Ativo: [ ]
-- Antimicrobiano em Curso: [Sem antibioticoterapia ativa / Em uso de ___ — D ___ de ___ dias programados (início em DD/MM)]
+- Antimicrobiano em Curso: [Sem antibioticoterapia ativa / Em uso de ___]
 - Dispositivos Atuais: [Acesso venoso periférico em MSD / MSE D ___ / Cateter Venoso Central D ___ / Sonda Vesical de Demora D ___ / Sem dispositivos invasivos]
 
 # HISTÓRIA / RESUMO DA INTERNAÇÃO:
-- Motivo da internação / Diagnóstico de base: [ ]
-- Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
+[ ]
+[DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 
 # EVOLUÇÃO (24H):
-- Intercorrências no Plantão Noturno: [Passou as últimas 24h estável, sem intercorrências agudas / Apresentou queixa de no período].
-- Controle Álgico (Escala EVA 0–10): [EVA 0 — Nega dor / Dor leve (EVA ___ ) em ___ , controlada com analgesia prescrita].
-- Sono, Apetite e Tolerância Oral: Padrão de sono [preservado / prejudicado por insônia]; Dieta por via oral [com boa aceitação plena (> 75%), sem náuseas ou vômitos / aceitação parcial / inapetência].
-- Sintomas Cardinais de Alarme: Nega dor torácica, palpitações, dispneia em repouso ou ortopneia, calafrios, tontura postural ou sangramentos.
-- Eliminações Fisiológicas:
-  * Diurese: [Presente, espontânea, límpida e sem disúria / Por SVD com débito claro e satisfatório].
-  * Hábito Intestinal: [Evacuação presente nas últimas 24h, aspecto habitual (Bristol 3–4) / Ausente há ___ dias, sem distensão ou dor abdominal].
+[Passou as últimas 24h estável, sem / Apresentou queixa de no período].
+[EVA 0 — Nega dor / Dor leve (EVA ___ ) em ___ , controlada com].
+Sono, Apetite e Tolerância Oral: Padrão de sono [preservado / prejudicado por insônia]; Dieta por via oral [com boa aceitação plena (> 75%), sem náuseas ou / aceitação parcial / inapetência].
+Nega dor torácica, palpitações, dispneia em repouso ou ortopneia, calafrios, tontura postural ou sangramentos.
+Eliminações Fisiológicas:
+[Presente, espontânea, límpida e sem disúria / Por SVD com débito claro e satisfatório].
+[Evacuação presente nas últimas 24h, aspecto / Ausente há ___ dias, sem distensão ou dor].
 
 # EXAME FÍSICO:
-- Sinais Vitais & Curvas das 24h:
-  * PA: [ ]x[ ] mmHg (Variação 24h: [ ] a [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob O2 a ___ L/min]).
-  * Curva Térmica (24h): Tax máxima de [ ] °C ([Afebril há > 24–48h / Apresentou pico febril de ___ °C às HH:MM]).
-  * Balanço Hídrico (24h): Diurese total: [ ] mL ([ ] mL/kg/h) | BH fechado: [Neutro / Positivo em + ___ mL / Negativo em - ___ mL].
-  * Curva Glicêmica Capilar (HGT 24h): Jejum: [ ] mg/dL | Pré-almoço: [ ] mg/dL | Pré-jantar: [ ] mg/dL | 22h: [ ] mg/dL.
-- Ectoscopia Geral: [Bom / Regular] estado geral, lúcido(a) e orientado(a) (Glasgow 15), corado(a), hidratado(a), anictérico(a), acianótico(a), eupneico(a). TEC < 2 segundos.
-- Aparelho Respiratório: Expansibilidade simétrica, murmúrio vesicular [universalmente audível sem ruídos adventícios / com estertores crepitantes em base em regressão / com sibilos esparsos].
-- Aparelho Cardiovascular: Ritmo cardíaco regular em 2 tempos, bulhas normofonéticas, sem sopros audíveis. Pulsos periféricos simétricos.
-- Abdome: Plano/globoso, flácido, indolor à palpação superficial e profunda, ruídos hidroaéreos normoativos, sem visceromegalias ou sinais de irritação peritoneal.
-- Extremidades & Sítios de Punção: [Sem edemas / Edema de MMII (+/4+) simétrico]; panturrilhas livres e indolores (Homans negativo). Sítio de punção venosa em [MSD / MSE] limpo, pérvio, sem hiperemia, calor ou cordão flebítico.
-- Exames Complementares Recentes ([DD/MM]):
-  * Laboratório: Hb: [ ] g/dL | Leucócitos: [ ] /mm³ (Bast: [ ]%) | Plaquetas: [ ] /mm³ | PCR: [ ] mg/L | Cr: [ ] mg/dL | Ur: [ ] mg/dL | Na: [ ] mEq/L | K: [ ] mEq/L.
-  * Microbiologia / Culturas: [Aguardando resultado parcial / Negativas até o momento / Isolamento de ___ sensível a ___].
-  * Imagem / Outros: [Sem novos exames de imagem / RX de tórax: ___ / USG: ___].
+SSVV:
+PA: [ ]x[ ] mmHg (Variação 24h: [ ] a [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob O2 a ___ L/min]).
+Curva Térmica (24h): Tax máxima de [ ] °C ([Afebril há > 24–48h / Apresentou pico febril de ___ °C às HH:MM]).
+Balanço Hídrico (24h): Diurese total: [ ] mL ([ ] mL/kg/h) | BH fechado: [Neutro / Positivo em + ___ mL / Negativo em - ___ mL].
+Curva Glicêmica Capilar (HGT 24h): Jejum: [ ] mg/dL | Pré-almoço: [ ] mg/dL | Pré-jantar: [ ] mg/dL | 22h: [ ] mg/dL.
+Geral: [Bom / Regular] estado geral, LOTE (Glasgow 15), corado(a), hidratado(a), anictérico(a), acianótico(a), eupneico(a). TEC < 2 segundos.
+AR: Expansibilidade simétrica, murmúrio vesicular [universalmente audível sem ruídos adventícios / com estertores crepitantes em base em regressão / com sibilos esparsos].
+ACV: RCR 2T, BNF, sem sopros audíveis. Pulsos periféricos simétricos.
+ABD: Plano/globoso, flácido, indolor à palpação superficial e profunda, RHA+, sem visceromegalias ou sinais de irritação peritoneal.
+EXT: [Sem edemas / Edema de MMII (+/4+) simétrico]; panturrilhas livres e indolores (Homans negativo). Sítio de punção venosa em [MSD / MSE] limpo, pérvio, sem hiperemia, calor ou cordão flebítico.
+Exames Complementares Recentes ([DD/MM]):
+Laboratório: Hb: [ ] g/dL | Leucócitos: [ ] /mm³ (Bast: [ ]%) | Plaquetas: [ ] /mm³ | PCR: [ ] mg/L | Cr: [ ] mg/dL | Ur: [ ] mg/dL | Na: [ ] mEq/L | K: [ ] mEq/L.
+Microbiologia / Culturas: [Aguardando resultado parcial / Negativas até o momento / Isolamento de ___ sensível a ___].
+Imagem / Outros: [Sem novos exames de imagem / RX de tórax: ___ / USG: ___].
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. [Problema Principal 1]: [Evoluindo com franca melhora clínica e queda de marcadores inflamatórios / Estável clinicamente, mantida conduta / Descompensação aguda exigindo ajuste terapêutico].
-2. [Comorbidades / Equilíbrio Hidroeletrolítico]: [Função renal e eletrólitos estáveis, glicemias dentro da meta hospitalar (140–180 mg/dL) / Em correção de: ___].
-3. Auditoria de Antimicrobiano & Dispositivos: [Mantido esquema atual em D / Preenchidos critérios de Switch Therapy para via oral / Indicada retirada de SVD/AVP hoje].
+1. [Problema Principal 1]: [Evoluindo com melhora clínica e queda de / Estável clinicamente, mantida conduta / Descompensação aguda exigindo ajuste terapêutico].
+2. [Comorbidades / Equilíbrio Hidroeletrolítico]: [Função renal e eletrólitos estáveis, glicemias / Em correção de: ___].
+3. Auditoria de Antimicrobiano & Dispositivos: [Mantido esquema atual em D / Preenchidos critérios de Switch Therapy para / Indicada retirada de SVD/AVP hoje].
 
 # CONDUTA:
 
 >> CONDUTA & METAS DO DIA (ENFERMARIA):
 1. Dieta: Manter dieta [geral / para diabetes / hipossódica / branda] por via oral; estimular ingesta hídrica oral.
-2. Hidratação Venosa: [Suspensa soroterapia de manutenção; manter acesso salinizado / Manter SF 0,9% ___ mL EV em 24h].
+2. Hidratação Venosa: [Suspensa soroterapia de manutenção; manter / Manter SF 0,9% ___ mL EV em 24h].
 3. Terapêutica Antimicrobiana & Específica:
-   - [Manter ___ em D ___ de ___ dias / Realizar transição (Switch Therapy) para via oral com ___ / Suspender antibiótico por término de tratamento].
+   - [Manter ___ em D ___ de ___ dias / Realizar transição (Switch Therapy) para via / Suspender antibiótico por término de tratamento].
    - [Ajuste de medicações de uso contínuo / controle pressórico e glicêmico: ___].
 4. Profilaxia de TEV & Mobilidade: Manter [Enoxaparina 40 mg SC 1x/dia / HNF 5.000 UI SC 8/8h] + estimular deambulação assistida no corredor e fisioterapia motora/respiratória.
 5. Revisão de Dispositivos Invasivos: [Retirar Sonda Vesical de Demora hoje / Trocar ou sacar acesso periférico com > 96h / Manter dispositivos atuais pérvios].

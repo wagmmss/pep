@@ -13,33 +13,33 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / Outros: ___].
+
 # QP:
-- Dor lombar insuportável em cólica de início súbito há [ ] horas.
+Dor lombar insuportável em cólica de início súbito há [ ] horas.
 
 # HMA:
-- HMA: Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa ([testículo/bolsa escrotal no homem / grande lábio na mulher]). Intensidade [ ] na escala analógica.
-- Sintomas Vegetativos & Urinários Associados:
-  * Náuseas intensas e vômitos ([ ] episódios) desencadeados pelo reflexo autonômico celíaco.
-  * Agitação psicomotora evidente: paciente inquieto, move-se constantemente e não encontra posição de alívio na maca.
-  * Sintomas de irritação ureterovesical distal: Polaciúria, disúria e sensação de urgência miccional.
-  * Hematúria [macroscópica com urina cor de refrigerante de cola / microscópica na fita reativa].
-- RASTREAMENTO OBRIGATÓRIO DE SINAIS DE ALARME (URGÊNCIA UROLÓGICA):
-  [ ] Febre (Tax >= 37,8 °C) ou calafrios referidos (ALERTA MÁXIMO DE RIM OBSTRUÍDO INFECTADO / SEPSE).
-  [ ] Rim único funcionante ou rim transplantado (risco de anúria obstrutiva aguda).
-  [ ] Anúria persistente ou oligúria severa.
-  [ ] Dor intratável refratária à analgesia venosa potente na UPA.
-  [ ] Gestante em vigência de cólica nefrética.
-  * STATUS: [TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: ___].
-- Histórico Prévio: [Episódios prévios conhecidos de litíase urinária com eliminação de cálculos / Primeiro episódio da vida].
+Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa. Intensidade [ ] na escala analógica.
+Sintomas Vegetativos & Urinários Associados:
+Náuseas intensas e vômitos ([ ] episódios) desencadeados pelo reflexo autonômico celíaco.
+Paciente inquieto, move-se constantemente e não encontra posição de alívio na maca.
+Sintomas de irritação ureterovesical distal: Polaciúria, disúria e sensação de urgência miccional.
+Hematúria [macroscópica com urina cor de refrigerante de / microscópica na fita reativa].
+[ ] Febre (Tax >= 37,8 °C) ou calafrios referidos.
+[ ] Rim único funcionante ou rim transplantado.
+[ ] Anúria persistente ou oligúria severa.
+[ ] Dor intratável refratária à analgesia venosa potente na UPA.
+[ ] Gestante em vigência de cólica nefrética.
+[TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: ___].
+[Episódios prévios conhecidos de litíase / Primeiro episódio da vida].
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).
-- Ectoscopia: Estado geral regular, extremamente inquieto, fácies de sofrimento álgico agudo, sudoreico frio, lúcido e orientado, corado, anictérico.
-- Exame Abdominal:
-  * Abdome plano, flácido, ruídos hidroaéreos presentes, com sensibilidade e dor reflexa à palpação profunda em flanco e fossa ilíaca [direita / esquerda], sem massas palpáveis.
-  * Ausência de peritonismo: Sinal de Blumberg negativo em todo o abdome (descompressão indolor), Murphy negativo.
-- Punhopercussão Lombar (Sinal de Giordano):
-  * Sinal de Giordano FRANCAMENTE POSITIVO no hemidorso [direito / esquerdo], com desencadeamento de dor viva e sobressalto imediato do paciente; negativo contralateralmente.
+SSVV: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).
+Geral: Estado geral regular, extremamente inquieto, fácies de sofrimento álgico agudo, sudoreico frio, lúcido e orientado, corado, anictérico.
+Exame Abdominal:
+Abdome plano, flácido, RHA+, com sensibilidade e dor reflexa à palpação profunda em flanco e fossa ilíaca [direita / esquerda], sem massas palpáveis.
+Ausência de peritonismo: Sinal de Blumberg negativo em todo o abdome (descompressão indolor), Murphy negativo.
+Punhopercussão Lombar (Sinal de Giordano):
+Sinal de Giordano FRANCAMENTE POSITIVO no hemidorso [direito / esquerdo], com desencadeamento de dor viva e sobressalto imediato do paciente; negativo contralateralmente.
 
 # EXAMES LABORATORIAIS NA UPA:
 - Urina Tipo 1 (EAS): Hematúria microscópica com hemácias abundantes (campo cheio), leucócitos [ ]/campo, ausência de cilindros hemáticos ou leucocitários, cristais de [oxalato de cálcio / ácido úrico] presentes.
@@ -61,7 +61,7 @@ Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / Outros: ___].
    - Antiemético:
      * Ondansetrona 4 a 8 mg EV lento (ou Metoclopramida 10 mg EV se náuseas persistentes).
 
-2. [SE DOR REFRATÁRIA OU INTENSA APÓS 30 MINUTOS (SEGUNDA LINHA)]:
+2. [SE DOR REFRATÁRIA OU INTENSA APÓS 30 MINUTOS]:
    - Cloridrato de Tramadol 50 a 100 mg EV diluído em 100 mL de SF 0,9% correr em 20 minutos (ou Morfina 2 a 4 mg EV lento).
 
 3. HIDRATAÇÃO EQUILIBRADA:

@@ -22,19 +22,19 @@ Alergias: [*Nega / Outros: ___].
 [ ] 3. Dor Precordial Isquêmica Típica (Angina em aperto, opressão torácica).
 [ ] 4. Diminuição da Pressão Arterial / Hipotensão (PAS < 90 mmHg, PAM < 65 mmHg, choque).
 [ ] 5. Desperfusão Tecidual Periférica (Tempo de enchimento capilar > 3s, extremidades frias e pálidas).
-* CLASSIFICAÇÃO CLÍNICA: [PACIENTE INSTÁVEL -> INDICAÇÃO DE CARDIOVERSÃO ELÉTRICA IMEDIATA / PACIENTE ESTÁVEL -> MANEJO FARMACOLÓGICO].
+* CLASSIFICAÇÃO CLÍNICA: [PACIENTE INSTÁVEL / PACIENTE ESTÁVEL -> MANEJO FARMACOLÓGICO].
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm (FC > 150 bpm) | FR: [ ] irpm | SpO2: [ ]% em AA.
-- Análise Sistemática do Eletrocardiograma (ECG):
-  * Frequência Cardíaca no Traçado: [ ] bpm.
-  * Largura do Complexo QRS: [QRS Estreito (< 120 ms / 3 quadradinhos) / QRS Largo (>= 120 ms)].
-  * Ritmo do QRS: [Regular / Irregular].
-  * Diagnóstico Eletrocardiográfico Definido:
-    - [ ] Taquicardia Supraventricular Paroxística (TPSV por reentrada nodal ou via acessória) - QRS estreito e regular, ausência de onda P visível.
-    - [ ] Fibrilação Atrial (FA) com Alta Resposta Ventricular (ARV) - QRS estreito e irregular, ausência de onda P, linha de base irregular (ondas f).
-    - [ ] Flutter Atrial - Ritmo regular ou irregularidade proporcional, ondas F serrilhadas ("dente de serra") em derivações inferiores (DII, DIII, aVF).
-    - [ ] Taquicardia Ventricular Monomórfica com Pulso (TV) - QRS largo e regular.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm (FC > 150 bpm) | FR: [ ] irpm | SpO2: [ ]% em AA.
+Análise Sistemática do Eletrocardiograma (ECG):
+Frequência Cardíaca no Traçado: [ ] bpm.
+Largura do Complexo QRS: [QRS Estreito (< 120 ms / 3 quadradinhos) / QRS Largo (>= 120 ms)].
+Ritmo do QRS: [Regular / Irregular].
+Diagnóstico Eletrocardiográfico Definido:
+[ ] Taquicardia Supraventricular Paroxística (TPSV por reentrada nodal ou via acessória) - QRS estreito e regular, ausência de onda P visível.
+[ ] Fibrilação Atrial (FA) com Alta Resposta Ventricular (ARV) - QRS estreito e irregular, ausência de onda P, linha de base irregular (ondas f).
+[ ] Flutter Atrial - Ritmo regular ou irregularidade proporcional, ondas F serrilhadas ("dente de serra") em derivações inferiores (DII, DIII, aVF).
+[ ] Taquicardia Ventricular Monomórfica com Pulso (TV) - QRS largo e regular.
 
 # CONDUTA:
 
@@ -64,7 +64,7 @@ Alergias: [*Nega / Outros: ___].
 1. CHECAGEM OBRIGATÓRIA ANTES DO CONTROLE DE FREQUÊNCIA:
    - ALERTA CRÍTICO: Contraindicação absoluta ao bloqueio do nó AV (Metoprolol, Diltiazem, Verapamil, Deslanosídeo, Adenosina e Amiodarona) se suspeita de FA pré-excitada / Wolff-Parkinson-White (QRS largo, bizarro e irregularmente irregular). Bloquear o nó AV nessa condição desvia a condução 100% para a via acessória, precipitando Fibrilação Ventricular e PCR fatal imediata. Em FA pré-excitada, a conduta é cardioversão elétrica imediata ou procainamida.
 2. Controle de Frequência Cardíaca (Meta inicial: FC < 110 bpm em repouso - QRS estreito habitual):
-   - [Paciente Sem Insuficiência Cardíaca Descompensada]:
+   - [Paciente Sem Insuficiência Cardíaca]:
      * Metoprolol (Seloken) 5 mg EV lento em 2 minutos. Pode repetir a cada 5 minutos até dose máxima de 15 mg.
      * [OU]: Diltiazem 0,25 mg/kg EV em 2 minutos (dose média: 15 a 20 mg EV).
    - [Paciente Com Insuficiência Cardíaca Aguda / Fração de Ejeção Reduzida]:
@@ -72,11 +72,11 @@ Alergias: [*Nega / Outros: ___].
      * [OU]: Amiodarona 150 mg a 300 mg EV diluídos em 100 mL de SG 5% infundidos em 20 a 30 minutos.
 3. Definição do Tempo de Início da Arritmia (Janela de Reversão de Ritmo):
    - [FA iniciada há < 48 horas documentadas]: Paciente elegível para reversão química (Amiodarona 300 mg EV em 1h + manutenção de 900 mg em 24h) ou elétrica com baixo risco tromboembólico.
-   - [FA iniciada há >= 48 horas ou de tempo indeterminado]: PROIBIDA reversão de ritmo de rotina na UPA sem anticoagulação prévia por 3 semanas ou ECO transesofágico (risco de embolização de trombo atrial e AVC isquêmico extenso). A conduta na UPA deve ser estritamente o controle da frequência ventricular.
+   - [FA iniciada há >= 48 horas ou de tempo]: PROIBIDA reversão de ritmo de rotina na UPA sem anticoagulação prévia por 3 semanas ou ECO transesofágico (risco de embolização de trombo atrial e AVC isquêmico extenso). A conduta na UPA deve ser estritamente o controle da frequência ventricular.
 4. Estratificação de Risco Tromboembólico - Escore CHA2DS2-VASc:
    - Escore CHA2DS2-VASc Total: [ ] PONTOS (Homem >= 2 ou Mulher >= 3: anticoagulação indicada).
    - Detalhamento: [C-Insuf.Cardíaca(1): 0 | H-Hipertensão(1): 0 | A2-Idade>=75a(2): 0 | D-Diabetes(1): 0 | S2-AVC/AIT(2): 0 | V-Vascular(1): 0 | A-Idade 65-74a(1): 0 | Sc-Sexo Fem(1): 0].
-   - Conduta de Anticoagulação: [Sem indicação (baixo risco) / Indicada anticoagulação oral plena (DOAC: Apixabana 5 mg VO 12/12h / Rivaroxabana 20 mg VO 1x/dia com alimento)].
+   - Conduta de Anticoagulação: [Sem indicação (baixo risco) / Indicada anticoagulação oral plena (DOAC / Rivaroxabana 20 mg VO 1x/dia com alimento)].
 ```
 
 ---

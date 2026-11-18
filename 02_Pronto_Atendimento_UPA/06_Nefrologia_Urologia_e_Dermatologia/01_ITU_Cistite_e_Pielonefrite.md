@@ -13,26 +13,27 @@
 ID: [Nome], [Idade] anos, Sexo: [Feminino / Masculino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Penicilinas / Outros: ___].
+
 # QP:
-- Ardor para urinar (disúria), aumento da frequência e dor no baixo ventre há [ ] dias.
+Ardor para urinar (disúria), aumento da frequência e dor no baixo ventre há [ ] dias.
 
 # HMA:
-- HMA: Relata quadro iniciado há cerca de [ ] dias de dor e ardor ao urinar, polaciúria (micções frequentes em pequenos volumes), sensação de urgência miccional, tenesmo vesical e desconforto suprapúbico. Refere urina turva com odor alterado [e hematúria terminal leve / sem sangramento visível].
-- DIFERENCIAÇÃO CLÍNICA & PESQUISA DE SINAIS DE PIELONEFRITE:
-  * [ ] CISTITE AGUDA NÃO COMPLICADA: Sintomas puramente miccionais baixos; nega febre, calafrios, dor lombar ou vômitos.
-  * [ ] PIELONEFRITE AGUDA (ITU ALTA): Presença de dor lombar unilateral, febre alta com calafrios (Tax [ ] °C), prostração, náuseas e vômitos.
-- Em mulheres: Nega corrimento vaginal com prurido ou dor à relação sexual (afastada vaginite/cervicite).
-- Em homens: Nega secreção uretral purulenta ou dor perineal/ejaculatória (afastada uretrite e prostatite aguda).
-- Nega cólica nefrética irradiando para a virilha sem febre (afastada litíase pura).
-- Fatores de ITU Complicada: [Mulher jovem hígida / Gestante / Diabética / Idosa / Sexo masculino / Uso recente de cateter vesical de demora / Litíase conhecida].
+Relata quadro iniciado há cerca de [ ] dias de dor e ardor ao urinar, polaciúria, sensação de urgência miccional, tenesmo vesical e desconforto suprapúbico. Refere urina turva com odor alterado [e hematúria terminal leve / sem sangramento visível].
+DIFERENCIAÇÃO CLÍNICA & PESQUISA DE SINAIS DE PIELONEFRITE:
+[ ] CISTITE AGUDA NÃO COMPLICADA: Sintomas puramente miccionais baixos; nega febre, calafrios, dor lombar ou vômitos.
+[ ] PIELONEFRITE AGUDA (ITU ALTA): Presença de dor lombar unilateral, febre alta com calafrios (Tax [ ] °C), prostração, náuseas e vômitos.
+Nega corrimento vaginal com prurido ou dor à relação sexual.
+Nega secreção uretral purulenta ou dor perineal/ejaculatória.
+Nega cólica nefrética irradiando para a virilha sem febre (afastada litíase pura).
+[Mulher jovem hígida / Gestante / Diabética / Idosa / Sexo masculino / Uso recente de cateter vesical de demora / Litíase conhecida].
 
 # EXAME FÍSICO:
-- SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
-- Ectoscopia: [*Bom estado geral, corada, afebril / Regular estado geral, prostrada, sudoreica e febril].
-- Exame Abdominal: Abdome plano, ruídos hidroaéreos normais, flácido, com sensibilidade e dor à palpação profunda em região suprapúbica (hipogástrio), sem defesa muscular ou descompressão dolorosa (Blumberg negativo).
-- Manobra de Punhopercussão Lombar (Sinal de Giordano):
-  * Sinal de Giordano [NEGATIVO BILATERALMENTE (Sugere infecção confinada à bexiga - Cistite) / POSITIVO À DIREITA/ESQUERDA com dor intensa e sobressalto do paciente (Indicativo de Pielonefrite Aguda)].
-- Exame Ginecológico / Genital (se corrimento associado): Genitália externa normal sem leucorreia purulenta visível.
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
+Geral: [*BEG, corada, afebril / Regular estado geral, prostrada, sudoreica e].
+Exame Abdominal: Abdome plano, ruídos hidroaéreos normais, flácido, com sensibilidade e dor à palpação profunda em região suprapúbica (hipogástrio), sem defesa muscular ou descompressão dolorosa (Blumberg negativo).
+Manobra de Punhopercussão Lombar (Sinal de Giordano):
+Sinal de Giordano [NEGATIVO BILATERALMENTE / POSITIVO À DIREITA/ESQUERDA com dor intensa e].
+Exame Ginecológico / Genital (se corrimento associado): Genitália externa normal sem leucorreia purulenta visível.
 
 # EXAMES LABORATORIAIS NA UPA:
 - Urina Tipo 1 (EAS / Fita Reativa): Leucocitúria maciça (piúria com leucócitos > 100.000/mL ou campo cheio), Esterase leucocitária positiva, Nitrito [positivo / negativo], hematúria microscópica [ ]/campo.
@@ -59,25 +60,26 @@ Alergias: [*Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Pen
 1. [Se paciente tolerando via oral, estável e lúcida]:
    - Dose de Ataque na UPA: Ceftriaxona 1 g EV diluída em 100 mL de SF 0,9% infundida agora.
    - Manutenção Oral Ambulatorial: Ciprofloxacino 500 mg VO de 12/12 horas por 7 dias (ou Levofloxacino 750 mg VO 1x/dia por 5 a 7 dias).
-2. [Se sepse, vômitos incoercíveis, gestante ou instabilidade hemodinâmica]:
+2. [Se sepse, vômitos incoercíveis, gestante ou]:
    - INTERNAÇÃO HOSPITALAR OBRIGATÓRIA.
    - Ceftriaxona 1 g a 2 g EV 1x/dia em leito de enfermaria sob monitorização.
    - Ultrassonografia de vias urinárias urgente para descartar cálculo obstrutivo ou abscesso renal.
 
 # ORIENTAÇÕES / SINAIS DE ALARME:
 - Retornar imediatamente se apresentar febre alta com calafrios, vômitos que impeçam tomar o antibiótico ou dor lombar que piore nas costas.
+
 # RECEITA:
 USO ORAL (ESCOLHER CONFORME CLASSIFICAÇÃO CLÍNICA):
 
-[OPÇÃO 1 - CISTITE AGUDA NÃO COMPLICADA (1ª LINHA - DOSE ÚNICA)]:
+[OPÇÃO 1 - CISTITE AGUDA NÃO COMPLICADA (1ª]:
 1. Fosfomicina Trometamol 3 g (envelope 8 g) ------------------- 01 envelope
    Dissolver o conteúdo de 01 envelope em meio copo de água e tomar em dose única, preferencialmente à noite, após esvaziar completamente a bexiga.
 
-[OPÇÃO 2 - CISTITE AGUDA NÃO COMPLICADA (ALTERNATIVA 5 DIAS)]:
+[OPÇÃO 2 - CISTITE AGUDA NÃO COMPLICADA]:
 1. Nitrofurantoína 100 mg -------------------------------------- 20 cápsulas
    Tomar 01 cápsula por via oral de 6/6 horas, junto às refeições, por 5 dias.
 
-[OPÇÃO 3 - PIELONEFRITE AGUDA NÃO COMPLICADA AMBULATORIAL]:
+[OPÇÃO 3 - PIELONEFRITE AGUDA NÃO COMPLICADA]:
 1. Ciprofloxacino 500 mg --------------------------------------- 14 comprimidos
    Tomar 01 comprimido por via oral de 12/12 horas por 7 dias.
 

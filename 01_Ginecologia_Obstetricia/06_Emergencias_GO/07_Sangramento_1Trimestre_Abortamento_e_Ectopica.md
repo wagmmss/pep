@@ -15,6 +15,7 @@ DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/
 TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!].
 Comorbidades: [+ *Hígida / HAS / DM2 / DIP prévia / Endometriose / Outros: ___].
 Alergias: [*Nega / Outros: ___].
+
 # AP:
 MED: [*Nega / Ácido Fólico / Progesterona]
 HAB: [*Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
@@ -24,18 +25,18 @@ HF: [*Nega / HAS / DM2]
 
 # CASO: SANGRAMENTO DO 1º TRIMESTRE (ABORTAMENTO VS. GRAVIDEZ ECTÓPICA)
 
-HMA: Gestante procura emergência obstétrica por sangramento vaginal iniciado há [ ] horas/dias, em volume [discreto em borra de café / moderado / intenso com coágulos e restos ovulares], associado a dor pélvica [ausente / cólica hipogástrica leve a moderada / dor em fossa ilíaca unilateral súbita e lancinante irradiada para escápula — Sinal de Lafond]. Nega [tontura ou síncope / refere lipotimia e sudorese fria]. Refere [presença prévia de DIU / ectópica anterior / nega fatores de risco para ectópica].
+HMA: Gestante procura emergência obstétrica por sangramento vaginal iniciado há [ ] horas/dias, em volume [discreto em borra de café / moderado / intenso com coágulos e restos ovulares], associado a dor pélvica [ausente / cólica hipogástrica leve a moderada / dor em fossa ilíaca unilateral súbita e]. Nega [tontura ou síncope / refere lipotimia e sudorese fria]. Refere [presença prévia de DIU / ectópica anterior / nega fatores de risco para ectópica].
 
 CHECO EXAMES (USG TRANSVAGINAL + β-hCG QUANTITATIVO):
 - β-hCG Quantitativo: [ ] mUI/mL (Zona Discriminatória: ≥ 2.000 a 3.500 mUI/mL).
-- USG Transvaginal: [Gestação tópica viável com BCF presente e hematoma subcoriônico / Abortamento incompleto com eco endometrial heterogêneo > 15 mm / Abortamento retido com CCN ≥ 7 mm sem BCF ou SG médio ≥ 25 mm sem embrião / Útero vazio + massa anexial heterogênea (Sinal do Anel Tubário) e líquido livre em fundo de saco de Douglas — Gravidez Ectópica!].
+- USG Transvaginal: [Gestação tópica viável com BCF presente e / Abortamento incompleto com eco endometrial / Abortamento retido com CCN ≥ 7 mm sem BCF ou SG / Útero vazio + massa anexial heterogênea (Sinal].
 
 # EXAME CLÍNICO
-Bom estado geral, corada, hidratada, acianótica, anictérica, afebril [ou hipocorada/taquicárdica se instabilidade hemodinâmica].
+Bom estado geral, corada, hidratada, acianótica, anictérica, afebril [ou hipocorada/taquicárdica se instabilidade].
 - Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | Índice de Choque (FC/PAS): [< 0,7 normal / ≥ 0,9 choque!] | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C (descartar aborto infectado!).
-- Abdome: [Plano, flácido, indolor, sem peritonismo / Doloroso à palpação profunda em hipogástrio ou fossa ilíaca com descompressão brusca positiva — Blumberg+].
+- Abdome: [Plano, flácido, indolor, sem peritonismo / Doloroso à palpação profunda em hipogástrio ou].
 - Especular: Sangramento [discreto coletado em fundo de saco / ativo pelo OE / saída de material ovular sem odor fétido / secreção purulenta fétida].
-- Toque Vaginal Bimanual: Colo uterino [grosso, posterior e impérvio (Ameaça de Aborto ou Ectópica) / pérvio para 1 polpa digital (Aborto Inevitável ou Incompleto)]. Útero de volume [compatível com a IG / menor que a IG], mobilização do colo [indolor / intensamente dolorosa — Sinal de Proust / Grito de Douglas positivo!].
+- Toque Vaginal Bimanual: Colo uterino [grosso, posterior e impérvio / pérvio para 1 polpa digital]. Útero de volume [compatível com a IG / menor que a IG], mobilização do colo [indolor / intensamente dolorosa — Sinal de Proust / Grito de Douglas positivo!].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Sangramento do 1º Trimestre compatível com: [Ameaça de Abortamento / Abortamento Incompleto / Abortamento Retido / Abortamento Completo / Abortamento Infectado / Gravidez Ectópica Íntegra / Gravidez Ectópica Rota com Hemoperitônio].
@@ -45,7 +46,7 @@ Bom estado geral, corada, hidratada, acianótica, anictérica, afebril [ou hipoc
 2. Imunoprofilaxia Anti-D Obrigatória em Gestantes Rh Negativo (Coombs Indireto Negativo): Administrar Imunoglobulina Anti-D 300 mcg IM até 72h após o início do sangramento ou esvaziamento uterino.
 3. Conduta Específica conforme Classificação:
    - Se Ameaça de Abortamento (colo fechado + BCF presente): Orientação de repouso relativo, abstinência sexual pélvica, analgesia se cólica (Escopolamina + Paracetamol) e reavaliação ultrassonográfica em 7 a 14 dias.
-   - Se Abortamento Incompleto / Retido (< 12 semanas): [Conduta Expectante / Esvaziamento Medicamentoso com Misoprostol (800 mcg vaginal se retido / 400 mcg SL ou 600 mcg VO se incompleto) / Aspiração Manual Intrauterina (AMIU) sob bloqueio paracervical e analgesia].
+   - Se Abortamento Incompleto / Retido (< 12 semanas): [Conduta Expectante / Esvaziamento Medicamentoso com Misoprostol (800 / 400 mcg SL ou 600 mcg VO se incompleto) / Aspiração Manual Intrauterina (AMIU) sob].
    - Se Abortamento Infectado (Febre, leucocitose, dor uterina, secreção fétida): Coleta de hemoculturas + Antibioticoterapia IV imediata (Clindamicina 900 mg IV 8/8h + Gentamicina 5 mg/kg/dia IV 24/24h) + Esvaziamento uterino cirúrgico imediato após 1ª dose de antibiótico.
    - Se Gravidez Ectópica Íntegra (Estável, massa < 3,5–4,0 cm, sem BCF ectópico, β-hCG < 5.000 mUI/mL, hemograma/TGO/TGP/creatinina normais e sem aleitamento/imunodeficiência): Tratamento clínico com Metotrexato 50 mg/m² IM em dose única (D1), dosando β-hCG no D4 e D7 (esperada queda ≥ 15% entre D4 e D7).
    - Se Gravidez Ectópica Rota (Instabilidade hemodinâmica, abdome agudo hemorrágico, β-hCG > 5.000 ou BCF ectópico presente): Laparoscopia / Laparotomia exploradora de emergência para Salpingectomia.
@@ -56,7 +57,7 @@ USO ORAL (ALTA AMBULATORIAL — AMEAÇA DE ABORTO OU PÓS-ESVAZIAMENTO / AMIU SE
 1. Escopolamina 10 mg + Paracetamol 500 mg (comprimidos) — 1 caixa (20 comprimidos)
    - Tomar 1 comprimido por via oral a cada 6 ou 8 horas se dor ou cólica hipogástrica.
 
-2. Ibuprofeno 600 mg (comprimidos) [APENAS PÓS-ABORTAMENTO COMPLETO/AMIU — NÃO USAR SE GESTAÇÃO TÓPICA VIÁVEL!] — 1 caixa (15 comprimidos)
+2. Ibuprofeno 600 mg (comprimidos) [APENAS PÓS-ABORTAMENTO COMPLETO/AMIU] — 1 caixa (15 comprimidos)
    - Tomar 1 comprimido por via oral a cada 8 horas por 3 a 5 dias para controle de cólica pós-esvaziamento.
 
 3. Sulfato Ferroso 40 mg de Fe elementar (comprimidos) — 1 frasco (30 comprimidos)

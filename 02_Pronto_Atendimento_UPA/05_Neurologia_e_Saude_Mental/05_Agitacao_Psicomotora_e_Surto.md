@@ -13,40 +13,40 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Comorbidades: [+ *Hígido(a) / Outros: ___].
 Alergias: [*Nega / Sim: ___].
+
 # CONTEXTO DE ENTRADA: [Trazido por familiares / Resgatado pelo SAMU ou Polícia Militar / Descompensação aguda na sala de espera].
 
 # QP:
-- [Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Apresentação Clínica: Paciente admitido com quadro de intensa agitação psicomotora, inquietação motora, desinibição verbal, agressividade [verbal / física direcionada a terceiros ou objetos], com discurso [desconexo / delirante paranoide / de grandiosidade / com alucinações auditivas e visuais].
-- ETIOLOGIA DA AGITAÇÃO EM INVESTIGAÇÃO:
-  * [ ] CAUSA PSIQUIÁTRICA PRIMÁRIA: Paciente com diagnóstico prévio de Esquizofrenia / Transtorno Bipolar em episódio maníaco / Transtorno de Personalidade em crise; relata abandono recente de antipsicóticos.
-  * [ ] CAUSA ORGÂNICA / DELIRIUM: Paciente idoso com quadro agudo flutuante de desorientação (investigar sepse urinária, pneumonia oculta, AVC ou distúrbio metabólico).
-  * [ ] CAUSA TÓXICA / ABSTINÊNCIA: Suspeita de intoxicação aguda por drogas de abuso estimulantes (cocaína/crack/canabinoides sintéticos) ou Síndrome de Abstinência Alcoólica (Delirium Tremens).
-- Nega histórico de trauma cranioencefálico recente ou cefaleia febril precedente.
-- Sem porte de armas ou objetos perfurocortantes (revista de segurança realizada pela equipe/guarda).
+Paciente admitido com quadro de intensa agitação psicomotora, inquietação motora, desinibição verbal, agressividade [verbal / física direcionada a terceiros ou objetos], com discurso [desconexo / delirante paranoide / de grandiosidade / com alucinações auditivas e visuais].
+[ ] CAUSA PSIQUIÁTRICA PRIMÁRIA: Paciente com diagnóstico prévio de Esquizofrenia / Transtorno Bipolar em episódio maníaco / Transtorno de Personalidade em crise; relata abandono recente de antipsicóticos.
+[ ] CAUSA ORGÂNICA / DELIRIUM: Paciente idoso com quadro agudo flutuante de desorientação.
+[ ] CAUSA TÓXICA / ABSTINÊNCIA: Suspeita de intoxicação aguda por drogas de abuso estimulantes ou Síndrome de Abstinência Alcoólica (Delirium Tremens).
+Nega histórico de trauma cranioencefálico recente ou cefaleia febril precedente.
+Sem porte de armas ou objetos perfurocortantes.
 
 # EXAME FÍSICO:
-- SINAIS VITAIS (AFERIDOS ASSIM QUE POSSÍVEL): PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
-- GLICEMIA CAPILAR (HGT): [ ] mg/dL (AFASTADA HIPOGLICEMIA COMO CAUSA DO DELIRIUM).
-- Exame do Estado Mental:
-  * Atitude: Hostil, desafiadora, não cooperativa, vigilância aumentada.
-  * Consciência & Orientação: [Orientado no tempo e espaço / Desorientado temporo-espacialmente com atenção flutuante].
-  * Sensopercepção: [Sem alucinações ativas / Alucinações auditivas imperativas].
-  * Pensamento: Curso taquipsíquico, forma frouxa, conteúdo com delírio [persecutório / de ciúmes / místico / de ruína].
-  * Afeto & Humor: Humor [irritado / eufórico / disfórico], afeto incongruente.
-  * Risco de Auto ou Heteroagressão: [ELEVADO - RISCO IMINENTE DE VIOLÊNCIA FÍSICA].
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
+GLICEMIA CAPILAR (HGT): [ ] mg/dL (AFASTADA HIPOGLICEMIA COMO CAUSA DO DELIRIUM).
+Exame do Estado Mental:
+Atitude: Hostil, desafiadora, não cooperativa, vigilância aumentada.
+Consciência & Orientação: [Orientado no tempo e espaço / Desorientado temporo-espacialmente com atenção].
+Sensopercepção: [Sem alucinações ativas / Alucinações auditivas imperativas].
+Pensamento: Curso taquipsíquico, forma frouxa, conteúdo com delírio [persecutório / de ciúmes / místico / de ruína].
+Afeto & Humor: Humor [irritado / eufórico / disfórico], afeto incongruente.
+Risco de Auto ou Heteroagressão: [ELEVADO - RISCO IMINENTE DE VIOLÊNCIA FÍSICA].
 
 # CONDUTA:
 
 >> ETAPA 1: DESESCALONAMENTO VERBAL & SEGURANÇA AMBIENTAL (SEMPRE A 1ª OPÇÃO):
 - Abordagem em tom calmo, firme, sem confronto de delírios e mantendo distância de segurança física (ao menos 2 passos). Retirados objetos do alcance do paciente.
-- [Se paciente aceitou medicação oral voluntariamente]:
+- [Se paciente aceitou medicação oral]:
   * Haloperidol 5 mg VO (ou Risperidona 2 mg VO / Olanzapina 10 mg VO) + Clonazepam 2 mg VO.
 
 >> ETAPA 2: CONTENÇÃO FARMACOLÓGICA RÁPIDA (SE RECUSA OU AGRESSIVIDADE ATIVA):
-1. [SE SUSPEITA DE ABSTINÊNCIA ALCOÓLICA (DELIRIUM TREMENS) OU INTOXICAÇÃO POR COCAÍNA/CRACK]:
+1. [SE SUSPEITA DE ABSTINÊNCIA ALCOÓLICA (DELIRIUM]:
    - PRIMEIRA LINHA OBRIGATÓRIA: Benzodiazepínico + Tiamina Parenteral (EVITAR Haloperidol isolado pelo risco de convulsão e arritmia):
      * Diazepam 10 mg EV lento (1 a 2 mL/min) ou VO, repetindo a cada 10 a 20 min até sedação leve [OU Midazolam 5 a 10 mg IM/EV].
      * + Tiamina (Vitamina B1) 100 mg a 300 mg IM ou EV (fazer ANTES de qualquer infusão de glicose para prevenção de Encefalopatia de Wernicke).
@@ -54,7 +54,7 @@ Alergias: [*Nega / Sim: ___].
    - Haloperidol (Haldol) 5 mg (1 ampola = 1 mL) INTRAMUSCULAR profunda no glúteo.
    + Prometazina (Fenergan) 50 mg (1 ampola = 2 mL) INTRAMUSCULAR profunda no outro glúteo.
    *(Nota: A Prometazina potencializa a sedação do Haloperidol e PREVINE OBRIGATORIAMENTE a ocorrência de distonia aguda, trismo e crise oculógira induzidas pelo haloperidol).*
-3. [Se paciente muito violento com pico adrenérgico extremo]:
+3. [Se paciente muito violento com pico adrenérgico]:
    - Adicionar Midazolam 5 a 10 mg IM profunda (ação sedativa hipnótica em 10 minutos).
 4. [SE PACIENTE IDOSO COM DELIRIUM]:
    - EVITAR Prometazina e Benzodiazepínicos (risco de piora do delirium e sedação paradoxal).

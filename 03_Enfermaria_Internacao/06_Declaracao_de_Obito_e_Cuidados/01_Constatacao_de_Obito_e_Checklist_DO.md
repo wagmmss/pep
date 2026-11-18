@@ -20,24 +20,24 @@ Chamado(a) ao leito às [HH:MM] pela equipe de enfermagem por parada cardiorresp
 2. Reflexos de Tronco Encefálico: Pupilas em midríase paralítica bilateral, fixas e arreativas ao estímulo fotomotor direto e consensual; reflexo corneopalpebral abolido bilateralmente.
 3. Aparelho Respiratório: Ausência absoluta de movimentos respiratórios toracoabdominais (apneia completa) e silêncio auscultatório pulmonar bilateral por mais de 1 minuto ininterrupto.
 4. Aparelho Cardiovascular: Ausência de pulsos arteriais centrais (carotídeos e femorais) à palpação e ausência completa de bulhas cardíacas à ausculta precordial prolongada (> 1 minuto).
-5. Monitorização Eletrocardiográfica: [Assistolia confirmada no protocolo da linha reta em 2 derivações com ganho máximo e cabos checados / Paciente em cuidados paliativos exclusivos de fim de vida sem indicação de manobras invasivas de RCP].
+5. Monitorização Eletrocardiográfica: [Assistolia confirmada no protocolo da linha / Paciente em cuidados paliativos exclusivos de].
 
 # AVALIAÇÃO MÉDICO-LEGAL DA NATUREZA DO ÓBITO:
 - Classificação Legal da Morte:
-  * [Morte de Causa Natural com Assistência Médica Hospitalar — Diagnóstico conhecido; Declaração de Óbito (DO) emitida pelo médico assistente/plantonista].
-  * [Morte Violenta ou Suspeita de Causa Externa (Acidente, queda da própria altura com fratura, trauma, intoxicação exógena, agressão ou suicídio) — NÃO emitida DO no hospital; acionado Instituto Médico Legal (IML)].
-  * [Morte de Causa Natural de Etiologia Indeterminada sem diagnóstico definido — Corpo encaminhado ao Serviço de Verificação de Óbito (SVO)].
+  * [Morte de Causa Natural com Assistência Médica].
+  * [Morte Violenta ou Suspeita de Causa Externa].
+  * [Morte de Causa Natural de Etiologia].
 
 # CONDUTA:
 
 >> CADEIA CAUSAL REGISTRADA NA DECLARAÇÃO DE ÓBITO (CAMPO 40 — PARTE I E II):
 - PARTE I (Cadeia Causal Direta — da causa terminal na linha A até a causa básica na última linha):
   * Linha a (Causa Imediata / Terminal): [ex: Choque séptico refratário / Insuficiência respiratória aguda hipoxêmica / Tamponamento cardíaco] — Tempo aproximado: [ ] [horas / dias].
-  * Linha b (Devido a / Causa Intermediária): [ex: Pneumonia bacteriana nosocomial / Tromboembolismo pulmonar maciço / Infarto agudo do miocárdio] — Tempo aproximado: [ dias].
+  * Linha b (Devido a / Causa Intermediária): [ex: Pneumonia bacteriana nosocomial / Tromboembolismo pulmonar maciço / Infarto agudo do miocárdio] — Tempo aproximado: [dias].
   * Linha c (Devido a / Causa Intermediária): [Não se aplica / Causa: ___] — Tempo aproximado: [ ].
   * Linha d (Causa Básica Fundamental — doença que iniciou a cadeia): [ex: Doença Pulmonar Obstrutiva Crônica grave / Neoplasia maligna de cólon metastática / Aterosclerose coronariana hipertensiva] — Tempo aproximado: [ ] [meses / anos].
 - PARTE II (Outras condições mórbidas preexistentes que contribuíram, mas não entraram na cadeia direta):
-  * [ex: Diabetes Mellitus tipo 2, Doença Renal Crônica estágio 4, Fibrilação Atrial crônica].
+  * [ex: Diabetes Mellitus tipo 2, Doença Renal].
 
 >> CONDUTA PÓS-ÓBITO & ACOLHIMENTO FAMILIAR (PROTOCOLO SPIKES):
 1. Declarado o óbito às [HH:MM] e registrado em prontuário eletrônico.
