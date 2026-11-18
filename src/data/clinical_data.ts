@@ -1,5 +1,5 @@
 // ============================================================================
-// REPOSITÓRIO TIPADO DOS 93 CARTÕES CLÍNICOS (74 PEP + 19 HABILIDADES)
+// REPOSITÓRIO TIPADO DOS 110 CARTÕES CLÍNICOS (88 PEP + 22 HABILIDADES)
 // ============================================================================
 
 export interface ChecklistItem {
@@ -47,11 +47,11 @@ export interface ClinicalProtocolItem {
 }
 
 export const MODULE_COUNTS = {
-  total: 93,
-  pep: 74,
-  go: 15,
-  upa: 42,
-  enf: 7,
-  ped: 10,
-  hab: 19
+  total: 110,
+  pep: 88,
+  go: 19,
+  upa: 47,
+  enf: 9,
+  ped: 13,
+  hab: 22
 } as const;

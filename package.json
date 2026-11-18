@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0 --port 3000",
     "start": "vite --host 0.0.0.0 --port 3000",
     "build": "vite build",
-    "build:engine": "rolldown src/engine/index.ts --format iife --name ClinicoEngineBundle --file clinico-engine.js --minify",
+    "build:engine": "rolldown src/engine/index.ts --format iife --name ClinicoEngineBundle --file clinico-engine.js --minify && cp clinico-engine.js public/clinico-engine.js",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
     "test": "node --test tests/cockpit_clinico.test.ts tests/markdown_linter.test.ts tests/calculadoras_remume.test.ts",
     "lint": "node --check vite.config.js"

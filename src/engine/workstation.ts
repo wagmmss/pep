@@ -10,22 +10,33 @@ export interface ClinicalSeverity {
   cls: string;
 }
 
-export function getClinicalSeverity(item: { id?: string; category?: string; mod_id?: string } | null): ClinicalSeverity {
+export function getClinicalSeverity(item: { id?: string; trigger?: string; category?: string; mod_id?: string } | null): ClinicalSeverity {
   if (!item) return { code: 'rotina', label: 'ROTINA', cls: 'sev-rotina' };
   const cat = String(item.category || '');
   const id = String(item.id || '');
+  const trigger = String(item.trigger || '').trim().toLowerCase();
+
+  // Mapeamento primário por trigger canônico imutável (imune a deslocamento posicional de IDs)
+  const criticalTriggers = new Set([
+    ';hpp', ';pre-eclampsia', ';tpp', ';rpmo', ';abortamento', ';dpp-pp', ';violencia-sexual',
+    ';dengue', ';abdome-agudo', ';hda', ';sca', ';has-crise', ';asma', ';dpoc', ';eap',
+    ';tvp-tep', ';sincope', ';convulsao', ';alergia', ';cad', ';intoxicacao', ';sri',
+    ';pcr', ';sepse', ';avc', ';taqui', ';hiperk', ';bradi', ';queimadura',
+    ';bva', ';crupe', ';ped-febre', ';convulsao-febril', ';ped-asma', ';ped-exantema'
+  ]);
+
   const criticalIds = new Set([
-    'go-10', 'go-11', 'go-12', 'go-13',
-    'upa-21', 'upa-23', 'upa-26', 'upa-27',
-    'upa-30', 'upa-31', 'upa-32', 'upa-33', 'upa-34',
-    'upa-35', 'upa-37', 'upa-39',
-    'upa-49', 'upa-50', 'upa-51', 'upa-52', 'upa-53', 'upa-54', 'upa-55', 'upa-56',
-    'ped-68', 'ped-69', 'ped-73', 'ped-74'
+    'go-11', 'go-12', 'go-13', 'go-14', 'go-17', 'go-18', 'go-19',
+    'upa-27', 'upa-30', 'upa-31', 'upa-35', 'upa-36', 'upa-37', 'upa-38', 'upa-39',
+    'upa-40', 'upa-41', 'upa-44', 'upa-51', 'upa-56', 'upa-57', 'upa-58',
+    'upa-59', 'upa-60', 'upa-61', 'upa-62', 'upa-63', 'upa-65', 'upa-66',
+    'ped-79', 'ped-80', 'ped-84', 'ped-85', 'ped-86', 'ped-87'
   ]);
 
   if (
+    (trigger && criticalTriggers.has(trigger)) ||
     criticalIds.has(id) ||
-    cat.includes('Emergencias') ||
+    cat.includes('Emergencias GO') ||
     cat.includes('Emergência') ||
     cat.includes('Sala Vermelha')
   ) {
@@ -33,7 +44,7 @@ export function getClinicalSeverity(item: { id?: string; category?: string; mod_
   }
 
   if (item.mod_id === 'hab') {
-    return { code: 'tecnica', label: 'TÉCNICA', cls: 'sev-info' };
+    return { code: 'tecnica', label: 'TÉCNICA', cls: 'sev-tecnica' };
   }
 
   if (

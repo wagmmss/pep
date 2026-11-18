@@ -43,7 +43,7 @@ export interface TimelineStep {
   atalhoSecao?: string;
   atalhoLabel?: string;
   atalhoTeoriaMod?: string;
-  atalhoFerramentaTab?: 'gaso' | 'lr' | 'travas' | 'madrugada';
+  atalhoFerramentaTab?: 'gaso' | 'lr' | 'travas' | 'intercorrencias';
 }
 
 export interface CurriculoAuditItem {
@@ -370,7 +370,7 @@ export const ROTA_DIAS_SEMANA: Record<
     pilarDetalhe: 'Avançar na Trilha Paralela R1 (Preventiva/Ped/CM) + Treino de casos complexos (/minicex) + calibrar Marcha e Micro-Hábito da próxima semana.',
     moduloRef: 'Módulo 07 (Procedimentos)',
     moduloId: 'mod-07',
-    ferramentaTab: 'madrugada'
+    ferramentaTab: 'intercorrencias'
   }
 };
 
@@ -655,13 +655,26 @@ export interface GasometriaResult {
 }
 
 export function calcGasometria5Passos(input: GasometriaInput): GasometriaResult {
-  const ph = Number(input.ph) || 7.4;
-  const pco2 = Number(input.pco2) || 40;
-  const hco3 = Number(input.hco3) || 24;
-  const na = Number(input.na) || 140;
-  const cl = Number(input.cl) || 104;
-  const alb = Number.isFinite(Number(input.albumina)) ? Number(input.albumina) : 4.0;
-  const lac = Number(input.lactato) || 1.0;
+  const numOr = (v: unknown, def: number) => {
+    const n = Number(v);
+    return Number.isFinite(n) ? n : def;
+  };
+  const phRaw = numOr(input.ph, 7.4);
+  const pco2Raw = numOr(input.pco2, 40);
+  const hco3Raw = numOr(input.hco3, 24);
+  const naRaw = numOr(input.na, 140);
+  const clRaw = numOr(input.cl, 104);
+  const albRaw = numOr(input.albumina, 4.0);
+  const lacRaw = numOr(input.lactato, 1.0);
+
+  const ph = Math.max(6.5, Math.min(8.0, phRaw));
+  const pco2 = Math.max(5, pco2Raw);
+  const hco3 = Math.max(1, hco3Raw);
+  const na = Math.max(80, naRaw);
+  const cl = Math.max(50, clRaw);
+  const albNorm = albRaw > 10 ? albRaw / 10 : albRaw; // aceita acidente em g/L convertendo p/ g/dL com nota
+  const alb = Math.max(0.5, Math.min(7.0, albNorm));
+  const lac = Math.max(0, lacRaw);
 
   // Passo 1: pH
   let passo1Ph = 'pH dentro da faixa normal (7,35–7,45) — checar pCO₂, HCO₃⁻ e AG para excluir distúrbio misto!';
@@ -671,40 +684,48 @@ export function calcGasometria5Passos(input: GasometriaInput): GasometriaResult 
   // Passo 4 (calculado cedo para apoiar diagnóstico): AG bruto e corrigido
   const agBruto = +(na - (cl + hco3)).toFixed(1);
   const agCorrigido = +(agBruto + 2.5 * Math.max(0, 4.0 - alb)).toFixed(1);
-  const hasHighAg = agCorrigido > 12.5;
+  const hasHighAg = agCorrigido > 12;
 
   // Passo 2 & 3: Primário e Compensação
   let passo2Primario = '';
   let passo3Compensacao = '';
   const diagParts: string[] = [];
+  const pushUniqueDiag = (label: string, prefixCheck?: string) => {
+    const exists = prefixCheck
+      ? diagParts.some(d => d.toLowerCase().includes(prefixCheck.toLowerCase()))
+      : diagParts.includes(label);
+    if (!exists) diagParts.push(label);
+  };
 
   if (hco3 < 22 && (ph < 7.4 || hasHighAg)) {
     passo2Primario = `Acidose Metabólica Primária (HCO₃⁻ ${hco3.toFixed(1)} mEq/L < 22)`;
-    diagParts.push(hasHighAg ? 'Acidose Metabólica de Ânion Gap Elevado' : 'Acidose Metabólica Hiperclorêmica (AG Normal)');
+    pushUniqueDiag(hasHighAg ? 'Acidose Metabólica de Ânion Gap Elevado' : 'Acidose Metabólica Hiperclorêmica (AG Normal)');
     const winterCenter = +(1.5 * hco3 + 8).toFixed(1);
     const winterMin = +(winterCenter - 2).toFixed(1);
     const winterMax = +(winterCenter + 2).toFixed(1);
     if (pco2 > winterMax) {
       passo3Compensacao = `Fórmula de Winter: pCO₂ esperada = ${winterMin} a ${winterMax} mmHg (medida: ${pco2}) → pCO₂ ACIMA do esperado = Acidose Respiratória Associada (alerta de fadiga ventilatória!).`;
-      diagParts.push('Acidose Respiratória Associada');
+      pushUniqueDiag('Acidose Respiratória Associada');
     } else if (pco2 < winterMin) {
       passo3Compensacao = `Fórmula de Winter: pCO₂ esperada = ${winterMin} a ${winterMax} mmHg (medida: ${pco2}) → pCO₂ ABAIXO do esperado = Alcalose Respiratória Associada (ex: sepse, dor, salicilato).`;
-      diagParts.push('Alcalose Respiratória Associada');
+      pushUniqueDiag('Alcalose Respiratória Associada');
     } else {
       passo3Compensacao = `Fórmula de Winter: pCO₂ esperada = ${winterMin} a ${winterMax} mmHg (medida: ${pco2}) → Compensação respiratória adequada.`;
     }
   } else if (hco3 > 26 && ph >= 7.4) {
     passo2Primario = `Alcalose Metabólica Primária (HCO₃⁻ ${hco3.toFixed(1)} mEq/L > 26)`;
-    diagParts.push('Alcalose Metabólica');
+    pushUniqueDiag('Alcalose Metabólica');
     const expPco2 = +(0.7 * hco3 + 21).toFixed(1);
-    if (pco2 > expPco2 + 3) {
-      passo3Compensacao = `pCO₂ esperada ≈ ${(expPco2 - 2).toFixed(1)}–${(expPco2 + 2).toFixed(1)} mmHg (medida: ${pco2}) → Acidose Respiratória Associada.`;
-      diagParts.push('Acidose Respiratória Associada');
-    } else if (pco2 < expPco2 - 3) {
-      passo3Compensacao = `pCO₂ esperada ≈ ${(expPco2 - 2).toFixed(1)}–${(expPco2 + 2).toFixed(1)} mmHg (medida: ${pco2}) → Alcalose Respiratória Associada.`;
-      diagParts.push('Alcalose Respiratória Associada');
+    const expMin = +(expPco2 - 2).toFixed(1);
+    const expMax = +(expPco2 + 2).toFixed(1);
+    if (pco2 > expMax) {
+      passo3Compensacao = `pCO₂ esperada ≈ ${expMin}–${expMax} mmHg (medida: ${pco2}) → Acidose Respiratória Associada.`;
+      pushUniqueDiag('Acidose Respiratória Associada');
+    } else if (pco2 < expMin) {
+      passo3Compensacao = `pCO₂ esperada ≈ ${expMin}–${expMax} mmHg (medida: ${pco2}) → Alcalose Respiratória Associada.`;
+      pushUniqueDiag('Alcalose Respiratória Associada');
     } else {
-      passo3Compensacao = `pCO₂ esperada ≈ ${(expPco2 - 2).toFixed(1)}–${(expPco2 + 2).toFixed(1)} mmHg (medida: ${pco2}) → Compensação adequada.`;
+      passo3Compensacao = `pCO₂ esperada ≈ ${expMin}–${expMax} mmHg (medida: ${pco2}) → Compensação adequada.`;
     }
   } else if (pco2 > 45) {
     passo2Primario = `Acidose Respiratória Primária (pCO₂ ${pco2} mmHg > 45)`;
@@ -712,39 +733,55 @@ export function calcGasometria5Passos(input: GasometriaInput): GasometriaResult 
     const hco3Agudo = +(24 + 1 * deltaPco2).toFixed(1);
     const hco3Cronico = +(24 + 3.5 * deltaPco2).toFixed(1);
     passo3Compensacao = `HCO₃⁻ esperado: Agudo ≈ ${hco3Agudo} mEq/L | Crônico (DPOC retentor) ≈ ${hco3Cronico} mEq/L (medido: ${hco3.toFixed(1)}).`;
-    diagParts.push(Math.abs(hco3 - hco3Cronico) < 2.5 ? 'Acidose Respiratória Crônica Compensada/Agudizada' : 'Acidose Respiratória Aguda');
+    pushUniqueDiag(Math.abs(hco3 - hco3Cronico) < 2.5 ? 'Acidose Respiratória Crônica Compensada/Agudizada' : 'Acidose Respiratória Aguda');
+    if (hco3 < hco3Agudo - 2) {
+      pushUniqueDiag(hasHighAg ? 'Acidose Metabólica de Ânion Gap Elevado Associada' : 'Acidose Metabólica Associada');
+    } else if (hco3 > hco3Cronico + 2) {
+      pushUniqueDiag('Alcalose Metabólica Associada');
+    }
   } else if (pco2 < 35) {
     passo2Primario = `Alcalose Respiratória Primária (pCO₂ ${pco2} mmHg < 35)`;
     const deltaPco2 = (40 - pco2) / 10;
     const hco3Agudo = +(24 - 2 * deltaPco2).toFixed(1);
-    passo3Compensacao = `HCO₃⁻ esperado na fase aguda ≈ ${hco3Agudo} mEq/L (medido: ${hco3.toFixed(1)}).`;
-    diagParts.push('Alcalose Respiratória');
+    const hco3Cronico = +(24 - 5 * deltaPco2).toFixed(1);
+    passo3Compensacao = `HCO₃⁻ esperado: Agudo ≈ ${hco3Agudo} mEq/L | Crônico ≈ ${hco3Cronico} mEq/L (medido: ${hco3.toFixed(1)}).`;
+    pushUniqueDiag('Alcalose Respiratória');
+    if (hco3 < Math.min(hco3Agudo, hco3Cronico) - 2) {
+      pushUniqueDiag(hasHighAg ? 'Acidose Metabólica de Ânion Gap Elevado Associada' : 'Acidose Metabólica Associada');
+    } else if (hco3 > Math.max(hco3Agudo, hco3Cronico) + 2) {
+      pushUniqueDiag('Alcalose Metabólica Associada');
+    }
   } else {
     passo2Primario = 'pCO₂ (35–45) e HCO₃⁻ (22–26) dentro das faixas de referência.';
     passo3Compensacao = 'Sem desvio primário aparente — conferir Ânion Gap Corrigido abaixo.';
-    if (hasHighAg) diagParts.push('Acidose Metabólica de AG Elevado Oculta + Alcalose Metabólica');
-    else diagParts.push('Equilíbrio Ácido-Básico Preservado');
+    if (hasHighAg) {
+      pushUniqueDiag('Acidose Metabólica de AG Elevado Oculta + Alcalose Metabólica');
+    } else {
+      pushUniqueDiag('Equilíbrio Ácido-Básico Preservado');
+    }
   }
 
-  const passo4AnionGap = `AG bruto = ${agBruto} mEq/L | AG corrigido pela albumina (${alb.toFixed(1)} g/dL) = ${agCorrigido} mEq/L → ${hasHighAg ? '🔴 AG ELEVADO (> 12): pesquisar GOLDMARK / Lactato / Cetoacidose / Uremia' : '🟢 AG Normal (≤ 12)'}.`;
+  const albNote = albRaw > 10 ? ` [convertida de ${albRaw} g/L]` : '';
+  const passo4AnionGap = `AG bruto = ${agBruto} mEq/L | AG corrigido pela albumina (${alb.toFixed(1)} g/dL${albNote}) = ${agCorrigido} mEq/L → ${hasHighAg ? '🔴 AG ELEVADO (> 12): pesquisar GOLDMARK / Lactato / Cetoacidose / Uremia' : '🟢 AG Normal (≤ 12)'}.`;
 
   let passo5DeltaDelta = 'Não aplicável (Ânion Gap corrigido ≤ 12).';
   let deltaRatio: number | null = null;
   if (hasHighAg) {
+    pushUniqueDiag('Acidose Metabólica de Ânion Gap Elevado', 'Acidose Metabólica de AG Elevado');
     const deltaAg = +(agCorrigido - 12).toFixed(1);
     const deltaHco3 = +(24 - hco3).toFixed(1);
     if (deltaHco3 <= 0) {
-      deltaRatio = 99;
+      deltaRatio = null;
       passo5DeltaDelta = `ΔAG (${deltaAg}) com HCO₃⁻ ≥ 24 → Relação Δ/Δ > 2,0: Alcalose Metabólica Associada coexistindo com Acidose de AG Elevado!`;
-      if (!diagParts.includes('Alcalose Metabólica Associada')) diagParts.push('Alcalose Metabólica Associada (Δ/Δ > 2)');
+      pushUniqueDiag('Alcalose Metabólica Associada (Δ/Δ > 2)', 'Alcalose Metabólica');
     } else {
       deltaRatio = +(deltaAg / deltaHco3).toFixed(2);
       if (deltaRatio < 1.0) {
         passo5DeltaDelta = `ΔAG (${deltaAg}) / ΔHCO₃⁻ (${deltaHco3}) = ${deltaRatio} (< 1,0) → Acidose Metabólica Hiperclorêmica (AG normal) associada!`;
-        diagParts.push('Acidose Hiperclorêmica Associada (Δ/Δ < 1)');
+        pushUniqueDiag('Acidose Hiperclorêmica Associada (Δ/Δ < 1)', 'Hiperclorêmica');
       } else if (deltaRatio > 2.0) {
         passo5DeltaDelta = `ΔAG (${deltaAg}) / ΔHCO₃⁻ (${deltaHco3}) = ${deltaRatio} (> 2,0) → Alcalose Metabólica Associada (ex: vômitos/SNG/diurético) ou retenção crônica prévia de HCO₃⁻!`;
-        diagParts.push('Alcalose Metabólica Associada (Δ/Δ > 2)');
+        pushUniqueDiag('Alcalose Metabólica Associada (Δ/Δ > 2)', 'Alcalose Metabólica');
       } else {
         passo5DeltaDelta = `ΔAG (${deltaAg}) / ΔHCO₃⁻ (${deltaHco3}) = ${deltaRatio} (entre 1,0 e 2,0) → Acidose Metabólica de Ânion Gap Elevado Pura.`;
       }
@@ -769,8 +806,10 @@ export function calcGasometria5Passos(input: GasometriaInput): GasometriaResult 
 }
 
 export function calcPostTestProbability(preTestPct: number, lr: number): { prePct: number; lr: number; postPct: number; interpretacao: string } {
-  const pre = Math.max(1, Math.min(99, Number(preTestPct) || 50)) / 100;
-  const ratio = Math.max(0.01, Number(lr) || 1);
+  const preVal = Number(preTestPct);
+  const lrVal = Number(lr);
+  const pre = Math.max(1, Math.min(99, Number.isFinite(preVal) ? preVal : 50)) / 100;
+  const ratio = Math.max(0.01, Number.isFinite(lrVal) && lrVal > 0 ? lrVal : 1);
   const preOdds = pre / (1 - pre);
   const postOdds = preOdds * ratio;
   const post = postOdds / (1 + postOdds);

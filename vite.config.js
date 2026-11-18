@@ -11,6 +11,7 @@ export default defineConfig({
       manifest: {
         name: 'Cockpit Clínico — Protocolos & PEP',
         short_name: 'Cockpit PEP',
+        lang: 'pt-BR',
         description: 'Protocolos clínicos, habilidades pré-porta, REMUME e calculadoras UBS/UPA offline.',
         theme_color: '#0284c7',
         background_color: '#0f172a',

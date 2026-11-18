@@ -183,7 +183,10 @@ export function sanitizePepOutput(rawText: string, opts?: SanitizePepOptions): s
   const keepEmpty = opts && opts.keepEmptyBrackets !== undefined ? opts.keepEmptyBrackets : true;
   const stripMd = opts && opts.stripMarkdownHeaders !== undefined ? opts.stripMarkdownHeaders : true;
 
-  const lines = String(rawText || '').replace(/\r\n/g, '\n').split('\n');
+  const cleanedRaw = String(rawText || '')
+    .replace(/\*\*([^*\n]+)\*\*/g, '$1')
+    .replace(/\*\(([^*\n)]+)\)\*/g, '($1)');
+  const lines = cleanedRaw.replace(/\r\n/g, '\n').split('\n');
   const outLines: string[] = [];
   let skipSecondaryMode: 'none' | 'block' | 'item' = 'none';
 
@@ -375,7 +378,7 @@ export function detectPendingGaps(text: string): PendingGapsReport {
 
 export function extractBodiesFromCustomPep(
   customPep: string,
-  item?: { evolucao_body?: string; conduta_body?: string; receita_body?: string } | null,
+  item?: { evolucao_body?: string; conduta_body?: string; receita_body?: string; has_receita?: boolean } | null,
   sanitizeOpts?: SanitizePepOptions
 ): ExtractedProtocolBodies {
   const raw = String(customPep || '');
@@ -394,15 +397,18 @@ export function extractBodiesFromCustomPep(
     rawEvolucao = item.evolucao_body;
   }
 
-  // Localizar início da Receita / Prescrição Domiciliar
+  // Localizar início da Receita / Prescrição Domiciliar (sem contaminar com rawConduta quando inexistente)
   const recRegex = /(?:>>\s*|#+\s*|^)(?:PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL|PRESCRIÇÃO AMBULATORIAL)[^\n]*\n([\s\S]*)$/im;
   const recMatch = raw.match(recRegex);
-  const rawReceita = recMatch
+  const explicitReceita = recMatch
     ? (recMatch[1] || '').trim()
-    : String(item?.receita_body || rawConduta).replace(
-        /^(?:>>\s*|#+\s*)(?:PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL)[^\n]*\n?/i,
-        ''
-      ).trim();
+    : (item && item.has_receita === false)
+      ? ''
+      : String(item?.receita_body || '').replace(
+          /^(?:>>\s*|#+\s*)(?:PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL|PRESCRIÇÃO AMBULATORIAL)[^\n]*\n?/i,
+          ''
+        ).trim();
+  const rawReceita = explicitReceita;
 
   // Localizar bloco de Orientações de Alta / Sinais de Alarme
   const oriRegex = /^((?:>>\s*|#+\s*)?(?:ORIENTAÇÕES|SINAIS DE ALARME)[^\n]*\n[\s\S]*)$/im;

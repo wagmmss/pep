@@ -1,5 +1,5 @@
 # Exame ORL, Otoscopia, Orofaringe & Olho Vermelho no PA (HINTS + Fluoresceína)
-**Atalho Rápido:** `;hab-orl` | **Meta de Tempo:** 30s Pré-Porta
+**Atalho Rápido:** `;hab-orl` | **Meta de Tempo:** 30s Pré-Porta | **Categoria:** Exame Físico & Semiologia
 **Âncora:** Otoscopia (Tração Pavilhão: Adulto p/ Cima-Trás vs <3a p/ Baixo-Trás + Abaulamento MT) → Centor/McIsaac → Epistaxe (Plexo de Kiesselbach) → Olho Vermelho (5 Sinais de Alarme + Teste de Fluoresceína)
 
 ---

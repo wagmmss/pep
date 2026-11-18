@@ -23,8 +23,11 @@ export function calcCkdEpi2021(params: {
   sexo: SexoBiologico;
 }): CalcResult {
   const { creatinina, idade, sexo } = params;
-  if (!(creatinina > 0) || !(idade > 0)) {
+  if (!Number.isFinite(creatinina) || !Number.isFinite(idade) || !(creatinina > 0) || !(idade > 0)) {
     throw new Error('Creatinina e idade devem ser maiores que zero.');
+  }
+  if (idade > 120) {
+    throw new Error('Idade fora da faixa fisiológica (1 a 120 anos).');
   }
   const kappa = sexo === 'F' ? 0.7 : 0.9;
   const alpha = sexo === 'F' ? -0.241 : -0.302;
@@ -46,9 +49,11 @@ export function calcCkdEpi2021(params: {
   else if (tfgRounded < 60) stage = 'G3a (Leve-moderada 45–59)';
   else if (tfgRounded < 90) stage = 'G2 (Levemente reduzida 60–89)';
 
+  const pedWarn = idade < 18 ? ' ⚠️ Menor de 18 anos: usar fórmula de Schwartz pediátrica!' : '';
+
   return {
     valueText: `${tfgRounded.toFixed(1).replace('.', ',')} mL/min/1,73m²`,
-    classification: `KDIGO ${stage}`,
+    classification: `KDIGO ${stage}${pedWarn}`,
     pepSnippet: `TFGe (CKD-EPI 2021): ${tfgRounded.toFixed(1).replace('.', ',')} mL/min/1,73m² (${stage}).`,
   };
 }
@@ -63,8 +68,11 @@ export function calcCockcroftGault(params: {
   sexo: SexoBiologico;
 }): CalcResult {
   const { creatinina, idade, pesoKg, sexo } = params;
-  if (!(creatinina > 0) || !(idade > 0) || !(pesoKg > 0)) {
+  if (!Number.isFinite(creatinina) || !Number.isFinite(idade) || !Number.isFinite(pesoKg) || !(creatinina > 0) || !(idade > 0) || !(pesoKg > 0)) {
     throw new Error('Creatinina, idade e peso devem ser maiores que zero.');
+  }
+  if (idade > 120) {
+    throw new Error('Idade fora da faixa clínica válida (<= 120 anos) para Cockcroft-Gault.');
   }
   const base = ((140 - idade) * pesoKg) / (72 * creatinina);
   const clcr = round1(sexo === 'F' ? base * 0.85 : base);
@@ -72,6 +80,7 @@ export function calcCockcroftGault(params: {
   let note = 'Função preservada para ajuste usual';
   if (clcr < 30) note = 'Atenção: ClCr < 30 mL/min — ajustar/contraindicar fármacos renais (ex.: enoxaparina, metformina, AINE)';
   else if (clcr < 60) note = 'ClCr 30–59 mL/min — revisar ajuste renal de antimicrobianos/anticoagulantes';
+  if (idade < 18) note += ' ⚠️ Menor de 18 anos: usar Schwartz.';
 
   return {
     valueText: `${clcr.toFixed(1).replace('.', ',')} mL/min`,
@@ -80,10 +89,25 @@ export function calcCockcroftGault(params: {
   };
 }
 
+function getLocalTodayIso(): string {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, '0');
+  const d = String(now.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
 function parseUtcDate(isoDate: string): Date {
   const m = String(isoDate || '').trim().match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (!m) throw new Error('Data inválida (use YYYY-MM-DD).');
-  return new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])));
+  const y = Number(m[1]);
+  const mon = Number(m[2]) - 1;
+  const day = Number(m[3]);
+  const dt = new Date(Date.UTC(y, mon, day));
+  if (dt.getUTCFullYear() !== y || dt.getUTCMonth() !== mon || dt.getUTCDate() !== day) {
+    throw new Error('Data inexistente no calendário.');
+  }
+  return dt;
 }
 
 function formatBrDate(utcDate: Date): string {
@@ -121,7 +145,7 @@ export function calcIdadeGestacionalDum(params: {
   const dum = parseUtcDate(params.dumIso);
   const ref = params.refDateIso
     ? parseUtcDate(params.refDateIso)
-    : parseUtcDate(new Date().toISOString().slice(0, 10));
+    : parseUtcDate(getLocalTodayIso());
   const totalDays = Math.round((ref.getTime() - dum.getTime()) / 86400000);
   return formatIgResult(totalDays, ref, 'DUM');
 }
@@ -138,8 +162,8 @@ export function calcIdadeGestacionalUsg(params: {
   const usgDate = parseUtcDate(params.usgDateIso);
   const ref = params.refDateIso
     ? parseUtcDate(params.refDateIso)
-    : parseUtcDate(new Date().toISOString().slice(0, 10));
-  if (params.usgWeeks < 0 || params.usgDays < 0 || params.usgDays > 6) {
+    : parseUtcDate(getLocalTodayIso());
+  if (!Number.isFinite(params.usgWeeks) || !Number.isFinite(params.usgDays) || params.usgWeeks < 0 || params.usgDays < 0 || params.usgDays > 6) {
     throw new Error('Semanas/dias na USG inválidos.');
   }
   const elapsedDays = Math.round((ref.getTime() - usgDate.getTime()) / 86400000);
@@ -152,10 +176,14 @@ export function calcIdadeGestacionalUsg(params: {
  */
 export function calcImc(params: { pesoKg: number; alturaCm: number }): CalcResult {
   const { pesoKg, alturaCm } = params;
-  if (!(pesoKg > 0) || !(alturaCm > 0)) {
+  if (!Number.isFinite(pesoKg) || !Number.isFinite(alturaCm) || !(pesoKg > 0) || !(alturaCm > 0)) {
     throw new Error('Peso e altura devem ser maiores que zero.');
   }
-  const altM = alturaCm / 100;
+  const normalizedAlturaCm = alturaCm <= 3 ? alturaCm * 100 : alturaCm;
+  if (normalizedAlturaCm < 30 || normalizedAlturaCm > 260) {
+    throw new Error('Informe a altura em centímetros (ex.: 170 cm) ou metros (ex.: 1,70 m).');
+  }
+  const altM = normalizedAlturaCm / 100;
   const imc = round1(pesoKg / (altM * altM));
   let cls = 'Eutrofia';
   if (imc < 18.5) cls = 'Baixo peso';
@@ -180,8 +208,11 @@ export function calcSodioCorrigido(params: {
   glicemiaMgDl: number;
 }): CalcResult {
   const { sodioMedido, glicemiaMgDl } = params;
-  if (!(sodioMedido > 0) || !(glicemiaMgDl > 0)) {
+  if (!Number.isFinite(sodioMedido) || !Number.isFinite(glicemiaMgDl) || !(sodioMedido > 0) || !(glicemiaMgDl > 0)) {
     throw new Error('Sódio e glicemia devem ser maiores que zero.');
+  }
+  if (sodioMedido < 80 || sodioMedido > 200) {
+    throw new Error('Sódio sérico fora da faixa clínica (80–200 mEq/L).');
   }
   const delta = Math.max(0, (glicemiaMgDl - 100) / 100);
   const naKatz = round1(sodioMedido + 1.6 * delta);
@@ -206,8 +237,14 @@ export function calcCalcioCorrigido(params: {
   albuminaGdl: number;
 }): CalcResult {
   const { calcioTotal, albuminaGdl } = params;
-  if (!(calcioTotal > 0) || !(albuminaGdl > 0)) {
+  if (!Number.isFinite(calcioTotal) || !Number.isFinite(albuminaGdl) || !(calcioTotal > 0) || !(albuminaGdl > 0)) {
     throw new Error('Cálcio e albumina devem ser maiores que zero.');
+  }
+  if (albuminaGdl > 10) {
+    throw new Error('Informe a albumina em g/dL (ex.: 2,5 g/dL), não em g/L.');
+  }
+  if (calcioTotal > 30) {
+    throw new Error('Cálcio total deve estar em mg/dL (ex.: 8,5 mg/dL).');
   }
   const caCorr = round1(calcioTotal + 0.8 * (4.0 - albuminaGdl));
   let cls = 'Normocalcemia (8,5–10,5 mg/dL)';
@@ -259,6 +296,9 @@ export function calcCentorMcIsaac(params: {
   exsudatoTonsilar: boolean;
   idadeAnos: number;
 }): CalcResult {
+  if (!Number.isFinite(params.idadeAnos) || params.idadeAnos < 0 || params.idadeAnos > 120) {
+    throw new Error('Idade deve ser um número válido entre 0 e 120 anos.');
+  }
   let score =
     (params.febre ? 1 : 0) +
     (params.ausenciaTosse ? 1 : 0) +
@@ -271,6 +311,7 @@ export function calcCentorMcIsaac(params: {
   let conduta = 'Score <= 1: baixo risco estreptocócico — apenas sintomáticos (não indicar ATB).';
   if (score >= 2 && score <= 3) conduta = 'Score 2–3: ideal teste rápido/cultura; decidir ATB conforme contexto clínico.';
   else if (score >= 4) conduta = 'Score >= 4: alta probabilidade — considerar antibioticoterapia empírica (Penicilina Benzatina / Amoxicilina).';
+  if (params.idadeAnos < 3) conduta += ' ⚠️ Escore não validado em < 3 anos.';
 
   return {
     valueText: `${score} pontos`,

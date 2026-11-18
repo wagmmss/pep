@@ -1,6 +1,6 @@
 // ============================================================================
-// REMUME (Ribeirão Preto) — Lista Padronizada de Medicamentos (255 itens)
-// Extraído de REMUME_RP.csv para consulta offline instantânea no plantão.
+// REMUME (Ribeirão Preto) — Lista Padronizada de Medicamentos (252 itens)
+// Extraído de REMUME_RP.csv (saneado sem legendas nem truncamentos) para consulta offline.
 // ============================================================================
 
 export interface RemumeItem {
@@ -114,8 +114,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "beclometasona 50 mcg"
   },
   {
-    "name": "Benzinidazol 12,5 mg ou 100 mg",
-    "norm": "benzinidazol 12,5 mg ou 100 mg"
+    "name": "Benznidazol 12,5 mg ou 100 mg",
+    "norm": "benznidazol 12,5 mg ou 100 mg"
   },
   {
     "name": "Benzocaína 200 mg/mL pt. 12 g",
@@ -338,8 +338,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "dobutamina 12,5 mg/ml ap."
   },
   {
-    "name": "Dolutegravir + lamivudina 50 mg",
-    "norm": "dolutegravir + lamivudina 50 mg"
+    "name": "Dolutegravir + lamivudina 50 mg + 300 mg",
+    "norm": "dolutegravir + lamivudina 50 mg + 300 mg"
   },
   {
     "name": "Dolutegravir 50 mg",
@@ -394,8 +394,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "estradiol 2 mg"
   },
   {
-    "name": "Estriol mg/g tb.",
-    "norm": "estriol mg/g tb."
+    "name": "Estriol 1 mg/g creme vaginal",
+    "norm": "estriol 1 mg/g creme vaginal"
   },
   {
     "name": "Etambutol 400 mg",
@@ -526,8 +526,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "hidrocortisona 500 mg fr."
   },
   {
-    "name": "Hioscina + dipirona 4 mg + 500",
-    "norm": "hioscina + dipirona 4 mg + 500"
+    "name": "Hioscina + dipirona 4 mg + 500 mg",
+    "norm": "hioscina + dipirona 4 mg + 500 mg"
   },
   {
     "name": "Hioscina 20 mg ap. 1 mL",
@@ -550,12 +550,12 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "insulina humana nph 100 ui/ml"
   },
   {
-    "name": "Isoniazida + rifampicina 150 mg +",
-    "norm": "isoniazida + rifampicina 150 mg +"
+    "name": "Isoniazida + rifampicina 150 mg + 300 mg",
+    "norm": "isoniazida + rifampicina 150 mg + 300 mg"
   },
   {
-    "name": "Isoniazida + rifampicina 75 mg +",
-    "norm": "isoniazida + rifampicina 75 mg +"
+    "name": "Isoniazida + rifampicina 75 mg + 150 mg",
+    "norm": "isoniazida + rifampicina 75 mg + 150 mg"
   },
   {
     "name": "Isoniazida 100 mg",
@@ -582,8 +582,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "lamivudina 150 mg"
   },
   {
-    "name": "Ledipasvir + sofosbuvir 90 mg +",
-    "norm": "ledipasvir + sofosbuvir 90 mg +"
+    "name": "Ledipasvir + sofosbuvir 90 mg + 400 mg",
+    "norm": "ledipasvir + sofosbuvir 90 mg + 400 mg"
   },
   {
     "name": "Levomepromazina 25 mg",
@@ -610,8 +610,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "lidocaina + epinefrina 20mg/ml"
   },
   {
-    "name": "Lopinavir + ritonavir (80 mg +",
-    "norm": "lopinavir + ritonavir (80 mg +"
+    "name": "Lopinavir + ritonavir (80 mg + 20 mg)/mL",
+    "norm": "lopinavir + ritonavir (80 mg + 20 mg)/ml"
   },
   {
     "name": "Loratadina 1 mg/mL",
@@ -674,8 +674,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "metronidazol 250 mg"
   },
   {
-    "name": "Midazolam 5 mg/mL ap. 3 mL ou",
-    "norm": "midazolam 5 mg/ml ap. 3 ml ou"
+    "name": "Midazolam 5 mg/mL ap. 3 mL ou 10 mL",
+    "norm": "midazolam 5 mg/ml ap. 3 ml ou 10 ml"
   },
   {
     "name": "Miltefosina 50 mg",
@@ -698,8 +698,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "naltrexona 50 mg"
   },
   {
-    "name": "Neomicina 5 mg + bacitracina",
-    "norm": "neomicina 5 mg + bacitracina"
+    "name": "Neomicina 5 mg/g + bacitracina 250 UI/g",
+    "norm": "neomicina 5 mg/g + bacitracina 250 ui/g"
   },
   {
     "name": "Nevirapina 200 mg",
@@ -846,8 +846,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "rifampicina 300 mg"
   },
   {
-    "name": "Rifapentina + isoniazida 300 mg",
-    "norm": "rifapentina + isoniazida 300 mg"
+    "name": "Rifapentina + isoniazida 300 mg + 300 mg",
+    "norm": "rifapentina + isoniazida 300 mg + 300 mg"
   },
   {
     "name": "Rifapentina 150 mg",
@@ -890,8 +890,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "sinvastatina 20 mg"
   },
   {
-    "name": "Sofosbuvir + velpatasvir 400 mg",
-    "norm": "sofosbuvir + velpatasvir 400 mg"
+    "name": "Sofosbuvir + velpatasvir 400 mg + 100 mg",
+    "norm": "sofosbuvir + velpatasvir 400 mg + 100 mg"
   },
   {
     "name": "Sofosbuvir 400 mg",
@@ -906,12 +906,12 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "sulfato de magnesio 1 meq/ml"
   },
   {
-    "name": "Sulfato ferroso 25 mg/mL de",
-    "norm": "sulfato ferroso 25 mg/ml de"
+    "name": "Sulfato ferroso 25 mg/mL de ferro elementar",
+    "norm": "sulfato ferroso 25 mg/ml de ferro elementar"
   },
   {
-    "name": "Sulfato ferroso 40 mg de ferro",
-    "norm": "sulfato ferroso 40 mg de ferro"
+    "name": "Sulfato ferroso 40 mg de ferro elementar",
+    "norm": "sulfato ferroso 40 mg de ferro elementar"
   },
   {
     "name": "Suxametônio cloreto 100 mg fr.",
@@ -966,18 +966,6 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "tramadol 50 mg/ml ap. 2 ml"
   },
   {
-    "name": "UI - Unidade(s) internacional(is)",
-    "norm": "ui - unidade(s) internacional(is)"
-  },
-  {
-    "name": "UI/mL - frasco ampola",
-    "norm": "ui/ml - frasco ampola"
-  },
-  {
-    "name": "UI/mL - tubete/carpule",
-    "norm": "ui/ml - tubete/carpule"
-  },
-  {
     "name": "Valaciclovir 500 mg",
     "norm": "valaciclovir 500 mg"
   },
@@ -990,8 +978,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "norm": "vecuronio 10 mg fr."
   },
   {
-    "name": "Zidovudina + lamivudina 300 mg",
-    "norm": "zidovudina + lamivudina 300 mg"
+    "name": "Zidovudina + lamivudina 300 mg + 150 mg",
+    "norm": "zidovudina + lamivudina 300 mg + 150 mg"
   },
   {
     "name": "Zidovudina 100 mg",

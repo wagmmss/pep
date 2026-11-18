@@ -15,8 +15,8 @@ import {
   calcCha2ds2Vasc,
 } from '../src/engine/calculadoras.ts';
 
-test('REMUME: base possui 255 medicamentos e busca normaliza acentos e múltiplos termos', () => {
-  assert.equal(REMUME_ITEMS.length, 255);
+test('REMUME: base possui 252 medicamentos válidos e busca normaliza acentos, vírgula/ponto e unidades', () => {
+  assert.equal(REMUME_ITEMS.length, 252);
 
   const amox = searchRemume('amoxicilina', 10);
   assert.ok(amox.length >= 1, 'Deve encontrar Amoxicilina na REMUME');

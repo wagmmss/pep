@@ -1,5 +1,5 @@
 # Manejo de Via Aérea, Laringoscopia (LEMON) & Ajuste Inicial da Ventilação Mecânica
-**Atalho Rápido:** `;hab-iot` | **Meta de Tempo:** 30s Pré-Porta
+**Atalho Rápido:** `;hab-iot` | **Meta de Tempo:** 30s Pré-Porta | **Categoria:** Emergência & Procedimentos
 **Âncora:** Ressuscitar ANTES de Intubar (Shock Index > 0,9) → LEMON + Posição Olfativa (Trago = Fúrcula) → Capnografia/5 Pontos → VM Protetora (VC 6 mL/kg Peso Predito + Pplatô < 30 + Driving Pressure < 15)
 
 ---

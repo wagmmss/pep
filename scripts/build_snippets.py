@@ -27,7 +27,11 @@ modules = [
         'id': 'ped',
         'name': 'Pediatria & Puericultura',
         'badge': '👶 Pediatria',
-        'dir': os.path.join(BASE_PROJECT, '04_Pediatria_Puericultura')
+        'dir': os.path.join(BASE_PROJECT, '04_Pediatria_Puericultura'),
+        'dirs': [
+            os.path.join(BASE_PROJECT, '04_Pediatria_Puericultura'),
+            os.path.join(BASE_PROJECT, '04_Pediatria_Pronto_Socorro_e_Puericultura')
+        ]
     }
 ]
 
@@ -35,16 +39,16 @@ HAB_DIR = os.path.join(BASE_PROJECT, '05_Habilidades_Clinicas')
 
 
 def extract_md_meta(content, labels):
-    """Extrai campo de metadados em Markdown no formato **Campo:** valor."""
+    """Extrai campo de metadados em Markdown no formato **Campo:** valor (mesmo após '|')."""
     if isinstance(labels, str):
         labels = [labels]
     pattern_labels = '|'.join(re.escape(lbl) for lbl in labels)
     m = re.search(
-        rf'^\s*\*\*(?:{pattern_labels})\s*:?\*\*\s*:?\s*(.+)$',
+        rf'(?:^|\|\s*)\*\*(?:{pattern_labels})\s*:?\*\*\s*:?\s*([^|\n\r]+)',
         content,
         re.MULTILINE | re.IGNORECASE
     )
-    return m.group(1).strip() if m else ''
+    return m.group(1).strip().strip('`').strip() if m else ''
 
 
 def extract_section_body(content, heading_pattern):
@@ -54,7 +58,31 @@ def extract_section_body(content, heading_pattern):
         content,
         re.MULTILINE | re.DOTALL | re.IGNORECASE
     )
-    return m.group(1).strip() if m else ''
+    body = m.group(1).strip() if m else ''
+    return re.sub(r'\n+---\s*$', '', body).strip()
+
+
+def _parse_bullet_items(section_text, default_title='Armadilha Crítica'):
+    items = []
+    for raw_line in (section_text or '').splitlines():
+        line = raw_line.strip()
+        if not line or line == '---':
+            continue
+        bold_match = re.match(r'^(?:[-*]|\d+\.)\s+\*\*(.+?)\*\*\s*(.*)$', line)
+        if bold_match:
+            p_title = bold_match.group(1).strip().rstrip(':').strip()
+            p_detail = bold_match.group(2).lstrip(':').strip()
+            items.append({'title': p_title, 'detail': p_detail})
+            continue
+        plain_match = re.match(r'^(?:[-*]|\d+\.)\s+(.+)$', line)
+        if plain_match:
+            txt = plain_match.group(1).strip()
+            if ':' in txt:
+                p_title, p_detail = txt.split(':', 1)
+                items.append({'title': p_title.strip(), 'detail': p_detail.strip()})
+            else:
+                items.append({'title': default_title, 'detail': txt})
+    return items
 
 
 def parse_hab_card(file_path, seq_num):
@@ -65,17 +93,49 @@ def parse_hab_card(file_path, seq_num):
     title_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
     title = title_match.group(1).strip() if title_match else os.path.splitext(os.path.basename(file_path))[0]
 
-    hab_category = extract_md_meta(content, ['Categoria']) or 'Habilidades Clínicas'
-    time_goal = extract_md_meta(content, ['Meta de Tempo', 'Tempo']) or '5–10 min'
+    raw_trig = extract_md_meta(content, ['Atalho Rápido', 'Atalho'])
+    all_triggers = [t.strip().strip('`') for t in re.split(r',', raw_trig) if t.strip()] if raw_trig else []
+    trigger = all_triggers[0] if all_triggers else f';hab-{seq_num}'
+    if not all_triggers:
+        all_triggers = [trigger]
+
+    hab_category = extract_md_meta(content, ['Categoria', 'Área']) or 'Habilidades Clínicas'
+    time_goal = extract_md_meta(content, ['Meta de Tempo', 'Tempo Alvo de Revisão Pré-Porta', 'Tempo Alvo', 'Tempo']) or '30s Pré-Porta'
     anchor = extract_md_meta(content, ['Âncora', 'Ancora'])
 
-    # 1. Bloco Pré-Porta 30s
-    pre_section = extract_section_body(content, r'(?:⚡\s*)?Pr[eé]-Porta(?:\s*30s)?')
-    pre_block = re.search(r'```(?:text|markdown|md)?\s*\n(.*?)\n```', pre_section, re.DOTALL)
-    pre_porta = pre_block.group(1).strip() if pre_block else pre_section.strip()
+    # 1. Bloco Pré-Porta 30s (consolida seções V2.0: 1, 2, 3, 4 e 5)
+    legacy_pre = extract_section_body(content, r'(?:⚡\s*)?Pr[eé]-Porta(?:\s*30s)?')
+    if legacy_pre:
+        pre_block = re.search(r'```(?:text|markdown|md)?\s*\n(.*?)\n```', legacy_pre, re.DOTALL)
+        pre_porta = pre_block.group(1).strip() if pre_block else legacy_pre.strip()
+    else:
+        sec1 = extract_section_body(content, r'(?:🎯\s*)?1\.\s*O QUE NÃO ESQUECER')
+        sec2 = extract_section_body(content, r'(?:🧠\s*)?2\.\s*MNEMÔNICO')
+        sec3 = extract_section_body(content, r'(?:🛠️\s*)?3\.\s*COREOGRAFIA')
+        sec4 = extract_section_body(content, r'(?:🚨\s*)?4\.\s*RED FLAGS')
+        sec5 = extract_section_body(content, r'(?:📝\s*)?5\.\s*COMO REGISTRAR NO PRONTUÁRIO')
+        sec5_code = re.search(r'```(?:text|markdown|md)?\s*\n(.*?)\n```', sec5, re.DOTALL)
+        sec5_clean = sec5_code.group(1).strip() if sec5_code else sec5
+
+        if not anchor and sec2:
+            anchor = re.sub(r'^>\s*', '', sec2.splitlines()[0]).strip().strip('*')
+
+        parts = []
+        if sec1:
+            parts.append(f"1. O QUE NÃO ESQUECER (Visão 5s):\n{sec1}")
+        if sec2:
+            clean_s2 = re.sub(r'^>\s*', '', sec2, flags=re.M).strip()
+            parts.append(f"2. REGRA DE OURO:\n{clean_s2}")
+        if sec3:
+            parts.append(f"3. COREOGRAFIA / PASSO A PASSO TÉCNICO:\n{sec3}")
+        if sec4:
+            parts.append(f"4. RED FLAGS (Sinais de Alarme):\n{sec4}")
+        if sec5_clean:
+            parts.append(f">>> COMO REGISTRAR NO PRONTUÁRIO:\n{sec5_clean}")
+        pre_porta = '\n\n'.join(parts).strip()
 
     # 2. Checklist Pós-Atendimento agrupado por ###
-    chk_section = extract_section_body(content, r'(?:✅\s*)?Checklist(?:\s+P[oó]s-Atendimento)?')
+    chk_section = extract_section_body(content, r'(?:✅\s*)?(?:\d+\.\s*)?Checklist(?:\s+P[oó]s-Atendimento)?')
     checklist_sections = []
     current_sec = None
 
@@ -108,27 +168,10 @@ def parse_hab_card(file_path, seq_num):
     checklist_sections = [s for s in checklist_sections if s['items']]
     checklist_total = sum(len(s['items']) for s in checklist_sections)
 
-    # 3. Armadilhas & Erros Fatais
-    pit_section = extract_section_body(content, r'(?:🚫\s*)?Armadilhas(?:\s*&\s*Erros(?:\s+Fatais)?)?')
-    pitfalls = []
-    for raw_line in pit_section.splitlines():
-        line = raw_line.strip()
-        if not line:
-            continue
-        bold_match = re.match(r'^(?:[-*]|\d+\.)\s+\*\*(.+?)\*\*\s*(.*)$', line)
-        if bold_match:
-            p_title = bold_match.group(1).strip().rstrip(':').strip()
-            p_detail = bold_match.group(2).lstrip(':').strip()
-            pitfalls.append({'title': p_title, 'detail': p_detail})
-            continue
-        plain_match = re.match(r'^(?:[-*]|\d+\.)\s+(.+)$', line)
-        if plain_match:
-            txt = plain_match.group(1).strip()
-            if ':' in txt:
-                p_title, p_detail = txt.split(':', 1)
-                pitfalls.append({'title': p_title.strip(), 'detail': p_detail.strip()})
-            else:
-                pitfalls.append({'title': 'Erro Crítico', 'detail': txt})
+    # 3. Red Flags + Armadilhas & Erros Fatais
+    rf_section = extract_section_body(content, r'(?:[^\w\s]+\s*)?(?:\d+\.\s*)?RED FLAGS')
+    pit_section = extract_section_body(content, r'(?:[^\w\s]+\s*)?(?:\d+\.\s*)?Armadilhas(?:\s+(?:DO\s+INTERNO|&\s*Erros(?:\s+Fatais)?))?')
+    pitfalls = _parse_bullet_items(rf_section, 'Red Flag') + _parse_bullet_items(pit_section, 'Erro Crítico')
 
     rel_path = os.path.relpath(file_path, BASE_PROJECT)
 
@@ -138,8 +181,8 @@ def parse_hab_card(file_path, seq_num):
         'module_name': 'Habilidades Clínicas',
         'badge': '🧠 Habilidades',
         'title': title,
-        'trigger': '',
-        'all_triggers': [],
+        'trigger': trigger,
+        'all_triggers': all_triggers,
         'category': hab_category,
         'hab_category': hab_category,
         'time_goal': time_goal,
@@ -148,7 +191,7 @@ def parse_hab_card(file_path, seq_num):
         'checklist_sections': checklist_sections,
         'checklist_total': checklist_total,
         'pitfalls': pitfalls,
-        'pitfalls_raw': pit_section,
+        'pitfalls_raw': '\n\n'.join(p for p in [rf_section, pit_section] if p).strip(),
         'path': rel_path,
         'pep_body': '',
         'has_split': False,
@@ -165,10 +208,14 @@ def parse_hab_card(file_path, seq_num):
 pep_snippets = []
 
 for mod in modules:
-    mod_files = [
-        f for f in sorted(glob.glob(f"{mod['dir']}/**/*.md", recursive=True))
-        if '_arquivados' not in f and not os.path.basename(f).startswith('.') and not os.path.basename(f).startswith('_')
-    ]
+    mod_dirs = mod.get('dirs') or [mod['dir']]
+    mod_files = []
+    for mdir in mod_dirs:
+        if os.path.isdir(mdir):
+            mod_files.extend(
+                f for f in sorted(glob.glob(f"{mdir}/**/*.md", recursive=True))
+                if '_arquivados' not in f and not os.path.basename(f).startswith('.') and not os.path.basename(f).startswith('_')
+            )
     print(f"Processando {mod['name']}: {len(mod_files)} arquivos.")
 
     for f in mod_files:
@@ -179,24 +226,34 @@ for mod in modules:
         title_match = re.search(r'^#\s+(.+)$', content, re.M)
         title = title_match.group(1).replace('Protocolo de Atendimento:', '').replace('Protocolo:', '').strip() if title_match else os.path.basename(f)
 
-        # Atalho
-        trigger_match = re.search(r'\*\*Atalhos? (?:Recomendados?|sugeridos?):\*\*\s*`?([^`\n\r]+)`?', content, re.IGNORECASE)
+        # Atalho (suporta "**Atalho:** `;slug` | **Categoria:** ..." e "**Atalhos Recomendados:** `;a`, `;b`")
+        trigger_match = re.search(
+            r'\*\*Atalhos?(?:\s+(?:Recomendados?|sugeridos?))?\s*:?\*\*\s*:?\s*([^\n\r]+)',
+            content,
+            re.IGNORECASE
+        )
         if trigger_match:
-            raw_triggers = trigger_match.group(1).strip()
-            first_trigger = [t.strip().strip('`') for t in re.split(r'\||,', raw_triggers) if t.strip()][0]
-            trigger = first_trigger
-            all_triggers = [t.strip().strip('`') for t in re.split(r'\||,', raw_triggers) if t.strip()]
+            raw_line = trigger_match.group(1).strip()
+            # Remover sufixo "| **Categoria:** ..." caso esteja na mesma linha
+            raw_triggers = re.split(r'\s*\|\s*\*\*', raw_line)[0].strip()
+            parsed_trigs = [t.strip().strip('`').strip() for t in re.split(r'\||,', raw_triggers) if t.strip().strip('`').strip()]
+            if parsed_trigs:
+                trigger = parsed_trigs[0]
+                all_triggers = parsed_trigs
+            else:
+                trigger = ';' + os.path.splitext(os.path.basename(f))[0].lower().replace('_', '-')
+                all_triggers = [trigger]
         else:
             trigger = ';' + os.path.splitext(os.path.basename(f))[0].lower().replace('_', '-')
             all_triggers = [trigger]
 
         # Snippet PEP
         snippet_pep = ""
-        pep_match = re.search(r'##\s+📋\s*Snippet[^\n]*\n+```(?:markdown|text)?\n(.*?)\n```', content, re.DOTALL)
+        pep_match = re.search(r'##\s+(?:📋\s*)?Snippet[^\n]*\n+```(?:markdown|text|txt)?\n(.*?)\n```', content, re.DOTALL | re.IGNORECASE)
         if pep_match:
             snippet_pep = pep_match.group(1).strip()
         else:
-            first_block = re.search(r'```(?:markdown|text)?\n(.*?)\n```', content, re.DOTALL)
+            first_block = re.search(r'```(?:markdown|text|txt)?\n(.*?)\n```', content, re.DOTALL)
             if first_block:
                 snippet_pep = first_block.group(1).strip()
             else:
@@ -215,15 +272,23 @@ for mod in modules:
             has_split = False
 
         # Receita Médica
-        receita_match = re.search(r'##\s+💊\s*Receita[^\n]*\n+(?:>[^\n]*\n+)*```(?:markdown|text)?\n(.*?)\n```', content, re.DOTALL)
+        receita_match = re.search(r'##\s+💊\s*Receita[^\n]*\n+(?:>[^\n]*\n+)*```(?:markdown|text|txt)?\n(.*?)\n```', content, re.DOTALL)
         if receita_match:
             receita_text = receita_match.group(1).strip()
         else:
-            rec_inline = re.search(r'^>>\s*(?:PRESCRIÇÃO DOMICILIAR|RECEITA DE ALTA|RECEITA MÉDICA)[^\n]*\n([\s\S]+)$', snippet_pep, re.M | re.I)
+            rec_inline = re.search(
+                r'^(?:>>\s*|#+\s*)(?:PRESCRIÇÃO DOMICILIAR(?:\s*/\s*(?:DE\s+)?ALTA|\s*/\s*RECEITA DE ALTA)?|PRESCRIÇÃO DE ALTA(?:\s*&\s*ORIENTAÇÕES[^\n]*)?|RECEITA DE ALTA|RECEITA MÉDICA)[^\n]*\n([\s\S]+)$',
+                snippet_pep,
+                re.M | re.I
+            )
             receita_text = rec_inline.group(1).strip() if rec_inline else ""
 
         # Guia de Conduta / Bolso / Diretrizes Editoriais
-        guia_match = re.search(r'(?:##\s+🎯\s*Diretrizes[^\n]*\n+|##\s+🎯\s*Guia de Bolso[^\n]*\n+|###\s+\[REGRAS DE CONDUTA|###\s+\[DIRETRIZES|###\s+\[PONTOS CRÍTICOS)(.*)', content, re.DOTALL)
+        guia_match = re.search(
+            r'(?:##\s+(?:🎯\s*)?(?:Diretrizes[^\n]*|Guia de Bolso[^\n]*)\n+|###\s+\[(?:REGRAS DE CONDUTA|DIRETRIZES|PONTOS CRÍTICOS)[^\]]*\]\s*\n*)(.*)',
+            content,
+            re.DOTALL | re.IGNORECASE
+        )
         guia_text = guia_match.group(1).strip() if guia_match else ""
 
         rel_path = os.path.relpath(f, BASE_PROJECT)
@@ -316,9 +381,10 @@ def _format_multi_choices_py(selected: list) -> str:
 
 
 def clean_pep_for_static_export(text: str) -> str:
-    """Resolve defaults [*...] e remove marcadores de UI ([? ...], [+ ...]) para Espanso."""
+    """Resolve defaults [*...] e remove marcadores de UI ([? ...], [+ ...]) e **negrito** para Espanso."""
+    cleaned_md = re.sub(r'\*\*([^*]+)\*\*', r'\1', text or '')
     out_lines = []
-    for raw_line in (text or '').splitlines():
+    for raw_line in cleaned_md.splitlines():
         i = 0
         n = len(raw_line)
         buf = []
@@ -3438,6 +3504,65 @@ if os.path.exists(index_path):
         idx_code,
         count=1
     )
+    count_by_mod = {m['id']: len([s for s in pep_snippets if s['mod_id'] == m['id']]) for m in modules}
+    total_all = len(cockpit_items)
+    idx_code = re.sub(
+        r'(<span id="wsSidebarCount">)\d+\s*PEP(</span>)',
+        rf'\g<1>{len(pep_snippets)} PEP\g<2>',
+        idx_code,
+        count=1
+    )
+    idx_code = re.sub(
+        r'(<span id="counterText">)\d+\s*Protocolos(</span>)',
+        rf'\g<1>{len(pep_snippets)} Protocolos\g<2>',
+        idx_code,
+        count=1
+    )
+    idx_code = re.sub(
+        r'(<span id="wsCenterCounter">)\d+\s*Protocolos(</span>)',
+        rf'\g<1>{len(pep_snippets)} Protocolos\g<2>',
+        idx_code,
+        count=1
+    )
+    idx_code = re.sub(
+        r'(<span id="cmdCount">)\d+\s*itens(</span>)',
+        rf'\g<1>{total_all} itens\g<2>',
+        idx_code,
+        count=1
+    )
+    idx_code = re.sub(
+        r'(data-app-section="pep"[\s\S]*?<span class="mq-nav-badge">)\d+(</span>)',
+        rf'\g<1>{len(pep_snippets)}\g<2>',
+        idx_code,
+        count=1
+    )
+    idx_code = re.sub(
+        r'(data-app-section="preporta"[\s\S]*?<span class="mq-nav-badge">)\d+(</span>)',
+        rf'\g<1>{len(hab_snippets)}\g<2>',
+        idx_code,
+        count=1
+    )
+    idx_code = re.sub(
+        r'(<span>Filtro Especialidades</span>\s*<span>)\d+(</span>)',
+        rf'\g<1>{total_all}\g<2>',
+        idx_code,
+        count=1
+    )
+    tab_counts = {
+        'all': len(pep_snippets),
+        'go': count_by_mod.get('go', 0),
+        'upa': count_by_mod.get('upa', 0),
+        'enf': count_by_mod.get('enf', 0),
+        'ped': count_by_mod.get('ped', 0),
+        'hab': len(hab_snippets),
+    }
+    for mod_key, mod_cnt in tab_counts.items():
+        idx_code = re.sub(
+            rf'(data-mod="{mod_key}"[\s\S]*?<span class="tab-count">)\d+(</span>)',
+            rf'\g<1>{mod_cnt}\g<2>',
+            idx_code,
+            count=1
+        )
     with open(index_path, 'w', encoding='utf-8') as fh:
         fh.write(idx_code)
 print(f"Cockpit Web UI/UX High-End salvo com sucesso em {html_path} e {index_path}!")

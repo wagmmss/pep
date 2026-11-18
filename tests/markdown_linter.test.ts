@@ -16,6 +16,7 @@ const ACTIVE_PROTOCOL_DIRS = [
   '02_Pronto_Atendimento_UPA',
   '03_Enfermaria_Internacao',
   '04_Pediatria_Puericultura',
+  '04_Pediatria_Pronto_Socorro_e_Puericultura',
   '05_Habilidades_Clinicas',
 ];
 

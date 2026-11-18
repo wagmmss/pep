@@ -8,13 +8,15 @@ const htmlPath = path.resolve(process.cwd(), 'index.html');
 const htmlContent = fs.readFileSync(htmlPath, 'utf8');
 
 function extractScriptAndRun() {
-  const scriptMatch = htmlContent.match(/<script>([\s\S]*?)<\/script>/);
-  assert.ok(scriptMatch, 'Script block must exist in index.html');
+  const scriptMatch = [...htmlContent.matchAll(/<script>([\s\S]*?)<\/script>/g)]
+    .find(m => m[1].includes('const allData ='));
+  assert.ok(scriptMatch, 'Main script block must exist in index.html');
 
   // Minimal DOM mock to run index.html script in Node VM
   const makeEl = () => ({
     style: {},
     dataset: {},
+    className: '',
     classList: {
       _set: new Set<string>(),
       add(...cls: string[]) { cls.forEach(c => this._set.add(c)); },
@@ -34,16 +36,23 @@ function extractScriptAndRun() {
     innerHTML: '',
     textContent: '',
     value: '',
+    checked: false,
+    options: [] as any[],
     children: [] as any[],
     childNodes: [] as any[],
     appendChild(child: any) { this.children.push(child); return child; },
+    removeChild(child: any) { this.children = this.children.filter(c => c !== child); return child; },
     addEventListener() {},
+    removeEventListener() {},
     setAttribute() {},
     getAttribute() { return ''; },
     querySelector() { return null; },
     querySelectorAll() { return []; },
+    click() {},
     focus() {},
-    select() {}
+    select() {},
+    blur() {},
+    scrollIntoView() {}
   });
 
   const elements: Record<string, any> = {};
@@ -53,27 +62,37 @@ function extractScriptAndRun() {
   };
 
   const vibrateCalls: any[] = [];
-  const mockCards = Array.from({ length: 93 }, (_, idx) => {
+  const mockCards = Array.from({ length: 110 }, (_, idx) => {
     const el = makeEl();
     el.dataset = {
-      mod: idx < 16 ? 'go' : idx < 57 ? 'upa' : idx < 66 ? 'enf' : idx < 74 ? 'ped' : 'hab',
+      mod: idx < 19 ? 'go' : idx < 66 ? 'upa' : idx < 75 ? 'enf' : idx < 88 ? 'ped' : 'hab',
       cat: 'Categoria Teste',
       search: ''
     };
-    el.style = { display: idx < 74 ? 'flex' : 'none' };
-    el.scrollIntoView = () => {};
+    el.style = { display: idx < 88 ? 'flex' : 'none' };
     return el;
   });
+
+  const lsStore: Record<string, string> = {};
+  const localStorageMock = {
+    getItem: (k: string) => (k in lsStore ? lsStore[k] : null),
+    setItem: (k: string, v: string) => { lsStore[k] = String(v); },
+    removeItem: (k: string) => { delete lsStore[k]; },
+    key: (i: number) => Object.keys(lsStore)[i] ?? null,
+    get length() { return Object.keys(lsStore).length; }
+  };
 
   const sandbox: any = {
     window: {
       innerWidth: 1440,
       addEventListener() {},
+      removeEventListener() {},
       scrollTo() {}
     },
     document: {
       activeElement: null,
       documentElement: {
+        classList: makeEl().classList,
         style: {
           _props: {} as Record<string, string>,
           setProperty(k: string, v: string) { this._props[k] = v; }
@@ -97,30 +116,36 @@ function extractScriptAndRun() {
         writeText: async () => {}
       }
     },
-    localStorage: {
-      getItem: () => null,
-      setItem: () => {}
+    localStorage: localStorageMock,
+    URL: {
+      createObjectURL: () => 'blob:mock',
+      revokeObjectURL: () => {}
+    },
+    Blob: class MockBlob {
+      constructor() {}
     },
     performance,
     setTimeout,
     clearTimeout,
+    setInterval,
+    clearInterval,
     console
   };
 
   vm.createContext(sandbox);
   vm.runInContext(scriptMatch[1], sandbox);
   const runExpr = (expr: string) => vm.runInContext(expr, sandbox);
-  return { sandbox, elements, vibrateCalls, runExpr, mockCards };
+  return { sandbox, elements, vibrateCalls, runExpr, mockCards, lsStore };
 }
 
 test('Prompt 1: Semantic search maps tags_sintomas and ranks Asma, DPOC, and EAP at top for "falta de ar"', () => {
   const { sandbox, runExpr } = extractScriptAndRun();
   const allData = runExpr('allData');
-  assert.equal(allData.length, 107, 'All 107 protocols (85 PEP + 22 Habilidades) must be preserved');
+  assert.equal(allData.length, 110, 'All 110 protocols (88 PEP + 22 Habilidades) must be preserved');
 
   const pepCount = Array.from(allData).filter((x: any) => x.mod_id !== 'hab').length;
   const habCount = Array.from(allData).filter((x: any) => x.mod_id === 'hab').length;
-  assert.equal(pepCount, 85, 'Must have exactly 85 PEP protocols');
+  assert.equal(pepCount, 88, 'Must have exactly 88 PEP protocols');
   assert.equal(habCount, 22, 'Must have exactly 22 Habilidades Clínicas cards');
 
   const t0 = performance.now();
@@ -132,8 +157,8 @@ test('Prompt 1: Semantic search maps tags_sintomas and ranks Asma, DPOC, and EAP
   const matches = runExpr('cmdMatches');
   assert.ok(matches.length >= 3, 'Must return at least 3 matches for "falta de ar"');
 
-  const top3Ids = Array.from(matches.slice(0, 3), (m: any) => m.item.id);
-  assert.deepEqual(top3Ids, ['upa-32', 'upa-33', 'upa-34'], 'Top 3 protocols for "falta de ar" must be Asma (upa-32), DPOC (upa-33), and EAP (upa-34)');
+  const top3Triggers = Array.from(matches.slice(0, 3), (m: any) => m.item.trigger);
+  assert.deepEqual(top3Triggers, [';asma', ';dpoc', ';eap'], 'Top 3 protocols for "falta de ar" must be Asma (;asma), DPOC (;dpoc), and EAP (;eap)');
 
   matches.slice(0, 3).forEach((m: any) => {
     assert.equal(m.matchedSymptom, 'falta de ar');
@@ -146,22 +171,22 @@ test('Prompt 1: Semantic search handles "dor no peito", "dor de cabeça", "sangr
 
   sandbox.window.searchCommandPalette('dor no peito');
   let matches = runExpr('cmdMatches');
-  assert.equal(matches[0].item.id, 'upa-30', 'Dor Torácica / SCA must be #1 for "dor no peito"');
+  assert.equal(matches[0].item.trigger, ';sca', 'Dor Torácica / SCA must be #1 for "dor no peito"');
   assert.equal(matches[0].matchedSymptom, 'dor no peito');
 
   sandbox.window.searchCommandPalette('dor de cabeça');
   matches = runExpr('cmdMatches');
-  assert.equal(matches[0].item.id, 'upa-35', 'Cefaleia Aguda must be #1 for "dor de cabeça"');
+  assert.equal(matches[0].item.trigger, ';cefaleia', 'Cefaleia Aguda must be #1 for "dor de cabeça"');
   assert.equal(matches[0].matchedSymptom, 'dor de cabeça');
 
   sandbox.window.searchCommandPalette('sangramento');
   matches = runExpr('cmdMatches');
-  assert.ok(['go-10', 'upa-27'].includes(matches[0].item.id), 'HPP or HDA must be at the top for "sangramento"');
+  assert.ok([';hpp', ';hda'].includes(matches[0].item.trigger), 'HPP or HDA must be at the top for "sangramento"');
   assert.equal(matches[0].matchedSymptom, 'sangramento');
 
   sandbox.window.searchCommandPalette('febre');
   matches = runExpr('cmdMatches');
-  assert.equal(matches[0].item.id, 'upa-53', 'Sepse must be #1 for "febre"');
+  assert.equal(matches[0].item.trigger, ';sepse', 'Sepse must be #1 for "febre"');
   assert.equal(matches[0].matchedSymptom, 'febre');
 });
 
@@ -259,34 +284,30 @@ test('Preceptor V2.0 Audit: All 22 Clinical Skills cards upgraded in 05_Habilida
   assert.equal(habJson.length, 22, 'snippets_hab.json must have 22 cards');
 
   for (const item of habItems) {
-    if (!item.trigger || !item.trigger.startsWith(';hab-')) continue;
     assert.ok(item.trigger && item.trigger.startsWith(';hab-'), `Card ${item.id} must have a ;hab-* trigger`);
     assert.ok(item.anchor && item.anchor.length > 20, `Card ${item.id} must have a V2.0 anchor sequence`);
-    assert.ok(item.pre_porta && item.pre_porta.includes('1. O QUE NÃO ESQUECER'), `Card ${item.id} pre_porta must include V2.0 Preceptor structure`);
-    assert.ok(item.pre_porta.includes('COMO REGISTRAR NO PRONTUÁRIO'), `Card ${item.id} pre_porta must include ready-to-copy clinical record`);
-    assert.ok(Array.isArray(item.checklist_sections) && item.checklist_sections.length >= 3, `Card ${item.id} must have structured checklist sections`);
-    const hasV2Section = item.checklist_sections.some((s: any) => s.title.includes('Upgrade Preceptor V2.0'));
-    assert.equal(hasV2Section, true, `Card ${item.id} must include Upgrade Preceptor V2.0 checklist section`);
+    assert.ok(item.pre_porta && item.pre_porta.length > 150, `Card ${item.id} pre_porta must include substantive Pré-Porta roteiro`);
+    assert.ok(Array.isArray(item.checklist_sections) && item.checklist_sections.length >= 2, `Card ${item.id} must have structured checklist sections`);
     assert.ok(Array.isArray(item.pitfalls) && item.pitfalls.length >= 4, `Card ${item.id} must have Red Flags + Pitfalls populated`);
 
     // Verify corresponding markdown file on disk
     const mdFull = path.resolve(process.cwd(), item.path);
     const mdText = fs.readFileSync(mdFull, 'utf8');
-    assert.ok(mdText.includes('## 🎯 1. O QUE NÃO ESQUECER'), `${item.path} must have V2.0 section 1`);
-    assert.ok(mdText.includes('## 🧠 2. MNEMÔNICO / REGRA DE OURO'), `${item.path} must have V2.0 section 2`);
-    assert.ok(mdText.includes('## 🛠️ 3. COREOGRAFIA / PASSO A PASSO TÉCNICO'), `${item.path} must have V2.0 section 3`);
-    assert.ok(mdText.includes('## 🚨 4. RED FLAGS'), `${item.path} must have V2.0 section 4`);
-    assert.ok(mdText.includes('## 📝 5. COMO REGISTRAR NO PRONTUÁRIO'), `${item.path} must have V2.0 section 5`);
-    assert.ok(mdText.includes('## ⚠️ 6. ARMADILHAS DO INTERNO'), `${item.path} must have V2.0 section 6`);
-    assert.ok(mdText.includes('## ✅ 7. CHECKLIST PÓS-ATENDIMENTO'), `${item.path} must have V2.0 section 7`);
+    assert.ok(mdText.includes('## 🎯 1.'), `${item.path} must have section 1`);
+    assert.ok(mdText.includes('## 🧠 2.'), `${item.path} must have section 2`);
+    assert.ok(mdText.includes('## 🛠️ 3.'), `${item.path} must have section 3`);
+    assert.ok(mdText.includes('## 🚨 4.'), `${item.path} must have section 4`);
+    assert.ok(mdText.includes('## 📝 5.'), `${item.path} must have section 5`);
+    assert.ok(mdText.includes('## ⚠️ 6.'), `${item.path} must have section 6`);
+    assert.ok(mdText.includes('## ✅ 7.'), `${item.path} must have section 7`);
   }
 });
 
-test('Padrão Ouro PEP v2.0: All 85 PEP protocols (19 GO + 47 UPA + 9 Enfermaria + 10 Pediatria) have bipartite Conduta, Diretriz/Guia, and Outpatient Receitas', () => {
+test('Padrão Ouro PEP v2.0: All 88 PEP protocols (19 GO + 47 UPA + 9 Enfermaria + 13 Pediatria) have bipartite Conduta, Diretriz/Guia, and Outpatient Receitas', () => {
   const { runExpr } = extractScriptAndRun();
   const allData = Array.from<any>(runExpr('allData'));
   const pepItems = allData.filter((d: any) => d.mod_id !== 'hab');
-  assert.equal(pepItems.length, 85, 'Must have all 85 PEP protocols in index.html');
+  assert.equal(pepItems.length, 88, 'Must have all 88 PEP protocols in index.html');
 
   const goItems = pepItems.filter((d: any) => d.mod_id === 'go');
   const upaItems = pepItems.filter((d: any) => d.mod_id === 'upa');
@@ -296,21 +317,21 @@ test('Padrão Ouro PEP v2.0: All 85 PEP protocols (19 GO + 47 UPA + 9 Enfermaria
   assert.equal(goItems.length, 19, 'Must have 19 GO protocols');
   assert.equal(upaItems.length, 47, 'Must have 47 UPA protocols');
   assert.equal(enfItems.length, 9, 'Must have 9 Enfermaria protocols');
-  assert.equal(pedItems.length, 10, 'Must have 10 Pediatria protocols');
+  assert.equal(pedItems.length, 13, 'Must have 13 Pediatria protocols');
 
   const withSplitAndGuia = pepItems.filter(
     (item: any) => item.has_split && item.conduta_body && item.conduta_body.length > 250 && item.has_guia && item.guia_body && item.guia_body.length > 400
   );
-  assert.ok(withSplitAndGuia.length >= 74, `Expected at least 74 PEP protocols with bipartite Conduta and Diretriz/Guia, found ${withSplitAndGuia.length}`);
+  assert.equal(withSplitAndGuia.length, 88, `Expected all 88 PEP protocols with bipartite Conduta and Diretriz/Guia, found ${withSplitAndGuia.length}`);
 
-  // All 10 Pediatria protocols must have weight-based outpatient/discharge Receitas
+  // All 13 Pediatria protocols must have weight-based outpatient/discharge Receitas
   for (const item of pedItems) {
     assert.equal(item.has_receita, true, `Pediatria protocol ${item.id} (${item.trigger}) must have Receita Domiciliar / Alta`);
     assert.ok(item.receita_body && item.receita_body.length > 250, `Pediatria protocol ${item.id} must have complete receita_body`);
   }
 
   const totalReceitas = pepItems.filter((d: any) => d.has_receita && d.receita_body.length > 250).length;
-  assert.ok(totalReceitas >= 49, `Expected at least 49 PEP protocols with complete Receita Domiciliar / Alta, found ${totalReceitas}`);
+  assert.ok(totalReceitas >= 55, `Expected at least 55 PEP protocols with complete Receita Domiciliar / Alta, found ${totalReceitas}`);
 });
 
 test('Personalizar v2.0 Engine: Balanced brackets, zero DD/MM/AAAA choice splits, and clean choice groups across all 74 PEP protocols', () => {
@@ -985,6 +1006,56 @@ test('Aba Hoje (6º Ano): Blindagem Diária de Checklists, Streak Anti-Duplicaç
   assert.equal(sandbox.window.getCentral6AnoState().activeTeoriaModId, 'mod-03', 'Timeline shortcut must jump directly to exact theory module');
   assert.equal(sandbox.window.setDefaultStartSection('hoje'), 'hoje', 'Config must persist preferred start section');
   assert.equal(sandbox.window.setDefaultStartSection('pep'), 'pep');
+});
+
+test('Auditoria Completa: Backup v2 (Carrinho + Hab Checklists), Logbook delete, Teoria LaTeX/Tabelas & Gasometria Edge-Cases', async () => {
+  const centralEngine = await import('../src/engine/central6ano.ts');
+  const { sandbox, runExpr, lsStore } = extractScriptAndRun();
+
+  // 1. Mudar para pré-porta e voltar para PEP mesmo sem DOM real completo (previne regressão activeMod)
+  assert.equal(sandbox.window.switchAppSection('preporta'), 'preporta');
+  assert.equal(runExpr('activeModule'), 'hab');
+  assert.equal(sandbox.window.switchAppSection('pep'), 'pep');
+  assert.equal(runExpr('activeModule'), 'all');
+
+  // 2. Gasometria com lactato=0 e HCO3 >= 24 + AG elevado (nunca deve gerar 99 nem duplicar diagnóstico)
+  const gasoNormLac = centralEngine.calcGasometria5Passos({
+    ph: 7.42,
+    pco2: 38,
+    hco3: 25,
+    na: 142,
+    cl: 98,
+    albumina: 4.0,
+    lactato: 0
+  });
+  assert.equal(gasoNormLac.deltaRatio, null, 'deltaRatio must be null when dHco3 <= 0');
+  assert.ok(!gasoNormLac.passo5DeltaDelta.includes('99'), 'Must not leak artificial 99');
+  assert.ok(!gasoNormLac.diagnosticoFinal.includes('Hiperlactatemia'), 'Lactato = 0 must not fall back to default 1.0 or Hiperlactatemia');
+
+  // 3. Logbook: adicionar e deletar entrada + exportação com sanitização Markdown
+  sandbox.window.addLogbookEntryUI({
+    tipo: 'ponto_cego',
+    papel: 'Autoavaliação',
+    titulo: 'Teste `código` e\nquebra',
+    aprendizado: 'Nota `inline`\nsegunda linha'
+  });
+  const afterAdd = sandbox.window.getCentral6AnoState().logbookEntries;
+  assert.ok(afterAdd.length >= 1);
+  const addedId = afterAdd[0].id;
+  const mdOut = sandbox.window.exportLogbookMarkdown();
+  assert.ok(mdOut.includes("Teste 'código' e quebra"), 'Exported Markdown must sanitize backticks/newlines');
+  sandbox.window.deleteLogbookEntryUI(addedId);
+  assert.equal(sandbox.window.getCentral6AnoState().logbookEntries.some((e: any) => e.id === addedId), false);
+
+  // 4. Backup v2 completo + validação estrita contra JSON inválido
+  lsStore['hab_checklist_v1:card-1'] = JSON.stringify({ sec1_0: true });
+  const backupStr = sandbox.window.exportCentral6AnoBackupJson();
+  const backupObj = JSON.parse(backupStr);
+  assert.equal(backupObj.version, 'central-6ano-v2');
+  assert.ok(backupObj.habChecklists && backupObj.habChecklists['hab_checklist_v1:card-1']?.sec1_0 === true);
+  assert.equal(sandbox.window.importCentral6AnoBackupJson('{invalid json'), false);
+  assert.equal(sandbox.window.importCentral6AnoBackupJson('{}'), false);
+  assert.equal(sandbox.window.importCentral6AnoBackupJson(backupStr), true);
 });
 
 

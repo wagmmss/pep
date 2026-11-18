@@ -1388,3 +1388,300 @@ matches:
       3. NUNCA tente abrir a boca da criança à força, NUNCA puxe a língua e NUNCA coloque o dedo, colher, pano ou água/remédio na boca durante a crise (a língua NÃO enrola nem é engolida, e colocar objetos na boca pode quebrar dentes ou sufocar a criança).
       4. Leve imediatamente ao Pronto-Socorro (ou ligue 192 — SAMU) se a crise durar MAIS DE 5 MINUTOS, se um lado só do corpo tremer ou se a criança não voltar a ficar esperta 30 a 60 minutos após a crise parar.
 
+  - trigger: ";ped-asma"
+    replace: |
+      ATENDIMENTO PEDIÁTRICO DE EMERGÊNCIA — CRISE DE ASMA AGUDA / BRONCOESPASMO (GINA PEDIÁTRICO)
+      IDENTIFICAÇÃO & ANTROPOMETRIA:
+      Criança [Nome], [Idade] anos/meses | Peso Atual: [15] kg | Acompanhante: [Mãe / Pai].
+      
+      ANAMNESE DIRIGIDA:
+      - Quadro Atual: Tosse seca persistente, "chiado no peito" e cansaço iniciados há [ ] horas/dias, desencadeados por [quadro viral de vias aéreas superiores / mudança climática / poeira ou aeroalérgenos / interrupção do corticoide inalatório].
+      - Uso Prévio de Resgate em Casa: [Não realizou puffs em casa / Fez Salbutamol sem espaçador ou com resposta parcial transitória].
+      - Histórico de Asma e Fatores de Risco para Asma Quase-Fatal: [Primeira crise sibilante / Asmático sem tratamento preventivo regular / Internação prévia em UTI ou IOT por asma / > 1 ida ao PS no último ano].
+      
+      EXAME FÍSICO & CLASSIFICAÇÃO DE GRAVIDADE DA CRISE (GINA):
+      - Sinais Vitais: FC: [125] bpm | FR: [38] irpm (Cortes de Taquipneia: < 2m ≥ 60; 2–11m ≥ 50; 1–5a ≥ 40; > 5a ≥ 30) | SpO2: [93]% em ar ambiente | Tax: [36,8]°C.
+      - Esforço Respiratório e Fala: Criança [alerta, falando frases completas, tiragem subcostal leve a moderada / agitada, falando apenas palavras isoladas, com tiragem intercostal, subcostal, de fúrcula e batimento de asa de nariz / sonolenta, exausta, cianótica].
+      - Ausculta Pulmonar: Murmúrio vesicular [presente bilateralmente com sibilos expiratórios difusos / globalmente reduzido com sibilos inspiratórios e expiratórios / Tórax silencioso — iminência de parada respiratória!].
+      - Classificação da Exacerbação: [Crise Leve a Moderada (SpO2 90–95%, fala frases, sem agitação) / Crise Grave (SpO2 < 90%, fala palavras, FC > 140 em > 5a ou > 180 em 0–5a, retração acentuada) / Asma Ameaçadora à Vida (sonolência, confusão ou tórax silencioso)].
+      
+      # PLANO / CONDUTA
+      1. Oxigenoterapia Titulada (se Hipoxemia): Ofertar O2 por cateter nasal ou máscara para manter SpO2 entre 94% e 98% na criança.
+      2. Broncodilatação de Ataque na 1ª Hora (Preferir SEMPRE Spray Dosimetrado / pMDI com Espaçador e máscara facial/bocal à nebulização!):
+       - Salbutamol 100 mcg/jato via espaçador: Aplicar 4 a 10 jatos (Crianças < 20 kg: 4 a 6 jatos; ≥ 20 kg: 6 a 10 jatos — agitando o frasco e fazendo 1 jato por vez com 5 respirações calmas no espaçador a cada jato) a cada 20 minutos durante a 1ª hora (total de 3 ciclos na 1ª hora).
+       - Brometo de Ipratrópio (Adicionar obrigatoriamente nas crises Moderadas a Graves na 1ª hora — reduz internação!): Aplicar 2 a 4 jatos (20 mcg/jato) no espaçador junto com cada ciclo de Salbutamol na 1ª hora (ou 20 a 40 gotas se nebulização).
+      3. Corticoterapia Sistêmica Precoce (Administrar na 1ª hora de atendimento):
+       - Via Oral (tão eficaz quanto EV se a criança não estiver vomitando): Prednisolona 3 mg/mL na dose de 1 a 2 mg/kg/dia (máx 20 mg em < 2 anos; máx 30 mg em 2–5 anos; máx 40 mg em > 5 anos).
+       - Via Venosa (se vômitos ou crise grave sem condição de VO): Metilprednisolona 1 a 2 mg/kg IV (máx 60 mg) ou Hidrocortisona 4 a 8 mg/kg IV (máx 250 mg).
+      4. Reavaliação em 1 Hora e Manejo de Crise Refratária:
+       - Se Crise Grave sem resposta após a 1ª hora: Administrar Sulfato de Magnésio IV 50 mg/kg (máximo 2.000 mg / 2 g) diluído em SF 0,9% para correr em 20 a 30 minutos em bomba de infusão (monitorar PA e reflexos) + internação em sala de emergência/UTI.
+       - Se boa resposta sustentada (SpO2 ≥ 94% em ar ambiente por > 1–2 horas após o último broncodilatador, sem esforço respiratório): Alta hospitalar com plano de ação escrito e revisão da técnica do espaçador.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO INALATÓRIO E ORAL (RECEITA DE ALTA PEDIÁTRICA — PESO DE REFERÊNCIA: [15] KG):
+      
+      1. Sulfato de Salbutamol 100 mcg/dose (Aerolin spray oral) — 1 frasco + Espaçador infantil com máscara/bocal
+       - Aplicar [4] jatos (1 jato por vez no espaçador, aguardando 5 respirações ou 15 segundos entre cada jato) a cada 4 ou 6 horas nos primeiros 2 dias, espaçando para cada 6 ou 8 horas por mais 3 dias conforme melhora do cansaço e da tosse.
+      
+      2. Fosfato Sódico de Prednisolona 3 mg/mL (solução oral) — 1 frasco (60 mL)
+       - Dar [5 a 10] mL (1 a 2 mg/kg/dia — máx 40 mg/dia) por via oral, 1 vez ao dia pela manhã após o café, por 3 a 5 dias (não precisa de desmame se usado por ≤ 5 dias).
+      
+      3. Dipirona Monoidratada 500 mg/mL (gotas) — 1 frasco
+       - Dar [12] gotas por via oral a cada 6 horas somente se febre (Tax ≥ 37,8°C) ou dor.
+      
+      4. Soro Fisiológico 0,9% para lavagem nasal — 1 frasco (250 mL)
+       - Realizar lavagem nasal com seringa antes das inalações e antes de dormir.
+      
+      5. Sinais de Alarme para Retorno Imediato ao Pronto-Socorro Infantil:
+       - Retornar imediatamente se a criança voltar a ficar cansada menos de 3 horas após o uso da bombinha, apresentar afundamento das costelas ou do pescoço para respirar, dificuldade para falar/mamar, lábios arroxeados ou prostração.
+
+  - trigger: ";ped-asma-cnd"
+    replace: |
+      # PLANO / CONDUTA
+      1. Oxigenoterapia Titulada (se Hipoxemia): Ofertar O2 por cateter nasal ou máscara para manter SpO2 entre 94% e 98% na criança.
+      2. Broncodilatação de Ataque na 1ª Hora (Preferir SEMPRE Spray Dosimetrado / pMDI com Espaçador e máscara facial/bocal à nebulização!):
+       - Salbutamol 100 mcg/jato via espaçador: Aplicar 4 a 10 jatos (Crianças < 20 kg: 4 a 6 jatos; ≥ 20 kg: 6 a 10 jatos — agitando o frasco e fazendo 1 jato por vez com 5 respirações calmas no espaçador a cada jato) a cada 20 minutos durante a 1ª hora (total de 3 ciclos na 1ª hora).
+       - Brometo de Ipratrópio (Adicionar obrigatoriamente nas crises Moderadas a Graves na 1ª hora — reduz internação!): Aplicar 2 a 4 jatos (20 mcg/jato) no espaçador junto com cada ciclo de Salbutamol na 1ª hora (ou 20 a 40 gotas se nebulização).
+      3. Corticoterapia Sistêmica Precoce (Administrar na 1ª hora de atendimento):
+       - Via Oral (tão eficaz quanto EV se a criança não estiver vomitando): Prednisolona 3 mg/mL na dose de 1 a 2 mg/kg/dia (máx 20 mg em < 2 anos; máx 30 mg em 2–5 anos; máx 40 mg em > 5 anos).
+       - Via Venosa (se vômitos ou crise grave sem condição de VO): Metilprednisolona 1 a 2 mg/kg IV (máx 60 mg) ou Hidrocortisona 4 a 8 mg/kg IV (máx 250 mg).
+      4. Reavaliação em 1 Hora e Manejo de Crise Refratária:
+       - Se Crise Grave sem resposta após a 1ª hora: Administrar Sulfato de Magnésio IV 50 mg/kg (máximo 2.000 mg / 2 g) diluído em SF 0,9% para correr em 20 a 30 minutos em bomba de infusão (monitorar PA e reflexos) + internação em sala de emergência/UTI.
+       - Se boa resposta sustentada (SpO2 ≥ 94% em ar ambiente por > 1–2 horas após o último broncodilatador, sem esforço respiratório): Alta hospitalar com plano de ação escrito e revisão da técnica do espaçador.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO INALATÓRIO E ORAL (RECEITA DE ALTA PEDIÁTRICA — PESO DE REFERÊNCIA: [15] KG):
+      
+      1. Sulfato de Salbutamol 100 mcg/dose (Aerolin spray oral) — 1 frasco + Espaçador infantil com máscara/bocal
+       - Aplicar [4] jatos (1 jato por vez no espaçador, aguardando 5 respirações ou 15 segundos entre cada jato) a cada 4 ou 6 horas nos primeiros 2 dias, espaçando para cada 6 ou 8 horas por mais 3 dias conforme melhora do cansaço e da tosse.
+      
+      2. Fosfato Sódico de Prednisolona 3 mg/mL (solução oral) — 1 frasco (60 mL)
+       - Dar [5 a 10] mL (1 a 2 mg/kg/dia — máx 40 mg/dia) por via oral, 1 vez ao dia pela manhã após o café, por 3 a 5 dias (não precisa de desmame se usado por ≤ 5 dias).
+      
+      3. Dipirona Monoidratada 500 mg/mL (gotas) — 1 frasco
+       - Dar [12] gotas por via oral a cada 6 horas somente se febre (Tax ≥ 37,8°C) ou dor.
+      
+      4. Soro Fisiológico 0,9% para lavagem nasal — 1 frasco (250 mL)
+       - Realizar lavagem nasal com seringa antes das inalações e antes de dormir.
+      
+      5. Sinais de Alarme para Retorno Imediato ao Pronto-Socorro Infantil:
+       - Retornar imediatamente se a criança voltar a ficar cansada menos de 3 horas após o uso da bombinha, apresentar afundamento das costelas ou do pescoço para respirar, dificuldade para falar/mamar, lábios arroxeados ou prostração.
+
+  - trigger: ";ped-asma-rec"
+    replace: |
+      USO INALATÓRIO E ORAL (RECEITA DE ALTA PEDIÁTRICA — PESO DE REFERÊNCIA: [15] KG):
+      
+      1. Sulfato de Salbutamol 100 mcg/dose (Aerolin spray oral) — 1 frasco + Espaçador infantil com máscara/bocal
+       - Aplicar [4] jatos (1 jato por vez no espaçador, aguardando 5 respirações ou 15 segundos entre cada jato) a cada 4 ou 6 horas nos primeiros 2 dias, espaçando para cada 6 ou 8 horas por mais 3 dias conforme melhora do cansaço e da tosse.
+      
+      2. Fosfato Sódico de Prednisolona 3 mg/mL (solução oral) — 1 frasco (60 mL)
+       - Dar [5 a 10] mL (1 a 2 mg/kg/dia — máx 40 mg/dia) por via oral, 1 vez ao dia pela manhã após o café, por 3 a 5 dias (não precisa de desmame se usado por ≤ 5 dias).
+      
+      3. Dipirona Monoidratada 500 mg/mL (gotas) — 1 frasco
+       - Dar [12] gotas por via oral a cada 6 horas somente se febre (Tax ≥ 37,8°C) ou dor.
+      
+      4. Soro Fisiológico 0,9% para lavagem nasal — 1 frasco (250 mL)
+       - Realizar lavagem nasal com seringa antes das inalações e antes de dormir.
+      
+      5. Sinais de Alarme para Retorno Imediato ao Pronto-Socorro Infantil:
+       - Retornar imediatamente se a criança voltar a ficar cansada menos de 3 horas após o uso da bombinha, apresentar afundamento das costelas ou do pescoço para respirar, dificuldade para falar/mamar, lábios arroxeados ou prostração.
+
+  - trigger: ";ped-exantema"
+    replace: |
+      ATENDIMENTO PEDIÁTRICO — DOENÇAS EXANTEMÁTICAS FEBRIS NA INFÂNCIA & DOENÇA DE KAWASAKI
+      IDENTIFICAÇÃO & ANTROPOMETRIA:
+      Criança [Nome], [Idade] anos/meses | Peso Atual: [14] kg | Cartão Vacinal (Tríplice/Tetra Viral): [Atualizado / Incompleto].
+      
+      CRONOLOGIA DA FEBRE VS. EXANTEMA (CHAVE DO DIAGNÓSTICO DIFERENCIAL):
+      - Tempo de Febre: [ ] dias (ATENÇÃO: Se febre alta persistente ≥ 5 dias, investigar obrigatoriamente Doença de Kawasaki!).
+      - Relação Febre x Rash: [O exantema surgiu EXATAMENTE quando a febre alta desapareceu subitamente após 3–4 dias → Exantema Súbito (Roséola / HHV-6)! / Exantema surgiu no pico da febre alta com tosse, coriza e conjuntivite → Sarampo! / Exantema surgiu após 24–48h de odinofagia e febre → Escarlatina! / Criança afebril ou subfebril com "face esbofeteada" → Eritema Infeccioso!].
+      
+      EXAME FÍSICO DERMATOLÓGICO E DE MUCOSAS (CLASSIFICAÇÃO MORFOLÓGICA):
+      - Sinais Vitais: Tax: [37,2]°C | FC: [110] bpm | FR: [26] irpm | SpO2: [98]%. BEG, hidratada, sem sinais meníngeos ou petéquias/púrpura (Sinal da Vitrocompressão: lesões desaparecem à digitopressão — afasta meningococcemia!).
+      - Padrão Clínico Identificado:
+       * [1. Exantema Súbito (Roséola Infantil — HHV-6/7): Lactente 6m–2a em ótimo estado geral, máculas róseas no tronco que surgem após crise da febre].
+       * [2. Eritema Infeccioso (5ª Doença — Parvovírus B19): Eritema malar bilateral ("face esbofeteada") com palidez perioral + exantema maculopapular rendilhado/reticulado em membros que recidiva ao sol/calor].
+       * [3. Escarlatina (Streptococcus pyogenes): Exantema micropapular áspero em "lixa", acentuação nas dobras flexurais (Sinal de Pastia), palidez perioral (Sinal de Filatov), língua em framboesa e faringoamigdalite exsudativa].
+       * [4. Doença Mão-Pé-Boca (Coxsackie A16 / Enterovírus 71): Vesículas ovaladas em palmas das mãos, plantas dos pés, pápulas em região glútea e úlceras dolorosas em cavidade oral].
+       * [5. Varicela (Catapora — VZV): Polimorfismo regional pruriginoso (máculas, pápulas, vesículas em "gota de orvalho" e crostas simultâneas) de distribuição centrípeta e couro cabeludo].
+       * [6. Doença de Kawasaki (Vasculite de médios vasos): Febre ≥ 5 dias + ≥ 4 de 5 critérios: (1) Conjuntivite bilateral não exsudativa; (2) Alteração oral (língua em framboesa / lábios fissurados); (3) Adenopatia cervical unilateral > 1,5 cm; (4) Exantema polimorfo; (5) Alteração de extremidades (edema/eritema palmar-plantar agudo ou descamação periungueal subaguda)].
+      
+      # PLANO / CONDUTA
+      1. Exclusão Imediata de Emergências Exantemáticas: Verificar ausência de petéquias/púrpuras que não desaparecem à vitrocompressão (Meningococcemia / Febre Maculosa) e checar se há febre ≥ 5 dias com irritabilidade intensa (Doença de Kawasaki).
+      2. Conduta Específica conforme Etiologia:
+       - Exantemas Virais Benignos (Exantema Súbito, Eritema Infeccioso, Mão-Pé-Boca): Manejo sintomático com hidratação oral fria/pastosa (especialmente no Mão-Pé-Boca pela odinofagia), antitérmico (Paracetamol ou Dipirona) e orientação familiar.
+       - Escarlatina (Estreptocócica): Antibioticoterapia erradicadora obrigatória para prevenir Febre Reumática → Penicilina G Benzatina IM dose única (< 20 kg: 600.000 UI; ≥ 20 kg: 1.200.000 UI) OU Amoxicilina 50 mg/kg/dia VO dividida de 8/8h ou 12/12h por 10 dias. Retorno escolar liberado após 24h de antibiótico sem febre.
+       - Varicela (Catapora): Banho com permanganato/sabonete neutro, unhas curtas, anti-histamínico oral (Dexclorfeniramina / Hidroxizina) + PROIBIR ÁCIDO ACETILSALICÍLICO (AAS — Síndrome de Reye) e EVITAR IBUPROFENO/AINEs (risco aumentado de fasciíte necrosante estreptocócica secundária!). Iniciar Aciclovir 20 mg/kg/dose VO 4x/dia por 5 dias se ≥ 12 anos, doença cutânea/pulmonar crônica ou 2º caso no domicílio (ou Aciclovir IV 10 mg/kg 8/8h em imunossuprimidos).
+       - Doença de Kawasaki (Suspeita completa ou incompleta): Internação hospitalar imediata + Ecocardiograma Transtorácico (pesquisa de aneurismas de artérias coronárias) + Imunoglobulina Humana IV (IGIV) 2 g/kg em infusão única de 10–12 horas (idealmente antes do 10º dia de febre!) + AAS em dose moderada/anti-inflamatória seguido de dose antiagregante (3 a 5 mg/kg/dia).
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (RECEITA DOMICILIAR PEDIÁTRICA — PESO DE REFERÊNCIA: [14] KG):
+      
+      1. Paracetamol 200 mg/mL (gotas) [1ª escolha segura em todos os exantemas, inclusive Varicela!] — 1 frasco (15 mL)
+       - Dar [14] gotas (1 gota/kg/dose) por via oral a cada 6 horas se febre (Tax ≥ 37,8°C) ou dor na boca/garganta.
+      
+      2. Maleato de Dexclorfeniramina 0,4 mg/mL (solução oral — se prurido/coceira na Varicela ou exantema alérgico) — 1 frasco (100 mL)
+       - Dar [3,5] mL (0,25 mL/kg/dia dividido de 8/8h; em 2–6 anos: 1,25 mL 8/8h) por via oral a cada 8 horas por 5 dias se coceira intensa.
+      
+      3. Amoxicilina 250 mg/5 mL suspensão oral [APENAS SE ESCARLATINA CONFIRMADA!] — 2 frascos
+       - Dar [4,5] mL por via oral a cada 8 horas (50 mg/kg/dia) durante 10 dias completos.
+      
+      4. Orientações de Isolamento e Sinais de Alarme:
+       - NUNCA administrar AAS (Aspirina) ou Ibuprofeno em criança com suspeita de Catapora (Varicela).
+       - No Mão-Pé-Boca: oferecer líquidos frios, sorvete de fruta, gelatina e alimentos pastosos frios/mornos sem acidez ou sal excessivo para evitar desidratação por dor ao engolir.
+       - Retornar imediatamente ao pronto-socorro se a febre durar 5 dias ou mais, surgirem manchas roxas que não somem ao esticar a pele, prostração intensa, recusa total de líquidos/redução do xixi ou vermelhidão quente e dolorosa ao redor de alguma ferida de catapora.
+
+  - trigger: ";ped-exantema-cnd"
+    replace: |
+      # PLANO / CONDUTA
+      1. Exclusão Imediata de Emergências Exantemáticas: Verificar ausência de petéquias/púrpuras que não desaparecem à vitrocompressão (Meningococcemia / Febre Maculosa) e checar se há febre ≥ 5 dias com irritabilidade intensa (Doença de Kawasaki).
+      2. Conduta Específica conforme Etiologia:
+       - Exantemas Virais Benignos (Exantema Súbito, Eritema Infeccioso, Mão-Pé-Boca): Manejo sintomático com hidratação oral fria/pastosa (especialmente no Mão-Pé-Boca pela odinofagia), antitérmico (Paracetamol ou Dipirona) e orientação familiar.
+       - Escarlatina (Estreptocócica): Antibioticoterapia erradicadora obrigatória para prevenir Febre Reumática → Penicilina G Benzatina IM dose única (< 20 kg: 600.000 UI; ≥ 20 kg: 1.200.000 UI) OU Amoxicilina 50 mg/kg/dia VO dividida de 8/8h ou 12/12h por 10 dias. Retorno escolar liberado após 24h de antibiótico sem febre.
+       - Varicela (Catapora): Banho com permanganato/sabonete neutro, unhas curtas, anti-histamínico oral (Dexclorfeniramina / Hidroxizina) + PROIBIR ÁCIDO ACETILSALICÍLICO (AAS — Síndrome de Reye) e EVITAR IBUPROFENO/AINEs (risco aumentado de fasciíte necrosante estreptocócica secundária!). Iniciar Aciclovir 20 mg/kg/dose VO 4x/dia por 5 dias se ≥ 12 anos, doença cutânea/pulmonar crônica ou 2º caso no domicílio (ou Aciclovir IV 10 mg/kg 8/8h em imunossuprimidos).
+       - Doença de Kawasaki (Suspeita completa ou incompleta): Internação hospitalar imediata + Ecocardiograma Transtorácico (pesquisa de aneurismas de artérias coronárias) + Imunoglobulina Humana IV (IGIV) 2 g/kg em infusão única de 10–12 horas (idealmente antes do 10º dia de febre!) + AAS em dose moderada/anti-inflamatória seguido de dose antiagregante (3 a 5 mg/kg/dia).
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (RECEITA DOMICILIAR PEDIÁTRICA — PESO DE REFERÊNCIA: [14] KG):
+      
+      1. Paracetamol 200 mg/mL (gotas) [1ª escolha segura em todos os exantemas, inclusive Varicela!] — 1 frasco (15 mL)
+       - Dar [14] gotas (1 gota/kg/dose) por via oral a cada 6 horas se febre (Tax ≥ 37,8°C) ou dor na boca/garganta.
+      
+      2. Maleato de Dexclorfeniramina 0,4 mg/mL (solução oral — se prurido/coceira na Varicela ou exantema alérgico) — 1 frasco (100 mL)
+       - Dar [3,5] mL (0,25 mL/kg/dia dividido de 8/8h; em 2–6 anos: 1,25 mL 8/8h) por via oral a cada 8 horas por 5 dias se coceira intensa.
+      
+      3. Amoxicilina 250 mg/5 mL suspensão oral [APENAS SE ESCARLATINA CONFIRMADA!] — 2 frascos
+       - Dar [4,5] mL por via oral a cada 8 horas (50 mg/kg/dia) durante 10 dias completos.
+      
+      4. Orientações de Isolamento e Sinais de Alarme:
+       - NUNCA administrar AAS (Aspirina) ou Ibuprofeno em criança com suspeita de Catapora (Varicela).
+       - No Mão-Pé-Boca: oferecer líquidos frios, sorvete de fruta, gelatina e alimentos pastosos frios/mornos sem acidez ou sal excessivo para evitar desidratação por dor ao engolir.
+       - Retornar imediatamente ao pronto-socorro se a febre durar 5 dias ou mais, surgirem manchas roxas que não somem ao esticar a pele, prostração intensa, recusa total de líquidos/redução do xixi ou vermelhidão quente e dolorosa ao redor de alguma ferida de catapora.
+
+  - trigger: ";ped-exantema-rec"
+    replace: |
+      USO ORAL (RECEITA DOMICILIAR PEDIÁTRICA — PESO DE REFERÊNCIA: [14] KG):
+      
+      1. Paracetamol 200 mg/mL (gotas) [1ª escolha segura em todos os exantemas, inclusive Varicela!] — 1 frasco (15 mL)
+       - Dar [14] gotas (1 gota/kg/dose) por via oral a cada 6 horas se febre (Tax ≥ 37,8°C) ou dor na boca/garganta.
+      
+      2. Maleato de Dexclorfeniramina 0,4 mg/mL (solução oral — se prurido/coceira na Varicela ou exantema alérgico) — 1 frasco (100 mL)
+       - Dar [3,5] mL (0,25 mL/kg/dia dividido de 8/8h; em 2–6 anos: 1,25 mL 8/8h) por via oral a cada 8 horas por 5 dias se coceira intensa.
+      
+      3. Amoxicilina 250 mg/5 mL suspensão oral [APENAS SE ESCARLATINA CONFIRMADA!] — 2 frascos
+       - Dar [4,5] mL por via oral a cada 8 horas (50 mg/kg/dia) durante 10 dias completos.
+      
+      4. Orientações de Isolamento e Sinais de Alarme:
+       - NUNCA administrar AAS (Aspirina) ou Ibuprofeno em criança com suspeita de Catapora (Varicela).
+       - No Mão-Pé-Boca: oferecer líquidos frios, sorvete de fruta, gelatina e alimentos pastosos frios/mornos sem acidez ou sal excessivo para evitar desidratação por dor ao engolir.
+       - Retornar imediatamente ao pronto-socorro se a febre durar 5 dias ou mais, surgirem manchas roxas que não somem ao esticar a pele, prostração intensa, recusa total de líquidos/redução do xixi ou vermelhidão quente e dolorosa ao redor de alguma ferida de catapora.
+
+  - trigger: ";ped-itu"
+    replace: |
+      ATENDIMENTO PEDIÁTRICO — INFECÇÃO DO TRATO URINÁRIO (ITU) NA INFÂNCIA E LACTENTE (SBP / AAP)
+      IDENTIFICAÇÃO & ANTROPOMETRIA:
+      Criança [Nome], [Idade] meses/anos | Peso Atual: [12] kg | Controle esfincteriano: [Não adquirido (usa fralda) / Adquirido].
+      
+      APRESENTAÇÃO CLÍNICA POR FAIXA ETÁRIA:
+      - Quadro Clínico:
+       * [Lactente / < 2 anos: Febre sem sinais localizatórios (Tax ≥ 38°C, especialmente se ≥ 39°C por > 24–48h — a ITU é a infecção bacteriana oculta mais comum nessa faixa!), irritabilidade, vômitos, recusa alimentar ou baixo ganho ponderal].
+       * [Criança maior com controle esfincteriano: Disúria, polaciúria, urgência miccional, enurese secundária, dor suprapúbica (Cistite afebril) ou febre alta + dor lombar/flanco + vômitos (Pielonefrite aguda)].
+      - Antecedentes Nefrourológicos: [Primeiro episódio de ITU / ITU de repetição / Hidronefrose antenatal na USG gestacional / Constipação intestinal associada e retenção urinária funcional — Disfunção das Eliminações!].
+      
+      EXAME FÍSICO & MÉTODO DE COLETA URINÁRIA (ATENÇÃO À REGRA DO SACO COLETOR!):
+      - Sinais Vitais: Tax: [38,5]°C | FC: [130] bpm | FR: [30] irpm. Estado Geral: [BEG, ativa, hidratada, aceitando bem via oral / Toxemiada, prostrada, vomitando ou desidratada].
+      - Abdome e Genitália: Abdome flácido, sem massas ou bexigoma; genitália externa [sem vulvovaginite, sinéquia labial ou balanopostite / fimose fisiológica].
+      - Método de Coleta de EAS + Urocultura (OBRIGATÓRIO ANTES DA 1ª DOSE DE ANTIBIÓTICO!):
+       * [Criança com controle esfincteriano: Jato médio após higiene íntima].
+       * [Lactente SEM controle esfincteriano: Cateterismo vesical de alívio estéril ou Punção Suprapúbica — NOTA: Saco coletor positivo tem até 85% de falso-positivo por contaminação perineal e NUNCA serve para confirmar ITU nem iniciar antibiótico sem confirmação por sondagem!].
+      - Resultado do EAS / Fita Reagente: Leucocitúria [presente (> 10.000/mL ou ≥ 5–10/campo)] | Esterase leucocitária: [Positiva] | Nitrito: [Positivo (altamente específico, mas pode ser negativo no lactente que urina com frequência!) / Negativo] | Bacterioscopia (Gram): [Presença de bacilos Gram-negativos].
+      
+      # PLANO / CONDUTA
+      1. Regra de Ouro Diagnóstica: Em lactentes febris sem controle esfincteriano, o saco coletor só tem valor se vier NEGATIVO (para excluir ITU). Se o saco coletor vier alterado ou se a criança for iniciar antibiótico, colher obrigatoriamente Urocultura por Cateterismo Vesical ou Punção Suprapúbica antes da 1ª dose do antimicrobiano.
+      2. Critérios de Internação Hospitalar para Antibioticoterapia Parenteral (Ceftriaxona 50 a 75 mg/kg/dia IV 24/24h ou Gentamicina 5 mg/kg/dia IV 24/24h; se RN < 2m: Ampicilina + Gentamicina/Cefotaxima):
+       - Idade < 2 a 3 meses;
+       - Sinais de sepse, toxemia, prostração ou desidratação moderada/grave;
+       - Vômitos persistentes / intolerância à medicação por via oral;
+       - Uropatia obstrutiva conhecida grave ou falha clínica após 48–72h de antibiótico oral.
+      3. Tratamento Ambulatorial Oral (Crianças > 3 meses em bom estado geral, hidratadas e tolerando via oral):
+       - ITU Febril / Pielonefrite Não Complicada (Duração: 7 a 14 dias — evitar Nitrofurantoína na ITU febril, pois não atinge concentração no parênquima renal!):
+       * Amoxicilina + Clavulanato (400 mg + 57 mg / 5 mL): 40 a 50 mg/kg/dia de amoxicilina divididos de 12/12h (ou 8/8h na apresentação 250 mg/5 mL) por 10 dias; OU
+       * Cefuroxima Axetil (250 mg/5 mL): 20 a 30 mg/kg/dia divididos de 12/12h por 10 dias; OU
+       * Cefalexina (250 mg/5 mL): 50 a 100 mg/kg/dia divididos de 6/6h por 10 dias.
+       - Cistite Afebril em Criança Maior (> 2 anos, sem febre — Duração: 5 a 7 dias): Cefalexina 50 mg/kg/dia de 6/6h, Amoxicilina-Clavulanato 40 mg/kg/dia ou Sulfametoxazol-Trimetoprima (40 mg/kg/dia de SMX de 12/12h).
+      4. Investigação por Imagem Pós-Tratamento (Diretriz SBP / AAP):
+       - Solicitar Ultrassonografia de Rins e Vias Urinárias (USGRV) para toda criança < 2 anos após o 1º episódio de ITU febril (ou em qualquer idade se ITU febril grave/recorrente). Uretrocistografia Miccional (UCM) reservada se USGRV alterada (hidronefrose, cicatriz, ureter dilatado) ou no 2º episódio de ITU febril.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (RECEITA DOMICILIAR PEDIÁTRICA — ITU / PIELONEFRITE EM > 3 MESES ESTÁVEL — PESO: [12] KG):
+      
+      1. Amoxicilina + Clavulanato de Potássio 400 mg + 57 mg / 5 mL (suspensão oral) — 2 frascos (70 mL cada)
+       - Dar [3,5] mL (45 mg/kg/dia divididos de 12/12h) por via oral a cada 12 horas, junto com as refeições, durante 10 dias completos (agitar bem o frasco antes de usar e conservar em geladeira após reconstituição).
+      
+      2. [Opção Alternativa] Cefalexina 250 mg / 5 mL (suspensão oral) — 2 frascos (100 mL cada)
+       - Dar [3,5] mL (60 mg/kg/dia divididos de 6/6h) por via oral a cada 6 horas durante 7 a 10 dias.
+      
+      3. Dipirona Monoidratada 500 mg/mL (gotas) — 1 frasco
+       - Dar [10] gotas por via oral a cada 6 horas se febre (Tax ≥ 37,8°C) ou dor ao urinar.
+      
+      4. Orientações, Retorno para Checagem de Urocultura e Investigação:
+       - Retorno obrigatório em 48 a 72 horas para reavaliação da curva térmica e conferência do resultado da Urocultura com Antibiograma.
+       - Estimular ingestão abundante de água, micções regulares a cada 2–3 horas (evitar "segurar o xixi") e tratar constipação intestinal associada.
+       - Solicito Ultrassonografia de Rins e Vias Urinárias ambulatorial após término do tratamento.
+       - Retornar imediatamente ao pronto-socorro se a febre persistir após 48 horas do antibiótico, surgirem vômitos que impeçam a medicação, prostração ou diminuição do volume urinário.
+
+  - trigger: ";ped-itu-cnd"
+    replace: |
+      # PLANO / CONDUTA
+      1. Regra de Ouro Diagnóstica: Em lactentes febris sem controle esfincteriano, o saco coletor só tem valor se vier NEGATIVO (para excluir ITU). Se o saco coletor vier alterado ou se a criança for iniciar antibiótico, colher obrigatoriamente Urocultura por Cateterismo Vesical ou Punção Suprapúbica antes da 1ª dose do antimicrobiano.
+      2. Critérios de Internação Hospitalar para Antibioticoterapia Parenteral (Ceftriaxona 50 a 75 mg/kg/dia IV 24/24h ou Gentamicina 5 mg/kg/dia IV 24/24h; se RN < 2m: Ampicilina + Gentamicina/Cefotaxima):
+       - Idade < 2 a 3 meses;
+       - Sinais de sepse, toxemia, prostração ou desidratação moderada/grave;
+       - Vômitos persistentes / intolerância à medicação por via oral;
+       - Uropatia obstrutiva conhecida grave ou falha clínica após 48–72h de antibiótico oral.
+      3. Tratamento Ambulatorial Oral (Crianças > 3 meses em bom estado geral, hidratadas e tolerando via oral):
+       - ITU Febril / Pielonefrite Não Complicada (Duração: 7 a 14 dias — evitar Nitrofurantoína na ITU febril, pois não atinge concentração no parênquima renal!):
+       * Amoxicilina + Clavulanato (400 mg + 57 mg / 5 mL): 40 a 50 mg/kg/dia de amoxicilina divididos de 12/12h (ou 8/8h na apresentação 250 mg/5 mL) por 10 dias; OU
+       * Cefuroxima Axetil (250 mg/5 mL): 20 a 30 mg/kg/dia divididos de 12/12h por 10 dias; OU
+       * Cefalexina (250 mg/5 mL): 50 a 100 mg/kg/dia divididos de 6/6h por 10 dias.
+       - Cistite Afebril em Criança Maior (> 2 anos, sem febre — Duração: 5 a 7 dias): Cefalexina 50 mg/kg/dia de 6/6h, Amoxicilina-Clavulanato 40 mg/kg/dia ou Sulfametoxazol-Trimetoprima (40 mg/kg/dia de SMX de 12/12h).
+      4. Investigação por Imagem Pós-Tratamento (Diretriz SBP / AAP):
+       - Solicitar Ultrassonografia de Rins e Vias Urinárias (USGRV) para toda criança < 2 anos após o 1º episódio de ITU febril (ou em qualquer idade se ITU febril grave/recorrente). Uretrocistografia Miccional (UCM) reservada se USGRV alterada (hidronefrose, cicatriz, ureter dilatado) ou no 2º episódio de ITU febril.
+      
+      # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (RECEITA DOMICILIAR PEDIÁTRICA — ITU / PIELONEFRITE EM > 3 MESES ESTÁVEL — PESO: [12] KG):
+      
+      1. Amoxicilina + Clavulanato de Potássio 400 mg + 57 mg / 5 mL (suspensão oral) — 2 frascos (70 mL cada)
+       - Dar [3,5] mL (45 mg/kg/dia divididos de 12/12h) por via oral a cada 12 horas, junto com as refeições, durante 10 dias completos (agitar bem o frasco antes de usar e conservar em geladeira após reconstituição).
+      
+      2. [Opção Alternativa] Cefalexina 250 mg / 5 mL (suspensão oral) — 2 frascos (100 mL cada)
+       - Dar [3,5] mL (60 mg/kg/dia divididos de 6/6h) por via oral a cada 6 horas durante 7 a 10 dias.
+      
+      3. Dipirona Monoidratada 500 mg/mL (gotas) — 1 frasco
+       - Dar [10] gotas por via oral a cada 6 horas se febre (Tax ≥ 37,8°C) ou dor ao urinar.
+      
+      4. Orientações, Retorno para Checagem de Urocultura e Investigação:
+       - Retorno obrigatório em 48 a 72 horas para reavaliação da curva térmica e conferência do resultado da Urocultura com Antibiograma.
+       - Estimular ingestão abundante de água, micções regulares a cada 2–3 horas (evitar "segurar o xixi") e tratar constipação intestinal associada.
+       - Solicito Ultrassonografia de Rins e Vias Urinárias ambulatorial após término do tratamento.
+       - Retornar imediatamente ao pronto-socorro se a febre persistir após 48 horas do antibiótico, surgirem vômitos que impeçam a medicação, prostração ou diminuição do volume urinário.
+
+  - trigger: ";ped-itu-rec"
+    replace: |
+      USO ORAL (RECEITA DOMICILIAR PEDIÁTRICA — ITU / PIELONEFRITE EM > 3 MESES ESTÁVEL — PESO: [12] KG):
+      
+      1. Amoxicilina + Clavulanato de Potássio 400 mg + 57 mg / 5 mL (suspensão oral) — 2 frascos (70 mL cada)
+       - Dar [3,5] mL (45 mg/kg/dia divididos de 12/12h) por via oral a cada 12 horas, junto com as refeições, durante 10 dias completos (agitar bem o frasco antes de usar e conservar em geladeira após reconstituição).
+      
+      2. [Opção Alternativa] Cefalexina 250 mg / 5 mL (suspensão oral) — 2 frascos (100 mL cada)
+       - Dar [3,5] mL (60 mg/kg/dia divididos de 6/6h) por via oral a cada 6 horas durante 7 a 10 dias.
+      
+      3. Dipirona Monoidratada 500 mg/mL (gotas) — 1 frasco
+       - Dar [10] gotas por via oral a cada 6 horas se febre (Tax ≥ 37,8°C) ou dor ao urinar.
+      
+      4. Orientações, Retorno para Checagem de Urocultura e Investigação:
+       - Retorno obrigatório em 48 a 72 horas para reavaliação da curva térmica e conferência do resultado da Urocultura com Antibiograma.
+       - Estimular ingestão abundante de água, micções regulares a cada 2–3 horas (evitar "segurar o xixi") e tratar constipação intestinal associada.
+       - Solicito Ultrassonografia de Rins e Vias Urinárias ambulatorial após término do tratamento.
+       - Retornar imediatamente ao pronto-socorro se a febre persistir após 48 horas do antibiótico, surgirem vômitos que impeçam a medicação, prostração ou diminuição do volume urinário.
+

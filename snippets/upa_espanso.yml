@@ -1646,7 +1646,7 @@ matches:
       - Na suspeita de Oxiuríase (coceira anal noturna): Tratar todas as pessoas que moram na mesma casa no mesmo dia, cortar as unhas bem curtas, trocar e ferver/lavar com água quente as roupas íntimas, pijamas, toalhas e lençóis de cama pela manhã (sem sacudir o lençol no quarto para não espalhar os ovos no ar).
       - Lavar bem frutas, verduras e hortaliças (deixar de molho por 15 minutos em água com hipoclorito de sódio — 1 colher de sopa de água sanitária própria para alimentos para cada 1 litro de água, e depois enxaguar em água filtrada).
 
-  - trigger: ";07-constipacao-fecaloma-e-obstrucao-intestinal"
+  - trigger: ";constipacao"
     replace: |
       ATENDIMENTO DE PRONTO ATENDIMENTO — CONSTIPAÇÃO AGUDA, FECALOMA VS. ABDOME AGUDO OBSTRUTIVO
       # IDENTIFICAÇÃO:
@@ -1693,7 +1693,7 @@ matches:
        - Aumentar a ingestão de água para pelo menos 2 litros/dia e consumir fibras solúveis e insolúveis (mamão, ameixa preta, aveia, farelo de trigo, verduras folhosas).
        - Retornar imediatamente ao pronto-socorro se apresentar parada total de eliminação de gases, vômitos persistentes, febre, dor abdominal intensa ou sangramento vivo nas fezes.
 
-  - trigger: ";07-constipacao-fecaloma-e-obstrucao-intestinal-cnd"
+  - trigger: ";constipacao-cnd"
     replace: |
       # CONDUTA:
       1. Regra de Ouro de Segurança: NUNCA prescrever laxativos orais estimulantes nem realizar enema sob pressão antes de excluir perfuração intestinal ou obstrução mecânica completa.
@@ -1706,6 +1706,23 @@ matches:
       4. Alta após Desimpactação Efetiva: Prescrever regime de manutenção domiciliar com laxativo osmótico (Polietilenoglicol ou Lactulose) para prevenir reimpactação precoce + encaminhar para colonoscopia ambulatorial se ≥ 45–50 anos ou sinais de alarme.
       
       # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL (PREVENÇÃO DE REIMPACTAÇÃO E MANEJO DOMICILIAR DA CONSTIPAÇÃO):
+      
+      1. Polietilenoglicol 4000 (Macrogol — Muvinlax ou PEG 4000 sem eletrólitos) pó para solução oral — 1 caixa/pote
+       - Diluir 1 a 2 sachês (ou 15 a 30 g) em 1 copo de água (200 mL) e tomar por via oral 1 a 2 vezes ao dia, ajustando a dose para manter 1 evacuação macia por dia (1ª escolha segura em idosos e uso contínuo).
+      
+      2. Lactulose 667 mg/mL (xarope — alternativa acessível no SUS) — 1 frasco (120 mL)
+       - Tomar 15 a 30 mL por via oral, 1 a 2 vezes ao dia, após as refeições, acompanhado de 2 copos de água.
+      
+      3. Simeticona 125 mg (cápsulas) — 1 caixa (10 cápsulas)
+       - Tomar 1 cápsula por via oral a cada 8 horas por 5 dias se distensão abdominal ou gases.
+      
+      4. Orientações Dietéticas e Sinais de Alarme:
+       - Aumentar a ingestão de água para pelo menos 2 litros/dia e consumir fibras solúveis e insolúveis (mamão, ameixa preta, aveia, farelo de trigo, verduras folhosas).
+       - Retornar imediatamente ao pronto-socorro se apresentar parada total de eliminação de gases, vômitos persistentes, febre, dor abdominal intensa ou sangramento vivo nas fezes.
+
+  - trigger: ";constipacao-rec"
+    replace: |
       USO ORAL (PREVENÇÃO DE REIMPACTAÇÃO E MANEJO DOMICILIAR DA CONSTIPAÇÃO):
       
       1. Polietilenoglicol 4000 (Macrogol — Muvinlax ou PEG 4000 sem eletrólitos) pó para solução oral — 1 caixa/pote
@@ -2427,7 +2444,7 @@ matches:
       6. REGULAÇÃO HOSPITALAR:
        - Paciente mantido em leito de Sala Vermelha com monitorização contínua; solicitada vaga de UTI coronariana / cardiologia via Central de Regulação.
 
-  - trigger: ";06-tvp-e-tromboembolismo-pulmonar-tep"
+  - trigger: ";tvp-tep"
     replace: |
       ATENDIMENTO DE EMERGÊNCIA — TROMBOSE VENOSA PROFUNDA (TVP) & TROMBOEMBOLISMO PULMONAR (TEP)
       # IDENTIFICAÇÃO:
@@ -2481,7 +2498,7 @@ matches:
        - Deambulação precoce permitida conforme tolerância (não ficar restrito ao leito, exceto se dor e edema severos no 1º dia); manter membro elevado em repouso.
        - Retornar imediatamente ao pronto-socorro se apresentar falta de ar súbita, dor no peito, desmaio, tosse com sangue, urina com sangue, fezes escuras como borra de café ou sangramento gengival/nasal que não estanca.
 
-  - trigger: ";06-tvp-e-tromboembolismo-pulmonar-tep-cnd"
+  - trigger: ";tvp-tep-cnd"
     replace: |
       # CONDUTA:
       1. Suporte Ventilatório e Hemodinâmico (no TEP): Oxigenoterapia suplementar se SpO2 < 90%; em caso de hipotensão por sobrecarga de VD, cautela máxima na expansão volêmica (máximo 500 mL de SF 0,9%, pois hiperdistensão do VD comprime o VE e piora o choque!).
@@ -2510,7 +2527,24 @@ matches:
        - Deambulação precoce permitida conforme tolerância (não ficar restrito ao leito, exceto se dor e edema severos no 1º dia); manter membro elevado em repouso.
        - Retornar imediatamente ao pronto-socorro se apresentar falta de ar súbita, dor no peito, desmaio, tosse com sangue, urina com sangue, fezes escuras como borra de café ou sangramento gengival/nasal que não estanca.
 
-  - trigger: ";07-sincope-na-emergencia"
+  - trigger: ";tvp-tep-rec"
+    replace: |
+      USO ORAL (TRATAMENTO AMBULATORIAL DE TVP ESTÁVEL OU TEP DE BAIXO RISCO sPESI = 0 COM DOAC):
+      
+      1. Rivaroxabana 15 mg (comprimidos revestidos) — 1 caixa com 42 comprimidos (Fase de Ataque de 21 dias)
+       - Tomar 1 comprimido (15 mg) por via oral a cada 12 horas, SEMPRE JUNTO COM ALIMENTOS (almoço e jantar), durante os primeiros 21 dias.
+      
+      2. Rivaroxabana 20 mg (comprimidos revestidos) — Uso contínuo a partir do 22º dia (Fase de Manutenção)
+       - A partir do 22º dia, passar a tomar 1 comprimido (20 mg) por via oral, 1 vez ao dia junto com o almoço, por no mínimo 3 a 6 meses (não interromper sem ordem médica).
+      
+      3. Dipirona Monoidratada 1.000 mg (comprimidos) — 1 caixa (20 comprimidos)
+       - Tomar 1 comprimido por via oral a cada 6 horas se dor (EVITAR uso de anti-inflamatórios como Ibuprofeno, Diclofenaco ou Cetoprofeno pelo risco aumentado de sangramento!).
+      
+      4. Orientações de Segurança na Anticoagulação:
+       - Deambulação precoce permitida conforme tolerância (não ficar restrito ao leito, exceto se dor e edema severos no 1º dia); manter membro elevado em repouso.
+       - Retornar imediatamente ao pronto-socorro se apresentar falta de ar súbita, dor no peito, desmaio, tosse com sangue, urina com sangue, fezes escuras como borra de café ou sangramento gengival/nasal que não estanca.
+
+  - trigger: ";sincope"
     replace: |
       ATENDIMENTO DE EMERGÊNCIA — SÍNCOPE (PERDA TRANSITÓRIA DA CONSCIÊNCIA)
       # IDENTIFICAÇÃO:
@@ -2558,7 +2592,7 @@ matches:
       3. Sinais de Alarme para Retorno Imediato ao Pronto-Socorro:
        - Retornar imediatamente se ocorrer novo desmaio sem aviso prévio (sem tontura/suor antes), desmaio durante esforço físico ou estando deitado, dor no peito, batedeira (palpitações) ou falta de ar.
 
-  - trigger: ";07-sincope-na-emergencia-cnd"
+  - trigger: ";sincope-cnd"
     replace: |
       # CONDUTA:
       1. Avaliação Imediata na Admissão: Glicemia capilar + ECG de 12 derivações em até 10 minutos + Medida de PA em decúbito e após 1 e 3 minutos de ortostase.
@@ -2569,6 +2603,21 @@ matches:
        - Alta hospitalar segura com educação sobre reconhecimento dos pródromos e manobras físicas de contrapressão isométrica.
       
       # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      ORIENTAÇÕES MÉDICAS E MEDIDAS DE PREVENÇÃO DOMICILIAR (SÍNCOPE VASOVAGAL / ORTOSTÁTICA DE BAIXO RISCO):
+      
+      1. Hidratação e Aporte Salino (se não for hipertenso ou portador de insuficiência cardíaca/renal):
+       - Ingerir pelo menos 2,5 a 3 litros de líquidos (água, sucos ou soluções isotônicas) ao longo do dia.
+       - Evitar jejum prolongado, ambientes abafados/superlotados e levantar-se bruscamente da cama (sentar-se na borda da cama por 1 minuto antes de ficar em pé).
+      
+      2. Manobras de Contrapressão Física Isométrica (Executar IMEDIATAMENTE ao sentir os primeiros sintomas de vista escura, suor frio ou tontura):
+       - Deitar-se imediatamente no chão e elevar as duas pernas; OU
+       - Se não puder deitar: cruzar as pernas com força contraindo os músculos das coxas, panturrilhas e glúteos, ou entrelaçar os dedos das mãos puxando um braço contra o outro com força máxima por 30 a 60 segundos (aumenta imediatamente a pressão arterial e aborta o desmaio).
+      
+      3. Sinais de Alarme para Retorno Imediato ao Pronto-Socorro:
+       - Retornar imediatamente se ocorrer novo desmaio sem aviso prévio (sem tontura/suor antes), desmaio durante esforço físico ou estando deitado, dor no peito, batedeira (palpitações) ou falta de ar.
+
+  - trigger: ";sincope-rec"
+    replace: |
       ORIENTAÇÕES MÉDICAS E MEDIDAS DE PREVENÇÃO DOMICILIAR (SÍNCOPE VASOVAGAL / ORTOSTÁTICA DE BAIXO RISCO):
       
       1. Hidratação e Aporte Salino (se não for hipertenso ou portador de insuficiência cardíaca/renal):
@@ -5060,6 +5109,122 @@ matches:
        - Detalhamento: [C-Insuf.Cardíaca(1): 0 | H-Hipertensão(1): 0 | A2-Idade>=75a(2): 0 | D-Diabetes(1): 0 | S2-AVC/AIT(2): 0 | V-Vascular(1): 0 | A-Idade 65-74a(1): 0 | Sc-Sexo Fem(1): 0].
        - Conduta de Anticoagulação: [Sem indicação (baixo risco) / Indicada anticoagulação oral plena (DOAC: Apixabana 5 mg VO 12/12h / Rivaroxabana 20 mg VO 1x/dia com alimento)].
 
+  - trigger: ";fa"
+    replace: |
+      ###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO TAQUIARRITMIAS & FA ######
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+      Comorbidades: Hígido(a).
+      Alergias: Nega.
+      - Queixa Principal: Palpitações taquicárdicas súbitas no peito há cerca de [ ] horas.
+      - Antecedentes Cardiovasculares: [Hipertensão / Insuficiência Cardíaca / DAC prévia / FA paroxística / Uso prévio de antiarrítmicos / Nega cardiopatia].
+      
+      # PASSO 1: AVALIAÇÃO DE ESTABILIDADE HEMODINÂMICA (OS 5 SINAIS DE GRAVIDADE):
+      [ ] 1. Diminuição do Nível de Consciência (Sonolência, confusão, síncope, Glasgow < 15).
+      [ ] 2. Dispneia Aguda / Congestão Pulmonar (Estertores crepitantes bilaterais, Edema Agudo de Pulmão).
+      [ ] 3. Dor Precordial Isquêmica Típica (Angina em aperto, opressão torácica).
+      [ ] 4. Diminuição da Pressão Arterial / Hipotensão (PAS < 90 mmHg, PAM < 65 mmHg, choque).
+      [ ] 5. Desperfusão Tecidual Periférica (Tempo de enchimento capilar > 3s, extremidades frias e pálidas).
+      * CLASSIFICAÇÃO CLÍNICA: [PACIENTE INSTÁVEL -> INDICAÇÃO DE CARDIOVERSÃO ELÉTRICA IMEDIATA / PACIENTE ESTÁVEL -> MANEJO FARMACOLÓGICO].
+      
+      # EXAME FÍSICO:
+      - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm (FC > 150 bpm) | FR: [ ] irpm | SpO2: [ ]% em AA.
+      - Análise Sistemática do Eletrocardiograma (ECG):
+       * Frequência Cardíaca no Traçado: [ ] bpm.
+       * Largura do Complexo QRS: [QRS Estreito (< 120 ms / 3 quadradinhos) / QRS Largo (>= 120 ms)].
+       * Ritmo do QRS: [Regular / Irregular].
+       * Diagnóstico Eletrocardiográfico Definido:
+       - [ ] Taquicardia Supraventricular Paroxística (TPSV por reentrada nodal ou via acessória) - QRS estreito e regular, ausência de onda P visível.
+       - [ ] Fibrilação Atrial (FA) com Alta Resposta Ventricular (ARV) - QRS estreito e irregular, ausência de onda P, linha de base irregular (ondas f).
+       - [ ] Flutter Atrial - Ritmo regular ou irregularidade proporcional, ondas F serrilhadas ("dente de serra") em derivações inferiores (DII, DIII, aVF).
+       - [ ] Taquicardia Ventricular Monomórfica com Pulso (TV) - QRS largo e regular.
+      
+      # CONDUTA:
+      
+      >> [MODALIDADE A]: PACIENTE INSTÁVEL (PRESENÇA DE QUALQUER UM DOS 5 SINAIS DE GRAVIDADE):
+      1. Cardioversão Elétrica Sincronizada (CVE) Imediata na Sala Vermelha:
+       - Paciente posicionado em decúbito dorsal horizontal, oxigênio suplementar sob máscara.
+       - Monitor/desfibrilador bifásico conectado às pás adesivas (posição ântero-apical).
+       - OBRIGATÓRIO: Acionar o botão "SYNC" no aparelho e conferir os marcadores de sincronização na onda R no monitor.
+      2. Sedoanalgesia de Ação Rápida (se nível de consciência permitir):
+       - Etomidato 0,2 a 0,3 mg/kg EV (ou Midazolam 3 a 5 mg EV) + Fentanil 50 a 100 mcg EV.
+      3. Carga do Choque Bifásico Sincronizado:
+       - TPSV ou Flutter Atrial: Iniciar com 50 a 100 J bifásicos.
+       - Fibrilação Atrial (FA): Iniciar com 120 a 200 J bifásicos.
+       - Taquicardia Ventricular Monomórfica com pulso: Iniciar com 100 J bifásicos.
+      4. Pós-Choque: Checagem imediata de ritmo e pulso no monitor. Se mantida arritmia, elevar a carga para 200 J e repetir o disparo sincronizado.
+      
+      >> [MODALIDADE B]: PACIENTE ESTÁVEL COM TPSV (QRS ESTREITO & REGULAR):
+      1. Manobra Vagal de 1ª Linha:
+       - Manobra de Valsalva Modificada: Paciente em posição semi-sentada assopra em seringa de 10-20 mL por 15 segundos gerando pressão, seguida de rebaixamento imediato da cabeceira para decúbito horizontal com elevação passiva dos membros inferiores a 45° por 15 segundos (taxa de reversão comprovada de até 40%).
+      2. Se Refratário -> Terapia Farmacológica com Adenosina:
+       - Administrada Adenosina 6 mg EV rápida em torneirinha (three-way) por veia antecubital calibrosa, seguida imediatamente de bólus de 20 mL de SF 0,9% em flush e elevação passiva do braço.
+       - Se não reverter em 1 a 2 minutos: Administrada 2ª dose de Adenosina 12 mg EV rápida com flush de 20 mL de SF 0,9%.
+      3. Se Refratário à Adenosina:
+       - Metoprolol 5 mg EV lento em 2 minutos (pode repetir a cada 5 min até 15 mg total) [OU Diltiazem 0,25 mg/kg EV lento em 2 min].
+      
+      >> [MODALIDADE C]: PACIENTE ESTÁVEL COM FIBRILAÇÃO ATRIAL (FA) DE ALTA RESPOSTA:
+      1. CHECAGEM OBRIGATÓRIA ANTES DO CONTROLE DE FREQUÊNCIA:
+       - ALERTA CRÍTICO: Contraindicação absoluta ao bloqueio do nó AV (Metoprolol, Diltiazem, Verapamil, Deslanosídeo, Adenosina e Amiodarona) se suspeita de FA pré-excitada / Wolff-Parkinson-White (QRS largo, bizarro e irregularmente irregular). Bloquear o nó AV nessa condição desvia a condução 100% para a via acessória, precipitando Fibrilação Ventricular e PCR fatal imediata. Em FA pré-excitada, a conduta é cardioversão elétrica imediata ou procainamida.
+      2. Controle de Frequência Cardíaca (Meta inicial: FC < 110 bpm em repouso - QRS estreito habitual):
+       - [Paciente Sem Insuficiência Cardíaca Descompensada]:
+       * Metoprolol (Seloken) 5 mg EV lento em 2 minutos. Pode repetir a cada 5 minutos até dose máxima de 15 mg.
+       * [OU]: Diltiazem 0,25 mg/kg EV em 2 minutos (dose média: 15 a 20 mg EV).
+       - [Paciente Com Insuficiência Cardíaca Aguda / Fração de Ejeção Reduzida]:
+       * Deslanosídeo (Cedilanide) 0,4 mg (1 ampola = 2 mL) EV diluído em 20 mL de SF 0,9% lento.
+       * [OU]: Amiodarona 150 mg a 300 mg EV diluídos em 100 mL de SG 5% infundidos em 20 a 30 minutos.
+      3. Definição do Tempo de Início da Arritmia (Janela de Reversão de Ritmo):
+       - [FA iniciada há < 48 horas documentadas]: Paciente elegível para reversão química (Amiodarona 300 mg EV em 1h + manutenção de 900 mg em 24h) ou elétrica com baixo risco tromboembólico.
+       - [FA iniciada há >= 48 horas ou de tempo indeterminado]: PROIBIDA reversão de ritmo de rotina na UPA sem anticoagulação prévia por 3 semanas ou ECO transesofágico (risco de embolização de trombo atrial e AVC isquêmico extenso). A conduta na UPA deve ser estritamente o controle da frequência ventricular.
+      4. Estratificação de Risco Tromboembólico - Escore CHA2DS2-VASc:
+       - Escore CHA2DS2-VASc Total: [ 0 ] PONTOS (Homem >= 2 ou Mulher >= 3: anticoagulação indicada).
+       - Detalhamento: [C-Insuf.Cardíaca(1): 0 | H-Hipertensão(1): 0 | A2-Idade>=75a(2): 0 | D-Diabetes(1): 0 | S2-AVC/AIT(2): 0 | V-Vascular(1): 0 | A-Idade 65-74a(1): 0 | Sc-Sexo Fem(1): 0].
+       - Conduta de Anticoagulação: [Sem indicação (baixo risco) / Indicada anticoagulação oral plena (DOAC: Apixabana 5 mg VO 12/12h / Rivaroxabana 20 mg VO 1x/dia com alimento)].
+
+  - trigger: ";fa-cnd"
+    replace: |
+      # CONDUTA:
+      
+      >> [MODALIDADE A]: PACIENTE INSTÁVEL (PRESENÇA DE QUALQUER UM DOS 5 SINAIS DE GRAVIDADE):
+      1. Cardioversão Elétrica Sincronizada (CVE) Imediata na Sala Vermelha:
+       - Paciente posicionado em decúbito dorsal horizontal, oxigênio suplementar sob máscara.
+       - Monitor/desfibrilador bifásico conectado às pás adesivas (posição ântero-apical).
+       - OBRIGATÓRIO: Acionar o botão "SYNC" no aparelho e conferir os marcadores de sincronização na onda R no monitor.
+      2. Sedoanalgesia de Ação Rápida (se nível de consciência permitir):
+       - Etomidato 0,2 a 0,3 mg/kg EV (ou Midazolam 3 a 5 mg EV) + Fentanil 50 a 100 mcg EV.
+      3. Carga do Choque Bifásico Sincronizado:
+       - TPSV ou Flutter Atrial: Iniciar com 50 a 100 J bifásicos.
+       - Fibrilação Atrial (FA): Iniciar com 120 a 200 J bifásicos.
+       - Taquicardia Ventricular Monomórfica com pulso: Iniciar com 100 J bifásicos.
+      4. Pós-Choque: Checagem imediata de ritmo e pulso no monitor. Se mantida arritmia, elevar a carga para 200 J e repetir o disparo sincronizado.
+      
+      >> [MODALIDADE B]: PACIENTE ESTÁVEL COM TPSV (QRS ESTREITO & REGULAR):
+      1. Manobra Vagal de 1ª Linha:
+       - Manobra de Valsalva Modificada: Paciente em posição semi-sentada assopra em seringa de 10-20 mL por 15 segundos gerando pressão, seguida de rebaixamento imediato da cabeceira para decúbito horizontal com elevação passiva dos membros inferiores a 45° por 15 segundos (taxa de reversão comprovada de até 40%).
+      2. Se Refratário -> Terapia Farmacológica com Adenosina:
+       - Administrada Adenosina 6 mg EV rápida em torneirinha (three-way) por veia antecubital calibrosa, seguida imediatamente de bólus de 20 mL de SF 0,9% em flush e elevação passiva do braço.
+       - Se não reverter em 1 a 2 minutos: Administrada 2ª dose de Adenosina 12 mg EV rápida com flush de 20 mL de SF 0,9%.
+      3. Se Refratário à Adenosina:
+       - Metoprolol 5 mg EV lento em 2 minutos (pode repetir a cada 5 min até 15 mg total) [OU Diltiazem 0,25 mg/kg EV lento em 2 min].
+      
+      >> [MODALIDADE C]: PACIENTE ESTÁVEL COM FIBRILAÇÃO ATRIAL (FA) DE ALTA RESPOSTA:
+      1. CHECAGEM OBRIGATÓRIA ANTES DO CONTROLE DE FREQUÊNCIA:
+       - ALERTA CRÍTICO: Contraindicação absoluta ao bloqueio do nó AV (Metoprolol, Diltiazem, Verapamil, Deslanosídeo, Adenosina e Amiodarona) se suspeita de FA pré-excitada / Wolff-Parkinson-White (QRS largo, bizarro e irregularmente irregular). Bloquear o nó AV nessa condição desvia a condução 100% para a via acessória, precipitando Fibrilação Ventricular e PCR fatal imediata. Em FA pré-excitada, a conduta é cardioversão elétrica imediata ou procainamida.
+      2. Controle de Frequência Cardíaca (Meta inicial: FC < 110 bpm em repouso - QRS estreito habitual):
+       - [Paciente Sem Insuficiência Cardíaca Descompensada]:
+       * Metoprolol (Seloken) 5 mg EV lento em 2 minutos. Pode repetir a cada 5 minutos até dose máxima de 15 mg.
+       * [OU]: Diltiazem 0,25 mg/kg EV em 2 minutos (dose média: 15 a 20 mg EV).
+       - [Paciente Com Insuficiência Cardíaca Aguda / Fração de Ejeção Reduzida]:
+       * Deslanosídeo (Cedilanide) 0,4 mg (1 ampola = 2 mL) EV diluído em 20 mL de SF 0,9% lento.
+       * [OU]: Amiodarona 150 mg a 300 mg EV diluídos em 100 mL de SG 5% infundidos em 20 a 30 minutos.
+      3. Definição do Tempo de Início da Arritmia (Janela de Reversão de Ritmo):
+       - [FA iniciada há < 48 horas documentadas]: Paciente elegível para reversão química (Amiodarona 300 mg EV em 1h + manutenção de 900 mg em 24h) ou elétrica com baixo risco tromboembólico.
+       - [FA iniciada há >= 48 horas ou de tempo indeterminado]: PROIBIDA reversão de ritmo de rotina na UPA sem anticoagulação prévia por 3 semanas ou ECO transesofágico (risco de embolização de trombo atrial e AVC isquêmico extenso). A conduta na UPA deve ser estritamente o controle da frequência ventricular.
+      4. Estratificação de Risco Tromboembólico - Escore CHA2DS2-VASc:
+       - Escore CHA2DS2-VASc Total: [ 0 ] PONTOS (Homem >= 2 ou Mulher >= 3: anticoagulação indicada).
+       - Detalhamento: [C-Insuf.Cardíaca(1): 0 | H-Hipertensão(1): 0 | A2-Idade>=75a(2): 0 | D-Diabetes(1): 0 | S2-AVC/AIT(2): 0 | V-Vascular(1): 0 | A-Idade 65-74a(1): 0 | Sc-Sexo Fem(1): 0].
+       - Conduta de Anticoagulação: [Sem indicação (baixo risco) / Indicada anticoagulação oral plena (DOAC: Apixabana 5 mg VO 12/12h / Rivaroxabana 20 mg VO 1x/dia com alimento)].
+
   - trigger: ";hiperk"
     replace: |
       ###### ATENDIMENTO DE SALA VERMELHA: DISTÚRBIOS ELETROLÍTICOS GRAVES ######
@@ -5124,7 +5289,7 @@ matches:
        [ ] Sinais clínicos de hipertensão intracraniana ou herniação cerebral iminente.
       
       # CONDUTA DE EMERGÊNCIA NA HIPONATREMIA GRAVE SINTOMÁTICA:
-      1. Alvo Inicial de Segurança: Elevar a natremia sérica em **4 a 6 mEq/L** nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
+      1. Alvo Inicial de Segurança: Elevar a natremia sérica em 4 a 6 mEq/L nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
       2. Infusão de Solução Salina Hipertônica a 3% (NaCl 3%):
        - [Como preparar 500 mL de NaCl 3% na UPA se não houver bolsa pronta]:
        445 mL de Soro Fisiológico a 0,9% + 55 mL de NaCl a 20% (volume total = 500 mL a 3%).
@@ -5134,8 +5299,8 @@ matches:
       3. Monitorização Laboratorial Estrita:
        - Dosagem de sódio sérico a cada 2 a 4 horas nas primeiras 24 horas.
       4. LIMITE MÁXIMO DE CORREÇÃO PARA PREVENÇÃO DE MIELINÓLISE PONTINA (SDO):
-       - Aumento MÁXIMO de **8 a 10 mEq/L nas primeiras 24 horas**.
-       - Aumento MÁXIMO de **18 mEq/L em 48 horas**.
+       - Aumento MÁXIMO de 8 a 10 mEq/L nas primeiras 24 horas.
+       - Aumento MÁXIMO de 18 mEq/L em 48 horas.
        - Se ocorrer supercorreção inadvertida (> 10 mEq/L em 24h): suspender reposição salina imediatamente e administrar Água Livre por via oral ou Soro Glicosado a 5% (associado a Desmopressina/DDAVP 1 a 2 mcg SC/EV).
 
   - trigger: ";hiperk-cnd"
@@ -5179,7 +5344,7 @@ matches:
        [ ] Sinais clínicos de hipertensão intracraniana ou herniação cerebral iminente.
       
       # CONDUTA DE EMERGÊNCIA NA HIPONATREMIA GRAVE SINTOMÁTICA:
-      1. Alvo Inicial de Segurança: Elevar a natremia sérica em **4 a 6 mEq/L** nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
+      1. Alvo Inicial de Segurança: Elevar a natremia sérica em 4 a 6 mEq/L nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
       2. Infusão de Solução Salina Hipertônica a 3% (NaCl 3%):
        - [Como preparar 500 mL de NaCl 3% na UPA se não houver bolsa pronta]:
        445 mL de Soro Fisiológico a 0,9% + 55 mL de NaCl a 20% (volume total = 500 mL a 3%).
@@ -5189,8 +5354,141 @@ matches:
       3. Monitorização Laboratorial Estrita:
        - Dosagem de sódio sérico a cada 2 a 4 horas nas primeiras 24 horas.
       4. LIMITE MÁXIMO DE CORREÇÃO PARA PREVENÇÃO DE MIELINÓLISE PONTINA (SDO):
-       - Aumento MÁXIMO de **8 a 10 mEq/L nas primeiras 24 horas**.
-       - Aumento MÁXIMO de **18 mEq/L em 48 horas**.
+       - Aumento MÁXIMO de 8 a 10 mEq/L nas primeiras 24 horas.
+       - Aumento MÁXIMO de 18 mEq/L em 48 horas.
+       - Se ocorrer supercorreção inadvertida (> 10 mEq/L em 24h): suspender reposição salina imediatamente e administrar Água Livre por via oral ou Soro Glicosado a 5% (associado a Desmopressina/DDAVP 1 a 2 mcg SC/EV).
+
+  - trigger: ";hipona"
+    replace: |
+      ###### ATENDIMENTO DE SALA VERMELHA: DISTÚRBIOS ELETROLÍTICOS GRAVES ######
+      # IDENTIFICAÇÃO:
+      ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino].
+      Comorbidades: Hígido(a).
+      Alergias: Nega.
+      - Motivo da Avaliação na Sala Vermelha: [MODALIDADE A: HIPERCALEMIA GRAVE / MODALIDADE B: HIPONATREMIA AGUDA SINTOMÁTICA].
+      
+      =============================================================================
+      >> [MODALIDADE A]: PROTOCOLO DE HIPERCALEMIA GRAVE (;hiperk)
+      =============================================================================
+      
+      # DADOS LABORATORIAIS & HISTÓRIA:
+      - Potássio Sérico (K+): [ ] mEq/L (Normal: 3,5 a 5,0 mEq/L | Hipercalemia Grave se K+ > 6,0 a 6,5 mEq/L ou com alterações ao ECG).
+      - Contexto Clínico: [Doença Renal Crônica dialítica / Injúria Renal Aguda oligúrica / Rabdomiólise / Uso de IECA, BRA, Espironolactona / Acidose grave].
+      - Sintomas: [Fraqueza muscular proximal intensa, parestesias, palpitações / Assintomático com achado laboratorial].
+      
+      # ALTERAÇÕES NO ELETROCARDIOGRAMA DE 12 DERIVAÇÕES:
+      [ ] Ondas T pontiagudas, simétricas e de base estreita ("T em tenda" - alteração precoce).
+      [ ] Alargamento do intervalo PR e achatamento / desaparecimento da onda P.
+      [ ] Alargamento progressivo do complexo QRS (> 120 ms).
+      [ ] Padrão de ritmo sinusoidal (pré-parada iminente).
+      * STATUS DO ECG: [ALTERAÇÕES ELETROCARDIOGRÁFICAS PRESENTES / ECG SEM ALTERAÇÕES AGUDAS].
+      
+      # CONDUTA TERAPÊUTICA ESCALONADA NA HIPERCALEMIA:
+      
+      >> ETAPA 1: ESTABILIZAÇÃO DA MEMBRANA MIOCÁRDICA (OBRIGATÓRIO SE ECG ALTERADO OU K+ > 6,5):
+      - Gluconato de Cálcio a 10%: Administrada 1 ampola (10 mL = 1 g) EV em infusão lenta de 2 a 5 minutos sob monitorização cardíaca contínua.
+      - Início de ação em 1 a 3 minutos com duração de 30 a 60 minutos.
+      - Reavaliado ECG após 5 a 10 minutos: se persistirem alterações de onda T/QRS, administrada 2ª ampola de Gluconato de Cálcio 10% EV.
+      - (Nota: O gluconato de cálcio NÃO reduz os níveis séricos de potássio; sua ação é exclusivamente proteger o miocárdio contra arritmias fatais).
+      
+      >> ETAPA 2: DESLOCAMENTO DO POTÁSSIO PARA O MEIO INTRACELULAR (MEDIDAS DE SHIFT):
+      1. Solução Polarizante (Glicoinsulina):
+       - Prescrição: 10 UI de Insulina Regular associadas a 100 mL de Glicose a 50% (ou 500 mL de Soro Glicosado a 10%) em infusão endovenosa contínua em 20 a 30 minutos.
+       - Início de ação em 15 a 30 minutos (promove queda de 0,5 a 1,2 mEq/L no potássio sérico).
+       - Vigilância glicêmica rigorosa: Aferir HGT aos 30, 60 e 120 minutos para prevenir hipoglicemia.
+      2. Inalação com Beta-2 Agonista Adrenérgico em Alta Dose:
+       - Fenoterol (Berotec) 10 a 20 gotas (ou Salbutamol 10 a 20 mg) em 4 mL de SF 0,9% em nebulização contínua com O2 a 6-8 L/min por 10 a 15 minutos (potencializa o influxo celular de potássio).
+      3. Bicarbonato de Sódio a 8,4% (se acidose metabólica concomitante com pH < 7,20 ou HCO3 < 15):
+       - Administrados 100 a 150 mL (100 a 150 mEq) EV em infusão de 20 a 30 minutos.
+      
+      >> ETAPA 3: ELIMINAÇÃO DEFINITIVA DO POTÁSSIO CORPORAL (ESPOLIAÇÃO):
+      1. Diurético de Alça (se paciente com função renal residual e diurese preservada):
+       - Furosemida 40 a 80 mg EV em bólus lento.
+      2. Resina Trocadora Gastrointestinal de Cátions:
+       - Poliestirenossulfonato de Cálcio (Sorcal) 30 g VO diluídos em 100 mL de água de 8/8 horas.
+      3. Hemodiálise de Urgência:
+       - Acionada equipe de Nefrologia / Hemodiálise de urgência se hipercalemia refratária, paciente anúrico ou com disfunção renal dialítica.
+      
+      =============================================================================
+      >> [MODALIDADE B]: PROTOCOLO DE HIPONATREMIA AGUDA GRAVE (;hipona)
+      =============================================================================
+      
+      # DADOS LABORATORIAIS & HISTÓRIA:
+      - Sódio Sérico (Na+): [ ] mEq/L (Normal: 135 a 145 mEq/L | Grave se Na+ < 120 a 125 mEq/L).
+      - Osmolaridade Plasmática Calculada: [ ] mOsm/kg | Tempo Estimado: [Aguda < 48 horas / Crônica > 48 horas / Tempo Indeterminado].
+      - Quadro Clínico Sintomático Neurológico Grave:
+       [ ] Crise convulsiva generalizada ativa ou recente.
+       [ ] Rebaixamento agudo do nível de consciência (Glasgow < 12 / coma / torpor).
+       [ ] Sinais clínicos de hipertensão intracraniana ou herniação cerebral iminente.
+      
+      # CONDUTA DE EMERGÊNCIA NA HIPONATREMIA GRAVE SINTOMÁTICA:
+      1. Alvo Inicial de Segurança: Elevar a natremia sérica em 4 a 6 mEq/L nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
+      2. Infusão de Solução Salina Hipertônica a 3% (NaCl 3%):
+       - [Como preparar 500 mL de NaCl 3% na UPA se não houver bolsa pronta]:
+       445 mL de Soro Fisiológico a 0,9% + 55 mL de NaCl a 20% (volume total = 500 mL a 3%).
+       - Prescrição do Bólus de Ataque:
+       Administrar 100 a 150 mL de NaCl a 3% EV em infusão rápida em 10 a 20 minutos (ou 2 mL/kg de peso).
+       - Reavaliação clínica imediata: Se sintomas neurológicos graves persistirem, repetir nova alíquota de 100 a 150 mL de NaCl 3% em 20 minutos (máximo de até 3 bólus).
+      3. Monitorização Laboratorial Estrita:
+       - Dosagem de sódio sérico a cada 2 a 4 horas nas primeiras 24 horas.
+      4. LIMITE MÁXIMO DE CORREÇÃO PARA PREVENÇÃO DE MIELINÓLISE PONTINA (SDO):
+       - Aumento MÁXIMO de 8 a 10 mEq/L nas primeiras 24 horas.
+       - Aumento MÁXIMO de 18 mEq/L em 48 horas.
+       - Se ocorrer supercorreção inadvertida (> 10 mEq/L em 24h): suspender reposição salina imediatamente e administrar Água Livre por via oral ou Soro Glicosado a 5% (associado a Desmopressina/DDAVP 1 a 2 mcg SC/EV).
+
+  - trigger: ";hipona-cnd"
+    replace: |
+      # CONDUTA TERAPÊUTICA ESCALONADA NA HIPERCALEMIA:
+      
+      >> ETAPA 1: ESTABILIZAÇÃO DA MEMBRANA MIOCÁRDICA (OBRIGATÓRIO SE ECG ALTERADO OU K+ > 6,5):
+      - Gluconato de Cálcio a 10%: Administrada 1 ampola (10 mL = 1 g) EV em infusão lenta de 2 a 5 minutos sob monitorização cardíaca contínua.
+      - Início de ação em 1 a 3 minutos com duração de 30 a 60 minutos.
+      - Reavaliado ECG após 5 a 10 minutos: se persistirem alterações de onda T/QRS, administrada 2ª ampola de Gluconato de Cálcio 10% EV.
+      - (Nota: O gluconato de cálcio NÃO reduz os níveis séricos de potássio; sua ação é exclusivamente proteger o miocárdio contra arritmias fatais).
+      
+      >> ETAPA 2: DESLOCAMENTO DO POTÁSSIO PARA O MEIO INTRACELULAR (MEDIDAS DE SHIFT):
+      1. Solução Polarizante (Glicoinsulina):
+       - Prescrição: 10 UI de Insulina Regular associadas a 100 mL de Glicose a 50% (ou 500 mL de Soro Glicosado a 10%) em infusão endovenosa contínua em 20 a 30 minutos.
+       - Início de ação em 15 a 30 minutos (promove queda de 0,5 a 1,2 mEq/L no potássio sérico).
+       - Vigilância glicêmica rigorosa: Aferir HGT aos 30, 60 e 120 minutos para prevenir hipoglicemia.
+      2. Inalação com Beta-2 Agonista Adrenérgico em Alta Dose:
+       - Fenoterol (Berotec) 10 a 20 gotas (ou Salbutamol 10 a 20 mg) em 4 mL de SF 0,9% em nebulização contínua com O2 a 6-8 L/min por 10 a 15 minutos (potencializa o influxo celular de potássio).
+      3. Bicarbonato de Sódio a 8,4% (se acidose metabólica concomitante com pH < 7,20 ou HCO3 < 15):
+       - Administrados 100 a 150 mL (100 a 150 mEq) EV em infusão de 20 a 30 minutos.
+      
+      >> ETAPA 3: ELIMINAÇÃO DEFINITIVA DO POTÁSSIO CORPORAL (ESPOLIAÇÃO):
+      1. Diurético de Alça (se paciente com função renal residual e diurese preservada):
+       - Furosemida 40 a 80 mg EV em bólus lento.
+      2. Resina Trocadora Gastrointestinal de Cátions:
+       - Poliestirenossulfonato de Cálcio (Sorcal) 30 g VO diluídos em 100 mL de água de 8/8 horas.
+      3. Hemodiálise de Urgência:
+       - Acionada equipe de Nefrologia / Hemodiálise de urgência se hipercalemia refratária, paciente anúrico ou com disfunção renal dialítica.
+      
+      =============================================================================
+      >> [MODALIDADE B]: PROTOCOLO DE HIPONATREMIA AGUDA GRAVE (;hipona)
+      =============================================================================
+      
+      # DADOS LABORATORIAIS & HISTÓRIA:
+      - Sódio Sérico (Na+): [ ] mEq/L (Normal: 135 a 145 mEq/L | Grave se Na+ < 120 a 125 mEq/L).
+      - Osmolaridade Plasmática Calculada: [ ] mOsm/kg | Tempo Estimado: [Aguda < 48 horas / Crônica > 48 horas / Tempo Indeterminado].
+      - Quadro Clínico Sintomático Neurológico Grave:
+       [ ] Crise convulsiva generalizada ativa ou recente.
+       [ ] Rebaixamento agudo do nível de consciência (Glasgow < 12 / coma / torpor).
+       [ ] Sinais clínicos de hipertensão intracraniana ou herniação cerebral iminente.
+      
+      # CONDUTA DE EMERGÊNCIA NA HIPONATREMIA GRAVE SINTOMÁTICA:
+      1. Alvo Inicial de Segurança: Elevar a natremia sérica em 4 a 6 mEq/L nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
+      2. Infusão de Solução Salina Hipertônica a 3% (NaCl 3%):
+       - [Como preparar 500 mL de NaCl 3% na UPA se não houver bolsa pronta]:
+       445 mL de Soro Fisiológico a 0,9% + 55 mL de NaCl a 20% (volume total = 500 mL a 3%).
+       - Prescrição do Bólus de Ataque:
+       Administrar 100 a 150 mL de NaCl a 3% EV em infusão rápida em 10 a 20 minutos (ou 2 mL/kg de peso).
+       - Reavaliação clínica imediata: Se sintomas neurológicos graves persistirem, repetir nova alíquota de 100 a 150 mL de NaCl 3% em 20 minutos (máximo de até 3 bólus).
+      3. Monitorização Laboratorial Estrita:
+       - Dosagem de sódio sérico a cada 2 a 4 horas nas primeiras 24 horas.
+      4. LIMITE MÁXIMO DE CORREÇÃO PARA PREVENÇÃO DE MIELINÓLISE PONTINA (SDO):
+       - Aumento MÁXIMO de 8 a 10 mEq/L nas primeiras 24 horas.
+       - Aumento MÁXIMO de 18 mEq/L em 48 horas.
        - Se ocorrer supercorreção inadvertida (> 10 mEq/L em 24h): suspender reposição salina imediatamente e administrar Água Livre por via oral ou Soro Glicosado a 5% (associado a Desmopressina/DDAVP 1 a 2 mcg SC/EV).
 
   - trigger: ";sutura"
@@ -5284,7 +5582,24 @@ matches:
        * Áreas de Articulações / Alta Mobilidade: 14 dias.
       5. Sinais de Alarme: Retornar antes se surgirem vermelhidão que se espalha ao redor da lesão, calor intenso, inchaço acentuado, saída de secreção purulenta (pus) ou febre.
 
-  - trigger: ";10-bradiarritmias-e-marcapasso-transcutaneo"
+  - trigger: ";sutura-rec"
+    replace: |
+      1. Antibioticoterapia Profilática para Mordedura Animal (Cão/Gato/Humana):
+       - [SE MORDEDURA ANIMAL/HUMANA OU TRAUMA PERFURANTE CONTAMINADO]:
+       Amoxicilina + Clavulanato de Potássio 875/125 mg - Tomar 1 comprimido VO de 12/12 horas às refeições por 5 a 7 dias (cobertura obrigatória para Pasteurella multocida, Capnocytophaga, S. aureus e anaeróbios).
+       [OU SE ALERGIA A PENICILINAS]: Doxiciclina 100 mg VO 12/12h + Metronidazol 500 mg VO 8/8h por 5 a 7 dias.
+      2. Analgesia: Dipirona 1 g VO de 6/6 horas SOS dor por 2 a 3 dias.
+      3. Cuidados Locais com a Ferida:
+       - Manter curativo limpo e seco por 24 horas. Após 24h, lavar a ferida delicadamente com água corrente e sabonete neutro durante o banho diário, secar e recobrir com curativo estéril se exposto a sujidades.
+      4. Prazo Agendado para Retirada dos Pontos (se suturado):
+       - Comparecer à UBS ou UPA para retirada dos pontos em:
+       * Face: 5 a 7 dias.
+       * Couro Cabeludo: 7 a 10 dias.
+       * Tronco e Membros Superiores/Inferiores: 10 a 14 dias.
+       * Áreas de Articulações / Alta Mobilidade: 14 dias.
+      5. Sinais de Alarme: Retornar antes se surgirem vermelhidão que se espalha ao redor da lesão, calor intenso, inchaço acentuado, saída de secreção purulenta (pus) ou febre.
+
+  - trigger: ";bradi"
     replace: |
       ATENDIMENTO DE EMERGÊNCIA — BRADIARRITMIA SINTOMÁTICA & BLOQUEIO ATRIOVENTRICULAR (ACLS)
       # IDENTIFICAÇÃO:
@@ -5313,13 +5628,13 @@ matches:
        * Adrenalina: 2 a 10 mcg/min IV em bomba de infusão (diluir 2 ampolas = 2 mg em 250 mL SF 0,9% → 8 mcg/mL → correr 15 a 75 mL/h).
       3. Instalação do Marcapasso Transcutâneo (MPTC — Passo a Passo):
        - Analgesia e Sedação prévia se paciente consciente: Fentanil 50 a 100 mcg IV lento + Midazolam 2 a 5 mg IV (ou Etomidato/Cetamina em baixas doses).
-       - Ajuste do MPTC: Ligar em modo Fixo/Demanda, programar Frequência Cardíaca alvo em [60 a 70] bpm e aumentar progressivamente a corrente elétrica (miliamperagem — mA) a partir de 30 mA até obter **Captura Elétrica** (espícula seguida de complexo QRS alargado e onda T Discordante) + confirmar **Captura Mecânica** (palpação obrigatória do pulso femoral ou radial direito sincronizado com o monitor; manter saída 5 a 10 mA acima do limiar de captura!).
+       - Ajuste do MPTC: Ligar em modo Fixo/Demanda, programar Frequência Cardíaca alvo em [60 a 70] bpm e aumentar progressivamente a corrente elétrica (miliamperagem — mA) a partir de 30 mA até obter Captura Elétrica (espícula seguida de complexo QRS alargado e onda T Discordante) + confirmar Captura Mecânica (palpação obrigatória do pulso femoral ou radial direito sincronizado com o monitor; manter saída 5 a 10 mA acima do limiar de captura!).
       4. Tratamento de Causas Específicas e Definitivas:
        - Se Hipercalemia grave: Gluconato de Cálcio 10% 10 a 20 mL IV lento + solução polarizante.
        - Se Intoxicação por Betabloqueador / BCC: Glucagon 3 a 5 mg IV + Gluconato de Cálcio + Insulina em alta dose com glicose.
        - Solicitar vaga de UTI Cardiológica / Hemodinâmica para passagem de Marcapasso Transvenoso Provisório (MPTV) e posterior Marcapasso Definitivo.
 
-  - trigger: ";10-bradiarritmias-e-marcapasso-transcutaneo-cnd"
+  - trigger: ";bradi-cnd"
     replace: |
       # CONDUTA:
       1. Pacote Inicial de Sala Vermelha (MOV): Monitorização cardíaca contínua + Pás adesivas do desfibrilador/marcapasso já posicionadas no tórax (anteroposterior ou anterolateral) + Oxigênio se SpO2 < 90% + 2 acessos venosos + ECG de 12 derivações + coleta de Eletrólitos (K+, Mg2+, Ca2+), Função Renal e Troponina.
@@ -5330,13 +5645,13 @@ matches:
        * Adrenalina: 2 a 10 mcg/min IV em bomba de infusão (diluir 2 ampolas = 2 mg em 250 mL SF 0,9% → 8 mcg/mL → correr 15 a 75 mL/h).
       3. Instalação do Marcapasso Transcutâneo (MPTC — Passo a Passo):
        - Analgesia e Sedação prévia se paciente consciente: Fentanil 50 a 100 mcg IV lento + Midazolam 2 a 5 mg IV (ou Etomidato/Cetamina em baixas doses).
-       - Ajuste do MPTC: Ligar em modo Fixo/Demanda, programar Frequência Cardíaca alvo em [60 a 70] bpm e aumentar progressivamente a corrente elétrica (miliamperagem — mA) a partir de 30 mA até obter **Captura Elétrica** (espícula seguida de complexo QRS alargado e onda T Discordante) + confirmar **Captura Mecânica** (palpação obrigatória do pulso femoral ou radial direito sincronizado com o monitor; manter saída 5 a 10 mA acima do limiar de captura!).
+       - Ajuste do MPTC: Ligar em modo Fixo/Demanda, programar Frequência Cardíaca alvo em [60 a 70] bpm e aumentar progressivamente a corrente elétrica (miliamperagem — mA) a partir de 30 mA até obter Captura Elétrica (espícula seguida de complexo QRS alargado e onda T Discordante) + confirmar Captura Mecânica (palpação obrigatória do pulso femoral ou radial direito sincronizado com o monitor; manter saída 5 a 10 mA acima do limiar de captura!).
       4. Tratamento de Causas Específicas e Definitivas:
        - Se Hipercalemia grave: Gluconato de Cálcio 10% 10 a 20 mL IV lento + solução polarizante.
        - Se Intoxicação por Betabloqueador / BCC: Glucagon 3 a 5 mg IV + Gluconato de Cálcio + Insulina em alta dose com glicose.
        - Solicitar vaga de UTI Cardiológica / Hemodinâmica para passagem de Marcapasso Transvenoso Provisório (MPTV) e posterior Marcapasso Definitivo.
 
-  - trigger: ";11-queimaduras-e-animais-peconhentos"
+  - trigger: ";queimadura"
     replace: |
       ATENDIMENTO DE EMERGÊNCIA — QUEIMADURAS AGUDAS OU ACIDENTE POR ANIMAL PEÇONHENTO
       # IDENTIFICAÇÃO:
@@ -5395,7 +5710,7 @@ matches:
        - Verificar e atualizar a vacina Antitetânica na sala de vacinas hoje.
        - Retornar imediatamente se febre, saída de pus com odor fétido, aumento da vermelhidão/calor ao redor da ferida ou dor desproporcional.
 
-  - trigger: ";11-queimaduras-e-animais-peconhentos-cnd"
+  - trigger: ";queimadura-cnd"
     replace: |
       # CONDUTA:
       1. CONDUTA NA QUEIMADURA AGUDA:
@@ -5415,6 +5730,24 @@ matches:
        - Acidente Crotálico (Soro Anticrotálico — SAC IV): Leve = 5 ampolas | Moderado = 10 ampolas | Grave = 20 ampolas + hiper-hidratação e alcalinização urinária (pH > 6,5) para proteger o rim da rabdomiólise.
       
       # PRESCRIÇÃO DOMICILIAR / DE ALTA
+      USO ORAL E TÓPICO (ALTA AMBULATORIAL — QUEIMADURA PEQUENA DE 1º OU 2º GRAU SUPERFICIAL < 10% SCQ):
+      
+      1. Sulfadiazina de Prata 10 mg/g (1%) creme dermatológico — 1 bisnaga ou pote (50 g a 400 g)
+       - Lavar a lesão diariamente com soro fisiológico 0,9% ou água corrente e sabonete neutro, secar suavemente com gaze estéril, aplicar uma camada fina (2 a 3 mm) do creme sobre a área queimada de 2º grau e cobrir com gaze estéril e faixa, 1 a 2 vezes ao dia (evitar exposição solar na área por 6 meses).
+      
+      2. Dipirona Monoidratada 1.000 mg (comprimidos) — 1 caixa (20 comprimidos)
+       - Tomar 1 comprimido por via oral a cada 6 horas por 5 dias (tomar 30 minutos antes da troca diária do curativo).
+      
+      3. Ibuprofeno 600 mg (comprimidos) — 1 caixa (15 comprimidos)
+       - Tomar 1 comprimido por via oral a cada 8 horas, após as refeições, por 5 dias.
+      
+      4. Orientações e Sinais de Alarme:
+       - Não romper bolhas íntegras em casa e nunca aplicar pasta de dente, pó de café, manteiga ou óleo de cozinha.
+       - Verificar e atualizar a vacina Antitetânica na sala de vacinas hoje.
+       - Retornar imediatamente se febre, saída de pus com odor fétido, aumento da vermelhidão/calor ao redor da ferida ou dor desproporcional.
+
+  - trigger: ";queimadura-rec"
+    replace: |
       USO ORAL E TÓPICO (ALTA AMBULATORIAL — QUEIMADURA PEQUENA DE 1º OU 2º GRAU SUPERFICIAL < 10% SCQ):
       
       1. Sulfadiazina de Prata 10 mg/g (1%) creme dermatológico — 1 bisnaga ou pote (50 g a 400 g)

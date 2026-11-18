@@ -1,5 +1,5 @@
 # Técnica de Sutura, Anestesia Local Segura, Bloqueio Digital & Escolha de Fios
-**Atalho Rápido:** `;hab-sutura` | **Meta de Tempo:** 30s Pré-Porta
+**Atalho Rápido:** `;hab-sutura` | **Meta de Tempo:** 30s Pré-Porta | **Categoria:** Emergência & Procedimentos
 **Âncora:** Exame Neurovascular ANTES da Lidocaína → Dose Máx Lido (4,5 mg/kg s/ vaso | 7 mg/kg c/ vaso) → Irrigação Sob Pressão SF 0,9% → Escolha do Fio e Tempo de Retirada → Profilaxia Tétano/Raiva
 
 ---

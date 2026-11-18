@@ -214,11 +214,17 @@ export function searchClinicalProtocols<T extends ClinicalSearchItem>(
   return scored.slice(0, limit);
 }
 
+function normalizeRemumeSearch(str: string): string {
+  return normalizeSearchText(str)
+    .replace(/(\d),(\d)/g, '$1.$2')
+    .replace(/(\d)(mg|mcg|g|ml|ui|%)/g, '$1 $2');
+}
+
 /**
- * Busca rápida nos 255 medicamentos da REMUME com normalização de acentos e multi-termo.
+ * Busca rápida nos medicamentos da REMUME com normalização de acentos, vírgula/ponto e unidades.
  */
 export function searchRemume(query: string, limit = 8): RemumeItem[] {
-  const qNorm = normalizeSearchText(query);
+  const qNorm = normalizeRemumeSearch(query);
   if (!qNorm) return REMUME_ITEMS.slice(0, limit);
 
   const tokens = qNorm.split(/\s+/).filter(Boolean);
@@ -226,10 +232,11 @@ export function searchRemume(query: string, limit = 8): RemumeItem[] {
 
   for (let i = 0; i < REMUME_ITEMS.length; i++) {
     const item = REMUME_ITEMS[i];
-    if (!tokens.every((t) => item.norm.includes(t))) continue;
+    const itemKey = normalizeRemumeSearch(item.norm || item.name);
+    if (!tokens.every((t) => itemKey.includes(t))) continue;
     let score = 10;
-    if (item.norm.startsWith(qNorm)) score += 30;
-    else if (item.norm.startsWith(tokens[0])) score += 15;
+    if (itemKey.startsWith(qNorm)) score += 30;
+    else if (itemKey.startsWith(tokens[0])) score += 15;
     scored.push({ item, score });
   }
 
