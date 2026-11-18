@@ -52,7 +52,7 @@
 DESCRIÇÃO DE PROCEDIMENTO — SUTURA DE FERIMENTO CORTO-CONTUSO:
 1. Avaliação Pré-Procedimento: Ferimento corto-contuso de cerca de [ ] cm em região [frontal / superciliar / couro cabeludo / antebraço / mão / membro inferior], com bordas [regulares / irregulares], sem sinais de lesão tendínea, nervosa ou vascular distal ao exame físico pré-anestésico (perfusão capilar < 2s, sensibilidade e motricidade preservadas).
 2. Antissepsia e Anestesia: Realizada antissepsia perilesional com clorexidina, colocação de campo fenestrado estéril e infiltração anestésica local pelas bordas com Lidocaína 2% [sem vasoconstritor / com vasoconstritor] ([ ] mL, aspiração prévia negativa).
-3. Exploração e Limpeza: Irrigação exaustiva sob pressão com SF 0,9% ([250] mL), exploração visual do leito da ferida [sem corpos estranhos ou lesão de planos profundos].
+3. Exploração e Limpeza: Irrigação exaustiva sob pressão com SF 0,9% ([ ] mL), exploração visual do leito da ferida [sem corpos estranhos ou lesão de planos profundos].
 4. Síntese (Sutura): Aproximação e eversão das bordas com [ ] pontos [simples separados / Donati] utilizando fio [Nylon 3-0 / Nylon 4-0 / Nylon 5-0 / Vicryl 4-0]. Hemostasia revisada e satisfatória, curativo oclusivo estéril realizado.
 5. Profilaxias e Orientações de Alta: Atualizada profilaxia antitetânica ([vacinação em dia / reforço com dT / dT + SAT/IGHAT]). Orientada higiene local diária com água e sabonete neutro, sinais de alarme para infecção (calor, rubor, secreção purulenta, febre) e retirada dos pontos na UBS em [5 / 7 a 10 / 10 a 14] dias.
 ```
@@ -69,8 +69,8 @@ DESCRIÇÃO DE PROCEDIMENTO — SUTURA DE FERIMENTO CORTO-CONTUSO:
 
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Exame Neurovascular & Anestesia Segura
-- [ ] Testei e documentei sensibilidade, perfusão distal e função tendínea ANTES de infiltrar a lidocaína
-- [ ] Respeitei a dose máxima de Lidocaína (4,5 mg/kg s/ vaso; 7 mg/kg c/ vaso) e aspirei antes de injetar
+- [ ] [CRÍTICO] Testei e documentei sensibilidade, perfusão distal e função tendínea ANTES de infiltrar a lidocaína
+- [ ] [CRÍTICO] Respeitei a dose máxima de Lidocaína (4,5 mg/kg s/ vaso; 7 mg/kg c/ vaso) e aspirei antes de injetar
 - [ ] No bloqueio digital (dedos), utilizei exclusivamente Lidocaína SEM vasoconstritor
 
 ### 2. Limpeza, Técnica & Escolha do Fio
@@ -79,5 +79,5 @@ DESCRIÇÃO DE PROCEDIMENTO — SUTURA DE FERIMENTO CORTO-CONTUSO:
 - [ ] Verifiquei se a ferida tinha contraindicação de fechamento primário (mordedura em mão/gato, puntiforme, > 12h)
 
 ### 3. Upgrade Preceptor V2.0 (Profilaxias & Retirada)
-- [ ] Chequei o status vacinal de Tétano (dT ± IGHAT/SAT conforme histórico e tipo de ferida) e risco de Raiva se mordedura animal
-- [ ] Orientei por escrito na receita o dia exato de retirada dos pontos na UBS (Face 3–5d; Couro cabeludo/Tronco 7–10d; MMII/Articulações 10–14d)
+- [ ] [CRÍTICO] Chequei o status vacinal de Tétano (dT ± IGHAT/SAT conforme histórico e tipo de ferida) e risco de Raiva se mordedura animal
+- [ ] [CRÍTICO] Orientei por escrito na receita o dia exato de retirada dos pontos na UBS (Face 3–5d; Couro cabeludo/Tronco 7–10d; MMII/Articulações 10–14d)

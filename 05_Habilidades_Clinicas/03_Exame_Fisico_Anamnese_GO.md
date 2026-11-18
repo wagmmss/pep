@@ -71,7 +71,7 @@ EXAME OBSTÉTRICO DIRECIONADO:
 - Sinais Vitais Maternos: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ]°C (Nega cefaleia, escotomas, epigastralgia ou perdas vaginais).
 - Abdome Gravídico: Altura Uterina (AU): [ ] cm. Manobras de Leopold: Feto único, situação longitudinal, apresentação cefálica, dorso à [esquerda/direita].
 - Dinâmica Uterina (DU): [Ausente / X contrações de Xs em 10 minutos]. Tônus uterino fisiológico.
-- Ausculta Fetal: BCF de [140] bpm, rítmico, sem desacelerações audíveis durante/após contração (pulso materno aferido simultaneamente). Movimentação fetal presente.
+- Ausculta Fetal: BCF de [ ] bpm, rítmico, sem desacelerações audíveis durante/após contração (pulso materno aferido simultaneamente). Movimentação fetal presente.
 - Exame Especular: Paredes vaginais íntegras, colo epitelizado, sem sangramento ativo ou perda de líquido amniótico pelo OE (Tarnier negativo).
 - Toque Vaginal: Colo [posterior/centralizado], [firme/amolecido], apagado [ ]%, pérvio para [ ] cm. Bolsa [íntegra / rota com LA claro com grumos]. Apresentação cefálica em plano [ ] de De Lee.
 ```
@@ -91,22 +91,22 @@ EXAME OBSTÉTRICO DIRECIONADO:
 - [ ] Auditei a caderneta completa: ABO/Rh (Coombs), sorologias, GJ/TOTG, urocultura, EGB (35–37s), vacinas e suplementos
 - [ ] Perguntei ativamente os 4 alarmes obstétricos (sangramento, perda de líquido, contrações e movimentação fetal)
 - [ ] Investiguei sintomas premonitórios de eclâmpsia (cefaleia, escotomas, epigastralgia) se IG ≥ 20s ou PA elevada
-- [ ] Em Gineco: detalhei GPA, padrão menstrual, MAC/vida sexual, rastreios (CCO/MMG) e red flags (sinusorragia/pós-menopausa)
+- [ ] [CRÍTICO] Em Gineco: detalhei GPA, padrão menstrual, MAC/vida sexual, rastreios (CCO/MMG) e red flags (sinusorragia/pós-menopausa)
 
 ### 2. Exame Físico Obstétrico (Pré-Natal / CO)
 - [ ] Aferi a PA sentada ou em DLE (evitando compressão aortocava) e avaliei edema/reflexos patelares se suspeita de PE
-- [ ] Solicitei esvaziamento vesical antes de medir a Altura Uterina (da borda superior da sínfise ao fundo uterino)
+- [ ] [CRÍTICO] Solicitei esvaziamento vesical antes de medir a Altura Uterina (da borda superior da sínfise ao fundo uterino)
 - [ ] Executei as 4 Manobras de Leopold na sequência correta (1º ao 3º olhando para o rosto; 4º girando para os pés)
 - [ ] Auscultei o BCF no dorso fetal por 1 min completo palpando o pulso radial materno simultaneamente
-- [ ] Avaliei Dinâmica Uterina por 10 min reais (se CO/dor) e respeitei as travas antes do toque (sem placenta prévia; especular estéril se RPMO)
+- [ ] [CRÍTICO] Avaliei Dinâmica Uterina por 10 min reais (se CO/dor) e respeitei as travas antes do toque (sem placenta prévia; especular estéril se RPMO)
 
 ### 3. Exame Físico Ginecológico & Coleta
-- [ ] Garanti privacidade, presença de chaperona/auxiliar, despir em 2 tempos e expliquei cada etapa antes do toque
+- [ ] [CRÍTICO] Garanti privacidade, presença de chaperona/auxiliar, despir em 2 tempos e expliquei cada etapa antes do toque
 - [ ] Mamas: realizei inspeção estática + dinâmica (3 posições) + linfonodos (axilares/claviculares) + palpação deitada em 3 pressões
 - [ ] Genitália externa: fiz aviso tátil prévio na coxa, inspecionei vulva/períneo, palpei Bartholin (4h e 8h) e pedi Valsalva se indicado
-- [ ] Especular e Coleta: introduzi espéculo sem gel lubrificante (45° → 0°), colhi ectocérvice (Ayre) ANTES da endocérvice (escova) e fixei na hora
+- [ ] [CRÍTICO] Especular e Coleta: introduzi espéculo sem gel lubrificante (45° → 0°), colhi ectocérvice (Ayre) ANTES da endocérvice (escova) e fixei na hora
 - [ ] Toque bimanual por último: avaliei mobilização do colo (Sinal de Frenkel), fundo de saco de Douglas, corpo uterino e anexos
 
 ### 5. Upgrade Preceptor V2.0 (Travas Obstétricas Críticas)
-- [ ] Palpei o pulso radial materno simultaneamente à ausculta do BCF (110–160 bpm) para não confundir taquicardia materna com batimento fetal
-- [ ] Garanti proibição de toque vaginal no sangramento de 2º/3º tri sem USG prévia (Placenta Prévia) e priorizei especular estéril na suspeita de RPMO
+- [ ] [CRÍTICO] Palpei o pulso radial materno simultaneamente à ausculta do BCF (110–160 bpm) para não confundir taquicardia materna com batimento fetal
+- [ ] [CRÍTICO] Garanti proibição de toque vaginal no sangramento de 2º/3º tri sem USG prévia (Placenta Prévia) e priorizei especular estéril na suspeita de RPMO

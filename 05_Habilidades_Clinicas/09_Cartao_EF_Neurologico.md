@@ -67,11 +67,11 @@ EXAME NEUROLÓGICO DIRECIONADO (6 BLOCOS):
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Estado Mental, Linguagem & Glasgow
 - [ ] Avaliei nível de consciência e apliquei Escala de Coma de Glasgow com reatividade pupilar (Glasgow-P)
-- [ ] Chequei orientação (autopsíquica/tempo/espaço), atenção e evocação recente (3 palavras)
+- [ ] [CRÍTICO] Chequei orientação (autopsíquica/tempo/espaço), atenção e evocação recente (3 palavras)
 - [ ] Testei linguagem completa (fluência, compreensão, repetição, nomeação) diferenciando afasia de disartria
 
 ### 2. Os 12 Pares Cranianos
-- [ ] Avaliei nervo óptico (acuidade, confrontação visual nos 4 quadrantes e reflexo fotomotor direto/consensual/Marcus Gunn)
+- [ ] [CRÍTICO] Avaliei nervo óptico (acuidade, confrontação visual nos 4 quadrantes e reflexo fotomotor direto/consensual/Marcus Gunn)
 - [ ] Testei motilidade ocular extrínseca em "H" (III, IV, VI) buscando diplopia, ptose e nistagmo
 - [ ] Testei V (V1/V2/V3 + motor) e VII par (andar superior vs inferior — diferenciando paralisia central de periférica)
 - [ ] Avaliei VIII (audição/Weber-Rinne/HINTS se tontura), IX/X (elevação de palato/"Aaah"), XI (trapézio/ECM) e XII (língua em repouso e protrusão)
@@ -89,8 +89,8 @@ EXAME NEUROLÓGICO DIRECIONADO (6 BLOCOS):
 - [ ] Avaliei coordenação apendicular (índex-nariz, diadococinesia, calcanhar-joelho)
 - [ ] Executei Teste de Romberg com segurança (olhos abertos e depois fechados) e marcha (normal, tandem, ponta dos pés, calcanhares)
 - [ ] Pesquisei sinais meníngeos (rigidez de nuca, Brudzinski e Kernig) após descartar trauma cervical
-- [ ] Na suspeita de AVC agudo: chequei HGT imediatamente, hora exata do UMVB e apliquei NIHSS completo
+- [ ] [CRÍTICO] Na suspeita de AVC agudo: chequei HGT imediatamente, hora exata do UMVB e apliquei NIHSS completo
 
 ### 6. Upgrade Preceptor V2.0 (HINTS Plus & Topografia)
-- [ ] Na síndrome vestibular aguda contínua, apliquei o HINTS Plus completo (Head Impulse, Nistagmo, Test of Skew + Audição + Marcha) para excluir AVC de fossa posterior
-- [ ] Diferenciei paralisia facial Central (poupa a testa) de Periférica/Bell (acomete toda a hemiface) e afasia de Broca vs Wernicke vs Disartria
+- [ ] [CRÍTICO] Na síndrome vestibular aguda contínua, apliquei o HINTS Plus completo (Head Impulse, Nistagmo, Test of Skew + Audição + Marcha) para excluir AVC de fossa posterior
+- [ ] [CRÍTICO] Diferenciei paralisia facial Central (poupa a testa) de Periférica/Bell (acomete toda a hemiface) e afasia de Broca vs Wernicke vs Disartria

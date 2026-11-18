@@ -1,21 +1,25 @@
 # Manejo de Emergência - Sangramento do 2º/3º Trimestre (DPP vs. Placenta Prévia e Vasa Prévia)
+**Categoria:** Emergencias GO  
+**Atalho:** `;dpp-pp`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** O45.9 / O44.1  
 
-**Atalho:** `;dpp-pp` | **Categoria:** Emergencias GO
+---
 
-## SNIPPET PEP
+## 📋 Snippet para Prontuário Eletrônico (PEP)
+
 ```text
-### EMERGÊNCIA OBSTÉTRICA — SANGRAMENTO DO 2º/3º TRIMESTRE ###
-# IDENTIFICAÇÃO & CRONOLOGIA:
-ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
 TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo].
-Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Trombofilia / [ ]].
-Alergias: [*Nega / [ ]].
+Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Trombofilia / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 # AP:
 MED: [*Nega / Sulfato Ferroso / Metildopa / AAS]
 HAB: [*Nega tabagismo, etilismo ou uso de cocaína / Tabagista / Uso de cocaína]
-CX: [*Nega / Cesáreas anteriores ([ ]) / Curetagem prévia]
-ALER: [*Nega alergias medicamentosas / Alérgica a: [ ]]
+CX: [*Nega / Cesáreas anteriores ( ) / Curetagem prévia]
+ALER: [*Nega alergias medicamentosas / Alérgica a: ___]
 HF: [*Nega / HAS / Pré-eclâmpsia]
 
 # CASO: SANGRAMENTO DO 2º/3º TRIMESTRE (DPP VS. PLACENTA PRÉVIA E VASA PRÉVIA)
@@ -31,7 +35,7 @@ CHECO EXAMES (COAGULOGRAMA & USG OBSTÉTRICA):
 - Hemodinâmica Materna: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Índice de Choque (FC/PAS): [ ] | FR: [ ] irpm | SpO2: [ ]% | Diurese em SVD: [ ] mL/h.
 - Tonometria e Dinâmica Uterina: Útero [hipertônico / taquissistolia / consistência lenhosa em "tábua" (Útero de Couvelaire — DPP!) / tônus uterino normal e indolor, feto facilmente palpável (Placenta Prévia!)].
 - Vitalidade Fetal (BCF / Cardiotocografia): BCF: [ ] bpm — [Padrão tranquilizador Categoria I / Bradicardia fetal grave ou desacelerações tardias — Sofrimento Fetal Agudo / BCF ausente — Óbito Fetal].
-- Exame Especular Cuidadoso: Presença de [sangramento ativo pelo orifício externo / coágulos escuros em fundo de saco / líquido amniótico sanguinolento (hemoâmnio)]. Toque vaginal [NÃO REALIZADO até confirmação placentária / realizado após exclusão de Placenta Prévia: colo dilatado para [ ] cm].
+- Exame Especular Cuidadoso: Presença de [sangramento ativo pelo orifício externo / coágulos escuros em fundo de saco / líquido amniótico sanguinolento (hemoâmnio)]. Toque vaginal [NÃO REALIZADO até confirmação placentária / realizado após exclusão de Placenta Prévia: colo dilatado para ___ cm].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Sangramento da segunda metade da gestação compatível com: [Descolamento Prematuro de Placenta — DPP (CID-10: O45) / Placenta Prévia (O44) / Rotura de Vasa Prévia].
@@ -48,11 +52,22 @@ CHECO EXAMES (COAGULOGRAMA & USG OBSTÉTRICA):
    - Se Gestante Estável e Prematura (24 a 34 semanas): Internação hospitalar, Corticoterapia antenatal (Betametasona 12 mg IM a cada 24h por 2 doses), Sulfato de Magnésio para neuroproteção se < 32 semanas, Imunoglobulina Anti-D se Rh negativo e programação de interrupção eletiva entre 36s0d e 37s6d (ou 34–35s se Acretismo Placentário confirmado com equipe multidisciplinar).
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
-### 🧠 1. Diferenciação Clínica Imediata: DPP vs. Placenta Prévia vs. Vasa Prévia
+---
+
+## 🎯 Diretrizes & Raciocínio Clínico
+
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Diferenciação Clínica Imediata: DPP vs. Placenta Prévia vs. Vasa Prévia**
 - **Por que o tônus uterino define o diagnóstico à beira do leito:** No **DPP**, o hematoma retroplacentário disseca a decídua basal e infiltra o miométrio (**Apoplexia Uteroplacentária ou Útero de Couvelaire**), provocando dor lancinante contínua, hipertonia uterina ("útero em tábua"), consumo rápido de fibrinogênio (**CIVD**) e sofrimento fetal agudo precoce. Na **Placenta Prévia**, o sangramento é externo, vermelho-vivo, indolor, com tônus uterino normal e vitalidade fetal inicialmente preservada.
 - **Por que suspeitar de Rotura de Vasa Prévia:** Sangramento vaginal vermelho-vivo **imediatamente após a amniotomia (rotura da bolsa)** acompanhado de **bradicardia fetal súbita ou padrão sinusoidal** (exsanguinação fetal direta pelos vasos umbilicais desprotegidos sobre o orifício interno) exige cesariana de emergência em minutos.
 
-### 💊 2. Por Que Fazemos Amniotomia Precoce no DPP e Proibimos Toque Vaginal na Placenta Prévia?
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Por Que Fazemos Amniotomia Precoce no DPP e Proibimos Toque Vaginal na Placenta Prévia?**
 - **Por que romper a bolsa (Amniotomia) imediatamente no DPP (mesmo antes da cesárea)?** Reduz a pressão hidrostática intrauterina, freando a dissecção progressiva da placenta e impedindo que **tromboplastina tecidual** entre nos seios venosos maternos e agrave a **Coagulação Intravascular Disseminada (CIVD)** — lembrando que o alvo obstétrico de **Fibrinogênio é `> 200 mg/dL`** (`< 150 mg/dL` prediz hemorragia maciça e exige Crioprecipitado).
 - **Por que NUNCA tocar antes da USG?** Em Placenta Prévia, o dedo do examinador descola diretamente os cotilédones inseridos sobre o orifício interno, desencadeando **hemorragia cataclísmica imediata**.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

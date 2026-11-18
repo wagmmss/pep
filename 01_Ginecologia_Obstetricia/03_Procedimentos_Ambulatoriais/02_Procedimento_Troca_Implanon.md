@@ -1,20 +1,20 @@
 # Procedimento Ambulatorial - Retirada e Troca de Implanon
-
-> **Atalho sugerido:** `;implanon-troca`  
-> **Finalidade:** Nota técnica de remoção de implante subdérmico (*Pop-Out*) com ou sem reinserção imediata no mesmo ato e receita pós-procedimento.
+**Categoria:** Procedimentos Ambulatoriais  
+**Atalho:** `;implanon-troca`  
+**Gravidade:** Procedimento  
+**CID-10:** Z30.5  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### NOTA DE PROCEDIMENTO: RETIRADA / TROCA DE IMPLANTE SUBDÉRMICO (IMPLANON) ######
-# IDENTIFICAÇÃO & INDICAÇÃO:
+# IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ].
-Comorbidades: [+ *Hígida / [ ]].
-Alergias: [*Nega / [ ]].
+Comorbidades: [+ *Hígida / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 - Indicação: [Troca por término da validade de 3 anos / Retirada eletiva por desejo reprodutivo / Retirada por sangramento desfavorável].
-- Consentimento: TCLE lido e assinado. [Novo lote inserido: [ ] — Validade até: [DD/MM/AAAA] / Apenas retirada eletiva].
+- Consentimento: TCLE lido e assinado. [Novo lote inserido: ___ — Validade até: DD/MM/AAAA / Apenas retirada eletiva].
 
 # DESCRIÇÃO TÉCNICA DO PROCEDIMENTO:
 1. Posicionamento & Palpação Prévia Obrigatória: Paciente em decúbito dorsal, braço [esquerdo / direito] abduzido com cotovelo fletido. Implante prévio facilmente localizado por palpação bimanual no plano subdérmico superficial, móvel e íntegro.
@@ -36,7 +36,7 @@ Alergias: [*Nega / [ ]].
 >> CONDUTA & ORIENTAÇÕES PÓS-PROCEDIMENTO:
 1. [Entregue novo Cartão da Usuária com validade de 3 anos (efeito contraceptivo imediato mantido sem necessidade de pausa) / Se apenas retirada: orientada sobre retorno imediato da fertilidade ovulatória e prescrito Ácido Fólico pré-concepcional ou novo método contraceptivo].
 
->> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+# RECEITA:
 USO ORAL:
 1. [Dipirona Monoidratada 500 mg / Paracetamol 750 mg] ---------------- 1 caixa
    Tomar 1 comprimido via oral de 6 em 6 horas se dor local nas primeiras 48 horas.
@@ -51,19 +51,25 @@ CUIDADOS COM O CURATIVO E SINAIS DE ALARME:
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que Usamos a Técnica *"Pop-Out"* na Retirada do Implanon?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que Usamos a Técnica *"Pop-Out"* na Retirada do Implanon?**
 - **A Cápsula Fibrosa Periprotética:** Logo após a inserção subdérmica, o tecido conjuntivo subcutâneo envolve o bastão de etonogestrel com uma **bainha fibrosa de colágeno milimétrica**.
 - **O Segredo Técnico do *"Pop-Out"*:**
   1. Pressiona-se com o dedo indicador a **extremidade proximal** (mais próxima da axila) para fazer a **ponta distal** (mais próxima do cotovelo) saltar contra a pele.
   2. Faz-se uma microincisão longitudinal de `2 mm` exatamente sobre a ponta distal saliente.
   3. Empurra-se o bastão até que a ponta branca recoberta pela cápsula fibrosa apareça na ferida, e **abre-se a cápsula fibrosa com a ponta do bisturi nº 11**. Assim que a cápsula é aberta, o bastão branco brilhante desliza quase sozinho para fora, sendo apreendido com a pinça de Halsted/Mosquito sem rasgar o tecido subcutâneo!
 
-### 🧭 2. Por Que na Troca Imediata Usamos a Mesma Incisão de 2 mm?
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 2. Por Que na Troca Imediata Usamos a Mesma Incisão de 2 mm?**
 - Na troca no mesmo tempo cirúrgico, **não é necessário fazer um segundo corte**: introduz-se a ponta da agulha do novo aplicador de Implanon NXT pela própria microincisão de `2 mm` da retirada, avançando no plano subdérmico exatamente na mesma direção anatômica segura (3–5 cm posterior ao sulco bicipital), após infiltrar mais `0,5 a 1 mL` de lidocaína no trajeto se necessário.
 - **Vantagem Clínica e Contraceptiva:** Uma única cicatriz puntiforme de 2 mm fechada com *Steri-Strip* e **transição hormonal contínua imediata** (sem necessidade de 7 dias de abstinência/preservativo se a troca ocorreu dentro da validade de 3 anos).
 
-### 🚫 3. Regra de Ouro de Segurança: Implante Profundo ou Não Palpável
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+**🚫 3. Regra de Ouro de Segurança: Implante Profundo ou Não Palpável**
 - **Proibido explorar o braço às cegas no consultório:** Se você não conseguir palpar nitidamente ambas as extremidades do bastão antes de anestesiar, **suspenda o procedimento**.
 - **Como localizar:** Solicitar **Ultrassonografia de Partes Moles com transdutor linear de alta frequência (10–15 MHz)** ou **Radiografia simples do braço** (o Implanon NXT possui **sulfato de bário** na matriz de etileno-vinil-acetato, sendo visível ao Raio-X!).

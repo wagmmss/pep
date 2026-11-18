@@ -1,18 +1,18 @@
 # Atendimento de Pronto Atendimento - Cetoacidose Diabética (CAD) e EHH
-
-> **Atalho sugerido:** `;cad`  
-> **Finalidade:** Protocolo dos 4 pilares da emergência hiperglicêmica (Hidratação, Regra de Ouro do Potássio, Insulinoterapia em BIC e Transição para Glicose a 5%).
+**Categoria:** Emergencias Graves e Procedimentos  
+**Atalho:** `;cad`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** E10.1 / E11.0  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA / SALA VERMELHA: CETOACIDOSE DIABÉTICA (CAD) / EHH ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Sim: [ ]].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Sim: ___].
 # HISTÓRICO: [Diabetes Mellitus tipo 1 / Diabetes Mellitus tipo 2 sob insulinoterapia / Primeiro diagnóstico de diabetes].
 
 # QP:
@@ -32,7 +32,7 @@ Alergias: [*Nega / Sim: [ ]].
 - GLICEMIA CAPILAR (HGT) NA ADMISSÃO: [ > 300 / > 500 / "HI" ] mg/dL.
 - Ectoscopia Geral: Estado geral regular a grave, [lúcido / sonolento / torporoso], mucosas orais intensamente secas, saliva espessa, olhos encovados, turgor cutâneo muito diminuído (> 2s), hálito cetônico característico ("aroma adocicado de maçã passada").
 - Aparelho Respiratório: Padrão respiratório de Kussmaul evidente (inspirações e expirações rápidas, profundas e ruidosas para expirar CO2 e compensar a acidose metabólica). Ausculta pulmonar limpa sem estertores.
-- Aparelho Cardiovascular: Taquicardia regular em 2 tempos, bulhas normofonéticas, pulsos periféricos finos/filiformes, tempo de enchimento capilar [3] segundos (sinais de choque hipovolêmico por diurese osmótica).
+- Aparelho Cardiovascular: Taquicardia regular em 2 tempos, bulhas normofonéticas, pulsos periféricos finos/filiformes, tempo de enchimento capilar [ ] segundos (sinais de choque hipovolêmico por diurese osmótica).
 - Exame Abdominal: Abdome flácido, difusamente doloroso à palpação profunda ("pseudoperitonite diabética"), sem massas e sem descompressão dolorosa (Blumberg negativo).
 
 # CRITÉRIOS DIAGNÓSTICOS LABORATORIAIS DA CAD / EHH:
@@ -82,16 +82,22 @@ Alergias: [*Nega / Sim: [ ]].
 
 ---
 
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. A Regra de Ouro da CAD: Por Que o Potássio (K⁺) Vem ANTES da Insulina Venosa?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. A Regra de Ouro da CAD: Por Que o Potássio (K⁺) Vem ANTES da Insulina Venosa?**
 Na Cetoacidose Diabética (CAD: glicemia > 200–250 mg/dL, pH < 7,30, HCO₃⁻ < 18 mEq/L e cetonemia/cetonúria), há **espoliação corporal total de potássio** (de 3 a 5 mEq/kg perdidos na diurese osmótica), mesmo quando o K⁺ sérico inicial parece normal devido ao desvio extracelular causado pela acidose e pela insulinopenia. Iniciar a **Insulina Regular IV (0,1 UI/kg/h)** sem antes checar o potássio força a entrada abrupta de K⁺ para o intracelular via bomba Na⁺/K⁺-ATPase, precipitando **hipocalemia grave e PCR em FV/TV**. Portanto:
 - **K⁺ < 3,3 mEq/L**: **NÃO iniciar insulina!** Hidratar com SF 0,9% e repor **20–40 mEq de KCl/hora** até K⁺ ≥ 3,3 mEq/L.
 - **K⁺ entre 3,3 e 5,2 mEq/L**: iniciar insulina IV **junto** com reposição de **20–30 mEq de KCl por litro de soro**.
 - **K⁺ > 5,2 mEq/L**: iniciar insulina IV sem KCl no soro e reavaliar K⁺ de 2/2h.
 
-### 💊 2. Hidratação em Fases e Por Que Adicionar Soro Glicosado Quando a Glicemia Atinge 200–250 mg/dL?
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Critérios de Resolução da CAD e o "Overlap" de 1 a 2 Horas com a Insulina Subcutânea**
+A CAD só está resolvida quando preenche **glicemia < 200 mg/dL + Anion Gap normalizado (≤ 12) + pelo menos dois dos seguintes: pH > 7,30 e HCO₃⁻ ≥ 15 mEq/L** (o bicarbonato IV só é indicado se **pH < 6,90**, pelo risco de hipocalemia e acidose paradoxal do SNC). Na transição para a enfermaria, aplica-se a **Insulina Basal Subcutânea (NPH ou Glargina) 1 a 2 horas ANTES de desligar a bomba de insulina venosa**: como a meia-vida da insulina regular IV é de apenas 4 a 5 minutos, desligar a bomba sem essa ponte (*overlap*) causa recorrência imediata da cetoacidose.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Hidratação em Fases e Por Que Adicionar Soro Glicosado Quando a Glicemia Atinge 200–250 mg/dL?**
 A primeira medida que reduz a glicemia e o lactato na CAD/EHH é a **expansão volêmica na 1ª hora (15–20 mL/kg de SF 0,9% ou Ringer Lactato = 1.000 a 1.500 mL)**, restaurando a perfusão renal para excretar cetoácidos. Na 2ª fase, calcula-se o **Sódio Corrigido** (Na⁺ (corr) = Na⁺ (medido) + 1,6 	imes (Glicemia - 100 / 100)) para guiar a tonicidade do soro. Como a **glicemia cai muito mais rápido que a cetonemia**, quando a glicemia atinge **200 mg/dL na CAD** (ou 250–300 mg/dL no EHH), **NÃO se desliga a bomba de insulina** (pois a lipólise voltaria em minutos): reduz-se a insulina para 0,02–0,05 UI/kg/h e **associa-se SG 5% ao soro de hidratação**, mantendo a glicemia entre 150–200 mg/dL até fechar o Anion Gap.
 
-### 🧭 3. Critérios de Resolução da CAD e o "Overlap" de 1 a 2 Horas com a Insulina Subcutânea
-A CAD só está resolvida quando preenche **glicemia < 200 mg/dL + Anion Gap normalizado (≤ 12) + pelo menos dois dos seguintes: pH > 7,30 e HCO₃⁻ ≥ 15 mEq/L** (o bicarbonato IV só é indicado se **pH < 6,90**, pelo risco de hipocalemia e acidose paradoxal do SNC). Na transição para a enfermaria, aplica-se a **Insulina Basal Subcutânea (NPH ou Glargina) 1 a 2 horas ANTES de desligar a bomba de insulina venosa**: como a meia-vida da insulina regular IV é de apenas 4 a 5 minutos, desligar a bomba sem essa ponte (*overlap*) causa recorrência imediata da cetoacidose.
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

@@ -60,9 +60,9 @@ EXAME DO ABDOME AGUDO (ORDEM I-A-P-P):
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Preparo, Inspeção & Ausculta
 - [ ] Garanti analgesia/conforto, decúbito 0° horizontal com joelhos fletidos e exposição até a raiz das coxas
-- [ ] Perguntei onde doía antes de tocar para começar pelo quadrante mais distante
+- [ ] [CRÍTICO] Perguntei onde doía antes de tocar para começar pelo quadrante mais distante
 - [ ] Inspecionei cicatrizes (bridas), distensão, hérnias visíveis e equimoses (Cullen / Grey-Turner)
-- [ ] Auscultei os 4 quadrantes ANTES de percutir ou palpar (e contei 2 min antes de declarar silêncio)
+- [ ] [CRÍTICO] Auscultei os 4 quadrantes ANTES de percutir ou palpar (e contei 2 min antes de declarar silêncio)
 
 ### 2. Percussão, Palpação & Manobras Dirigidas
 - [ ] Percuti suavemente buscando dor localizada, Sinal de Jobert (pneumoperitônio) e macicez móvel/piparote se ascite
@@ -70,10 +70,10 @@ EXAME DO ABDOME AGUDO (ORDEM I-A-P-P):
 - [ ] Executei corretamente as manobras dirigidas pertinentes (Blumberg, Rovsing, Psoas, Obturador, Murphy e Giordano)
 
 ### 3. Orifícios, Toque & Segurança Cirúrgica
-- [ ] Examinei ativamente todas as cicatrizes e orifícios herniários inguinais E femorais (com tosse/Valsalva)
-- [ ] Avaliei necessidade de toque retal (sangramento, obstrução, apendicite pélvica/Douglas, trauma) respeitando contraindicações
-- [ ] Em mulher em idade fértil com dor abdominal baixa: solicitei Beta-hCG e considerei exame ginecológico (ectópica/DIP)
+- [ ] [CRÍTICO] Examinei ativamente todas as cicatrizes e orifícios herniários inguinais E femorais (com tosse/Valsalva)
+- [ ] [CRÍTICO] Avaliei necessidade de toque retal (sangramento, obstrução, apendicite pélvica/Douglas, trauma) respeitando contraindicações
+- [ ] [CRÍTICO] Em mulher em idade fértil com dor abdominal baixa: solicitei Beta-hCG e considerei exame ginecológico (ectópica/DIP)
 
 ### 4. Upgrade Preceptor V2.0 (Dunphy, Carnett & Vascular)
-- [ ] Iniciei pelo Sinal de Dunphy (dor na FID à tosse, LR+ 3.2) antes de palpar e testei o Sinal de Carnett para diferenciar parede abdominal de peritônio
-- [ ] Descartei Abdome Agudo Vascular (Isquemia Mesentérica com dor desproporcional ao exame + FA, e Rotura de AAA com massa pulsátil + hipotensão)
+- [ ] [CRÍTICO] Iniciei pelo Sinal de Dunphy (dor na FID à tosse, LR+ 3.2) antes de palpar e testei o Sinal de Carnett para diferenciar parede abdominal de peritônio
+- [ ] [CRÍTICO] Descartei Abdome Agudo Vascular (Isquemia Mesentérica com dor desproporcional ao exame + FA, e Rotura de AAA com massa pulsátil + hipotensão)

@@ -1,18 +1,18 @@
 # Atendimento de Pronto Atendimento - Intoxicações Exógenas e Intoxicação Alcoólica Aguda
-
-> **Atalho sugerido:** `;intoxicacao`  
-> **Finalidade:** Identificação das Toxidromes da emergência (Colinérgica, Opióide, Sedativa e Simpaticomimética), antídotos específicos (Naloxona, Atropina, Tiamina) e medidas de descontaminação.
+**Categoria:** Emergencias Graves e Procedimentos  
+**Atalho:** `;intoxicacao`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** T50.9 / F10.0  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA / SALA VERMELHA: INTOXICAÇÃO EXÓGENA AGUDA ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Sim: [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Sim: ___].
 # CONTEXTO: [Ingesta alcoólica pesada aguda / Suspeita de tentativa de autoextermínio / Acidente ocupacional com agrotóxico / Intoxicação medicamentosa acidental].
 
 # QP:
@@ -68,22 +68,28 @@ Alergias: [*Nega / Sim: [ ]].
 
 ---
 
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que o Reconhecimento Rápido das Toxíndromes Guia o Manejo na Sala Vermelha?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que o Reconhecimento Rápido das Toxíndromes Guia o Manejo na Sala Vermelha?**
 Na maioria das intoxicações exógenas, o agente exato ou a dose são desconhecidos; por isso, o diagnóstico guia-se pela **Toxíndrome autonômica e pupilar**:
 - **Colinesterásica ("Chumbinho"/Carbamatos e Organofosforados)**: **mnemônico DUMBBELS** (Diarreia, Urinação, **Miose puntiforme**, Broncorreia/Broncoespasmo, **Bradicardia**, Êmese, Lacrimejamento, Sialorreia) + fasciculações musculares.
 - **Anticolinérgica (Tricíclicos, Anti-histamínicos, Biperideno)**: *"seco como osso, quente como brasa, vermelho como beterraba, cego como morcego, louco como chapeleiro"* (midríase, pele seca/quente, taquicardia, retenção urinária, delirium).
 - **Opioide (Morfina, Fentanil, Metadona)**: tríade de **miose puntiforme + depressão respiratória (FR < 8–10 irpm) + rebaixamento do nível de consciência**.
 - **Simpaticomimética (Cocaína, Crack, Anfetaminas)**: midríase, **diaforese profusa (pele úmida — diferencia da anticolinérgica!)**, taquicardia, hipertensão e agitação/convulsão.
 
-### 💊 2. Carvão Ativado (Janela de 1 Hora) e os Antídotos Salvadores de Vida
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Intoxicação Alcoólica Aguda: A Regra da Tiamina Antes da Glicose e a Exclusão de TCE**
+No paciente etilista com rebaixamento do sensório, duas armadilhas fatais devem ser evitadas:
+1. **Encefalopatia de Wernicke iatrogênica**: a glicose consome tiamina (vitamina B1) como cofator da piruvato-desidrogenase no ciclo de Krebs; por isso, administra-se **Tiamina 100 a 500 mg IV/IM antes ou concomitantemente à Glicose hipertônica**.
+2. **Hematoma Subdural Agudo oculto**: etilistas sofrem quedas frequentes e têm atrofia cortical que estira as veias-ponte; qualquer sinal de trauma craniano, anisocoria ou ausência de melhora do Glasgow após 3–4h de observação exige **TC de Crânio imediata**.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Carvão Ativado (Janela de 1 Hora) e os Antídotos Salvadores de Vida**
 A descontaminação gastrointestinal com **Carvão Ativado (1 g/kg, máx 50 g em 250 mL de SF/água)** só tem benefício real até **1 a 2 horas** da ingestão, com **via aérea protegida (Glasgow 15 ou paciente intubado)**, sendo **proscrita** em cáusticos, derivados de petróleo e metais pesados/lítio/álcool (**mnemônico PHAILS**). Entre os antídotos críticos:
 - **Chumbinho/Organofosforado**: **Atropina 2 a 5 mg IV a cada 5 min** dobrando a dose até **secar as secreções brônquicas** ("atropinização pulmonar", independentemente da FC ou do tamanho da pupila).
 - **Paracetamol (> 150 mg/kg ou > 7,5–10 g)**: **N-Acetilcisteína (NAC)** regenera a glutationa hepática neutralizando o metabólito hepatotóxico NAPQI (eficácia de quase 100% se iniciada em < 8h).
 - **Tricíclicos com QRS > 100 ms**: **Bicarbonato de Sódio 8,4% 1–2 mEq/kg IV em bolus** para reverter o bloqueio de canais de sódio cardíacos.
 
-### 🧭 3. Intoxicação Alcoólica Aguda: A Regra da Tiamina Antes da Glicose e a Exclusão de TCE
-No paciente etilista com rebaixamento do sensório, duas armadilhas fatais devem ser evitadas:
-1. **Encefalopatia de Wernicke iatrogênica**: a glicose consome tiamina (vitamina B1) como cofator da piruvato-desidrogenase no ciclo de Krebs; por isso, administra-se **Tiamina 100 a 500 mg IV/IM antes ou concomitantemente à Glicose hipertônica**.
-2. **Hematoma Subdural Agudo oculto**: etilistas sofrem quedas frequentes e têm atrofia cortical que estira as veias-ponte; qualquer sinal de trauma craniano, anisocoria ou ausência de melhora do Glasgow após 3–4h de observação exige **TC de Crânio imediata**.
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

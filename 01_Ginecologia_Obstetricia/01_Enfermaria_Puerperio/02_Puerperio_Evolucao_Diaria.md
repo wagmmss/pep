@@ -1,21 +1,25 @@
 # Evolução Diária em Enfermaria de Puerpério
-
-> **Atalho sugerido:** `;puerp-evo`  
-> **Finalidade:** Evolução clínica diária de enfermaria (Alojamento Conjunto), prescrição hospitalar e receita de alta puerperal.
+**Categoria:** Enfermaria Puerperio  
+**Atalho:** `;puerp-evo`  
+**Gravidade:** Enfermaria / Internação  
+**CID-10:** Z39.0  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### EVOLUÇÃO DIÁRIA DE ENFERMARIA — PUERPÉRIO (ALOJAMENTO CONJUNTO) ######
-# IDENTIFICAÇÃO & PARTO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]].
-TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: | TS RN: [ ] (Coombs Direto: [*Negativo / Positivo])].
-Comorbidades: [+ *Hígida / [ ]].
-Alergias: [*Nega / [ ]].
-Sorologias: [Não reagentes (HIV, VDRL, HBsAg, Toxo) / [ ]].
-Em [1º / 2º / 3º] dia de puerpério de [Parto Normal sem laceração / Parto Normal com rafia de laceração de 2º grau / Parto Normal com episiotomia / Cesárea por indicação de [ ]] realizado em [DD/MM às HH:MM] com IG de [ ]s[ ]d[? G/P/A :: , G[ ] P[ ] A[ ]].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos[? Leito :: , Leito ___].
+TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: | TS RN: ___ (Coombs Direto: *Negativo / Positivo)].
+Comorbidades: [+ *Hígida / Outros: ___].
+Alergias: [*Nega / Outros: ___].
+Sorologias: [Não reagentes (HIV, VDRL, HBsAg, Toxo) / Outros: ___].
+Em [1º / 2º / 3º] dia de puerpério de [Parto Normal sem laceração / Parto Normal com rafia de laceração de 2º grau / Parto Normal com episiotomia / Cesárea por indicação de ___] realizado em [DD/MM às HH:MM] com IG de [ ]s[ ]d[? G/P/A :: , G ___ P ___ A].
+
+# HISTÓRIA / RESUMO DA INTERNAÇÃO:
+- Motivo da internação / Diagnóstico de base: [ ]
+- Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 
 # EVOLUÇÃO (24H):
 Encontro puérpera no leito com RN em alojamento conjunto.
@@ -25,7 +29,7 @@ Encontro puérpera no leito com RN em alojamento conjunto.
 - Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, lipotímia ou dor/empastamento em panturrilhas.
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [110x70] mmHg | FC: [78] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C.
+- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C.
 - Ectoscopia: BEG, lúcida, corada, hidratada, anictérica, acianótica, afebril e eupneica.
 - Mamas: [Flácidas / Túrgidas fisiológicas], indolores, sem áreas de hiperemia, calor ou ingurgitamento patológico. Papilas [íntegras sem fissuras / com fissura superficial em mama]. Colostro presente à expressão bilateral.
 - Abdome & Útero: Abdome flácido, RHA+, indolor, sem bexigoma palpável. Útero globoso, firme e bem contraído (Globo de Pinard presente), centrado, involuindo a [1 a 2] cm abaixo da cicatriz umbilical, indolor à mobilização.
@@ -44,9 +48,9 @@ Encontro puérpera no leito com RN em alojamento conjunto.
 3. [Se constipação / rafia perineal / cesárea]: Simeticona 40 gotas VO 8/8h se gases + Lactulose 15 mL VO à noite se necessário.
 4. [Se mãe Rh negativo com RN Rh positivo e Coombs Direto negativo]: Prescrever e checar Imunoglobulina Anti-D 300 mcg IM (em até 72h do parto).
 5. [Se alto risco para TEV]: Enoxaparina 40 mg SC 1x/dia.
-6. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / [ ]].
+6. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 mcg/dia contínuo / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / Outros: ___].
 
->> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+# RECEITA:
 USO ORAL:
 1. Sulfato Ferroso 40 mg de ferro elementar (200 mg) ----------------- 60 comprimidos
    Tomar 1 comprimido via oral, 1 vez ao dia (30 min antes do almoço, com suco cítrico), por 60 a 90 dias (suplementação puerperal).
@@ -65,9 +69,10 @@ ORIENTAÇÕES DE ALTA PUERPERAL:
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que Avaliamos Assim na Enfermaria? (Fisiopatologia do Puerpério)
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que Avaliamos Assim na Enfermaria? (Fisiopatologia do Puerpério)**
 - **Involução Uterina Fisiológica (1 cm/dia) & Globo de Pinard:** Logo após a dequitação, a contração tônica das fibras miometriais oblíquas estrangula as artérias espiraladas (*ligaduras vivas de Pinard*). No 1º DPO o fundo uterino está na cicatriz umbilical e regride cerca de **1 cm por dia**, tornando-se intrapélvico por volta do `10º–14º dia`.
   - **Por que útero alto e desviado para a direita no 1º DPO quase sempre é Bexigoma?** Após raquianestesia ou parto vaginal instrumentalizado, há hiporreflexia detrusora transitória. A bexiga cheia empurra o útero para cima e para a direita, impedindo sua contração eficaz — por isso **sempre mandamos urinar ou sondamos antes de diagnosticar atonia tardia**.
 - **Evolução Fisiológica dos Lóquios (*Rubra → Serosa → Alba*):**
@@ -76,14 +81,19 @@ ORIENTAÇÕES DE ALTA PUERPERAL:
   - `Após 10º dia`: **Lóquios Albos** (esbranquiçados/amarelados por epitelização endometrial). Lóquios com **odor fétido (pútrido)** ou retorno de sangramento vivo intenso sugerem **Endometrite ou Retenção de Restos Placentários (ou gaze esquecida na vagina!)**.
 - **Apojadura Fisiológica vs. Mastite Puerperal:** No `3º ao 4º dia pós-parto`, a queda abrupta da progesterona placentária libera a ação da prolactina, causando a **apojadura** (mamas túrgidas, quentes, **bilaterais** e febrícula transitória `< 38 °C` por menos de 24h — o *"calafrio fisiológico do leite"*). Já a **mastite infecciosa** surge geralmente após o `10º dia`, é **unilateral**, com eritema em cunha e febre alta `≥ 38,3 °C`.
 
-### 💊 2. Por Que Prescrevemos Assim? (Farmacologia & Travas de Segurança)
-- **Por que é PROIBIDO prescrever AINEs (Cetoprofeno, Ibuprofeno, Diclofenaco) em Hipertensas / Pré-Eclâmpsia?** Entre o `3º e o 6º DPO`, todo o líquido acumulado no espaço extravascular durante a gestação retorna para o intravascular. Os AINEs bloqueiam as prostaglandinas renais (PGE₂ e PGI₂), causando vasoconstrição da arteríola aferente, retenção aguda de sódio/água e perda do efeito dos anti-hipertensivos — precipitando **Crise Hipertensiva, Eclâmpsia Tardia e Edema Agudo de Pulmão** no pós-parto! Em hipertensas, use apenas **Dipirona + Paracetamol**.
-- **Por que suplementamos Sulfato Ferroso (40 mg de Fe elementar/dia) por 60 a 90 dias?** Repõe o estoque de ferritina depletado pela perda sanguínea periparto (`300–500 mL` no parto normal; `600–1.000 mL` na cesárea) e garante ferro para a lactação.
-- **Por que iniciamos Desogestrel 75 mcg/dia (ou DIU/Implanon) e NUNCA anticoncepcional combinado com estrogênio?** O Etinilestradiol nas primeiras **6 semanas pós-parto** soma-se ao estado pró-trombótico puerperal (multiplicando o risco de **TVP/TEP**) e inibe a ação da prolactina no alvéolo mamário, **secando o leite materno**.
-
-### 🧭 3. Checklist de Decisão Antes da Alta Hospitalar (Binômio Mãe-RN)
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Checklist de Decisão Antes da Alta Hospitalar (Binômio Mãe-RN)**
 | Eixo de Segurança | O Que Checar no Prontuário | Por Que é Mandatório? |
 | :--- | :--- | :--- |
 | **Imuno-hematologia (Rh)** | TS Materna + TS do RN + Coombs Direto | Se **Mãe Rh(-) + RN Rh(+) + Coombs Direto(-)** → Aplicar **Imunoglobulina Anti-D 300 mcg IM em até 72h** do parto para evitar aloimunização na próxima gestação. |
 | **Sorologias de Admissão** | Teste Rápido / VDRL e HIV maternos | VDRL reagente exige investigar Sífilis Congênita antes da alta; HIV+ contraindica amamentação (cabergolina + fórmula). |
 | **Vigilância Mínima** | `≥ 24h` (Parto Normal) a `≥ 48h` (Cesárea / Risco) | Capta hemorragias tardias, icterícia neonatal precoce (`< 24h` é sempre patológica!) e cardiopatias ducto-dependentes (Teste do Coraçãozinho entre 24–48h). |
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+**💊 2. Por Que Prescrevemos Assim? (Farmacologia & Travas de Segurança)**
+- **Por que é PROIBIDO prescrever AINEs (Cetoprofeno, Ibuprofeno, Diclofenaco) em Hipertensas / Pré-Eclâmpsia?** Entre o `3º e o 6º DPO`, todo o líquido acumulado no espaço extravascular durante a gestação retorna para o intravascular. Os AINEs bloqueiam as prostaglandinas renais (PGE₂ e PGI₂), causando vasoconstrição da arteríola aferente, retenção aguda de sódio/água e perda do efeito dos anti-hipertensivos — precipitando **Crise Hipertensiva, Eclâmpsia Tardia e Edema Agudo de Pulmão** no pós-parto! Em hipertensas, use apenas **Dipirona + Paracetamol**.
+- **Por que suplementamos Sulfato Ferroso (40 mg de Fe elementar/dia) por 60 a 90 dias?** Repõe o estoque de ferritina depletado pela perda sanguínea periparto (`300–500 mL` no parto normal; `600–1.000 mL` na cesárea) e garante ferro para a lactação.
+- **Por que iniciamos Desogestrel 75 mcg/dia (ou DIU/Implanon) e NUNCA anticoncepcional combinado com estrogênio?** O Etinilestradiol nas primeiras **6 semanas pós-parto** soma-se ao estado pró-trombótico puerperal (multiplicando o risco de **TVP/TEP**) e inibe a ação da prolactina no alvéolo mamário, **secando o leite materno**.

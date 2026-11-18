@@ -1,18 +1,18 @@
 # Manejo de Emergência - Infecções Puerperais: Mastite e Endometrite
-
-> **Atalhos sugeridos:** `;mastite` | `;endometrite`  
-> **Finalidade:** Diagnóstico diferencial e manejo da Febre Puerperal — Mastite Lactacional Aguda (ambulatorial/manutenção da amamentação) vs Endometrite Puerperal (Tríade de Bumm e esquema Clindamicina + Gentamicina EV).
+**Categoria:** Emergencias GO  
+**Atalho:** `;mastite`, `;endometrite`  
+**Gravidade:** Urgência (Laranja/Amarelo)  
+**CID-10:** O85 / O91.2  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — INFECÇÕES PUERPERAIS (MASTITE vs ENDOMETRITE) ######
-# IDENTIFICAÇÃO & CONTEXTO PUERPERAL:
+# IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], no [ ]º dia de puerpério de [Parto Normal / Cesariana].
-Comorbidades: [+ *Hígida / [ ]].
-Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
+Comorbidades: [+ *Hígida / Outros: ___].
+Alergias: [*Nega alergias medicamentosas / Alérgica a: ___].
 - Quadro Atual: [MODALIDADE A — MASTITE PUERPERAL AGUDA / MODALIDADE B — ENDOMETRITE PUERPERAL].
 
 # QP:
@@ -20,11 +20,11 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 
 # HMA:
 - Queixa Principal & HMA:
-  * [SE MASTITE]: Dor mamária localizada intensa, vermelhidão em cunha e calafrios/febre (Tax [38,5] °C) há [ ] dias, associada a fissura mamilar e ingurgitamento prévio em mama [direita / esquerda]. Nega dor hipogástrica ou lóquios fétidos.
+  * [SE MASTITE]: Dor mamária localizada intensa, vermelhidão em cunha e calafrios/febre (Tax [ ] °C) há [ ] dias, associada a fissura mamilar e ingurgitamento prévio em mama [direita / esquerda]. Nega dor hipogástrica ou lóquios fétidos.
   * [SE ENDOMETRITE]: Febre alta (Tax >= 38,0 °C), calafrios, mal-estar, dor hipogástrica progressiva e eliminação de lóquios escuros/purulentos com odor fétido intenso há [ ] dias (Fatores de risco: [cesariana / bolsa rota prolongada / múltiplos toques / anemia]). Nega queixas mamárias ou respiratórias.
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [110x70] mmHg | FC: [98] bpm | FR: [18] irpm | SpO2: [99]% AA | Tax: [38,4] °C.
+- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C.
 - Exame das Mamas:
   * [SE MASTITE]: Mama [direita / esquerda] com placa eritematosa em cunha, quente, edemaciada e dolorosa no quadrante [superior externo / inferior], fissura mamilar presente, ausência de ponto de flutuação à palpação (afastado abscesso mamário franco). Linfonodo axilar homolateral palpável.
   * [SE ENDOMETRITE]: Mamas lactantes flácidas/túrgidas fisiológicas, indolores, sem hiperemia ou sinais de mastite.
@@ -32,10 +32,10 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
   * [SE MASTITE]: Abdome flácido, útero bem involuído e indolor, ferida/períneo íntegros, lóquios fisiológicos sem odor.
   * [SE ENDOMETRITE — Tríade de Bumm Positiva]: Abdome doloroso em hipogástrio (DB negativo); ferida operatória [íntegra sem coleção / com celulite perilesional]. Ao exame especular e toque bimanual: (1) Febre puerperal + (2) Útero subinvoluído, amolecido e intensamente doloroso à mobilização + (3) Lóquios achocolatados/purulentos de odor fétido fluindo pelo colo.
 - Exames Complementares (se realizados):
-  * [Ambulatorial sem necessidade de exames / Hemograma: Leucócitos [ ]/mm³ com [ ]% bastões, PCR: [ ] mg/L / USG Mamária: sem coleção líquida / USG Transvaginal: cavidade uterina [vazia sem restos / com conteúdo heterogêneo sugerindo restos placentários]].
+  * [Ambulatorial sem necessidade de exames / Hemograma: Leucócitos ___ /mm³ com ___ % bastões, PCR: ___ mg/L / USG Mamária: sem coleção líquida / USG Transvaginal: cavidade uterina vazia sem restos / com conteúdo heterogêneo sugerindo restos placentários].
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. [Mastite Lactacional Aguda não complicada em mama [direita / esquerda] (CID-10: O91.2) / Endometrite Puerperal Aguda pós-[cesárea/parto] (CID-10: O85)].
+1. [Mastite Lactacional Aguda não complicada em mama direita / esquerda (CID-10: O91.2) / Endometrite Puerperal Aguda pós-cesárea/parto (CID-10: O85)].
 
 # CONDUTA:
 >> [MODALIDADE A — CONDUTA NA MASTITE PUERPERAL AGUDA (AMBULATORIAL)]:
@@ -53,7 +53,7 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 4. Critério de Alta (Sem necessidade de antibiótico oral para casa!): Manter Clindamicina + Gentamicina EV até a paciente permanecer afebril por 24 a 48 horas completas, com dor resolvida e leucograma em queda -> Suspender antibiótico e dar alta hospitalar (não prescrever ATB VO na alta!).
 5. *Se febre persistir após 48–72h de Clinda + Genta:* Associar Ampicilina 2 g EV de 6/6h (para cobrir *Enterococcus faecalis*) e investigar hematoma/abscesso pélvico, infecção de ferida operatória ou Tromboflebite Pélvica Séptica (TC de pelve com contraste).
 
->> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA (PARA MASTITE LACTACIONAL AMBULATORIAL):
+# RECEITA:
 USO ORAL:
 1. Cefalexina 500 mg --------------------------------------------------- 40 comprimidos
    Tomar 1 comprimido via oral de 6 em 6 horas, rigorosamente nos horários, durante 10 dias consecutivos.
@@ -71,9 +71,10 @@ ORIENTAÇÕES PRÁTICAS PARA A AMAMENTAÇÃO NA MASTITE:
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Endometrite Puerperal Aguda: Fisiopatologia, Tríade de Bumm e Microbiologia Polimicrobiana
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Endometrite Puerperal Aguda: Fisiopatologia, Tríade de Bumm e Microbiologia Polimicrobiana**
 - **Fatores de Risco & Patogênese:** A endometrite puerperal é a principal causa de febre puerperal. A **Cesariana** é o principal fator de risco isolado (multiplica a incidência em 10 a 20 vezes em relação ao parto vaginal), potencializada por bolsa rota prolongada (> 18 horas), múltiplos toques vaginais durante o trabalho de parto, corioamnionite prévia e anemia materna.
 - **A Tríade Semiológica de Bumm (Diagnóstico Clínico à Beira do Leito):**
   1. **Febre Puerperal:** Temperatura axilar ≥ 38,0 °C em dois dias quaisquer nos primeiros 10 dias de puerpério (excluindo as primeiras 24h fisiológicas);
@@ -81,7 +82,24 @@ ORIENTAÇÕES PRÁTICAS PARA A AMAMENTAÇÃO NA MASTITE:
   3. **Lóquios Patológicos Fétidos:** Lóquios achocolatados, purulentos e com odor característico fétido/pútrido fluindo pelo colo uterino.
 - **Microbiologia Polimicrobiana Ascendente:** É uma infecção mista de bactérias anaeróbias (*Bacteroides fragilis*, *Peptostreptococcus*) e aeróbias facultativas (*Escherichia coli*, *Klebsiella pneumoniae*, *Streptococcus agalactiae*, *Enterococcus faecalis*).
 
-### 💉 2. Esquema Antibiótico Padrão-Ouro de Slight (Clindamicina + Gentamicina EV)
+**🤱 3. Mastite Puerperal Lactacional vs. Abscesso Mamário**
+- **Microbiologia:** O agente etiológico em mais de 90% dos casos é o ***Staphylococcus aureus*** meticilina-sensível (proveniente da microbiota nasofaríngea do recém-nascido ou da pele da mãe, colonizando o ducto através de fissuras mamilares).
+- **REGRA DE OURO: NUNCA Suspender a Amamentação na Mama Afetada!**
+  - A infecção localiza-se no tecido conjuntivo intersticial mamário periductal; o leite materno não transmite infecção para o lactente sadio.
+  - Se a mãe suspender as mamadas no seio doente, ocorre **estase láctea aguda**, hiperpressão ductal e rápida progressão do eritema celulítico para **Abscesso Mamário** em 24 a 48 horas. O esvaziamento frequente por sucção direta ou ordenha manual é o pilar terapêutico número 1.
+- **Tratamento da Mastite Aguda:**
+  - **Cefalexina 500 mg VO de 6 em 6 horas por 10 a 14 dias** (ou Clindamicina 300 mg VO 6/6h se anafilaxia a penicilina).
+  - **Ibuprofeno 600 mg VO de 8 em 8 horas** para controle da inflamação ductal e analgesia.
+  - Compressas frias por 10–15 minutos após as mamadas (compressas mornas antes da mamada apenas se ingurgitamento que impeça a pega).
+- **Diagnóstico e Manejo do Abscesso Mamário:**
+  - Suspeitar de abscesso diante de **massa mamária palpável com ponto de flutuação**, persistência da febre após 48–72 horas de antibioticoterapia correta ou coleção líquida documentada à Ultrassonografia de mamas.
+  - **Conduta:** Punção aspirativa por agulha grossa (calibre 14G–16G) guiada por USG (repetida se recidiva) ou drenagem cirúrgica aberta com incisão periareolar/submamária se coleções > 5 cm. O aleitamento materno deve ser mantido na mama sadia e mantido ou ordenhado na mama afetada.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+**💉 2. Esquema Antibiótico Padrão-Ouro de Slight (Clindamicina + Gentamicina EV)**
 - **Internação Hospitalar Obrigatória:** Toda paciente com endometrite puerperal exige internação hospitalar e antibioticoterapia venosa de largo espectro.
 - **O Esquema Padrão-Ouro:**
   - **Clindamicina 900 mg EV de 8 em 8 horas**
@@ -97,15 +115,5 @@ ORIENTAÇÕES PRÁTICAS PARA A AMAMENTAÇÃO NA MASTITE:
   2. **2º Passo:** Solicitar Ultrassonografia ou Tomografia de Pelve para investigar coleções pélvicas, abscessos de parede abdominal ou hematomas infectados.
   3. **3º Passo:** Se exames de imagem forem normais, suspeitar de **Tromboflebite Pélvica Séptica** (trombo infectado na veia ovariana que cursa com febre em agulha e paciente em bom estado geral — *Sinal de Michaelis*). O diagnóstico é presuntivo e responde rapidamente à introdução de **Heparina / Enoxaparina em dose terapêutica plena** mantendo a antibioticoterapia.
 
-### 🤱 3. Mastite Puerperal Lactacional vs. Abscesso Mamário
-- **Microbiologia:** O agente etiológico em mais de 90% dos casos é o ***Staphylococcus aureus*** meticilina-sensível (proveniente da microbiota nasofaríngea do recém-nascido ou da pele da mãe, colonizando o ducto através de fissuras mamilares).
-- **REGRA DE OURO: NUNCA Suspender a Amamentação na Mama Afetada!**
-  - A infecção localiza-se no tecido conjuntivo intersticial mamário periductal; o leite materno não transmite infecção para o lactente sadio.
-  - Se a mãe suspender as mamadas no seio doente, ocorre **estase láctea aguda**, hiperpressão ductal e rápida progressão do eritema celulítico para **Abscesso Mamário** em 24 a 48 horas. O esvaziamento frequente por sucção direta ou ordenha manual é o pilar terapêutico número 1.
-- **Tratamento da Mastite Aguda:**
-  - **Cefalexina 500 mg VO de 6 em 6 horas por 10 a 14 dias** (ou Clindamicina 300 mg VO 6/6h se anafilaxia a penicilina).
-  - **Ibuprofeno 600 mg VO de 8 em 8 horas** para controle da inflamação ductal e analgesia.
-  - Compressas frias por 10–15 minutos após as mamadas (compressas mornas antes da mamada apenas se ingurgitamento que impeça a pega).
-- **Diagnóstico e Manejo do Abscesso Mamário:**
-  - Suspeitar de abscesso diante de **massa mamária palpável com ponto de flutuação**, persistência da febre após 48–72 horas de antibioticoterapia correta ou coleção líquida documentada à Ultrassonografia de mamas.
-  - **Conduta:** Punção aspirativa por agulha grossa (calibre 14G–16G) guiada por USG (repetida se recidiva) ou drenagem cirúrgica aberta com incisão periareolar/submamária se coleções > 5 cm. O aleitamento materno deve ser mantido na mama sadia e mantido ou ordenhado na mama afetada.
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

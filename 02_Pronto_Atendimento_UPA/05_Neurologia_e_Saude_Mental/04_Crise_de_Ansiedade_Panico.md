@@ -1,18 +1,18 @@
 # Atendimento de Pronto Atendimento - Crise de Ansiedade e Transtorno de Pânico
-
-> **Atalho sugerido:** `;ansiedade`  
-> **Finalidade:** Descarte seguro de patologias orgânicas graves (SCA e TEP), manejo da alcalose respiratória por hiperventilação, técnica de desaceleração e ansiolítico sublingual.
+**Categoria:** Neurologia e Saude Mental  
+**Atalho:** `;ansiedade`  
+**Gravidade:** Urgência (Laranja/Amarelo)  
+**CID-10:** F41.0  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA: CRISE DE ANSIEDADE AGUDA / ATAQUE DE PÂNICO ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Sim: [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Sim: ___].
 # QP:
 - Falta de ar, taquicardia no peito, tremores e sensação de morte há [ ] minutos/horas.
 
@@ -61,7 +61,7 @@ Alergias: [*Nega / Sim: [ ]].
 - Esclarecer a natureza psicossomática dos sintomas e desmistificar o medo de infarto ou loucura.
 - Evitar cafeína, energéticos e álcool nos próximos dias.
 - Encaminhamento com relatório para a Unidade Básica de Saúde (UBS) / CAPS para avaliação psiquiátrica ambulatorial e introdução de terapia de manutenção (ISRS como Sertralina/Escitalopram) associada à psicoterapia cognitivo-comportamental.
->> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+# RECEITA:
 USO ORAL:
 
 1. Cloridrato de Sertralina 50 mg ------------------------------ 30 comprimidos
@@ -79,36 +79,19 @@ ORIENTAÇÕES NÃO FARMACOLÓGICAS E SINAIS DE ALERTA:
 
 ---
 
-## 💊 Receita Domiciliar / Alta (Pronta para Copiar)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-> **Como usar:** Clique no botão **`💊 Receita`** no topo do card ou na aba **Receita** para copiar apenas a prescrição de alta pronta para impressão/entrega ao paciente.
-
-```text
->> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
-USO ORAL:
-
-1. Cloridrato de Sertralina 50 mg ------------------------------ 30 comprimidos
-   Tomar meio comprimido (25 mg) pela manhã após o café nos primeiros 7 dias, passando para 01 comprimido (50 mg) pela manhã a partir do 8º dia, continuamente, até avaliação psiquiátrica/ambulatorial.
-
-2. Cloridrato de Hidroxizina 25 mg ----------------------------- 10 comprimidos
-   Tomar 01 comprimido por via oral à noite ou em caso de crise aguda de ansiedade/insônia (máximo de 2 comprimidos ao dia). Atenção: pode causar sonolência.
-
-ORIENTAÇÕES NÃO FARMACOLÓGICAS E SINAIS DE ALERTA:
-- Praticar respiração diafragmática quadrada (inspirar em 4s, segurar 4s, expirar lentamente pela boca em 6s) aos primeiros sinais de taquicardia ou formigamento.
-- Reduzir consumo de cafeína, energéticos, pré-treinos e nicotina.
-- Buscar acompanhamento longitudinal em Saúde Mental (UBS / CAPS / Psicoterapia Cognitivo-Comportamental).
-- Retornar imediatamente se dor torácica opressiva ao esforço, desmaio ou ideação de autoextermínio.
-```
-
----
-
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
-
-### 🧠 1. Por Que o Ataque de Pânico É um Diagnóstico de Exclusão Orgânica na Sala de Emergência?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que o Ataque de Pânico É um Diagnóstico de Exclusão Orgânica na Sala de Emergência?**
 A descarga simpática aguda do ataque de pânico (*locus coeruleus* e amígdala) libera catecolaminas que causam dor torácica, taquicardia, sudorese e dispneia idênticas às de uma **Síndrome Coronariana Aguda, Tromboembolismo Pulmonar (TEP), Taquiarritmia Supraventricular, Hipoglicemia ou Crise Tireotóxica**. Por isso, o protocolo seguro exige sinais vitais completos, SpO₂, HGT e ECG em pacientes com dor torácica ou fatores de risco antes de atribuir o quadro à ansiedade. A parestesia perioral e o espasmo carpopedal ("mão de parteiro") decorrem da **alcalose respiratória aguda por hiperventilação** (queda da PaCO₂ reduz o cálcio iônico livre por aumento da ligação à albumina, hiperexcitando nervos periféricos).
 
-### 💊 2. Por Que a Respiração Diafragmática Supera a Sedação Venosa e Quando Usar Benzodiazepínico?
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Estratificação de Risco de Suicídio e Redirecionamento à Rede de Saúde Mental**
+Mesmo após a remissão completa dos sintomas autonômicos na UPA, nenhum paciente com crise psiquiátrica aguda deve receber alta sem **avaliação ativa e empática de ideação suicida** (presença de plano estruturado, acesso a meios letais, tentativa prévia, desesperança grave ou ausência de suporte familiar). Na ausência de risco iminente, a alta é segura com validação do sofrimento (evitando frases minimizadoras como *"você não tem nada"*), plano escrito de manejo de crise e referência para UBS/CAPS.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Por Que a Respiração Diafragmática Supera a Sedação Venosa e Quando Usar Benzodiazepínico?**
 Orientar a **respiração lenta com expiração prolongada (4s-4s-6s)** corrige a hipocapnia e ativa o reflexo vagal barorreceptor sem iatrogenia (nota: respirar em saco de papel é contraindicado caso haja hipóxia ou TEP oculto). Se o sofrimento agudo persistir, utiliza-se benzodiazepínico por via oral ou sublingual (Clonazepam 0,25–0,5 mg ou Diazepam 5 mg VO) apenas como resgate pontual na sala de observação, evitando-se prescrição contínua de benzodiazepínicos na alta pelo alto risco de dependência e efeito rebote, priorizando-se ISRS (Sertralina/Escitalopram) com titulação lenta nos primeiros 7 dias.
 
-### 🧭 3. Estratificação de Risco de Suicídio e Redirecionamento à Rede de Saúde Mental
-Mesmo após a remissão completa dos sintomas autonômicos na UPA, nenhum paciente com crise psiquiátrica aguda deve receber alta sem **avaliação ativa e empática de ideação suicida** (presença de plano estruturado, acesso a meios letais, tentativa prévia, desesperança grave ou ausência de suporte familiar). Na ausência de risco iminente, a alta é segura com validação do sofrimento (evitando frases minimizadoras como *"você não tem nada"*), plano escrito de manejo de crise e referência para UBS/CAPS.
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

@@ -53,10 +53,10 @@
 ```text
 DESCRIÇÃO DE PROCEDIMENTO — INTUBAÇÃO OROTRAQUEAL (SRI) & ACOPLAMENTO À VM:
 1. Indicação e Preparo: Indicada via aérea definitiva por [insuficiência respiratória aguda / rebaixamento do nível de consciência (Glasgow <= 8) / fadiga ventilatória / proteção de via aérea]. Realizado checklist SOAPME, pré-oxigenação a 100%, posicionamento em eixo olfativo e estabilização hemodinâmica pré-indução ([cristaloide / noradrenalina]).
-2. Sequência Rápida de Intubação (SRI): Administrados em bólus EV: [Fentanil 100 mcg] + Indutor [Etomidato 20 mg / Cetamina 100 mg] + Bloqueador Neuromuscular [Succinilcolina 100 mg / Rocurônio 80 mg].
-3. Laringoscopia e Passagem do TOT: Laringoscopia direta com lâmina [Macintosh nº 3 / nº 4], visualização glótica Cormack-Lehane [I / IIa / IIb com uso de Bougie]. Passado Tubo Orotraqueal (TOT) nº [7.5 / 8.0] na [1ª] tentativa, sem intercorrências, insuflado balonete (cuff) até 20-30 cmH2O e fixado em [22] cm na rima labial.
+2. Sequência Rápida de Intubação (SRI): Administrados em bólus EV: [Fentanil ___ mcg / Sem pré-tratamento] + Indutor [Etomidato ___ mg / Cetamina ___ mg] + Bloqueador Neuromuscular [Succinilcolina ___ mg / Rocurônio ___ mg].
+3. Laringoscopia e Passagem do TOT: Laringoscopia direta com lâmina [Macintosh nº 3 / nº 4], visualização glótica Cormack-Lehane [I / IIa / IIb com uso de Bougie]. Passado Tubo Orotraqueal (TOT) nº [7.5 / 8.0] na [ ]ª tentativa, sem intercorrências, insuflado balonete (cuff) até 20-30 cmH2O e fixado em [ ] cm na rima labial.
 4. Confirmação e Pós-Intubação: Posicionamento confirmado por [capnografia com curva presente] e ausculta em 5 pontos (epigástrio negativo e murmúrio vesicular simétrico em bases e ápices). Passada SNG/SOG, iniciada sedoanalgesia contínua em BIC ([Fentanil + Midazolam / Propofol]) e solicitado RX de tórax no leito.
-5. Parâmetros Iniciais da Ventilação Mecânica: Acoplado à VM em modo [VCV / PCV], Volume Corrente: [400] mL ([6] mL/kg de peso predito), PEEP: [5] cmH2O, FR: [14] irpm, Relação I:E: [1:2 / 1:4], FiO2 titulada para [40]% mantendo SpO2 de [96]%, Pressão de Platô de [20] cmH2O (< 30) e Driving Pressure de [15] cmH2O (< 15).
+5. Parâmetros Iniciais da Ventilação Mecânica: Acoplado à VM em modo [VCV / PCV], Volume Corrente: [ ] mL ([ ] mL/kg de peso predito), PEEP: [ ] cmH2O, FR: [ ] irpm, Relação I:E: [1:2 / 1:4], FiO2 titulada para [ ]% mantendo SpO2 de [ ]%, Pressão de Platô de [ ] cmH2O (< 30) e Driving Pressure de [ ] cmH2O (< 15).
 ```
 
 ---
@@ -71,16 +71,16 @@ DESCRIÇÃO DE PROCEDIMENTO — INTUBAÇÃO OROTRAQUEAL (SRI) & ACOPLAMENTO À V
 
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Estabilização Pré-IOT & Técnica (SOAPME + LEMON)
-- [ ] Calculei o Índice de Choque (FC/PAS) e estabilizei a hemodinâmica (vasopressor/volume) ANTES do indutor
+- [ ] [CRÍTICO] Calculei o Índice de Choque (FC/PAS) e estabilizei a hemodinâmica (vasopressor/volume) ANTES do indutor
 - [ ] Posicionei o paciente alinhando o trago da orelha com a fúrcula esternal e pré-oxigenei por 3–5 min
-- [ ] Chequei contraindicações absolutas à Succinilcolina (hipercalemia, queimado/trauma > 48h, denervação)
+- [ ] [CRÍTICO] Chequei contraindicações absolutas à Succinilcolina (hipercalemia, queimado/trauma > 48h, denervação)
 - [ ] Tracionei o laringoscópio a 45° sem bascular nos dentes e fixei o TOT em 21–23 cm na rima labial
 
 ### 2. Confirmação & Ventilação Protetora
-- [ ] Confirmei o TOT com Capnografia + Ausculta em 5 pontos começando pelo EPIGÁSTRIO
+- [ ] [CRÍTICO] Confirmei o TOT com Capnografia + Ausculta em 5 pontos começando pelo EPIGÁSTRIO
 - [ ] Regulei o Volume Corrente (6–8 mL/kg) pelo PESO PREDITO (pela altura) e adequei I:E e FR ao perfil pulmonar
 - [ ] Medi a Pressão de Platô (≤ 30 cmH2O) e a Driving Pressure (< 15 cmH2O)
 
 ### 3. Upgrade Preceptor V2.0 (Segurança Pós-Intubação)
-- [ ] Iniciei sedoanalgesia contínua imediatamente após o bloqueador neuromuscular (evitando consciência sob paralisia por Rocurônio)
-- [ ] Solicitei RX de tórax pós-IOT, passei sonda gástrica (SOG/SNG) e apliquei o protocolo D-O-P-E diante de qualquer dessaturação/alarme
+- [ ] [CRÍTICO] Iniciei sedoanalgesia contínua imediatamente após o bloqueador neuromuscular (evitando consciência sob paralisia por Rocurônio)
+- [ ] [CRÍTICO] Solicitei RX de tórax pós-IOT, passei sonda gástrica (SOG/SNG) e apliquei o protocolo D-O-P-E diante de qualquer dessaturação/alarme

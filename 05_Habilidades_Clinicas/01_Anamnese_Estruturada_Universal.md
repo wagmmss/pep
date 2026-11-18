@@ -71,27 +71,27 @@ ESTRUTURA DE ANAMNESE COMPLETA (MODELO PRONTUÁRIO):
 ### 1. Abertura & Agenda
 - [ ] Higienizei as mãos, me apresentei, chamei pelo nome e validei a confiabilidade do informante
 - [ ] Deixei o paciente falar livremente por 45–60s sem interromper
-- [ ] Perguntei ativamente se havia outras queixas/demandas antes de aprofundar (negociei a agenda)
+- [ ] [CRÍTICO] Perguntei ativamente se havia outras queixas/demandas antes de aprofundar (negociei a agenda)
 
 ### 2. HMA & Red Flags
-- [ ] Defini a linha de base exata ("quando estava 100% bem?") e o status funcional/cognitivo prévio
-- [ ] Dissequei o sintoma (OPQRST + Impacto + Prévios/Remédios) e testei sintomas (+/-) por hipótese
-- [ ] Excluí os 6 Fantasmas: 3 Cavidades (Cabeça, Tórax, Abdome) + 3 Sistêmicos (Sepse, Sangue, Peso/Sinais B)
+- [ ] [CRÍTICO] Defini a linha de base exata ("quando estava 100% bem?") e o status funcional/cognitivo prévio
+- [ ] [CRÍTICO] Dissequei o sintoma (OPQRST + Impacto + Prévios/Remédios) e testei sintomas (+/-) por hipótese
+- [ ] [CRÍTICO] Excluí os 6 Fantasmas: 3 Cavidades (Cabeça, Tórax, Abdome) + 3 Sistêmicos (Sepse, Sangue, Peso/Sinais B)
 
 ### 3. Bloco MACHOS-F & Varredura Craniocaudal
-- [ ] M: Chequei medicações contínuas + adesão real + suspensões recentes + automedicação/chás
-- [ ] A: Perguntei alergias medicamentosas/alimentares E o tipo exato de reação que causou
+- [ ] [CRÍTICO] M: Chequei medicações contínuas + adesão real + suspensões recentes + automedicação/chás
+- [ ] [CRÍTICO] A: Perguntei alergias medicamentosas/alimentares E o tipo exato de reação que causou
 - [ ] C: Investiguei os 5 C's (Comorbidades, Cirurgias, Cama/internações, Caderneta vacinal, Concentrado/transfusões)
 - [ ] H: Quantifiquei tabagismo (maços-ano), álcool, drogas, sono e atividade física
-- [ ] O: Chequei DUM / chance de gestação / GPA / contracepção (ou saúde urogenital/ISTs se masculino/pós-menopausa)
+- [ ] [CRÍTICO] O: Chequei DUM / chance de gestação / GPA / contracepção (ou saúde urogenital/ISTs se masculino/pós-menopausa)
 - [ ] S & F: Investiguei Ocupação, Epidemiologia (viagens/contatos/endemias) e História Familiar (1º grau + idade)
 - [ ] Varredura Craniocaudal (5 Toques): Varri Cabeça/ORL → Peito → Intestino/Urina → Pele/Juntas/Edema → Humor/Sono
 
 ### 4. Fechamento Espelhado + IME
 - [ ] Fiz resumo espelhado em voz alta para validar a cronologia e o entendimento
 - [ ] Explorei a agenda oculta com IME (Ideia do paciente, Maior medo e Expectativa na consulta)
-- [ ] Fiz ponte clara explicando e pedindo permissão antes de iniciar o exame físico
+- [ ] [CRÍTICO] Fiz ponte clara explicando e pedindo permissão antes de iniciar o exame físico
 
 ### 5. Upgrade Preceptor V2.0 (Semiogênese & Segurança)
-- [ ] Diferenciei a semiogênese da dor (Visceral autonômica mal localizada vs Somática parietal bem localizada com defesa vs Neuropática em queimação/choque)
-- [ ] Apliquei a trava 'M antes de C' (perguntei os remédios de uso diário antes das comorbidades) e diferenciei alergia IgE/SCAR real de intolerância GI
+- [ ] [CRÍTICO] Diferenciei a semiogênese da dor (Visceral autonômica mal localizada vs Somática parietal bem localizada com defesa vs Neuropática em queimação/choque)
+- [ ] [CRÍTICO] Apliquei a trava 'M antes de C' (perguntei os remédios de uso diário antes das comorbidades) e diferenciei alergia IgE/SCAR real de intolerância GI

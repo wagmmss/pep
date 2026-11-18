@@ -1,18 +1,18 @@
 # Atendimento de Pronto Atendimento - Uretrite Aguda Masculina e ISTs
-
-> **Atalho sugerido:** `;uretrite`  
-> **Finalidade:** Manejo da Síndrome do Corrimento Uretral masculino conforme o PCDT de ISTs do Ministério da Saúde (cobertura dupla para Gonococo e Clamídia) e rastreio de parcerias.
+**Categoria:** Nefrologia Urologia e Dermatologia  
+**Atalho:** `;uretrite`  
+**Gravidade:** Ambulatorial / Eletivo (Verde)  
+**CID-10:** N34.1 / A54.0  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA: SÍNDROME DO CORRIMENTO URETRAL (IST) ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: Masculino[? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
+ID: [Nome], [Idade] anos, Sexo: Masculino, Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / Outros: ___].
 # QP:
 - Saída de pus pelo canal da urina e ardência para urinar há [ ] dias.
 
@@ -61,7 +61,7 @@ Alergias: [*Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos /
 - TRATAMENTO OBRIGATÓRIO DE TODAS AS PARCERIAS SEXUAIS: Todas as pessoas com quem o paciente se relacionou sexualmente nos últimos 60 dias DEVEM comparecer à unidade de saúde para receber a mesma medicação (Ceftriaxona + Azitromicina), mesmo que estejam totalmente sem sintomas (a infecção em mulheres é assintomática em até 80% dos casos e pode causar infertilidade por DIP se não tratada).
 - Preservativos entregues; orientado uso contínuo de preservativo masculino/feminino em todas as relações futuras.
 - Notificação Compulsória formal da IST realizada via ficha de notificação do SINAN.
->> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+# RECEITA:
 USO INTRAMUSCULAR E ORAL (TRATAMENTO DUPLO GONOCOCO + CLAMÍDIA — PCDT IST/MS):
 
 1. Ceftriaxona 500 mg IM --------------------------------------- 01 frasco-ampola
@@ -79,36 +79,19 @@ ORIENTAÇÕES ESSENCIAIS:
 
 ---
 
-## 💊 Receita Domiciliar / Alta (Pronta para Copiar)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-> **Como usar:** Clique no botão **`💊 Receita`** no topo do card ou na aba **Receita** para copiar apenas a prescrição de alta pronta para impressão/entrega ao paciente.
-
-```text
->> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
-USO INTRAMUSCULAR E ORAL (TRATAMENTO DUPLO GONOCOCO + CLAMÍDIA — PCDT IST/MS):
-
-1. Ceftriaxona 500 mg IM --------------------------------------- 01 frasco-ampola
-   Aplicar 500 mg por via intramuscular profunda (glúteo) em dose única na unidade de saúde.
-
-2. Azitromicina 500 mg ----------------------------------------- 02 comprimidos
-   Tomar 02 comprimidos (1 g) juntos por via oral em dose única.
-   (Alternativa se indisponibilidade ou preferência: Doxiciclina 100 mg — tomar 01 comprimido VO de 12/12h por 7 dias).
-
-ORIENTAÇÕES ESSENCIAIS:
-- Abstinência sexual (ou uso rigoroso de preservativo) até 7 dias após o término do tratamento e desaparecimento completo dos sintomas.
-- Convocação e tratamento obrigatório das parcerias sexuais dos últimos 60 dias (mesmo que assintomáticas) para evitar reinfecção (efeito pingue-pongue).
-- Realizar testes rápidos para HIV, Sífilis e Hepatites B e C na UBS.
-```
-
----
-
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
-
-### 🧠 1. Por Que Tratar Gonococo e Clamídia Simultaneamente na Abordagem Sindrômica?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que Tratar Gonococo e Clamídia Simultaneamente na Abordagem Sindrômica?**
 Na prática de Pronto Atendimento, onde a biologia molecular (NAAT/PCR) não está disponível no mesmo turno, a coinfecção entre *Neisseria gonorrhoeae* (diplococo Gram-negativo intracelular, incubação curta de 2–5 dias, corrimento purulento abundante) e *Chlamydia trachomatis* (bactéria intracelular obrigatória, incubação de 7–21 dias, corrimento mucoide escasso) ocorre em até **30 a 50% dos pacientes**. Tratar apenas o gonococo resulta em **uretrite pós-gonocócica persistente**; por isso, o PCDT de IST do Ministério da Saúde preconiza a **terapia dupla empírica em dose única supervisionada**.
 
-### 💊 2. Por Que o Ciprofloxacino Foi Banido da Uretrite Gonocócica no Brasil?
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Tratamento de Parcerias, Rastreiamento Sorológico e Complicações (Epididimite e Reativa)**
+Uma IST nunca anda sozinha: todo atendimento de uretrite é uma janela de oportunidade obrigatória para realizar **testes rápidos para HIV, Sífilis, Hepatite B e C** e convocar todas as **parcerias sexuais dos últimos 60 dias** para tratamento epidemiológico (mesmo assintomáticas). Deve-se examinar a bolsa escrotal para descartar **orquiepididimite aguda** (dor e edema epididimário com Sinal de Prehn positivo, que exige extensão da Doxiciclina para 10–14 dias) e artrite reativa (Síndrome de Reiter: uretrite + conjuntivite + oligoartrite assimétrica).
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Por Que o Ciprofloxacino Foi Banido da Uretrite Gonocócica no Brasil?**
 Historicamente usado em dose única, o Ciprofloxacino apresenta hoje taxas de resistência cromossômica e plasmidial da *Neisseria gonorrhoeae* superiores a 50–65% no Brasil (Projeto *SenGono*). O esquema padrão-ouro atual é **Ceftriaxona 500 mg IM em dose única + Azitromicina 1 g VO em dose única** (ou Doxiciclina 100 mg VO 12/12h por 7 dias). A administração intramuscular na própria unidade garante adesão de 100% e interrompe imediatamente a cadeia de transmissão.
 
-### 🧭 3. Tratamento de Parcerias, Rastreiamento Sorológico e Complicações (Epididimite e Reativa)
-Uma IST nunca anda sozinha: todo atendimento de uretrite é uma janela de oportunidade obrigatória para realizar **testes rápidos para HIV, Sífilis, Hepatite B e C** e convocar todas as **parcerias sexuais dos últimos 60 dias** para tratamento epidemiológico (mesmo assintomáticas). Deve-se examinar a bolsa escrotal para descartar **orquiepididimite aguda** (dor e edema epididimário com Sinal de Prehn positivo, que exige extensão da Doxiciclina para 10–14 dias) e artrite reativa (Síndrome de Reiter: uretrite + conjuntivite + oligoartrite assimétrica).
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

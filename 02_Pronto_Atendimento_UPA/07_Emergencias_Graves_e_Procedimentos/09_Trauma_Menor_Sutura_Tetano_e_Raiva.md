@@ -1,18 +1,18 @@
 # Protocolo de Atendimento: Pequena Cirurgia - Sutura, Profilaxia de Tétano e Raiva Humana
-
-> **Atalho sugerido:** `;sutura`  
-> **Finalidade:** Registro completo de procedimento de pequena cirurgia (ferimento cortocontuso e sutura), anestesia local, avaliação neurovascular prévia, protocolo oficial do Ministério da Saúde para profilaxia antitetânica e conduta pós-exposição de profilaxia da raiva humana.
+**Categoria:** Emergencias Graves e Procedimentos  
+**Atalho:** `;sutura`  
+**Gravidade:** Procedimento  
+**CID-10:** T14.1  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### PROCEDIMENTO DE SALA DE SUTURA: FERIMENTO CONTUSO, SUTURA & PROFILAXIAS ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / [ ]].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / Outros: ___].
 - Horário do Trauma: Há cerca de [ ] horas (Trauma ocorrido às [HH:MM]).
 - Mecanismo do Trauma: [Corte por vidro / Lâmina metálica / Queda da própria altura com impacto / Mordedura animal por cão ou gato / Objeto perfurocortante enferrujado / Acidente de trabalho].
 
@@ -61,7 +61,7 @@ Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penici
 
 # CONDUTA:
 
->> PRESCRIÇÃO DE ALTA & ORIENTAÇÕES AO PACIENTE:
+# RECEITA:
 1. Antibioticoterapia Profilática para Mordedura Animal (Cão/Gato/Humana):
    - [SE MORDEDURA ANIMAL/HUMANA OU TRAUMA PERFURANTE CONTAMINADO]:
      Amoxicilina + Clavulanato de Potássio 875/125 mg - Tomar 1 comprimido VO de 12/12 horas às refeições por 5 a 7 dias (cobertura obrigatória para Pasteurella multocida, Capnocytophaga, S. aureus e anaeróbios).
@@ -80,12 +80,20 @@ Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penici
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que Avaliar Tendões e Nervos Antes da Anestesia Local?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que Avaliar Tendões e Nervos Antes da Anestesia Local?**
 - **Por Que Nunca Anestesiar Mãos, Punhos ou Pés Antes do Exame Neurotendíneo?** O bloqueio anestésico abole a dor e pode mascarar lesões parciais ou completas de nervos digitais e tendões flexores/extensores. Teste sempre **força contra resistência de cada dedo e sensibilidade distal** antes de infiltrar lidocaína.
 - **Por Que Evitar Vasoconstritor em Circulação Terminal (ou Usá-lo com Critério)?** Em extremidades com artérias terminais sem colaterais robustas (asa nasal, pavilhão auricular, pênis e dedos com vasculopatia), o uso clássico sem adrenalina evita vasoespasmo sustentado e **isquemia/necrose tecidual**.
 
-### 💉 2. Por Que Profilaxia de Tétano e Raiva Seguem Travas Rígidas?
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+**💉 2. Por Que Profilaxia de Tétano e Raiva Seguem Travas Rígidas?**
 - **Por Que Mordedura ou Contato com Morcego é Sempre Acidente Grave?** Pelo protocolo do Ministério da Saúde, qualquer contato físico direto com morcego (inclusive arranhadura imperceptível ou acordar no mesmo ambiente) implica risco real de vírus rábico e exige **Vacina Antirrábica (4 doses) + Soro/Imunoglobulina Antirrábica**, sem observação do animal.
 - **Tétano em Ferimento Sujo/Profundo:** Se vacinação incompleta/incerta (`< 3 doses` ou `> 5 anos` em ferimento de alto risco), além da dose de reforço (`dT`), é obrigatória a aplicação de **SAT ou Imunoglobulina Antitetânica (IGHAT)** em sítio anatômico diferente.

@@ -62,7 +62,7 @@
 ## 📝 5. COMO REGISTRAR NO PRONTUÁRIO (Texto Pronto)
 ```text
 AVALIAÇÃO DE CARDIOTOCOGRAFIA (CTG) E PARTOGRAMA:
-- CTG (Duração: [20] min): Dinâmica uterina com [3] contrações em 10 minutos, sem taquissistolia. Linha de base em [135] bpm. Variabilidade moderada (6-25 bpm). Presença de acelerações transitórias (>15 bpm x 15s). Ausência de desacelerações periódicas ou episódicas (DIP II ou III ausentes). Conclusão: CTG Categoria I (ACOG) — Feto reativo / Bem-estar fetal preservado.
+- CTG (Duração: [ ] min): Dinâmica uterina com [ ] contrações em 10 minutos, sem taquissistolia. Linha de base em [ ] bpm. Variabilidade moderada (6-25 bpm). Presença de acelerações transitórias (>15 bpm x 15s). Ausência de desacelerações periódicas ou episódicas (DIP II ou III ausentes). Conclusão: CTG Categoria I (ACOG) — Feto reativo / Bem-estar fetal preservado.
 - Partograma: Gestante em fase ativa do trabalho de parto. Dilatação evoluindo de [ ] cm para [ ] cm em [ ] horas (à esquerda da linha de alerta). Apresentação cefálica fletida ([OEA]), em plano [ ] de De Lee, bolsa [íntegra/rota com LA claro]. Ausência de sinais de desproporção cefalopélvica.
 ```
 
@@ -85,8 +85,8 @@ AVALIAÇÃO DE CARDIOTOCOGRAFIA (CTG) E PARTOGRAMA:
 ### 2. Leitura & Conduta no Partograma
 - [ ] Confirmei abertura do partograma apenas na Fase Ativa real (≥ 4–5 cm com contrações rítmicas)
 - [ ] Registrei dilatação, De Lee, variedade de posição, bolsa, dinâmica e BCF no gráfico
-- [ ] Ao cruzar Linha de Alerta/Ação, avaliei os 3 Ps diferenciando distócia funcional vs mecânica (DCP)
+- [ ] [CRÍTICO] Ao cruzar Linha de Alerta/Ação, avaliei os 3 Ps diferenciando distócia funcional vs mecânica (DCP)
 
 ### 4. Upgrade Preceptor V2.0 (ACOG Cat I-III, MOPS & Bandl-Frommel)
-- [ ] Avaliei a Variabilidade (6–25 bpm = VPN 98% para acidemia) e classifiquei as desacelerações pela fisiopatologia C-P-U (DIP I, II e III)
-- [ ] Instituí manobras de ressuscitação intrauterina (MOPS) na CTG Cat II/III e rastreei as 5 distocias do partograma e sinais de iminência de rotura uterina (Bandl-Frommel)
+- [ ] [CRÍTICO] Avaliei a Variabilidade (6–25 bpm = VPN 98% para acidemia) e classifiquei as desacelerações pela fisiopatologia C-P-U (DIP I, II e III)
+- [ ] [CRÍTICO] Instituí manobras de ressuscitação intrauterina (MOPS) na CTG Cat II/III e rastreei as 5 distocias do partograma e sinais de iminência de rotura uterina (Bandl-Frommel)

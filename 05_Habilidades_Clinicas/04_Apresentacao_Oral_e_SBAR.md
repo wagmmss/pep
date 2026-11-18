@@ -79,8 +79,8 @@ REGISTRO DE PASSAGEM DE CASO / INTERCONSULTA (MÉTODO SBAR):
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Caso Novo ao Preceptor (60–90s)
 - [ ] Abri com a Manchete em 1 frase (quem, risco, queixa/duração e estabilidade atual)
-- [ ] Filtrei a história (contei apenas evolução, negativas pertinentes, meds e alergias)
-- [ ] Falei todos os Sinais Vitais numéricos reais antes do exame físico dirigido
+- [ ] [CRÍTICO] Filtrei a história (contei apenas evolução, negativas pertinentes, meds e alergias)
+- [ ] [CRÍTICO] Falei todos os Sinais Vitais numéricos reais antes do exame físico dirigido
 - [ ] Fechei assumindo posição clínica: síntese + 2 a 3 hipóteses diferenciais (SNAPPS)
 - [ ] Propôs explicitamente o meu plano de exames/conduta (não joguei no colo do preceptor)
 - [ ] Mantive a apresentação enxuta entre 60 e 90 segundos
@@ -91,5 +91,5 @@ REGISTRO DE PASSAGEM DE CASO / INTERCONSULTA (MÉTODO SBAR):
 - [ ] Na passagem de plantão: deixei plano de contingência ("SE acontecer X -> fazer Y") para toda pendência
 
 ### 4. Upgrade Preceptor V2.0 (SNAPPS & SBAR)
-- [ ] Abri a apresentação com Headline / Summary Statement usando qualificadores semânticos e tendência dos sinais vitais
-- [ ] Na passagem de plantão ou interconsulta, explicitei a Recomendação (R do SBAR) com prazo claro e pendências condicionais ('se X, fazer Y')
+- [ ] [CRÍTICO] Abri a apresentação com Headline / Summary Statement usando qualificadores semânticos e tendência dos sinais vitais
+- [ ] [CRÍTICO] Na passagem de plantão ou interconsulta, explicitei a Recomendação (R do SBAR) com prazo claro e pendências condicionais ('se X, fazer Y')

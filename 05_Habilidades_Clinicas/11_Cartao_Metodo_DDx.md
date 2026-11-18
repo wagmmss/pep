@@ -71,7 +71,7 @@ SÍNTESE DE RACIOCÍNIO CLÍNICO & DIAGNÓSTICO DIFERENCIAL (PEP):
 ### 1. Enquadramento & Travas de Gravidade
 - [ ] Traduzi a história em qualificadores semânticos (tempo, padrão e terreno de risco)
 - [ ] Formulei o Problem Representation mental ou oral em 1 frase cirúrgica
-- [ ] Chequei sinais objetivos de choque oculto ou sepse (PAM, Índice de Choque FC/PAS e qSOFA)
+- [ ] [CRÍTICO] Chequei sinais objetivos de choque oculto ou sepse (PAM, Índice de Choque FC/PAS e qSOFA)
 - [ ] Respeitei a trava anti-alucinação (não assumi como negativa dado que não perguntei/examinei)
 
 ### 2. Geração de Diferenciais & Scripts
@@ -80,10 +80,10 @@ SÍNTESE DE RACIOCÍNIO CLÍNICO & DIAGNÓSTICO DIFERENCIAL (PEP):
 - [ ] Busquei achados discriminadores à beira-leito comparando os Illness Scripts
 
 ### 3. Limiar de Exames & Higiene Cognitiva
-- [ ] Pedi apenas exames que mudam a conduta (sem "pesca de arrastão" nem atrasar emergência)
+- [ ] [CRÍTICO] Pedi apenas exames que mudam a conduta (sem "pesca de arrastão" nem atrasar emergência)
 - [ ] Fiz a Pausa Anti-Viés buscando ativamente um dado discrepante contra minha 1ª hipótese
-- [ ] Considerei SIFE e prevenção quaternária antes de fechar plano/alta
+- [ ] [CRÍTICO] Considerei SIFE e prevenção quaternária antes de fechar plano/alta
 
 ### 4. Upgrade Preceptor V2.0 (Bayes & Pausa Cognitiva)
-- [ ] Construí a Representação do Problema em 1 frase com qualificadores semânticos e separei o DDx em Mais Prováveis, Worst-First (Fantasmas) e VINDICATE/Drogas
-- [ ] Executei a Pausa de Desaceleração Cognitiva ('O que neste caso NÃO se encaixa na minha hipótese favorita?') para blindar contra fechamento prematuro
+- [ ] [CRÍTICO] Construí a Representação do Problema em 1 frase com qualificadores semânticos e separei o DDx em Mais Prováveis, Worst-First (Fantasmas) e VINDICATE/Drogas
+- [ ] [CRÍTICO] Executei a Pausa de Desaceleração Cognitiva ('O que neste caso NÃO se encaixa na minha hipótese favorita?') para blindar contra fechamento prematuro

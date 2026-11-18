@@ -1,21 +1,25 @@
 # Admissão em Trabalho de Parto & Descrição Cirúrgica de Cesariana
+**Categoria:** Centro Obstetrico Cirurgias  
+**Atalho:** `;cesarea`  
+**Gravidade:** Procedimento  
+**CID-10:** O82.9  
 
-**Atalho:** `;cesarea` | **Categoria:** Centro Obstetrico Cirurgias
+---
 
-## SNIPPET PEP
+## 📋 Snippet para Prontuário Eletrônico (PEP)
+
 ```text
-### CENTRO OBSTÉTRICO — ADMISSÃO EM TP & CESARIANA ###
-# IDENTIFICAÇÃO & ADMISSÃO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10].
 TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-].
-Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Anemia / [ ]].
-Alergias: [*Nega / [ ]].
+Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Anemia / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 # AP:
 MED: [*Nega / Sulfato Ferroso / Metildopa]
 HAB: [Nega tabagismo, etilismo ou drogas ilícitas]
-CX: [*Nega / Cesáreas prévias ([ ])]
-ALER: [*Nega alergias medicamentosas / Alérgica a: [ ]]
+CX: [*Nega / Cesáreas prévias ( )]
+ALER: [*Nega alergias medicamentosas / Alérgica a: ___]
 HF: [*Nega / HAS / DM2]
 
 # CASO: [DESCRIÇÃO CIRÚRGICA DE CESARIANA / ADMISSÃO EM FASE ATIVA DE TRABALHO DE PARTO]
@@ -24,14 +28,14 @@ HMA: Gestante admitida no Centro Obstétrico com indicação de cesariana por [d
 
 # EXAME CLÍNICO
 Bom estado geral, corada, hidratada, acianótica, anictérica, afebril; encaminhada à RPA lúcida, estável e com útero firmemente contraído abaixo da cicatriz umbilical.
-- Sinais Vitais Pós-Operatórios: PA: [115x75] mmHg | FC: [80] bpm | SpO2: [99]% AA | SVD com diurese clara.
+- Sinais Vitais Pós-Operatórios: PA: [ ] mmHg | FC: [ ] bpm | SpO2: [ ]% AA | SVD com diurese clara.
 - DESCRIÇÃO CIRÚRGICA DA CESARIANA (TÉCNICA DE PFANNENSTIEL / KERR):
   1. Anestesia & Profilaxia: Raquianestesia hiperbárica + Antibioticoprofilaxia cirúrgica com Cefazolina 2 g IV (ou 3 g se peso ≥ 120 kg) administrada 30–60 minutos antes da incisão cutânea + Sondagem vesical de demora com urina clara.
   2. Diérese: Antissepsia com clorexidina alcoólica, aposição de campos estéreis. Incisão abdominal transversa suprapúbica a Pfannenstiel (ou Joel-Cohen), abertura da aponeurose dos retos abdominais, divulsão muscular na linha média e abertura do peritônio parietal.
   3. Histerotomia & Extração Fetal: Abertura do peritônio visceral vesicouterino, rebatimento vesical e histerotomia segmentar transversa arciforme (Kerr). Amniotomia com saída de líquido amniótico [claro com grumos / meconial fluido / meconial espesso].
-  4. Nascimento: Extração fetal em apresentação [cefálica / pélvica] às [HH:MM]h, RN do sexo [Masculino / Feminino], Peso: [ ] g, Apgar [ ]/[ ]. Clampeamento oportuno do cordão umbilical em [60] segundos e entrega ao pediatra.
+  4. Nascimento: Extração fetal em apresentação [cefálica / pélvica] às [HH:MM]h, RN do sexo [Masculino / Feminino], Peso: [ ] g, Apgar [ ]/[ ]. Clampeamento oportuno do cordão umbilical em [ ] segundos e entrega ao pediatra.
   5. Dequitação & Histerorrafia: Dequitação placentária completa (Baudelocque-Schultze) sob tração controlada do cordão + Ocitocina 3 a 5 UI IV muito lento (em 3–5 min, NUNCA 10 UI em bolus direto!) ou 10 UI IM + manutenção em infusão. Revisão e limpeza da cavidade uterina com compressa montada. Histerorrafia em plano [único contínuo / duplo plano não ancorado] com fio absorvível Vicryl 0.
-  6. Revisão & Síntese: Revisão da hemostasia da linha de sutura e anexos normais. Contagem de compressas conferida e correta. Síntese da aponeurose dos retos abdominais de forma contínua com Vicryl 1, aproximação do subcutâneo (se espessura > 2 cm) e sutura intradérmica da pele com Monocryl / Nylon 3-0. Perda sanguínea estimada: [600] mL.
+  6. Revisão & Síntese: Revisão da hemostasia da linha de sutura e anexos normais. Contagem de compressas conferida e correta. Síntese da aponeurose dos retos abdominais de forma contínua com Vicryl 1, aproximação do subcutâneo (se espessura > 2 cm) e sutura intradérmica da pele com Monocryl / Nylon 3-0. Perda sanguínea estimada: [ ] mL.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Pós-operatório imediato de Cesariana (indicação: [ ]) sem intercorrências intraoperatórias.
@@ -44,7 +48,7 @@ Bom estado geral, corada, hidratada, acianótica, anictérica, afebril; encaminh
    - Antiemético e Simeticona: Ondansetrona 4 a 8 mg IV 8/8h se náuseas/prurido + Simeticona 40 a 80 gotas VO 8/8h.
    - Retirada precoce da Sonda Vesical de Demora e estímulo à deambulação assistida após 6 a 8 horas (prevenção de TEV e íleo paralítico); Enoxaparina 40 mg SC/dia se alto risco de TEV (iniciar >= 12h após bloqueio raquidiano e hemostasia segura).
 
-# PRESCRIÇÃO DOMICILIAR / DE ALTA
+# RECEITA:
 USO ORAL (RECEITA DE ALTA PÓS-CESARIANA):
 
 1. Dipirona Monoidratada 1.000 mg (comprimidos) — 1 caixa (20 comprimidos)
@@ -65,12 +69,23 @@ USO ORAL (RECEITA DE ALTA PÓS-CESARIANA):
    - Procurar a maternidade imediatamente se febre (Tax ≥ 37,8°C), saída de pus/abertura dos pontos na ferida, sangramento vaginal intenso, dor na panturrilha, falta de ar ou cefaleia forte.
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
-### 🧠 1. Por Que Fazemos Antibioticoprofilaxia Pré-Incisional e Fechamento do Subcutâneo > 2 cm?
+---
+
+## 🎯 Diretrizes & Raciocínio Clínico
+
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Admissão em Trabalho de Parto & Descrição Cirúrgica de Cesariana** centrado na identificação precoce de gravidade e manejo baseado em evidências.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+**🧠 1. Por Que Fazemos Antibioticoprofilaxia Pré-Incisional e Fechamento do Subcutâneo > 2 cm?**
 - **Por que administrar Cefazolina 2 g IV 30 a 60 minutos ANTES da incisão na pele (e não após o clampeamento do cordão):** Estudos randomizados e diretrizes da OMS/ACOG demonstram que a administração pré-incisional reduz em quase **50% as taxas de endometrite puerperal e infecção de ferida operatória**, sem impacto adverso neonatal. Em gestantes com peso `≥ 120 kg`, a dose deve ser ajustada para **`3 g IV`**.
 - **Por que aproximar o tecido subcutâneo quando a espessura for > 2 cm:** A sutura do espaço subcutâneo em pacientes com panículo adiposo `> 2 cm` oblitera espaço morto e reduz significativamente seroma, hematoma e deiscência de ferida operatória.
 
-### 💊 2. Travas Críticas Pós-Raquianestesia: Ocitocina, AINEs e Enoxaparina
+### 🚫 4. Segurança, Travas & Proibições
+**💊 2. Travas Críticas Pós-Raquianestesia: Ocitocina, AINEs e Enoxaparina**
 - **Por que NUNCA fazer Ocitocina 10 UI IV em bolus rápido na cesariana?** A raquianestesia já promove bloqueio simpático com vasodilatação periférica. Injetar `10 UI` de ocitocina IV rápido causa queda abrupta da resistência vascular sistêmica, hipotensão severa, taquicardia reflexa e risco de isquemia miocárdica. Use **`3 a 5 UI IV lento` (em 3–5 min)** seguido de infusão contínua.
 - **Por que bloquear Cetoprofeno/Ibuprofeno na cesárea por Pré-Eclâmpsia/HAS?** AINEs precipitam vasoconstrição renal, retenção hidrossalina e crise hipertensiva/EAP no puerpério (`3º–6º DPO`). Nesses casos, manter **Dipirona + Paracetamol (+ opioide de resgate)**.
 - **Por que aguardar ≥ 12 horas pós-raqui para Enoxaparina?** Respeitar o intervalo neuroaxial mínimo previne **hematoma espinhal/epidural** sem perder a proteção contra TEV (a cesárea dobra o risco tromboembólico comparado ao parto vaginal).

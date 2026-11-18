@@ -1,21 +1,25 @@
 # Manejo de Emergência - Violência Sexual e Profilaxias Pós-Exposição (ISTs, HIV e Contracepção)
+**Categoria:** Emergencias GO  
+**Atalho:** `;violencia-sexual`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** T74.2 / Z20.6  
 
-**Atalho:** `;violencia-sexual` | **Categoria:** Emergencias GO
+---
 
-## SNIPPET PEP
+## 📋 Snippet para Prontuário Eletrônico (PEP)
+
 ```text
-### EMERGÊNCIA GO — VIOLÊNCIA SEXUAL & PROFILAXIA PEP ###
-# IDENTIFICAÇÃO & EXPOSIÇÃO:
+# IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Peso: [ ] kg, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU].
 TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção de emergência até 5 dias e profilaxia de ISTs não virais]).
-Comorbidades: [+ *Hígida / Hepatite B vacinação: [Completa 3 doses / Incompleta ou desconhecida] / [ ]].
-Alergias: [*Nega / [ ]].
+Comorbidades: [+ *Hígida / Hepatite B vacinação: Completa 3 doses / Incompleta ou desconhecida / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 # AP:
-MED: [*Nega uso contínuo / Em uso de: [ ]]
+MED: [*Nega uso contínuo / Em uso de: ___]
 HAB: [Nega tabagismo ou etilismo]
 CX: [Nega]
-ALER: [*Nega alergias medicamentosas / Alérgica a: [ ]]
+ALER: [*Nega alergias medicamentosas / Alérgica a: ___]
 HF: [Nega]
 
 # CASO: ACOLHIMENTO E PROFILAXIA PÓS-VIOLÊNCIA SEXUAL (PORTARIA MS / PCDT)
@@ -28,7 +32,7 @@ CHECO EXAMES E TESTES RÁPIDOS DE TEMPO ZERO (T0):
 
 # EXAME CLÍNICO
 Bom estado geral [ou emocionalmente abalada, porém lúcida e orientada], corada, hidratada, acianótica, anictérica, afebril (exame realizado com consentimento e acompanhante).
-- Sinais Vitais: PA: [115x75] mmHg | FC: [84] bpm | FR: [16] irpm | SpO2: [99]% AA.
+- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA.
 - Exame Corporal Externo: [Ausência de lesões traumáticas graves / Presença de escoriações ou equimoses descritas topograficamente].
 - Exame Ginecológico / Perineal: [Sem lacerações ativas ou sangramento / Presença de hiperemia ou fissura mucosa superficial sem sangramento ativo].
 
@@ -50,7 +54,7 @@ Bom estado geral [ou emocionalmente abalada, porém lúcida e orientada], corada
 5. PEP para HIV (se exposição ≤ 72 horas, teste rápido de HIV Não Reagente e ClCr >= 50–60 mL/min):
    - Tenofovir (TDF) 300 mg + Lamivudina (3TC) 300 mg (1 comprimido coformulado VO 1x/dia) + Dolutegravir (DTG) 50 mg (1 comprimido VO 1x/dia — seguro inclusive na gestação!) por 28 dias ininterruptos.
 
-# PRESCRIÇÃO DOMICILIAR / DE ALTA
+# RECEITA:
 USO ORAL (KIT DE ALTA — PROFILAXIA PÓS-EXPOSIÇÃO SEXUAL / PEP):
 
 1. Levonorgestrel 1,5 mg (comprimido) — 1 caixa (1 comprimido)
@@ -72,12 +76,25 @@ USO ORAL (KIT DE ALTA — PROFILAXIA PÓS-EXPOSIÇÃO SEXUAL / PEP):
    - Retorno agendado em 14 dias (avaliação clínica, β-hCG de controle e adesão à PEP), 30 dias e 90 dias para repetição de sorologias (HIV, Sífilis, Hepatites B e C) e apoio psicológico.
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
-### 🧠 1. Por Que 72 Horas é o Limite da PEP para HIV, Mas Não das Demais Medidas?
+---
+
+## 🎯 Diretrizes & Raciocínio Clínico
+
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Manejo de Emergência - Violência Sexual e Profilaxias Pós-Exposição (ISTs, HIV e Contracepção)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+**🧠 1. Por Que 72 Horas é o Limite da PEP para HIV, Mas Não das Demais Medidas?**
 - **Janelas Críticas (PCDT Ministério da Saúde):** A replicação sistêmica do HIV nos linfonodos regionais consolida-se após `72 horas` da inoculação mucosa; por isso, **TDF + 3TC + Dolutegravir por 28 dias** deve ser iniciado o mais rápido possível (idealmente nas primeiras 2 horas e no máximo até 72h). Contudo, a **contracepção de emergência** funciona até **5 dias (120h)**, a **IGHAHB** até **14 dias**, e a **profilaxia de ISTs bacterianas** e a **vacinação HPV (9–45 anos)** devem ser administradas mesmo em apresentações mais tardias.
 - **Por que postergar o Metronidazol 2 g em 48–72 horas?** Administrar Azitromicina 1 g + Levonorgestrel + Metronidazol 2 g + antirretrovirais no mesmo minuto provoca alta taxa de êmese aguda, levando à perda da dose da contracepção de emergência e da PEP.
 
-### 💊 2. Por Que Não Exigimos Boletim de Ocorrência e Quais Travas Checamos na PEP/IST?
+**💊 2. Por Que Não Exigimos Boletim de Ocorrência e Quais Travas Checamos na PEP/IST?**
 - **Lei nº 12.845/2013 & Sigilo:** O atendimento na rede pública e privada é **imediato, obrigatório e gratuito sem exigência de Boletim de Ocorrência ou exame do IML prévio** (realizar apenas Notificação Compulsória no SINAN em até 24h).
 - **Travas Farmacológicas na Prescrição:**
   1. **Gestantes:** **Dolutegravir (DTG)** é seguro e 1ª escolha na gestação atual pelo PCDT/OMS; evitar apenas Doxiciclina (na sífilis em alérgica gestante, indicar dessensibilização à penicilina).

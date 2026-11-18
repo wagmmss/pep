@@ -1,18 +1,18 @@
 # Atendimento de Pronto Atendimento - Lombalgia Mecânica e Lombociatalgia
-
-> **Atalho sugerido:** `;lombalgia`  
-> **Finalidade:** Diagnóstico diferencial de dor lombar, exclusão sistemática da Síndrome da Cauda Equina e fraturas, Teste de Lasègue e analgesia multimodal.
+**Categoria:** Nefrologia Urologia e Dermatologia  
+**Atalho:** `;lombalgia`  
+**Gravidade:** Ambulatorial / Eletivo (Verde)  
+**CID-10:** M54.5 / M54.4  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA: LOMBALGIA AGUDA / LOMBOCIATALGIA ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Sim: [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Sim: ___].
 # QP:
 - Dor na coluna lombar / Dor que desce para a perna há [ ] dias/horas.
 
@@ -58,7 +58,7 @@ Alergias: [*Nega / Sim: [ ]].
    - Cloridrato de Ciclobenzaprina 5 a 10 mg VO agora (ou Diazepam 5 a 10 mg VO se contratura muscular severa incapacitante).
 4. [Se dor incapacitante refratária]: Cloridrato de Tramadol 50 a 100 mg EV diluído em 100 mL de SF correr lento.
 
->> PRESCRIÇÃO DOMICILIAR:
+# RECEITA:
 1. Anti-inflamatório Oral (Duração curta de 5 a 7 dias):
    - Cetoprofeno 150 mg (comprimido de liberação prolongada) - Tomar 1 comprimido VO ao dia após o jantar por 5 dias consecutivos.
    - [OU]: Ibuprofeno 600 mg VO de 8/8h após as refeições por 5 dias.
@@ -76,37 +76,21 @@ Alergias: [*Nega / Sim: [ ]].
 
 ---
 
-## 💊 Receita Domiciliar / Alta (Pronta para Copiar)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-> **Como usar:** Clique no botão **`💊 Receita`** no topo do card ou na aba **Receita** para copiar apenas a prescrição de alta pronta para impressão/entrega ao paciente.
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Atendimento de Pronto Atendimento - Lombalgia Mecânica e Lombociatalgia** centrado na identificação precoce de gravidade e manejo baseado em evidências.
 
-```text
-USO ORAL:
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
 
-1. Ciclobenzaprina 5 mg (ou 10 mg) ----------------------------- 10 comprimidos
-   Tomar 01 comprimido por via oral à noite, 1 hora antes de dormir, por 5 a 7 dias. Atenção: causa sonolência; evitar dirigir ou operar máquinas.
-
-2. Dipirona Sódica 1 g ----------------------------------------- 20 comprimidos
-   Tomar 01 comprimido por via oral de 6/6 horas por 3 a 5 dias para controle álgico de base.
-
-3. Naproxeno 500 mg (ou Ibuprofeno 600 mg) --------------------- 10 comprimidos
-   Tomar 01 comprimido por via oral de 12/12 horas (Naproxeno) ou de 8/8 horas (Ibuprofeno), após as refeições, por no máximo 5 dias.
-
-ORIENTAÇÕES E SINAIS DE ALERTA (CAUDA EQUINA):
-- Aplicar compressa morna na região lombar por 20 minutos, 3x/dia.
-- Evitar repouso absoluto na cama (manter caminhadas leves conforme tolerância acelera a recuperação).
-- RETORNO IMEDIATO se: perda de força no pé (pé caído/tropeços), dormência na região genital/perineal ("anestesia em sela") ou retenção/incontinência urinária ou fecal.
-```
-
----
-
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
-
-### 🧠 1. Lombalgia Mecânica vs. Sinais de Alarme (*Red Flags*): Por Que Não Solicitar Imagem de Rotina na UPA?
-Mais de 90% das lombalgias agudas no pronto-socorro são **mecânico-posturais ou miofasciais autolimitadas**, nas quais radiografias ou tomografias precoces (< 4–6 semanas) não mudam a conduta e aumentam intervenções desnecessárias. Exames de imagem na urgência são reservados exclusivamente para pacientes com **Red Flags (mnemônico TUNA FISH)**: **T**rauma significativo, **U**so de corticoide/Osteoporose, **N**eurologia alterada (**Síndrome da Cauda Equina**), **A**ge (< 20 ou > 50 anos com dor nova), **F**ebre/uso de drogas IV (espondilodiscite/abscesso epidural), **I**nexplicada perda ponderal e **H**istória de câncer (metástase óssea, dor noturna que não melhora ao repouso).
-
-### 💊 2. Manobra de Lasègue, Exame Miotomal Rápido e o Mito do Corticoide Sistêmico
+### 💊 3. Farmacologia & Doses
+**💊 2. Manobra de Lasègue, Exame Miotomal Rápido e o Mito do Corticoide Sistêmico**
 Para diferenciar dor lombar axial de compressão radicular verdadeira (hérnia discal L4-L5 ou L5-S1), a **Manobra de Lasègue** só é positiva quando reproduz dor irradiada abaixo do joelho entre **30° e 70°** de elevação da perna estendida (dor apenas na coxa posterior é encurtamento de isquiotibiais). Em 30 segundos, testa-se a integridade motora: **andar nos calcanhares (raiz L5 — dorsiflexão)** e **andar na ponta dos pés (raiz S1 — flexão plantar)**. No manejo farmacológico, **corticoides sistêmicos (Dexametasona IM/Prednisona) não têm eficácia comprovada na lombalgia mecânica pura**, sendo a base o retorno precoce ao movimento + Analgésico + AINE em ciclo curto + Relaxante muscular (Ciclobenzaprina).
 
-### 🧭 3. Síndrome da Cauda Equina: A Emergência Neurocirúrgica que Não Pode Esperar
+### 🚫 4. Segurança, Travas & Proibições
+**🧠 1. Lombalgia Mecânica vs. Sinais de Alarme (*Red Flags*): Por Que Não Solicitar Imagem de Rotina na UPA?**
+Mais de 90% das lombalgias agudas no pronto-socorro são **mecânico-posturais ou miofasciais autolimitadas**, nas quais radiografias ou tomografias precoces (< 4–6 semanas) não mudam a conduta e aumentam intervenções desnecessárias. Exames de imagem na urgência são reservados exclusivamente para pacientes com **Red Flags (mnemônico TUNA FISH)**: **T**rauma significativo, **U**so de corticoide/Osteoporose, **N**eurologia alterada (**Síndrome da Cauda Equina**), **A**ge (< 20 ou > 50 anos com dor nova), **F**ebre/uso de drogas IV (espondilodiscite/abscesso epidural), **I**nexplicada perda ponderal e **H**istória de câncer (metástase óssea, dor noturna que não melhora ao repouso).
+
+**🧭 3. Síndrome da Cauda Equina: A Emergência Neurocirúrgica que Não Pode Esperar**
 A compressão maciça das raízes lombossacrais abaixo do cone medular manifesta-se por **anestesia em sela** (perda de sensibilidade no períneo, nádegas e face interna das coxas), **retenção urinária com incontinência por transbordamento** (o sinal mais sensível), hiporreflexia aquileia bilateral e déficit motor progressivo (*pé caído*). Qualquer suspeita exige **Ressonância Magnética de Coluna Lombossacra de emergência** e descompressão cirúrgica em até 24–48h para evitar paraparesia e bexiga neurogênica definitivas.

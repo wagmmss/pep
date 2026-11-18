@@ -1,18 +1,18 @@
 # Atendimento de Pronto Atendimento - Sequência Rápida de Intubação (SRI / IOT)
-
-> **Atalho sugerido:** `;sri`  
-> **Finalidade:** Protocolo cronometrado dos 7 Ps da Sequência Rápida de Intubação em emergência, doses exatas de hipnóticos e bloqueadores neuromusculares, e checagem pós-IOT.
+**Categoria:** Emergencias Graves e Procedimentos  
+**Atalho:** `;sri`  
+**Gravidade:** Procedimento  
+**CID-10:** J96.0  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### NOTA DE PROCEDIMENTO: SEQUÊNCIA RÁPIDA DE INTUBAÇÃO (SRI) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 # INDICAÇÃO CLÍNICA DA INTUBAÇÃO OROTRAQUEAL (IOT):
 - [ ] Falência respiratória hipoxêmica ou hipercápnica refratária (SpO2 < 85% a despeito de VNI/máscara).
 - [ ] Rebaixamento do nível de consciência com perda dos reflexos protetores de via aérea (Escala de Coma de Glasgow <= 8).
@@ -31,8 +31,8 @@ Alergias: [*Nega / [ ]].
 1. P1 - PREPARAÇÃO (MATERIAL SOAP ME TESTADO):
    - Aspirador rígido de Yankauer funcionando com sucção efetiva à mão.
    - Ambu com bolsa-válvula-máscara conectado a fonte de oxigênio a 15 L/min.
-   - Laringoscópio testado com lâmina curva tipo Macintosh nº [3 / 4] [ou videolaringoscópio].
-   - Tubo orotraqueal (TOT) estéril com balonete nº [7,5 / 8,0] mm lubrificado, com cuff testado e fio-guia montado sem ultrapassar o orifício distal (ponta em "taco de hóquei"). Tubo reserva meio número menor disponível.
+   - Laringoscópio testado com lâmina curva tipo Macintosh nº [ ] [ou videolaringoscópio].
+   - Tubo orotraqueal (TOT) estéril com balonete nº [ ] mm lubrificado, com cuff testado e fio-guia montado sem ultrapassar o orifício distal (ponta em "taco de hóquei"). Tubo reserva meio número menor disponível.
    - Monitor multiparâmetro com ECG, oximetria e PANI de 2 em 2 minutos.
 
 2. P2 - PRÉ-OXIGENAÇÃO (MINUTOS -5 A 0):
@@ -83,15 +83,21 @@ Alergias: [*Nega / [ ]].
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que Seguimos os 7 Ps na Sequência Rápida de Intubação?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que Seguimos os 7 Ps na Sequência Rápida de Intubação?**
 - **Por Que a Ausculta Começa Obrigatoriamente pelo Epigástrio?** Ao testar a colocação do tubo traqueal com o estetoscópio, o primeiro ponto a auscultar é o epigástrio. Som de borbulhamento ou entrada de ar no estômago confirma **intubação esofágica**: desinsufle o cuff imediatamente, retire o tubo e pré-oxigene novamente antes de nova tentativa.
 - **Por Que Não Ventilamos com Ambu Após a Indução?** Na SRI, após administrar o hipnótico e o bloqueador neuromuscular, a ventilação sob pressão positiva com bolsa-válvula-máscara vence o tônus do esfíncter esofágico inferior, insufla o estômago e precipita **regurgitação maciça e broncoaspiração** (exceto resgate se `SpO₂ < 90%`).
 
-### 💊 2. Por Que Escolhemos Etomidato ou Cetamina e Succinilcolina ou Rocurônio?
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Por Que Confirmar Sempre em 5 Pontos + Capnografia + RX?**
+- A capnografia contínua com onda retangular (`EtCO₂`) é o padrão-ouro para descartar intubação esofágica, enquanto a ausculta bilateral em bases e ápices descarta **intubação seletiva no brônquio-fonte direito** e o RX de tórax confirma a ponta do tubo `3 a 4 cm` acima da carina.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Por Que Escolhemos Etomidato ou Cetamina e Succinilcolina ou Rocurônio?**
 - **Estabilidade Hemodinâmica na Indução:** Em pacientes sépticos, hipovolêmicos ou cardiopatas, Propofol e Midazolam em bólus causam vasodilatação venosa/arterial e colapso cardiovascular pós-intubação. **Etomidato (`0,3 mg/kg`)** é neutro hemodinamicamente; **Cetamina (`1,5 mg/kg`)** preserva ou eleva discretamente a PA por estímulo simpático e promove broncodilatação (ideal no broncoespasmo e choque).
 - **Bloqueio Neuromuscular Rápido:** **Succinilcolina (`1–1,5 mg/kg`)** e **Rocurônio (`1,2 mg/kg`)** garantem condições ótimas de laringoscopia em 45–60 segundos. Evite Succinilcolina em **hipercalemia, grandes queimados (> 24–48h), politrauma/rabdomiólise ou doença neuromuscular** pelo risco de parada hipercalêmica fatal.
 
-### 🧭 3. Por Que Confirmar Sempre em 5 Pontos + Capnografia + RX?
-- A capnografia contínua com onda retangular (`EtCO₂`) é o padrão-ouro para descartar intubação esofágica, enquanto a ausculta bilateral em bases e ápices descarta **intubação seletiva no brônquio-fonte direito** e o RX de tórax confirma a ponta do tubo `3 a 4 cm` acima da carina.
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

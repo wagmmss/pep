@@ -70,23 +70,23 @@ Realizada conversa estruturada em ambiente reservado com o(a) paciente [e famili
 
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Não Verbal, Escuta Ativa & NURSE
-- [ ] Sentei na mesma altura visual e mantive contato visual antes de focar no computador/PEP
+- [ ] [CRÍTICO] Sentei na mesma altura visual e mantive contato visual antes de focar no computador/PEP
 - [ ] Respeitei 3–5 segundos de silêncio terapêutico diante de pausa emocional ou choro
-- [ ] Apliquei validação emocional (`NURSE`) antes de dar explicações técnicas
+- [ ] [CRÍTICO] Apliquei validação emocional (`NURSE`) antes de dar explicações técnicas
 - [ ] Investiguei medos/expectativas ocultas (`SIFE`: Sentimentos, Ideias, Função, Expectativas)
 
 ### 2. Explicação & Adesão (`Ask–Tell–Ask` + `Teach-Back`)
 - [ ] Traduzi o diagnóstico sem jargão médico usando analogia simples e no máximo 3 ideias
 - [ ] Ancorei horários da receita na rotina real do paciente (café, almoço, jantar, dormir)
 - [ ] Apliquei `Teach-Back` assumindo a responsabilidade ("para eu saber se expliquei direito...")
-- [ ] Confirmei se o paciente soube repetir a duração do tratamento e os sinais de alarme para retorno imediato
+- [ ] [CRÍTICO] Confirmei se o paciente soube repetir a duração do tratamento e os sinais de alarme para retorno imediato
 
 ### 3. Más Notícias (`SPIKES`) & Manejo de Conflitos *(quando aplicável)*
 - [ ] Garanti sala reservada, revisão prévia do caso e convidei acompanhante de escolha (`Setting`)
-- [ ] Dei o "tiro de alerta" e a notícia direta sem jargão, sustentando 5–10s de silêncio após falar
+- [ ] [CRÍTICO] Dei o "tiro de alerta" e a notícia direta sem jargão, sustentando 5–10s de silêncio após falar
 - [ ] Em demanda sem indicação (ATB/exame), expliquei por que não fazer protege o paciente e ofereci plano ativo
-- [ ] Em hostilidade ou alta a pedido: garanti segurança física, chequei capacidade mental, envolvi o preceptor e registrei com testemunhas
+- [ ] [CRÍTICO] Em hostilidade ou alta a pedido: garanti segurança física, chequei capacidade mental, envolvi o preceptor e registrei com testemunhas
 
 ### 4. Upgrade Preceptor V2.0 (Warning Shot, NURSE & Teach-Back)
-- [ ] Utilizei o Tiro de Aviso (Warning Shot) antes da notícia grave, respeitei o silêncio terapêutico e acolhi a emoção pelo protocolo NURSE (sem eufemismos no óbito)
-- [ ] Validei a segurança da alta com o método Teach-Back ('Me conta como o senhor vai tomar esses remédios em casa?') em vez de perguntar 'Entendeu tudo?'
+- [ ] [CRÍTICO] Utilizei o Tiro de Aviso (Warning Shot) antes da notícia grave, respeitei o silêncio terapêutico e acolhi a emoção pelo protocolo NURSE (sem eufemismos no óbito)
+- [ ] [CRÍTICO] Validei a segurança da alta com o método Teach-Back ('Me conta como o senhor vai tomar esses remédios em casa?') em vez de perguntar 'Entendeu tudo?'

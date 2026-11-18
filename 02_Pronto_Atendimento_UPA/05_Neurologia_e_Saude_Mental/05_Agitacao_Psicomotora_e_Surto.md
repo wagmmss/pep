@@ -1,18 +1,18 @@
 # Atendimento de Pronto Atendimento - Agitação Psicomotora e Surto Psiquiátrico
-
-> **Atalho sugerido:** `;surto`  
-> **Finalidade:** Desescalonamento progressivo (verbal, farmacológico e mecânico), protocolo de "Haldol + Fenergan", prevenção de asfixia posicional e monitoramento pós-contenção.
+**Categoria:** Neurologia e Saude Mental  
+**Atalho:** `;surto`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** F29 / R45.1  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA / SALA DE EMERGÊNCIA: AGITAÇÃO PSICOMOTORA / SURTO ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Sim: [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Sim: ___].
 # CONTEXTO DE ENTRADA: [Trazido por familiares / Resgatado pelo SAMU ou Polícia Militar / Descompensação aguda na sala de espera].
 
 # QP:
@@ -74,16 +74,22 @@ Alergias: [*Nega / Sim: [ ]].
 
 ---
 
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Delirium Orgânico vs. Surto Psicótico Primário: Por Que Essa Diferenciação Salva Vidas?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Delirium Orgânico vs. Surto Psicótico Primário: Por Que Essa Diferenciação Salva Vidas?**
 Todo quadro de agitação psicomotora aguda com **início abrupto em idoso, flutuação do nível de consciência, desorientação têmporo-espacial, alucinações visuais (zoopsias) ou sinais vitais alterados** é **Delirium secundário a causa orgânica** até prova em contrário (**mnemônico MOVE STUPID**: Metabólico/Hiponatremia, Oxigênio/Hipóxia, Vascular/AVCh, Endócrino/Hipoglicemia, Sepse/Meningite, Trauma/HSD, Uremia, Psicotrópicos/Abstinência alcoólica, Intoxicação, Dor/Globo vesical). Sedar um paciente agitado por **hipóxia, hipoglicemia ou hematoma subdural** sem checar SpO₂ e HGT converte uma emergência reversível em óbito.
 
-### 💊 2. A Escada da Tranquilização Rápida: Desescalonamento Verbal → Via Oral → Contenção Química IM
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. A Escada da Tranquilização Rápida: Desescalonamento Verbal → Via Oral → Contenção Química IM**
 O objetivo na emergência não é "anestesiar" o paciente, mas atingir **calma cooperativa (RASS 0 a -1)**. Após falha do desescalonamento verbal (*Project BETA*) e recusa da medicação oral:
 - Em **surto psicótico/esquizofrenia/mania**: a combinação clássica **Haloperidol 5 mg IM + Prometazina 50 mg IM** (estudos *TREC*) oferece início rápido e a ação anticolinérgica da prometazina previne a **distonia aguda laríngea/cervical** induzida pelo butirofenônico.
 - Em **intoxicação alcoólica aguda ou idoso com delirium**: **evita-se prometazina e midazolam** (pelo risco de depressão respiratória sinérgica com álcool e piora paradoxal do delirium anticolinérgico), utilizando-se Haloperidol isolado em baixa dose (2,5–5 mg IM, após descartar QTc longo).
 - Em **abstinência alcoólica (*Delirium Tremens*) ou intoxicação simpaticomimética (cocaína/crack)**: a base é o **Benzodiazepínico (Diazepam/Midazolam)**, pois o haloperidol isolado reduz o limiar convulsivo e prejudica a dissipação térmica.
 
-### 🧭 3. Segurança Legal e Clínica na Contenção Mecânica no Leito
+### 🚫 4. Segurança, Travas & Proibições
+**🧭 3. Segurança Legal e Clínica na Contenção Mecânica no Leito**
 A contenção física (4 ou 5 pontos com faixas acolchoadas) é um **ato médico terapêutico excepcional**, indicado apenas quando há risco iminente de auto ou heteroagressão refratário à abordagem verbal. Exige prescrição médica formal em prontuário, cabeceira elevada a 30° (prevenção de broncoaspiração) e monitorização documentada a cada 15–30 minutos de sinais vitais, expansão torácica e **perfusão/pulsos distais dos quatro membros** (prevenção de rabdomiólise, síndrome compartimental e trombose venosa).

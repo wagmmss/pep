@@ -70,21 +70,21 @@ ATENDIMENTO DE EMERGÊNCIA — ABORDAGEM SISTEMÁTICA ABCDE (SALA VERMELHA):
 - [ ] Identifiquei precocemente indicação de via aérea definitiva (Glasgow ≤ 8, estridor, fadiga refratária)
 
 ### 1. `B` (Respiração & Ventilação)
-- [ ] Contei FR real, chequei SpO2 e executei inspeção, percussão e ausculta pulmonar bilateral (incluindo axilas)
+- [ ] [CRÍTICO] Contei FR real, chequei SpO2 e executei inspeção, percussão e ausculta pulmonar bilateral (incluindo axilas)
 - [ ] Ofertei O2 suplementar titulado ao alvo certo (92–96% geral ou 88–92% no DPOC retentor) ou VNI se indicada
-- [ ] Descartei/tratei imediatamente ameaças clínicas do `B` (pneumotórax hipertensivo/aberto, EAP, broncoespasmo)
+- [ ] [CRÍTICO] Descartei/tratei imediatamente ameaças clínicas do `B` (pneumotórax hipertensivo/aberto, EAP, broncoespasmo)
 
 ### 2. `C` (Circulação & Hemorragia)
-- [ ] Avaliei perfusão antes de confiar só na PA (pele, TEC, pulsos centrais/periféricos, Índice de Choque e jugular)
+- [ ] [CRÍTICO] Avaliei perfusão antes de confiar só na PA (pele, TEC, pulsos centrais/periféricos, Índice de Choque e jugular)
 - [ ] Estanquei sangramento ativo, garanti 2 acessos calibrosos (14G–18G) e colhi labs + lactato + tipagem + ECG
-- [ ] Diferenciei o tipo de choque antes de fazer prova volêmica cega (e fiz adrenalina IM imediata se anafilaxia)
+- [ ] [CRÍTICO] Diferenciei o tipo de choque antes de fazer prova volêmica cega (e fiz adrenalina IM imediata se anafilaxia)
 
 ### 3. `D` (Neurológico), `E` (Exposição) & Reavaliação
-- [ ] Fiz **HGT imediato na beira do leito** no `D` (e corrigi hipoglicemia antes de pensar em TC)
-- [ ] Calculei Glasgow detalhado (`AO+RV+RM`), chequei pupilas/anisocoria e rastreei déficit focal súbito
+- [ ] [CRÍTICO] Fiz **HGT imediato na beira do leito** no `D` (e corrigi hipoglicemia antes de pensar em TC)
+- [ ] [CRÍTICO] Calculei Glasgow detalhado (`AO+RV+RM`), chequei pupilas/anisocoria e rastreei déficit focal súbito
 - [ ] Exposição completa (pele, dorso em bloco se trauma, períneo/sítios ocultos), medi Tax e cobri contra hipotermia
-- [ ] Reavaliei `A → B → C → D` imediatamente após cada intervenção realizada
+- [ ] [CRÍTICO] Reavaliei `A → B → C → D` imediatamente após cada intervenção realizada
 
 ### 5. Upgrade Preceptor V2.0 (Shock Index Pré-IOT & Matriz de Choque)
-- [ ] Calculei o Shock Index (FC/PAS) antes da intubação e ressuscitei hemodinamicamente antes da sequência rápida se SI > 0,9 para evitar PCR pós-IOT
-- [ ] Classifiquei o choque nos 4 quadrantes (Jugular + Pulmão + POCUS RUSH), descomprimi pneumotórax no 4º–5º EIC LAA e chequei HGT capilar imediato no D
+- [ ] [CRÍTICO] Calculei o Shock Index (FC/PAS) antes da intubação e ressuscitei hemodinamicamente antes da sequência rápida se SI > 0,9 para evitar PCR pós-IOT
+- [ ] [CRÍTICO] Classifiquei o choque nos 4 quadrantes (Jugular + Pulmão + POCUS RUSH), descomprimi pneumotórax no 4º–5º EIC LAA e chequei HGT capilar imediato no D

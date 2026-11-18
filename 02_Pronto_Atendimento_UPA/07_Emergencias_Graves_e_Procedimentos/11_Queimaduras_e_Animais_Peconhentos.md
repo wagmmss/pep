@@ -1,19 +1,24 @@
 # Atendimento de Emergência - Queimaduras Agudas (Parkland) e Acidentes por Animais Peçonhentos
+**Categoria:** Emergencias Graves e Procedimentos  
+**Atalho:** `;queimadura`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** T30.0 / T63.0  
 
-**Atalho:** `;queimadura` | **Categoria:** Emergencias Graves e Procedimentos
+---
 
-## SNIPPET PEP
+## 📋 Snippet para Prontuário Eletrônico (PEP)
+
 ```text
 ATENDIMENTO DE EMERGÊNCIA — QUEIMADURAS AGUDAS OU ACIDENTE POR ANIMAL PEÇONHENTO
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 
 CENÁRIO DO ATENDIMENTO: [1. Queimadura Térmica/Química/Elétrica Aguda / 2. Acidente por Animal Peçonhento (Escorpião, Serpente ou Aranha)].
 
 BLOCO A — SE QUEIMADURA AGUDA (ATLS / ABA):
-- Agente e Circunstância: Queimadura há [ ] horas por [líquido superaquecido (escaldo) / chama direta em ambiente fechado / contato / choque elétrico de alta tensão / agente químico]. Peso estimado: [70] kg.
+- Agente e Circunstância: Queimadura há [ ] horas por [líquido superaquecido (escaldo) / chama direta em ambiente fechado / contato / choque elétrico de alta tensão / agente químico]. Peso estimado: [ ] kg.
 - Avaliação de Via Aérea (Queimadura Inalatória): [Ausência de sinais inalatórios / Presença de rouquidão, estridor, vibrissas nasais chamuscadas, escarro carbonáceo ou queimadura de face/pescoço circunferencial → INDICAÇÃO DE IOT PRECOCE!].
 - Profundidade e Extensão (Regra dos 9 de Wallace — NÃO contabilizar eritema de 1º grau no cálculo de SCQ!):
   * Grau da Lesão: [1º Grau (epiderme: eritema doloroso sem bolhas) / 2º Grau Superficial (bolhas/flictenas, base rósea úmida e muito dolorosa) / 2º Grau Profundo (base pálida/mosqueada, menor dor) / 3º Grau (espessura total: placa coriácea nacarada/carbonizada e indolor)].
@@ -44,7 +49,7 @@ BLOCO B — SE ACIDENTE POR ANIMAL PEÇONHENTO (SINAN / MINISTÉRIO DA SAÚDE):
    - Acidente Botrópico (Soro Antibotrópico — SAB IV): Leve = 2 a 4 ampolas | Moderado = 4 a 8 ampolas | Grave = 12 ampolas (NUNCA fazer torniquete e manter membro elevado; doses de soro são IGUAIS para adultos e crianças!).
    - Acidente Crotálico (Soro Anticrotálico — SAC IV): Leve = 5 ampolas | Moderado = 10 ampolas | Grave = 20 ampolas + hiper-hidratação e alcalinização urinária (pH > 6,5) para proteger o rim da rabdomiólise.
 
-# PRESCRIÇÃO DOMICILIAR / DE ALTA
+# RECEITA:
 USO ORAL E TÓPICO (ALTA AMBULATORIAL — QUEIMADURA PEQUENA DE 1º OU 2º GRAU SUPERFICIAL < 10% SCQ):
 
 1. Sulfadiazina de Prata 10 mg/g (1%) creme dermatológico — 1 bisnaga ou pote (50 g a 400 g)
@@ -62,7 +67,20 @@ USO ORAL E TÓPICO (ALTA AMBULATORIAL — QUEIMADURA PEQUENA DE 1º OU 2º GRAU 
    - Retornar imediatamente se febre, saída de pus com odor fétido, aumento da vermelhidão/calor ao redor da ferida ou dor desproporcional.
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
-### Critérios de Transferência para Centro de Tratamento de Queimados (CTQ) e Regras de Ouro da Soroterapia
+---
+
+## 🎯 Diretrizes & Raciocínio Clínico
+
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Atendimento de Emergência - Queimaduras Agudas (Parkland) e Acidentes por Animais Peçonhentos** centrado na identificação precoce de gravidade e manejo baseado em evidências.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**Critérios de Transferência para Centro de Tratamento de Queimados (CTQ) e Regras de Ouro da Soroterapia**
 - **Por que nunca dar antibiótico sistêmico profilático no grande queimado e quando transferir para o CTQ:** O antibiótico sistêmico profilático seleciona germes multirresistentes (*Pseudomonas*, *Acinetobacter*, MRSA) sem reduzir infecção. São indicações formais de transferência para CTQ: queimaduras de 2º grau **> 10% SCQ**, qualquer queimadura de **3º grau**, queimaduras em **face, mãos, pés, genitália, períneo ou grandes articulações**, queimaduras **elétricas**, **químicas** ou com **lesão inalatória**.
 - **Por que a dose de Soro Antiveneno na criança é idêntica à do adulto:** O soro antiveneno neutraliza a quantidade de **peçonha circulante inoculada pelo animal**, e não o peso corporal da vítima; portanto, uma criança picada recebe exatamente o mesmo número de ampolas que um adulto para a mesma classificação de gravidade.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

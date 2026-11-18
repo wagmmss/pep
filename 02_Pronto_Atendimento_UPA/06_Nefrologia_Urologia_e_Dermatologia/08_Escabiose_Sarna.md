@@ -1,18 +1,18 @@
 # Atendimento de Pronto Atendimento - Escabiose (Sarna Humana)
-
-> **Atalho sugerido:** `;escabiose`  
-> **Finalidade:** Diagnóstico dermatológico das lesões em túnel e nódulos genitais, esquema terapêutico duplo (Permetrina tópica + Ivermectina oral), regra dos 7 dias e tratamento familiar.
+**Categoria:** Nefrologia Urologia e Dermatologia  
+**Atalho:** `;escabiose`  
+**Gravidade:** Ambulatorial / Eletivo (Verde)  
+**CID-10:** B86  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA: ESCABIOSE (SARNA HUMANA) ######
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Sim: [ ]].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Sim: ___].
 # QP:
 - Coceira no corpo todo que piora muito à noite há [ ] dias/semanas.
 
@@ -42,7 +42,7 @@ Alergias: [*Nega / Sim: [ ]].
 
 # CONDUTA:
 
->> PRESCRIÇÃO DOMICILIAR:
+# RECEITA:
 
 1. TRATAMENTO TÓPICO COM ESCABICIDA (PADRÃO-OURO):
    - Permetrina loção a 5% - 01 a 02 frascos:
@@ -75,37 +75,19 @@ Alergias: [*Nega / Sim: [ ]].
 
 ---
 
-## 💊 Receita Domiciliar / Alta (Pronta para Copiar)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-> **Como usar:** Clique no botão **`💊 Receita`** no topo do card ou na aba **Receita** para copiar apenas a prescrição de alta pronta para impressão/entrega ao paciente.
-
-```text
-USO ORAL E TÓPICO (TRATAMENTO DO PACIENTE E DE TODOS OS CONTATOS DOMICILIARES SIMULTANEAMENTE):
-
-1. Ivermectina 6 mg -------------------------------------------- 04 comprimidos
-   Tomar [02] comprimidos juntos por via oral em dose única (dose calculada a 200 mcg/kg = 1 comprimido a cada 30 kg de peso), e REPETIR a mesma dose exata após 7 dias (no 8º dia) para eliminar as larvas recém-eclodidas dos ovos.
-
-2. Permetrina 5% Loção Cremosa --------------------------------- 01 frasco (60 ml)
-   Aplicar uma camada fina em todo o corpo, do pescoço para baixo (incluindo espaços entre os dedos, punhos, axilas, umbigo, genitália externa e plantas dos pés), após o banho à noite. Deixar agir por 8 a 12 horas e retirar no banho pela manhã. Repetir a aplicação após 7 dias.
-   (Nota: Em gestantes e crianças < 15 kg, utilizar apenas Permetrina 5% tópica ou Enxofre precipitado 6-10% em vaselina).
-
-3. Cloridrato de Hidroxizina 25 mg (ou Dexclorfeniramina 2 mg) - 10 comprimidos
-   Tomar 01 comprimido por via oral à noite por 7 a 10 dias para alívio do prurido noturno (Nota: a coceira residual de hipersensibilidade pode persistir por até 2 semanas mesmo após a morte do ácaro).
-
-MEDIDAS DE ERRADICAÇÃO AMBIENTAL:
-- Tratar no MESMO DIA todas as pessoas que moram na mesma casa ou dormem na mesma cama, mesmo que não estejam coçando.
-- Trocar e lavar roupas de cama, toalhas e roupas de uso pessoal em água quente (ou passar a ferro quente) e expor colchões ao sol; roupas que não puderem ser lavadas devem ficar fechadas em saco plástico por 72 horas.
-```
-
----
-
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
-
-### 🧠 1. Por Que o Prurido É Pior à Noite e Por Que "Poupa" a Cabeça no Adulto?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que o Prurido É Pior à Noite e Por Que "Poupa" a Cabeça no Adulto?**
 A escabiose é causada pelo ácaro *Sarcoptes scabiei var. hominis*, cuja fêmea escava túneis na camada córnea da epiderme para depositar ovos e fezes (*scybala*). O **prurido intenso de predomínio noturno** ocorre tanto pelo aumento da atividade locomotora do ácaro com o aquecimento corporal sob as cobertas quanto pela reação de hipersensibilidade tipo IV aos antígenos parasitários. No adulto imunocompetente, as lesões concentram-se nos **espaços interdigitais das mãos, face flexora dos punhos, axilas, região periumbilical, aréolas mamárias (mulheres) e pênis/bolsa escrotal (pápulas patognomônicas nos homens)**, poupando face e couro cabeludo (que só são acometidos em lactentes e idosos).
 
-### 💊 2. O Ciclo de Vida do Ácaro: Por Que a 2ª Dose no 8º Dia É Obrigatória?
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Tratamento Simultâneo do Domicílio e o Fenômeno do "Prurido Pós-Escabiótico"**
+Como o período de incubação assintomático na primoinfecção pode chegar a 4 semanas, **todos os contatos domiciliares e parceiros sexuais devem ser tratados no mesmo dia**, tenham sintomas ou não; caso contrário, o paciente tratado reinfesta-se em poucos dias (*efeito pingue-pongue*). Além disso, é fundamental orientar que a coceira pode persistir por **até 2 a 4 semanas após a cura parasitológica** (reação imunológica aos restos antigênicos do ácaro morto na epiderme): isso é manejado com anti-histamínico oral e hidratação cutânea, **e não com reaplicações diárias de permetrina**, que causam dermatite de contato irritativa grave.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. O Ciclo de Vida do Ácaro: Por Que a 2ª Dose no 8º Dia É Obrigatória?**
 O erro número 1 que leva à "falha terapêutica" na escabiose é prescrever dose única sem repetição. Tanto a **Ivermectina oral (200 mcg/kg)** quanto a **Permetrina 5% tópica** são **adulticidas e larvicidas, mas NÃO são ovicidas** eficientes. Como os ovos do *Sarcoptes* levam de 3 a 5 dias para eclodir em novas larvas, a **repetição obrigatória da dose após 7 dias (no 8º dia)** extermina a nova geração antes que atinja a maturidade reprodutiva, quebrando definitivamente o ciclo parasitário.
 
-### 🧭 3. Tratamento Simultâneo do Domicílio e o Fenômeno do "Prurido Pós-Escabiótico"
-Como o período de incubação assintomático na primoinfecção pode chegar a 4 semanas, **todos os contatos domiciliares e parceiros sexuais devem ser tratados no mesmo dia**, tenham sintomas ou não; caso contrário, o paciente tratado reinfesta-se em poucos dias (*efeito pingue-pongue*). Além disso, é fundamental orientar que a coceira pode persistir por **até 2 a 4 semanas após a cura parasitológica** (reação imunológica aos restos antigênicos do ácaro morto na epiderme): isso é manejado com anti-histamínico oral e hidratação cutânea, **e não com reaplicações diárias de permetrina**, que causam dermatite de contato irritativa grave.
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

@@ -10,6 +10,17 @@ export interface BracketToken {
   inner?: string;
 }
 
+export interface PediatricDoseBadgeItem {
+  drug: string;
+  doseRule: string;
+  formattedDose: string;
+  maxAdultCeiling: string;
+  ceilingHit: boolean;
+  badge: string;
+  allowed: boolean;
+  note?: string;
+}
+
 export interface WeightDoseSummary {
   weightKg: number;
   dipironaAllowed: boolean;
@@ -30,6 +41,16 @@ export interface WeightDoseSummary {
   prednisolonaMgDia: number;
   dexametasonaCrupeMg: string;
   midazolamImEvMg: string;
+  items?: PediatricDoseBadgeItem[];
+}
+
+export type PowerActionId = 1 | 2 | 3 | 4 | 5;
+
+export interface PowerActionOutput {
+  actionId: PowerActionId;
+  label: string;
+  text: string;
+  pendingGaps: PendingGapsReport;
 }
 
 export interface PendingGapsReport {
@@ -398,14 +419,14 @@ export function extractBodiesFromCustomPep(
   }
 
   // Localizar início da Receita / Prescrição Domiciliar (sem contaminar com rawConduta quando inexistente)
-  const recRegex = /(?:>>\s*|#+\s*|^)(?:PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL|PRESCRIÇÃO AMBULATORIAL)[^\n]*\n([\s\S]*)$/im;
+  const recRegex = /(?:>>\s*|#+\s*|^)(?:RECEITA(?:\s+DE\s+ALTA|\s+MÉDICA)?|PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL|PRESCRIÇÃO AMBULATORIAL)\s*:?[^\n]*\n([\s\S]*)$/im;
   const recMatch = raw.match(recRegex);
   const explicitReceita = recMatch
     ? (recMatch[1] || '').trim()
     : (item && item.has_receita === false)
       ? ''
       : String(item?.receita_body || '').replace(
-          /^(?:>>\s*|#+\s*)(?:PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL|PRESCRIÇÃO AMBULATORIAL)[^\n]*\n?/i,
+          /^(?:>>\s*|#+\s*)(?:RECEITA(?:\s+DE\s+ALTA|\s+MÉDICA)?|PRESCRIÇÃO DOMICILIAR|PRESCRIÇÃO DE ALTA|RECEITA DE ALTA|PRESCRIÇÃO MÉDICA AMBULATORIAL|PRESCRIÇÃO AMBULATORIAL)\s*:?[^\n]*\n?/i,
           ''
         ).trim();
   const rawReceita = explicitReceita;
@@ -504,6 +525,83 @@ export function computeWeightBasedDoses(weightKg: number): WeightDoseSummary | n
   const dexametasonaCrupeMg = Math.min(10, weightKg * 0.6).toFixed(1).replace('.', ',');
   const midazolamImEvMg = Math.min(10, weightKg * 0.2).toFixed(1).replace('.', ',');
 
+  const items: PediatricDoseBadgeItem[] = [
+    {
+      drug: 'Dipirona (500 mg/mL = 20 gts/mL)',
+      doseRule: '20 mg/kg/dose (0,8 gt/kg)',
+      formattedDose: `${dipironaMg} mg (${dipironaGotas} gts / ${dipironaMlSolucao} mL sol. oral)`,
+      maxAdultCeiling: '1000 mg (40 gts)',
+      ceilingHit: weightKg * 20 >= 1000,
+      badge: weightKg * 20 >= 1000 ? 'Teto adulto (1000 mg)' : 'Dose ponderal',
+      allowed: dipironaAllowed,
+      note: dipironaAllowed ? undefined : 'Contraindicado < 5 kg',
+    },
+    {
+      drug: 'Paracetamol (200 mg/mL)',
+      doseRule: '10–15 mg/kg/dose (~1 gt/kg)',
+      formattedDose: `${paracetamolMg} mg (${paracetamolGotas} gts)`,
+      maxAdultCeiling: '750 mg (50 gts)',
+      ceilingHit: weightKg * 13 >= 750 || weightKg >= 50,
+      badge: weightKg * 13 >= 750 || weightKg >= 50 ? 'Teto adulto (750 mg)' : 'Dose ponderal',
+      allowed: true,
+    },
+    {
+      drug: 'Ibuprofeno (100 mg/mL)',
+      doseRule: '10 mg/kg/dose (1 gt/kg)',
+      formattedDose: `${ibuprofenoMg} mg (${ibuprofenoGotas100} gts 100mg/mL)`,
+      maxAdultCeiling: '400 mg (40 gts)',
+      ceilingHit: weightKg * 10 >= 400,
+      badge: weightKg * 10 >= 400 ? 'Teto adulto (400 mg)' : 'Dose ponderal',
+      allowed: ibuprofenoAllowed,
+      note: ibuprofenoAllowed ? undefined : 'Evitar < 6 meses / < 7 kg',
+    },
+    {
+      drug: 'Ondansetrona EV/VO',
+      doseRule: '0,15 mg/kg/dose',
+      formattedDose: `${ondansetronaMg} mg (${ondansetronaMlEv} mL EV)`,
+      maxAdultCeiling: '8 mg',
+      ceilingHit: weightKg * 0.15 >= 8,
+      badge: weightKg * 0.15 >= 8 ? 'Teto adulto (8 mg)' : 'Dose ponderal',
+      allowed: true,
+    },
+    {
+      drug: 'Amoxicilina 250 mg/5 mL',
+      doseRule: '50 mg/kg/dia 8/8h | 90 mg/kg/dia 12/12h',
+      formattedDose: `${amoxi50Ml8h} mL 8/8h (50) | ${amoxi90Ml12h} mL 12/12h (90)`,
+      maxAdultCeiling: '500 mg 8/8h (10 mL) | 875–1000 mg 12/12h (12,5 mL)',
+      ceilingHit: weightKg / 3 >= 10,
+      badge: weightKg / 3 >= 10 ? 'Teto adulto (500 mg/dose)' : 'Dose ponderal',
+      allowed: true,
+    },
+    {
+      drug: 'Prednisolona 3 mg/mL',
+      doseRule: '1 mg/kg/dia',
+      formattedDose: `${prednisolonaMgDia} mg/dia (${prednisolonaMlDia} mL/dia)`,
+      maxAdultCeiling: '40 mg/dia (13,3 mL)',
+      ceilingHit: weightKg >= 40,
+      badge: weightKg >= 40 ? 'Teto adulto (40 mg/dia)' : 'Dose ponderal',
+      allowed: true,
+    },
+    {
+      drug: 'Dexametasona (Crupe)',
+      doseRule: '0,6 mg/kg dose única',
+      formattedDose: `${dexametasonaCrupeMg} mg`,
+      maxAdultCeiling: '10 mg',
+      ceilingHit: weightKg * 0.6 >= 10,
+      badge: weightKg * 0.6 >= 10 ? 'Teto adulto (10 mg)' : 'Dose ponderal',
+      allowed: true,
+    },
+    {
+      drug: 'Midazolam (Crise Convulsiva)',
+      doseRule: '0,2 mg/kg EV/IM',
+      formattedDose: `${midazolamImEvMg} mg`,
+      maxAdultCeiling: '10 mg',
+      ceilingHit: weightKg * 0.2 >= 10,
+      badge: weightKg * 0.2 >= 10 ? 'Teto adulto (10 mg)' : 'Dose ponderal',
+      allowed: true,
+    },
+  ];
+
   return {
     weightKg,
     dipironaAllowed,
@@ -523,7 +621,53 @@ export function computeWeightBasedDoses(weightKg: number): WeightDoseSummary | n
     prednisolonaMlDia,
     prednisolonaMgDia,
     dexametasonaCrupeMg,
-    midazolamImEvMg
+    midazolamImEvMg,
+    items,
+  };
+}
+
+export function hasEmptyPediatricWeight(text: string): boolean {
+  return /Peso:\s*\[\s*\]\s*kg/i.test(String(text || ''));
+}
+
+export function resolvePowerActionText(
+  actionId: PowerActionId,
+  customPep: string,
+  item?: { evolucao_body?: string; conduta_body?: string; receita_body?: string; has_receita?: boolean } | null,
+  options?: { medsOnly?: boolean; sanitizeOpts?: SanitizePepOptions }
+): PowerActionOutput {
+  const bodies = extractBodiesFromCustomPep(customPep, item, options?.sanitizeOpts);
+  let label = 'Tudo';
+  let text = bodies.pep_body;
+
+  switch (actionId) {
+    case 1:
+      label = 'Tudo';
+      text = bodies.pep_body;
+      break;
+    case 2:
+      label = 'Evolução';
+      text = bodies.evolucao_body;
+      break;
+    case 3:
+      label = 'Conduta';
+      text = bodies.conduta_body;
+      break;
+    case 4:
+      label = options?.medsOnly ? 'Receita (Só Meds)' : 'Receita';
+      text = options?.medsOnly ? bodies.receita_meds_body : bodies.receita_body;
+      break;
+    case 5:
+      label = 'Orientações';
+      text = bodies.orientacoes_body;
+      break;
+  }
+
+  return {
+    actionId,
+    label,
+    text,
+    pendingGaps: detectPendingGaps(text),
   };
 }
 

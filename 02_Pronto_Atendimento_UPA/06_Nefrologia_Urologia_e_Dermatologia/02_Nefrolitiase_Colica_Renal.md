@@ -1,23 +1,23 @@
 # Atendimento de Pronto Atendimento - Nefrolitíase e Cólica Renal Aguda
-
-> **Atalho sugerido:** `;colica-renal`  
-> **Finalidade:** Manejo escalonado da dor aguda na UPA (AINEs, analgésicos e opióides), rastreamento de urgência urológica (cálculo obstrutivo infectado) e Terapia Expulsiva Médica (MET).
+**Categoria:** Nefrologia Urologia e Dermatologia  
+**Atalho:** `;colica-renal`  
+**Gravidade:** Urgência (Laranja/Amarelo)  
+**CID-10:** N20.0 / N23  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA / SALA DE MEDICAÇÃO: CÓLICA RENAL AGUDA ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / Outros: ___].
 # QP:
 - Dor lombar insuportável em cólica de início súbito há [ ] horas.
 
 # HMA:
-- HMA: Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa ([testículo/bolsa escrotal no homem / grande lábio na mulher]). Intensidade [10/10] na escala analógica.
+- HMA: Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa ([testículo/bolsa escrotal no homem / grande lábio na mulher]). Intensidade [ ] na escala analógica.
 - Sintomas Vegetativos & Urinários Associados:
   * Náuseas intensas e vômitos ([ ] episódios) desencadeados pelo reflexo autonômico celíaco.
   * Agitação psicomotora evidente: paciente inquieto, move-se constantemente e não encontra posição de alívio na maca.
@@ -29,7 +29,7 @@ Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
   [ ] Anúria persistente ou oligúria severa.
   [ ] Dor intratável refratária à analgesia venosa potente na UPA.
   [ ] Gestante em vigência de cólica nefrética.
-  * STATUS: [TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: [ ]].
+  * STATUS: [TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: ___].
 - Histórico Prévio: [Episódios prévios conhecidos de litíase urinária com eliminação de cálculos / Primeiro episódio da vida].
 
 # EXAME FÍSICO:
@@ -68,7 +68,7 @@ Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
    - Soro Fisiológico 0,9% 500 mL EV lento.
    *(Nota: NÃO realizar hiperidratação venosa forçada de 2 a 3 litros durante a crise aguda, pois o aumento súbito da diurese contra o ureter obstruído eleva a pressão pielocalicial e PIORA a dor).*
 
->> PRESCRIÇÃO DOMICILIAR & TERAPIA EXPULSIVA MÉDICA (MET):
+# RECEITA:
 1. Terapia Expulsiva Médica (Para cálculos ureterais de 5 a 10 mm no ureter distal):
    - Cloridrato de Tansulosina 0,4 mg - Tomar 1 cápsula VO 1x/dia, à noite após o jantar, por 14 a 28 dias (promove o relaxamento da musculatura lisa do ureter distal e facilita a expulsão do cálculo).
 2. Anti-inflamatório Oral:
@@ -78,7 +78,7 @@ Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
 4. Antiespasmódico de Resgate:
    - Hioscina + Dipirona (Buscopan Composto) - Tomar 1 a 2 comprimidos VO 8/8h se cólica.
 
->> ORIENTAÇÕES & SINAIS DE ALARME DE RETORNO IMEDIATO:
+# ORIENTAÇÕES / SINAIS DE ALARME:
 - Urinar em filtro de café ou peneira fina para capturar o cálculo caso seja expelido (para posterior análise bioquímica).
 - Ingesta hídrica moderada de cerca de 2 litros/dia após a crise álgica.
 - ALERTA ABSOLUTO: Retornar à UPA IMEDIATAMENTE se apresentar febre (Tax >= 37,8 °C), tremores de frio, vômitos que impeçam tomar água ou parada completa de eliminação de urina (anúria).
@@ -87,42 +87,22 @@ Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
 
 ---
 
-## 💊 Receita Domiciliar / Alta (Pronta para Copiar)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-> **Como usar:** Clique no botão **`💊 Receita`** no topo do card ou na aba **Receita** para copiar apenas a prescrição de alta pronta para impressão/entrega ao paciente.
-
-```text
-USO ORAL (CONTROLE DE DOR + TERAPIA MÉDICA EXPULSIVA):
-
-1. Cetoprofeno 100 mg (ou Diclofenaco 50 mg) ------------------- 10 comprimidos
-   Tomar 01 comprimido por via oral de 12/12 horas, após as refeições, por 3 a 5 dias (apenas se função renal normal e ausência de úlcera gástrica).
-
-2. Dipirona Sódica 1 g ----------------------------------------- 20 comprimidos
-   Tomar 01 comprimido por via oral de 6/6 horas se dor lombar (pode intercalar com o anti-inflamatório).
-
-3. Cloridrato de Tansulosina 0,4 mg ---------------------------- 14 cápsulas
-   Tomar 01 cápsula por via oral uma vez ao dia, 30 minutos após a mesma refeição, por até 14 dias (facilita a expulsão de cálculos ureterais de 5 a 10 mm). Atenção: levantar-se devagar pelo risco de tontura postural.
-
-4. Ondansetrona 4 mg (ou 8 mg) --------------------------------- 10 comprimidos
-   Tomar 01 comprimido por via oral de 8/8 horas se náuseas ou vômitos.
-
-SINAIS DE ALERTA (RETORNO IMEDIATO):
-- Urinar em recipiente claro ou peneira para identificar a eliminação do cálculo.
-- Retornar imediatamente ao Pronto-Socorro se: FEBRE (> 37,8°C) ou calafrios (risco de pielonefrite obstrutiva — emergência urológica), parada de eliminação de urina (anúria) ou dor intratável.
-```
-
----
-
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
-
-### 🧠 1. Por Que o AINE É Superior à Morfina na Cólica Nefrítica e Por Que Evitar a "Hiper-Hidratação"?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que o AINE É Superior à Morfina na Cólica Nefrítica e Por Que Evitar a "Hiper-Hidratação"?**
 A dor lancinante da cólica nefrítica não vem do "arranhão" do cálculo no ureter, mas da **hiperpressão aguda da cápsula renal** secundária à síntese local de **Prostaglandina E₂ (PGE₂)**, que vasodilata a arteríola aferente (aumentando a filtração glomerular contra um ureter obstruído) e induz espasmo da musculatura lisa ureteral. Por isso, os **AINEs (Cetoprofeno 100 mg IV ou Diclofenaco 75 mg IM)** atuam diretamente na causa fisiopatológica — reduzindo o fluxo plasmático renal e a pressão pielocalicial — sendo mais eficazes que os opioides e sem causar vômitos. Pelo mesmo motivo, **infundir grandes volumes de soro ("forçar diurese") durante a crise aguda é proscrito**, pois distende ainda mais a pelve renal obstruída e piora a dor.
 
-### 💊 2. Terapia Médica Expulsiva (Tansulosina) e o Papel da TC Helicoidal Sem Contraste
-O exame padrão-ouro para litíase ureteral é a **TC de Abdome e Pelve sem contraste (baixa dose)**, com sensibilidade e especificidade > 97%, definindo tamanho exato (em mm), densidade (Unidades Hounsfield) e topografia (JUP, terço médio ou JUV). Cálculos **≤ 5 mm** têm taxa de eliminação espontânea > 75%; para cálculos ureterais distais de **5 a 10 mm**, o bloqueador alfa-1 adrenérgico seletivo (**Tansulosina 0,4 mg/dia**) relaxa a musculatura lisa da junção ureterovesical, acelerando a expulsão e reduzindo novas idas ao pronto-socorro.
-
-### 🧭 3. Os 3 Sinais de Alarme Absolutos que Transformam a Cólica Renal em Emergência Cirúrgica
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Os 3 Sinais de Alarme Absolutos que Transformam a Cólica Renal em Emergência Cirúrgica**
 A cólica nefrítica deixa de ser manejável clinicamente e exige **avaliação urológica de urgência para desobstrução (Duplo J)** diante de qualquer um dos três critérios:
 1. **Infecção associada (Febre, calafrios, piúria maciça ou leucocitose com desvio)**: risco iminente de choque séptico urológico.
 2. **Anúria ou Injúria Renal Aguda pós-renal**: obstrução em rim único anatômico/funcional ou ureterolitíase bilateral.
 3. **Dor refratária** às classes analgésicas escalonadas (AINE + Dipirona + Opioide) ou vômitos incoercíveis.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Terapia Médica Expulsiva (Tansulosina) e o Papel da TC Helicoidal Sem Contraste**
+O exame padrão-ouro para litíase ureteral é a **TC de Abdome e Pelve sem contraste (baixa dose)**, com sensibilidade e especificidade > 97%, definindo tamanho exato (em mm), densidade (Unidades Hounsfield) e topografia (JUP, terço médio ou JUV). Cálculos **≤ 5 mm** têm taxa de eliminação espontânea > 75%; para cálculos ureterais distais de **5 a 10 mm**, o bloqueador alfa-1 adrenérgico seletivo (**Tansulosina 0,4 mg/dia**) relaxa a musculatura lisa da junção ureterovesical, acelerando a expulsão e reduzindo novas idas ao pronto-socorro.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

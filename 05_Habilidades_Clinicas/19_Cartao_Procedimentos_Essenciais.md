@@ -66,7 +66,7 @@
 DESCRIÇÃO DE PROCEDIMENTO INVASIVO ([PARACENTESE / TORACOCENTESE / PUNÇÃO LOMBAR]):
 1. Indicação clínica: [Diagnóstica / Terapêutica aliviadora por ascite tensa / derrame pleural]. Consentimento informado obtido com paciente/familiar.
 2. Posicionamento e Marcação: Paciente posicionado adequadamente. Ponto anatômico identificado em [FIE na junção do 1/3 externo com 1/3 médio da linha umbigo-EIAS / borda superior da costela no Xº EIC posterior / espaço L3-L4] [com auxílio de POCUS à beira do leito].
-3. Assepsia e Anestesia: Antissepsia ampla com clorexidina alcoólica 0,5%, colocação de campos estéreis e paramentação completa. Botão anestésico por planos com Lidocaína 2% sem vasoconstritor ([5] mL).
+3. Assepsia e Anestesia: Antissepsia ampla com clorexidina alcoólica 0,5%, colocação de campos estéreis e paramentação completa. Botão anestésico por planos com Lidocaína 2% sem vasoconstritor ([ ] mL).
 4. Execução: Punção realizada [pela técnica em Z / na borda superior da costela inferior] com cateter nº [14G/16G/22G], com retorno imediato de líquido de aspecto [amarelo-citrino límpido / turvo / sero-hemático], sem acidentes de punção.
 5. Amostras e Volume: Coletadas amostras para análise bioquímica, citometria global e diferencial, Gram e culturas. Drenado volume total de [ ] mL sem intercorrências hemodinâmicas ou respiratórias. [Se paracentese > 5L: Prescrita reposição de Albumina Humana 20% 8g por litro retirado].
 6. Finalização: Retirado dispositivo, realizado curativo oclusivo compressivo estéril. Paciente mantém sinais vitais estáveis pós-procedimento.
@@ -82,23 +82,23 @@ DESCRIÇÃO DE PROCEDIMENTO INVASIVO ([PARACENTESE / TORACOCENTESE / PUNÇÃO LO
 
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Preparo Universal, Anestesia & Descarte
-- [ ] Fiz Time Out (paciente, procedimento, lado, coagulograma/plaquetas e alergia) e expliquei ao paciente
-- [ ] Separei 100% dos materiais da bandeja e ajustei altura da maca/iluminação antes de calçar luva estéril
-- [ ] Respeitei secagem da antissepsia, teto de lidocaína e sempre aspirei antes de injetar anestésico
-- [ ] Descartei todos os perfurocortantes no Descarpack sem reencapar agulha
+- [ ] [CRÍTICO] Fiz Time Out (paciente, procedimento, lado, coagulograma/plaquetas e alergia) e expliquei ao paciente
+- [ ] [CRÍTICO] Separei 100% dos materiais da bandeja e ajustei altura da maca/iluminação antes de calçar luva estéril
+- [ ] [CRÍTICO] Respeitei secagem da antissepsia, teto de lidocaína e sempre aspirei antes de injetar anestésico
+- [ ] [CRÍTICO] Descartei todos os perfurocortantes no Descarpack sem reencapar agulha
 
 ### 2. Sutura, SVD & Gasometria *(execução específica)*
-- [ ] Na sutura: testei neurovascular/tendão antes, irriguei com SF sob pressão, deixei bordas evertidas e chequei `dT`
-- [ ] Na SVD: usei água destilada no balonete, entrei até a bifurcação (`Y`) e confirmei urina ANTES de insuflar
+- [ ] [CRÍTICO] Na sutura: testei neurovascular/tendão antes, irriguei com SF sob pressão, deixei bordas evertidas e chequei `dT`
+- [ ] [CRÍTICO] Na SVD: usei água destilada no balonete, entrei até a bifurcação (`Y`) e confirmei urina ANTES de insuflar
 - [ ] Na SVD masculina: apliquei lidocaína gel com pausa 3–5 min, reposicionei o prepúcio e fixei no hipogástrio
 - [ ] Na gasometria arterial: retirei ar/excesso de heparina e comprimi diretamente por ≥ 5 min no relógio
 
 ### 3. Procedimentos Invasivos Maiores *(Acesso Central / Paracentese / Toracocentese / PL)*
-- [ ] No Acesso Central: usei paramentação máxima/USG, nunca soltei nem forcei o fio-guia e confirmei RX antes de DVA
+- [ ] [CRÍTICO] No Acesso Central: usei paramentação máxima/USG, nunca soltei nem forcei o fio-guia e confirmei RX antes de DVA
 - [ ] Na Paracentese: esvaziei bexiga, usei QIE/USG + `Z-track` e repus albumina (6–8 g/L) se drenagem > 5 L
 - [ ] Na Toracocentese: puncionei na borda superior da costela inferior em sistema fechado respeitando limite ≤ 1.500 mL
 - [ ] Na Punção Lombar: excluí risco de herniação/TC prévia, alinhei coluna, orientei bisel paralelo e recoloquei mandril ao retirar
 
 ### 5. Upgrade Preceptor V2.0 (GASA, Critérios de Light & Hasbun)
-- [ ] Na paracentese (FIE em Z-track), calculei o GASA (≥ 1,1 = hipertensão portal), rastreei PBE (PMN ≥ 250) + Critérios de Runyon e prescrevi Albumina se > 5L ou PBE
-- [ ] Na toracocentese (borda SUPERIOR da costela inferior, máx 1,5L), apliquei Critérios de Light e pH < 7,20; na PL, chequei Critérios de Hasbun para TC prévia sem atrasar ATB
+- [ ] [CRÍTICO] Na paracentese (FIE em Z-track), calculei o GASA (≥ 1,1 = hipertensão portal), rastreei PBE (PMN ≥ 250) + Critérios de Runyon e prescrevi Albumina se > 5L ou PBE
+- [ ] [CRÍTICO] Na toracocentese (borda SUPERIOR da costela inferior, máx 1,5L), apliquei Critérios de Light e pH < 7,20; na PL, chequei Critérios de Hasbun para TC prévia sem atrasar ATB

@@ -1,14 +1,19 @@
 # Atendimento de Emergência - Bradiarritmias Sintomáticas, BAV de Alto Grau e Marcapasso Transcutâneo
+**Categoria:** Emergencias Graves e Procedimentos  
+**Atalho:** `;bradi`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** I44.2 / I49.5  
 
-**Atalho:** `;bradi` | **Categoria:** Emergencias Graves e Procedimentos
+---
 
-## SNIPPET PEP
+## 📋 Snippet para Prontuário Eletrônico (PEP)
+
 ```text
 ATENDIMENTO DE EMERGÊNCIA — BRADIARRITMIA SINTOMÁTICA & BLOQUEIO ATRIOVENTRICULAR (ACLS)
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 
 APRESENTAÇÃO CLÍNICA & SINAIS DE INSTABILIDADE (5 CRITÉRIOS DO ACLS):
 - Queixa Principal: Paciente admitido na Sala Vermelha por [síncope / pré-síncope e tontura intensa / dispneia aguda / dor torácica isquêmica / rebaixamento do nível de consciência] associado a FC < 50 bpm.
@@ -16,7 +21,7 @@ APRESENTAÇÃO CLÍNICA & SINAIS DE INSTABILIDADE (5 CRITÉRIOS DO ACLS):
 - Causas Reversíveis Investigadas (Hs e Ts / Drogas): Uso de [Betabloqueador / Bloqueador de Canal de Cálcio (Verapamil/Diltiazem) / Digoxina / Amiodarona] | [Hipercalemia / Hipotireoidismo grave / IAM de Parede Inferior (CD) / Hipóxia].
 
 EXAME FÍSICO & MONITORIZAÇÃO MULTIPARAMÉTRICA:
-- Sinais Vitais: PA: [80x50] mmHg | FC: [34] bpm | FR: [22] irpm | SpO2: [93]% | Glicemia Capilar: [110] mg/dL.
+- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Glicemia Capilar: [ ] mg/dL.
 - Exame Cardiovascular: Pulso arterial lento, presença de [ondas "a" em canhão no pulso venoso jugular — dissociação atrioventricular do BAVT!], ausculta com B1 de intensidade variável e pulmões [limpos / com estertores crepitantes bibasais].
 
 LAUDO DO ECG DE 12 DERIVAÇÕES:
@@ -31,14 +36,27 @@ LAUDO DO ECG DE 12 DERIVAÇÕES:
      * Adrenalina: 2 a 10 mcg/min IV em bomba de infusão (diluir 2 ampolas = 2 mg em 250 mL SF 0,9% → 8 mcg/mL → correr 15 a 75 mL/h).
 3. Instalação do Marcapasso Transcutâneo (MPTC — Passo a Passo):
    - Analgesia e Sedação prévia se paciente consciente: Fentanil 50 a 100 mcg IV lento + Midazolam 2 a 5 mg IV (ou Etomidato/Cetamina em baixas doses).
-   - Ajuste do MPTC: Ligar em modo Fixo/Demanda, programar Frequência Cardíaca alvo em [60 a 70] bpm e aumentar progressivamente a corrente elétrica (miliamperagem — mA) a partir de 30 mA até obter **Captura Elétrica** (espícula seguida de complexo QRS alargado e onda T Discordante) + confirmar **Captura Mecânica** (palpação obrigatória do pulso femoral ou radial direito sincronizado com o monitor; manter saída 5 a 10 mA acima do limiar de captura!).
+   - Ajuste do MPTC: Ligar em modo Fixo/Demanda, programar Frequência Cardíaca alvo em [60 a 70] bpm e aumentar progressivamente a corrente elétrica (miliamperagem — mA) a partir de 30 mA até obter Captura Elétrica (espícula seguida de complexo QRS alargado e onda T Discordante) + confirmar Captura Mecânica (palpação obrigatória do pulso femoral ou radial direito sincronizado com o monitor; manter saída 5 a 10 mA acima do limiar de captura!).
 4. Tratamento de Causas Específicas e Definitivas:
    - Se Hipercalemia grave: Gluconato de Cálcio 10% 10 a 20 mL IV lento + solução polarizante.
    - Se Intoxicação por Betabloqueador / BCC: Glucagon 3 a 5 mg IV + Gluconato de Cálcio + Insulina em alta dose com glicose.
    - Solicitar vaga de UTI Cardiológica / Hemodinâmica para passagem de Marcapasso Transvenoso Provisório (MPTV) e posterior Marcapasso Definitivo.
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
-### Diferenciação Anatômica e Prognóstica: BAV Nodal vs. Infranodal (Mobitz II e BAVT)
+---
+
+## 🎯 Diretrizes & Raciocínio Clínico
+
+### 🧠 1. Fisiopatologia & Porquê
+**Diferenciação Anatômica e Prognóstica: BAV Nodal vs. Infranodal (Mobitz II e BAVT)**
 - **Por que a Atropina funciona no BAV Mobitz I, mas falha no Mobitz II e no BAVT de QRS largo:** O BAV de 1º grau e o BAV de 2º grau **Mobitz I (Wenckebach)** ocorrem quase sempre no **nó AV (supranodal)**, que é ricamente inervado pelo nervo vago — por isso respondem bem ao bloqueio vagal da Atropina. Já o **BAV de 2º grau Mobitz II** e o **BAVT com escape de QRS largo** localizam-se no **sistema His-Purkinje (infranodal)**, onde a Atropina não atua; esses bloqueios têm alto risco de degenerar subitamente para assistolia ou Torsades de Pointes e exigem **Marcapasso Transcutâneo / Transvenoso imediato**.
 - **Por que nunca checar a captura mecânica do Marcapasso Transcutâneo pelo pulso carotídeo:** As contrações da musculatura peitoral e cervical induzidas pelo estímulo elétrico do MPTC simulam batimentos no pescoço; a confirmação da captura mecânica real exige palpação do **pulso femoral** ou leitura da curva de oximetria de pulso/PAI.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

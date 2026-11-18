@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Editável do Cockpit Clínico — Árvore & Interações</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #111a2e;
+      --elevated: #17233c;
+      --inset: #090e1a;
+      --border: #253554;
+      --text: #e6edf7;
+      --muted: #93a4bf;
+      --accent: #2dd4bf;
+      --info: #38bdf8;
+      --warn: #fbbf24;
+      --danger: #f87171;
+      --purple: #a78bfa;
+      --radius: 10px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    html.light {
+      --bg: #e9eef5;
+      --surface: #f8fafc;
+      --elevated: #ffffff;
+      --inset: #edf2f7;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0f766e;
+      --info: #0369a1;
+      --warn: #b45309;
+      --danger: #b91c1c;
+      --purple: #6d28d9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .brand { display: flex; flex-direction: column; gap: 2px; }
+    .brand h1 { margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+    .brand small { color: var(--muted); font-size: 0.76rem; }
+    .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    button, select, input, textarea {
+      font-family: inherit;
+      color: var(--text);
+    }
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--elevated);
+      padding: 6px 11px;
+      border-radius: 7px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: 0.15s;
+    }
+    .btn:hover { border-color: var(--accent); }
+    .btn-primary { background: var(--accent); color: #052e2b; border-color: transparent; }
+    html.light .btn-primary { color: #ffffff; }
+    .btn-danger { border-color: rgba(248,113,113,0.45); color: var(--danger); }
+    .btn-sm { padding: 4px 8px; font-size: 0.72rem; }
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 0.95fr;
+      min-height: 0;
+    }
+    @media (max-width: 1100px) {
+      body { height: auto; overflow: auto; }
+      main { grid-template-columns: 1fr; }
+    }
+    .pane {
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      background: var(--surface);
+    }
+    .pane:last-child { border-right: none; }
+    .pane-head {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      background: var(--elevated);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pane-head h2 { margin: 0; font-size: 0.84rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .pane-body {
+      padding: 12px 14px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .search-inp, .field-inp, .field-sel, .field-ta {
+      width: 100%;
+      padding: 7px 10px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      background: var(--inset);
+      font-size: 0.82rem;
+    }
+    .field-ta { min-height: 68px; resize: vertical; line-height: 1.45; }
+    .tree-node {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--elevated);
+      padding: 8px 10px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .tree-node:hover { border-color: var(--info); }
+    .tree-node.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    .tree-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .tree-left { display: flex; align-items: center; gap: 6px; min-width: 0; }
+    .tree-title { font-weight: 700; font-size: 0.84rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .tree-sub { font-size: 0.74rem; color: var(--muted); margin-top: 3px; }
+    .tree-children {
+      margin-left: 18px;
+      padding-left: 10px;
+      border-left: 1px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .badge {
+      font-size: 0.66rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 99px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .st-keep { background: rgba(45,212,191,0.12); color: var(--accent); border-color: rgba(45,212,191,0.3); }
+    .st-edit { background: rgba(56,189,248,0.14); color: var(--info); border-color: rgba(56,189,248,0.35); }
+    .st-move { background: rgba(251,191,36,0.14); color: var(--warn); border-color: rgba(251,191,36,0.35); }
+    .st-merge { background: rgba(167,139,250,0.14); color: var(--purple); border-color: rgba(167,139,250,0.35); }
+    .st-remove { background: rgba(248,113,113,0.14); color: var(--danger); border-color: rgba(248,113,113,0.35); text-decoration: line-through; }
+    .st-new { background: rgba(16,185,129,0.18); color: #34d399; border-color: rgba(16,185,129,0.4); }
+    .tree-node.is-removed .tree-title { text-decoration: line-through; opacity: 0.65; }
+    .card {
+      background: var(--elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    label.lbl {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .edge-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--inset);
+      padding: 8px 10px;
+      font-size: 0.78rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .edge-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-weight: 700; }
+    .edge-arrow { color: var(--accent); font-family: var(--mono); }
+    .mono-chip {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: var(--inset);
+      border: 1px solid var(--border);
+      color: var(--info);
+      display: inline-block;
+    }
+    .layer-legend { display: flex; gap: 6px; flex-wrap: wrap; font-size: 0.72rem; color: var(--muted); }
+    .toast {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      background: var(--elevated);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      z-index: 99;
+    }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>🗺️ Mapa Interativo &amp; Editável do Cockpit Clínico</h1>
+      <small>Clique em qualquer módulo para entender o que ele faz, com quem ele conversa, e reorganize o programa do seu jeito.</small>
+    </div>
+    <div class="toolbar">
+      <button class="btn" onclick="toggleTheme()">☀️ / 🌙 Tema</button>
+      <button class="btn" onclick="addChildNode()">➕ Novo Filho</button>
+      <button class="btn" onclick="exportMarkdown()">📋 Copiar Plano (.md)</button>
+      <button class="btn btn-primary" onclick="downloadMarkdown()">⬇️ Baixar Plano (.md)</button>
+      <button class="btn btn-danger" onclick="resetToActualArchitecture()">↺ Restaurar Mapa Original</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- COLUNA 1: ÁRVORE HIERÁRQUICA -->
+    <section class="pane">
+      <div class="pane-head">
+        <h2>1. Árvore do Cockpit (Clique para inspecionar/editar)</h2>
+        <div class="layer-legend">
+          <span>🟢 Manter</span>
+          <span>🔵 Ajustar</span>
+          <span>🟡 Mover</span>
+          <span>🟣 Fundir</span>
+          <span>🔴 Remover</span>
+        </div>
+      </div>
+      <div class="pane-body">
+        <div style="display:flex; gap:8px;">
+          <input id="treeFilter" class="search-inp" type="text" placeholder="Filtrar árvore por nome, arquivo ou função..." oninput="renderTree()">
+          <select id="statusFilter" class="field-sel" style="width:150px;" onchange="renderTree()">
+            <option value="all">Todos status</option>
+            <option value="keep">✅ Manter</option>
+            <option value="edit">✏️ Ajustar</option>
+            <option value="move">🔀 Mover</option>
+            <option value="merge">🧩 Fundir</option>
+            <option value="remove">🗑️ Remover</option>
+            <option value="new">🆕 Novo</option>
+          </select>
+        </div>
+        <div id="treeContainer" style="display:flex; flex-direction:column; gap:8px;"></div>
+      </div>
+    </section>
+
+    <!-- COLUNA 2: EDITOR DO ITEM SELECIONADO -->
+    <section class="pane">
+      <div class="pane-head">
+        <h2>2. O que é &amp; Como Quero Reestruturar</h2>
+        <div style="display:flex; gap:6px;">
+          <button class="btn btn-sm" onclick="moveSelectedOrder(-1)" title="Subir na lista">↑ Subir</button>
+          <button class="btn btn-sm" onclick="moveSelectedOrder(1)" title="Descer na lista">↓ Descer</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteSelectedCustomNode()">🗑️ Excluir</button>
+        </div>
+      </div>
+      <div class="pane-body" id="inspectorPane"></div>
+    </section>
+
+    <!-- COLUNA 3: MAPA DE INTERAÇÕES E PREVIEW DO PLANO -->
+    <section class="pane">
+      <div class="pane-head">
+        <h2>3. Conexões (Como tudo interage)</h2>
+        <button class="btn btn-sm" onclick="toggleAddEdgeForm()">➕ Nova Conexão</button>
+      </div>
+      <div class="pane-body">
+        <div id="newEdgeBox" class="card" style="display:none;">
+          <strong style="font-size:0.8rem;">Criar nova interação entre 2 módulos</strong>
+          <label class="lbl">Origem (Quando eu agir aqui...)
+            <select id="edgeFromSel" class="field-sel"></select>
+          </label>
+          <label class="lbl">Ação / Gatilho
+            <input id="edgeActionInp" class="field-inp" placeholder="Ex.: Ao clicar em 'Finalizar Atendimento'">
+          </label>
+          <label class="lbl">Destino (...muda ou abre isto)
+            <select id="edgeToSel" class="field-sel"></select>
+          </label>
+          <div style="display:flex; gap:6px; justify-content:flex-end;">
+            <button class="btn btn-sm" onclick="toggleAddEdgeForm(false)">Cancelar</button>
+            <button class="btn btn-sm btn-primary" onclick="createNewEdge()">Salvar Conexão</button>
+          </div>
+        </div>
+
+        <div id="edgesContainer" style="display:flex; flex-direction:column; gap:8px;"></div>
+
+        <div class="card" style="margin-top:8px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong style="font-size:0.8rem;">📄 Prévia do Plano de Mudanças (.md)</strong>
+            <button class="btn btn-sm" onclick="exportMarkdown()">Copiar</button>
+          </div>
+          <textarea id="planPreviewTa" class="field-ta" style="min-height:170px; font-family:var(--mono); font-size:0.72rem;" readonly></textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    const STORAGE_KEY = 'pep_cockpit_editable_map_v1';
+
+    const STATUS_META = {
+      keep:   { label: 'Manter',  cls: 'st-keep',   tag: '[MANTER]' },
+      edit:   { label: 'Ajustar', cls: 'st-edit',   tag: '[AJUSTAR]' },
+      move:   { label: 'Mover',   cls: 'st-move',   tag: '[MOVER]' },
+      merge:  { label: 'Fundir',  cls: 'st-merge',  tag: '[FUNDIR]' },
+      remove: { label: 'Remover', cls: 'st-remove', tag: '[REMOVER]' },
+      new:    { label: 'Novo',    cls: 'st-new',    tag: '[NOVO]' }
+    };
+
+    const INITIAL_DATA = {
+      nodes: [
+        {
+          id: 'root-fontes', parentId: null, kind: 'Camada 1 · Fontes & Build',
+          title: '1. Arquivos Fonte & Compilação Automática',
+          files: 'scripts/build_snippets.py · package.json · vite.config.js',
+          desc: 'Tudo o que você edita em Markdown (.md) ou TypeScript (.ts) passa por scripts de build que alimentam o index.html e geram a versão PWA publicada no GitHub Pages.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'src-md-pep', parentId: 'root-fontes', kind: 'Conteúdo Clínico',
+          title: 'Protocolos Clínicos PEP (.md) — 88 arquivos',
+          files: '01_Ginecologia_Obstetricia (19) · 02_Pronto_Atendimento_UPA (47) · 03_Enfermaria_Internacao (9) · 04_Pediatria_* (13)',
+          desc: 'Cada arquivo .md tem Cabeçalho (Título, ;gatilho, Pasta), Corpo PEP com opções [A / B] e blocos >> Diretriz / Conduta / Receita.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'src-md-hab', parentId: 'root-fontes', kind: 'Habilidades Clínicas',
+          title: 'Cartões Pré-Porta 30s (.md) — 22 arquivos',
+          files: '05_Habilidades_Clinicas/*.md',
+          desc: '22 estações com 7 seções padronizadas: O que não esquecer, Mnemônico, Coreografia, Red Flags, Prontuário, Armadilhas e Checklist.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'src-ts-engine', parentId: 'root-fontes', kind: 'Motor Lógico (.ts)',
+          title: 'Motores TypeScript & Bases Estáticas',
+          files: 'src/engine/ (personalizar, search, workstation, calculadoras, central6ano, diretrizes) · src/data/ (remume 252, teoria 7)',
+          desc: 'Código tipado empacotado em public/clinico-engine.js (via rolldown) e também importado pelo Vite no deploy.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'root-shell', parentId: null, kind: 'Camada 2 · Moldura',
+          title: '2. Moldura Global (Sidebar + Modais + Memória)',
+          files: 'index.html (#wsSidebar, #mobileBottomBar, overlays)',
+          desc: 'Estrutura fixa ao redor das 7 abas: menu esquerdo, filtro de especialidades, atalhos globais de teclado, busca Ctrl+K e persistência em localStorage.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'mod-cmd', parentId: 'root-shell', kind: 'Modal Global',
+          title: 'Spotlight Clínico (Ctrl+K)',
+          files: '#cmdOverlay · updateCmdResults() · activateCmdItem()',
+          desc: 'Busca única sobre 88 PEP, 22 Pré-Porta, 252 REMUME, 7 Teorias, 4 Ferramentas e 12 manobras LR+/LR-.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'mod-remume', parentId: 'root-shell', kind: 'Modal Global',
+          title: 'Modal REMUME (252) & Calculadoras UBS/UPA',
+          files: '#remumeCalcOverlay · src/data/remume.ts · src/engine/calculadoras.ts',
+          desc: 'Lista pesquisável de 252 fármacos municipais + CKD-EPI 2021, Cockcroft-Gault, IG/DPP (DUM/USG), IMC/Na+/Ca++, CURB-65, Centor, Wells TVP e CHA2DS2-VASc.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'store-ls', parentId: 'root-shell', kind: 'Persistência',
+          title: 'Banco Local do Navegador (localStorage)',
+          files: 'mq_central_6ano_state_v1 · hab_checklist_v1:* · mq_prescription_cart_v1 · ws_col_widths_v1 · mq_clinical_theme_v1',
+          desc: 'Guarda rotina 6º ano, checkboxes dos 22 Pré-Porta, carrinho de prescrição, tema claro/escuro, largura das colunas e logbook.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'root-abas', parentId: null, kind: 'Camada 3 · Interface Principal',
+          title: '3. As 7 Abas do Programa (Workspace)',
+          files: '#wsMainSectionNav · switchAppSection()',
+          desc: 'Cada botão do menu esquerdo ativa uma destas 7 telas. Nas abas PEP e Pré-Porta aparece a lista central + Cockpit direito; nas outras 5 abre uma tela larga dedicada.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'aba-hoje', parentId: 'root-abas', kind: 'Aba 1',
+          title: '📅 Hoje (6º Ano)',
+          files: '#secPaneHoje · src/engine/central6ano.ts',
+          desc: 'Painel do dia: cruza Rodízio Atual × Marcha (1..4) × Dia da Semana para montar timeline de blocos, metas 70/30 de questões MedQuest, cronômetro, preview de pontos cegos e prompts de IA.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'aba-pep', parentId: 'root-abas', kind: 'Aba 2',
+          title: '🩺 Protocolos PEP (88)',
+          files: '.ws-list-pane + #drawerPanel · src/engine/personalizar.ts',
+          desc: 'Lista filtrável dos 88 protocolos com gravidade e cópia rápida + Cockpit direito com 6 sub-abas.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'pep-sub-snippet', parentId: 'aba-pep', kind: 'Sub-aba PEP',
+          title: 'Snippet Completo & Conduta & Receita & Diretrizes',
+          files: '#tabPepBtn · #tabCondutaBtn · #tabRecBtn · #tabGuiaBtn · powerActions (1..5)',
+          desc: 'Visualização limpa e botões de cópia por bloco (Snippet, Conduta, Receita, Evolução, Orientações).',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'pep-sub-personalizar', parentId: 'aba-pep', kind: 'Sub-aba PEP',
+          title: 'Personalizar + Doses Pediátricas + Edição Livre',
+          files: '#tabInteractiveBtn · renderInteractive() · applyWeightDosesToPrescription()',
+          desc: 'Pílulas clicáveis [A / B], caixas de texto inline, cálculo automático por peso em Pediatria/DUM-IG/IMC e modo Edição Livre (Alt+E) com Ctrl+Z.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'pep-sub-cart', parentId: 'aba-pep', kind: 'Sub-aba PEP',
+          title: '🛒 Carrinho Modular de Prescrição',
+          files: '#tabCartBtn · #drawerCartPanel · mq_prescription_cart_v1',
+          desc: 'Soma medicamentos de vários protocolos ou injeção rápida num único receituário final copiável.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'aba-preporta', parentId: 'root-abas', kind: 'Aba 3',
+          title: '🧠 Pré-Porta 30s (22)',
+          files: 'activeModule="hab" · #habPrePanel · #habChecklistPanel · #habPitfallsPanel',
+          desc: '22 cartões com Âncora Mental + roteiro 30s, Checklist Pós-Atendimento (salva progresso local e envia falhas para o Logbook) e Armadilhas Fatais.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'aba-teoria', parentId: 'root-abas', kind: 'Aba 4',
+          title: '📚 Formação Teórica (7 Módulos)',
+          files: '#secPaneTeoria · src/data/formacao_teorica_data.ts',
+          desc: 'Apostilas teóricas em leitura confortável (72ch) com status Não iniciado/Estudado/Dominado, tabelas, LaTeX e links para os cartões Pré-Porta e prompts de IA.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'aba-ferramentas', parentId: 'root-abas', kind: 'Aba 5',
+          title: '🧪 Ferramentas & Exames',
+          files: '#secPaneFerramentas · fPaneGaso · fPaneLr · fPaneTravas · fPaneIntercorrencias',
+          desc: 'Reúne 4 sub-abas clínicas + atalhos para o modal REMUME/Calculadoras.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'ferr-gaso', parentId: 'aba-ferramentas', kind: 'Sub-aba Ferramentas',
+          title: '🩸 Gasometria em 5 Passos + Winter + AG + Δ/Δ',
+          files: 'calcGasometria5Passos() · computeGaso5PassosLocal()',
+          desc: 'Calcula distúrbio primário, Winter, Ânion Gap corrigido pela albumina, Delta-Delta e gera frase pronta p/ prontuário.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'ferr-lr', parentId: 'aba-ferramentas', kind: 'Sub-aba Ferramentas',
+          title: '🎯 Tabela LR+/LR- & Simulador Bayesiano',
+          files: 'TABELA_LR_CLINICA_DATA · renderLrTableUI() · runBayesCalcUI()',
+          desc: '12 manobras com busca multi-palavra; clicar em LR+ ou LR- preenche e recalcula a probabilidade pós-teste na hora.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'ferr-travas-mad', parentId: 'aba-ferramentas', kind: 'Sub-aba Ferramentas',
+          title: '🛡️ 7 Travas (A-R-G-I-V-P-O) & 🚨 6 Intercorrências',
+          files: 'SETE_TRAVAS_DATA · SEIS_INTERCORRENCIAS_DATA',
+          desc: 'Checklist de prescrição segura por paciente + guia rápido das 6 intercorrências de madrugada.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'aba-logbook', parentId: 'root-abas', kind: 'Aba 6',
+          title: '📓 Logbook & Pontos Cegos',
+          files: '#secPaneLogbook · #ensaioMentalOverlay',
+          desc: 'Ensaio Mental (13 procedimentos + Timer 3 min), Metas Motoras (12 procedimentos ligados ao rodízio atual) e Diário de Pontos Cegos com filtros, vínculos e exportação .md.',
+          status: 'keep', targetParentNote: '', note: ''
+        },
+        {
+          id: 'aba-config', parentId: 'root-abas', kind: 'Aba 7',
+          title: '⚙️ Config & Backup',
+          files: '#secPaneConfig · exportCentral6AnoBackupJson() · importCentral6AnoBackupJson()',
+          desc: 'Tema Claro/Escuro, tela inicial (Hoje ou PEP), layout (Zen, Sidebar, Colunas), Backup v2 (.json / texto) e Reset de dados locais.',
+          status: 'keep', targetParentNote: '', note: ''
+        }
+      ],
+      edges: [
+        { id: 'e1', from: 'src-md-pep', action: 'Compilados via build_snippets.py para allData', to: 'aba-pep', status: 'keep', note: '' },
+        { id: 'e2', from: 'src-md-hab', action: 'Compilados via build_snippets.py para allData (mod_id="hab")', to: 'aba-preporta', status: 'keep', note: '' },
+        { id: 'e3', from: 'aba-hoje', action: 'Passa Rodízio Ativo para destacar/filtrar metas', to: 'aba-logbook', status: 'keep', note: '' },
+        { id: 'e4', from: 'aba-hoje', action: 'Deep-links da rotina diária saltam para qualquer seção', to: 'aba-teoria', status: 'keep', note: '' },
+        { id: 'e5', from: 'aba-preporta', action: 'Botão "Ler Formação Teórica" abre o módulo equivalente', to: 'aba-teoria', status: 'keep', note: '' },
+        { id: 'e6', from: 'aba-teoria', action: 'Chips "Cartões Pré-Porta" abrem o checklist do cartão', to: 'aba-preporta', status: 'keep', note: '' },
+        { id: 'e7', from: 'aba-preporta', action: 'Botão "Salvar Pontos Cegos" grava itens esquecidos', to: 'aba-logbook', status: 'keep', note: '' },
+        { id: 'e8', from: 'aba-logbook', action: 'Últimos pontos cegos alimentam o tile de resumo', to: 'aba-hoje', status: 'keep', note: '' },
+        { id: 'e9', from: 'pep-sub-personalizar', action: 'Peso informado preenche doses pediátricas e ecoa nos campos', to: 'pep-sub-snippet', status: 'keep', note: '' },
+        { id: 'e10', from: 'aba-pep', action: 'Botão "+ Carrinho" envia itens de prescrição', to: 'pep-sub-cart', status: 'keep', note: '' },
+        { id: 'e11', from: 'mod-cmd', action: 'Ctrl+K busca e abre protocolo, cartão, teoria, ferramenta ou copia REMUME', to: 'root-abas', status: 'keep', note: '' },
+        { id: 'e12', from: 'aba-config', action: 'Backup v2 exporta e restaura todo estado', to: 'store-ls', status: 'keep', note: '' }
+      ]
+    };
+
+    let state = loadState();
+    let selectedId = state.nodes[0]?.id || null;
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && Array.isArray(parsed.nodes) && Array.isArray(parsed.edges)) {
+            return parsed;
+          }
+        }
+      } catch (_) {}
+      return JSON.parse(JSON.stringify(INITIAL_DATA));
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (_) {}
+      renderPlanPreview();
+    }
+
+    function showToast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), 2200);
+    }
+
+    function esc(s) {
+      return String(s ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('light');
+    }
+
+    function matchesFilter(node, q, stFilter) {
+      const statusOk = stFilter === 'all' || node.status === stFilter;
+      if (!q) return statusOk;
+      const hay = `${node.title} ${node.kind} ${node.files} ${node.desc} ${node.note}`.toLowerCase();
+      return statusOk && hay.includes(q);
+    }
+
+    function hasMatchingDescendant(nodeId, q, stFilter) {
+      const children = state.nodes.filter(n => n.parentId === nodeId);
+      return children.some(ch => matchesFilter(ch, q, stFilter) || hasMatchingDescendant(ch.id, q, stFilter));
+    }
+
+    function renderNodeHtml(node, q, stFilter) {
+      const showSelf = matchesFilter(node, q, stFilter) || hasMatchingDescendant(node.id, q, stFilter);
+      if (!showSelf) return '';
+      const meta = STATUS_META[node.status] || STATUS_META.keep;
+      const children = state.nodes.filter(n => n.parentId === node.id);
+      const isSel = node.id === selectedId;
+      const edgeCount = state.edges.filter(e => e.from === node.id || e.to === node.id).length;
+
+      let html = `
+        <div class="tree-node${isSel ? ' selected' : ''}${node.status === 'remove' ? ' is-removed' : ''}" onclick="event.stopPropagation(); selectNode('${esc(node.id)}')">
+          <div class="tree-row">
+            <div class="tree-left">
+              <span class="tree-title">${esc(node.title)}</span>
+            </div>
+            <div style="display:flex; gap:4px; align-items:center;">
+              ${edgeCount ? `<span class="badge" style="background:rgba(56,189,248,0.1); color:var(--info); border-color:rgba(56,189,248,0.25);">🔗 ${edgeCount}</span>` : ''}
+              <span class="badge ${meta.cls}">${esc(meta.label)}</span>
+            </div>
+          </div>
+          <div class="tree-sub">${esc(node.kind)}${node.targetParentNote ? ` · → ${esc(node.targetParentNote)}` : ''}</div>
+      `;
+      if (children.length > 0) {
+        const inner = children.map(ch => renderNodeHtml(ch, q, stFilter)).join('');
+        if (inner) html += `<div class="tree-children">${inner}</div>`;
+      }
+      html += '</div>';
+      return html;
+    }
+
+    function renderTree() {
+      const q = (document.getElementById('treeFilter').value || '').trim().toLowerCase();
+      const stFilter = document.getElementById('statusFilter').value || 'all';
+      const roots = state.nodes.filter(n => !n.parentId);
+      const html = roots.map(r => renderNodeHtml(r, q, stFilter)).join('');
+      document.getElementById('treeContainer').innerHTML = html || '<div style="color:var(--muted); font-size:0.82rem; padding:12px;">Nenhum item corresponde ao filtro.</div>';
+    }
+
+    function selectNode(id) {
+      selectedId = id;
+      renderTree();
+      renderInspector();
+      renderEdges();
+    }
+
+    function updateSelectedField(field, value) {
+      const node = state.nodes.find(n => n.id === selectedId);
+      if (!node) return;
+      node[field] = value;
+      saveState();
+      renderTree();
+      if (field === 'title') {
+        populateEdgeSelects();
+        renderEdges();
+      }
+    }
+
+    function changeSelectedParent(newParentId) {
+      const node = state.nodes.find(n => n.id === selectedId);
+      if (!node) return;
+      const pid = newParentId || null;
+      if (pid === node.id) return;
+      // Prevenir ciclo
+      let cur = pid;
+      while (cur) {
+        if (cur === node.id) {
+          showToast('⚠️ Não é possível mover um item para dentro de um filho dele mesmo.');
+          renderInspector();
+          return;
+        }
+        const p = state.nodes.find(n => n.id === cur);
+        cur = p ? p.parentId : null;
+      }
+      node.parentId = pid;
+      if (node.status === 'keep') node.status = 'move';
+      saveState();
+      renderTree();
+      renderInspector();
+      showToast('🔀 Item movido na árvore!');
+    }
+
+    function moveSelectedOrder(delta) {
+      const node = state.nodes.find(n => n.id === selectedId);
+      if (!node) return;
+      const siblings = state.nodes.filter(n => n.parentId === node.parentId);
+      const sIdx = siblings.findIndex(s => s.id === node.id);
+      const targetSibling = siblings[sIdx + delta];
+      if (!targetSibling) return;
+      const idxA = state.nodes.indexOf(node);
+      const idxB = state.nodes.indexOf(targetSibling);
+      state.nodes[idxA] = targetSibling;
+      state.nodes[idxB] = node;
+      saveState();
+      renderTree();
+    }
+
+    function addChildNode() {
+      const parent = state.nodes.find(n => n.id === selectedId) || null;
+      const id = 'node-' + Date.now();
+      const newNode = {
+        id,
+        parentId: parent ? parent.id : null,
+        kind: parent ? 'Novo Sub-item' : 'Nova Seção',
+        title: '🆕 Novo Módulo / Recurso',
+        files: '(a definir na implementação)',
+        desc: 'Descreva aqui o que este bloco deve fazer.',
+        status: 'new',
+        targetParentNote: '',
+        note: ''
+      };
+      state.nodes.push(newNode);
+      selectedId = id;
+      saveState();
+      renderTree();
+      renderInspector();
+      populateEdgeSelects();
+      showToast('➕ Novo item criado na árvore!');
+    }
+
+    function deleteSelectedCustomNode() {
+      const node = state.nodes.find(n => n.id === selectedId);
+      if (!node) return;
+      const hasChildren = state.nodes.some(n => n.parentId === node.id);
+      if (hasChildren) {
+        showToast('⚠️ Mova ou apague os filhos antes de excluir este grupo (ou marque como Remover).');
+        return;
+      }
+      state.nodes = state.nodes.filter(n => n.id !== node.id);
+      state.edges = state.edges.filter(e => e.from !== node.id && e.to !== node.id);
+      selectedId = state.nodes[0]?.id || null;
+      saveState();
+      renderTree();
+      renderInspector();
+      renderEdges();
+      populateEdgeSelects();
+      showToast('🗑️ Item excluído.');
+    }
+
+    function renderInspector() {
+      const box = document.getElementById('inspectorPane');
+      const node = state.nodes.find(n => n.id === selectedId);
+      if (!node) {
+        box.innerHTML = '<div style="color:var(--muted);">Selecione um item na árvore à esquerda.</div>';
+        return;
+      }
+      const parentOpts = [`<option value="">(Nível Raiz / Camada Principal)</option>`]
+        .concat(state.nodes.filter(n => n.id !== node.id).map(n =>
+          `<option value="${esc(n.id)}" ${node.parentId === n.id ? 'selected' : ''}>${esc(n.title)}</option>`
+        )).join('');
+
+      box.innerHTML = `
+        <div class="card">
+          <label class="lbl">Nome do Item na Árvore
+            <input class="field-inp" value="${esc(node.title)}" oninput="updateSelectedField('title', this.value)">
+          </label>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <label class="lbl">Decisão de Reestruturação
+              <select class="field-sel" onchange="updateSelectedField('status', this.value)">
+                <option value="keep" ${node.status==='keep'?'selected':''}>✅ Manter como está</option>
+                <option value="edit" ${node.status==='edit'?'selected':''}>✏️ Ajustar / Renomear</option>
+                <option value="move" ${node.status==='move'?'selected':''}>🔀 Mover de lugar</option>
+                <option value="merge" ${node.status==='merge'?'selected':''}>🧩 Fundir com outro</option>
+                <option value="remove" ${node.status==='remove'?'selected':''}>🗑️ Remover</option>
+                <option value="new" ${node.status==='new'?'selected':''}>🆕 Novo item</option>
+              </select>
+            </label>
+            <label class="lbl">Pertence ao Grupo / Pai
+              <select class="field-sel" onchange="changeSelectedParent(this.value)">${parentOpts}</select>
+            </label>
+          </div>
+          <label class="lbl">Papel / Categoria
+            <input class="field-inp" value="${esc(node.kind)}" oninput="updateSelectedField('kind', this.value)">
+          </label>
+          <div>
+            <div style="font-size:0.74rem; font-weight:700; color:var(--muted); margin-bottom:4px;">Onde mora no código (Referência real)</div>
+            <span class="mono-chip">${esc(node.files)}</span>
+          </div>
+          <label class="lbl">O que este bloco faz hoje
+            <textarea class="field-ta" oninput="updateSelectedField('desc', this.value)">${esc(node.desc)}</textarea>
+          </label>
+          <label class="lbl">Destino / Fusão desejada (se Mover ou Fundir)
+            <input class="field-inp" placeholder="Ex.: Juntar dentro da aba Ferramentas" value="${esc(node.targetParentNote || '')}" oninput="updateSelectedField('targetParentNote', this.value)">
+          </label>
+          <label class="lbl">Sua Nota / Como você quer que funcione
+            <textarea class="field-ta" placeholder="Escreva aqui exatamente o que você quer mudar neste módulo..." oninput="updateSelectedField('note', this.value)">${esc(node.note || '')}</textarea>
+          </label>
+        </div>
+      `;
+    }
+
+    function populateEdgeSelects() {
+      const fromSel = document.getElementById('edgeFromSel');
+      const toSel = document.getElementById('edgeToSel');
+      if (!fromSel || !toSel) return;
+      const opts = state.nodes.map(n => `<option value="${esc(n.id)}">${esc(n.title)}</option>`).join('');
+      fromSel.innerHTML = opts;
+      toSel.innerHTML = opts;
+      if (selectedId) fromSel.value = selectedId;
+    }
+
+    function toggleAddEdgeForm(force) {
+      const box = document.getElementById('newEdgeBox');
+      const next = typeof force === 'boolean' ? force : (box.style.display === 'none');
+      box.style.display = next ? 'flex' : 'none';
+      if (next) populateEdgeSelects();
+    }
+
+    function createNewEdge() {
+      const from = document.getElementById('edgeFromSel').value;
+      const to = document.getElementById('edgeToSel').value;
+      const action = (document.getElementById('edgeActionInp').value || '').trim();
+      if (!from || !to || !action) {
+        showToast('⚠️ Escolha origem, destino e descreva a interação.');
+        return;
+      }
+      state.edges.unshift({
+        id: 'edge-' + Date.now(),
+        from,
+        to,
+        action,
+        status: 'new',
+        note: ''
+      });
+      document.getElementById('edgeActionInp').value = '';
+      toggleAddEdgeForm(false);
+      saveState();
+      renderEdges();
+      renderTree();
+      showToast('🔗 Nova conexão adicionada!');
+    }
+
+    function deleteEdge(id) {
+      state.edges = state.edges.filter(e => e.id !== id);
+      saveState();
+      renderEdges();
+      renderTree();
+    }
+
+    function toggleEdgeRemove(id) {
+      const ed = state.edges.find(e => e.id === id);
+      if (!ed) return;
+      ed.status = ed.status === 'remove' ? 'keep' : 'remove';
+      saveState();
+      renderEdges();
+    }
+
+    function renderEdges() {
+      const box = document.getElementById('edgesContainer');
+      const getName = (id) => (state.nodes.find(n => n.id === id) || {}).title || id;
+      const sorted = [...state.edges].sort((a, b) => {
+        const aRel = (a.from === selectedId || a.to === selectedId) ? 1 : 0;
+        const bRel = (b.from === selectedId || b.to === selectedId) ? 1 : 0;
+        return bRel - aRel;
+      });
+      box.innerHTML = sorted.map(e => {
+        const isRel = e.from === selectedId || e.to === selectedId;
+        const isRem = e.status === 'remove';
+        const badge = e.status === 'new'
+          ? '<span class="badge st-new">Nova</span>'
+          : isRem
+            ? '<span class="badge st-remove">Remover</span>'
+            : '<span class="badge st-keep">Ativa</span>';
+        return `
+          <div class="edge-item" style="${isRel ? 'border-color:var(--accent);' : ''}${isRem ? 'opacity:0.6;' : ''}">
+            <div class="edge-top">
+              <span>${esc(getName(e.from))} <span class="edge-arrow">→</span> ${esc(getName(e.to))}</span>
+              <div style="display:flex; gap:4px; align-items:center;">
+                ${badge}
+                <button class="btn btn-sm" onclick="toggleEdgeRemove('${esc(e.id)}')" title="Marcar/Desmarcar remoção">✂️</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteEdge('${esc(e.id)}')" title="Excluir linha">✕</button>
+              </div>
+            </div>
+            <div style="color:var(--muted);">${esc(e.action)}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function buildPlanMarkdown() {
+      const lines = ['# 🗺️ Meu Plano de Reestruturação do Cockpit Clínico', ''];
+      lines.push('## 1. Árvore Estrutural');
+      function walk(parentId, depth) {
+        const children = state.nodes.filter(n => n.parentId === parentId);
+        children.forEach(n => {
+          const indent = '  '.repeat(depth);
+          const tag = (STATUS_META[n.status] || STATUS_META.keep).tag;
+          let row = `${indent}- ${tag} **${n.title}** _(${n.kind})_`;
+          if (n.targetParentNote) row += ` → **Destino:** ${n.targetParentNote}`;
+          lines.push(row);
+          if (n.note && n.note.trim()) {
+            lines.push(`${indent}  - **Nota:** ${n.note.trim().replace(/\r?\n/g, ' ')}`);
+          }
+          walk(n.id, depth + 1);
+        });
+      }
+      walk(null, 0);
+
+      lines.push('', '## 2. Mapa de Interações & Mudanças de Fluxo');
+      const getName = (id) => (state.nodes.find(n => n.id === id) || {}).title || id;
+      state.edges.forEach(e => {
+        const tag = (STATUS_META[e.status] || STATUS_META.keep).tag;
+        lines.push(`- ${tag} **${getName(e.from)}** → **${getName(e.to)}**: ${e.action}`);
+      });
+      return lines.join('\n');
+    }
+
+    function renderPlanPreview() {
+      const ta = document.getElementById('planPreviewTa');
+      if (ta) ta.value = buildPlanMarkdown();
+    }
+
+    function exportMarkdown() {
+      const md = buildPlanMarkdown();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(md).then(() => {
+          showToast('📋 Plano estruturado copiado! Cole no chat para aplicar.');
+        }).catch(() => fallbackCopy(md));
+      } else {
+        fallbackCopy(md);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.getElementById('planPreviewTa');
+      ta.select();
+      document.execCommand('copy');
+      showToast('📋 Plano copiado!');
+    }
+
+    function downloadMarkdown() {
+      const md = buildPlanMarkdown();
+      const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'meu-plano-cockpit.md';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      showToast('⬇️ Plano baixado em Markdown!');
+    }
+
+    function resetToActualArchitecture() {
+      state = JSON.parse(JSON.stringify(INITIAL_DATA));
+      selectedId = state.nodes[0].id;
+      saveState();
+      renderTree();
+      renderInspector();
+      renderEdges();
+      populateEdgeSelects();
+      showToast('↺ Mapa restaurado para a arquitetura atual real!');
+    }
+
+    renderTree();
+    renderInspector();
+    renderEdges();
+    populateEdgeSelects();
+    renderPlanPreview();
+  </script>
+</body>
+</html>

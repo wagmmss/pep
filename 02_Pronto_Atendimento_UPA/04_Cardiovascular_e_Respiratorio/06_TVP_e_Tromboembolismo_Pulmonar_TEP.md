@@ -1,23 +1,28 @@
 # Atendimento de Pronto Atendimento - Trombose Venosa Profunda (TVP) e Tromboembolismo Pulmonar (TEP)
+**Categoria:** Cardiovascular e Respiratorio  
+**Atalho:** `;tvp-tep`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** I26.9 / I80.2  
 
-**Atalho:** `;tvp-tep` | **Categoria:** Cardiovascular e Respiratorio
+---
 
-## SNIPPET PEP
+## 📋 Snippet para Prontuário Eletrônico (PEP)
+
 ```text
 ATENDIMENTO DE EMERGÊNCIA — TROMBOSE VENOSA PROFUNDA (TVP) & TROMBOEMBOLISMO PULMONAR (TEP)
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 
 APRESENTAÇÃO CLÍNICA PRINCIPAL:
 - Quadro Dominante: [Suspeita de TVP de Membro Inferior (edema unilateral assimétrico, dor em panturrilha e empastamento) / Suspeita de TEP Agudo (dispneia súbita inexplicada, dor torácica ventilatório-dependente, taquicardia ou síncope)].
 - Fatores de Risco Tromboembólicos (Tríade de Virchow): [Cirurgia ou trauma recente (< 4 semanas) / Imobilização prolongada (> 3 dias) ou viagem longa / Neoplasia ativa / Uso de anticoncepcional oral combinado ou TRH / Gestação ou puerpério / TEV prévio / Trombofilia].
 
 EXAME FÍSICO DIRIGIDO:
-- Sinais Vitais: PA: [120x80] mmHg | FC: [108] bpm | FR: [24] irpm | SpO2: [91]% em ar ambiente.
+- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
 - Avaliação Cardiorrespiratória: Ausculta pulmonar [limpa — dissociação clínico-auscultatória clássica do TEP! / estertores localizados]. Turgência jugular: [*Ausente / Presente com hiperfonese de B2 em foco pulmonar — sobrecarga aguda de VD].
-- Exame de Membros Inferiores: [Assimetria de panturrilha > 3 cm (medida 10 cm abaixo da tuberosidade tibial) no membro [Direito / Esquerdo], edema depressível (cacifo+) unilateral, calor local e dor à palpação do trajeto venoso profundo / Membros inferiores simétricos sem sinais de TVP clínica]. Pulsos distais (pedioso e tibial posterior) [presentes e simétricos — descartada flegmasia cerulea dolens].
+- Exame de Membros Inferiores: [Assimetria de panturrilha > 3 cm (medida 10 cm abaixo da tuberosidade tibial) no membro Direito / Esquerdo, edema depressível (cacifo+) unilateral, calor local e dor à palpação do trajeto venoso profundo / Membros inferiores simétricos sem sinais de TVP clínica]. Pulsos distais (pedioso e tibial posterior) [presentes e simétricos — descartada flegmasia cerulea dolens].
 
 ESTRATIFICAÇÃO DE PROBABILIDADE E GRAVIDADE:
 - Escore de Wells para TVP: [Baixa probabilidade (≤ 0 pts) / Moderada (1–2 pts) / Alta probabilidade (≥ 3 pts)].
@@ -40,7 +45,7 @@ EXAMES COMPLEMENTARES:
    - Se TVP distal/proximal estável sem flegmasia ou TEP sPESI = 0 sem disfunção de VD e com suporte social: Alta com anticoagulação plena oral (DOAC) e retorno vascular/pneumo precoce.
    - Se TEP sPESI ≥ 1, disfunção de VD (Eco/TC/Troponina/BNP elevados), hipoxemia ou TVP íleo-femoral extensa: Internação hospitalar.
 
-# PRESCRIÇÃO DOMICILIAR / DE ALTA
+# RECEITA:
 USO ORAL (TRATAMENTO AMBULATORIAL DE TVP ESTÁVEL OU TEP DE BAIXO RISCO sPESI = 0 COM DOAC):
 
 1. Rivaroxabana 15 mg (comprimidos revestidos) — 1 caixa com 42 comprimidos (Fase de Ataque de 21 dias)
@@ -57,7 +62,20 @@ USO ORAL (TRATAMENTO AMBULATORIAL DE TVP ESTÁVEL OU TEP DE BAIXO RISCO sPESI = 
    - Retornar imediatamente ao pronto-socorro se apresentar falta de ar súbita, dor no peito, desmaio, tosse com sangue, urina com sangue, fezes escuras como borra de café ou sangramento gengival/nasal que não estanca.
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
-### Escore de Wells, Regra PERC e D-Dímero Ajustado pela Idade (Diretriz ESC / CHEST)
+---
+
+## 🎯 Diretrizes & Raciocínio Clínico
+
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Atendimento de Pronto Atendimento - Trombose Venosa Profunda (TVP) e Tromboembolismo Pulmonar (TEP)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**Escore de Wells, Regra PERC e D-Dímero Ajustado pela Idade (Diretriz ESC / CHEST)**
 - **Por que ajustar o D-Dímero pela idade acima dos 50 anos:** A especificidade do corte fixo de `500 ng/mL` cai drasticamente em idosos. Multiplicar a **Idade × 10 ng/mL** (em pacientes > 50 anos com probabilidade clínica baixa ou intermediária) aumenta a capacidade de excluir TEP com segurança sem aumentar falsos negativos.
 - **Por que a Rivaroxabana de 15 mg e 20 mg deve ser tomada obrigatoriamente junto com refeição:** Em jejum, a biodisponibilidade oral das doses de 15 mg e 20 mg de Rivaroxabana cai para cerca de 66%, reduzindo o nível sérico e aumentando o risco de recorrência trombótica; com alimentos, a absorção atinge > 80–90%.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

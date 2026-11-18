@@ -1,22 +1,22 @@
 # Revisão de Canal de Parto e Perineorrafia (Lacerações e Episiotomia)
-
-> **Atalho sugerido:** `;perineorrafia`  
-> **Finalidade:** Nota operatória de revisão de colo/vagina, sutura anatômica por planos de lacerações perineais/episiotomia, toque retal de segurança e prescrição pós-sutura.
+**Categoria:** Centro Obstetrico Cirurgias  
+**Atalho:** `;perineorrafia`  
+**Gravidade:** Procedimento  
+**CID-10:** O70.1  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### NOTA CIRÚRGICA: REVISÃO DE CANAL DE PARTO E PERINEORRAFIA ######
-# IDENTIFICAÇÃO & CLASSIFICAÇÃO DA LESÃO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | Data/Hora: [DD/MM/AAAA] às [HH:MM].
-Alergias: [*Nega / [ ]].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] A[ ] | Data/Hora: [DD/MM/AAAA] às [HH:MM].
+Alergias: [*Nega / Outros: ___].
 - Indicação & Grau da Lesão: [Laceração perineal espontânea de 2º grau / Episiotomia médio-lateral direita seletiva / Laceração de 1º grau sangrante / Laceração de 3º grau com reparo esfincteriano (OASIS)].
 - Extensão Anatômica Verificada: Comprometimento de mucosa vaginal, fúrcula e musculatura do corpo perineal (transverso superficial e bulbocavernoso). Toque retal pré-sutura confirmando integridade do complexo do esfíncter anal externo/interno e da mucosa anorretal (afastada lesão de 3º/4º grau).
 
 # TEMPOS TÉCNICOS DA REVISÃO E PERINEORRAFIA:
-1. Exposição & Revisão de Canal: Paciente em litotomia sob foco cirúrgico, antissepsia com Clorexidina Aquosa 0,5% e campos estéreis. Revisão de colo uterino em 360° com pinças de Foerster (DeLee) e paredes vaginais: [íntegras e sem hematomas / suturada laceração cervical em lábio [ ]]. Posicionado tampão de gaze estéril com reparo para manter campo seco.
+1. Exposição & Revisão de Canal: Paciente em litotomia sob foco cirúrgico, antissepsia com Clorexidina Aquosa 0,5% e campos estéreis. Revisão de colo uterino em 360° com pinças de Foerster (DeLee) e paredes vaginais: [íntegras e sem hematomas / suturada laceração cervical em lábio ___]. Posicionado tampão de gaze estéril com reparo para manter campo seco.
 2. Anestesia Local: Infiltração em leque nos planos mucoso, muscular e subcutâneo com 10 a 15 mL de Lidocaína 2% sem vasoconstritor (aspiração prévia negativa).
 3. Síntese da Mucosa Vaginal (1º Plano):
    - Identificado o ápice da laceração vaginal; dado 1º ponto de ancoragem 0,5 a 1,0 cm ACIMA (cranial) do ápice para ligadura de vasos submucosos retraídos.
@@ -38,7 +38,7 @@ Alergias: [*Nega / [ ]].
 1. Compressa de gelo protegida na região perineal por 20 minutos a cada 4–6h nas primeiras 24 horas (redução de edema e dor).
 2. Vigilância de formação de hematoma vulvoperineal (atentar se dor intensa em puxo retal).
 
->> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+# RECEITA:
 USO ORAL:
 1. Dipirona Monoidratada [1 g / 500 mg] -------------------------------- 1 caixa
    Tomar 1 comprimido via oral de 6 em 6 horas se dor perineal.
@@ -54,9 +54,13 @@ ORIENTAÇÕES DE CUIDADOS COM OS PONTOS:
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que a Classificação Anatômica (1º ao 4º Grau / OASIS) Muda Toda a Sutura?
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Revisão de Canal de Parto e Perineorrafia (Lacerações e Episiotomia)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧠 1. Por Que a Classificação Anatômica (1º ao 4º Grau / OASIS) Muda Toda a Sutura?**
 Antes de dar o primeiro ponto de uma perineorrafia, é **obrigatório realizar inspeção sob boa iluminação + toque retal digital** para classificar a lesão:
 
 | Grau da Laceração | Estruturas Anatômicas Atingidas | Conduta Cirúrgica & Fio Ideal |
@@ -66,10 +70,16 @@ Antes de dar o primeiro ponto de uma perineorrafia, é **obrigatório realizar i
 | **3º Grau (OASIS)** | Lesão do **Complexo Esfincteriano Anal**: `3A` (< 50% do Esfíncter Anal Externo - EAE); `3B` (> 50% do EAE); `3C` (lesão do Esfíncter Anal Interno - EAI). | **Reparo em Centro Cirúrgico** sob bloqueio regional/raqui: identificar e suturar isoladamente o EAI (chuleio com Vicryl/PDS 3-0) e o EAE (*End-to-End* ou *Overlap* com PDS/Vicryl 2-0) + **Cefazolina 2g EV profilática + Lactulose no pós-operatório**. |
 | **4º Grau (OASIS)** | Rompe EAE + EAI + **mucosa anorretal** (comunicando vagina e reto). | Reparo da mucosa anorretal com pontos submucosos de Vicryl 3-0/4-0, seguido da reconstrução esfincteriana anatômica camada por camada. |
 
-### 🪡 2. Os 3 Segredos Técnicos da Perineorrafia Perfeita (Por Que Fazemos Assim?)
+**🪡 2. Os 3 Segredos Técnicos da Perineorrafia Perfeita (Por Que Fazemos Assim?)**
 1. **Por que o 1º ponto da mucosa vaginal deve ser dado `0,5 a 1,0 cm ACIMA` do ângulo superior (ápice) da ferida?**
    - Os pequenos vasos arteriolares submucosos seccionados no ápice sofrem **retração elástica** para cima da borda visível da mucosa. Se o seu primeiro ponto pegar apenas no vértice visível, os vasos retraídos continuam sangrando por trás da sutura, dissecando a parede vaginal e formando um **grande hematoma paravaginal/isquiorretal** (que causa dor excruciante e choque hipovolêmico oculto no puerpério!).
 2. **Por que a sutura contínua em 3 planos com Vicryl Rapide 2-0 é superior aos pontos separados na pele?**
    - A sutura contínua frouxa (não-ancorada) distribui a tensão uniformemente conforme o edema pós-parto regride, e o fechamento **intradérmico/subcuticular** da pele reduz em **50% a dor perineal e a dispareunia** nos primeiros 3 meses comparado aos pontos simples na pele (Donatti/separados).
 3. **Por que o Toque Retal Final + Retirada do Tampão Vaginal são obrigatórios antes de tirar as luvas?**
    - O toque retal final confirma que nenhuma laçada da camada muscular transfixou a mucosa do reto (caso haja ponto transfixante no reto, ele deve ser desfeito imediatamente na hora para evitar **fístula retovaginal**!). E retirar a gaze/tampão vaginal com fio de reparo evita retenção de corpo estranho.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

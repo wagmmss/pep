@@ -87,5 +87,5 @@ EXAME CARDIOVASCULAR DIRECIONADO:
 - [ ] Classifiquei perfil hemodinâmico (Seco/Úmido x Quente/Frio) se suspeita de IC ou choque
 
 ### 5. Upgrade Preceptor V2.0 (Semiologia Dinâmica & Hemodinâmica)
-- [ ] Diferenciei pulso Parvus et Tardus (EAo) de Martelo d'Água/Corrigan (IAo) e avaliei PVJ a 30–45° com refluxo hepatojugular
-- [ ] Executei manobras dinâmicas (Rivero-Carvallo para câmaras direitas e Valsalva/Agachamento para diferenciar CMH de Estenose Aórtica) e classifiquei o perfil de Stevenson
+- [ ] [CRÍTICO] Diferenciei pulso Parvus et Tardus (EAo) de Martelo d'Água/Corrigan (IAo) e avaliei PVJ a 30–45° com refluxo hepatojugular
+- [ ] [CRÍTICO] Executei manobras dinâmicas (Rivero-Carvallo para câmaras direitas e Valsalva/Agachamento para diferenciar CMH de Estenose Aórtica) e classifiquei o perfil de Stevenson

@@ -1,18 +1,18 @@
 # Manejo de Emergência - Trabalho de Parto Prematuro (TPP)
-
-> **Atalho sugerido:** `;tpp`  
-> **Finalidade:** Diagnóstico de Trabalho de Parto Prematuro (< 37 semanas), prescrição de Corticoterapia, Tocólise (Nifedipino/Atosiban), Neuroproteção (MgSO4 < 32s) e Profilaxia de EGB.
+**Categoria:** Emergencias GO  
+**Atalho:** `;tpp`  
+**Gravidade:** Urgência (Laranja/Amarelo)  
+**CID-10:** O60.0  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO DE EMERGÊNCIA OBSTÉTRICA — TRABALHO DE PARTO PREMATURO (TPP) ######
-# IDENTIFICAÇÃO & IDADE GESTACIONAL:
-ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [+ *Hígida / [ ]].
-Alergias: [*Nega / [ ]].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [+ *Hígida / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º trimestre) | Fatores de Risco: [Prematuridade prévia / Colo curto < 25 mm / Gemelaridade / ITU ativa / Nega fatores prévios].
 
 # QP:
@@ -23,11 +23,11 @@ Alergias: [*Nega / [ ]].
 - Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido (afastada corioamnionite), nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
 
 # EXAME FÍSICO:
-- Sinais Vitais: PA: [110x70] mmHg | FC: [84] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C (afebril).
-- Abdome & Dinâmica Uterina (DU): AU: [ ] cm | Leopold: Feto único, longitudinal, apresentação [cefálica / pélvica]. DU: [3 a 4] contrações regulares e dolorosas de [45] segundos em 10 minutos, com relaxamento completo do tônus uterino no intervalo.
-- Vitalidade Fetal: BCF: [142] bpm, rítmico, sem desacelerações | CTG: Categoria I (reativa).
+- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C (afebril).
+- Abdome & Dinâmica Uterina (DU): AU: [ ] cm | Leopold: Feto único, longitudinal, apresentação [cefálica / pélvica]. DU: [3 a 4] contrações regulares e dolorosas de [ ] segundos em 10 minutos, com relaxamento completo do tônus uterino no intervalo.
+- Vitalidade Fetal: BCF: [ ] bpm, rítmico, sem desacelerações | CTG: Categoria I (reativa).
 - Exame Especular Estéril (Realizado antes do toque): Paredes íntegras, sem sangramento ou perda de líquido pelo OE (Manobra de Tarnier negativa). Coletado Swab Vaginal e Retal para EGB.
-- Toque Vaginal: Colo [centralizado / intermediário], amolecido, apagado [80]%, dilatado para [3] cm, bolsa íntegra, polo cefálico em plano [-2] de De Lee.
+- Toque Vaginal: Colo [centralizado / intermediário], amolecido, apagado [ ]%, dilatado para [ ] cm, bolsa íntegra, polo cefálico em plano [ ] de De Lee.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Trabalho de Parto Prematuro ativo com membranas íntegras em gestação de [ ]s[ ]d (CID-10: O60.0), sem sinais de corioamnionite ou sofrimento fetal — Elegível para Tocólise e Maturação Pulmonar.
@@ -60,16 +60,27 @@ Alergias: [*Nega / [ ]].
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Diagnóstico e Raciocínio Clínico no Trabalho de Parto Prematuro (TPP)
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Diagnóstico e Raciocínio Clínico no Trabalho de Parto Prematuro (TPP)**
 - **Definição Diagnóstica:** O Trabalho de Parto Prematuro ocorre entre **20–22 semanas e 36 semanas e 6 dias**, caracterizado pela presença simultânea de:
   1. **Contrações uterinas rítmicas e dolorosas:** Pelo menos **≥ 2 a 3 contrações em 10 minutos** de ≥ 30 segundos mantidas; **E**
   2. **Modificação cervical progressiva:** Dilatação cervical ≥ 2–3 cm e/ou apagamento cervical ≥ 50–80% (ou colo uterino < 25 mm à ultrassonografia transvaginal).
 - **Rastreio de Focos Infecciosos Desencadeantes:** Até 40% dos episódios de TPP têm como gatilho infecção subclínica ascendente. É obrigatório colher **Urina 1 + Urocultura** (a pielonefrite/cistite libera prostaglandinas e induz contratilidade miometrial) e **Swab anovaginal para EGB**.
 - **Contraindicações Absolutas à Tocólise (Quando NÃO Inibir):** Corioamnionite clínica, sofrimento fetal agudo (SFA / CTG Categoria III), óbito fetal intrauterino, malformação fetal incompatível com a vida, sangramento materno com instabilidade hemodinâmica (DPP ou placenta prévia sangrante) e dilatação cervical avançada (≥ 5 cm).
 
-### 💊 2. Tocólise Farmacológica: Por Que Inibir por Apenas 48 Horas?
+**🛡️ 4. Profilaxia Intraparto para Streptococcus agalactiae (EGB)**
+- Indicada em todo trabalho de parto prematuro com bolsa íntegra ou rota, a menos que haja cultura anovaginal negativa nas últimas 5 semanas:
+  - **Penicilina G Cristalina:** **5.000.000 UI EV** de ataque, seguida de **2.500.000 UI EV de 4/4 horas** até o clampeamento do cordão; **OU**
+  - **Ampicilina:** **2 g EV** de ataque, seguida de **1 g EV de 4/4 horas** até o parto.
+  - Se a tocólise for bem-sucedida e o trabalho de parto for interrompido, a profilaxia antibiótica para EGB é suspensa.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Tocólise Farmacológica: Por Que Inibir por Apenas 48 Horas?**
 - **O Objetivo Real da Tocólise:** A inibição farmacológica das contrações **não impede o parto prematuro a longo prazo**. Seu propósito exclusivo é postergar o nascimento por **48 horas**, permitindo tempo hábil para:
   1. Atuação plena da **Corticoterapia Antenatal** (pico de eficácia 24 a 48 horas após a 2ª dose);
   2. Infusão de **Sulfato de Magnésio para Neuroproteção Fetal** (se < 32 semanas);
@@ -80,7 +91,7 @@ Alergias: [*Nega / [ ]].
   - **Indometacina (Inibidor da COX — Alternativa < 32 semanas):** 50–100 mg VR ou VO ataque, seguido de 25 mg VO 6/6h por no máximo 48 horas (proibido após 32 semanas pelo risco de fechamento precoce do canal arterial fetal e oligoâmnio).
 - **Trava de Segurança:** Evitar associação intempestiva de Nifedipino em altas doses com Sulfato de Magnésio EV sem monitorização rigorosa de bloqueio neuromuscular e hipotensão materna severa.
 
-### 🫁 3. Corticoterapia Antenatal & Neuroproteção Fetal com Sulfato de Magnésio
+**🫁 3. Corticoterapia Antenatal & Neuroproteção Fetal com Sulfato de Magnésio**
 - **Corticoterapia para Maturação Pulmonar (24s0d a 34s0d):**
   - **Betametasona 12 mg IM a cada 24 horas por 2 doses** (ou Dexametasona 6 mg IM 12/12h por 4 doses).
   - Acelera a síntese e secreção de surfactante pelos pneumócitos tipo II e melhora a complacência pulmonar, reduzindo em > 50% a Síndrome do Desconforto Respiratório (SDR), Hemorragia Intraventricular (HIV), Enterocolite Necrotizante e mortalidade neonatal.
@@ -88,8 +99,5 @@ Alergias: [*Nega / [ ]].
   - Indicada para toda gestante < 32 semanas com trabalho de parto prematuro ativo estabelecido ou interrupção programada em até 24 horas.
   - **Esquema de Zuspan:** Ataque de **4 g EV** em 20 a 30 minutos (8 mL de MgSO4 50% + 92 mL SF 0,9%), seguido de manutenção de **1 g/h EV contínuo** (20 mL de MgSO4 50% + 480 mL SF 0,9% a 50 mL/h) até o parto ou por no máximo 24 horas. Reduz expressivamente a incidência de Paralisia Cerebral e disfunção motora no prematuro extremo.
 
-### 🛡️ 4. Profilaxia Intraparto para Streptococcus agalactiae (EGB)
-- Indicada em todo trabalho de parto prematuro com bolsa íntegra ou rota, a menos que haja cultura anovaginal negativa nas últimas 5 semanas:
-  - **Penicilina G Cristalina:** **5.000.000 UI EV** de ataque, seguida de **2.500.000 UI EV de 4/4 horas** até o clampeamento do cordão; **OU**
-  - **Ampicilina:** **2 g EV** de ataque, seguida de **1 g EV de 4/4 horas** até o parto.
-  - Se a tocólise for bem-sucedida e o trabalho de parto for interrompido, a profilaxia antibiótica para EGB é suspensa.
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

@@ -55,8 +55,8 @@ GRADE PADRÃO (25 mm/s e 10 mm/mV): 1q = 40 ms / 0,1 mV | 1Q (5q) = 200 ms / 0,5
 LAUDO SISTEMÁTICO DE ELETROCARDIOGRAMA (10 PASSOS):
 - Padrão Técnico: Calibração 10 mm/mV, velocidade 25 mm/s, progressão de cabos normal (onda P positiva em DI/DII e negativa em aVR).
 - Ritmo e FC: Ritmo sinusal regular, FC de [ ] bpm.
-- Intervalos: Onda P normal (< 120 ms; < 2,5 mm), Intervalo PR de [160] ms (120–200 ms), Complexo QRS estreito de [80] ms (< 120 ms), Intervalo QTc (Bazett/Fridericia) de [410] ms.
-- Eixo Elétrico e Sobrecargas: Eixo de QRS normal a [+45]° (DI e DII positivos). Ausência de critérios de sobrecarga atrial ou ventricular (Sokolow-Lyon e Cornell normais); transição precordial fisiológica em V3–V4.
+- Intervalos: Onda P normal (< 120 ms; < 2,5 mm), Intervalo PR de [ ] ms (120–200 ms), Complexo QRS estreito de [ ] ms (< 120 ms), Intervalo QTc (Bazett/Fridericia) de [ ] ms.
+- Eixo Elétrico e Sobrecargas: Eixo de QRS normal a [ ]° (DI e DII positivos). Ausência de critérios de sobrecarga atrial ou ventricular (Sokolow-Lyon e Cornell normais); transição precordial fisiológica em V3–V4.
 - Repolarização e Isquemia (OCA/OMI): Segmento ST isoelétrico em todas as derivações (ausência de supradesnivelamento, infradesnivelamento ou ondas Q patológicas). Ondas T com morfologia e polaridade normais (ausência de padrões de Wellens, De Winter ou ondas T hiperagudas).
 ```
 
@@ -80,16 +80,16 @@ LAUDO SISTEMÁTICO DE ELETROCARDIOGRAMA (10 PASSOS):
 - [ ] Medi intervalo PR procurando pré-excitação (WPW) e diferenciando BAV Mobitz I, II e BAVT
 
 ### 2. QRS, Isquemia & Ocultos (Passos 6–8)
-- [ ] Avaliei duração/morfologia do QRS (BRE/BRD, HVE, ondas Q patológicas, S1Q3T3)
-- [ ] Varri Ponto J/ST por paredes contíguas buscando imagem em espelho ou infra de PR (pericardite)
-- [ ] Se IAM inferior ou infra em V1–V3, solicitei imediatamente derivações V3R/V4R e V7–V9
-- [ ] Rastreiei sinais de hipercalemia (T apiculada, P achatada, QRS alargando)
-- [ ] Chequei padrões oclusivos sem supra clássico (Wellens, De Winter, supra aVR, Sgarbossa no BRE)
+- [ ] [CRÍTICO] Avaliei duração/morfologia do QRS (BRE/BRD, HVE, ondas Q patológicas, S1Q3T3)
+- [ ] [CRÍTICO] Varri Ponto J/ST por paredes contíguas buscando imagem em espelho ou infra de PR (pericardite)
+- [ ] [CRÍTICO] Se IAM inferior ou infra em V1–V3, solicitei imediatamente derivações V3R/V4R e V7–V9
+- [ ] [CRÍTICO] Rastreiei sinais de hipercalemia (T apiculada, P achatada, QRS alargando)
+- [ ] [CRÍTICO] Chequei padrões oclusivos sem supra clássico (Wellens, De Winter, supra aVR, Sgarbossa no BRE)
 
 ### 3. QT & Contexto Dinâmico (Passos 9–10)
-- [ ] Calculei o QTc pela fórmula de Bazett (alerta crítico se ≥ 500 ms)
+- [ ] [CRÍTICO] Calculei o QTc pela fórmula de Bazett (alerta crítico se ≥ 500 ms)
 - [ ] Comparei com ECG prévio e indiquei ECG seriado (15–30 min) se dor ativa/inconclusivo
 
 ### 5. Upgrade Preceptor V2.0 (Equivalentes de OCA / OMI)
-- [ ] Solicitei V3R/V4R em todo IAM inferior (e proibi nitrato se VD acometido!) e V7–V9 quando houve infra de V1–V3
-- [ ] Pesquisei ativamente equivalentes de Oclusão Coronariana Aguda sem supra clássico: Síndrome de Wellens, Padrão de De Winter, Supra de aVR e Sgarbossa Modificado no BRE
+- [ ] [CRÍTICO] Solicitei V3R/V4R em todo IAM inferior (e proibi nitrato se VD acometido!) e V7–V9 quando houve infra de V1–V3
+- [ ] [CRÍTICO] Pesquisei ativamente equivalentes de Oclusão Coronariana Aguda sem supra clássico: Síndrome de Wellens, Padrão de De Winter, Supra de aVR e Sgarbossa Modificado no BRE

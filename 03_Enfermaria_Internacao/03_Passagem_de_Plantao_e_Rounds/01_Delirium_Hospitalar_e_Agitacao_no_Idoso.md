@@ -1,14 +1,19 @@
 # Manejo em Enfermaria - Delirium Hospitalar, Agitação no Idoso e Rastreio de Causas Reversíveis
+**Categoria:** Passagem de Plantao e Rounds  
+**Atalho:** `;enf-delirium`  
+**Gravidade:** Urgência (Laranja/Amarelo)  
+**CID-10:** F05.9  
 
-**Atalho:** `;enf-delirium` | **Categoria:** Passagem de Plantao e Rounds
+---
 
-## SNIPPET PEP
+## 📋 Snippet para Prontuário Eletrônico (PEP)
+
 ```text
 AVALIAÇÃO DE INTERCORRÊNCIA EM ENFERMARIA — DELIRIUM HOSPITALAR (MÉTODO CAM)
-# IDENTIFICAÇÃO E STATUS COGNITIVO BASAL:
-ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], no [ ]º DIH por [motivo da internação].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos[? Leito :: , Leito ___], no [ ]º DIH por [motivo da internação].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 - Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular leve/moderada / Doença de Parkinson ou Demência por Corpos de Lewy].
 
 DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2 + [3 OU 4]):
@@ -34,12 +39,25 @@ RASTREIO SISTEMÁTICO DA CAUSA BASE (MNEMÔNICO DELIRIUM):
    - Devolver imediatamente óculos, aparelho auditivo e prótese dentária; liberar presença de familiar acompanhante 24h ao lado do leito.
    - Mobilização precoce fora do leito e retirada de contenções físicas, sondas vesicais e acessos venosos desnecessários.
 3. Manejo Farmacológico de Resgate (Restrito EXCLUSIVAMENTE ao Delirium Hiperativo Grave com risco iminente de auto/heteroagressão ou avulsão de dispositivos vitais):
-   - 1ª Escolha (Idoso sem Parkinson/Demência de Lewy e com QTc < 470 ms): Haloperidol em microdose: **0,5 mg a 1 mg VO, IM ou IV lento**, podendo repetir em 30–60 min se necessário (evitar doses > 3 mg/dia no idoso frágil!).
-   - Opções Atípicas Orais: Risperidona 0,5 mg VO à noite ou Quetiapina 12,5 a 25 mg VO (a **Quetiapina é a única opção segura em pacientes com Doença de Parkinson ou Demência por Corpos de Lewy**, nos quais o Haloperidol é estritamente contraindicado!).
+   - 1ª Escolha (Idoso sem Parkinson/Demência de Lewy e com QTc < 470 ms): Haloperidol em microdose: 0,5 mg a 1 mg VO, IM ou IV lento, podendo repetir em 30–60 min se necessário (evitar doses > 3 mg/dia no idoso frágil!).
+   - Opções Atípicas Orais: Risperidona 0,5 mg VO à noite ou Quetiapina 12,5 a 25 mg VO (a Quetiapina é a única opção segura em pacientes com Doença de Parkinson ou Demência por Corpos de Lewy, nos quais o Haloperidol é estritamente contraindicado!).
    - PROIBIDO usar Benzodiazepínicos (Diazepam, Midazolam, Clonazepam) no Delirium do idoso (pioram e prolongam o delirium, exceto se a causa for Abstinência Alcoólica / Delirium Tremens ou abstinência de BZD!).
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
-### Por Que o Delirium Hipoativo é o Mais Letal e Por Que Evitar Benzodiazepínicos e Prometazina
+---
+
+## 🎯 Diretrizes & Raciocínio Clínico
+
+### 🧠 1. Fisiopatologia & Porquê
+**Por Que o Delirium Hipoativo é o Mais Letal e Por Que Evitar Benzodiazepínicos e Prometazina**
 - **Por que o Delirium Hipoativo passa despercebido em até 70% das enfermarias:** O idoso quieto, sonolento e que "não dá trabalho" à enfermagem frequentemente é rotulado como deprimido ou cansado, atrasando o diagnóstico de sepse urinária/pulmonar, hiponatremia, retenção urinária ou intoxicação medicamentosa.
 - **Por que nunca fazer Haloperidol no paciente com Parkinson ou Demência por Corpos de Lewy (e nunca associar Prometazina no idoso):** O bloqueio dopaminérgico D2 potente do Haloperidol no Parkinson/Lewy desencadeia **rigidez acinética grave, síndrome neuroléptica maligna e broncoaspiração fatal** (nesses casos, use **Quetiapina 12,5 a 25 mg VO**). Já a **Prometazina (Fenergan)** possui fortíssima ação anticolinérgica central, aprofundando dramaticamente a confusão mental no idoso.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

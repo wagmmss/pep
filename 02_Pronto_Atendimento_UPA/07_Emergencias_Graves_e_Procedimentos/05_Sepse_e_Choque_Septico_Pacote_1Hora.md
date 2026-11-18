@@ -1,18 +1,18 @@
 # Protocolo de Atendimento: Sepse e Choque Séptico - Pacote da 1ª Hora (Surviving Sepsis)
-
-> **Atalho sugerido:** `;sepse`  
-> **Finalidade:** Reconhecimento precoce de disfunção orgânica aguda por infecção (qSOFA e SOFA), execução do Pacote da 1ª Hora, ressuscitação volêmica guiada por metas com cristaloides e uso precoce de vasopressores.
+**Categoria:** Emergencias Graves e Procedimentos  
+**Atalho:** `;sepse`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** A41.9 / R65.2  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO SEPSE & CHOQUE SÉPTICO ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___][? Registro :: , Registro: ___].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 - Horário de Abertura do Protocolo de Sepse: [HH:MM] do dia [DD/MM/AAAA].
 - Foco Infeccioso Suspeito: [Pulmonar (PAC grave / Broncoaspiração) / Urinário (Pielonefrite) / Abdominal (Peritonite / Colangite) / Pele e Partes Moles (Erisipela / Fasciíte) / Foco Indeterminado].
 
@@ -36,9 +36,9 @@ Alergias: [*Nega / [ ]].
 - Ectoscopia: [Mau / Regular] estado geral, [sonolento / torporoso / confuso / lúcido], descorado, taquipneico.
 - Perfusão Periférica: Extremidades [frias e mal perfundidas / quentes com vasodilatação distributiva]. Tempo de enchimento capilar (TEC): [ ] segundos (alterado se > 3 segundos). Presença de livedo em joelhos: [Sim / Não].
 - Aparelho Cardiovascular: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas, sem sopros.
-- Aparelho Respiratório: Murmúrio vesicular [reduzido em bases / com presença de estertores crepitantes em [ ] / sem ruídos adventícios].
+- Aparelho Respiratório: Murmúrio vesicular [reduzido em bases / com presença de estertores crepitantes em ___ / sem ruídos adventícios].
 - Abdome: Flácido, [indolor / dor difusa / dor à palpação de fossa ilíaca / sinais de irritação peritoneal].
-- Pele: Ausência de lesões bolhosas, crepitação subcutânea ou áreas necróticas extensas [se presente: [ ]].
+- Pele: Ausência de lesões bolhosas, crepitação subcutânea ou áreas necróticas extensas [se presente: ___].
 
 # CONDUTA:
 1. Lactato Sérico Inicial: Coletado às [HH:MM] -> Resultado: [ ] mmol/L (Alerta se > 2 mmol/L | Hipoperfusão tecidual grave se >= 4 mmol/L). Programada redosagem em 2 a 4 horas para avaliar clareamento do lactato.
@@ -73,12 +73,22 @@ Alergias: [*Nega / [ ]].
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### ⏱️ 1. Por Que o Pacote de 1 Hora Muda a Sobrevida na Sepse?
+### 🧠 1. Fisiopatologia & Porquê
+**⏱️ 1. Por Que o Pacote de 1 Hora Muda a Sobrevida na Sepse?**
 - **Por Que Cada Hora de Atraso no Antibiótico Aumenta a Mortalidade?** No choque séptico, cada hora de atraso até a primeira dose do antibiótico endovenoso eleva o risco de óbito em cerca de **7% a 8%**. Coletar hemoculturas imediatamente é mandatório, mas **nunca atrase o início do antimicrobiano** por dificuldade de coleta ou demora de exames de imagem.
 - **Lactato Arterial/Venoso como Marcador de Hipoperfusão Oculta:** Mesmo com PA limítrofe, lactato `≥ 2 mmol/L` (ou `> 4 mmol/L`) denuncia metabolismo anaeróbio por microcirculação comprometida e exige ressuscitação guiada e reavaliação seriada em 2–4 horas (*clearance* de lactato).
 
-### 💧 2. Por Que Preferimos Ringer Lactato e Vasopressor Periférico Precoce?
+**💧 2. Por Que Preferimos Ringer Lactato e Vasopressor Periférico Precoce?**
 - **Por Que Cristaloides Balanceados (Ringer Lactato) São Melhores que SF 0,9%?** Grandes volumes de SF 0,9% (concentração suprafisiológica de cloreto `154 mEq/L`) causam **acidose metabólica hiperclorêmica**, vasoconstrição da arteríola aferente renal e maior risco de lesão renal aguda.
 - **Por Que Não Esperar o Acesso Central para Iniciar Noradrenalina?** Se a `PAM < 65 mmHg` persiste durante ou após o início da expansão (`30 mL/kg`), iniciar **Noradrenalina em veia periférica calibrosa** (preferencialmente antecubital, com vigilância do sítio) restaura rapidamente a perfusão coronariana e cerebral enquanto o acesso venoso central é providenciado.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

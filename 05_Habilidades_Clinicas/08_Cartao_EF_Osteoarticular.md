@@ -88,22 +88,22 @@ EXAME OSTEOARTICULAR E DE COLUNA:
 
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Método Universal & Segurança no Trauma
-- [ ] Apliquei triagem GALS quando queixa difusa/poliarticular antes de focar
-- [ ] Segui a ordem Look → Feel → Move (Ativo antes do Passivo) comparando com o lado sadio primeiro
-- [ ] No trauma com deformidade/suspeita de fratura: NÃO forcei amplitude nem testes de estabilidade antes do RX
-- [ ] Chequei pele ao redor de toda fratura buscando exposição oculta
+- [ ] [CRÍTICO] Apliquei triagem GALS quando queixa difusa/poliarticular antes de focar
+- [ ] [CRÍTICO] Segui a ordem Look → Feel → Move (Ativo antes do Passivo) comparando com o lado sadio primeiro
+- [ ] [CRÍTICO] No trauma com deformidade/suspeita de fratura: NÃO forcei amplitude nem testes de estabilidade antes do RX
+- [ ] [CRÍTICO] Chequei pele ao redor de toda fratura buscando exposição oculta
 
 ### 2. Testes Específicos por Região Pertinente
-- [ ] Coluna: avaliei raízes L4/L5/S1, Lasègue verdadeiro (abaixo do joelho + Bragard) e red flags de Cauda Equina
+- [ ] [CRÍTICO] Coluna: avaliei raízes L4/L5/S1, Lasègue verdadeiro (abaixo do joelho + Bragard) e red flags de Cauda Equina
 - [ ] Ombro: executei testes dirigidos (Neer, Hawkins, Jobe, Gerber e Apreensão anterior) + nervo axilar se luxação
 - [ ] Quadril: observei posição/encurtamento (sem manipular se suspeita de fratura), rotação interna e FABER/Trendelenburg
-- [ ] Joelho: pesquisei derrame (Tecla), chequei afundamento posterior (LCP) antes da Gaveta, fiz Lachman (20°–30°) e McMurray/Apley
+- [ ] [CRÍTICO] Joelho: pesquisei derrame (Tecla), chequei afundamento posterior (LCP) antes da Gaveta, fiz Lachman (20°–30°) e McMurray/Apley
 - [ ] Tornozelo/Pé: apliquei Regras de Ottawa corretamente (6 cm maleolares, base 5º MTT, navicular, 4 passos) e palpei fíbula proximal se dor medial
 
 ### 3. Neurovascular Distal & Síndrome Compartimental
-- [ ] Documentei pulso distal, TEC, sensibilidade e motricidade distal ANTES e DEPOIS de qualquer imobilização/redução
+- [ ] [CRÍTICO] Documentei pulso distal, TEC, sensibilidade e motricidade distal ANTES e DEPOIS de qualquer imobilização/redução
 - [ ] Rastreiei síndrome compartimental (dor desproporcional que não cede e dor extrema ao estiramento passivo dos dedos)
 
 ### 4. Upgrade Preceptor V2.0 (TUNA FISH, Lachman & Artrocentese)
-- [ ] Rastreei Red Flags da coluna pelo mnemônico TUNA FISH (incluindo retenção urinária e anestesia em sela da Cauda Equina) e testei L4, L5 e S1
-- [ ] No joelho agudo, priorizei o Teste de Lachman a 20–30° (LR+ 10.2) e Regras de Ottawa; na monoartrite aguda febril, indiquei artrocentese imediata
+- [ ] [CRÍTICO] Rastreei Red Flags da coluna pelo mnemônico TUNA FISH (incluindo retenção urinária e anestesia em sela da Cauda Equina) e testei L4, L5 e S1
+- [ ] [CRÍTICO] No joelho agudo, priorizei o Teste de Lachman a 20–30° (LR+ 10.2) e Regras de Ottawa; na monoartrite aguda febril, indiquei artrocentese imediata

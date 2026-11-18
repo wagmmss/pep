@@ -52,7 +52,7 @@ LABORATÓRIO CRÍTICO DE PLANTÃO (INTERPRETAÇÃO IMEDIATA):
 ## 📝 5. COMO REGISTRAR NO PRONTUÁRIO (Texto Pronto)
 ```text
 INTERPRETAÇÃO SISTEMÁTICA DE GASOMETRIA ARTERIAL & ELETRÓLITOS:
-- Dados Gasométricos: pH: [ ] | PaCO2: [ ] mmHg | HCO3: [ ] mEq/L | BE: [ ] | PaO2: [ ] mmHg | SaO2: [ ]% (FiO2: [21]%, Relação PaO2/FiO2: [ ]) | Lactato: [ ] mmol/L.
+- Dados Gasométricos: pH: [ ] | PaCO2: [ ] mmHg | HCO3: [ ] mEq/L | BE: [ ] | PaO2: [ ] mmHg | SaO2: [ ]% (FiO2: [ ]%, Relação PaO2/FiO2: [ ]) | Lactato: [ ] mmol/L.
 - Eletrólitos & Bioquímica: Na+: [ ] mEq/L | Cl-: [ ] mEq/L | K+: [ ] mEq/L | Ca++ iônico: [ ] mmol/L | Albumina: [ ] g/dL | Glicemia: [ ] mg/dL.
 - Passo 1 e 2 (Distúrbio Primário - ROME): [Acidemia / Alcalemia / pH normal] por distúrbio primário [Metabólico / Respiratório].
 - Passo 3 (Resposta Compensatória): PaCO2 esperada (Fórmula de Winter) de [ ] ± 2 mmHg -> [Compensação adequada / Distúrbio misto associado].
@@ -79,11 +79,11 @@ INTERPRETAÇÃO SISTEMÁTICA DE GASOMETRIA ARTERIAL & ELETRÓLITOS:
 - [ ] Avaliei Lactato, Gradiente A-a e relação PaO2/FiO2 (índice de oxigenação)
 
 ### 2. Laboratório Básico Crítico
-- [ ] Chequei Hemograma completo (VCM/RDW, contagem absoluta de neutrófilos e plaquetas)
+- [ ] [CRÍTICO] Chequei Hemograma completo (VCM/RDW, contagem absoluta de neutrófilos e plaquetas)
 - [ ] Avaliei K+ (ECG imediato se hipercalemia; Mg++ se hipocalemia) e Na+ respeitando limite de 8 mEq/L/24h
 - [ ] Comparei Creatinina atual com a basal + diurese (estadiamento KDIGO) e ajustei medicações
-- [ ] Separei padrão hepatocelular vs colestático (FA + GGT) e chequei síntese real (INR e Albumina)
+- [ ] [CRÍTICO] Separei padrão hepatocelular vs colestático (FA + GGT) e chequei síntese real (INR e Albumina)
 
 ### 4. Upgrade Preceptor V2.0 (Figge, Delta-Delta & Trava de K+)
-- [ ] Corrigi o Ânion Gap pela albumina sérica (Fórmula de Figge: +2,5 mEq/L para cada 1 g/dL de queda da albumina) e calculei o Delta-Delta (ΔAG / ΔHCO3)
-- [ ] Apliquei a trava de segurança do Potássio na acidose (proibido iniciar insulina na CAD se K+ < 3,3 mEq/L) e identifiquei normocapnia na crise de asma como fadiga iminente
+- [ ] [CRÍTICO] Corrigi o Ânion Gap pela albumina sérica (Fórmula de Figge: +2,5 mEq/L para cada 1 g/dL de queda da albumina) e calculei o Delta-Delta (ΔAG / ΔHCO3)
+- [ ] [CRÍTICO] Apliquei a trava de segurança do Potássio na acidose (proibido iniciar insulina na CAD se K+ < 3,3 mEq/L) e identifiquei normocapnia na crise de asma como fadiga iminente

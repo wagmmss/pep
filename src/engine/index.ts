@@ -8,6 +8,9 @@ import * as SearchEngine from './search.ts';
 import * as DiretrizesEngine from './diretrizes.ts';
 import * as CalculadorasEngine from './calculadoras.ts';
 import * as Central6AnoEngine from './central6ano.ts';
+import * as ClinicalLinks from '../data/clinical_links.ts';
+import * as StoreState from '../state/store.ts';
+import * as RouterState from '../state/router.ts';
 
 export {
   PersonalizarEngine,
@@ -15,7 +18,10 @@ export {
   SearchEngine,
   DiretrizesEngine,
   CalculadorasEngine,
-  Central6AnoEngine
+  Central6AnoEngine,
+  ClinicalLinks,
+  StoreState,
+  RouterState
 };
 
 if (typeof window !== 'undefined') {

@@ -1,18 +1,18 @@
 # Procedimento Ambulatorial - Inserção de Implanon (Etonogestrel 68 mg)
-
-> **Atalho sugerido:** `;implanon-ins`  
-> **Finalidade:** Nota técnica de inserção subdérmica do implante de Etonogestrel 68 mg, confirmação por palpação e receita pós-procedimento.
+**Categoria:** Procedimentos Ambulatoriais  
+**Atalho:** `;implanon-ins`  
+**Gravidade:** Procedimento  
+**CID-10:** Z30.5  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### NOTA DE PROCEDIMENTO: INSERÇÃO DE IMPLANTE SUBDÉRMICO (IMPLANON NXT 68 MG) ######
-# IDENTIFICAÇÃO & ELEGIBILIDADE:
+# IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], DUM: [DD/MM/AAAA].
-Comorbidades: [+ *Hígida / [ ]].
-Alergias: [*Nega / [ ]].
+Comorbidades: [+ *Hígida / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 - Indicação & Elegibilidade (OMS): Contracepção reversível de longa ação (LARC) [no menacme com β-hCG negativo / no pós-parto imediato]. Ausência de contraindicações Categoria 4 da OMS (nega câncer de mama, TVP/TEP agudo ou hepatopatia grave).
 - Consentimento & Lote: TCLE lido e assinado. Lote do dispositivo: [ ] | Validade de uso: 3 anos (até [DD/MM/AAAA]).
 
@@ -36,7 +36,7 @@ Alergias: [*Nega / [ ]].
 2. Orientada sobre mudanças benignas esperadas no padrão menstrual (amenorreia, *spotting* ou escapes irregulares).
 3. Uso de método de barreira (preservativo) por 7 dias se inserido fora dos primeiros 5 dias do ciclo menstrual.
 
->> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+# RECEITA:
 USO ORAL:
 1. [Dipirona Monoidratada 500 mg / Paracetamol 750 mg] ---------------- 1 caixa
    Tomar 1 comprimido via oral de 6 em 6 horas se dor no local da aplicação nos primeiros 2 dias.
@@ -52,23 +52,29 @@ CUIDADOS COM O CURATIVO E SINAIS DE ALARME:
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que o Implanon (Etonogestrel 68 mg) é o Método Mais Eficaz da Medicina?
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que o Implanon (Etonogestrel 68 mg) é o Método Mais Eficaz da Medicina?**
 - **Duplo Mecanismo de Ação Central e Periférico (Índice de Pearl = `0,05` — superior à laqueadura tubária!):**
   1. **Bloqueio Hipotalâmico-Hipofisário do Pico de LH:** O etonogestrel liberado continuamente na corrente sanguínea suprime o pico ovulatório de LH, impedindo a ovulação em `> 99%` dos ciclos (sem suprimir totalmente o FSH, de modo que os folículos continuam produzindo estradiol endógeno fisiológico — evitando fogachos e perda de massa óssea!).
   2. **Espessamento Hostil do Muco Cervical:** Torna o muco cervical escasso e altamente viscoso, bloqueando a penetração dos espermatozoides.
   3. **Atrofia/Decidualização Endometrial:** Impede a receptividade endometrial e reduz drasticamente a dismenorreia e o volume menstrual.
 
-### 📐 2. Por Que a Anatomia da Inserção Mudou? (Trava Contra Lesão Neural e Vascular)
-- **A Zona de Perigo (Sulco Bicipital Medial):** No sulco entre o bíceps e o tríceps correm superficialmente o **nervo mediano, o nervo ulnar, a artéria braquial e a veia basílica**.
-- **A Técnica Atualizada da Fabricante (Sobre o Tríceps):**
-  - Marca-se o ponto de entrada **8 a 10 cm proximal ao epicôndilo medial do úmero** e **3 a 5 cm POSTERIORMENTE ao sulco bicipital** (diretamente sobre o ventre do músculo tríceps, longe do feixe neurovascular).
-  - Após perfurar a derme em `< 30°`, **abaixa-se o aplicador para a posição totalmente horizontal (paralela à pele)** e avança-se toda a agulha levantando levemente a pele (*técnica de tenda*). Isso garante que o bastão fique **estritamente subdérmico** (logo abaixo da derme), facilitando a palpação imediata e a retirada futura em 3 anos.
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
 
-### 💊 3. Por Que Ocorre o *Spotting* (Escape) e Como Tratamos na Prática?
+### 💊 3. Farmacologia & Doses
+**💊 3. Por Que Ocorre o *Spotting* (Escape) e Como Tratamos na Prática?**
 - **Por que sangra?** A progestina contínua sem estrogênio deixa o endométrio fino, atrófico e com **neovascularização capilar superficial frágil**. Não é falta de eficácia contraceptiva!
 - **Manejo Escalonado do Sangramento Desfavorável:**
   1. **Tranquilização prévia (padrão-ouro):** Explicar antes da inserção que `~20%` entram em amenorreia e `~20%` têm escapes irregulares nos primeiros 3–6 meses reduz em 80% os pedidos de retirada precoce.
   2. **1ª Linha Medicamentosa (AINE por 5 a 7 dias):** **Ibuprofeno 600 mg VO de 8/8h** ou **Ácido Mefenâmico 500 mg VO de 8/8h por 5 dias** (inibe prostaglandinas vasodilatadoras endometriais e estabiliza os capilares).
   3. **2ª Linha (se sem contraindicação ao estrogênio):** **ACO Combinado** (Etinilestradiol 30 mcg + Levonorgestrel 150 mcg) 1 cp/dia por **21 a 42 dias** para proliferar e reepitelizar a camada basal do endométrio.
+
+### 🚫 4. Segurança, Travas & Proibições
+**📐 2. Por Que a Anatomia da Inserção Mudou? (Trava Contra Lesão Neural e Vascular)**
+- **A Zona de Perigo (Sulco Bicipital Medial):** No sulco entre o bíceps e o tríceps correm superficialmente o **nervo mediano, o nervo ulnar, a artéria braquial e a veia basílica**.
+- **A Técnica Atualizada da Fabricante (Sobre o Tríceps):**
+  - Marca-se o ponto de entrada **8 a 10 cm proximal ao epicôndilo medial do úmero** e **3 a 5 cm POSTERIORMENTE ao sulco bicipital** (diretamente sobre o ventre do músculo tríceps, longe do feixe neurovascular).
+  - Após perfurar a derme em `< 30°`, **abaixa-se o aplicador para a posição totalmente horizontal (paralela à pele)** e avança-se toda a agulha levantando levemente a pele (*técnica de tenda*). Isso garante que o bastão fique **estritamente subdérmico** (logo abaixo da derme), facilitando a palpação imediata e a retirada futura em 3 anos.

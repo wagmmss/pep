@@ -70,22 +70,22 @@ Prescrição auditada quanto a: (1) Alergias medicamentosas confirmadas; (2) Aju
 
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Travas Clínicas (`A – R – G – I`)
-- [ ] Verifiquei alergias reais e reatividade cruzada (beta-lactâmicos, AINEs/dipirona, sulfa, contraste/látex)
-- [ ] Conferi função renal (ClCr) e hepática atuais e ajustei fármacos de risco (enoxaparina, ATBs, metformina, morfina)
-- [ ] Em mulher em idade fértil, chequei DUM/gestação e evitei teratogênicos; em idoso/criança, chequei Beers / mg/kg
+- [ ] [CRÍTICO] Verifiquei alergias reais e reatividade cruzada (beta-lactâmicos, AINEs/dipirona, sulfa, contraste/látex)
+- [ ] [CRÍTICO] Conferi função renal (ClCr) e hepática atuais e ajustei fármacos de risco (enoxaparina, ATBs, metformina, morfina)
+- [ ] [CRÍTICO] Em mulher em idade fértil, chequei DUM/gestação e evitei teratogênicos; em idoso/criança, chequei Beers / mg/kg
 - [ ] Eliminei duplicidades ocultas (2 AINEs, HNF+HBPM, 2 procinéticos) e interações críticas (QTc, K+, RNI)
 
 ### 2. Vias, Diluições & Drogas de Alta Vigilância (`V`)
-- [ ] Chequei vias e diluições críticas (`KCl` diluído/lento, `Fenitoína` só SF 0,9%, `Amiodarona` só SG 5%, `Vanco` ≥ 60 min)
-- [ ] Prescrevi insulina com "unidades" por extenso, corte de HGT e compatível com jejum/dieta do dia
+- [ ] [CRÍTICO] Chequei vias e diluições críticas (`KCl` diluído/lento, `Fenitoína` só SF 0,9%, `Amiodarona` só SG 5%, `Vanco` ≥ 60 min)
+- [ ] [CRÍTICO] Prescrevi insulina com "unidades" por extenso, corte de HGT e compatível com jejum/dieta do dia
 - [ ] Conferi cronofarmacologia (8/8h preservando sono, IBP em jejum, corticoide/diurético manhã, estatina noite)
 
 ### 3. Profilaxias & Receita Segura (`P – O`)
 - [ ] Avaliei indicação vs contraindicação de profilaxia de TEV (sangramento/plaquetas) em paciente internado
 - [ ] Prescrevi profilaxia de úlcera de estresse apenas se houver critério real (sem IBP automático para todos)
 - [ ] Garanti cabeceira 30°–45°, meta glicêmica segura e revisei retirada de SVD/acesso venoso desnecessário
-- [ ] Entreguei receita sem abreviações perigosas, com duração exata, sinais de alarme escritos e validada por Teach-Back
+- [ ] [CRÍTICO] Entreguei receita sem abreviações perigosas, com duração exata, sinais de alarme escritos e validada por Teach-Back
 
 ### 4. Upgrade Preceptor V2.0 (7 Travas A-R-G-I-V-P-O)
-- [ ] Bloqueei neurotoxicidade por Cefepime e narcose por Morfina (metabólito M6G) na disfunção renal, e a 'Bomba de Hipercalemia' (Bactrim + IECA/BRA + Espironolactona)
-- [ ] Auditei Medicamentos de Alta Vigilância (KCl 19,1% nunca em bolus, Fenitoína nunca em SG 5%, Vancomicina lenta) e apliquei o checklist FAST HUG BID
+- [ ] [CRÍTICO] Bloqueei neurotoxicidade por Cefepime e narcose por Morfina (metabólito M6G) na disfunção renal, e a 'Bomba de Hipercalemia' (Bactrim + IECA/BRA + Espironolactona)
+- [ ] [CRÍTICO] Auditei Medicamentos de Alta Vigilância (KCl 19,1% nunca em bolus, Fenitoína nunca em SG 5%, Vancomicina lenta) e apliquei o checklist FAST HUG BID

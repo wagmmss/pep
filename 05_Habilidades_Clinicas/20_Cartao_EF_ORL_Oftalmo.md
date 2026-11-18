@@ -65,7 +65,7 @@ EXAME OTORRINOLARINGOLÓGICO E OFTALMOLÓGICO DIRIGIDO:
 - [ ] Examinei primeiro o ouvido são e segurei o otoscópio apoiando o dedo na face do paciente
 - [ ] Tracionei o pavilhão na direção correta para a idade (acima/atrás no adulto vs abaixo/atrás no < 3 anos)
 - [ ] Diferenciei Otite Externa (dor no trago/edema de CAE) de OMA real (abaulamento de MT)
-- [ ] Avaliei simetria da úvula, ausência de trismo e calculei Centor/McIsaac antes de prescrever ATB
+- [ ] [CRÍTICO] Avaliei simetria da úvula, ausência de trismo e calculei Centor/McIsaac antes de prescrever ATB
 
 ### 2. Epistaxe & Olho Vermelho
 - [ ] Na epistaxe, posicionei sentado inclinado para a frente com compressão das asas nasais por 10–15 min
@@ -73,5 +73,5 @@ EXAME OTORRINOLARINGOLÓGICO E OFTALMOLÓGICO DIRIGIDO:
 - [ ] Everti a pálpebra superior à procura de corpo estranho e realizei teste de fluoresceína na suspeita corneana
 
 ### 3. Upgrade Preceptor V2.0 (Travas de Segurança Oftalmo/ORL)
-- [ ] Descartei as 5 Bandeiras Vermelhas do Olho Vermelho e NUNCA prescrevi colírio anestésico ou corticoide tópico para uso domiciliar
-- [ ] Excluí complicações supurativas graves (Mastoidite Aguda retroauricular e Celulite Orbitária Pós-Septal com proptose/oftalmoplegia)
+- [ ] [CRÍTICO] Descartei as 5 Bandeiras Vermelhas do Olho Vermelho e NUNCA prescrevi colírio anestésico ou corticoide tópico para uso domiciliar
+- [ ] [CRÍTICO] Excluí complicações supurativas graves (Mastoidite Aguda retroauricular e Celulite Orbitária Pós-Septal com proptose/oftalmoplegia)

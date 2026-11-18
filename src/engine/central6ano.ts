@@ -54,6 +54,53 @@ export interface CurriculoAuditItem {
   done: boolean;
 }
 
+export type ProcedureAutonomy = 'auxiliei' | 'supervisionado' | 'autonomo';
+
+export interface LogbookProcedureGoal {
+  id: string;
+  rodizioId: string;
+  rodizioNome: string;
+  nome: string;
+  metaAlvo: number;
+  guiaRef: string;
+}
+
+export interface ShiftScheduleEntry {
+  dateIso: string;
+  tipo: Central6AnoState['arquetipoId'];
+  label?: string;
+}
+
+export interface WeeklyHistory7030Entry {
+  weekIso: string;
+  rodizioId: string;
+  marchaId: MarchaId;
+  questoesAncora: number;
+  questoesTrilha: number;
+  totalQuestoes: number;
+  metaAlvo: number;
+  pctAncora: number;
+  pctTrilha: number;
+  metaAtingida: boolean;
+}
+
+export type TimerPresetId = 'anki_15m' | 'exames_25m' | 'ciclo_90m' | 'osce_8m' | 'cochilo_90m';
+
+export interface TimerPresetConfig {
+  id: TimerPresetId;
+  label: string;
+  minutes: number;
+  seconds: number;
+  category: string;
+}
+
+export interface TimerLogEntry {
+  id: string;
+  presetId: TimerPresetId;
+  completedAtIso: string;
+  minutes: number;
+}
+
 export interface Central6AnoState {
   rodizioId: string;
   feriasSemana: string;
@@ -61,6 +108,9 @@ export interface Central6AnoState {
   arquetipoId: 'ferias_4h' | 'dia_cheio' | 'pe_vespera' | 'plantao_12h' | 'pos_plantao' | 'fds';
   diaSemana: 'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab' | 'dom';
   microHabitoSemanal: string;
+  linkedHabId?: string;
+  consecutiveCleanByHab?: Record<string, number>;
+  dominadasHabIds?: Record<string, boolean>;
   questoesAncoraSem: number;
   questoesTrilhaSem: number;
   streakDias: number;
@@ -73,9 +123,14 @@ export interface Central6AnoState {
   curriculoDoneIds: Record<string, boolean>;
   ritualDomingoDoneIds: Record<string, boolean>;
   teoriaStatusById?: Record<string, 'nao_iniciado' | 'estudado' | 'dominado'>;
+  teoriaExercisesDone?: Record<string, boolean>;
   activeTeoriaModId?: string;
   travasCheckedIds?: Record<string, boolean>;
   procCountsById?: Record<string, number>;
+  procAutonomyById?: Record<string, { auxiliei: number; supervisionado: number; autonomo: number }>;
+  shiftSchedule?: ShiftScheduleEntry[];
+  weeklyHistory?: WeeklyHistory7030Entry[];
+  timerLogs?: TimerLogEntry[];
   logbookEntries?: Array<{
     id: string;
     dateIso: string;
@@ -84,6 +139,8 @@ export interface Central6AnoState {
     titulo: string;
     papel: string;
     aprendizado: string;
+    status?: 'em_treino' | 'resolvido';
+    gatilhoCorrecao?: string;
   }>;
 }
 
@@ -306,7 +363,7 @@ export const ROTA_DIAS_SEMANA: Record<
     pilarDetalhe: string;
     moduloRef: string;
     moduloId: string;
-    ferramentaTab: 'gaso' | 'lr' | 'travas' | 'madrugada';
+    ferramentaTab: 'gaso' | 'lr' | 'travas' | 'intercorrencias';
   }
 > = {
   seg: {
@@ -826,18 +883,183 @@ export function buildContextualAiPrompt(kind: PromptContextualKind, state: Centr
   const rodizio = RODIZIOS_6ANO.find((r) => r.id === state.rodizioId) || RODIZIOS_6ANO[0];
   const rotaDia = ROTA_DIAS_SEMANA[state.diaSemana] || ROTA_DIAS_SEMANA.seg;
   const microHab = state.microHabitoSemanal || rodizio.microHabitoSugerido;
+  const top3BlindSpots = (state.logbookEntries || [])
+    .filter((e) => e.tipo === 'ponto_cego' && e.status !== 'resolvido')
+    .slice(-3)
+    .map((e) => e.titulo);
+  const blindSpotsSuffix = top3BlindSpots.length > 0
+    ? `\n\n[Pontos Cegos Ativos no Logbook para testar neste treino: ${top3BlindSpots.join(' | ')}]`
+    : '';
 
   if (kind === 'paciente') {
-    return `Atue como um paciente real em um cenário clínico de [${rodizio.nome} — Foco: ${rodizio.ancora70}]. Escolha uma patologia prevalente desse rodízio, mas NÃO me diga qual é. Comece dizendo apenas sua idade, sexo e queixa principal em 1 frase leiga. Só me dê detalhes se eu perguntar de forma clara e empática. Estou treinando hoje especificamente: "${microHab}" (${rotaDia.pilarTitulo}). Quando eu pedir o exame físico, informe apenas os achados das manobras específicas que eu solicitar (HDPE). Ao final, quando eu encerrar e apresentar meu One-Liner + 3 hipóteses + conduta, saia do personagem e me avalie pelo modelo Calgary-Cambridge: (1) perguntas discriminatórias que faltaram, (2) Red Flags que esqueci, (3) se meu exame físico foi guiado por hipóteses com bom LR+ e (4) se executei meu micro-hábito da semana.`;
+    return `Atue como um paciente real em um cenário clínico de [${rodizio.nome} — Foco: ${rodizio.ancora70}]. Escolha uma patologia prevalente desse rodízio, mas NÃO me diga qual é. Comece dizendo apenas sua idade, sexo e queixa principal em 1 frase leiga. Só me dê detalhes se eu perguntar de forma clara e empática. Estou treinando hoje especificamente: "${microHab}" (${rotaDia.pilarTitulo}). Quando eu pedir o exame físico, informe apenas os achados das manobras específicas que eu solicitar (HDPE). Ao final, quando eu encerrar e apresentar meu One-Liner + 3 hipóteses + conduta, saia do personagem e me avalie pelo modelo Calgary-Cambridge: (1) perguntas discriminatórias que faltaram, (2) Red Flags que esqueci, (3) se meu exame físico foi guiado por hipóteses com bom LR+ e (4) se executei meu micro-hábito da semana.${blindSpotsSuffix}`;
   }
   if (kind === 'oratoria') {
-    return `Atue como um preceptor exigente da FMRP-USP/HCRP no rodízio de [${rodizio.nome}]. Vou colar abaixo a transcrição do áudio/vídeo de 1 a 3 minutos em que passei um caso clínico usando [SNAPPS / SBAR / Pyramid Principle]. Avalie minha apresentação de 0 a 10 usando esta rubrica: (1) Abertura com One-Liner claro e Qualificadores Semânticos (0–2), (2) Filtro cirúrgico de positivos e negativos pertinentes sem relato cronológico prolixo (0–2), (3) Comparação explícita entre pelo menos 2 diagnósticos diferenciais (0–2), (4) Proposta de plano objetivo com as 7 Travas de segurança (0–2), (5) Firmeza, pausas limpas e ausência de vícios de linguagem (0–2). Em seguida, reescreva minha fala em uma versão Padrão-Ouro de até 75 segundos para eu regravar o Take 2:\n\n[COLE SUA TRANSCRIÇÃO AQUI]`;
+    return `Atue como um preceptor exigente da FMRP-USP/HCRP no rodízio de [${rodizio.nome}]. Vou colar abaixo a transcrição do áudio/vídeo de 1 a 3 minutos em que passei um caso clínico usando [SNAPPS / SBAR / Pyramid Principle]. Avalie minha apresentação de 0 a 10 usando esta rubrica: (1) Abertura com One-Liner claro e Qualificadores Semânticos (0–2), (2) Filtro cirúrgico de positivos e negativos pertinentes sem relato cronológico prolixo (0–2), (3) Comparação explícita entre pelo menos 2 diagnósticos diferenciais (0–2), (4) Proposta de plano objetivo com as 7 Travas de segurança (0–2), (5) Firmeza, pausas limpas e ausência de vícios de linguagem (0–2). Em seguida, reescreva minha fala em uma versão Padrão-Ouro de até 75 segundos para eu regravar o Take 2:${blindSpotsSuffix}\n\n[COLE SUA TRANSCRIÇÃO AQUI]`;
   }
   if (kind === 'raciocinio') {
-    return `Quero treinar Raciocínio Clínico, Illness Scripts e Raciocínio Bayesiano para o rodízio de [${rodizio.nome} — Temas: ${rodizio.ancora70}]. Apresente um caso clínico desafiador em 3 etapas progressivas (Etapa 1: apenas queixa principal, idade e contexto; Etapa 2: HMA completa + sinais vitais + exame físico dirigido; Etapa 3: exames complementares). A cada etapa, pare e espere eu responder com: (a) Qualificadores Semânticos, (b) One-Liner atualizado, (c) Top 3 hipóteses comparando seus Illness Scripts, e (d) o diagnóstico mais letal que não posso deixar passar. Critique meu raciocínio apontando vieses cognitivos (ancoragem, fechamento prematuro) antes de liberar a próxima etapa.`;
+    return `Quero treinar Raciocínio Clínico, Illness Scripts e Raciocínio Bayesiano para o rodízio de [${rodizio.nome} — Temas: ${rodizio.ancora70}]. Apresente um caso clínico desafiador em 3 etapas progressivas (Etapa 1: apenas queixa principal, idade e contexto; Etapa 2: HMA completa + sinais vitais + exame físico dirigido; Etapa 3: exames complementares). A cada etapa, pare e espere eu responder com: (a) Qualificadores Semânticos, (b) One-Liner atualizado, (c) Top 3 hipóteses comparando seus Illness Scripts, e (d) o diagnóstico mais letal que não posso deixar passar. Critique meu raciocínio apontando vieses cognitivos (ancoragem, fechamento prematuro) antes de liberar a próxima etapa.${blindSpotsSuffix}`;
   }
   if (kind === 'exames') {
-    return `Me dê a Micro-Dose Diária de Interpretação Sistemática de Exames (25 min) calibrada para [${rodizio.nome}] (${rotaDia.exame25m}): gere 1 caso clínico agudo contendo (1) dados completos de Gasometria Arterial com Na+, Cl-, K+, Albumina e Lactato para eu calcular os 5 passos (pH, primário, Fórmula de Winter, Ânion Gap corrigido pela albumina e relação Delta-Delta), e (2) um desafio detalhado de ECG (10 passos) ou Imagem de Urgência (RX Tórax/Abdome, TC de Crânio ou e-FAST). NÃO dê o gabarito ainda: espere eu enviar minha leitura sistemática e minha conduta imediata para então corrigir passo a passo.`;
+    return `Me dê a Micro-Dose Diária de Interpretação Sistemática de Exames (25 min) calibrada para [${rodizio.nome}] (${rotaDia.exame25m}): gere 1 caso clínico agudo contendo (1) dados completos de Gasometria Arterial com Na+, Cl-, K+, Albumina e Lactato para eu calcular os 5 passos (pH, primário, Fórmula de Winter, Ânion Gap corrigido pela albumina e relação Delta-Delta), e (2) um desafio detalhado de ECG (10 passos) ou Imagem de Urgência (RX Tórax/Abdome, TC de Crânio ou e-FAST). NÃO dê o gabarito ainda: espere eu enviar minha leitura sistemática e minha conduta imediata para então corrigir passo a passo.${blindSpotsSuffix}`;
   }
-  return `Atue como examinador de uma estação prática de 2ª Fase (OSCE — padrão USP-RP / USP-SP / UNICAMP) do rodízio de [${rodizio.nome}]. Monte uma estação cronometrada de 8 minutos sobre [${rodizio.ancora70}] envolvendo anamnese dirigida, exame físico HDPE, interpretação de 1 exame crítico e prescrição/conduta com as 7 Travas (A-R-G-I-V-P-O). Apresente a folha de porta da estação e aguarde minhas ações passo a passo. Ao final, corrija meu desempenho usando um Checklist Oficial de Banca (0 a 10 pontos) destacando os itens obrigatórios que esqueci.`;
+  return `Atue como examinador de uma estação prática de 2ª Fase (OSCE — padrão USP-RP / USP-SP / UNICAMP) do rodízio de [${rodizio.nome}]. Monte uma estação cronometrada de 8 minutos sobre [${rodizio.ancora70}] envolvendo anamnese dirigida, exame físico HDPE, interpretação de 1 exame crítico e prescrição/conduta com as 7 Travas (A-R-G-I-V-P-O). Apresente a folha de porta da estação e aguarde minhas ações passo a passo. Ao final, corrija meu desempenho usando um Checklist Oficial de Banca (0 a 10 pontos) destacando os itens obrigatórios que esqueci.${blindSpotsSuffix}`;
 }
+
+// ============================================================================
+// MATRIZ COMPLETA DOS 9 RODÍZIOS (LOGBOOK_PROCEDIMENTOS_6ANO.md) + ENSAIO 3 MIN
+// + ESCALA DE PLANTÕES + TIMER MULTI-PRESETS + HISTÓRICO 70/30 + REGRA 3x
+// ============================================================================
+
+export const LOGBOOK_PROCEDIMENTOS_MATRIX: LogbookProcedureGoal[] = [
+  // 1. Pré-Temporada Férias / Base
+  { id: 'proc-ecg-10', rodizioId: 'ferias', rodizioNome: 'Pré-Temporada Férias', nome: 'ECG Sistemático (10 passos)', metaAlvo: 15, guiaRef: 'Módulo 05' },
+  { id: 'proc-gaso-5', rodizioId: 'ferias', rodizioNome: 'Pré-Temporada Férias', nome: 'Gasometria em 5 Passos', metaAlvo: 15, guiaRef: 'Módulo 05' },
+  // 2. Cirurgia Geral
+  { id: 'proc-sutura', rodizioId: 'cirurgia', rodizioNome: 'Cirurgia Geral', nome: 'Anestesia local + Sutura (simples/Donati/intradérmica)', metaAlvo: 10, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
+  { id: 'proc-svd', rodizioId: 'cirurgia', rodizioNome: 'Cirurgia Geral', nome: 'Sondagem Vesical de Demora (SVD M/F)', metaAlvo: 3, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
+  { id: 'proc-sng', rodizioId: 'cirurgia', rodizioNome: 'Cirurgia Geral', nome: 'Sondagem Nasogástrica / Enteral (SNG/SNE)', metaAlvo: 2, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
+  { id: 'proc-curativo', rodizioId: 'cirurgia', rodizioNome: 'Cirurgia Geral', nome: 'Curativo complexo / Debridamento / Retirada de dreno', metaAlvo: 3, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
+  // 3. Anestesio / CTI
+  { id: 'proc-bvm', rodizioId: 'anestesio_cti', rodizioNome: 'Anestesio / CTI', nome: 'Ventilação Bolsa-Válvula-Máscara (BVM)', metaAlvo: 10, guiaRef: 'Módulo 07' },
+  { id: 'proc-iot', rodizioId: 'anestesio_cti', rodizioNome: 'Anestesio / CTI', nome: 'Laringoscopia / Intubação Orotraqueal (IOT)', metaAlvo: 5, guiaRef: 'Módulo 07' },
+  { id: 'proc-gaso-art', rodizioId: 'anestesio_cti', rodizioNome: 'Anestesio / CTI', nome: 'Gasometria Arterial / PAI', metaAlvo: 5, guiaRef: 'Módulo 07' },
+  { id: 'proc-cvc', rodizioId: 'anestesio_cti', rodizioNome: 'Anestesio / CTI', nome: 'Acesso Venoso Central (USG-guiado)', metaAlvo: 2, guiaRef: 'Módulo 07' },
+  // 4. Ginecologia & Obstetrícia
+  { id: 'proc-especular', rodizioId: 'go', rodizioNome: 'Ginecologia & Obstetrícia', nome: 'Exame Especular + Coleta CCO', metaAlvo: 10, guiaRef: '02_Exame_Fisico_Anamnese_GO.md' },
+  { id: 'proc-toque-obs', rodizioId: 'go', rodizioNome: 'Ginecologia & Obstetrícia', nome: 'Toque Obstétrico (dilatação/apagamento/plano)', metaAlvo: 10, guiaRef: '02_Exame_Fisico_Anamnese_GO.md' },
+  { id: 'proc-parto-sut', rodizioId: 'go', rodizioNome: 'Ginecologia & Obstetrícia', nome: 'Parto Normal Assistido / Sutura Perineal / Episiorrafia', metaAlvo: 3, guiaRef: '02_Exame_Fisico_Anamnese_GO.md' },
+  // 5. Oftalmo / ORL / CCP
+  { id: 'proc-otoscopia', rodizioId: 'oftalmo_orl_ccp', rodizioNome: 'Oftalmo / ORL / CCP', nome: 'Otoscopia limpa + Remoção de cerume/CE simples', metaAlvo: 10, guiaRef: 'Guias de Semiologia + R1' },
+  { id: 'proc-fluoresceina', rodizioId: 'oftalmo_orl_ccp', rodizioNome: 'Oftalmo / ORL / CCP', nome: 'Avaliação de olho vermelho com Fluoresceína', metaAlvo: 5, guiaRef: 'Guias de Semiologia + R1' },
+  { id: 'proc-tamponamento', rodizioId: 'oftalmo_orl_ccp', rodizioNome: 'Oftalmo / ORL / CCP', nome: 'Tamponamento nasal anterior / Manejo traqueostomia', metaAlvo: 1, guiaRef: 'Guias de Semiologia + R1' },
+  // 6. MFC / Atenção Primária
+  { id: 'proc-mfc-ice', rodizioId: 'mfc', rodizioNome: 'Medicina de Família (MFC)', nome: 'Consulta centrada na pessoa (ICE + Teach-Back)', metaAlvo: 10, guiaRef: 'Módulo 01' },
+  { id: 'proc-mfc-rastreio', rodizioId: 'mfc', rodizioNome: 'Medicina de Família (MFC)', nome: 'Rastreamento oportunista & Conciliação medicamentosa', metaAlvo: 5, guiaRef: 'Módulo 06' },
+  // 7. Clínica Médica
+  { id: 'proc-paracentese', rodizioId: 'cm', rodizioNome: 'Clínica Médica', nome: 'Paracentese diagnóstica / alívio', metaAlvo: 3, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
+  { id: 'proc-toracocentese', rodizioId: 'cm', rodizioNome: 'Clínica Médica', nome: 'Toracocentese', metaAlvo: 2, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
+  { id: 'proc-pl', rodizioId: 'cm', rodizioNome: 'Clínica Médica', nome: 'Punção Lombar (PL)', metaAlvo: 2, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
+  // 8. Pediatria
+  { id: 'proc-ped-oto', rodizioId: 'ped', rodizioNome: 'Pediatria', nome: 'Otoscopia pediátrica com contenção adequada', metaAlvo: 15, guiaRef: '08_Exame_Fisico_Pediatrico.md' },
+  { id: 'proc-ped-sala-parto', rodizioId: 'ped', rodizioNome: 'Pediatria', nome: 'Reanimação Neonatal / Sala de Parto', metaAlvo: 3, guiaRef: '08_Exame_Fisico_Pediatrico.md' },
+  { id: 'proc-ped-diluicao', rodizioId: 'ped', rodizioNome: 'Pediatria', nome: 'Cálculo e preparo de diluições pediátricas', metaAlvo: 5, guiaRef: '08_Exame_Fisico_Pediatrico.md' },
+  // 9. Emergência & Trauma
+  { id: 'proc-efast', rodizioId: 'emergencia_trauma', rodizioNome: 'Emergência & Trauma', nome: 'e-FAST à beira do leito', metaAlvo: 10, guiaRef: '02_Avaliacao_Paciente_Grave_ABCDE.md' },
+  { id: 'proc-sri', rodizioId: 'emergencia_trauma', rodizioNome: 'Emergência & Trauma', nome: 'IOT de Emergência (SRI) / Cardioversão', metaAlvo: 5, guiaRef: '02_Avaliacao_Paciente_Grave_ABCDE.md' },
+  { id: 'proc-dreno-torax', rodizioId: 'emergencia_trauma', rodizioNome: 'Emergência & Trauma', nome: 'Drenagem de Tórax (auxiliar/executar)', metaAlvo: 2, guiaRef: '02_Avaliacao_Paciente_Grave_ABCDE.md' },
+];
+
+export const ENSAIO_MENTAL_3MIN_PASSOS = [
+  { step: 1, title: 'Indicação & Contraindicação Absoluta', prompt: 'Por que estou fazendo agora? O que proíbe (plaquetopenia grave, INR alterado, infecção no sítio, instabilidade)?' },
+  { step: 2, title: 'Material Completo na Bandeja', prompt: 'Cheque mentalmente 100% dos itens antes de calçar luva estéril para não quebrar assepsia no meio.' },
+  { step: 3, title: 'Marco Anatômico & Ângulo', prompt: 'Onde entra a agulha/lâmina, em que ângulo, qual estrutura nobre passa ao lado (vaso, nervo, pleura)?' },
+  { step: 4, title: 'Complicação Imediata & Plano B', prompt: 'Se sangrar / der pneumotórax / não progredir o fio-guia, o que eu faço nos primeiros 10 segundos?' },
+] as const;
+
+export const TIMER_PRESETS: Record<TimerPresetId, TimerPresetConfig> = {
+  anki_15m: { id: 'anki_15m', label: 'Anki 15m', minutes: 15, seconds: 15 * 60, category: 'Micro-Janela' },
+  exames_25m: { id: 'exames_25m', label: 'Exames 25m', minutes: 25, seconds: 25 * 60, category: 'Aquecimento' },
+  ciclo_90m: { id: 'ciclo_90m', label: 'Ciclo 90m', minutes: 90, seconds: 90 * 60, category: 'Estudo Profundo' },
+  osce_8m: { id: 'osce_8m', label: 'OSCE 8m', minutes: 8, seconds: 8 * 60, category: 'Simulação' },
+  cochilo_90m: { id: 'cochilo_90m', label: 'Cochilo 90m', minutes: 90, seconds: 90 * 60, category: 'Blindagem' },
+};
+
+export function registerProcedureExecution(
+  state: Central6AnoState,
+  procId: string,
+  autonomy: ProcedureAutonomy
+): Central6AnoState {
+  const prevCounts = state.procCountsById || {};
+  const prevAuto = state.procAutonomyById || {};
+  const curAuto = prevAuto[procId] || { auxiliei: 0, supervisionado: 0, autonomo: 0 };
+
+  return {
+    ...state,
+    procCountsById: {
+      ...prevCounts,
+      [procId]: (prevCounts[procId] || 0) + 1,
+    },
+    procAutonomyById: {
+      ...prevAuto,
+      [procId]: {
+        ...curAuto,
+        [autonomy]: (curAuto[autonomy] || 0) + 1,
+      },
+    },
+  };
+}
+
+export function resolveContextWithSchedule(
+  dateObj: Date,
+  schedule: ShiftScheduleEntry[] = []
+): ReturnType<typeof resolveCalendarContextForDate> & { fromSchedule: boolean; scheduleLabel?: string } {
+  const base = resolveCalendarContextForDate(dateObj);
+  const match = schedule.find((s) => s.dateIso === base.dateIso);
+  if (match) {
+    return {
+      ...base,
+      arquetipoSugerido: match.tipo,
+      fromSchedule: true,
+      scheduleLabel: match.label,
+    };
+  }
+  return { ...base, fromSchedule: false };
+}
+
+export function recordPrePortaExecution(
+  state: Central6AnoState,
+  habId: string,
+  criticalErrorsCount: number
+): { nextState: Central6AnoState; streakCount: number; newlyDominated: boolean } {
+  const prevStreak = state.consecutiveCleanByHab || {};
+  const prevDom = state.dominadasHabIds || {};
+  const nextCount = criticalErrorsCount === 0 ? (prevStreak[habId] || 0) + 1 : 0;
+  const dominated = Boolean(prevDom[habId]) || nextCount >= 3;
+  const newlyDominated = !prevDom[habId] && nextCount >= 3;
+
+  return {
+    nextState: {
+      ...state,
+      consecutiveCleanByHab: { ...prevStreak, [habId]: nextCount },
+      dominadasHabIds: { ...prevDom, [habId]: dominated },
+    },
+    streakCount: nextCount,
+    newlyDominated,
+  };
+}
+
+export function computeWeekly7030Summary(state: Central6AnoState, weekIso: string): WeeklyHistory7030Entry {
+  const ancora = Math.max(0, Number(state.questoesAncoraSem) || 0);
+  const trilha = Math.max(0, Number(state.questoesTrilhaSem) || 0);
+  const total = ancora + trilha;
+  const marcha = MARCHAS_6ANO[state.marchaId] || MARCHAS_6ANO['3_normal'];
+  const pctAncora = total > 0 ? Math.round((ancora / total) * 100) : 0;
+  const pctTrilha = total > 0 ? 100 - pctAncora : 0;
+
+  return {
+    weekIso,
+    rodizioId: state.rodizioId,
+    marchaId: state.marchaId,
+    questoesAncora: ancora,
+    questoesTrilha: trilha,
+    totalQuestoes: total,
+    metaAlvo: marcha.metaAlvo,
+    pctAncora,
+    pctTrilha,
+    metaAtingida: total >= marcha.metaMin,
+  };
+}
+
+export function closeWeekly7030Snapshot(state: Central6AnoState, weekIso: string): Central6AnoState {
+  const summary = computeWeekly7030Summary(state, weekIso);
+  const history = [...(state.weeklyHistory || []).filter((h) => h.weekIso !== weekIso), summary];
+  return {
+    ...state,
+    semanasConcluidas: (state.semanasConcluidas || 0) + 1,
+    questoesAncoraSem: 0,
+    questoesTrilhaSem: 0,
+    weeklyHistory: history,
+  };
+}
+

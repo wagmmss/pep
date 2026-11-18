@@ -1,18 +1,18 @@
 # Protocolo de Atendimento: Acidente Vascular Cerebral (AVC) e Ataque Isquêmico Transitório (AIT)
-
-> **Atalho sugerido:** `;avc`  
-> **Finalidade:** Triagem rápida na Sala Vermelha (Escala de Cincinnati e NIHSS), definição da janela terapêutica de trombólise química (< 4,5 horas), manejo rigoroso da PA antes e após Alteplase/rt-PA e conduta no AVC não trombolisado / AIT.
+**Categoria:** Emergencias Graves e Procedimentos  
+**Atalho:** `;avc`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** I63.9 / G45.9  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO DE SALA VERMELHA: PROTOCOLO AVC AGUDO (CÓDIGO AVC) ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___][? Registro :: , Registro: ___].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 - Data e Hora do Início dos Sintomas / Última vez visto bem (Last Seen Well): [DD/MM/AAAA] às [HH:MM].
 - Tempo de Evolução dos Sintomas: [ ] horas e [ ] minutos.
 - Classificação Temporal: [JANELA DE TROMBÓLISE VÁLIDA (< 4,5 HORAS) / FORA DA JANELA (> 4,5 HORAS) / AVC DO DESPERTAR (WAKE-UP STROKE)].
@@ -29,7 +29,7 @@ Alergias: [*Nega / [ ]].
 - Escala de Coma de Glasgow: [ ]/15 pontos (Ocular: [ ], Verbal: [ ], Motora: [ ]).
 - Pupilas: Isocóricas e fotorreagentes [ou anisocóricas: ( )].
 - Escala de Gravidade do AVC (NIHSS - National Institutes of Health Stroke Scale):
-  * PONTUAÇÃO TOTAL DO NIHSS: [ 0 ] PONTOS (AVC Menor <= 4 | Moderado 5-15 | Grave 16-20 | Muito Grave > 20).
+  * PONTUAÇÃO TOTAL DO NIHSS: [ ] PONTOS (AVC Menor <= 4 | Moderado 5-15 | Grave 16-20 | Muito Grave > 20).
   * Detalhamento Executivo: [1a-Consciência: 0 | 1b-Perguntas: 0 | 1c-Comandos: 0 | 2-Olhar: 0 | 3-Campo Visual: 0 | 4-Paralisia Facial: 0 | 5a/5b-MMSS: 0/0 | 6a/6b-MMII: 0/0 | 7-Ataxia: 0 | 8-Sensibilidade: 0 | 9-Linguagem: 0 | 10-Disartria: 0 | 11-Negligência: 0].
 
 # INVESTIGAÇÃO COMPLEMENTAR IMEDIATA:
@@ -74,15 +74,21 @@ Alergias: [*Nega / [ ]].
 
 ---
 
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que "Tempo É Cérebro"? A Zona de Penumbra Isquêmica e a Regra do *Last Known Well*
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que "Tempo É Cérebro"? A Zona de Penumbra Isquêmica e a Regra do *Last Known Well***
 A cada minuto de oclusão de uma grande artéria cerebral, **1,9 milhão de neurônios** são perdidos irreversivelmente no *core* isquêmico, mas o tecido ao redor (**zona de penumbra**) permanece vivo graças à circulação colateral por algumas horas. O relógio da trombólise (**janela de até 4,5 horas para Alteplase/Tenecteplase** e **até 6 a 24 horas para Trombectomia Mecânica** em oclusão de grande vaso) conta a partir do **último momento em que o paciente foi visto assintomático (*Last Known Well*)** — no AVC do despertar (*Wake-up Stroke*), o tempo zero é a hora em que o paciente foi dormir bem, exigindo RM (mismatch DWI-FLAIR) ou TC perfusão para recanalização.
 
-### 💊 2. Os 2 Erros Fatais Antes da TC de Crânio: Esquecer a Glicemia e Baixar a Pressão Arterial Rápido Demais
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Trombólise Venosa (Alteplase 0,9 mg/kg) e Profilaxia Secundária Precoce (AAS vs. DAPT no AIT/AVC Menor)**
+Confirmada a ausência de hemorragia na TC de crânio e respeitados os critérios de exclusão, administra-se **Alteplase (rt-PA) 0,9 mg/kg (máximo 90 mg): 10% em bolus IV em 1 min e 90% em BIC em 60 min**, sendo **proibidos AAS, Heparina e passagem de SNE/SVD nas primeiras 24 horas** pós-trombólise. Nos pacientes fora de janela que não receberam trombolítico, inicia-se **AAS 100–300 mg/dia** imediatamente após a TC descartar sangramento (após triagem de disfagia); em **AIT de alto risco (ABCD² ≥ 4) ou AVC isquêmico menor (NIHSS ≤ 3)** não cardioembólico, os estudos *CHANCE* e *POINT* demonstram que a **Dupla Antiagregação (AAS 100 mg + Clopidogrel 75 mg, com ataque de 300 mg) por 21 dias** reduz drasticamente a recorrência de AVC nos primeiros 90 dias.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+**💊 2. Os 2 Erros Fatais Antes da TC de Crânio: Esquecer a Glicemia e Baixar a Pressão Arterial Rápido Demais**
 Antes de ativar a trombólise, dois cuidados à beira do leito são inegociáveis:
 1. **Checar a Glicemia Capilar (HGT)**: a **hipoglicemia (< 60 mg/dL)** é o grande camaleão neurológico capaz de produzir hemiparesia e afasia súbitas idênticas ao AVC, revertendo instantaneamente com glicose hipertônica.
 2. **Permissividade Hipertensiva no AVC Isquêmico**: a hipertensão reativa é o mecanismo fisiológico que mantém a perfusão da zona de penumbra; **reduzir a PA abruptamente com Nifedipino ou Captopril infarta a penumbra**. No AVCi **candidato à trombólise**, a PA deve ser reduzida suavemente com anti-hipertensivo titulável IV (Metoprolol, Labetalol ou Nitroprussiato) apenas se **PA ≥ 185x110 mmHg** (mantendo < 180x105 mmHg nas 24h pós-rtPA); no AVCi **não candidato à trombólise**, só se trata a PA nas primeiras 24h se **PA > 220x120 mmHg** (reduzindo apenas 15%).
-
-### 🧭 3. Trombólise Venosa (Alteplase 0,9 mg/kg) e Profilaxia Secundária Precoce (AAS vs. DAPT no AIT/AVC Menor)
-Confirmada a ausência de hemorragia na TC de crânio e respeitados os critérios de exclusão, administra-se **Alteplase (rt-PA) 0,9 mg/kg (máximo 90 mg): 10% em bolus IV em 1 min e 90% em BIC em 60 min**, sendo **proibidos AAS, Heparina e passagem de SNE/SVD nas primeiras 24 horas** pós-trombólise. Nos pacientes fora de janela que não receberam trombolítico, inicia-se **AAS 100–300 mg/dia** imediatamente após a TC descartar sangramento (após triagem de disfagia); em **AIT de alto risco (ABCD² ≥ 4) ou AVC isquêmico menor (NIHSS ≤ 3)** não cardioembólico, os estudos *CHANCE* e *POINT* demonstram que a **Dupla Antiagregação (AAS 100 mg + Clopidogrel 75 mg, com ataque de 300 mg) por 21 dias** reduz drasticamente a recorrência de AVC nos primeiros 90 dias.

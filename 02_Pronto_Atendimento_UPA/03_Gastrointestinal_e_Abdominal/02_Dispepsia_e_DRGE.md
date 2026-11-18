@@ -1,17 +1,18 @@
 # Atendimento de Pronto Atendimento - Dispepsia Aguda e DRGE
 **Categoria:** Pronto Atendimento / UPA Adulto  
-**Atalho Recomendado:** `;drge`
+**Atalho:** `;drge`  
+**Gravidade:** Ambulatorial / Eletivo (Verde)  
+**CID-10:** K21.9 / K30  
 
 ---
 
 ## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA: DISPEPSIA AGUDA / DRGE ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Sim: [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Sim: ___].
 # QP:
 - Queimação no estômago (epigastralgia) e azia que sobe para o peito há [ ] dias/horas.
 
@@ -53,7 +54,7 @@ Alergias: [*Nega / Sim: [ ]].
 3. Antiflatulento (se distensão por gases): Simeticona gotas (75 mg/mL) - 40 a 50 gotas VO agora.
 4. Reavaliação clínica após 30 a 40 minutos com alívio do sintoma antes da alta.
 
->> PRESCRIÇÃO DOMICILIAR:
+# RECEITA:
 1. Inibidor de Bomba de Prótons (IBP):
    - Omeprazol 20 mg a 40 mg [ou Pantoprazol 40 mg] - Tomar 1 cápsula VO pela manhã, em JEJUM RIGOROSO, cerca de 30 minutos antes do café da manhã, diariamente por 4 a 8 semanas consecutivas.
 2. Antiácido para Alívio Imediato de Resgate:
@@ -71,46 +72,15 @@ Alergias: [*Nega / Sim: [ ]].
 
 ---
 
-## 💊 Receita Domiciliar / Alta
+## 🎯 Diretrizes & Raciocínio Clínico
 
-```text
-RECEITUÁRIO MÉDICO — DISPEPSIA AGUDA / GASTRITE E REFLUXO GASTROESOFÁGICO (DRGE)
-Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
-
-USO ORAL:
-1. Omeprazol 20 mg (ou Pantoprazol 40 mg / Esomeprazol 40 mg) ---------------- 1 caixa (28 a 30 cápsulas)
-   Tomar 1 cápsula por via oral EM JEJUM, com meio copo de água, exatamente 30 minutos antes do café da manhã, todos os dias, durante 4 a 8 semanas.
-   *(Nota: Tomar em jejum 30 minutos antes da primeira refeição é indispensável para ativar o medicamento nas bombas de ácido do estômago).*
-
-2. Hidróxido de Alumínio + Hidróxido de Magnésio + Simeticona Suspensão Oral -- 1 frasco
-   Tomar 1 colher de sopa (10 a 15 mL) por via oral 1 hora após as refeições principais e ao deitar (ou se houver queimação/azia aguda), por 5 a 7 dias.
-
-3. Bromoprida 10 mg (ou Domperidona 10 mg) ----------------------------------- 1 caixa
-   Tomar 1 comprimido por via oral 20 minutos antes do almoço e do jantar por 5 a 7 dias se houver sensação de estufamento (empachamento) ou náuseas.
-
-MEDIDAS COMPORTAMENTAIS E ALIMENTARES INDISPENSÁVEIS:
-- Não se deitar logo após comer: aguardar no mínimo 2 a 3 horas após o jantar antes de se deitar na cama.
-- Elevar a cabeceira da cama em 15 cm (colocar calços embaixo dos pés da cabeceira da cama; apenas usar mais travesseiros dobra o pescoço e aumenta a pressão no estômago).
-- SUSPENDER imediatamente o uso de qualquer anti-inflamatório (Ibuprofeno, Diclofenaco, Nimesulida, Cetoprofeno, AAS), além de evitar café em excesso, refrigerantes, bebidas alcoólicas, frituras, molho de tomate ácido, chocolate, menta e tabagismo.
-- Encaminhado(a) à UBS / Gastroenterologia para realização de Endoscopia Digestiva Alta (EDA) e pesquisa de *Helicobacter pylori* (Lembrar de suspender o Omeprazol 14 dias antes da endoscopia se orientado pelo endoscopista para não dar falso-negativo no teste da bactéria).
-
-SINAIS DE ALARME (RETORNO IMEDIATO À UPA):
-- Dor na boca do estômago que aperta, sobe para o peito, costas, pescoço ou braço esquerdo, acompanhada de suor frio ou falta de ar.
-- Vômitos com sangue vivo ou escuro ("borra de café"), fezes pretas com cheiro muito forte (melena), dificuldade ou engasgo para engolir alimentos sólidos (disfagia) ou dor abdominal intensa que deixa a barriga dura.
-```
-
----
-
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
-
-### 🧠 1. Por Que Toda "Queimação Epigástrica" em Idosos, Diabéticos e Mulheres Exige um ECG Antes do Omeprazol? (Fisiopatologia & Raciocínio)
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que Toda "Queimação Epigástrica" em Idosos, Diabéticos e Mulheres Exige um ECG Antes do Omeprazol? (Fisiopatologia & Raciocínio)**
 - **A armadilha mais letal do pronto-socorro (O Infarto de Parede Inferior que simula Gastrite):** A face diafragmática (inferior) do ventrículo esquerdo, irrigada na maioria das pessoas pela Artéria Coronária Direita (ACD), repousa diretamente sobre o hemidiafragma e próxima à cárdia gástrica, compartilhando aferências nervosas autonômicas vagais e simpáticas torácicas baixas (`T5–T9`). Por isso, um **Infarto Agudo do Miocárdio de Parede Inferior (`DII, DIII e aVF`)** frequentemente se manifesta como **dor ou queimação epigástrica acompanhada de náuseas, eructações ("arrotos") e sudorese fria**!
 - **Regra de ouro inviolável na UPA:** Em todo paciente com **`> 40–45 anos`, diabético, hipertenso, tabagista ou mulher** que chega à UPA com dor epigástrica aguda ou "indigestão súbita", **realize um ECG de 12 derivações nos primeiros 10 minutos** antes de rotular como gastrite!
 
-### 💊 2. Por Que o Omeprazol Deve Ser Tomado 30 Minutos Antes do Café da Manhã e Quando Solicitar Endoscopia (EDA)? (Racional Farmacológico)
-- **A farmacocinética dos Inibidores da Bomba de Prótons (IBP = Pró-fármacos dependentes de ativação ácida):** O Omeprazol/Pantoprazol é absorvido no duodeno e chega pela corrente sanguínea ao canalículo secretor da célula parietal gástrica, onde precisa ser protonado pelo ácido para se ligar irreversivelmente às bombas `H+/K+-ATPase` **que estão ativas**. Durante a noite em jejum, novas bombas são sintetizadas e ficam guardadas em vesículas citoplasmáticas inativas; quando o paciente toma o IBP em jejum e **30 minutos depois toma o café da manhã**, o alimento estimula a histamina/gastrina a colocar todas as bombas na membrana exatamente no momento do pico plasmático do Omeprazol (bloqueando `> 70%` das bombas)! Tomar Omeprazol "antes de dormir" ou "depois do almoço" reduz sua eficácia pela metade.
-
-### 🧭 3. Sinais de Alarme Dispepsia (*Red Flags* para Endoscopia Digestiva Alta Urgente) vs Diagnósticos Diferenciais Epigástricos
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧭 3. Sinais de Alarme Dispepsia (*Red Flags* para Endoscopia Digestiva Alta Urgente) vs Diagnósticos Diferenciais Epigástricos**
 | Sinais de Alarme na Dispepsia (Exigem EDA Prioritária) | Diagnósticos Diferenciais Graves de Dor Epigástrica na UPA | Como Diferenciar na Beira do Leito |
 | :--- | :--- | :--- |
 | **1. Idade de início `≥ 40–45 anos`** (Diretriz Brasileira — FBG) | **1. IAM de Parede Inferior (`DII, DIII, aVF`)** | Dor opressiva/queimação sem relação alimentar, sudorese fria, náuseas → **ECG 12 derivações + Troponina**. |
@@ -118,3 +88,10 @@ SINAIS DE ALARME (RETORNO IMEDIATO À UPA):
 | **3. Sangramento Digestivo** (Hematêmese, melena ou anemia ferropriva) | **3. Colecistite / Cólica Biliar** | Dor em epigástrio/HCD após refeição gordurosa durando `> 4–6h`, **Sinal de Murphy positivo** → USG de abdome. |
 | **4. Perda ponderal involuntária (`> 5%`) ou Vômitos persistentes** | **4. Úlcera Péptica Perfurada** | Dor epigástrica **súbita em facada**, **abdome em tábua** (rigidez peritoneal) → **RX de tórax em pé (pneumoperitônio)**. |
 | **5. História familiar de Câncer Gástrico** em parente de 1º grau | **5. Apendicite Aguda Inicial (Fase Visceral)** | Inicia como dor epigástrica/periumbilical visceral vaga que **migra para a Fossa Ilíaca Direita** após 6–12h. |
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Por Que o Omeprazol Deve Ser Tomado 30 Minutos Antes do Café da Manhã e Quando Solicitar Endoscopia (EDA)? (Racional Farmacológico)**
+- **A farmacocinética dos Inibidores da Bomba de Prótons (IBP = Pró-fármacos dependentes de ativação ácida):** O Omeprazol/Pantoprazol é absorvido no duodeno e chega pela corrente sanguínea ao canalículo secretor da célula parietal gástrica, onde precisa ser protonado pelo ácido para se ligar irreversivelmente às bombas `H+/K+-ATPase` **que estão ativas**. Durante a noite em jejum, novas bombas são sintetizadas e ficam guardadas em vesículas citoplasmáticas inativas; quando o paciente toma o IBP em jejum e **30 minutos depois toma o café da manhã**, o alimento estimula a histamina/gastrina a colocar todas as bombas na membrana exatamente no momento do pico plasmático do Omeprazol (bloqueando `> 70%` das bombas)! Tomar Omeprazol "antes de dormir" ou "depois do almoço" reduz sua eficácia pela metade.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

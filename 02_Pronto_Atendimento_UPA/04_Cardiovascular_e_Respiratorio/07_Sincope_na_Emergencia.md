@@ -1,14 +1,19 @@
 # Atendimento de Pronto Atendimento - Síncope na Emergência (Vasovagal, Ortostática e Cardiogênica)
+**Categoria:** Cardiovascular e Respiratorio  
+**Atalho:** `;sincope`  
+**Gravidade:** Urgência (Laranja/Amarelo)  
+**CID-10:** R55  
 
-**Atalho:** `;sincope` | **Categoria:** Cardiovascular e Respiratorio
+---
 
-## SNIPPET PEP
+## 📋 Snippet para Prontuário Eletrônico (PEP)
+
 ```text
 ATENDIMENTO DE EMERGÊNCIA — SÍNCOPE (PERDA TRANSITÓRIA DA CONSCIÊNCIA)
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 
 CARACTERIZAÇÃO DO EVENTO E PRÓDROMOS:
 - Circunstância do Evento: Episódio ocorrido [em ortostase prolongada em ambiente quente / após dor ou estresse emocional / ao levantar-se rapidamente / DURANTE o esforço físico ou em decúbito dorsal — ALERTA CARDIOGÊNICO!].
@@ -17,8 +22,8 @@ CARACTERIZAÇÃO DO EVENTO E PRÓDROMOS:
 - Antecedentes & Medicações: [*Nega cardiopatia / Portador de IC, DAC ou sopro / História familiar de morte súbita < 40 anos / Uso de anti-hipertensivos, diuréticos, vasodilatadores, alfa-bloqueadores ou drogas que prolongam o QT].
 
 EXAME FÍSICO & TESTE DE HIPOTENSÃO ORTOSTÁTICA:
-- Sinais Vitais em Decúbito: PA: [120x75] mmHg | FC: [68] bpm | SpO2: [98]% | Glicemia Capilar: [96] mg/dL.
-- Manobra Ortostática (PA após 1 e 3 min em pé): PA em pé: [115x72] mmHg ([*Negativa / Positiva: queda da PAS ≥ 20 mmHg ou PAD ≥ 10 mmHg ou PAS < 90 mmHg reproduzindo sintomas]).
+- Sinais Vitais em Decúbito: PA: [ ] mmHg | FC: [ ] bpm | SpO2: [ ]% | Glicemia Capilar: [ ] mg/dL.
+- Manobra Ortostática (PA após 1 e 3 min em pé): PA em pé: [ ] mmHg ([*Negativa / Positiva: queda da PAS ≥ 20 mmHg ou PAD ≥ 10 mmHg ou PAS < 90 mmHg reproduzindo sintomas]).
 - Ausculta Cardíaca & Exame Neurológico: [*RCR em 2T, BNF, sem sopros / Sopro sistólico ejetivo em foco aórtico ou que aumenta à manobra de Valsalva — descartar Estenose Aórtica grave ou CMHO!]. Exame neurológico sem déficits focais.
 
 ECG DE 12 DERIVAÇÕES OBRIGATÓRIO (CAÇA AOS 7 SINAIS DE MORTE SÚBITA):
@@ -36,7 +41,7 @@ ESTRATIFICAÇÃO DE RISCO (CRITÉRIOS DE SAN FRANCISCO — CHESS / ESC):
    - Hidratação oral ou parenteral se desidratação leve, revisão e ajuste/suspensão de fármacos hipotensores ou diuréticos culpados.
    - Alta hospitalar segura com educação sobre reconhecimento dos pródromos e manobras físicas de contrapressão isométrica.
 
-# PRESCRIÇÃO DOMICILIAR / DE ALTA
+# RECEITA:
 ORIENTAÇÕES MÉDICAS E MEDIDAS DE PREVENÇÃO DOMICILIAR (SÍNCOPE VASOVAGAL / ORTOSTÁTICA DE BAIXO RISCO):
 
 1. Hidratação e Aporte Salino (se não for hipertenso ou portador de insuficiência cardíaca/renal):
@@ -51,7 +56,20 @@ ORIENTAÇÕES MÉDICAS E MEDIDAS DE PREVENÇÃO DOMICILIAR (SÍNCOPE VASOVAGAL /
    - Retornar imediatamente se ocorrer novo desmaio sem aviso prévio (sem tontura/suor antes), desmaio durante esforço físico ou estando deitado, dor no peito, batedeira (palpitações) ou falta de ar.
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
-### Escore de San Francisco (CHESS) e os Sinais Eletrocardiográficos de Síncope Cardiogênica
+---
+
+## 🎯 Diretrizes & Raciocínio Clínico
+
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Atendimento de Pronto Atendimento - Síncope na Emergência (Vasovagal, Ortostática e Cardiogênica)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**Escore de San Francisco (CHESS) e os Sinais Eletrocardiográficos de Síncope Cardiogênica**
 - **Por que nunca pedir TC de Crânio ou EEG de rotina na síncope não traumática:** A síncope é definida por hipoperfusão cerebral global transitória (queda súbita do débito cardíaco ou da resistência vascular periférica), e não por descarga elétrica cortical ou AVC hemorrágico focal (exceto se houver déficit neurológico focal ou trauma craniano secundário à queda).
 - **Por que o mnemônico CHESS identifica quem não pode ter alta da UPA:** Presença de qualquer 1 dos 5 itens (**C**ongestive Heart Failure / IC, **H**ematócrito < 30%, **E**CG anormal, **S**hortness of breath / dispneia, **S**ystolic BP < 90 mmHg na triagem), além de síncope **durante o exercício**, **em decúbito** ou com **história familiar de morte súbita**, impõe internação para investigação cardiológica.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

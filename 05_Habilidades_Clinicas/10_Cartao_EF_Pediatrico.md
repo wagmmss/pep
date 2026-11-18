@@ -68,7 +68,7 @@
 ```text
 EXAME FÍSICO PEDIÁTRICO (ORDEM OPORTUNISTA):
 - Triângulo de Avaliação Pediátrica (TEP): Estável (Aparência preservada/ativa e reativa no colo materno, Respiração sem esforço visível, Circulação cutânea normal).
-- Dados Antropométricos e Vitais: Peso: [ ] kg | FC: [ ] bpm | FR: [ ] irpm (aferida em 60s em repouso) | SpO2: [99]% AA | Tax: [ ]°C.
+- Dados Antropométricos e Vitais: Peso: [ ] kg | FC: [ ] bpm | FR: [ ] irpm (aferida em 60s em repouso) | SpO2: [ ]% AA | Tax: [ ]°C.
 - Hidratação e Perfusão: Hidratada (olhos normais, lágrimas presentes, mucosas úmidas, sinal da prega com retorno imediato, TEC < 2s, pulsos periféricos cheios e simétricos). [Fontanela anterior normotensa e plana].
 - Aparelho Respiratório: Tórax sem tiragens (ausência de tiragem subcostal, intercostal ou fúrcula), sem batimento de asa nasal ou gemência. MV presente e simétrico bilateralmente, sem ruídos adventícios.
 - Aparelho Cardiovascular: RCR em 2T, BNF, sem sopros. Pulsos femorais palpáveis e simétricos.
@@ -88,12 +88,12 @@ EXAME FÍSICO PEDIÁTRICO (ORDEM OPORTUNISTA):
 ### 1. PAT, Sinais Vitais & Esforço Respiratório
 - [ ] Avaliei o Triângulo de Avaliação Pediátrica (Aparência TICLS, Trabalho Respiratório e Circulação) nos primeiros 30s
 - [ ] Contei a Frequência Respiratória por 60 segundos completos à distância (com tórax exposto e criança calma)
-- [ ] Chequei sinais objetivos de esforço respiratório (tiragem intercostal, subcostal, fúrcula, BAN, balanço e gemência)
+- [ ] [CRÍTICO] Chequei sinais objetivos de esforço respiratório (tiragem intercostal, subcostal, fúrcula, BAN, balanço e gemência)
 - [ ] Interpretei FC/FR considerando febre (reavaliando após antitérmico se taquipneia/taquicardia febril)
 
 ### 2. Ordem Invertida (Colo da Mãe) & Sistêmico
 - [ ] Mantive lactente/pré-escolar no colo e executei ausculta cardíaca/pulmonar com estetoscópio aquecido enquanto calmo
-- [ ] Examinei abdome (I-A-P-P) e coto umbilical/regiões inguinais antes de manobras desconfortáveis
+- [ ] [CRÍTICO] Examinei abdome (I-A-P-P) e coto umbilical/regiões inguinais antes de manobras desconfortáveis
 - [ ] Palpei pulsos braquiais e femorais SIMULTANEAMENTE e avaliei TEC (< 2s no esterno) e pele (petéquias)
 - [ ] Avaliei hidratação pelos 4 sinais cardinais da OMS (incluindo prega cutânea vertical no abdome) -> Plano A/B/C
 - [ ] Avaliei fontanelas com a criança calma e sentada (e em < 18m lembrei que irritabilidade paradoxal/abaulamento superam rigidez de nuca)
@@ -101,10 +101,10 @@ EXAME FÍSICO PEDIÁTRICO (ORDEM OPORTUNISTA):
 
 ### 3. Antropometria, DNPM & Exame ORL Final
 - [ ] Garanti antropometria correta (peso sem fralda < 2a; comprimento com joelhos estendidos/2 pessoas < 2a; PC até 2a) e plotei nas curvas OMS
-- [ ] Chequei marcos do DNPM para a idade (usando idade corrigida se prematuro < 2a) e excluí Red Flags
+- [ ] [CRÍTICO] Chequei marcos do DNPM para a idade (usando idade corrigida se prematuro < 2a) e excluí Red Flags
 - [ ] Deixei oroscopia e otoscopia POR ÚLTIMO usando contenção segura no colo da mãe ("abraço seguro")
 - [ ] Executei otoscopia com pegada em lápis + apoio do dedo na face + tração correta (< 3 anos baixo/trás; ≥ 3 anos cima/trás)
 
 ### 5. Upgrade Preceptor V2.0 (Ordem Oportunista & Cutoffs OMS)
-- [ ] Apliquei o Triângulo de Avaliação Pediátrica (A-R-C / TICLS) em 15s sem tocar na criança e contei a FR em 60s no colo antes do choro
-- [ ] Classifiquei a hidratação nos Planos A/B/C e, na otoscopia final, exigi abaulamento timpânico (LR+ 8.4–51) para diagnóstico de OMA
+- [ ] [CRÍTICO] Apliquei o Triângulo de Avaliação Pediátrica (A-R-C / TICLS) em 15s sem tocar na criança e contei a FR em 60s no colo antes do choro
+- [ ] [CRÍTICO] Classifiquei a hidratação nos Planos A/B/C e, na otoscopia final, exigi abaulamento timpânico (LR+ 8.4–51) para diagnóstico de OMA

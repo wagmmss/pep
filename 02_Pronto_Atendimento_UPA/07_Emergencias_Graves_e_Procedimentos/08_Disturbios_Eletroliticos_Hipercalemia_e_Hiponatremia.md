@@ -1,18 +1,18 @@
 # Protocolo de Atendimento: Distúrbios Eletrolíticos Graves - Hipercalemia e Hiponatremia
-
-> **Atalhos sugeridos:** `;hiperk` | `;hipona`  
-> **Finalidade:** Reconhecimento eletrocardiográfico e manejo emergencial escalonado da hipercalemia grave (estabilização de membrana com gluconato de cálcio, glicoinsulina e espoliação) e conduta na hiponatremia aguda sintomática grave com salina hipertônica a 3% (evitando síndrome de desmielinização osmótica).
+**Categoria:** Emergencias Graves e Procedimentos  
+**Atalho:** `;hiperk`, `;hipona`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** E87.5 / E87.1  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO DE SALA VERMELHA: DISTÚRBIOS ELETROLÍTICOS GRAVES ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg][? Leito :: , Leito: Sala Vermelha [ ]][? Registro :: , Registro: [ ]].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___][? Registro :: , Registro: ___].
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 - Motivo da Avaliação na Sala Vermelha: [MODALIDADE A: HIPERCALEMIA GRAVE / MODALIDADE B: HIPONATREMIA AGUDA SINTOMÁTICA].
 
 =============================================================================
@@ -70,7 +70,7 @@ Alergias: [*Nega / [ ]].
   [ ] Sinais clínicos de hipertensão intracraniana ou herniação cerebral iminente.
 
 # CONDUTA DE EMERGÊNCIA NA HIPONATREMIA GRAVE SINTOMÁTICA:
-1. Alvo Inicial de Segurança: Elevar a natremia sérica em **4 a 6 mEq/L** nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
+1. Alvo Inicial de Segurança: Elevar a natremia sérica em 4 a 6 mEq/L nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
 2. Infusão de Solução Salina Hipertônica a 3% (NaCl 3%):
    - [Como preparar 500 mL de NaCl 3% na UPA se não houver bolsa pronta]:
      445 mL de Soro Fisiológico a 0,9% + 55 mL de NaCl a 20% (volume total = 500 mL a 3%).
@@ -80,22 +80,30 @@ Alergias: [*Nega / [ ]].
 3. Monitorização Laboratorial Estrita:
    - Dosagem de sódio sérico a cada 2 a 4 horas nas primeiras 24 horas.
 4. LIMITE MÁXIMO DE CORREÇÃO PARA PREVENÇÃO DE MIELINÓLISE PONTINA (SDO):
-   - Aumento MÁXIMO de **8 a 10 mEq/L nas primeiras 24 horas**.
-   - Aumento MÁXIMO de **18 mEq/L em 48 horas**.
+   - Aumento MÁXIMO de 8 a 10 mEq/L nas primeiras 24 horas.
+   - Aumento MÁXIMO de 18 mEq/L em 48 horas.
    - Se ocorrer supercorreção inadvertida (> 10 mEq/L em 24h): suspender reposição salina imediatamente e administrar Água Livre por via oral ou Soro Glicosado a 5% (associado a Desmopressina/DDAVP 1 a 2 mcg SC/EV).
 ```
 
 ---
 
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Os 3 Pilares da Hipercalemia: Por Que o Gluconato de Cálcio NÃO Baixa o Potássio, Mas Salva a Vida?
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Distúrbios Eletrolíticos Graves - Hipercalemia e Hiponatremia** centrado na identificação precoce de gravidade e manejo baseado em evidências.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Hiponatremia Aguda Sintomática vs. Crônica: O Limite Seguro de 8 a 10 mEq/L em 24 Horas**
+Na hiponatremia (Na⁺ < 135 mEq/L), o cérebro adapta-se à hipotonicidade em 48 horas expulsando osmóis orgânicos das células gliais. Por isso:
+- **Salina Hipertônica (NaCl 3% — 100 a 150 mL IV em 10–20 min)** é reservada **exclusivamente para Hiponatremia Grave com Sintomas Neurológicos Ameaçadores à Vida** (convulsões, coma, rebaixamento torporoso, sinais de herniação), visando elevar o Na⁺ em **4 a 6 mEq/L nas primeiras horas** (o suficiente para reduzir o edema cerebral em 50% e cessar a convulsão).
+- **A Regra de Ouro da Segurança**: a elevação total do sódio sérico **NUNCA deve ultrapassar 8 a 10 mEq/L em 24 horas** (ou 6 a 8 mEq/L em 24h em etilistas, desnutridos, cirróticos e hipocalêmicos), sob pena de desencadear a devastadora **Síndrome de Desmielinização Osmótica (Mielinólise Pontina Central)** com tetraparesia espástica e síndrome do encarceramento (*locked-in*).
+
+### 🚫 4. Segurança, Travas & Proibições
+**🧠 1. Os 3 Pilares da Hipercalemia: Por Que o Gluconato de Cálcio NÃO Baixa o Potássio, Mas Salva a Vida?**
 O potássio extracelular elevado reduz o potencial de repouso da membrana miocárdica, gerando evolução eletrocardiográfica clássica: **ondas T apiculadas ("em tenda") → achatamento/perda da onda P e alargamento do PR → alargamento bizarro do QRS → padrão sinusoidal → Assistolia/FV**. Diante de **K⁺ > 6,5 mEq/L ou qualquer alteração no ECG**, o manejo segue 3 etapas simultâneas:
 1. **Estabilizar a membrana cardíaca (Ação em 1–3 min)**: **Gluconato de Cálcio 10% — 10 a 30 mL IV lento em 5 min**. O cálcio **não altera o K⁺ sérico**, mas restaura o limiar de excitabilidade do miócito, protegendo contra PCR por 30–60 minutos.
 2. **Desviar o K⁺ para o intracelular (*Shift* — Ação em 15–30 min)**: **Solução Polarizante (10 UI de Insulina Regular + 50 g de Glicose = 100 mL de SG 50% IV em 15–30 min)** + **Salbutamol nebulizado em dose alta (10–20 mg = 40–80 gotas)** + HCO₃⁻ IV (se acidose metabólica associada).
 3. **Espoliar o K⁺ do corpo**: **Furosemida IV** (se houver diurese/hipervolemia), **Sorcal/Ciclossilicato de Zircônio** ou **Hemodiálise de urgência** (em anúricos/refratários).
-
-### 💊 2. Hiponatremia Aguda Sintomática vs. Crônica: O Limite Seguro de 8 a 10 mEq/L em 24 Horas
-Na hiponatremia (Na⁺ < 135 mEq/L), o cérebro adapta-se à hipotonicidade em 48 horas expulsando osmóis orgânicos das células gliais. Por isso:
-- **Salina Hipertônica (NaCl 3% — 100 a 150 mL IV em 10–20 min)** é reservada **exclusivamente para Hiponatremia Grave com Sintomas Neurológicos Ameaçadores à Vida** (convulsões, coma, rebaixamento torporoso, sinais de herniação), visando elevar o Na⁺ em **4 a 6 mEq/L nas primeiras horas** (o suficiente para reduzir o edema cerebral em 50% e cessar a convulsão).
-- **A Regra de Ouro da Segurança**: a elevação total do sódio sérico **NUNCA deve ultrapassar 8 a 10 mEq/L em 24 horas** (ou 6 a 8 mEq/L em 24h em etilistas, desnutridos, cirróticos e hipocalêmicos), sob pena de desencadear a devastadora **Síndrome de Desmielinização Osmótica (Mielinólise Pontina Central)** com tetraparesia espástica e síndrome do encarceramento (*locked-in*).

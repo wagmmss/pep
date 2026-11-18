@@ -1,17 +1,18 @@
 # Atendimento de Pronto Atendimento - Edema Agudo de Pulmão (EAP) e ICAD
 **Categoria:** Pronto Atendimento / UPA Adulto  
-**Atalho Recomendado:** `;eap`
+**Atalho:** `;eap`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** I50.1 / J81  
 
 ---
 
 ## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA / SALA VERMELHA: EDEMA AGUDO DE PULMÃO (EAP) ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Sim: [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Sim: ___].
 # CLASSIFICAÇÃO HEMODINÂMICA DE STEVENSON:
 - PERFIL B: "QUENTE E ÚMIDO" (Boa perfusão periférica, porém com congestão pulmonar grave e hipertensão arterial) -> > 80% DOS CASOS DE EAP NA UPA.
 - [Se Perfil C ("Frio e Úmido"): Choque cardiogênico com hipoperfusão -> avaliar Dobutamina + Noradrenalina].
@@ -72,15 +73,28 @@ Alergias: [*Nega / Sim: [ ]].
 
 ---
 
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que o Paciente em Edema Agudo de Pulmão (EAP) "Se Afoga no Próprio Plasma" em Minutos e Como a Classificação de Nohria-Stevenson Guia Tudo? (Fisiopatologia & Raciocínio)
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Atendimento de Pronto Atendimento - Edema Agudo de Pulmão (EAP) e ICAD** centrado na identificação precoce de gravidade e manejo baseado em evidências.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+**🧠 1. Por Que o Paciente em Edema Agudo de Pulmão (EAP) "Se Afoga no Próprio Plasma" em Minutos e Como a Classificação de Nohria-Stevenson Guia Tudo? (Fisiopatologia & Raciocínio)**
 - **O ciclo vicioso hemodinâmico do EAP Cardiogênico (Perfil B — "Quente e Úmido" em > 80% dos casos):** Na maioria dos pacientes que chegam à Sala Vermelha em Edema Agudo de Pulmão hipertensivo/cardiogênico, o problema inicial **não é excesso absoluto de água no corpo**, e sim uma **redistribuição vascular abrupta**: uma descarga simpática intensa contrai as artérias sistêmicas (aumentando brutalmente a pós-carga do Ventrículo Esquerdo) e as veias esplâncnicas/periféricas (jogando sangue para o tórax). O VE rígido/disfuncional não consegue ejetar contra a pressão alta; a pressão diastólica final do VE e a pressão capilar pulmonar ultrapassam **`25 a 30 mmHg`** (vencendo a pressão coloidosmótica da albumina de `~25 mmHg`), e o transudato plasmático inunda os alvéolos pulmonares!
 - **A Classificação Hemodinâmica de Nohria-Stevenson à Beira do Leito (2 perguntas em 30 segundos):**
   1. **Há Congestão ("Úmido" vs "Seco")?** Estertores crepitantes, ortopneia, turgência jugular, refluxo hepatojugular, B3, edema de MMII ou linhas B difusas no ultrassom pulmonar (*POCUS*).
   2. **Há Hipoperfusão Tecidual ("Frio" vs "Quente")?** Extremidades frias e pegajosas, tempo de enchimento capilar `> 3s`, pressão de pulso estreita (`[PAS - PAD] / PAS < 25%`), sonolência/confusão mental, oligúria e lactato alto.
 
-### 💊 2. Os 3 Pilares que Salvam Vidas no EAP (VNI + Vasodilatador + Furosemida) e Por Que a Morfina Saiu da Rotina? (Racional Farmacológico)
+**🧭 3. Manejo Dirigido pelos 4 Perfis Hemodinâmicos da IC Descompensada (Nohria-Stevenson)**
+| Perfil Hemodinâmico | Achados Clínicos (Congestão × Perfusão) | Conduta Terapêutica Específica na Sala de Emergência |
+| :--- | :--- | :--- |
+| **Perfil A — "Quente e Seco"** *(Compensado)* | Sem congestão pulmonar/sistêmica e boa perfusão periférica. | Ajuste ambulatorial das 4 classes modificadoras de mortalidade da ICFEr (**ARNI/IECA + Betabloqueador + Espironolactona + iSGLT2**). |
+| **Perfil B — "Quente e Úmido"** *(80% das descompensações e EAP hipertensivo)* | **Congesto** (dispneia, estertores, turgência jugular, edema) + **Bem perfundido** (extremidades quentes, `PAS normal ou alta`). | **VNI (CPAP/BiPAP) + Vasodilatador EV (Tridil/Nipride) + Furosemida EV**. *(Não suspender o Betabloqueador de uso crônico no Perfil B!).* |
+| **Perfil C — "Frio e Úmido"** *(Choque Cardiogênico Congestivo — Grave!)* | **Congesto** + **Mal perfundido** (`PAS < 90 mmHg`, extremidades frias, oligúria, confusão, lactato alto). | • Se `PAS < 85–90 mmHg`: Iniciar **Noradrenalina EV** primeiro para garantir `PAM ≥ 65 mmHg` + associar **Inotrópico (Dobutamina `2,5–20 mcg/kg/min` ou Milrinona)** → fazer **Furosemida EV apenas após restaurar a perfusão**. **Suspender/reduzir Betabloqueador!** |
+| **Perfil L — "Frio e Seco"** *(Baixo Débito Hipovolêmico)* | **Sem congestão** (pulmões limpos, jugular colabada) + **Mal perfundido** (desidratação ou excesso de diurético). | **Prova volêmica cautelosa** (`250 mL de SF 0,9% ou RL` em 15–30 min reavaliando ausculta pulmonar); se persistir hipoperfundido → **Inotrópico (Dobutamina)**. |
+
+### 💊 3. Farmacologia & Doses
+**💊 2. Os 3 Pilares que Salvam Vidas no EAP (VNI + Vasodilatador + Furosemida) e Por Que a Morfina Saiu da Rotina? (Racional Farmacológico)**
 - **1. Pilar nº 1 (Mais rápido que qualquer droga): Ventilação Não Invasiva com Pressão Positiva (CPAP `8–10 cmH2O` ou BiPAP):**
   - A pressão positiva intratorácica empurra mecanicamente o líquido do alvéolo de volta para o interstício, recruta alvéolos colabados, **reduz o retorno venoso (pré-carga)** e **diminui a pressão transmural do Ventrículo Esquerdo (reduzindo a pós-carga do VE!)**. Iniciar CPAP/BiPAP nos primeiros minutos reduz a taxa de intubação orotraqueal em **50% e a mortalidade em 40%**!
 - **2. Pilar nº 2: Vasodilatador Endovenoso (Nitroglicerina — Tridil, ou Nitroprussiato — Nipride, se `PAS > 110 mmHg`) + Furosemida EV:**
@@ -89,10 +103,5 @@ Alergias: [*Nega / Sim: [ ]].
 - **3. Por que a Morfina NÃO deve mais ser usada de rotina no EAP (Estudo ADHERE e Registro MIMO):**
   - O antigo mnemônico *"MOV (Morfina, Oxigênio, Veia)"* foi revisto porque grandes registros multicêntricos demonstraram que o uso rotineiro de **Morfina no EAP deprime o centro respiratório, causa náuseas/vômitos sob a máscara de VNI, reduz o débito cardíaco, quadruplica a necessidade de intubação e UTI e aumenta significativamente a mortalidade hospitalar**! *(Reservada apenas em doses minúsculas de `1–2 mg` em casos selecionados de agitação extrema refratária).*
 
-### 🧭 3. Manejo Dirigido pelos 4 Perfis Hemodinâmicos da IC Descompensada (Nohria-Stevenson)
-| Perfil Hemodinâmico | Achados Clínicos (Congestão × Perfusão) | Conduta Terapêutica Específica na Sala de Emergência |
-| :--- | :--- | :--- |
-| **Perfil A — "Quente e Seco"** *(Compensado)* | Sem congestão pulmonar/sistêmica e boa perfusão periférica. | Ajuste ambulatorial das 4 classes modificadoras de mortalidade da ICFEr (**ARNI/IECA + Betabloqueador + Espironolactona + iSGLT2**). |
-| **Perfil B — "Quente e Úmido"** *(80% das descompensações e EAP hipertensivo)* | **Congesto** (dispneia, estertores, turgência jugular, edema) + **Bem perfundido** (extremidades quentes, `PAS normal ou alta`). | **VNI (CPAP/BiPAP) + Vasodilatador EV (Tridil/Nipride) + Furosemida EV**. *(Não suspender o Betabloqueador de uso crônico no Perfil B!).* |
-| **Perfil C — "Frio e Úmido"** *(Choque Cardiogênico Congestivo — Grave!)* | **Congesto** + **Mal perfundido** (`PAS < 90 mmHg`, extremidades frias, oligúria, confusão, lactato alto). | • Se `PAS < 85–90 mmHg`: Iniciar **Noradrenalina EV** primeiro para garantir `PAM ≥ 65 mmHg` + associar **Inotrópico (Dobutamina `2,5–20 mcg/kg/min` ou Milrinona)** → fazer **Furosemida EV apenas após restaurar a perfusão**. **Suspender/reduzir Betabloqueador!** |
-| **Perfil L — "Frio e Seco"** *(Baixo Débito Hipovolêmico)* | **Sem congestão** (pulmões limpos, jugular colabada) + **Mal perfundido** (desidratação ou excesso de diurético). | **Prova volêmica cautelosa** (`250 mL de SF 0,9% ou RL` em 15–30 min reavaliando ausculta pulmonar); se persistir hipoperfundido → **Inotrópico (Dobutamina)**. |
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

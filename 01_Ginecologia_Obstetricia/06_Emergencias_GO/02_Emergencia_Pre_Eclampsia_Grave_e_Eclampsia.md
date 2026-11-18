@@ -1,18 +1,18 @@
 # Manejo de Emergência - Pré-Eclâmpsia Grave, Iminência de Eclâmpsia e Eclâmpsia
-
-> **Atalho sugerido:** `;pre-eclampsia`  
-> **Finalidade:** Atendimento de emergência e prescrição imediata de Sulfato de Magnésio (Zuspan/Pritchard), controle de crise hipertensiva (Hidralazina/Nifedipino) e rastreio de HELLP.
+**Categoria:** Emergencias GO  
+**Atalho:** `;pre-eclampsia`  
+**Gravidade:** Emergência (Vermelho)  
+**CID-10:** O14.1 / O15.0  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO DE EMERGÊNCIA — PRÉ-ECLÂMPSIA GRAVE / ECLÂMPSIA / HELLP ######
-# IDENTIFICAÇÃO & QUADRO SINDRÔMICO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito [ ]], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
-Comorbidades: [+ *Hígida / HAS crônica / Pré-eclâmpsia prévia / [ ]].
-Alergias: [*Nega / [ ]].
+# IDENTIFICAÇÃO:
+ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
+Comorbidades: [+ *Hígida / HAS crônica / Pré-eclâmpsia prévia / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 - Apresentação Clínica: [Pré-Eclâmpsia com sinais de gravidade / Iminência de Eclâmpsia (Tríade de cefaleia + escotomas + epigastralgia) / Eclâmpsia (Crise convulsiva TCG às HH:MM) / Síndrome HELLP].
 
 # QP:
@@ -23,9 +23,9 @@ Alergias: [*Nega / [ ]].
 - Sintomas Cardiopulmonares & Obstétricos: [Nega dispneia ou ortopneia / Dispneia com estertores (EAP)] | [Nega sangramento vaginal ou hipertonia uterina (afastado DPP) / Refere dor abdominal e sangramento].
 
 # EXAME FÍSICO:
-- Sinais Vitais & Neurológico: PA: [170x115] mmHg (confirmada em 15 min) | FC: [88] bpm | FR: [18] irpm | SpO2: [98]% AA. Consciente, ECG [15], pupilas isocóricas. Reflexos patelares: [Exaltados 3+/4+ ou 4+/4+ com clônus aquileu / Normoativos 2+/4+].
+- Sinais Vitais & Neurológico: PA: [ ] mmHg (confirmada em 15 min) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA. Consciente, ECG [ ], pupilas isocóricas. Reflexos patelares: [Exaltados 3+/4+ ou 4+/4+ com clônus aquileu / Normoativos 2+/4+].
 - Cardiopulmonar & Extremidades: RCR 2T BNF, MV+ bilateral [sem ruídos adventícios / com crepitações basais]. Edema de MMII/face [++/4+]. Diurese em SVD: [> 25] mL/h, clara.
-- Exame Obstétrico: AU: [ ] cm | Tônus uterino: [Normal (sem hipertonia de DPP)] | DU: [*Ausente / [ ] contrações/10 min] | BCF: [140] bpm, rítmico | CTG: [Categoria I / Categoria II / Categoria III].
+- Exame Obstétrico: AU: [ ] cm | Tônus uterino: [Normal (sem hipertonia de DPP)] | DU: [*Ausente / ___ contrações/10 min] | BCF: [ ] bpm, rítmico | CTG: [Categoria I / Categoria II / Categoria III].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. [Pré-Eclâmpsia Grave (CID-10: O14.1) / Iminência de Eclâmpsia (O14.1) / Eclâmpsia (O15.0) / Síndrome HELLP (O14.2)] em gestação de [ ]s[ ]d.
@@ -60,15 +60,20 @@ Alergias: [*Nega / [ ]].
 
 ---
 
-### [REGRAS DE CONDUTA E DIRETRIZES CLÍNICAS]
+## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Por Que a Iminência de Eclâmpsia Dói no Epigástrio e Dá Escotomas? (Fisiopatologia)
+### 🧠 1. Fisiopatologia & Porquê
+**🧠 1. Por Que a Iminência de Eclâmpsia Dói no Epigástrio e Dá Escotomas? (Fisiopatologia)**
 A Pré-Eclâmpsia Grave é uma **endoteliose sistêmica generalizada** desencadeada pela isquemia placentária (excesso de fatores antiangiogênicos `sFlt-1` e queda de `PlGF`), levando a vasoespasmo arteriolar difuso, ativação plaquetária e extravasamento capilar:
 1. **Cefaleia Occipital/Frontal Refratária e Escotomas Cintilantes / Turvação Visual:** Decorrem de perda da autorregulação vascular cerebral e edema vasogênico no córtex parieto-occipital (**Síndrome PRES** — *Posterior Reversible Encephalopathy Syndrome*). É o prenúncio imediato da convulsão eclâmptica!
 2. **Epigastralgia em Barra ou Dor intensa no Hipocôndrio Direito (*Sinal de Chaussier*):** Causada por deposição de fibrina nos sinusoides periportais, necrose hepatocelular e **distensão aguda da Cápsula de Glisson** por edema ou hematoma subcapsular hepático (tríade da **Síndrome HELLP**: **H**emólise microangiopática com esquizócitos e LDH ≥ 600 + **E**levated **L**iver enzymes AST/ALT ≥ 70 + **L**ow **P**latelets < 100.000/mm³).
 3. **Reflexos Tendíneos Exaltados (Hiperreflexia Patelar com Clônus):** Sinal objetivo de hiperexcitabilidade cortical motora.
 
-### 💉 2. Por Que Usamos Sulfato de Magnésio (MgSO₄) e Como Evitar Intoxicação?
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+**💉 2. Por Que Usamos Sulfato de Magnésio (MgSO₄) e Como Evitar Intoxicação?**
 - **Por que MgSO₄ e NÃO Diazepam ou Fenitoína?** A convulsão da eclâmpsia ocorre por vasoespasmo cerebral isquêmico e quebra da barreira hematoencefálica. O Magnésio bloqueia os canais de cálcio dependentes de voltagem e os receptores **NMDA de glutamato** no cérebro, revertendo o vasoespasmo cerebral sem deprimir o SNC da mãe ou do feto (reduz em `> 50%` a recorrência de convulsões no *Estudo Magpie*).
 - **Diluição Prática do Esquema de Zuspan (Toda ampola de MgSO₄ 50% de 10 mL contém `5 g` de magnésio):**
   - **Ataque (`4 g EV em 15–20 min`):** Diluir `8 mL` de MgSO₄ 50% (= 4g) em `92 mL` de SF 0,9% e correr em BIC a `300 mL/h` (acaba em 20 minutos).
@@ -79,6 +84,9 @@ A Pré-Eclâmpsia Grave é uma **endoteliose sistêmica generalizada** desencade
     2. **2º Sinal (`> 12 mEq/L`):** **Depressão/Parada Respiratória (`FR < 12–16 irpm`)**.
     3. **Conduta na Intoxicação:** Parar a bomba de MgSO₄ imediatamente + aplicar o antídoto **Gluconato de Cálcio 10% — 10 mL (1 g) EV lento em 3 a 5 minutos** (o cálcio desloca competitivamente o magnésio na junção neuromuscular!).
 
-### 💊 3. Por Que a Meta da Crise Hipertensiva é `140–150 x 90–100 mmHg` (e NUNCA `110x70`)?
+**💊 3. Por Que a Meta da Crise Hipertensiva é `140–150 x 90–100 mmHg` (e NUNCA `110x70`)?**
 - Sempre que **PAS ≥ 160 mmHg ou PAD ≥ 110 mmHg**, iniciamos anti-hipertensivo de ação rápida (**Nifedipino 10 mg VO** a cada 20–30 min ou **Hidralazina 5 mg EV** a cada 20 min) para proteger o cérebro materno de **AVC Hemorrágico** (principal causa de morte materna na PE!).
 - **Por que é PROIBIDO derrubar a PA abruptamente para 110x70 mmHg ou usar Nifedipino Sublingual?** A circulação uteroplacentária na pré-eclâmpsia é de alta resistência e **não possui autorregulação pressórica** (o fluxo depende diretamente da pressão de perfusão materna). Derrubar a PA mais de 25% de uma vez corta o fluxo sanguíneo placentário, causando **Sofrimento Fetal Agudo (bradicardia severa) e Descolamento Prematuro de Placenta (DPP)**!
+
+### 🚫 4. Segurança, Travas & Proibições
+- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

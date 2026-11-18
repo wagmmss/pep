@@ -1,18 +1,18 @@
 # Atendimento de Pronto Atendimento - Erisipela, Celulite e Drenagem de Abscesso
-
-> **Atalho sugerido:** `;celulite`  
-> **Finalidade:** Diferenciação entre Erisipela (bordas nítidas) e Celulite (bordas difusas), técnica cirúrgica de drenagem de abscesso na UPA e descarte de fasciíte necrosante.
+**Categoria:** Nefrologia Urologia e Dermatologia  
+**Atalho:** `;celulite`  
+**Gravidade:** Urgência (Laranja/Amarelo)  
+**CID-10:** L03.9 / A46  
 
 ---
 
-### [SNIPPET DE PRONTUÁRIO - COPIAR ABAIXO]
+## 📋 Snippet para Prontuário Eletrônico (PEP)
 
 ```text
-###### ATENDIMENTO UPA: INFECÇÃO DE PELE E PARTES MOLES (PPM) ######
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / Outros: ___].
 # QP:
 - Vermelhidão, dor, inchaço e calor na pele [em perna / pé / braço / face] há [ ] dias.
 
@@ -63,7 +63,7 @@ Alergias: [*Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
 7. [ ] Posicionado dreno laminar de látex (Penrose nº 1) / fita de gaze estéril umedecida para manter a ferida aberta e garantir drenagem contínua.
 8. Curativo oclusivo absorvente estéril. Procedimento concluído sem intercorrências hemorrágicas.
 
->> PRESCRIÇÃO DOMICILIAR (ANTIBIOTICOTERAPIA PARA ERISIPELA / CELULITE):
+# RECEITA:
 1. Antibioticoterapia Oral de 1ª Linha (Duração de 7 a 10 dias):
    - Cefalexina 500 mg - Tomar 1 comprimido VO de 6/6 horas (a cada 6 horas) por 7 a 10 dias consecutivos.
    - [OU]: Cefadroxila 500 mg VO de 12/12 horas por 10 dias.
@@ -83,47 +83,27 @@ Alergias: [*Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
 
 ---
 
-## 💊 Receita Domiciliar / Alta (Pronta para Copiar)
+## 🎯 Diretrizes & Raciocínio Clínico
 
-> **Como usar:** Clique no botão **`💊 Receita`** no topo do card ou na aba **Receita** para copiar apenas a prescrição de alta pronta para impressão/entrega ao paciente.
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Atendimento de Pronto Atendimento - Erisipela, Celulite e Drenagem de Abscesso** centrado na identificação precoce de gravidade e manejo baseado em evidências.
 
-```text
-USO ORAL (ESCOLHER CONFORME ETIOLOGIA — ESTREPTOCOCO vs S. AUREUS/MRSA):
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
 
-[OPÇÃO 1 - ERISIPELA / CELULITE NÃO PURULENTA TÍPICA]:
-1. Cefalexina 500 mg ------------------------------------------- 28 cápsulas
-   Tomar 01 cápsula por via oral de 6/6 horas por 7 dias.
-   (Alternativa: Amoxicilina + Clavulanato 875/125 mg — tomar 01 comprimido VO de 12/12h por 7 dias).
-
-[OPÇÃO 2 - CELULITE PURULENTA / PÓS-DRENAGEM DE ABSCESSO (COBERTURA CA-MRSA)]:
-1. Sulfametoxazol + Trimetoprima 800/160 mg -------------------- 14 comprimidos
-   Tomar 01 a 02 comprimidos por via oral de 12/12 horas por 7 dias.
-   (Alternativa: Clindamicina 300 mg — tomar 02 cápsulas VO de 8/8h por 7 dias).
-
-[ANALGESIA]:
-2. Dipirona Sódica 1 g ----------------------------------------- 20 comprimidos
-   Tomar 01 comprimido por via oral de 6/6 horas se dor ou febre. Evitar uso de anti-inflamatórios (AINEs), pois podem mascarar progressão para fasciíte necrosante.
-
-CUIDADOS E SINAIS DE ALERTA:
-- Manter o membro acometido elevado acima do nível do coração sempre que estiver sentado ou deitado (fundamental para reduzir o edema e melhorar a penetração do antibiótico).
-- Observar a linha demarcada a caneta na pele: retornar imediatamente se a vermelhidão ultrapassar a linha após 48h, se surgir dor desproporcional, bolhas escuras/violáceas, anestesia local ou febre alta.
-```
-
----
-
-## 🎯 Diretrizes & Raciocínio Clínico (O Porquê das Condutas)
-
-### 🧠 1. Erisipela, Celulite e Abscesso: Como a Profundidade e a Purulência Ditam o Antibiótico
+### 💊 3. Farmacologia & Doses
+**🧠 1. Erisipela, Celulite e Abscesso: Como a Profundidade e a Purulência Ditam o Antibiótico**
 As infecções de pele e partes moles seguem uma divisão anatômica e microbiológica clara (*IDSA*):
 - **Erisipela**: infecção da derme superficial e vasos linfáticos, com placa vermelho-viva, quente, brilhante e **bordas nítidas e elevadas**, causada quase exclusivamente pelo *Streptococcus pyogenes* (β-hemolítico do grupo A).
 - **Celulite não purulenta**: acomete derme profunda e tecido subcutâneo, com **bordas mal delimitadas**, causada por estreptococos e *Staphylococcus aureus* sensível à meticilina (MSSA) — respondendo a **Cefalexina, Amoxicilina-Clavulanato ou Oxacilina/Cefazolina IV**.
 - **Abscesso cutâneo / Celulite purulenta**: coleção flutuante causada predominantemente por *S. aureus* (incluindo cepas comunitárias resistentes à meticilina — **CA-MRSA**). Aqui, o tratamento primário é a **incisão e drenagem cirúrgica**, associada a **SMX-TMP ou Clindamicina** quando há celulite circundante extensa ou sinais sistêmicos.
 
-### 💊 2. Por Que Demarcar a Borda com Caneta, Elevar o Membro e Tratar a *Tinea Pedis*?
+**💊 2. Por Que Demarcar a Borda com Caneta, Elevar o Membro e Tratar a *Tinea Pedis*?**
 Três medidas simples mudam o desfecho clínico da celulite de membros inferiores:
 1. **Demarcação a caneta das bordas do eritema**: como a destruição bacteriana libera toxinas inflamatórias, o eritema pode avançar levemente nas primeiras 24h; a linha desenhada permite objetivar se a infecção está regredindo em 48–72h.
 2. **Elevação do membro acima do nível do coração**: o edema linfático comprime a microcirculação e impede a chegada do antibiótico ao interstício.
 3. **Inspeção dos espaços interdigitais dos pés**: a **fissura por micose interdigital (*Tinea pedis*)** é a porta de entrada em mais de 60% das erisipelas de perna; tratá-la com antifúngico tópico previne erisipela de repetição.
 
-### 🧭 3. Fasciíte Necrosante: O Diagnóstico que Não Pode Passar como "Celulite Forte"
+### 🚫 4. Segurança, Travas & Proibições
+**🧭 3. Fasciíte Necrosante: O Diagnóstico que Não Pode Passar como "Celulite Forte"**
 Deve-se suspeitar imediatamente de **Fasciíte Necrosante** (emergência cirúrgica com mortalidade > 30%) diante de: **dor excruciante e desproporcional aos achados cutâneos iniciais**, edema lenhoso que ultrapassa os limites do eritema, **bolhas hemorrágicas/violáceas**, **anestesia cutânea** (por infarto dos nervos perfurantes na fáscia), crepitação subcutânea ou toxicidade sistêmica/sepse rápida. Nesses casos, solicita-se avaliação cirúrgica para **desbridamento imediato** e inicia-se terapia tripla empírica (**Vancomicina + Piperacilina-Tazobactam/Meropenem + Clindamicina**, sendo a clindamicina essencial para inibir a síntese de exotoxinas ribossomais estreptocócicas — *Efeito Eagle*).

@@ -82,10 +82,10 @@ EXAME FÍSICO GERAL COREOGRAFADO (5 ESTAÇÕES):
 - [ ] Palpei a tireoide por abordagem posterior pedindo para o paciente deglutir
 - [ ] Percorri o colar linfonodal (Ferradura craniana + cervical) finalizando nas fossas supraclaviculares (Virchow)
 - [ ] Examinei tórax posterior nos 4 tempos (Inspeção, Expansibilidade/FTV "33", Percussão e Ausculta em Z + axilas) com boca entreaberta
-- [ ] Realizei punho-percussão lombar (Sinal de Giordano) bilateral antes de deitar o paciente
+- [ ] [CRÍTICO] Realizei punho-percussão lombar (Sinal de Giordano) bilateral antes de deitar o paciente
 
 ### 3. Deitado a 30°–45° (Pivô 3: Ancorado à Direita do Leito)
-- [ ] Avaliei turgência jugular interna direita a 45° (e refluxo hepatojugular) + auscultei carótidas em apneia antes de palpar (uma por vez)
+- [ ] [CRÍTICO] Avaliei turgência jugular interna direita a 45° (e refluxo hepatojugular) + auscultei carótidas em apneia antes de palpar (uma por vez)
 - [ ] Inspecionei e palpei o precórdio (frêmitos e topografia/diâmetro do ictus cordis no 5º EIC LHCE)
 - [ ] Auscultei os 5 focos na escada 2D-2E-3E-4E-5E (A-P-A-T-M) palpando o pulso carotídeo/radial simultaneamente para cravar B1
 - [ ] Auscultei e percuti o tórax anterior avaliando lobos superiores, lobo médio (D) e língula (E)
@@ -98,5 +98,5 @@ EXAME FÍSICO GERAL COREOGRAFADO (5 ESTAÇÕES):
 - [ ] Avaliei PA/FC ortostática (1 e 3 min: queda PAS ≥ 20 ou PAD ≥ 10), marcha, Romberg ou manobra de Valsalva p/ hérnias
 
 ### 6. Upgrade Preceptor V2.0 (Manobras de Alta Acurácia)
-- [ ] Contei a FR real em 60s fingindo palpar o pulso radial e pesquisei Sinal de Schamroth (baqueteamento) e Linfonodo de Virchow supraclavicular esquerdo
-- [ ] Palpei o pulso carotídeo/radial simultaneamente à ausculta cardíaca (identificando B1) e respeitei a ordem abdominal I-A-P-P
+- [ ] [CRÍTICO] Contei a FR real em 60s fingindo palpar o pulso radial e pesquisei Sinal de Schamroth (baqueteamento) e Linfonodo de Virchow supraclavicular esquerdo
+- [ ] [CRÍTICO] Palpei o pulso carotídeo/radial simultaneamente à ausculta cardíaca (identificando B1) e respeitei a ordem abdominal I-A-P-P

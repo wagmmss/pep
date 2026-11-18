@@ -1,14 +1,19 @@
 # Atendimento de Pronto Atendimento - Constipação Aguda, Fecaloma e Suspeita de Obstrução Intestinal
+**Categoria:** Gastrointestinal e Abdominal  
+**Atalho:** `;constipacao`  
+**Gravidade:** Urgência (Laranja/Amarelo)  
+**CID-10:** K59.0 / K56.6  
 
-**Atalho:** `;constipacao` | **Categoria:** Gastrointestinal e Abdominal
+---
 
-## SNIPPET PEP
+## 📋 Snippet para Prontuário Eletrônico (PEP)
+
 ```text
 ATENDIMENTO DE PRONTO ATENDIMENTO — CONSTIPAÇÃO AGUDA, FECALOMA VS. ABDOME AGUDO OBSTRUTIVO
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino][? Peso :: , Peso: [ ] kg].
-Comorbidades: [+ *Hígido(a) / [ ]].
-Alergias: [*Nega / [ ]].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
+Comorbidades: [+ *Hígido(a) / Outros: ___].
+Alergias: [*Nega / Outros: ___].
 
 HISTÓRIA CLÍNICA DIRIGIDA:
 - Hábito Intestinal Atual: Ausência de evacuação há [ ] dias, associada a [desconforto abdominal baixo, esforço evacuatório e sensação de bloqueio anorretal / eliminação paradoxal de fezes líquidas em pequena quantidade — "diarreia paradoxal" por transbordamento ao redor do fecaloma!].
@@ -17,7 +22,7 @@ HISTÓRIA CLÍNICA DIRIGIDA:
 - Fatores Precipitantes: [Idoso acamado ou institucionalizado / Uso recente de Opioides (Tramadol, Codeína, Morfina), Anticolinérgicos, Bloqueadores de Canal de Cálcio ou Carbonato de Cálcio / Baixa ingesta hídrica].
 
 EXAME FÍSICO & TOQUE RETAL OBRIGATÓRIO:
-- Sinais Vitais: PA: [125x80] mmHg | FC: [78] bpm | Tax: [36,5]°C | Abdome: [Globoso, RHA presentes, massa fecal moldável palpável em topografia de sigmoide (FIE), sem peritonismo / Distendido, timpânico, RHA metálicos de luta, dor difusa].
+- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | Tax: [ ]°C | Abdome: [Globoso, RHA presentes, massa fecal moldável palpável em topografia de sigmoide (FIE), sem peritonismo / Distendido, timpânico, RHA metálicos de luta, dor difusa].
 - Inspeção Anal e Toque Retal: Esfíncter normotônico, sem fissuras agudas ou trombose hemorroidária; ampola retal [preenchida por grande massa fecal endurecida e pétrea — FECALOMA CONFIRMADO / ampola retal vazia e sem sangue em dedo de luva — suspeitar de impactação alta ou obstrução mecânica proximal!].
 
 EXAMES DE IMAGEM (SE SUSPEITA DE OBSTRUÇÃO MECÂNICA OU MEGACÓLON):
@@ -33,7 +38,7 @@ EXAMES DE IMAGEM (SE SUSPEITA DE OBSTRUÇÃO MECÂNICA OU MEGACÓLON):
    - Dieta zero + Sondagem Nasogástrica (SNG) aberta em drenagem + Hidratação venosa com Ringer Lactato + Correção de K+ e Mg2+ + TC de Abdome e Pelve + Avaliação da Cirurgia Geral.
 4. Alta após Desimpactação Efetiva: Prescrever regime de manutenção domiciliar com laxativo osmótico (Polietilenoglicol ou Lactulose) para prevenir reimpactação precoce + encaminhar para colonoscopia ambulatorial se ≥ 45–50 anos ou sinais de alarme.
 
-# PRESCRIÇÃO DOMICILIAR / DE ALTA
+# RECEITA:
 USO ORAL (PREVENÇÃO DE REIMPACTAÇÃO E MANEJO DOMICILIAR DA CONSTIPAÇÃO):
 
 1. Polietilenoglicol 4000 (Macrogol — Muvinlax ou PEG 4000 sem eletrólitos) pó para solução oral — 1 caixa/pote
@@ -50,7 +55,20 @@ USO ORAL (PREVENÇÃO DE REIMPACTAÇÃO E MANEJO DOMICILIAR DA CONSTIPAÇÃO):
    - Retornar imediatamente ao pronto-socorro se apresentar parada total de eliminação de gases, vômitos persistentes, febre, dor abdominal intensa ou sangramento vivo nas fezes.
 ```
 
-## DIRETRIZES E RACIOCÍNIO CLÍNICO
-### Armadilhas Clínicas no Fecaloma e no Uso de Fleet Enema
+---
+
+## 🎯 Diretrizes & Raciocínio Clínico
+
+### 🧠 1. Fisiopatologia & Porquê
+- Racional clínico e fisiopatológico de **Atendimento de Pronto Atendimento - Constipação Aguda, Fecaloma e Suspeita de Obstrução Intestinal** centrado na identificação precoce de gravidade e manejo baseado em evidências.
+
+### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
+- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
+
+### 💊 3. Farmacologia & Doses
+- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
+
+### 🚫 4. Segurança, Travas & Proibições
+**Armadilhas Clínicas no Fecaloma e no Uso de Fleet Enema**
 - **Por que a "diarreia" no idoso acamado frequentemente é um Fecaloma:** O bolo fecal pétreo impactado no reto dilata o esfíncter interno por reflexo retoesfincteriano inibitório contínuo, permitindo que apenas o muco e o líquido entérico proximal escorram ao redor da massa (**incontinência por transbordamento ou diarreia paradoxal**). Prescrever Loperamida sem fazer toque retal transforma a impactação em megacólon tóxico ou perfuração estercoral.
 - **Por que evitar Fleet Enema (Fosfato de Sódio) em idosos e renais crônicos:** O enema hipertônico de fosfato pode ser absorvido pela mucosa retal distendida, desencadeando **hiperfosfatemia aguda grave, hipocalcemia tetânica, hipocalemia e injúria renal aguda**. Prefira sempre **Clister Glicerinado 12%** ou solução fisiológica morna.

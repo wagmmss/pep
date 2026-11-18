@@ -74,7 +74,7 @@
 ## 📝 5. COMO REGISTRAR NO PRONTUÁRIO (Texto Pronto)
 ```text
 EXAME PULMONAR (APARELHO RESPIRATÓRIO):
-Tórax simétrico, atípico, sem retrações ou uso de musculatura acessória (FR: [16] irpm). Traqueia centralizada. Expansibilidade preservada e simétrica nos ápices e bases. Frêmito toracovocal (FTV) fisiológico e simétrico bilateralmente. Som claro pulmonar à percussão comparativa em todos os campos. Murmúrio vesicular presente e universalmente audível, sem ruídos adventícios (ausência de estertores, roncos, sibilos ou estridor). Ressonância vocal fisiológica (ausência de broncofonia, egofonia ou pectorilóquia áfona).
+Tórax simétrico, atípico, sem retrações ou uso de musculatura acessória (FR: [ ] irpm). Traqueia centralizada. Expansibilidade preservada e simétrica nos ápices e bases. Frêmito toracovocal (FTV) fisiológico e simétrico bilateralmente. Som claro pulmonar à percussão comparativa em todos os campos. Murmúrio vesicular presente e universalmente audível, sem ruídos adventícios (ausência de estertores, roncos, sibilos ou estridor). Ressonância vocal fisiológica (ausência de broncofonia, egofonia ou pectorilóquia áfona).
 ```
 
 ---
@@ -89,11 +89,11 @@ Tórax simétrico, atípico, sem retrações ou uso de musculatura acessória (F
 ## ✅ 7. CHECKLIST PÓS-ATENDIMENTO (Autoavaliação & Debriefing V2.0)
 ### 1. Ectoscopia & Sinais de Esforço
 - [ ] Contei a FR real por 30–60s sem avisar o paciente (sem chutar "16 irpm")
-- [ ] Chequei ativamente tiragens, musculatura acessória, fala entrecortada e respiração paradoxal abdominal
+- [ ] [CRÍTICO] Chequei ativamente tiragens, musculatura acessória, fala entrecortada e respiração paradoxal abdominal
 - [ ] Identifiquei o padrão respiratório e cianose central/periférica quando presentes
 
 ### 2. Palpação & Percussão Torácica
-- [ ] Chequei centralização da traqueia na fúrcula esternal
+- [ ] [CRÍTICO] Chequei centralização da traqueia na fúrcula esternal
 - [ ] Avaliei expansibilidade de ápices (Ruault) e bases (T9–T10) bilateralmente
 - [ ] Testei Frêmito Toracovocal ("33") com borda ulnar em 3 andares comparativos fora das escápulas
 - [ ] Percuti espaços intercostais em escada comparando D vs E (e excursão diafragmática se indicado)
@@ -101,9 +101,9 @@ Tórax simétrico, atípico, sem retrações ou uso de musculatura acessória (F
 ### 3. Ausculta Sistemática & Diferenciação Sindrômica
 - [ ] Auscultei em Z comparando D vs E no mesmo nível (costas, bases, axilas)
 - [ ] Auscultei a região anterior incluindo obrigatoriamente Lobo Médio (4º–5º EIC D) e Língula (4º–5º EIC E)
-- [ ] Diferenciei ruídos adventícios (crepitantes vs subcrepitantes vs sibilos vs roncos vs atrito/estridor)
+- [ ] [CRÍTICO] Diferenciei ruídos adventícios (crepitantes vs subcrepitantes vs sibilos vs roncos vs atrito/estridor)
 - [ ] Fiz testes de transmissão da voz (broncofonia, pectorilóquia sussurrada, egofonia) diante de alteração focal
 
 ### 4. Upgrade Preceptor V2.0 (Física Acústica C-A-D-P)
-- [ ] Integrei FTV + Percussão + Ausculta em zigue-zague para diferenciar Consolidação, Atelectasia, Derrame e Pneumotórax
-- [ ] Pedi para o paciente tossir (diferenciando estertores grossos que clareiam de estertores finos fixos) e pesquisei Egofonia (LR+ 4.1) e Sinal de Hoover
+- [ ] [CRÍTICO] Integrei FTV + Percussão + Ausculta em zigue-zague para diferenciar Consolidação, Atelectasia, Derrame e Pneumotórax
+- [ ] [CRÍTICO] Pedi para o paciente tossir (diferenciando estertores grossos que clareiam de estertores finos fixos) e pesquisei Egofonia (LR+ 4.1) e Sinal de Hoover

@@ -5,6 +5,7 @@
 export interface ChecklistItem {
   id: string;
   text: string;
+  critical?: boolean;
 }
 
 export interface ChecklistSection {
@@ -26,6 +27,8 @@ export interface ClinicalProtocolItem {
   trigger: string;
   all_triggers: string[];
   category: string;
+  gravidade?: 'critico' | 'urgente' | 'rotina' | 'tecnica';
+  cid10?: string;
   path: string;
   pep_body?: string;
   has_split?: boolean;
@@ -33,8 +36,11 @@ export interface ClinicalProtocolItem {
   conduta_body?: string;
   has_receita?: boolean;
   receita_body?: string;
+  receita_meds_body?: string;
+  orientacoes_body?: string;
   has_guia?: boolean;
   guia_body?: string;
+  sections?: Record<string, string>;
   time_goal?: string;
   hab_category?: string;
   anchor?: string;

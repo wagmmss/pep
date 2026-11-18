@@ -48,7 +48,7 @@
 ## 📝 5. COMO REGISTRAR NO PRONTUÁRIO (Texto Pronto)
 ```text
 LAUDO SISTEMÁTICO DE RADIOGRAFIA DE TÓRAX (RIPE + ABCDE-F):
-- Qualidade Técnica (RIPE): Incidência [PA / AP no leito], centrada (clavículas equidistantes das apófises espinhosas), boa inspiração ([9–10] arcos costais posteriores visíveis), penetração adequada.
+- Qualidade Técnica (RIPE): Incidência [PA / AP no leito], centrada (clavículas equidistantes das apófises espinhosas), boa inspiração ([ ] arcos costais posteriores visíveis), penetração adequada.
 - F (Dispositivos): [Ausência de dispositivos invasivos / TOT posicionado a 4 cm da carina / CVC em projeção de veia cava superior / SNE com extremidade distal subdiafragmática em topografia gástrica].
 - A (Vias Aéreas): Traqueia e brônquios principais centrados, carina com ângulo livre.
 - B (Parênquima e Pleura): Campos pleuropulmonares com transparência preservada e trama vasobrônquica fisiológica. Ausência de consolidações (sinal da silhueta preservado nas bordas cardíacas e hemicúpulas), massas ou linha de pneumotórax.
@@ -74,16 +74,16 @@ LAUDO SISTEMÁTICO DE RADIOGRAFIA DE TÓRAX (RIPE + ABCDE-F):
 - [ ] Avaliei RIPE (Rotação, Inspiração 9–10 arcos, Penetração atrás do coração e Extensão)
 
 ### 2. Varredura ABCDE-F Completa
-- [ ] A: Chequei centralização da traqueia, carina e altura/contorno dos hilos (E > D)
+- [ ] [CRÍTICO] A: Chequei centralização da traqueia, carina e altura/contorno dos hilos (E > D)
 - [ ] B: Varri clavículas, arcos costais um a um, coluna e partes moles (enfisema subcutâneo)
 - [ ] C: Avaliei ICT (< 0,50 apenas em PA), contornos cardíacos e largura do mediastino (< 8 cm)
-- [ ] D: Chequei cúpulas diafragmáticas, seios costofrênicos e pesquisei ar subdiafragmático
+- [ ] [CRÍTICO] D: Chequei cúpulas diafragmáticas, seios costofrênicos e pesquisei ar subdiafragmático
 - [ ] E: Comparei campos pulmonares em 3 zonas D vs E e apliquei o Sinal da Silhueta de Felson
-- [ ] F: Localizei a ponta exata de todo dispositivo (TOT, CVC, SNG/SNE, dreno) antes de liberar uso
+- [ ] [CRÍTICO] F: Localizei a ponta exata de todo dispositivo (TOT, CVC, SNG/SNE, dreno) antes de liberar uso
 
 ### 3. Áreas Cegas
 - [ ] Revisei as 5 áreas cegas (ápices, retrocardíaco, hilos, seios posteriores, subdiafragma)
 
 ### 4. Upgrade Preceptor V2.0 (Dispositivos de UTI & Silhueta)
-- [ ] Chequei primeiro a posição de todos os dispositivos invasivos (TOT a 3–5 cm da carina, CVC na cava superior e SNE subdiafragmática antes da dieta)
-- [ ] Apliquei o Sinal da Silhueta de Felson (Lobo Médio vs Língula vs Lobos Inferiores), o Sinal da Coluna no perfil e varri os 5 Pontos Cegos
+- [ ] [CRÍTICO] Chequei primeiro a posição de todos os dispositivos invasivos (TOT a 3–5 cm da carina, CVC na cava superior e SNE subdiafragmática antes da dieta)
+- [ ] [CRÍTICO] Apliquei o Sinal da Silhueta de Felson (Lobo Médio vs Língula vs Lobos Inferiores), o Sinal da Coluna no perfil e varri os 5 Pontos Cegos

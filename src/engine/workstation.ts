@@ -10,8 +10,12 @@ export interface ClinicalSeverity {
   cls: string;
 }
 
-export function getClinicalSeverity(item: { id?: string; trigger?: string; category?: string; mod_id?: string } | null): ClinicalSeverity {
+export function getClinicalSeverity(item: { id?: string; trigger?: string; category?: string; mod_id?: string; gravidade?: string } | null): ClinicalSeverity {
   if (!item) return { code: 'rotina', label: 'ROTINA', cls: 'sev-rotina' };
+  if (item.gravidade === 'critico') return { code: 'critico', label: 'CRÍTICO', cls: 'sev-critico' };
+  if (item.gravidade === 'urgente') return { code: 'urgente', label: 'URGENTE', cls: 'sev-urgente' };
+  if (item.gravidade === 'rotina') return { code: 'rotina', label: 'ROTINA', cls: 'sev-rotina' };
+  if (item.gravidade === 'tecnica') return { code: 'tecnica', label: 'TÉCNICA', cls: 'sev-tecnica' };
   const cat = String(item.category || '');
   const id = String(item.id || '');
   const trigger = String(item.trigger || '').trim().toLowerCase();
