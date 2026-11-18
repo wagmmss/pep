@@ -64,13 +64,9 @@ export function initPepDrawer(): void {
   let freeEditState: FreeEditSessionState = createFreeEditState('');
   let highlightGaps = false;
 
-  const getCompiledPepText = (): string => {
-    if (!activeProtocol) return '';
-    if (freeEditMode) return freeEditState.currentText;
-
-    const raw = activeProtocol.pep_body || '';
-    const tokens = parseBalancedBrackets(raw);
-    if (tokens.length === 0) return raw;
+  const compileTokens = (rawText: string, prefix = 'tok'): string => {
+    const tokens = parseBalancedBrackets(rawText);
+    if (tokens.length === 0) return rawText;
 
     const identity = cockpitStore.getState().patientSession.identity;
     let out = '';
@@ -81,21 +77,20 @@ export function initPepDrawer(): void {
         return;
       }
 
-      const key = `tok_${idx}`;
+      const key = `${prefix}_${idx}`;
       const inner = (tok.inner || '').trim();
 
       if (isInternalInstructionBracket(inner) || isSecondaryOptionBracket(inner)) {
         return;
       }
 
-      // Optional block [? Label :: Content]
       if (inner.startsWith('?')) {
         const body = inner.slice(1).trim();
         const sepIdx = body.indexOf('::');
         const content = sepIdx >= 0 ? body.slice(sepIdx + 2).trim() : body;
         const enabled = fieldValues[key] === '1';
         if (enabled) {
-          out += content;
+          out += compileTokens(content, `${key}_sub`);
         }
         return;
       }
@@ -139,7 +134,14 @@ export function initPepDrawer(): void {
       out += `[${inner}]`;
     });
 
-    return sanitizePepOutput(out, { keepEmptyBrackets: true, stripMarkdownHeaders: true });
+    return out;
+  };
+
+  const getCompiledPepText = (): string => {
+    if (!activeProtocol) return '';
+    if (freeEditMode) return freeEditState.currentText;
+    const compiled = compileTokens(activeProtocol.pep_body || '', 'tok');
+    return sanitizePepOutput(compiled, { keepEmptyBrackets: true, stripMarkdownHeaders: true });
   };
 
   const syncDraftToStore = () => {
@@ -243,25 +245,20 @@ export function initPepDrawer(): void {
     `;
   };
 
-  const renderPepTab = () => {
-    if (!activeProtocol) return;
-    const identity = cockpitStore.getState().patientSession.identity;
-    const compiled = getCompiledPepText();
-    const gaps = detectPendingGaps(compiled);
-    const tokens = parseBalancedBrackets(activeProtocol.pep_body || '');
-
-    let formHtml = '';
+  const renderTokensHtml = (rawText: string, prefix = 'tok'): string => {
+    const tokens = parseBalancedBrackets(rawText);
+    let html = '';
 
     tokens.forEach((tok, idx) => {
       if (tok.type === 'text') {
         const formattedText = escapeHtml(tok.raw)
           .replace(/(^|\n)#{1,6}\s+([^\n]+)/g, '$1<strong class="pep-section-heading">$2</strong>')
           .replace(/\n/g, '<br>');
-        formHtml += formattedText;
+        html += formattedText;
         return;
       }
 
-      const key = `tok_${idx}`;
+      const key = `${prefix}_${idx}`;
       const inner = (tok.inner || '').trim();
 
       if (isInternalInstructionBracket(inner) || isSecondaryOptionBracket(inner)) {
@@ -272,24 +269,30 @@ export function initPepDrawer(): void {
         const body = inner.slice(1).trim();
         const sepIdx = body.indexOf('::');
         const label = sepIdx >= 0 ? body.slice(0, sepIdx).trim() : 'Opcional';
+        const content = sepIdx >= 0 ? body.slice(sepIdx + 2).trim() : body;
         const checked = fieldValues[key] === '1';
-        formHtml += `
+        html += `
           <label class="pep-opt-toggle${checked ? ' checked' : ''}">
             <input type="checkbox" data-tok-opt="${key}" ${checked ? 'checked' : ''} />
             <span>+ ${escapeHtml(label)}</span>
           </label>
         `;
+        if (checked && content) {
+          html += `<span class="pep-opt-inline-body">${renderTokensHtml(content, `${key}_sub`)}</span>`;
+        }
         return;
       }
 
       const parsed = parseChoiceGroupToken(inner);
       if (parsed.isExplicitMulti) {
         const currentArr = Array.isArray(fieldValues[key]) ? (fieldValues[key] as string[]) : [];
-        formHtml += `<span class="pep-multi-group" data-tok-multi="${key}">` +
+        html +=
+          `<span class="choice-group is-multi" data-tok-multi="${key}">` +
           parsed.options
             .map((opt) => {
               const active = currentArr.includes(opt.text) || (currentArr.length === 0 && opt.isDefault);
-              return `<button type="button" class="pep-choice-pill multi${active ? ' active' : ''}" data-tok-key="${key}" data-choice="${escapeHtml(opt.text)}">${escapeHtml(opt.text)}</button>`;
+              const defCls = opt.isDefault ? ' is-default' : '';
+              return `<button type="button" class="choice-pill${defCls}${active ? ' active' : ''}" data-tok-key="${key}" data-choice="${escapeHtml(opt.text)}">${escapeHtml(opt.text)}</button>`;
             })
             .join('') +
           `</span>`;
@@ -298,11 +301,13 @@ export function initPepDrawer(): void {
 
       if (parsed.options.length > 1) {
         const currentVal = typeof fieldValues[key] === 'string' ? (fieldValues[key] as string) : '';
-        formHtml += `<span class="pep-single-group">` +
+        html +=
+          `<span class="choice-group">` +
           parsed.options
             .map((opt) => {
               const active = currentVal ? currentVal === opt.text : opt.isDefault;
-              return `<button type="button" class="pep-choice-pill${active ? ' active' : ''}" data-tok-key="${key}" data-single-choice="${escapeHtml(opt.text)}">${escapeHtml(opt.text)}</button>`;
+              const defCls = opt.isDefault ? ' is-default' : '';
+              return `<button type="button" class="choice-pill${defCls}${active ? ' active' : ''}" data-tok-key="${key}" data-single-choice="${escapeHtml(opt.text)}">${escapeHtml(opt.text)}</button>`;
             })
             .join('') +
           `</span>`;
@@ -312,13 +317,23 @@ export function initPepDrawer(): void {
       const val = typeof fieldValues[key] === 'string' ? (fieldValues[key] as string) : '';
       const isEmpty = !val.trim();
       const gapCls = highlightGaps && isEmpty ? ' gap-highlight' : '';
+      const filledCls = !isEmpty ? ' is-filled' : '';
       const lowInner = inner.toLowerCase();
       let roleAttr = '';
       if (lowInner === 'nome') roleAttr = ' data-tok-role="nome"';
       else if (lowInner === 'idade') roleAttr = ' data-tok-role="idade"';
-      else if (lowInner === '' && /peso:\s*$/i.test(formHtml.slice(-24))) roleAttr = ' data-tok-role="peso"';
-      formHtml += `<input type="text" class="pill-sub-input${gapCls}" data-tok-input="${key}"${roleAttr} value="${escapeHtml(val)}" placeholder="${escapeHtml(inner || '...')}" size="${Math.max(6, Math.min(28, (val || inner).length + 2))}" />`;
+      else if (lowInner === '' && /peso:\s*$/i.test(html.slice(-24))) roleAttr = ' data-tok-role="peso"';
+      html += `<input type="text" class="pep-inline-input${filledCls}${gapCls}" data-tok-input="${key}"${roleAttr} value="${escapeHtml(val)}" placeholder="${escapeHtml(inner || '...')}" size="${Math.max(6, Math.min(28, (val || inner).length + 2))}" />`;
     });
+
+    return html;
+  };
+
+  const renderPepTab = () => {
+    if (!activeProtocol) return;
+    const compiled = getCompiledPepText();
+    const gaps = detectPendingGaps(compiled);
+    const formHtml = renderTokensHtml(activeProtocol.pep_body || '', 'tok');
 
     const hasReceita = Boolean(activeProtocol.has_receita || activeProtocol.receita_body?.trim());
 

@@ -115,19 +115,36 @@ async function run() {
 
     const layoutCheck = await page.evaluate(() => {
       const sb = document.querySelector('#wsSidebar')?.getBoundingClientRect();
+      const sbStatus = document.querySelector('.ws-sidebar-status')?.getBoundingClientRect();
       const lp = document.querySelector('#wsListPane')?.getBoundingClientRect();
       const dr = document.querySelector('#drawerOverlay')?.getBoundingClientRect();
+      const drTabs = document.querySelector('.drawer-tabs')?.getBoundingClientRect();
       const navBg = getComputedStyle(document.querySelector('.mq-nav-item')).backgroundColor;
       const tabBg = getComputedStyle(document.querySelector('.tab-btn')).backgroundColor;
       const cardBg = getComputedStyle(document.querySelector('#cardsGrid .card')).backgroundColor;
-      return { sb, lp, dr, navBg, tabBg, cardBg };
+      const pillBg = getComputedStyle(document.querySelector('.choice-pill')).backgroundColor;
+      const btnGhostBg = getComputedStyle(document.querySelector('.btn-ghost')).backgroundColor;
+      const btnSecEl = document.querySelector('.btn-secondary') || document.querySelector('.btn-warning');
+      const btnSecBg = btnSecEl ? getComputedStyle(btnSecEl).backgroundColor : null;
+      return { sb, sbStatus, lp, dr, drTabs, navBg, tabBg, cardBg, pillBg, btnGhostBg, btnSecBg };
     });
     assert.ok(layoutCheck.sb && layoutCheck.lp && layoutCheck.dr, 'As 3 colunas devem existir no Desktop');
+    assert.ok(layoutCheck.sb.x >= 0 && (!layoutCheck.sbStatus || layoutCheck.sbStatus.x >= 0), 'Sidebar não pode ter clipping horizontal');
+    assert.ok(layoutCheck.drTabs && layoutCheck.drTabs.height >= 24, `drawer-tabs deve estar visível (height=${layoutCheck.drTabs?.height})`);
     assert.ok(layoutCheck.sb.width > 180 && layoutCheck.lp.width > 280 && layoutCheck.dr.width > 400, 'Larguras das 3 colunas devem ser válidas');
     assert.ok(layoutCheck.sb.x < layoutCheck.lp.x && layoutCheck.lp.x < layoutCheck.dr.x, 'As 3 colunas devem estar lado a lado');
-    assert.notEqual(layoutCheck.navBg, 'rgb(255, 255, 255)', 'Botão da sidebar não pode ficar branco no dark mode');
-    assert.notEqual(layoutCheck.tabBg, 'rgb(255, 255, 255)', 'Botão de especialidade não pode ficar branco no dark mode');
-    assert.notEqual(layoutCheck.cardBg, 'rgb(255, 255, 255)', 'Card PEP não pode ficar branco no dark mode');
+    for (const [label, bg] of [
+      ['navBg', layoutCheck.navBg],
+      ['tabBg', layoutCheck.tabBg],
+      ['cardBg', layoutCheck.cardBg],
+      ['pillBg', layoutCheck.pillBg],
+      ['btnGhostBg', layoutCheck.btnGhostBg],
+      ['btnSecBg', layoutCheck.btnSecBg],
+    ]) {
+      if (!bg) continue;
+      assert.notEqual(bg, 'rgb(255, 255, 255)', `${label} não pode ser branco no dark mode`);
+      assert.notEqual(bg, 'rgb(239, 239, 239)', `${label} não pode ser cinza padrão do navegador no dark mode`);
+    }
 
     // Toggle Consulta / Treino + Abrir PEP Pediatria + Doses Pediátricas + Novo Paciente
     await page.locator('#clinicalModeToggle').click();
@@ -143,7 +160,7 @@ async function run() {
     const drawerHtmlTreino = await page.locator('#drawerInteractivePanel').innerHTML();
     assert.ok(drawerHtmlTreino.includes('pepRegisterLogbookBtn') || drawerHtmlTreino.includes('Formação Teórica'), 'Modo Treino deve exibir vínculos de estudo/Logbook');
 
-    const pesoInput = page.locator('#drawerInteractivePanel input.pill-sub-input').first();
+    const pesoInput = page.locator('#drawerInteractivePanel input.pep-inline-input').first();
     await pesoInput.fill('15');
     await pesoInput.dispatchEvent('change');
     await page.waitForTimeout(100);
