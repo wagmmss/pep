@@ -11995,10 +11995,74 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       const calcDesc = document.getElementById('rcCalcDesc');
       let lastPepSnippet = '';
       let activeCalc = 'renal';
+      let fallbackLoading = false;
+      const fallbackCallbacks = [];
+
+      function copyToClipboardSafe(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+          return;
+        }
+        fallbackCopy(text);
+      }
+
+      function fallbackCopy(text) {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        } catch (_) {}
+      }
+
+      function ensureClinicoEngineFallback(onReady) {
+        if (window.__ClinicoEngine) {
+          if (typeof onReady === 'function') onReady();
+          return;
+        }
+        if (typeof onReady === 'function') fallbackCallbacks.push(onReady);
+        if (fallbackLoading) return;
+        fallbackLoading = true;
+        const sc = document.createElement('script');
+        sc.src = './clinico-engine.js';
+        sc.onload = () => {
+          fallbackLoading = false;
+          while (fallbackCallbacks.length) {
+            const cb = fallbackCallbacks.shift();
+            try { cb(); } catch (_) {}
+          }
+        };
+        sc.onerror = () => {
+          fallbackLoading = false;
+        };
+        document.body.appendChild(sc);
+      }
+
+      function runCalcSafe(computeFn) {
+        if (!window.__ClinicoEngine) {
+          ensureClinicoEngineFallback(() => runCalcSafe(computeFn));
+          return;
+        }
+        try {
+          showCalcResult(computeFn(window.__ClinicoEngine));
+        } catch (err) {
+          if (typeof showToast === 'function') {
+            showToast(err && err.message ? err.message : 'Erro ao calcular.');
+          }
+        }
+      }
 
       function renderRemumeList(q) {
         const engine = window.__ClinicoEngine;
-        if (!engine || typeof engine.searchRemume !== 'function') return;
+        if (!engine || typeof engine.searchRemume !== 'function') {
+          remumeCount.textContent = 'Carregando base REMUME...';
+          ensureClinicoEngineFallback(() => renderRemumeList(remumeInput.value));
+          return;
+        }
         const items = engine.searchRemume(q || '', 60);
         remumeCount.textContent = `${items.length}${!q ? ' primeiros de 255' : ' encontrados'}`;
         remumeList.innerHTML = '';
@@ -12012,9 +12076,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
           btn.className = 'btn-palette-trigger';
           btn.textContent = 'Copiar';
           btn.onclick = () => {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-              navigator.clipboard.writeText(it.name).catch(() => {});
-            }
+            copyToClipboardSafe(it.name);
             if (typeof showToast === 'function') showToast(`💊 Copiado: ${it.name}`);
           };
           row.appendChild(span);
@@ -12048,23 +12110,17 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
               <button type="button" class="btn-palette-trigger" id="rcBtnCkd">Calcular CKD-EPI 2021</button>
               <button type="button" class="btn-palette-trigger" id="rcBtnCg">Calcular Cockcroft-Gault</button>
             </div>`;
-          document.getElementById('rcBtnCkd').onclick = () => {
-            const e = window.__ClinicoEngine;
-            showCalcResult(e.calcCkdEpi2021({
-              creatinina: parseFloat(document.getElementById('rcCr').value),
-              idade: parseFloat(document.getElementById('rcIdade').value),
-              sexo: document.getElementById('rcSexo').value
-            }));
-          };
-          document.getElementById('rcBtnCg').onclick = () => {
-            const e = window.__ClinicoEngine;
-            showCalcResult(e.calcCockcroftGault({
-              creatinina: parseFloat(document.getElementById('rcCr').value),
-              idade: parseFloat(document.getElementById('rcIdade').value),
-              pesoKg: parseFloat(document.getElementById('rcPeso').value),
-              sexo: document.getElementById('rcSexo').value
-            }));
-          };
+          document.getElementById('rcBtnCkd').onclick = () => runCalcSafe((e) => e.calcCkdEpi2021({
+            creatinina: parseFloat(document.getElementById('rcCr').value),
+            idade: parseFloat(document.getElementById('rcIdade').value),
+            sexo: document.getElementById('rcSexo').value
+          }));
+          document.getElementById('rcBtnCg').onclick = () => runCalcSafe((e) => e.calcCockcroftGault({
+            creatinina: parseFloat(document.getElementById('rcCr').value),
+            idade: parseFloat(document.getElementById('rcIdade').value),
+            pesoKg: parseFloat(document.getElementById('rcPeso').value),
+            sexo: document.getElementById('rcSexo').value
+          }));
         } else if (kind === 'ig') {
           const today = new Date().toISOString().slice(0, 10);
           calcForm.innerHTML = `
@@ -12078,20 +12134,14 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
               <label>Dias: <input id="rcUsgD" type="number" min="0" max="6" value="0" style="${inpStyle}width:70px;"></label>
               <button type="button" class="btn-palette-trigger" id="rcBtnUsg">Calcular por USG</button>
             </div>`;
-          document.getElementById('rcBtnDum').onclick = () => {
-            try {
-              showCalcResult(window.__ClinicoEngine.calcIdadeGestacionalDum({ dumIso: document.getElementById('rcDum').value }));
-            } catch (err) { if (typeof showToast === 'function') showToast(err.message); }
-          };
-          document.getElementById('rcBtnUsg').onclick = () => {
-            try {
-              showCalcResult(window.__ClinicoEngine.calcIdadeGestacionalUsg({
-                usgDateIso: document.getElementById('rcUsgDt').value,
-                usgWeeks: parseInt(document.getElementById('rcUsgW').value || '0', 10),
-                usgDays: parseInt(document.getElementById('rcUsgD').value || '0', 10)
-              }));
-            } catch (err) { if (typeof showToast === 'function') showToast(err.message); }
-          };
+          document.getElementById('rcBtnDum').onclick = () => runCalcSafe((e) => e.calcIdadeGestacionalDum({
+            dumIso: document.getElementById('rcDum').value
+          }));
+          document.getElementById('rcBtnUsg').onclick = () => runCalcSafe((e) => e.calcIdadeGestacionalUsg({
+            usgDateIso: document.getElementById('rcUsgDt').value,
+            usgWeeks: parseInt(document.getElementById('rcUsgW').value || '0', 10),
+            usgDays: parseInt(document.getElementById('rcUsgD').value || '0', 10)
+          }));
         } else if (kind === 'elec') {
           calcForm.innerHTML = `
             <div style="${rowStyle}">
@@ -12109,15 +12159,15 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
               <label>Albumina: <input id="rcAlb" type="number" step="0.1" value="2.5" style="${inpStyle}"></label>
               <button type="button" class="btn-palette-trigger" id="rcBtnCa">Corrigir Ca++</button>
             </div>`;
-          document.getElementById('rcBtnImc').onclick = () => showCalcResult(window.__ClinicoEngine.calcImc({
+          document.getElementById('rcBtnImc').onclick = () => runCalcSafe((e) => e.calcImc({
             pesoKg: parseFloat(document.getElementById('rcImcP').value),
             alturaCm: parseFloat(document.getElementById('rcImcA').value)
           }));
-          document.getElementById('rcBtnNa').onclick = () => showCalcResult(window.__ClinicoEngine.calcSodioCorrigido({
+          document.getElementById('rcBtnNa').onclick = () => runCalcSafe((e) => e.calcSodioCorrigido({
             sodioMedido: parseFloat(document.getElementById('rcNa').value),
             glicemiaMgDl: parseFloat(document.getElementById('rcGli').value)
           }));
-          document.getElementById('rcBtnCa').onclick = () => showCalcResult(window.__ClinicoEngine.calcCalcioCorrigido({
+          document.getElementById('rcBtnCa').onclick = () => runCalcSafe((e) => e.calcCalcioCorrigido({
             calcioTotal: parseFloat(document.getElementById('rcCa').value),
             albuminaGdl: parseFloat(document.getElementById('rcAlb').value)
           }));
@@ -12129,7 +12179,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
             <label><input type="checkbox" id="cPa"> PAS &lt; 90 ou PAD &le; 60 mmHg</label>
             <label><input type="checkbox" id="cId"> Idade &ge; 65 anos</label>
             <button type="button" class="btn-palette-trigger" id="rcBtnCurb" style="align-self:flex-start;">Calcular CURB-65</button>`;
-          document.getElementById('rcBtnCurb').onclick = () => showCalcResult(window.__ClinicoEngine.calcCurb65({
+          document.getElementById('rcBtnCurb').onclick = () => runCalcSafe((e) => e.calcCurb65({
             confusao: document.getElementById('cConf').checked,
             ureiaAlta: document.getElementById('cUre').checked,
             fr30: document.getElementById('cFr').checked,
@@ -12144,7 +12194,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
             <label><input type="checkbox" id="mExs"> Exsudato ou edema tonsilar</label>
             <label>Idade (anos): <input id="mId" type="number" value="22" style="${inpStyle}"></label>
             <button type="button" class="btn-palette-trigger" id="rcBtnCentor" style="align-self:flex-start;">Calcular Centor/McIsaac</button>`;
-          document.getElementById('rcBtnCentor').onclick = () => showCalcResult(window.__ClinicoEngine.calcCentorMcIsaac({
+          document.getElementById('rcBtnCentor').onclick = () => runCalcSafe((e) => e.calcCentorMcIsaac({
             febre: document.getElementById('mFeb').checked,
             ausenciaTosse: document.getElementById('mTos').checked,
             linfonodoCervical: document.getElementById('mLin').checked,
@@ -12164,7 +12214,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
             <label><input type="checkbox" id="w9"> TVP prévia documentada (+1)</label>
             <label><input type="checkbox" id="w10"> Diagnóstico alternativo tão ou mais provável (-2)</label>
             <button type="button" class="btn-palette-trigger" id="rcBtnWells" style="align-self:flex-start;">Calcular Wells TVP</button>`;
-          document.getElementById('rcBtnWells').onclick = () => showCalcResult(window.__ClinicoEngine.calcWellsTvp({
+          document.getElementById('rcBtnWells').onclick = () => runCalcSafe((e) => e.calcWellsTvp({
             cancerAtivo: document.getElementById('w1').checked,
             imobilizacaoParesia: document.getElementById('w2').checked,
             acamado3dOuCirurgia: document.getElementById('w3').checked,
@@ -12187,7 +12237,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
             <label><input type="checkbox" id="ch7"> Idade 65–74 anos (+1)</label>
             <label><input type="checkbox" id="ch8"> Sexo feminino (+1)</label>
             <button type="button" class="btn-palette-trigger" id="rcBtnChads" style="align-self:flex-start;">Calcular CHA₂DS₂-VASc</button>`;
-          document.getElementById('rcBtnChads').onclick = () => showCalcResult(window.__ClinicoEngine.calcCha2ds2Vasc({
+          document.getElementById('rcBtnChads').onclick = () => runCalcSafe((e) => e.calcCha2ds2Vasc({
             icc: document.getElementById('ch1').checked,
             has: document.getElementById('ch2').checked,
             idade75: document.getElementById('ch3').checked,
@@ -12222,9 +12272,7 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
 
       window.copyRcCalcSnippet = function () {
         if (!lastPepSnippet) return;
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(lastPepSnippet).catch(() => {});
-        }
+        copyToClipboardSafe(lastPepSnippet);
         if (typeof showToast === 'function') showToast('📋 Resultado copiado para o PEP!');
       };
 
@@ -12238,8 +12286,11 @@ ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Pes
       };
 
       remumeInput.addEventListener('input', (e) => renderRemumeList(e.target.value));
+      window.addEventListener('DOMContentLoaded', () => {
+        if (!window.__ClinicoEngine) ensureClinicoEngineFallback();
+      });
     })();
   </script>
-  <script type="module" src="/src/engine/index.ts"></script>
+  <script type="module" src="/src/engine/index.ts" onerror="window.dispatchEvent(new Event('clinico-module-error'))"></script>
 </body>
 </html>
