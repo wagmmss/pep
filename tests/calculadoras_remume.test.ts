@@ -112,3 +112,44 @@ test('Escores UBS/UPA: CURB-65, Centor/McIsaac, Wells TVP e CHA2DS2-VASc', () =>
   assert.equal(chads.valueText, '4 pontos');
   assert.ok(chads.classification.includes('indicada anticoagulação'));
 });
+
+test('Calculadoras: validações de borda, faixa etária, unidades e datas inválidas', () => {
+  // CKD-EPI: aviso em <18 anos e erro em >120 anos
+  const ckdPed = calcCkdEpi2021({ creatinina: 0.7, idade: 14, sexo: 'F' });
+  assert.ok(ckdPed.classification.includes('Schwartz'), 'Menores de 18 anos devem receber alerta sobre Schwartz');
+  assert.throws(() => calcCkdEpi2021({ creatinina: 1.0, idade: 125, sexo: 'M' }), /Idade/);
+
+  // Cockcroft-Gault: erro em idade > 120 e aviso pediátrico em <18
+  const cgPed = calcCockcroftGault({ creatinina: 0.8, idade: 12, pesoKg: 40, sexo: 'M' });
+  assert.ok(cgPed.classification.includes('Schwartz'));
+  assert.throws(() => calcCockcroftGault({ creatinina: 1.0, idade: 125, pesoKg: 70, sexo: 'M' }), /Idade/);
+
+  // DUM inexistente no calendário (ex: 31/02) deve rejeitar em vez de fazer rollover para março
+  assert.throws(() => calcIdadeGestacionalDum({ dumIso: '2026-02-31', refDateIso: '2026-06-01' }), /Data inexistente no calendário/);
+
+  // IMC aceita metros <= 3 (ex: 1.72) e rejeita valores absurdos
+  const imcMetros = calcImc({ pesoKg: 72, alturaCm: 1.72 });
+  assert.equal(imcMetros.valueText, '24,3 kg/m²');
+  assert.throws(() => calcImc({ pesoKg: 70, alturaCm: 20 }), /altura/);
+
+  // Sódio corrigido rejeita Na+ fora de 80-200 mEq/L e cálcio rejeita albumina > 10 (g/L)
+  assert.throws(() => calcSodioCorrigido({ sodioMedido: 45, glicemiaMgDl: 200 }), /Sódio/);
+  assert.throws(() => calcCalcioCorrigido({ calcioTotal: 8.5, albuminaGdl: 35 }), /g\/dL/);
+
+  // Centor/McIsaac rejeita idade negativa ou >120 e avisa quando < 3 anos
+  assert.throws(() => calcCentorMcIsaac({
+    febre: true,
+    ausenciaTosse: true,
+    linfonodoCervical: false,
+    exsudatoTonsilar: false,
+    idadeAnos: 130,
+  }), /Idade/);
+  const centorBaby = calcCentorMcIsaac({
+    febre: true,
+    ausenciaTosse: false,
+    linfonodoCervical: false,
+    exsudatoTonsilar: false,
+    idadeAnos: 2,
+  });
+  assert.ok(centorBaby.classification.includes('< 3 anos'));
+});
