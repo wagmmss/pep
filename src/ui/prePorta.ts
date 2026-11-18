@@ -344,27 +344,6 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
       }
     `;
 
-    const blindspotsHtml =
-      totalItems === 0
-        ? `<div class="hab-blindspots-panel"><div class="hab-blindspots-header">Nenhum item de checklist encontrado neste cartão.</div></div>`
-        : missedItems.length === 0
-          ? `<div class="hab-blindspots-panel all-done"><div class="hab-blindspots-header"><span>✅ Nenhum ponto cego — todos os ${totalItems} itens executados.</span></div></div>`
-          : `<div class="hab-blindspots-panel">
-               <div class="hab-blindspots-header">
-                 <span>Pontos Cegos / Itens Pendentes (${missedItems.length})</span>
-                 <span>Ao vivo</span>
-               </div>
-               <ul class="hab-blindspots-list">
-                 ${missedItems
-                   .slice(0, 8)
-                   .map(
-                     (m) =>
-                       `<li class="hab-blindspot-item"><span class="hab-blindspot-sec">[${escapeHtml(m.section)}]</span>${m.critical ? '<span class="hab-critical-badge">CRÍTICO</span> ' : ''}${formatGuiaInlineHtml(m.text)}</li>`
-                   )
-                   .join('')}
-               </ul>
-             </div>`;
-
     const checklistTabHtml = `
       <div class="hab-progress-card">
         <div class="hab-progress-top">
@@ -384,8 +363,6 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
         <button type="button" class="btn btn-secondary btn-xs" id="habCopyDebriefBtn">📋 Copiar Debriefing</button>
         <button type="button" class="btn btn-ghost btn-xs" id="habResetChecksBtn">↺ Limpar Checklist</button>
       </div>
-
-      ${blindspotsHtml}
 
       <div class="hab-sections-grid">
         ${sections

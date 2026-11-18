@@ -235,6 +235,18 @@ async function run() {
     await usgDateInp.fill(brToday);
     const igDefW = await page.locator('#drawerInteractivePanel input[data-obstetric-role="ig-def-w"]').first().inputValue();
     assert.equal(igDefW, '11', `CCN 45mm na data de hoje deve calcular IG Definitiva = 11s (obtido: ${igDefW})`);
+
+    await page.locator('#pepToggleFreeEditBtn').click();
+    await assertVisibleInputsLabeled(page, 'pep-free-edit');
+    const freeBox = await page.locator('#pepFreeEditTextarea').boundingBox();
+    assert.ok(freeBox && freeBox.height > 100, 'Edição Livre deve exibir #pepFreeEditTextarea visível');
+    assert.ok(((await page.locator('#pepFreeEditTextarea').inputValue()) || '').includes('IDENTIFICAÇÃO:'), 'Edição Livre deve conter texto do PEP');
+    await page.locator('#pepToggleFreeEditBtn').click();
+
+    await page.locator('#tabGuiaBtn').click();
+    assert.ok((await page.locator('#drawerGuiaPanel .guia-table, #drawerGuiaPanel .guia-list').count()) >= 1, 'Diretrizes deve renderizar listas/tabelas HTML estruturadas');
+    await page.locator('#tabPepBtn').click();
+
     await page.locator('#wsClearSearchBtn').click();
 
     // 5. Command Palette (Ctrl+K)

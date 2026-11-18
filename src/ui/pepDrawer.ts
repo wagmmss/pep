@@ -1,7 +1,7 @@
 import type { ClinicalProtocolItem } from '../data/clinical_data.ts';
 import { resolveClinicalLinksForPep } from '../data/clinical_links.ts';
 import { calcIdadeGestacionalUsg } from '../engine/calculadoras.ts';
-import { classifyGuiaSectionTheme, formatGuiaInlineHtml } from '../engine/diretrizes.ts';
+import { classifyGuiaSectionTheme, renderGuiaSectionBodyHtml } from '../engine/diretrizes.ts';
 import {
   computeWeightBasedDoses,
   createFreeEditState,
@@ -1840,7 +1840,7 @@ export function initPepDrawer(): void {
 
       ${
         freeEditMode
-          ? `<div class="pep-free-edit-wrap active">
+          ? `<div class="pep-free-edit-wrap is-open">
                <div class="pep-free-edit-bar">
                  <span>✏️ Edição Livre ativa — texto abaixo é a fonte final para cópia e impressão.</span>
                  <button type="button" class="btn btn-secondary btn-xs" id="pepFreeUndoBtn" ${freeEditState.undoStack.length <= 1 ? 'disabled' : ''}>↶ Desfazer (${Math.max(0, freeEditState.undoStack.length - 1)})</button>
@@ -2027,11 +2027,11 @@ export function initPepDrawer(): void {
               const theme = classifyGuiaSectionTheme(secTitle);
               return `
                 <article class="guia-section-card ${theme.cls}">
-                  <div class="guia-section-head">
+                  <div class="guia-section-header">
+                    <h4 class="guia-section-title">${escapeHtml(secTitle)}</h4>
                     <span class="guia-tag">${escapeHtml(theme.tag)}</span>
-                    <h4>${escapeHtml(secTitle)}</h4>
                   </div>
-                  <div class="guia-section-body">${formatGuiaInlineHtml(secBody)}</div>
+                  <div class="guia-section-body">${renderGuiaSectionBodyHtml(secBody)}</div>
                 </article>`;
             })
             .join('')
