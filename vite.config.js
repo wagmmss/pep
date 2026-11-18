@@ -27,6 +27,7 @@ export default defineConfig({
         ]
       },
       workbox: {
+        cleanupOutdatedCaches: true,
         globPatterns: ['**/*.{js,css,html,svg,png,json,webmanifest}'],
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024
       }

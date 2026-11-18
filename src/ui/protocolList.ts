@@ -67,15 +67,19 @@ export function initProtocolList(): void {
           : '';
 
         return `
-          <article class="protocol-card" data-protocol-id="${escapeHtml(item.id)}" tabindex="0" role="button" aria-label="Abrir ${escapeHtml(item.title)}">
-            <div class="card-top-row">
-              <span class="sev-badge ${sev.cls}">${sev.label}</span>
-              <span class="card-mod-badge mod-${escapeHtml(item.mod_id)}">${escapeHtml(item.badge)}</span>
-            </div>
-            <h3 class="card-title">${escapeHtml(item.title)}</h3>
-            <p class="card-cat">${escapeHtml(item.category)}</p>
-            <div class="card-meta-row">
+          <article class="card mod-${escapeHtml(item.mod_id)}" data-protocol-id="${escapeHtml(item.id)}" tabindex="0" role="button" aria-label="Abrir ${escapeHtml(item.title)}">
+            <div class="card-head">
+              <div class="card-meta">
+                <span class="sev-badge ${sev.cls}">${sev.label}</span>
+                <span class="badge badge-${escapeHtml(item.mod_id)}">${escapeHtml(item.badge)}</span>
+              </div>
               <code class="card-trigger">${escapeHtml(item.trigger)}</code>
+            </div>
+            <div class="card-body-block">
+              <h3 class="card-title">${escapeHtml(item.title)}</h3>
+              <p class="card-preview-text">${escapeHtml(item.category)}</p>
+            </div>
+            <div class="card-footer">
               ${cid}
               ${symChip}
             </div>
@@ -87,6 +91,8 @@ export function initProtocolList(): void {
     grid.querySelectorAll<HTMLElement>('[data-protocol-id]').forEach((card) => {
       const open = () => {
         const id = card.dataset.protocolId;
+        grid.querySelectorAll('.card.ws-selected').forEach((el) => el.classList.remove('ws-selected'));
+        card.classList.add('ws-selected');
         if (id) uiBridge.openPepDrawer(id, 'pep');
       };
       card.addEventListener('click', open);

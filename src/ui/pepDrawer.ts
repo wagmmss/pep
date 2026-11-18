@@ -312,22 +312,17 @@ export function initPepDrawer(): void {
       const val = typeof fieldValues[key] === 'string' ? (fieldValues[key] as string) : '';
       const isEmpty = !val.trim();
       const gapCls = highlightGaps && isEmpty ? ' gap-highlight' : '';
-      formHtml += `<input type="text" class="pill-sub-input${gapCls}" data-tok-input="${key}" value="${escapeHtml(val)}" placeholder="${escapeHtml(inner || '...')}" size="${Math.max(6, Math.min(28, (val || inner).length + 2))}" />`;
+      const lowInner = inner.toLowerCase();
+      let roleAttr = '';
+      if (lowInner === 'nome') roleAttr = ' data-tok-role="nome"';
+      else if (lowInner === 'idade') roleAttr = ' data-tok-role="idade"';
+      else if (lowInner === '' && /peso:\s*$/i.test(formHtml.slice(-24))) roleAttr = ' data-tok-role="peso"';
+      formHtml += `<input type="text" class="pill-sub-input${gapCls}" data-tok-input="${key}"${roleAttr} value="${escapeHtml(val)}" placeholder="${escapeHtml(inner || '...')}" size="${Math.max(6, Math.min(28, (val || inner).length + 2))}" />`;
     });
 
-    pepPanel.innerHTML = `
-      <div class="pep-shared-identity-bar">
-        <input type="text" class="pep-id-input" id="pepIdNome" placeholder="Nome / Iniciais" value="${escapeHtml(identity.nome)}" />
-        <input type="text" class="pep-id-input small" id="pepIdIdade" placeholder="Idade" value="${escapeHtml(identity.idade)}" />
-        <select class="pep-id-input small" id="pepIdSexo" aria-label="Sexo">
-          <option value="">Sexo</option>
-          <option value="Masculino"${identity.sexo === 'Masculino' ? ' selected' : ''}>Masc</option>
-          <option value="Feminino"${identity.sexo === 'Feminino' ? ' selected' : ''}>Fem</option>
-        </select>
-        <input type="text" class="pep-id-input small" id="pepIdPeso" placeholder="Peso (kg)" value="${escapeHtml(identity.pesoKg)}" />
-        <input type="text" class="pep-id-input" id="pepIdAlergias" placeholder="Alergias" value="${escapeHtml(identity.alergias)}" />
-      </div>
+    const hasReceita = Boolean(activeProtocol.has_receita || activeProtocol.receita_body?.trim());
 
+    pepPanel.innerHTML = `
       ${renderClinicalLinksBar(activeProtocol)}
 
       <div class="pep-toolbar-row">
@@ -347,7 +342,7 @@ export function initPepDrawer(): void {
           ? `
           <div class="pep-free-edit-wrap">
             <div class="pep-free-edit-bar">
-              <span>🔒 <strong>Edição Livre ativa</strong> — fonte da verdade para Power Actions (1–5).</span>
+              <span>🔒 <strong>Edição Livre ativa</strong> — fonte da verdade para cópia.</span>
               <button type="button" class="btn btn-ghost btn-xs" id="pepFreeUndoBtn" ${freeEditState.undoStack.length === 0 ? 'disabled' : ''}>↩️ Desfazer</button>
             </div>
             <textarea id="pepFreeEditTextarea" class="pep-free-edit-textarea" spellcheck="false">${escapeHtml(freeEditState.currentText)}</textarea>
@@ -357,30 +352,12 @@ export function initPepDrawer(): void {
       }
 
       <div class="pep-power-actions-bar">
-        <button type="button" class="btn btn-primary btn-sm" data-power-action="1">[1] Tudo</button>
-        <button type="button" class="btn btn-secondary btn-sm" data-power-action="2">[2] Evolução</button>
-        <button type="button" class="btn btn-secondary btn-sm" data-power-action="3">[3] Conduta</button>
-        <button type="button" class="btn btn-secondary btn-sm" data-power-action="4">[4] Receita</button>
-        <button type="button" class="btn btn-secondary btn-sm" data-power-action="5">[5] Orientações</button>
-        <button type="button" class="btn btn-ghost btn-sm" id="pepMedsOnlyBtn">💊 Meds-Only</button>
+        <button type="button" class="btn btn-primary btn-sm" data-power-action="1">📋 Copiar PEP</button>
+        ${hasReceita ? `<button type="button" class="btn btn-secondary btn-sm" data-power-action="4">📋 Copiar Receita</button>` : ''}
         <button type="button" class="btn btn-ghost btn-sm" id="pepAddCartBtn">🛒 + Carrinho</button>
-        <button type="button" class="btn btn-ghost btn-sm" id="pepPrintReceiptBtn">🖨️ Imprimir / PDF Receita</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="pepPrintReceiptBtn">🖨️ Imprimir</button>
       </div>
     `;
-
-    // Bind identity bar
-    const bindId = (sel: string, field: keyof typeof identity) => {
-      const el = pepPanel.querySelector<HTMLInputElement | HTMLSelectElement>(sel);
-      el?.addEventListener('change', () => {
-        cockpitStore.updateSharedIdentity({ [field]: el.value });
-        if (field === 'pesoKg') renderPepTab();
-      });
-    };
-    bindId('#pepIdNome', 'nome');
-    bindId('#pepIdIdade', 'idade');
-    bindId('#pepIdSexo', 'sexo');
-    bindId('#pepIdPeso', 'pesoKg');
-    bindId('#pepIdAlergias', 'alergias');
 
     // Bind links bar
     pepPanel.querySelectorAll<HTMLButtonElement>('[data-link-hab]').forEach((btn) => {
@@ -410,13 +387,20 @@ export function initPepDrawer(): void {
       uiBridge.openLogbookNewCase(`Protocolo: ${title}`);
     });
 
-    // Bind interactive tokens
+    // Bind interactive tokens + inline shared identity sync
     pepPanel.querySelectorAll<HTMLInputElement>('[data-tok-input]').forEach((inp) => {
       inp.addEventListener('input', () => {
         const k = inp.dataset.tokInput!;
         fieldValues[k] = inp.value;
+        const role = inp.dataset.tokRole;
+        if (role === 'nome') cockpitStore.updateSharedIdentity({ nome: inp.value });
+        else if (role === 'idade') cockpitStore.updateSharedIdentity({ idade: inp.value });
+        else if (role === 'peso') cockpitStore.updateSharedIdentity({ pesoKg: inp.value });
         syncDraftToStore();
       });
+      if (inp.dataset.tokRole === 'peso') {
+        inp.addEventListener('change', () => renderPepTab());
+      }
     });
 
     pepPanel.querySelectorAll<HTMLInputElement>('[data-tok-opt]').forEach((chk) => {

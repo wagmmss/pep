@@ -47,11 +47,13 @@ export function initSidebar(): void {
             (item) => `
           <button
             type="button"
-            class="mq-nav-btn${activeSection === item.section ? ' active' : ''}"
+            class="mq-nav-item${activeSection === item.section ? ' active' : ''}"
             data-section="${item.section}"
           >
-            <span class="mq-nav-icon">${item.icon}</span>
-            <span class="mq-nav-label">${item.label}</span>
+            <span class="mq-nav-item-left">
+              <span class="mq-nav-icon">${item.icon}</span>
+              <span class="mq-nav-text">${item.label}</span>
+            </span>
             ${item.badge ? `<span class="mq-nav-badge">${item.badge}</span>` : ''}
           </button>
         `
@@ -81,11 +83,14 @@ export function initSidebar(): void {
       (sp) => `
       <button
         type="button"
-        class="nav-tab${currentMod === sp.id ? ' active' : ''}"
+        class="tab-btn tab-${sp.id}${currentMod === sp.id ? ' active' : ''}"
         data-mod="${sp.id}"
       >
-        <span>${sp.label}</span>
-        <span class="nav-tab-count">${sp.count}</span>
+        <span class="tab-btn-left">
+          <span class="tab-dot"></span>
+          <span>${sp.label}</span>
+        </span>
+        <span class="tab-count">${sp.count}</span>
       </button>
     `
     ).join('');
@@ -102,26 +107,15 @@ export function initSidebar(): void {
 
   if (footerEl) {
     footerEl.innerHTML = `
-      <button type="button" class="ws-footer-btn" id="wsBtnConfig">
-        <span>⚙️</span><span>Config &amp; Backup</span>
-      </button>
-      <button type="button" class="ws-footer-btn" id="wsBtnRemumeCalc">
-        <span>💊</span><span>REMUME/HSL &amp; Calc</span>
-      </button>
-      <button type="button" class="ws-footer-btn" id="wsBtnShortcuts">
-        <span>⌨️</span><span>Atalhos (?)</span>
+      <button type="button" class="mq-nav-item" id="wsBtnConfig">
+        <span class="mq-nav-item-left">
+          <span class="mq-nav-icon">⚙️</span>
+          <span class="mq-nav-text">Config &amp; Backup</span>
+        </span>
       </button>
     `;
     footerEl.querySelector('#wsBtnConfig')?.addEventListener('click', () => {
       uiBridge.navigate('config');
-      sidebarEl.classList.remove('mobile-open');
-    });
-    footerEl.querySelector('#wsBtnRemumeCalc')?.addEventListener('click', () => {
-      uiBridge.openRemumeCalcModal('remume');
-      sidebarEl.classList.remove('mobile-open');
-    });
-    footerEl.querySelector('#wsBtnShortcuts')?.addEventListener('click', () => {
-      uiBridge.openShortcutsModal();
       sidebarEl.classList.remove('mobile-open');
     });
   }

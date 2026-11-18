@@ -49,19 +49,29 @@ function syncTopbarControls(): void {
 }
 
 function renderActiveWorkspace(route: RouteState): void {
+  const wsContainer = document.getElementById('wsContainer');
   const pepPane = document.getElementById('wsListPane');
   const secWorkspace = document.getElementById('appSectionWorkspace');
   if (!pepPane || !secWorkspace) return;
 
   if (route.section === 'pep') {
+    wsContainer?.classList.remove('section-mode');
     pepPane.style.display = 'flex';
     secWorkspace.style.display = 'none';
     if (route.itemId) {
       uiBridge.openPepDrawer(route.itemId, 'pep');
+    } else if (window.innerWidth >= 1024 && !uiBridge.hasActivePep()) {
+      const firstCard = document.querySelector<HTMLElement>('#cardsGrid [data-protocol-id]');
+      const firstId = firstCard?.dataset.protocolId;
+      if (firstId) {
+        firstCard.classList.add('ws-selected');
+        uiBridge.openPepDrawer(firstId, 'pep');
+      }
     }
     return;
   }
 
+  wsContainer?.classList.add('section-mode');
   pepPane.style.display = 'none';
   secWorkspace.style.display = 'block';
 

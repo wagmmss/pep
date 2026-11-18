@@ -109,26 +109,43 @@ async function run() {
     assert.ok(sidebarText.includes('Protocolos PEP') && sidebarText.includes('Hoje (6º Ano)'), `Sidebar texto inesperado: ${sidebarText}`);
     assert.equal(await page.locator('#moduleTabs [data-mod="hab"]').count(), 0, 'Filtro PEP não deve ter botão Habilidades (22)');
 
-    // 88 cards PEP renderizados
-    const cardCount = await page.locator('#cardsGrid .protocol-card').count();
+    // 88 cards PEP renderizados & geometria de 3 colunas no Desktop (1440x900)
+    const cardCount = await page.locator('#cardsGrid .card').count();
     assert.equal(cardCount, 88, `Esperado 88 cards PEP no grid inicial, encontrado ${cardCount}`);
 
-    // Toggle Consulta / Treino + Abrir PEP Pediatria + Doses Pediátricas + Power Actions + Novo Paciente
+    const layoutCheck = await page.evaluate(() => {
+      const sb = document.querySelector('#wsSidebar')?.getBoundingClientRect();
+      const lp = document.querySelector('#wsListPane')?.getBoundingClientRect();
+      const dr = document.querySelector('#drawerOverlay')?.getBoundingClientRect();
+      const navBg = getComputedStyle(document.querySelector('.mq-nav-item')).backgroundColor;
+      const tabBg = getComputedStyle(document.querySelector('.tab-btn')).backgroundColor;
+      const cardBg = getComputedStyle(document.querySelector('#cardsGrid .card')).backgroundColor;
+      return { sb, lp, dr, navBg, tabBg, cardBg };
+    });
+    assert.ok(layoutCheck.sb && layoutCheck.lp && layoutCheck.dr, 'As 3 colunas devem existir no Desktop');
+    assert.ok(layoutCheck.sb.width > 180 && layoutCheck.lp.width > 280 && layoutCheck.dr.width > 400, 'Larguras das 3 colunas devem ser válidas');
+    assert.ok(layoutCheck.sb.x < layoutCheck.lp.x && layoutCheck.lp.x < layoutCheck.dr.x, 'As 3 colunas devem estar lado a lado');
+    assert.notEqual(layoutCheck.navBg, 'rgb(255, 255, 255)', 'Botão da sidebar não pode ficar branco no dark mode');
+    assert.notEqual(layoutCheck.tabBg, 'rgb(255, 255, 255)', 'Botão de especialidade não pode ficar branco no dark mode');
+    assert.notEqual(layoutCheck.cardBg, 'rgb(255, 255, 255)', 'Card PEP não pode ficar branco no dark mode');
+
+    // Toggle Consulta / Treino + Abrir PEP Pediatria + Doses Pediátricas + Novo Paciente
     await page.locator('#clinicalModeToggle').click();
     await page.locator('#moduleTabs [data-mod="ped"]').click();
-    assert.equal(await page.locator('#cardsGrid .protocol-card').count(), 13, 'Filtro Pediatria deve exibir 13 PEPs');
+    assert.equal(await page.locator('#cardsGrid .card').count(), 13, 'Filtro Pediatria deve exibir 13 PEPs');
 
     await page.locator('#wsSearchInput').fill(';ped-otite');
     await page.waitForTimeout(150);
-    await page.locator('#cardsGrid .protocol-card').first().click();
+    await page.locator('#cardsGrid .card').first().click();
     await page.waitForSelector('#drawerOverlay.open', { state: 'attached' });
 
     // Modo Treino dentro do PEP
     const drawerHtmlTreino = await page.locator('#drawerInteractivePanel').innerHTML();
     assert.ok(drawerHtmlTreino.includes('pepRegisterLogbookBtn') || drawerHtmlTreino.includes('Formação Teórica'), 'Modo Treino deve exibir vínculos de estudo/Logbook');
 
-    await page.locator('#pepIdPeso').fill('15');
-    await page.locator('#pepIdPeso').dispatchEvent('change');
+    const pesoInput = page.locator('#drawerInteractivePanel input.pill-sub-input').first();
+    await pesoInput.fill('15');
+    await pesoInput.dispatchEvent('change');
     await page.waitForTimeout(100);
     await page.locator('[data-power-action="1"]').waitFor();
     await page.locator('#pepAddCartBtn').click();
@@ -137,7 +154,6 @@ async function run() {
     assert.ok(Number(cartCountText) >= 1, `Carrinho deve registrar >= 1 item (drawerTitle=${await page.locator('#drawerTitle').textContent()}, badge=${cartCountText})`);
 
     // Limpar sessão com 🧹 Novo Paciente
-    await page.locator('#drawerCloseBtn').click();
     await page.locator('#wsClearSearchBtn').click();
     await page.locator('#btnNovoPaciente').click();
     await page.waitForTimeout(200);
@@ -150,19 +166,6 @@ async function run() {
     await page.waitForTimeout(150);
     assert.ok((await page.locator('#cmdResults [data-cmd-type="pep"]').count()) >= 1, 'Ctrl+K deve encontrar PEP por ;atalho');
     await page.locator('#cmdCloseBtn').click();
-
-    // REMUME/HSL & Calculadoras Modal
-    await page.locator('#wsBtnRemumeCalc').click();
-    await page.waitForSelector('#remumeCalcOverlay.open', { state: 'attached' });
-    await page.locator('#pharmaSearchInput').fill('amoxicilina');
-    await page.waitForTimeout(150);
-    await page.locator('#pharmaSrcHsl').click();
-    await page.waitForTimeout(300);
-    await page.locator('[data-rc-tab="calc"]').click();
-    await page.waitForTimeout(150);
-    await page.locator('[data-rc-tab="gaso"]').click();
-    await page.waitForTimeout(150);
-    await page.locator('#remumeCalcCloseBtn').click();
 
     // Pré-Porta 30s (22), Ferramentas, Hoje, Logbook, Config
     await page.locator('#wsMainSectionNav [data-section="preporta"]').click();
