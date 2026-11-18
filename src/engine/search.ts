@@ -121,7 +121,9 @@ export function createClinicalSearchIndex<T extends ClinicalSearchItem>(
     triggers: Array.isArray(item.all_triggers) ? item.all_triggers.join(' ') : '',
     anchor: item.anchor || '',
     category: `${item.category || ''} ${item.module_name || ''}`,
-    body: typeof item.pep_body === 'string' ? item.pep_body.slice(0, 1500) : ''
+    body: typeof (item.pep_body || (item as any).pre_porta) === 'string'
+      ? String(item.pep_body || (item as any).pre_porta).slice(0, 1800)
+      : ''
   }));
 
   miniSearch.addAll(docs);

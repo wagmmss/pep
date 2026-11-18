@@ -1,18 +1,50 @@
     :root {
-      /* Paleta Ardósia / Grafite Clínico Profundo (Anti-Slop) */
-      --bg: #0b0e14;
-      --surface: #111620;
-      --surface-hover: #182030;
-      --surface-inset: #080b10;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-strong: rgba(255, 255, 255, 0.16);
-      --text: #f1f5f9;
-      --text-secondary: #b4bece;
-      --text-dim: #8b98ae;
+      /* ==========================================================================
+         DESIGN SYSTEM MEDQUEST — CLINICAL CALM / CLINICAL PRECISION WORKSPACE
+         Base tokens + Compatibilidade legada (#0b0e14, #111620, #182030, #10b981, #f59e0b, #ef4444, #0284c7)
+         ========================================================================== */
+      --bg-canvas: #121417;
+      --bg-surface: #191c20;
+      --bg-surface-subtle: #1e2228;
+      --bg-elevated: #22262c;
+      --bg-popover: #1d2127;
+      --ink-primary: #e4e7eb;
+      --ink-secondary: #9ca3af;
+      --ink-muted: #6b7280;
+      --line-subtle: #282c33;
+      --line-strong: #373d47;
+      --accent: #2dd4bf;
+      --accent-hover: #5eead4;
+      --accent-fg: #0e1013;
+      --critical: #fb7185;
+      --critical-bg: #2f1720;
+      --warning-bg: #2e2412;
+      --normal: #34d399;
+      --normal-bg: #112b22;
+      --info: #38bdf8;
+      --info-bg: #122838;
+
+      /* 5 Grandes Áreas (MedQuest Canonical Badges) */
+      --area-clinica: #2dd4bf;
+      --area-cirurgia: #38bdf8;
+      --area-go: #f472b6;
+      --area-pediatria: #fbbf24;
+      --area-preventiva: #818cf8;
+
+      /* Mapeamento para os seletores do Cockpit */
+      --bg: var(--bg-canvas); /* ref: #0b0e14 */
+      --surface: var(--bg-surface); /* ref: #111620 */
+      --surface-hover: var(--bg-elevated); /* ref: #182030 */
+      --surface-inset: #0e1013;
+      --border: var(--line-subtle);
+      --border-strong: var(--line-strong);
+      --text: var(--ink-primary);
+      --text-secondary: var(--ink-secondary);
+      --text-dim: var(--ink-muted);
 
       /* Cores Funcionais Médicas Exclusivas (Zero Gradientes IA) */
       --primary: #0284c7;
-      --primary-bright: #38bdf8;
+      --primary-bright: var(--accent);
       --primary-solid: #0284c7;
       --primary-hover: #0369a1;
       --success: #10b981;
@@ -21,37 +53,90 @@
       --warning: #f59e0b;
       --danger: #ef4444;
 
-      /* Módulos Clínicos mapeados às Cores Funcionais Médicas */
-      --mod-go: #0284c7;
+      /* Módulos Clínicos mapeados às Cores das Grandes Áreas */
+      --mod-go: var(--area-go);
       --mod-upa: #ef4444;
-      --mod-enf: #10b981;
-      --mod-ped: #f59e0b;
-      --mod-hab: #0284c7;
+      --mod-enf: var(--area-clinica);
+      --mod-ped: var(--area-pediatria);
+      --mod-hab: var(--area-preventiva);
       --hab-solid: #0284c7;
 
-      /* Tipografia Hierárquica Intencional */
+      /* Tipografia Hierárquica MedQuest (Plus Jakarta Sans + Inter + JetBrains Mono) */
+      --font-display: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-mono: ui-monospace, "JetBrains Mono", Consolas, "SF Mono", Menlo, monospace;
-      --radius-sm: 4px;
-      --radius-md: 6px;
-      --radius-lg: 6px;
+      --font-sans-clinical: var(--font-sans);
+      --font-mono: "JetBrains Mono", ui-monospace, Consolas, "SF Mono", Menlo, monospace;
+      --font-mono-lab: var(--font-mono);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+    }
+
+    html.light,
+    body.light-theme {
+      color-scheme: light;
+      /* Clinical Calm Light: Papel Fosco Médio (conforto em leitura prolongada 4h+) */
+      --bg-canvas: #dce3ec;
+      --bg-surface: #eaeff5;
+      --bg-surface-subtle: #e2e8f1;
+      --bg-elevated: #d2dbe6;
+      --bg-popover: #f0f4f8;
+      --ink-primary: #142238;
+      --ink-secondary: #435164;
+      --ink-muted: #5d6c80;
+      --line-subtle: #c5d0de;
+      --line-strong: #a7b6c8;
+      --accent: #0f9d9a;
+      --accent-hover: #0b827f;
+      --accent-fg: #f8fafc;
+      --critical: #e11d48;
+      --critical-bg: #fce7ec;
+      --warning-bg: #fef3c7;
+      --normal: #059669;
+      --normal-bg: #d1fae5;
+      --info: #0284c7;
+      --info-bg: #e0f2fe;
+      --area-clinica: #0f766e;
+      --area-cirurgia: #0284c7;
+      --area-go: #be185d;
+      --area-pediatria: #d97706;
+      --area-preventiva: #4f46e5;
+
+      --bg: var(--bg-canvas);
+      --surface: var(--bg-surface);
+      --surface-hover: var(--bg-elevated);
+      --surface-inset: #d5dee9;
+      --border: var(--line-subtle);
+      --border-strong: var(--line-strong);
+      --text: var(--ink-primary);
+      --text-secondary: var(--ink-secondary);
+      --text-dim: var(--ink-muted);
+      --primary: #0b2a4a;
+      --primary-bright: #0f9d9a;
+      --primary-solid: #0f9d9a;
+      --primary-hover: #0b827f;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { color-scheme: dark; }
+    html { color-scheme: dark; scroll-behavior: smooth; }
     body {
       background: var(--bg);
       color: var(--text);
       font-family: var(--font-sans);
-      font-size: 13.5px;
+      font-size: 14px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      line-height: 1.45;
+      text-rendering: optimizeLegibility;
+      line-height: 1.5;
     }
-    button, input {
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      letter-spacing: -0.02em;
+    }
+    button, input, select, textarea {
       font-family: inherit;
     }
 
@@ -60,7 +145,7 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      background: #0b0e14;
+      background: var(--bg-surface);
       border-bottom: 1px solid var(--border);
       padding: 10px 16px;
     }
@@ -3029,4 +3114,754 @@
       color: #7dd3fc;
       margin-left: 6px;
     }
+
+    /* ==========================================================================
+       MEDQUEST SHELL V1 (FASE 1): SIDEBAR COLAPSÁVEL, 7 SEÇÕES, MODO ZEN & LIGHT/DARK
+       ========================================================================== */
+    .mq-brand-actions {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .mq-icon-btn {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+      border: 1px solid var(--line-subtle);
+      color: var(--ink-secondary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    }
+    .mq-icon-btn:hover {
+      background: var(--bg-elevated);
+      border-color: var(--accent);
+      color: var(--ink-primary);
+    }
+    .mq-icon-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-fg);
+    }
+
+    .mq-main-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 8px;
+      border-bottom: 1px solid var(--line-subtle);
+      background: var(--bg-canvas);
+    }
+    .mq-nav-label {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-muted);
+      padding: 2px 6px 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mq-nav-item {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      min-height: 36px;
+      padding: 7px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      border-left: 2px solid transparent;
+      background: transparent;
+      color: var(--ink-secondary);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      text-align: left;
+      transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+    }
+    .mq-nav-item:hover {
+      background: var(--bg-surface);
+      color: var(--ink-primary);
+    }
+    .mq-nav-item.active {
+      background: var(--bg-elevated);
+      border-color: var(--line-subtle);
+      border-left: 2px solid var(--accent);
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+    .mq-nav-item-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+    .mq-nav-icon {
+      font-size: 0.92rem;
+      line-height: 1;
+      flex-shrink: 0;
+      width: 18px;
+      text-align: center;
+    }
+    .mq-nav-badge {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: var(--bg-surface-subtle);
+      border: 1px solid var(--line-subtle);
+      color: var(--ink-secondary);
+      flex-shrink: 0;
+    }
+    .mq-nav-item.active .mq-nav-badge {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-fg);
+    }
+
+    /* Sidebar Colapsada no Desktop (64px) */
+    @media (min-width: 1024px) {
+      body.sidebar-collapsed .workstation-shell {
+        --sidebar-width: 64px !important;
+      }
+      body.sidebar-collapsed .ws-brand-title,
+      body.sidebar-collapsed .ws-brand-sub,
+      body.sidebar-collapsed .ws-status-block,
+      body.sidebar-collapsed .mq-nav-label,
+      body.sidebar-collapsed .mq-nav-text,
+      body.sidebar-collapsed .mq-nav-badge,
+      body.sidebar-collapsed .ws-nav-section .ws-section-label,
+      body.sidebar-collapsed .tab-btn span:not(.tab-btn-left):not(.tab-dot),
+      body.sidebar-collapsed .tab-btn-left span:not(.tab-dot),
+      body.sidebar-collapsed .ws-sidebar-cmd-btn span:first-child {
+        display: none !important;
+      }
+      body.sidebar-collapsed .ws-sidebar-brand {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 6px;
+      }
+      body.sidebar-collapsed .mq-brand-actions {
+        flex-direction: column;
+      }
+      body.sidebar-collapsed .mq-nav-item,
+      body.sidebar-collapsed .tab-btn,
+      body.sidebar-collapsed .ws-sidebar-cmd-btn {
+        justify-content: center;
+        padding: 8px 4px;
+      }
+    }
+
+    /* Modo Zen (Oculta Sidebar e Topbar, expande área ativa) */
+    body.zen-mode .ws-sidebar,
+    body.zen-mode .topbar {
+      display: none !important;
+    }
+    @media (min-width: 1024px) {
+      body.zen-mode .workstation-shell {
+        grid-template-columns: var(--list-width, 460px) 6px minmax(360px, 1fr) !important;
+      }
+      body.zen-mode[data-active-section="hoje"] .workstation-shell,
+      body.zen-mode[data-active-section="teoria"] .workstation-shell,
+      body.zen-mode[data-active-section="ferramentas"] .workstation-shell,
+      body.zen-mode[data-active-section="logbook"] .workstation-shell,
+      body.zen-mode[data-active-section="config"] .workstation-shell {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    .zen-exit-floating-btn {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 95;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      background: var(--bg-elevated);
+      border: 1px solid var(--accent);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+    body.zen-mode .zen-exit-floating-btn {
+      display: inline-flex;
+    }
+
+    /* Alternância entre Estação 3 Colunas (PEP/Pré-Porta) e Seções Dedicadas (6º Ano) */
+    .app-section-workspace {
+      display: none;
+      flex-direction: column;
+      flex: 1;
+      height: 100%;
+      overflow-y: auto;
+      background: var(--bg-canvas);
+      color: var(--ink-primary);
+      padding: 24px 32px 96px;
+    }
+    body[data-active-section="hoje"] #wsListPane,
+    body[data-active-section="hoje"] #resizerList,
+    body[data-active-section="hoje"] #drawerOverlay,
+    body[data-active-section="teoria"] #wsListPane,
+    body[data-active-section="teoria"] #resizerList,
+    body[data-active-section="teoria"] #drawerOverlay,
+    body[data-active-section="ferramentas"] #wsListPane,
+    body[data-active-section="ferramentas"] #resizerList,
+    body[data-active-section="ferramentas"] #drawerOverlay,
+    body[data-active-section="logbook"] #wsListPane,
+    body[data-active-section="logbook"] #resizerList,
+    body[data-active-section="logbook"] #drawerOverlay,
+    body[data-active-section="config"] #wsListPane,
+    body[data-active-section="config"] #resizerList,
+    body[data-active-section="config"] #drawerOverlay {
+      display: none !important;
+    }
+    body[data-active-section="hoje"] #appSectionWorkspace,
+    body[data-active-section="teoria"] #appSectionWorkspace,
+    body[data-active-section="ferramentas"] #appSectionWorkspace,
+    body[data-active-section="logbook"] #appSectionWorkspace,
+    body[data-active-section="config"] #appSectionWorkspace {
+      display: flex !important;
+      grid-column: 2 / -1;
+    }
+    @media (min-width: 1024px) {
+      body.zen-mode[data-active-section="hoje"] #appSectionWorkspace,
+      body.zen-mode[data-active-section="teoria"] #appSectionWorkspace,
+      body.zen-mode[data-active-section="ferramentas"] #appSectionWorkspace,
+      body.zen-mode[data-active-section="logbook"] #appSectionWorkspace,
+      body.zen-mode[data-active-section="config"] #appSectionWorkspace {
+        grid-column: 1 / -1;
+      }
+    }
+
+    /* Componentes de Workspace MedQuest (Cards, Hero, StatTiles) */
+    .mq-section-pane {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .mq-section-pane.active {
+      display: flex;
+    }
+    .mq-workspace-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line-subtle);
+    }
+    .mq-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .mq-workspace-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink-primary);
+      line-height: 1.2;
+    }
+    .mq-workspace-sub {
+      font-size: 0.88rem;
+      color: var(--ink-secondary);
+      margin-top: 4px;
+    }
+    .mq-hero-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--line-strong);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .mq-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+    }
+    .mq-stat-tile {
+      background: var(--bg-surface);
+      border: 1px solid var(--line-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mq-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+    }
+    .mq-stat-val {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+    }
+    .mq-stat-sub {
+      font-size: 0.76rem;
+      color: var(--ink-secondary);
+    }
+    .mq-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--line-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+    }
+
+    /* Fase 2: Controles de Rotina, Timeline, Contadores 70/30 & Auditoria Curricular */
+    .mq-controls-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--line-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+    .mq-control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .mq-control-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-muted);
+    }
+    .mq-select,
+    .mq-input {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-strong);
+      background: var(--bg-canvas);
+      color: var(--ink-primary);
+      font-size: 0.84rem;
+      font-weight: 500;
+      outline: none;
+    }
+    .mq-select:focus,
+    .mq-input:focus {
+      border-color: var(--accent);
+    }
+    .mq-day-pills {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .mq-day-pill {
+      -webkit-appearance: none;
+      appearance: none;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-subtle);
+      background: var(--bg-canvas);
+      color: var(--ink-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .mq-day-pill.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-fg);
+    }
+    .mq-context-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line-subtle);
+      font-size: 0.8rem;
+    }
+    .mq-context-box {
+      background: var(--bg-canvas);
+      border: 1px solid var(--line-subtle);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+    .mq-timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .mq-timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-subtle);
+      background: var(--bg-canvas);
+      transition: border-color 0.12s ease, opacity 0.12s ease;
+    }
+    .mq-timeline-item.is-done {
+      opacity: 0.68;
+      border-color: var(--normal);
+      background: var(--bg-surface-subtle);
+    }
+    .mq-timeline-item.is-done .mq-timeline-title {
+      text-decoration: line-through;
+    }
+    .mq-timeline-chk {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--accent);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .mq-timeline-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .mq-timeline-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .mq-timeline-time {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .mq-timeline-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+    }
+    .mq-timeline-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+      line-height: 1.35;
+    }
+    .mq-timeline-detail {
+      font-size: 0.81rem;
+      color: var(--ink-secondary);
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+    .mq-progress-bar-wrap {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--bg-canvas);
+      border: 1px solid var(--line-subtle);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .mq-progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+    .mq-counter-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .mq-counter-btn {
+      -webkit-appearance: none;
+      appearance: none;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-strong);
+      background: var(--bg-canvas);
+      color: var(--ink-primary);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .mq-counter-btn:hover {
+      border-color: var(--accent);
+      background: var(--bg-elevated);
+    }
+    .mq-two-col-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 16px;
+    }
+    .mq-check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-subtle);
+      background: var(--bg-canvas);
+      font-size: 0.83rem;
+      cursor: pointer;
+    }
+    .mq-check-row.is-done {
+      border-color: var(--normal);
+      opacity: 0.78;
+    }
+
+    /* Ajustes de Contraste para Modo Claro (Clinical Calm Light) */
+    html.light .card:hover,
+    body.light-theme .card:hover {
+      background: var(--bg-surface-subtle);
+    }
+    html.light .mobile-bottom-bar,
+    body.light-theme .mobile-bottom-bar {
+      background: rgba(234, 239, 245, 0.96);
+      box-shadow: 0 -6px 20px rgba(20, 34, 56, 0.12);
+    }
+    @media (max-width: 767.98px) {
+      .app-section-workspace {
+        padding: 16px 14px 104px;
+      }
+      .mq-main-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding: 6px 10px;
+      }
+      .mq-nav-label { display: none; }
+      .mq-nav-item {
+        width: auto;
+        flex-shrink: 0;
+        min-height: 40px;
+        padding: 6px 10px;
+        border-left: 1px solid transparent;
+        border-bottom: 2px solid transparent;
+      }
+      .mq-nav-item.active {
+        border-left-color: var(--line-subtle);
+        border-bottom: 2px solid var(--accent);
+      }
+    }
+
+    /* ==========================================================================
+       FASE 3: FORMAÇÃO TEÓRICA (~72ch), FERRAMENTAS (GASO/LR/7 TRAVAS) & LOGBOOK
+       ========================================================================== */
+    .mq-teoria-shell {
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .mq-teoria-shell {
+        grid-template-columns: 1fr;
+      }
+    }
+    .mq-teoria-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: sticky;
+      top: 16px;
+    }
+    .mq-teoria-card-btn {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      text-align: left;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line-subtle);
+      background: var(--bg-surface);
+      color: var(--ink-primary);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: border-color 0.12s ease, background 0.12s ease;
+    }
+    .mq-teoria-card-btn:hover {
+      background: var(--bg-elevated);
+      border-color: var(--line-strong);
+    }
+    .mq-teoria-card-btn.active {
+      background: var(--bg-elevated);
+      border-color: var(--accent);
+      border-left: 4px solid var(--accent);
+    }
+    .mq-teoria-reader-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--line-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px 34px;
+    }
+    @media (max-width: 767.98px) {
+      .mq-teoria-reader-wrap {
+        padding: 18px 16px;
+      }
+    }
+    .mq-prose-clinical {
+      max-width: 72ch;
+      margin: 0 auto;
+      font-family: var(--font-sans);
+      font-size: 16.5px;
+      line-height: 1.68;
+      color: var(--ink-primary);
+    }
+    .mq-prose-clinical h1 {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      line-height: 1.25;
+      margin: 0 0 14px;
+      color: var(--ink-primary);
+    }
+    .mq-prose-clinical h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      line-height: 1.3;
+      margin: 28px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line-subtle);
+      color: var(--ink-primary);
+    }
+    .mq-prose-clinical h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      margin: 20px 0 8px;
+      color: var(--accent);
+    }
+    .mq-prose-clinical p {
+      margin: 0 0 12px;
+    }
+    .mq-prose-clinical ul,
+    .mq-prose-clinical ol {
+      margin: 0 0 14px 22px;
+    }
+    .mq-prose-clinical li {
+      margin-bottom: 6px;
+    }
+    .mq-prose-clinical blockquote {
+      margin: 14px 0;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      background: var(--bg-canvas);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      color: var(--ink-secondary);
+      font-size: 0.94em;
+    }
+    .mq-prose-clinical code {
+      font-family: var(--font-mono);
+      font-size: 0.86em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--bg-canvas);
+      border: 1px solid var(--line-subtle);
+      color: var(--accent);
+    }
+    .mq-prose-clinical hr {
+      border: none;
+      border-top: 1px solid var(--line-subtle);
+      margin: 24px 0;
+    }
+    .mq-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 14px 0 18px;
+      border: 1px solid var(--line-subtle);
+      border-radius: var(--radius-sm);
+    }
+    .mq-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      line-height: 1.45;
+      background: var(--bg-canvas);
+    }
+    .mq-table th,
+    .mq-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--line-subtle);
+      text-align: left;
+      vertical-align: top;
+    }
+    .mq-table th {
+      background: var(--bg-surface-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink-secondary);
+      font-weight: 700;
+    }
+    .mq-subtabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--line-subtle);
+      padding-bottom: 10px;
+    }
+    .mq-subtab-btn {
+      -webkit-appearance: none;
+      appearance: none;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-subtle);
+      background: var(--bg-surface);
+      color: var(--ink-secondary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .mq-subtab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-fg);
+    }
+    .mq-step-result-box {
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-subtle);
+      background: var(--bg-canvas);
+      font-size: 0.84rem;
+    }
+
 

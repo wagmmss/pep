@@ -810,6 +810,100 @@ test('Motor PEP v3.2: Multi-select [+ ...], Defaults [*...], junção gramatical
   assert.ok(pyContent.includes('def clean_pep_for_static_export('), 'build_snippets.py must define clean_pep_for_static_export');
 });
 
+test('Fases 1 a 4: Central do 6º Ano & MedQuest Design System (Shell, Hoje 70/30, 7 Módulos Teóricos, Gasometria 5 Passos, LR/Bayes, Logbook e Prompts IA)', async () => {
+  const centralEngine = await import('../src/engine/central6ano.ts');
+  const { FORMACAO_TEORICA_MODULOS } = await import('../src/data/formacao_teorica_data.ts');
+  const { sandbox, runExpr } = extractScriptAndRun();
+
+  // 1. MedQuest Shell & Navegação das 7 Seções + Light/Dark + Modo Zen + Sidebar Colapsável
+  assert.equal(typeof sandbox.window.switchAppSection, 'function', 'switchAppSection must be exposed');
+  assert.equal(typeof sandbox.window.toggleClinicalTheme, 'function', 'toggleClinicalTheme must be exposed');
+  assert.equal(typeof sandbox.window.toggleZenMode, 'function', 'toggleZenMode must be exposed');
+  assert.equal(typeof sandbox.window.toggleSidebarCollapse, 'function', 'toggleSidebarCollapse must be exposed');
+
+  assert.equal(sandbox.window.switchAppSection('hoje'), 'hoje');
+  assert.equal(sandbox.window.switchAppSection('teoria'), 'teoria');
+  assert.equal(sandbox.window.switchAppSection('ferramentas'), 'ferramentas');
+  assert.equal(sandbox.window.switchAppSection('logbook'), 'logbook');
+  assert.equal(sandbox.window.switchAppSection('config'), 'config');
+  assert.equal(sandbox.window.switchAppSection('preporta'), 'preporta');
+  assert.equal(sandbox.window.switchAppSection('pep'), 'pep');
+
+  assert.equal(sandbox.window.toggleClinicalTheme('light'), 'light');
+  assert.equal(sandbox.window.toggleClinicalTheme('dark'), 'dark');
+  assert.equal(sandbox.window.toggleZenMode(true), true);
+  assert.equal(sandbox.window.toggleZenMode(false), false);
+  assert.equal(sandbox.window.toggleSidebarCollapse(true), true);
+  assert.equal(sandbox.window.toggleSidebarCollapse(false), false);
+
+  // 2. Motor Dinâmico "Hoje (6º Ano)" + Rastreador 70/30 + Streak + Backup JSON
+  sandbox.window.updateHojeSelect('rodizioId', 'cirurgia');
+  sandbox.window.updateHojeSelect('marchaId', '3_normal');
+  sandbox.window.updateHojeSelect('arquetipoId', 'dia_cheio');
+  sandbox.window.updateHojeSelect('diaSemana', 'seg');
+  sandbox.window.addWeeklyQuestions('ancora', 15);
+  sandbox.window.addWeeklyQuestions('trilha', 10);
+  const stAfterQ = sandbox.window.getCentral6AnoState();
+  assert.equal(stAfterQ.rodizioId, 'cirurgia');
+  assert.equal(stAfterQ.questoesAncoraSem, 15);
+  assert.equal(stAfterQ.questoesTrilhaSem, 10);
+
+  const exportedJson = sandbox.window.exportCentral6AnoBackupJson();
+  assert.ok(exportedJson.includes('"rodizioId": "cirurgia"'), 'Exported JSON must serialize Central do 6º Ano state');
+  assert.equal(sandbox.window.importCentral6AnoBackupJson(exportedJson), true, 'Import JSON must restore valid backup');
+
+  // 3. Formação Teórica (7 Módulos Completos) & Link Bidirecional com Pré-Porta 30s
+  assert.equal(FORMACAO_TEORICA_MODULOS.length, 7, 'Must have all 7 theoretical modules');
+  for (const mod of FORMACAO_TEORICA_MODULOS) {
+    assert.ok(mod.markdown.length > 2500, `Module ${mod.id} must contain complete theoretical content`);
+    assert.ok(Array.isArray(mod.relatedHabIds) && mod.relatedHabIds.length >= 1, `Module ${mod.id} must link to related Pré-Porta 30s cards`);
+  }
+  sandbox.window.selectTeoriaModule('mod-05');
+  sandbox.window.setTeoriaModStatus('dominado');
+  assert.equal(sandbox.window.getCentral6AnoState().teoriaStatusById['mod-05'], 'dominado');
+
+  // 4. Calculadora de Gasometria em 5 Passos (Winter + AG Corrigido + Delta-Delta)
+  const gasoSepse = centralEngine.calcGasometria5Passos({
+    ph: 7.22,
+    pco2: 26,
+    hco3: 10,
+    na: 140,
+    cl: 100,
+    albumina: 2.0,
+    lactato: 4.8
+  });
+  assert.equal(gasoSepse.agBruto, 30, 'Raw AG must be 140 - (100 + 10) = 30');
+  assert.equal(gasoSepse.agCorrigido, 35, 'Albumin-corrected AG for Alb 2.0 must be 30 + 2.5*(4-2) = 35');
+  assert.ok(gasoSepse.passo2Primario.includes('Acidose Metabólica'), 'Primary disorder must be metabolic acidosis');
+  assert.ok(gasoSepse.passo3Compensacao.includes('21 a 25 mmHg'), 'Winter formula for HCO3=10 must be 23 ± 2 mmHg');
+  assert.ok(gasoSepse.passo5DeltaDelta.includes('1.64'), 'Delta-Delta for AGcorr=35 (ΔAG=23) and HCO3=10 (ΔHCO3=14) must be ~1.64');
+
+  const domGaso = sandbox.window.loadGasoPreset('sepse');
+  assert.equal(domGaso.agCorrigido, 27, 'Sepse preset (Na 138, Cl 102, HCO3 14, Alb 2.0) must yield AGcorr = 27');
+  assert.equal(domGaso.deltaRatio, 1.5, 'Sepse preset (ΔAG=15, ΔHCO3=10) must yield Delta-Delta = 1.5');
+
+  // 5. Simulador Bayesiano (Probabilidade Pré-Teste × LR+ / LR-)
+  const bayesPos = centralEngine.calcPostTestProbability(40, 5.2);
+  const bayesNeg = centralEngine.calcPostTestProbability(40, 0.25);
+  assert.ok(bayesPos.postPct > 75 && bayesPos.postPct < 79, `Post-test positive probability for 40% with LR+ 5.2 should be ~77.6%, got ${bayesPos.postPct}`);
+  assert.ok(bayesNeg.postPct > 13 && bayesNeg.postPct < 16, `Post-test negative probability for 40% with LR- 0.25 should be ~14.3%, got ${bayesNeg.postPct}`);
+
+  // 6. Central de Prompts Contextuais (1 Clique) & Command Palette Unificado
+  for (const kind of ['paciente', 'oratoria', 'raciocinio', 'exames', 'osce'] as const) {
+    const prompt = sandbox.window.copyContextualPrompt(kind);
+    assert.ok(prompt.length > 180, `Contextual prompt "${kind}" must be generated with rich clinical instructions`);
+    assert.ok(prompt.includes('Cirurgia Geral'), `Contextual prompt "${kind}" must inject the active rotation context`);
+  }
+
+  sandbox.window.searchCommandPalette('winter');
+  const winterMatches = runExpr('cmdMatches');
+  assert.ok(
+    Array.isArray(winterMatches) && winterMatches.some((m: any) => m.item && String(m.item.title).includes('Gasometria')),
+    'Command Palette (Ctrl+K) must find Gasometria calculator & theoretical module when searching "winter"'
+  );
+});
+
+
 
 
 

@@ -7,13 +7,15 @@ import * as WorkstationEngine from './workstation.ts';
 import * as SearchEngine from './search.ts';
 import * as DiretrizesEngine from './diretrizes.ts';
 import * as CalculadorasEngine from './calculadoras.ts';
+import * as Central6AnoEngine from './central6ano.ts';
 
 export {
   PersonalizarEngine,
   WorkstationEngine,
   SearchEngine,
   DiretrizesEngine,
-  CalculadorasEngine
+  CalculadorasEngine,
+  Central6AnoEngine
 };
 
 if (typeof window !== 'undefined') {
@@ -22,6 +24,7 @@ if (typeof window !== 'undefined') {
     ...WorkstationEngine,
     ...SearchEngine,
     ...DiretrizesEngine,
-    ...CalculadorasEngine
+    ...CalculadorasEngine,
+    ...Central6AnoEngine
   };
 }
