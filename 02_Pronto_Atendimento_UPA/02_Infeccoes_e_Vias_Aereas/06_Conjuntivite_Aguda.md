@@ -11,24 +11,24 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega alergias / Alérgico a colírios: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega alergias / Alérgico a colírios].
 
 # QP:
 Olho vermelho, sensação de areia e secreção há [ ] dias.
 
 # HMA:
-Relata hiperemia conjuntival iniciada há [ ] dias em olho [direito / esquerdo / bilateral], associada a sensação de corpo estranho ("areia nos olhos"), prurido, lacrimejamento e secreção de aspecto [aquoso claro / mucopurulento amarelado com pálpebras coladas]. Relata contato recente com familiar/colega com sintomas semelhantes.
+Relata hiperemia conjuntival iniciada há [ ] dias em olho [direito / esquerdo / bilateral], associada a sensação de corpo estranho, prurido, lacrimejamento e secreção de aspecto [aquoso claro / mucopurulento amarelado com pálpebras coladas]. Relata contato recente com familiar/colega com sintomas semelhantes.
 Nega dor ocular profunda, contínua e latejante no bulbo ocular.
 Nega perda ou redução súbita da acuidade visual / visão borrada.
-Nega enxergar halos coloridos ao redor de luzes ou cefaleia hemicraniana com náuseas (afasta Glaucoma Agudo).
+Nega enxergar halos coloridos ao redor de luzes ou cefaleia hemicraniana com náuseas.
 Nega uso de lentes de contato.
 Nega trauma ocular mecânico, químico ou respingo de substâncias cáusticas.
 
 # EXAME FÍSICO:
 Ectoscopia Ocular Externa:
 Hiperemia conjuntival bulbar e tarsal difusa em olho [direito / esquerdo / bilateral], com injeção conjuntival periférica (ausência de injeção ciliar periquerática violácea profunda).
-Secreção: [Serosa/aquosa abundante / Mucopurulenta espessa amarelada aderida aos].
+Secreção: [Serosa/aquosa abundante / Mucopurulenta espessa amarelada aderida aos cílios].
 Córnea: Transparente, brilhante, superfície lisa sem opacidades grosseiras, leucomas ou ulcerações visíveis sob iluminação direta.
 Pálpebras: [*Sem alterações / Edema palpebral leve sem quemose exuberante].
 Pupilas: Isocóricas, redondas, fotorreagentes ao reflexo fotomotor direto e consensual, sem deformidades pupilares ou midríase paralítica fixa.
@@ -36,12 +36,12 @@ Palpação Linfonodal: Presença de linfonodomegalia pré-auricular ipsilateral 
 Acuidade Visual Grosseira: Preservada bilateralmente (paciente lê linhas de texto e conta dedos a 5 metros sem alterações).
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. Conjuntivite Aguda de provável etiologia [VIRAL (Adenovírus) / BACTERIANA / ALÉRGICA] (CID-10: H10.3 / H10.0 / H10.1).
+1. Conjuntivite Aguda de provável etiologia [VIRAL / BACTERIANA / ALÉRGICA] (CID-10: H10.3 / H10.0 / H10.1).
 2. Ausência de sinais de ceratite infecciosa, úlcera de córnea ou glaucoma agudo.
 
 # CONDUTA:
 
->> [MODALIDADE A]: CONDUTA NA CONJUNTIVITE VIRAL (ADENOVÍRUS):
+>> [MODALIDADE]: CONDUTA NA CONJUNTIVITE VIRAL (ADENOVÍRUS):
 1. Colírio Lubrificante (Lágrima Artificial sem vasoconstritor):
    - Carmelose Sódica 0,5% [ou Lacribell / Hyabak]: Pingar 1 gota no olho afetado de 4 a 6 vezes ao dia por 10 a 14 dias para conforto ocular.
 2. Compressas Oculares: Compressas com gaze embebida em Soro Fisiológico 0,9% gelado aplicadas sobre as pálpebras fechadas 3 a 4x/dia por 10 minutos.

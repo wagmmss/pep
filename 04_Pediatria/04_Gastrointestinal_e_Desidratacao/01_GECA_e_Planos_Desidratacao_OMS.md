@@ -10,32 +10,32 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso de Entrada: [ ] kg, Acompanhante: [Mãe / Pai / Responsável: ___].
-Peso Prévio Conhecido: [Não informado / ___ kg -> Perda de ___ %].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso de Entrada: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
+Peso Prévio Conhecido: [Não informado / kg -> Perda de %].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 # QP:
 Diarreia líquida e vômitos há [ ] dias.
 
 # HMA:
-Quadro iniciado há [ ] dias com dejeções líquidas de aspecto [aquoso amarelado/esverdeado explosivo, sem / mucossanguinolento com tenesmo], associado a [ ] episódios de vômitos alimentares nas últimas 24h e febre de [ ] °C.
-Aceitação de Líquidos & Diurese: [Aceitando líquidos sem sede ávida / Sedenta, bebendo líquidos avidamente / Incapaz de beber ou vomitando tudo o que ingere]. Última diurese há [ ] horas.
-Nega vômitos biliosos (verde-escuros), fezes em "geleia de morango/framboesa" com choro paroxístico e flexão das pernas, distensão abdominal tensa ou defesa peritoneal localizada.
+Quadro iniciado há [ ] dias com dejeções líquidas de aspecto [aquoso amarelado/esverdeado explosivo / mucossanguinolento com tenesmo], associado a [ ] episódios de vômitos alimentares nas últimas 24h e febre de [ ] °C.
+[Aceitando líquidos sem sede ávida / Sedenta, bebendo líquidos avidamente / Incapaz de beber ou vomitando tudo o que ingere]. Última diurese há [ ] horas.
+Nega vômitos biliosos, fezes em "geleia de morango/framboesa" com choro paroxístico e flexão das pernas, distensão abdominal tensa ou defesa peritoneal localizada.
 
 # EXAME FÍSICO:
 SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Tempo de Enchimento Capilar (TEC): [< 2 segundos / 2 a 3 segundos / > 3 segundos] | Pulso radial: [Cheio e amplo / Rápido e fino / Muito fraco ou ausente].
 Avaliação Sistemática do Estado de Hidratação (4 Parâmetros OMS):
-1. Estado Geral / Nível de Consciência: [*Alerta, ativo e bem (Plano A) / Irritado, intranquilo e choroso (Plano B) / Letárgico, hipotônico ou inconsciente (Plano C)].
-2. Olhos e Lágrimas: [Olhos normais com lágrimas presentes (Plano A) / Olhos fundos, lágrimas diminuídas (Plano B) / Olhos muito fundos e secos, sem lágrimas (Plano].
-3. Sede / Prova do Copo d'Água: [Bebe normalmente, sem sede excessiva (Plano A) / Sedento, bebe rápida e avidamente, chora quando / Bebe muito mal ou não é capaz de beber (Plano C)].
-4. Sinal da Prega Abdominal (Pinçamento longitudinal da pele lateral do abdome): [Desaparece imediatamente (Plano A) / Desaparece lentamente em < 2 segundos (Plano B) / Desaparece muito lentamente em > 2 segundos].
-Mucosa Oral & Fontanela: Mucosa [úmida / seca / muito seca ("língua de papagaio")] | Fontanela anterior (< 18m): [Plana / Deprimida].
+1. Estado Geral / Nível de Consciência: [*Alerta, ativo e bem / Irritado, intranquilo e choroso / Letárgico, hipotônico ou inconsciente].
+2. Olhos e Lágrimas: [Olhos normais com lágrimas presentes / Olhos fundos, lágrimas diminuídas / Olhos muito fundos e secos, sem lágrimas].
+3. Sede / Prova do Copo d'Água: [Bebe normalmente, sem sede excessiva / Sedento, bebe rápida e avidamente, chora quando retira / Bebe muito mal ou não é capaz de beber].
+4. Sinal da Prega Abdominal (Pinçamento longitudinal da pele lateral do abdome): [Desaparece imediatamente / Desaparece lentamente em < 2 segundos / Desaparece muito lentamente em > 2 segundos].
+Mucosa Oral & Fontanela: Mucosa [úmida / seca / muito seca] | Fontanela anterior (< 18m): [Plana / Deprimida].
 Exame Abdominal: Abdome flácido, indolor à palpação profunda, ruídos hidroaéreos hiperativos, sem massas palpáveis ("chouriço" de invaginação ausente) e sem irritação peritoneal (Blumberg negativo).
 
 # HIPÓTESES DIAGNÓSTICAS & CLASSIFICAÇÃO OMS:
 1. Gastroenterite Aguda — GECA [Viral Aquosa / Disenteria Bacteriana Aguda] (CID-10: A09).
-2. Classificação do Estado de Hidratação: [SEM DESIDRATAÇÃO — PLANO A / COM DESIDRATAÇÃO (MODERADA) — PLANO B / DESIDRATAÇÃO GRAVE OU CHOQUE — PLANO C].
+2. Classificação do Estado de Hidratação: [SEM DESIDRATAÇÃO / COM DESIDRATAÇÃO — PLANO B / DESIDRATAÇÃO GRAVE OU CHOQUE — PLANO C].
 
 # CONDUTA:
 
@@ -49,7 +49,7 @@ Exame Abdominal: Abdome flácido, indolor à palpação profunda, ruídos hidroa
 1. Administrar SRO sob supervisão na unidade: volume estimado de 50 a 100 mL/kg ao longo de 4 a 6 horas (Peso: [ ] kg -> Volume alvo de [ ] a [ ] mL ofertado em pequenas colheres/seringa a cada 2–3 minutos). Manter aleitamento materno durante a TRO.
 2. Se vômitos persistentes dificultando a TRO: Administrar dose única de Ondansetrona 0,15 mg/kg VO (2 mg se 8–15 kg; 4 mg se 15–30 kg; 8 mg se > 30 kg), aguardar 20 minutos e reiniciar SRO lentamente.
 3. Reavaliar e repesar a criança a cada 1 a 2 horas:
-   - [Reavaliação após ___ h: Criança calma, olhos].
+   - [Reavaliação após h: Criança calma].
    - [Se falha da TRO por vômitos]: Passar SNG para gastróclise (20 a 30 mL/kg/h de SRO) ou converter para PLANO C venoso.
 
 >> [PLANO C — DESIDRATAÇÃO GRAVE / CHOQUE]: EXPANSÃO VENOSA IMEDIATA EM SALA VERMELHA:

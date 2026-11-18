@@ -10,32 +10,32 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Alérgico(a) a Penicilinas / Outros: ___].
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Alérgico a Penicilinas / Outros].
 
 # QP:
-Dor de ouvido (otalgia), febre e irritabilidade há [ ] dias.
+Dor de ouvido, febre e irritabilidade há [ ] dias.
 
 # HMA:
 Quadro iniciado há [ ] dias após pródromo de resfriado comum, evoluindo nas últimas [24 a 48] horas com otalgia aguda em orelha [direita / esquerda / bilateral], despertar noturno com choro intenso, [mão levada repetidamente à orelha] e febre de [ ] °C.
-[Ausente / Otorreia purulenta exteriorizada no conduto].
-Presença de Conjuntivite Purulenta Ipsilateral: [Ausente / Presente].
-Estratificação de Risco para Pneumococo Resistente (Define Dose de Amoxicilina 50 vs 90 mg/kg/dia):
-Idade < 2 anos: [Sim / Não] | Frequenta creche/berçário: [Sim / Não] | Uso de antibiótico nos últimos 30 dias: [Não / Sim: ___].
+[Ausente / Otorreia purulenta exteriorizada no conduto auditivo].
+[Ausente / Presente].
+Estratificação de Risco para Pneumococo Resistente:
+[Sim / Não] | Frequenta creche/berçário: [Sim / Não] | Uso de antibiótico nos últimos 30 dias: [Não / Sim].
 Nega edema, hiperemia ou dor retroauricular com deslocamento anterior do pavilhão, paralisia facial periférica, vômitos em jato ou rigidez de nuca.
 
 # EXAME FÍSICO:
 SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 Ectoscopia & Inspeção Retroauricular: Bom/Regular estado geral, corado, hidratado, acianótico. Região mastoidea bilateral sem edema, sem eritema, sulco retroauricular preservado e indolor à percussão/palpação (afastada mastoidite aguda).
 Otoscopia Bilateral Comparativa:
-Orelha Acometida ([Direita / Esquerda / Ambas]): Membrana timpânica (MT) apresentando [abaulamento moderado a grave da pars tensa / opacificação difusa, perda do triângulo / otorreia purulenta aguda no conduto auditivo].
-Orelha Contralateral: [Membrana timpânica íntegra, translúcida / Também abaulada e hiperemiada (OMA bilateral)].
+Orelha Acometida ([Direita / Esquerda / Ambas]): Membrana timpânica (MT) apresentando [abaulamento moderado a grave da pars tensa (critério / opacificação difusa / otorreia purulenta aguda no conduto auditivo externo].
+Orelha Contralateral: [Membrana timpânica íntegra / Também abaulada e hiperemiada].
 Rinoscopia, Oroscopia & Ausculta Pulmonar: Mucosa nasal congesta com rinorreia; orofaringe sem placas; murmúrio vesicular universalmente audível sem ruídos adventícios.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Otite Média Aguda Supurativa [Unilateral Direita / Unilateral Esquerda / Bilateral] (CID-10: H66.0).
-2. Classificação de Gravidade e Conduta (SBP/AAP): [Indicação de antibioticoterapia imediata / Elegível para observação vigilante por 48h com].
+2. Classificação de Gravidade e Conduta (SBP/AAP): [Indicação de antibioticoterapia imediata (< 6 meses / Elegível para observação vigilante por 48h].
 
 # CONDUTA:
 
@@ -45,7 +45,7 @@ Rinoscopia, Oroscopia & Ausculta Pulmonar: Mucosa nasal congesta com rinorreia; 
 2. Antibioticoterapia Dirigida pelo Perfil de Risco (Peso Atual: [ ] kg):
    - [OPÇÃO 1 — Sem fatores de risco para resistência]:
      Amoxicilina 50 mg/kg/dia VO dividida de 8/8h (suspensão 250 mg/5 mL) ou 12/12h (suspensão 400 mg/5 mL).
-   - [OPÇÃO 2 — Risco de Pneumococo Resistente (< 2]:
+   - [OPÇÃO 2 — Risco de Pneumococo Resistente (< 2 anos]:
      Amoxicilina em Dose Dobrada: 90 mg/kg/dia VO dividida de 12/12h (preferir suspensão concentrada de 400 mg/5 mL).
    - [OPÇÃO 3 — Síndrome Otite-Conjuntivite]:
      Amoxicilina + Clavulanato na dose de 50 a 90 mg/kg/dia da amoxicilina dividida de 12/12h *(Atenção farmacológica: na apresentação 7:1 de 400 + 57 mg/5 mL, respeitar o teto de ≤ 10 mg/kg/dia de clavulanato — para atingir 90 mg/kg/dia sem diarreia severa, usar formulação 14:1 de 600 + 42,9 mg/5 mL OU combinar 45 mg/kg/dia de Amox+Clav 400+57/5 mL + 45 mg/kg/dia de Amoxicilina pura 400/5 mL)*.

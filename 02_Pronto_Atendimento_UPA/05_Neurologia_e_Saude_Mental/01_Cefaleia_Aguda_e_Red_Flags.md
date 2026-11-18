@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # QP:
 Dor de cabeça forte há [ ] horas/dias.
@@ -22,13 +22,13 @@ Relata cefaleia de localização [hemicraniana à direita/esquerda / holocranian
 [ ]/10 na escala visual analógica.
 [Pulsátil latejante / Em aperto contínuo / Pontada / Em queimação].
 [Náuseas e vômitos / Fotofobia e fonofobia / Piora importante com atividade física habitual / Presença de aura visual prévia com escotomas / Ausentes].
-Nega febre, calafrios, sudorese noturna ou perda ponderal inexplicada; nega histórico de neoplasia prévia ou imunossupressão (HIV).
+Nega febre, calafrios, sudorese noturna ou perda ponderal inexplicada; nega histórico de neoplasia prévia ou imunossupressão.
 Nega déficits motores focais, nega dormência assimétrica, nega alteração da fala, nega crise convulsiva e nega confusão mental.
-O - ONSET SÚBITO: Nega início hiperagudo que atingiu intensidade máxima em menos de 1 minuto.
-Idade < 50 anos [se > 50 anos: nega dor em couro cabeludo ao].
-Nega dor que acorda o paciente de madrugada com vômitos em jato, nega piora acentuada com manobra de Valsalva (tosse, evacuação, esforço físico) e nega componente postural extremo.
-Nega trauma cranioencefálico (TCE) recente nos últimos dias/semanas.
-[Paciente com crises semelhantes prévias de / Primeiro episódio da vida].
+Nega início hiperagudo que atingiu intensidade máxima em menos de 1 minuto.
+Idade < 50 anos [se > 50 anos: nega dor em couro cabeludo ao pentear].
+Nega dor que acorda o paciente de madrugada com vômitos em jato, nega piora acentuada com manobra de Valsalva e nega componente postural extremo.
+Nega trauma cranioencefálico recente nos últimos dias/semanas.
+[Paciente com crises semelhantes prévias de enxaqueca / Primeiro episódio da vida].
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C (afebril).
@@ -65,7 +65,7 @@ Palpação Craniofacial: Têmporas simétricas, ausência de artérias temporais
 1. Dipirona 1 g VO de 6/6h se dor (máximo 4 g/dia por até 3 dias).
 2. Naproxeno 500 mg VO de 12/12h após refeições por 3 dias [OU Ibuprofeno 600 mg VO 8/8h].
 3. [Se enxaqueca com sintomas náuseos]: Ondansetrona 4 a 8 mg VO ou Bromoprida 10 mg VO 8/8h SOS.
-4. [Triptano se paciente com enxaqueca diagnóstica]:
+4. [Triptano se paciente com enxaqueca diagnóstica prévia]:
    - Succinato de Sumatriptana 50 mg - Tomar 1 comprimido VO logo ao início da fase de dor da enxaqueca (pode repetir 1 cp após 2 horas se persistência; máximo 200 mg/dia. CONTRAINDICADO SE CORONARIOPATIA OU HAS NÃO CONTROLADA).
 
 # ORIENTAÇÕES / SINAIS DE ALARME:

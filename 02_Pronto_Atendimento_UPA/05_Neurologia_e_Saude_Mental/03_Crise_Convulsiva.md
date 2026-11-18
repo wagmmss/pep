@@ -11,18 +11,18 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # HISTÓRICO CONVULSIVO: [Epilepsia conhecida sob tratamento prévio / Primeiro episódio convulsivo da vida / Histórico de etilismo crônico].
 
 # QP:
-[Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora / dia].
 
 # HMA:
-Presenciada crise convulsiva generalizada caracterizada por abalos tônico-clônicos nos 4 membros, desvio do olhar para cima, sialorreia ("espuma na boca"), mordedura de borda lateral de língua e perda súbita da consciência. Duração estimada da crise: cerca de [ ] minutos.
-[Liberação esfincteriana urinária e/ou fecal / Ausente].
-[Abandono recente de anticonvulsivantes / Febre alta prévia / Abstinência alcoólica aguda há horas / Privação severa de sono / Uso de drogas ilícitas (cocaína/crack) / TCE recente].
+Presenciada crise convulsiva generalizada caracterizada por abalos tônico-clônicos nos 4 membros, desvio do olhar para cima, sialorreia, mordedura de borda lateral de língua e perda súbita da consciência. Duração estimada da crise: cerca de [ ] minutos.
+[Liberação esfincteriana urinária e/ou fecal presente / Ausente].
+[Abandono recente de anticonvulsivantes / Febre alta prévia / Abstinência alcoólica aguda há horas / Privação severa de sono / Uso de drogas ilícitas / TCE recente].
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
@@ -31,7 +31,7 @@ Avaliação Pós-Ictal Imediata:
 Nível de Consciência: [Sonolento, despertável ao chamado verbal / Confuso / Em torpor / Lúcido].
 Escala de Coma de Glasgow: [ ] / 15 pontos.
 Oroscopia: Presença de ferimento cortocontuso recente na borda lateral da língua com estrias hemáticas (sinal característico de crise epiléptica motora generalizada).
-Exame Neurológico Pós-Ictal: Pupilas isocóricas e fotorreagentes, ausência de assimetria de reflexos, reflexo cutâneo-plantar em flexão bilateral [ou Paralisia de Todd transitória em hemicorpo (]. Ausência de rigidez de nuca.
+Exame Neurológico Pós-Ictal: Pupilas isocóricas e fotorreagentes, ausência de assimetria de reflexos, reflexo cutâneo-plantar em flexão bilateral [ou Paralisia de Todd transitória em hemicorpo]. Ausência de rigidez de nuca.
 Inspeção Corporal: Ausência de estigmas de trauma cranioencefálico grave ou fraturas por queda.
 
 # HIPÓTESES DIAGNÓSTICAS:
@@ -45,7 +45,7 @@ Inspeção Corporal: Ausência de estigmas de trauma cranioencefálico grave ou 
 2. Oxigenoterapia sob máscara facial a 10 L/min.
 3. PROIBIÇÃO ABSOLUTA: NUNCA colocar objetos (colheres, panos) ou dedos na boca do paciente durante a crise.
 4. Puncionado acesso venoso periférico calibroso e coleta de sangue (Hemograma, Eletrólitos: Sódio/Potássio/Cálcio/Magnésio, Ureia, Creatinina, Gasometria e CPK).
-5. [SE HGT < 70 MG/DL (HIPOGLICEMIA)]:
+5. [SE HGT < 70 MG/DL]:
    - [Se etilista/desnutrido]: TIAMINA (Vitamina B1) 100 mg EV lento ANTES DA GLICOSE (prevenção mandatória de Encefalopatia de Wernicke).
    - Glicose a 50%: 4 ampolas (40 mL) EV em bólus direto de imediato.
 

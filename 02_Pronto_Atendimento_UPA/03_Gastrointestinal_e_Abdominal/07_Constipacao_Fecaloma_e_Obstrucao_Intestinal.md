@@ -13,21 +13,21 @@ ATENDIMENTO DE PRONTO ATENDIMENTO — CONSTIPAÇÃO AGUDA, FECALOMA VS. ABDOME A
 
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 HISTÓRIA CLÍNICA DIRIGIDA:
-- Hábito Intestinal Atual: Ausência de evacuação há [ ] dias, associada a [desconforto abdominal baixo, esforço / eliminação paradoxal de fezes líquidas em].
-- Pesquisa de Sinais de Obstrução Intestinal Mecânica (Red Flags): Eliminação de flatus (gases): [Presente — afasta oclusão completa / PARADA TOTAL de eliminação de gases e fezes].
+- Hábito Intestinal Atual: Ausência de evacuação há [ ] dias, associada a [desconforto abdominal baixo / eliminação paradoxal de fezes líquidas em pequena].
+- Pesquisa de Sinais de Obstrução Intestinal Mecânica (Red Flags): Eliminação de flatus (gases): [Presente — afasta oclusão completa / PARADA TOTAL de eliminação de gases e fezes associada].
 - Sinais de Alarme para Neoplasia Colorretal: [*Nega / Idade > 50 anos sem colonoscopia prévia].
 - Fatores Precipitantes: [Idoso acamado ou institucionalizado / Uso recente de Opioides, Anticolinérgicos / Baixa ingesta hídrica].
 
 EXAME FÍSICO & TOQUE RETAL OBRIGATÓRIO:
-- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | Tax: [ ]°C | Abdome: [Globoso, RHA presentes, massa fecal moldável / Distendido, timpânico, RHA metálicos de luta].
-- Inspeção Anal e Toque Retal: Esfíncter normotônico, sem fissuras agudas ou trombose hemorroidária; ampola retal [preenchida por grande massa fecal endurecida e / ampola retal vazia e sem sangue em dedo de luva].
+- Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | Tax: [ ]°C | Abdome: [Globoso, RHA presentes, massa fecal moldável palpável / Distendido, timpânico, RHA metálicos de luta, dor].
+- Inspeção Anal e Toque Retal: Esfíncter normotônico, sem fissuras agudas ou trombose hemorroidária; ampola retal [preenchida por grande massa fecal endurecida e pétrea / ampola retal vazia e sem sangue em dedo de luva].
 
 EXAMES DE IMAGEM (SE SUSPEITA DE OBSTRUÇÃO MECÂNICA OU MEGACÓLON):
-- Rotina de Abdome Agudo (RX em Pé e Decúbito): [Grande quantidade de resíduos fecais em todo o / Níveis hidroaéreos em "empilhamento de moedas"].
+- Rotina de Abdome Agudo (RX em Pé e Decúbito): [Grande quantidade de resíduos fecais em todo / Níveis hidroaéreos em "empilhamento de moedas"].
 
 # CONDUTA:
 1. Regra de Ouro de Segurança: NUNCA prescrever laxativos orais estimulantes nem realizar enema sob pressão antes de excluir perfuração intestinal ou obstrução mecânica completa.

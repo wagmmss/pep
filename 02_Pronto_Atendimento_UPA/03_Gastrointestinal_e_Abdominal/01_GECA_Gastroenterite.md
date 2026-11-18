@@ -11,18 +11,18 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Alérgico a Dipirona / Alérgico a Metoclopramida/Plasil / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Alérgico a Dipirona / Alérgico a Metoclopramida/Plasil / Outros].
 
 # QP:
 Diarreia, vômitos e dor de barriga em cólica há [ ] dias.
 
 # HMA:
-Refere início há cerca de [ ] dias de evacuações líquidas frequentes, fezes de aspecto [líquido amarelado sem restos de sangue / com restos alimentares / sanguinolento], associadas a episódios de vômitos ([ ] episódios), cólicas abdominais difusas e febre não aferida. Relata história epidemiológica de consumo de alimento suspeito ou familiares com quadro similar.
+Refere início há cerca de [ ] dias de evacuações líquidas frequentes, fezes de aspecto [líquido amarelado sem restos de sangue / com restos alimentares / sanguinolento], associadas a episódios de vômitos, cólicas abdominais difusas e febre não aferida. Relata história epidemiológica de consumo de alimento suspeito ou familiares com quadro similar.
 Nega disenteria grave.
 Nega dor abdominal contínua localizada em fossa ilíaca direita ou hipocôndrio direito.
 Nega vômitos incoercíveis com intolerância absoluta a qualquer líquido.
-Nega anúria ou oligúria severa (diurese ausente há mais de 12 horas).
+Nega anúria ou oligúria severa.
 Nega síncope, hipotensão postural severa ou confusão mental.
 
 # EXAME FÍSICO:
@@ -34,12 +34,12 @@ Boca e Língua: [Úmidas / Secas / Muito secas].
 Sede: [Bebe normalmente / Sedento, bebe sofregamente / Incapaz de beber].
 Sinal da Prega Cutânea (Turgor): [Desaparece rapidamente / Desaparece lentamente (> 2s)].
 Tempo de Enchimento Capilar: [*Normal < 2 segundos / Lentificado > 2 segundos].
-CLASSIFICAÇÃO: [SEM DESIDRATAÇÃO (PLANO A) / DESIDRATAÇÃO CLÍNICA MODERADA (PLANO B) / DESIDRATAÇÃO GRAVE COM CHOQUE (PLANO C)].
+CLASSIFICAÇÃO: [SEM DESIDRATAÇÃO / DESIDRATAÇÃO CLÍNICA MODERADA / DESIDRATAÇÃO GRAVE COM CHOQUE].
 Exame Abdominal: Abdome plano/globoso, ruídos hidroaéreos aumentados difusamente (borborigmos), flácido, difusamente doloroso à palpação sem ponto doloroso fixo, ausência de massas, ausência de sinais de irritação peritoneal (Sinal de Blumberg negativo, Murphy negativo).
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Gastroenterite Aguda Infecciosa de provável etiologia viral/toxigênica (CID-10: A09).
-2. Paciente [euidratado / com desidratação leve a moderada tratada na].
+2. Paciente [euidratado / com desidratação leve a moderada tratada na unidade].
 
 # CONDUTA:
 

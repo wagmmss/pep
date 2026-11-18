@@ -11,15 +11,15 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: Masculino, Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos / Outros].
 
 # QP:
 Saída de pus pelo canal da urina e ardência para urinar há [ ] dias.
 
 # HMA:
-Paciente relata aparecimento há cerca de [ ] dias de secreção uretral anormal espontânea, com aspecto [purulento abundante amarelo-esverdeado (típico / mucoide esbranquiçado e escasso (típico de], associada a disúria intensa, prurido no trajeto da uretra peniana e eritema no meato externo.
-Histórico de relação sexual desprotegida (sem uso consistente de preservativo) há cerca de [ ] dias [relação vaginal / anal / oral receptiva ou insertiva].
+Paciente relata aparecimento há cerca de [ ] dias de secreção uretral anormal espontânea, com aspecto [purulento abundante amarelo-esverdeado / mucoide esbranquiçado e escasso], associada a disúria intensa, prurido no trajeto da uretra peniana e eritema no meato externo.
+Histórico de relação sexual desprotegida há cerca de [ ] dias [relação vaginal / anal / oral receptiva ou insertiva].
 [Estável / Eventual].
 Nega dor intensa, inchaço ou vermelhidão na bolsa escrotal/testículo.
 Nega febre, calafrios, dor no períneo ou dificuldade para esvaziar a bexiga.

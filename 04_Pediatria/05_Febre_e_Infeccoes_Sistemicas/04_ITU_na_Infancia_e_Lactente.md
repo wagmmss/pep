@@ -11,25 +11,25 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade], Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outras: ___].
-Alergias: [+ *Nega / Outras: ___].
+Comorbidades: [+ *Hígido / Outras].
+Alergias: [+ *Nega / Outras].
 
 ATENDIMENTO PEDIÁTRICO — INFECÇÃO DO TRATO URINÁRIO (ITU) NA INFÂNCIA E LACTENTE (SBP / AAP)
 IDENTIFICAÇÃO & ANTROPOMETRIA:
-Criança [Nome], [Idade] meses/anos | Peso Atual: [ ] kg | Controle esfincteriano: [Não adquirido (usa fralda) / Adquirido].
+Criança [Nome], [Idade] meses/anos | Peso Atual: [ ] kg | Controle esfincteriano: [Não adquirido / Adquirido].
 
 APRESENTAÇÃO CLÍNICA POR FAIXA ETÁRIA:
 - Quadro Clínico:
-  * [Lactente / < 2 anos: Febre sem sinais localizatórios (Tax].
-  * [Criança maior com controle esfincteriano].
-- Antecedentes Nefrourológicos: [Primeiro episódio de ITU / ITU de repetição / Hidronefrose antenatal na USG gestacional / Constipação intestinal associada e retenção].
+  * [Lactente / < 2 anos: Febre sem sinais localizatórios (Tax ≥ 38°C].
+  * [Criança maior com controle esfincteriano: Disúria].
+- Antecedentes Nefrourológicos: [Primeiro episódio de ITU / ITU de repetição / Hidronefrose antenatal na USG gestacional / Constipação intestinal associada e retenção urinária].
 
 EXAME FÍSICO & MÉTODO DE COLETA URINÁRIA (ATENÇÃO À REGRA DO SACO COLETOR!):
 - Sinais Vitais: Tax: [ ]°C | FC: [ ] bpm | FR: [ ] irpm. Estado Geral: [BEG, ativa, hidratada, aceitando bem via oral / Toxemiada, prostrada, vomitando ou desidratada].
-- Abdome e Genitália: Abdome flácido, sem massas ou bexigoma; genitália externa [sem vulvovaginite, sinéquia labial ou / fimose fisiológica].
+- Abdome e Genitália: Abdome flácido, sem massas ou bexigoma; genitália externa [sem vulvovaginite, sinéquia labial ou balanopostite / fimose fisiológica].
 - Método de Coleta de EAS + Urocultura (OBRIGATÓRIO ANTES DA 1ª DOSE DE ANTIBIÓTICO!):
-  * [Criança com controle esfincteriano: Jato médio].
-  * [Lactente SEM controle esfincteriano].
+  * [Criança com controle esfincteriano: Jato médio após].
+  * [Lactente SEM controle esfincteriano: Cateterismo].
 - Resultado do EAS / Fita Reagente: Leucocitúria [presente (> 10.000/mL ou ≥ 5–10/campo)] | Esterase leucocitária: [Positiva] | Nitrito: [Positivo / Negativo] | Bacterioscopia (Gram): [Presença de bacilos Gram-negativos].
 
 # PLANO / CONDUTA

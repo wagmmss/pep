@@ -10,20 +10,20 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos[? Profissão :: , Profissão: ___], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [+ *Hígida / Outros: ___].
-Alergias: [*Nega alergias conhecidas / Alérgica a: ___].
-Antecedentes Obstétricos: [*Nulípara / Gestações prévias sem intercorrências / Pré-eclâmpsia prévia / DMG prévio / Parto prematuro prévio / Cesárea prévia há ___ anos]. Último Citopatológico: [*Em dia e normal / Colhido há > 1–3 anos].
-[? Medicações & Hábitos :: Medicações em uso: *Nega uso contínuo / ___ / Hábitos: + *Nega tabagismo, etilismo ou drogas / Tabagista / Etilismo / ___ .]
+ID: [Nome], [Idade] anos, Profissão: [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [+ *Hígida / Outros].
+Alergias: [*Nega alergias conhecidas / Alérgica (especificar)].
+Antecedentes Obstétricos: [*Nulípara / Gestações prévias sem intercorrências / Pré-eclâmpsia prévia / DMG prévio / Parto prematuro prévio / Cesárea prévia há anos]. Último Citopatológico: [*Em dia e normal / Colhido há > 1–3 anos].
+Medicações em uso: *Nega uso contínuo / [ ] / Hábitos: + *Nega tabagismo / Tabagista / Etilismo / [ ] .
 - DUM: [DD/MM/AAAA] ([Certa e confiável / Incerta]) -> IG DUM: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
-- USG Precoce (1º Tri): [Solicitada hoje / Realizada em DD/MM com CCN de ___ mm = IG USG].
+- USG Precoce (1º Tri): [Solicitada hoje / Realizada em DD/MM com CCN de mm = IG USG s d].
 - IG Definitiva Adotada: [ ] semanas e [ ] dias.
 
 # QP:
 Abertura de pré-natal.
 
 # HMA:
-Comparece para abertura de pré-natal, referindo [*ausência de queixas / náuseas matinais leves sem perda ponderal / mastalgia e sonolência fisiológicas / Outros: ___].
+Comparece para abertura de pré-natal, referindo [*ausência de queixas / náuseas matinais leves sem perda ponderal / mastalgia e sonolência fisiológicas / Outros].
 Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
 
 # EXAME FÍSICO:
@@ -35,7 +35,7 @@ Exame Ginecológico (se realizado) & MMII: [Especular com colo epitelizado viol�
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Gestação tópica de [ ] semanas e [ ] dias (CID-10: Z34.0 / Z34.8).
-2. Estratificação de Risco: [Pré-Natal de Risco Habitual (PNBR) / Pré-Natal de Alto Risco (PNAR) por: ___] | Risco de Pré-Eclâmpsia: [Baixo / Alto risco].
+2. Estratificação de Risco: [Pré-Natal de Risco Habitual / Pré-Natal de Alto Risco] | Risco de Pré-Eclâmpsia: [Baixo / Alto risco].
 
 # CONDUTA:
 >> CONDUTA & EXAMES SOLICITADOS (ROTINA DE 1º TRIMESTRE):

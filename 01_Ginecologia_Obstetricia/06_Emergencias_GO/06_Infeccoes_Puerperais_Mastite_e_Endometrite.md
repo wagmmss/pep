@@ -11,17 +11,17 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], no [ ]º dia de puerpério de [Parto Normal / Cesariana].
-Comorbidades: [+ *Hígida / Outros: ___].
-Alergias: [*Nega alergias medicamentosas / Alérgica a: ___].
+Comorbidades: [+ *Hígida / Outros].
+Alergias: [*Nega alergias medicamentosas / Alérgica (especificar)].
 - Quadro Atual: [MODALIDADE A — MASTITE PUERPERAL AGUDA / MODALIDADE B — ENDOMETRITE PUERPERAL].
 
 # QP:
-[Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora / dia].
 
 # HMA:
 Queixa Principal & HMA:
-[SE MASTITE]: Dor mamária localizada intensa, vermelhidão em cunha e calafrios/febre (Tax [ ] °C) há [ ] dias, associada a fissura mamilar e ingurgitamento prévio em mama [direita / esquerda]. Nega dor hipogástrica ou lóquios fétidos.
-[SE ENDOMETRITE]: Febre alta (Tax >= 38,0 °C), calafrios, mal-estar, dor hipogástrica progressiva e eliminação de lóquios escuros/purulentos com odor fétido intenso há [ ] dias. Nega queixas mamárias ou respiratórias.
+[SE MASTITE]: Dor mamária localizada intensa, vermelhidão em cunha e calafrios/febre há [ ] dias, associada a fissura mamilar e ingurgitamento prévio em mama [direita / esquerda]. Nega dor hipogástrica ou lóquios fétidos.
+[SE ENDOMETRITE]: Febre alta, calafrios, mal-estar, dor hipogástrica progressiva e eliminação de lóquios escuros/purulentos com odor fétido intenso há [ ] dias. Nega queixas mamárias ou respiratórias.
 
 # EXAME FÍSICO:
 SSVV: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C.
@@ -32,13 +32,13 @@ Exame Abdominal, Obstétrico & Especular (Tríade de Bumm):
 [SE MASTITE]: Abdome flácido, útero bem involuído e indolor, ferida/períneo íntegros, lóquios fisiológicos sem odor.
 [SE ENDOMETRITE — Tríade de Bumm Positiva]: Abdome doloroso em hipogástrio (DB negativo); ferida operatória [íntegra sem coleção / com celulite perilesional]. Ao exame especular e toque bimanual: (1) Febre puerperal + (2) Útero subinvoluído, amolecido e intensamente doloroso à mobilização + (3) Lóquios achocolatados/purulentos de odor fétido fluindo pelo colo.
 Exames Complementares (se realizados):
-[Ambulatorial sem necessidade de exames / Hemograma: Leucócitos ___ /mm³ com ___ % / USG Mamária: sem coleção líquida / USG Transvaginal: cavidade uterina vazia sem / com conteúdo heterogêneo sugerindo restos].
+[Ambulatorial sem necessidade de exames / Hemograma: Leucócitos /mm³ com % bastões / USG Mamária: sem coleção líquida / USG Transvaginal: cavidade uterina vazia sem restos / com conteúdo heterogêneo sugerindo restos placentários].
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. [Mastite Lactacional Aguda não complicada em / esquerda (CID-10: O91.2) / Endometrite Puerperal Aguda pós-cesárea/parto].
+1. [Mastite Lactacional Aguda não complicada em mama / esquerda (CID-10: O91.2) / Endometrite Puerperal Aguda pós-cesárea/parto (CID-10].
 
 # CONDUTA:
->> [MODALIDADE A]:
+>> [MODALIDADE A — MASTITE PUERPERAL AGUDA]:
 1. MANTER O ALEITAMENTO MATERNO (Pilar #1 do tratamento): Orientada a NÃO suspender a amamentação na mama afetada (o esvaziamento frequente previne abscesso e não faz mal ao RN a termo). Iniciar mamada pela mama sadia e ordenhar manualmente o leite residual da mama afetada após as mamadas.
 2. Prescritos Cefalexina 500 mg VO 6/6h por 10 a 14 dias (cobertura antiestafilocócica para *S. aureus*) + Ibuprofeno 600 mg VO 8/8h + Dipirona 1 g VO 6/6h SOS + compressas frias após as mamadas.
 3. Reavaliação Obrigatória em 48 a 72 horas: Se persistir febre após 48–72h de ATB ou surgir área de flutuação -> solicitar USG de Mamas e realizar punção aspirativa por agulha grossa / drenagem de Abscesso Mamário (mantendo amamentação).

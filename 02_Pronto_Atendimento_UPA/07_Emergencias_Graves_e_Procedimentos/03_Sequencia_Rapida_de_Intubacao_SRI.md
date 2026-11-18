@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 # INDICAÇÃO CLÍNICA DA INTUBAÇÃO OROTRAQUEAL (IOT):
 - [ ] Falência respiratória hipoxêmica ou hipercápnica refratária (SpO2 < 85% a despeito de VNI/máscara).
@@ -25,7 +25,7 @@ Alergias: [*Nega / Outros: ___].
 - E (Evaluate 3-3-2): Abertura bucal >= 3 dedos, distância tireomentoniana >= 3 dedos, distância tireohioide >= 2 dedos.
 - M (Mallampati): Classe [I / II / III / IV].
 - O (Obstruction): Ausência de massas, estridor ou corpos estranhos em orofaringe.
-- N (Neck mobility): Mobilidade cervical livre [ou restrita por colar cervical em trauma].
+- N (Neck mobility): Mobilidade cervical livre [ou restrita por colar cervical em trauma raquimedular].
 
 # CONDUTA:
 
@@ -41,7 +41,7 @@ Alergias: [*Nega / Outros: ___].
 
 3. P3 - PRÉ-OTIMIZAÇÃO HEMODINÂMICA (MINUTO -3):
    - Ressuscitação volêmica prévia / noradrenalina em bólus ("push-dose") se instabilidade hemodinâmica.
-   - [Se indicado para atenuação da resposta]: Fentanil 2 mcg/kg EV lento ([ ] mcg EV).
+   - [Se indicado para atenuação da resposta simpática]: Fentanil 2 mcg/kg EV lento ([ ] mcg EV).
 
 4. P4 - PARALISIA COM INDUÇÃO SIMULTÂNEA (MINUTO 0):
    - HIPNÓTICO ESCOLHIDO (ADMINISTRADO PRIMEIRO):
@@ -49,11 +49,11 @@ Alergias: [*Nega / Outros: ___].
      * [ ] OU Cetamina (Ketamina) 1,5 a 2,0 mg/kg: Administrados [ ] mg EV (escolha ouro na asma/DPOC por potente broncodilatação).
      * [ ] OU Propofol 1,5 a 2,0 mg/kg: Administrados [ ] mg EV (se hipertenso sem choque).
    - BLOQUEADOR NEUROMUSCULAR (ADMINISTRADO IMEDIATAMENTE A SEGUIR):
-     * [ ] Succinilcolina 1,0 a 1,5 mg/kg: Administrados [ ] mg ([ ] mL) EV direto (dose usual 100 mg / 1 frasco; início de ação em 45 segundos) [CONFERIDA AUSÊNCIA DE CONTRAINDICAÇÕES: sem].
+     * [ ] Succinilcolina 1,0 a 1,5 mg/kg: Administrados [ ] mg ([ ] mL) EV direto (dose usual 100 mg / 1 frasco; início de ação em 45 segundos) [CONFERIDA AUSÊNCIA DE CONTRAINDICAÇÕES].
      * [ ] OU Rocurônio 1,2 mg/kg: Administrados [ ] mg EV direto (dose de sequência rápida - início em 60 segundos).
 
 5. P5 - POSICIONAMENTO (MINUTO 0 A +1):
-   - Paciente posicionado em posição olfativa ("Sniffing position") com coxim occipital de 5 cm elevando a cabeça e estendendo a articulação atlanto-occipital (alinhamento dos eixos oral, faríngeo e laríngeo) [ou mantida estabilização bimanual em linha se].
+   - Paciente posicionado em posição olfativa ("Sniffing position") com coxim occipital de 5 cm elevando a cabeça e estendendo a articulação atlanto-occipital (alinhamento dos eixos oral, faríngeo e laríngeo) [ou mantida estabilização bimanual em linha se suspeita].
    - Aguardados 45 a 60 segundos de latência farmacológica até abolição completa dos movimentos respiratórios.
 
 6. P6 - PASSAGEM DO TUBO TRAQUEAL SOB VISÃO DIRETA (MINUTO +1):
@@ -79,7 +79,7 @@ Alergias: [*Nega / Outros: ___].
    - [OU Opção Solução Pura na seringa]: Fentanil puro 50 mcg/mL em seringa de 20 ou 50 mL -> Iniciar infusão a 1 a 3 mL/h em BIC (50 a 150 mcg/h).
 2. Midazolam (5 mg/mL):
    - 2 ampolas de 50 mg/10 mL (20 mL = 100 mg) + 80 mL de SF 0,9% (Solução 1 mg/mL) -> Iniciar infusão a 5 a 10 mL/h em BIC.
-3. [OU Propofol 1% puro (10 mg/mL) em BIC a 5 a 20].
+3. [OU Propofol 1% puro (10 mg/mL) em BIC a 5 a 20 mL/h].
 ```
 
 ---

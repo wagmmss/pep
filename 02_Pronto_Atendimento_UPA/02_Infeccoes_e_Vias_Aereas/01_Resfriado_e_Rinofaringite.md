@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [Hígido / Asma / HAS / DM2 / Outros: ___].
-Alergias: [*Nega alergias conhecidas / Alérgico a: ___].
+Comorbidades: [Hígido / Asma / HAS / DM2 / Outros].
+Alergias: [*Nega alergias conhecidas / Alérgico (especificar)].
 
 # QP:
 Coriza, congestão nasal e dor de garganta há [ ] dias.

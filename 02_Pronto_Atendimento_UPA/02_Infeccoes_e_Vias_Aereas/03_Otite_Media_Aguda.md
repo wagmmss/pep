@@ -11,27 +11,27 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Alérgico a Penicilinas / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Alérgico a Penicilinas / Outros].
 
 # QP:
-Dor intensa no ouvido (otalgia) [direito / esquerdo / bilateral] há [ ] dias.
+Dor intensa no ouvido [direito / esquerdo / bilateral] há [ ] dias.
 
 # HMA:
-Refere otalgia contínua e pulsátil iniciada há [ ] dias, precedida por sintomas gripais. Relata sensação de ouvido entupido (plenitude auricular), redução da audição e febre de [ ] °C aferida em casa. [Refere saída de secreção purulenta recente com / Sem otorréia].
+Refere otalgia contínua e pulsátil iniciada há [ ] dias, precedida por sintomas gripais. Relata sensação de ouvido entupido, redução da audição e febre de [ ] °C aferida em casa. [Refere saída de secreção purulenta recente com alívio / Sem otorréia].
 Nega dor, vermelhidão ou inchaço atrás da orelha.
 Nega protrusão ou desvio do pavilhão auricular para a frente.
-Nega assimetria facial, desvio de rima labial ou incapacidade de fechar o olho (paralisia facial).
+Nega assimetria facial, desvio de rima labial ou incapacidade de fechar o olho.
 Nega vertigem incapacitante, vômitos em jato ou rigidez de nuca.
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.
 Inspeção e Palpação Auricular:
 Região mastoidea bilateral sem hiperemia, sem calor local, sem edema ou flutuação, e totalmente indolor à palpação/percussão óssea. Sulco retroauricular preservado.
-Sinal do Trago (palpação do tragus) e tração do pavilhão auricular: [*Indolores (afastada otite externa) / Discreta sensibilidade].
+Sinal do Trago (palpação do tragus) e tração do pavilhão auricular: [*Indolores / Discreta sensibilidade].
 Otoscopia Direcionada:
 Ouvido Afetado ([Direito / Esquerdo]): Conduto auditivo externo com calibre habitual. Membrana timpânica intensamente hiperemiada, opaca, espessada, com perda dos marcos anatômicos habituais (cabo do martelo e triângulo luminoso abolido).
-Mobilidade / Abaulamento: [Abaulamento evidente da membrana timpânica com / Perfuração puntiforme em quadrante].
+Mobilidade / Abaulamento: [Abaulamento evidente da membrana timpânica com tensão / Perfuração puntiforme em quadrante].
 Ouvido Contralateral: Membrana timpânica translúcida, cinza-perolada, íntegra, reflexo luminoso preservado.
 Exame Neurológico Sumário: Nervos cranianos íntegros (VII par sem paresias, mímica facial preservada), ausência de nistagmo espontâneo.
 
@@ -48,10 +48,10 @@ Exame Neurológico Sumário: Nervos cranianos íntegros (VII par sem paresias, m
 # RECEITA:
 1. Antibioticoterapia de 1ª Linha:
    - Amoxicilina 500 mg - Tomar 1 comprimido VO de 8/8 horas por 7 a 10 dias.
-   - [OU]: Amoxicilina 875 mg - Tomar 1 comprimido VO de 12/12 horas por 10 dias.
-   - [SE USO DE ANTIBIÓTICO RECENTE (< 30 DIAS) OU]:
+   - OU:: Amoxicilina 875 mg - Tomar 1 comprimido VO de 12/12 horas por 10 dias.
+   - [SE USO DE ANTIBIÓTICO RECENTE (< 30 DIAS) OU FALHA]:
      Amoxicilina + Clavulanato de Potássio (875 + 125 mg) - Tomar 1 comprimido VO de 12/12h por 10 dias.
-   - [SE ALERGIA À PENICILINA (REAÇÃO NÃO ANAFILÁTICA)]: Cefuroxima Axetil 500 mg VO 12/12h por 10 dias.
+   - [SE ALERGIA À PENICILINA]: Cefuroxima Axetil 500 mg VO 12/12h por 10 dias.
    - [SE HISTÓRICO DE ANAFILAXIA A BETA-LACTÂMICOS]: Claritromicina 500 mg VO 12/12h por 10 dias (ou Azitromicina 500 mg VO 1x/dia por 5 dias).
 2. Anti-inflamatório (redução rápida do edema da tuba auditiva e da membrana):
    - Ibuprofeno 600 mg VO de 8/8h após as refeições por 3 a 5 dias.

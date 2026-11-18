@@ -11,9 +11,9 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
-Hábitos & Saneamento: [*Água encanada tratada / Água de poço; consome verduras cruas sem].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
+Hábitos & Saneamento: [*Água encanada tratada / Água de poço].
 
 # QP:
 Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
@@ -21,8 +21,8 @@ Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
 # HMA:
 Paciente relata queixas gastrointestinais insidiosas:
 Prurido perianal de predomínio noturno que prejudica o sono.
-Eliminação de espécime macroscópico nas fezes tipo "minhoca branca/rosada" (Ascaris lumbricoides).
-Fezes amolecidas, espumosas, de odor fétido acentuado com distensão abdominal e eructações frequentes (suspeita de Giardíase).
+Eliminação de espécime macroscópico nas fezes tipo "minhoca branca/rosada".
+Fezes amolecidas, espumosas, de odor fétido acentuado com distensão abdominal e eructações frequentes.
 Dor abdominal periumbilical mal definida em cólica leve, perda de apetite e sensação de fraqueza.
 Nega vômitos fecaloides ou parada de eliminação de flatos e fezes.
 Nega febre alta, calafrios ou fezes com sangue vivo e pus.
@@ -30,7 +30,7 @@ Nega desidratação, prostração grave ou perda de peso volumosa.
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Afebril.
-Geral: BEG, corado [ou hipocorado +/4+ por provável anemia], hidratado, anictérico, acianótico.
+Geral: BEG, corado [ou hipocorado +/4+ por provável anemia ferropriva], hidratado, anictérico, acianótico.
 Exame Abdominal: Abdome plano a discretamente meteorizado/timpânico, RHA+, flácido, com sensibilidade difusa leve à palpação periumbilical, sem dor localizada, sem visceromegalias palpáveis e sem sinais de peritonismo (Blumberg negativo).
 Inspeção Anal (se prurido intenso): Ausência de fissuras agudas ou lesões hemorroidárias trombosadas; presença de escoriações perianais superficiais por coçadura.
 
@@ -42,21 +42,21 @@ Inspeção Anal (se prurido intenso): Ausência de fissuras agudas ou lesões he
 
 # RECEITA:
 
-[OPÇÃO 1 - ESPECTRO COMPLETO / POLIPARASITISMO (HELMINTOS + PROTOZOÁRIOS)]:
+[OPÇÃO 1 - ESPECTRO COMPLETO / POLIPARASITISMO]:
 1. Nitazoxanida 500 mg (Annita) - Tomar 1 comprimido VO de 12/12 horas, obrigatoriamente junto com as refeições, por 3 dias consecutivos.
    * [Nota: Urina e fezes podem adquirir coloração].
 
 [OPÇÃO 2 - HELMINTÍASES GERAIS]:
-1. Albendazol 400 mg - Tomar 1 comprimido mastigável VO dose única [ou 1 cp VO 1x/dia por 3 dias se suspeita de].
+1. Albendazol 400 mg - Tomar 1 comprimido mastigável VO dose única [ou 1 cp VO 1x/dia por 3 dias se suspeita].
    * Se suspeita de Enterobius (Oxiúro com prurido anal): OBRIGATÓRIO REPETIR a dose de Albendazol 400 mg após exatamente 14 dias para eliminar as larvas recém-eclodidas dos ovos. Tratar todos os membros da família simultaneamente!
-2. [OU]: Mebendazol 100 mg - Tomar 1 comprimido VO de 12/12 horas por 3 dias consecutivos.
+2. OU:: Mebendazol 100 mg - Tomar 1 comprimido VO de 12/12 horas por 3 dias consecutivos.
 
 [OPÇÃO 3 - PROTOZOÁRIOS (GIÁRDIA / AMEBA COM DIARREIA CRÔNICA)]:
 1. Secnidazol 1 g - Tomar 2 comprimidos (2 g) VO em dose única, à noite após o jantar (evitar qualquer bebida alcoólica por 48h pelo efeito antabuse).
-   * [OU]: Metronidazol 500 mg VO de 8/8 horas por 5 a 7 dias.
+   * OU:: Metronidazol 500 mg VO de 8/8 horas por 5 a 7 dias.
 
 [OPÇÃO 4 - ESTRONGILOIDÍASE / ESCABIOSE ASSOCIADA]:
-1. Ivermectina 6 mg - Tomar [número de comprimidos conforme peso: 1 cp para] VO em dose única com água em jejum.
+1. Ivermectina 6 mg - Tomar [número de comprimidos conforme peso: 1 cp para cada 30] VO em dose única com água em jejum.
 
 >> SINTOMÁTICO PARA CÓLICAS:
 - Butilbrometo de Escopolamina 10 mg + Dipirona 250 mg - Tomar 1 comprimido VO 8/8h SOS cólicas abdominais.

@@ -10,22 +10,22 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] meses e [ ] dias (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Acompanhante: [Mãe / Pai / Ambos os pais / Cuidador(a): ___]., Peso: [ ] kg
-Idade Corrigida / Nascimento: [Nascido a termo / Prematuro de ___ semanas].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [ ] meses e [ ] dias (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Acompanhante: [Mãe / Pai / Ambos os pais / Cuidador]., Peso: [ ] kg
+Idade Corrigida / Nascimento: [Nascido a termo / Prematuro de semanas].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 # QP:
-[Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora / dia].
 
 # HMA:
-[Assintomático(a), em excelente evolução / Apresentou quadro leve de ___].
+[Assintomático, em excelente evolução / Apresentou quadro leve].
 Alimentação e Prática Nutricional:
-Lactente < 6 meses: [Aleitamento Materno Exclusivo (AME) em livre / Aleitamento misto / Fórmula infantil de partida ( ) na diluição].
-Criança ≥ 6 meses: [Aleitamento materno complementado + Introdução / Dieta da família consistente, sem açúcar, mel]. Oferta de água potável: [Adequada / Baixa].
-Sono Seguro & Hábitos: Dorme em [berço próprio em decúbito dorsal (barriga para / cama compartilhada].
+[Aleitamento Materno Exclusivo em livre demanda / Aleitamento misto / Fórmula infantil de partida na diluição correta de 1].
+[Aleitamento materno complementado + Introdução / Dieta da família consistente, sem açúcar, mel]. Oferta de água potável: [Adequada / Baixa].
+Dorme em [berço próprio em decúbito dorsal / cama compartilhada].
 Diurese [ampla, > 5–6 fraldas molhadas/dia] | Evacuações [aspecto e frequência habituais para a idade].
-Saúde Bucal & Exposição a Telas: Higiene oral [com escova macia e pasta fluoretada ≥ 1.000 ppm / ainda sem erupção dentária]; Tempo de telas (celular/TV): [Zero telas conforme recomendação SBP (< 2 anos) / Exposição inadequada — orientada suspensão].
+Higiene oral [com escova macia e pasta fluoretada ≥ 1.000 ppm / ainda sem erupção dentária]; Tempo de telas: [Zero telas conforme recomendação SBP (< 2 anos) / Exposição inadequada — orientada suspensão].
 
 # EXAME FÍSICO:
 Dados Antropométricos e Curvas da OMS (Caderneta da Criança):
@@ -36,28 +36,28 @@ Perímetro Cefálico (< 2 anos): [ ] cm -> Escore-Z PC/Idade: [Normocefalia (Z e
 IMC para a Idade: [ ] kg/m² -> Classificação: [Eutrofia (Z entre -2 e +1) / Risco de sobrepeso (Z > +1) / Sobrepeso (Z > +2)].
 Triagens Neonatais & Caderneta de Vacinação (PNI):
 Triagens: Pezinho: [Normal] | Olhinho (Reflexo Vermelho): [Presente e simétrico] | Orelhinha (EOA): [Passou bilateralmente] | Coraçãozinho: [Normal] | Linguinha: [Normal].
-Situação Vacinal: [Completa e em dia para a idade / Vacinas pendentes encaminhadas hoje: ___].
+Situação Vacinal: [Completa e em dia para a idade / Vacinas pendentes encaminhadas hoje].
 Exame FÍSICO Segmentar Completo:
 Geral: BEG, ativo, reativo, corado, hidratado, anictérico, acianótico. Fontanela anterior [plana e normotensa / fechada fisiologicamente].
 Cardiopulmonar: RCR em 2T, BNF sem sopros, pulsos femorais palpáveis e simétricos; MV presente bilateralmente sem ruídos adventícios.
-Abdome & Genitália/Quadril: Abdome flácido e indolor sem visceromegalias; coto/cicatriz umbilical íntegra. Manobras de Ortolani e Barlow [negativas, abdução simétrica dos quadris]. Genitália [masculina com testículos tópicos na bolsa / feminina sem sinéquia de pequenos lábios].
+Abdome & Genitália/Quadril: Abdome flácido e indolor sem visceromegalias; coto/cicatriz umbilical íntegra. Manobras de Ortolani e Barlow [negativas, abdução simétrica dos quadris]. Genitália [masculina com testículos tópicos na bolsa escrotal / feminina sem sinéquia de pequenos lábios].
 Vigilância dos Marcos do Desenvolvimento Neuropsicomotor (DNPM):
 Motricidade Grossa: [Adequado para a idade: sustenta cabeça (2–4m) / senta sem apoio (6–9m) / anda (12–15m) / corre (18–24m)].
-Motricidade Fina: [Adequado para a idade: abre as mãos e pega / transfere objetos (6m) / pinça polegar-indicador (9–12m) / rabisca e empilha blocos (18–24m)].
+Motricidade Fina: [Adequado para a idade: abre as mãos e pega objetos / transfere objetos (6m) / pinça polegar-indicador (9–12m) / rabisca e empilha blocos (18–24m)].
 Linguagem e Comunicação: [Adequado para a idade: vocaliza e sorri (2–4m) / balbucia sílabas (6–9m) / primeiras palavras com sentido (12m) / junta 2 palavras (18–24m)].
-Pessoal-Social (Sinais de Alerta TEA / M-CHAT): [Contato visual sustentado, sorriso social / Alerta identificado: ___].
+Pessoal-Social (Sinais de Alerta TEA / M-CHAT): [Contato visual sustentado / Alerta identificado].
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. Criança [eutrófica com velocidade de crescimento e / com alerta nutricional ou de desenvolvimento em].
+1. Criança [eutrófica com velocidade de crescimento / com alerta nutricional ou de desenvolvimento].
 2. Profilaxia de micronutrientes (Vitamina D e Ferro) e calendário vacinal revisados.
 
 # CONDUTA:
 
 >> CONDUTA DE PUERICULTURA & PREVENÇÃO DE ACIDENTES:
-1. Manter [Aleitamento Materno Exclusivo em livre demanda / Aleitamento materno + alimentação complementar].
+1. Manter [Aleitamento Materno Exclusivo em livre demanda até / Aleitamento materno + alimentação complementar].
 2. Suplementação Profilática (SBP / Ministério da Saúde):
    - Vitamina D3 (Colecalciferol): [400 UI/dia VO (< 12 meses) / 600 UI/dia VO (12 a 24 meses)].
-   - Ferro Elementar Profilático (SBP): [Ainda não iniciado (< 3–6m a termo sem fatores / Iniciar ou manter 1 mg/kg/dia VO a partir dos 6 / Iniciar 1 mg/kg/dia VO aos 3 meses / 2 a 4 mg/kg/dia VO desde 30 dias de vida].
+   - Ferro Elementar Profilático (SBP): [Ainda não iniciado (< 3–6m a termo sem fatores / Iniciar ou manter 1 mg/kg/dia VO a partir dos 6 meses / Iniciar 1 mg/kg/dia VO aos 3 meses / 2 a 4 mg/kg/dia VO desde 30 dias de vida (prematuro].
 3. Prevenção de Acidentes Domésticos e Sono Seguro: Orientados decúbito dorsal estrito no berço, transporte veicular no bebê-conforto/cadeirinha de costas para o painel, prevenção de quedas de trocador/cama, queimaduras, afogamentos e engasgos (proibição de grãos inteiros e peças pequenas).
 4. Agendado retorno de Puericultura para [ ] meses de idade (Cronograma MS: 1ª sem, 1m, 2m, 4m, 6m, 9m, 12m, 18m e 24m).
 
@@ -71,7 +71,7 @@ USO ORAL DIÁRIO:
 
 2. Sulfato Ferroso (ou Ferro Polimaltosado / Quelato) Solução Gotas ------------ 1 frasco
    (Concentração padrão: 25 mg de Ferro Elementar/mL ≈ 1 mg de Ferro Elementar por gota)
-   Dar [ ] gotas (Dose SBP: [1 mg/kg/dia a partir dos 6 meses (termo sem / 1 mg/kg/dia a partir dos 3 meses / 2 mg/kg/dia a partir de 30 dias / 3 a 4 mg/kg/dia a partir de 30 dias (< 1.500 g)]) por via oral, 1 vez ao dia, 30 minutos antes do almoço (preferencialmente junto com fruta cítrica rica em vitamina C, longe do leite), até os 24 meses.
+   Dar [ ] gotas (Dose SBP: [1 mg/kg/dia a partir dos 6 meses / 1 mg/kg/dia a partir dos 3 meses / 2 mg/kg/dia a partir de 30 dias / 3 a 4 mg/kg/dia a partir de 30 dias (< 1.500 g)]) por via oral, 1 vez ao dia, 30 minutos antes do almoço (preferencialmente junto com fruta cítrica rica em vitamina C, longe do leite), até os 24 meses.
 
 3. Soro Fisiológico 0,9% ------------------------------------------------------- 1 frasco
    Para higiene nasal com seringa de 3 a 5 mL em cada narina antes das mamadas e antes de dormir se houver congestão nasal.

@@ -11,25 +11,25 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # QP:
-Queimação no estômago (epigastralgia) e azia que sobe para o peito há [ ] dias/horas.
+Queimação no estômago e azia que sobe para o peito há [ ] dias/horas.
 
 # HMA:
-Refere dor em queimação localizada em região epigástrica iniciada há [ ], associada a sensação de azia retroesternal ascendente (pirose), regurgitação ácida na garganta, sensação de estômago cheio logo após começar a comer e eructações frequentes. Relata piora após ingestão de café, alimentos gordurosos ou ao se deitar após as refeições.
+Refere dor em queimação localizada em região epigástrica iniciada há [ ], associada a sensação de azia retroesternal ascendente, regurgitação ácida na garganta, sensação de estômago cheio logo após começar a comer e eructações frequentes. Relata piora após ingestão de café, alimentos gordurosos ou ao se deitar após as refeições.
 Nega dor precordial em aperto, queimação opressiva retroesternal ou peso no peito.
 Nega irradiação para mandíbula, pescoço, dorso ou membro superior esquerdo.
 Nega sudorese fria profusa, palidez, náuseas com sensação de morte iminente ou dispneia.
 [Se paciente com fatores de risco].
 Nega disfagia ou entalo alimentar.
-Nega odinofagia (dor para engolir).
+Nega odinofagia.
 Nega perda de peso involuntária inexplicada nos últimos meses.
 Nega vômitos recorrentes ou hematêmese.
-Nega fezes pretas com cheiro podre característico (melena).
+Nega fezes pretas com cheiro podre característico.
 Nega história familiar de câncer gástrico em parentes de 1º grau.
-[Nega uso recente de AINEs / Em uso crônico de AAS, Cetoprofeno, Ibuprofeno].
+[Nega uso recente de AINEs / Em uso crônico de AAS].
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

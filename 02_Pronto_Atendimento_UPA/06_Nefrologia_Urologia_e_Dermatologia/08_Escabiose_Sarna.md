@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # QP:
 Coceira no corpo todo que piora muito à noite há [ ] dias/semanas.
@@ -37,7 +37,7 @@ Infecção Secundária: [*Ausente / Presença de crostas melicéricas amareladas
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Escabiose / Sarna Humana (CID-10: B86).
-2. [Com impetiginização bacteriana secundária / Sem infecção bacteriana secundária].
+2. [Com impetiginização bacteriana secundária associada / Sem infecção bacteriana secundária].
 
 # CONDUTA:
 

@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade], Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outras: ___].
-Alergias: [+ *Nega / Outras: ___].
+Comorbidades: [+ *Hígido / Outras].
+Alergias: [+ *Nega / Outras].
 
 ATENDIMENTO PEDIÁTRICO — DOENÇAS EXANTEMÁTICAS FEBRIS NA INFÂNCIA & DOENÇA DE KAWASAKI
 IDENTIFICAÇÃO & ANTROPOMETRIA:
@@ -20,17 +20,17 @@ Criança [Nome], [Idade] anos/meses | Peso Atual: [ ] kg | Cartão Vacinal (Trí
 
 CRONOLOGIA DA FEBRE VS. EXANTEMA (CHAVE DO DIAGNÓSTICO DIFERENCIAL):
 - Tempo de Febre: [ ] dias (ATENÇÃO: Se febre alta persistente ≥ 5 dias, investigar obrigatoriamente Doença de Kawasaki!).
-- Relação Febre x Rash: [O exantema surgiu EXATAMENTE quando a febre / HHV-6)! / Exantema surgiu no pico da febre alta com / Exantema surgiu após 24–48h de odinofagia e / Criança afebril ou subfebril com "face].
+- Relação Febre x Rash: [O exantema surgiu EXATAMENTE quando a febre alta / HHV-6)! / Exantema surgiu no pico da febre alta com tosse / Exantema surgiu após 24–48h de odinofagia e febre → / Criança afebril ou subfebril com "face esbofeteada" →].
 
 EXAME FÍSICO DERMATOLÓGICO E DE MUCOSAS (CLASSIFICAÇÃO MORFOLÓGICA):
 - Sinais Vitais: Tax: [ ]°C | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]%. BEG, hidratada, sem sinais meníngeos ou petéquias/púrpura (Sinal da Vitrocompressão: lesões desaparecem à digitopressão — afasta meningococcemia!).
 - Padrão Clínico Identificado:
   * [1. Exantema Súbito: Lactente 6m–2a em ótimo].
   * [2. Eritema Infeccioso: Eritema malar bilateral].
-  * [3. Escarlatina (Streptococcus pyogenes)].
-  * [4. Doença Mão-Pé-Boca (Coxsackie A16 / Enterovírus 71): Vesículas ovaladas em palmas].
+  * [3. Escarlatina: Exantema micropapular áspero em "lixa"].
+  * [4. Doença Mão-Pé-Boca (Coxsackie A16 / Enterovírus 71): Vesículas ovaladas em palmas das mãos].
   * [5. Varicela (Catapora].
-  * [6. Doença de Kawasaki: Febre ≥ 5 dias + ≥ 4 de / lábios fissurados); (3) Adenopatia cervical].
+  * [6. Doença de Kawasaki: Febre ≥ 5 dias + ≥ 4 / lábios fissurados)].
 
 # PLANO / CONDUTA
 1. Exclusão Imediata de Emergências Exantemáticas: Verificar ausência de petéquias/púrpuras que não desaparecem à vitrocompressão (Meningococcemia / Febre Maculosa) e checar se há febre ≥ 5 dias com irritabilidade intensa (Doença de Kawasaki).

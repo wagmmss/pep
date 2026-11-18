@@ -11,19 +11,19 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # CONTEXTO DE ENTRADA: [Trazido por familiares / Resgatado pelo SAMU ou Polícia Militar / Descompensação aguda na sala de espera].
 
 # QP:
-[Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora / dia].
 
 # HMA:
 Paciente admitido com quadro de intensa agitação psicomotora, inquietação motora, desinibição verbal, agressividade [verbal / física direcionada a terceiros ou objetos], com discurso [desconexo / delirante paranoide / de grandiosidade / com alucinações auditivas e visuais].
 [ ] CAUSA PSIQUIÁTRICA PRIMÁRIA: Paciente com diagnóstico prévio de Esquizofrenia / Transtorno Bipolar em episódio maníaco / Transtorno de Personalidade em crise; relata abandono recente de antipsicóticos.
 [ ] CAUSA ORGÂNICA / DELIRIUM: Paciente idoso com quadro agudo flutuante de desorientação.
-[ ] CAUSA TÓXICA / ABSTINÊNCIA: Suspeita de intoxicação aguda por drogas de abuso estimulantes ou Síndrome de Abstinência Alcoólica (Delirium Tremens).
+[ ] CAUSA TÓXICA / ABSTINÊNCIA: Suspeita de intoxicação aguda por drogas de abuso estimulantes ou Síndrome de Abstinência Alcoólica.
 Nega histórico de trauma cranioencefálico recente ou cefaleia febril precedente.
 Sem porte de armas ou objetos perfurocortantes.
 
@@ -46,7 +46,7 @@ Risco de Auto ou Heteroagressão: [ELEVADO - RISCO IMINENTE DE VIOLÊNCIA FÍSIC
   * Haloperidol 5 mg VO (ou Risperidona 2 mg VO / Olanzapina 10 mg VO) + Clonazepam 2 mg VO.
 
 >> ETAPA 2: CONTENÇÃO FARMACOLÓGICA RÁPIDA (SE RECUSA OU AGRESSIVIDADE ATIVA):
-1. [SE SUSPEITA DE ABSTINÊNCIA ALCOÓLICA (DELIRIUM]:
+1. [SE SUSPEITA DE ABSTINÊNCIA ALCOÓLICA OU INTOXICAÇÃO]:
    - PRIMEIRA LINHA OBRIGATÓRIA: Benzodiazepínico + Tiamina Parenteral (EVITAR Haloperidol isolado pelo risco de convulsão e arritmia):
      * Diazepam 10 mg EV lento (1 a 2 mL/min) ou VO, repetindo a cada 10 a 20 min até sedação leve [OU Midazolam 5 a 10 mg IM/EV].
      * + Tiamina (Vitamina B1) 100 mg a 300 mg IM ou EV (fazer ANTES de qualquer infusão de glicose para prevenção de Encefalopatia de Wernicke).

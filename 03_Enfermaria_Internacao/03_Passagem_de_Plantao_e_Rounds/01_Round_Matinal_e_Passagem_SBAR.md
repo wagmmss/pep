@@ -17,27 +17,27 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Leito: [ ].
 
 # 1. [S] SITUATION (MANCHETE EXECUTIVA DO LEITO):
-- [? Leito :: Leito: ___ |]Paciente: [Nome], [Idade] anos | Equipe: [Clínica Médica / Cirurgia Geral / Terapia Intensiva]
-- Tempo de Internação: [ ]º DIH ([Não cirúrgico / ___ º DPO de ___])
+- Leito: [ ] |Paciente: [Nome], [Idade] anos | Equipe: [Clínica Médica / Cirurgia Geral / Terapia Intensiva]
+- Tempo de Internação: [ ]º DIH ([Não cirúrgico / º DPO])
 - Diagnóstico Principal Ativo: [ ]
-- Antimicrobiano em Curso: [Sem antibiótico / Em uso de ___]
-- Status de Gravidade / Código de Cuidado: [Estável em enfermaria / Vigilância aproximada (semi-intensivo) / Cuidados paliativos proporcionais definidos]
+- Antimicrobiano em Curso: [Sem antibiótico / Em uso]
+- Status de Gravidade / Código de Cuidado: [Estável em enfermaria / Vigilância aproximada / Cuidados paliativos proporcionais definidos]
 
 # 2. [B] BACKGROUND (CONTEXTO CLÍNICO & HISTÓRICO ESSENCIAL):
 - Motivo da Admissão: Internado(a) em [DD/MM/AAAA] por quadro de [ ].
-- Comorbidades de Base: [Hígido(a) / HAS / DM2 / IC (FE ___ %) / DRC estágio ___ / DPOC / Cirrose / Neoplasia: ___].
-- Intervenções Relevantes Realizadas na Internação: [Tratamento clínico exclusivo / Procedimento cirúrgico: ___ / Toracocentese / Paracentese / EDA / Transfusão].
-- Alergias Medicamentosas: [*Nega alergias / Alérgico(a) a: ___].
+- Comorbidades de Base: [Hígido / HAS / DM2 / IC / DRC estágio / DPOC / Cirrose / Neoplasia].
+- Intervenções Relevantes Realizadas na Internação: [Tratamento clínico exclusivo / Procedimento cirúrgico / Toracocentese / Paracentese / EDA / Transfusão].
+- Alergias Medicamentosas: [*Nega alergias / Alérgico (especificar)].
 
-# 3. [A] ASSESSMENT (AVALIAÇÃO DAS ÚLTIMAS 24H, EXAME & LABORATÓRIO):
-- Evolução nas Últimas 24h: [Estável, sem intercorrências no plantão / Apresentou pico febril de ___ °C / Apresentou dessaturação para ___ % / Episódio de hipotensão ou dor aguda].
-- Sinais Vitais Atuais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob O2 a ___ L/min]) | Tax máx 24h: [ ] °C.
-- Balanço Hídrico & Diurese (24h): Diurese: [ ] mL ([ ] mL/kg/h) | BH 24h: [Neutro / Positivo em + ___ mL / Negativo em - ___ mL].
-- Achados Físicos Positivos do Dia: [*Lúcido(a), eupneico(a), abdome flácido e / Alteração relevante: ___].
-- Dispositivos Ativos: [Acesso periférico em MSD / MSE D ___ / CVC em ___ D ___ / SVD / SNE / Dreno ___ com débito de ___ mL/24h].
+# 3. [Apresentou pico febril de °C] ASSESSMENT (AVALIAÇÃO DAS ÚLTIMAS 24H, EXAME & LABORATÓRIO):
+- Evolução nas Últimas 24h: [Estável, sem intercorrências no plantão / Apresentou pico febril de °C / Apresentou dessaturação para % / Episódio de hipotensão ou dor aguda].
+- Sinais Vitais Atuais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% ([em ar ambiente / sob O2 a L/min]) | Tax máx 24h: [ ] °C.
+- Balanço Hídrico & Diurese (24h): Diurese: [ ] mL ([ ] mL/kg/h) | BH 24h: [Neutro / Positivo em + mL / Negativo em - mL].
+- Achados Físicos Positivos do Dia: [*Lúcido, eupneico, abdome flácido e indolor / Alteração relevante].
+- Dispositivos Ativos: [Acesso periférico em MSD / MSE D / CVC em D / SVD / SNE / Dreno com débito de mL/24h].
 - Exames Laboratoriais e Culturas Recentes:
   * Hb: [ ] | Leuco: [ ] (Bast: [ ]%) | Plaq: [ ] | PCR: [ ] | Cr: [ ] | Ur: [ ] | Na: [ ] | K: [ ].
-  * Culturas / Imagem: [Sem pendências / Aguardando hemocultura/urocultura colhida em / Imagem: ___].
+  * Culturas / Imagem: [Sem pendências / Aguardando hemocultura/urocultura colhida em DD/MM / Imagem].
 
 # CONDUTA:
 
@@ -47,8 +47,8 @@ ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Leito: [ ].
    - Antimicrobiano: [Manter D / Transicionar para via oral hoje / Suspender antibiótico hoje].
    - Dispositivos: [Retirar SVD hoje / Sacar acesso venoso / Sacar dreno cirúrgico / Manter dispositivos].
 2. Pendências Objetivas para o Plantonista (Formato "Se X → Fazer Y"):
-   - Pendência 1 (Laboratório): Checar resultado de [Eletrólitos / Hb / Função renal / Cultura] às [HH:MM] -> [Se K < 3,5 mEq/L, repor KCl; se Hb < 7,0 g/dL].
-   - Pendência 2 (Imagem / Parecer): Cobrar realização/laudo de [TC / USG / Parecer da ___] -> [Conduta conforme achado: ___].
+   - Pendência 1 (Laboratório): Checar resultado de [Eletrólitos / Hb / Função renal / Cultura] às [HH:MM] -> [Se K < 3,5 mEq/L, repor KCl].
+   - Pendência 2 (Imagem / Parecer): Cobrar realização/laudo de [TC / USG / Parecer] -> [Conduta conforme achado].
    - Pendência 3 (Vigilância Clínica): Reavaliar [padrão respiratório / pressão arterial / diurese] às [HH:MM].
 3. Previsão de Alta Hospitalar: [Programada alta para (hoje / amanhã / em 48h) após conclusão de metas].
 ```

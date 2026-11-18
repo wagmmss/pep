@@ -10,29 +10,29 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / Climatério / Pós-menopausa há ___ anos].
-Comorbidades: [+ *Hígida / HAS / DM2 / Dislipidemia / Hipotireoidismo / Outros: ___].
-Alergias: [*Nega alergias medicamentosas / Alérgica a: ___].
-[? HF & Tabagismo :: HF Câncer (Mama < 50a / Ovário / Endométrio em 1º grau): *Nega / Positivo em: ___ / Tabagismo: *Nega / Sim.]
+ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / Climatério / Pós-menopausa há anos].
+Comorbidades: [+ *Hígida / HAS / DM2 / Dislipidemia / Hipotireoidismo / Outros].
+Alergias: [*Nega alergias medicamentosas / Alérgica (especificar)].
+HF Câncer (Mama < 50a / Ovário / Endométrio em 1º grau): *Nega / Positivo em: [ ] / Tabagismo: *Nega / Sim.
 - DUM: [DD/MM/AAAA] | Ciclos: [Regulares 28/28d, fluxo 4–5d normal / Irregulares / Sangramento uterino aumentado com coágulos / Amenorreia].
-- Contracepção / TRH Atual: [Nenhum / ACO: ___ / DIU de Cobre / SIU-LNG Mirena / Implanon / Injetável mensal ou trimestral / Preservativo].
+- Contracepção / TRH Atual: [Nenhum / ACO / DIU de Cobre / SIU-LNG Mirena / Implanon / Injetável mensal ou trimestral / Preservativo].
 - Rastreio Oncológico Prévio:
-  * Citopatológico / DNA-HPV: Último em [MM/AAAA] -> [*Normal (NILM) / Alterado: ___ / Nunca realizou].
+  * Citopatológico / DNA-HPV: Último em [MM/AAAA] -> [*Normal / Alterado / Nunca realizou].
   * Mamografia Bilateral: Última em [MM/AAAA] -> [BI-RADS 1 ou 2 / BI-RADS 0 / BI-RADS 3 / Não aplicável pela idade].
   * USG Transvaginal: Última em [MM/AAAA] -> [*Sem alterações / Miomatose uterina / Eco endometrial de mm].
 
 # QP:
-[*Rotina ginecológica preventiva / Corrimento vaginal / Sangramento uterino anormal / Fogachos e climatério / Outros: ___].
+[*Rotina ginecológica preventiva / Corrimento vaginal / Sangramento uterino anormal / Fogachos e climatério / Outros].
 
 # HMA:
-Comparece para [*rotina ginecológica preventiva anual / queixa de corrimento vaginal com prurido / queixa de corrimento com odor fétido (peixe) / sangramento uterino anormal / fogachos e ressecamento vaginal].
-Nega sinusorragia (sangramento pós-coito), sangramento pós-menopausa, dor pélvica aguda, dispareunia profunda, febre ou perda urinária.
+Comparece para [*rotina ginecológica preventiva anual assintomática / queixa de corrimento vaginal com prurido / queixa de corrimento com odor fétido / sangramento uterino anormal / fogachos e ressecamento vaginal].
+Nega sinusorragia, sangramento pós-menopausa, dor pélvica aguda, dispareunia profunda, febre ou perda urinária.
 
 # EXAME FÍSICO:
 Vitais & Antropometria: PA: [ ] mmHg | FC: [ ] bpm | Peso: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m². BEG, corada, hidratada.
 Exame Clínico das Mamas: Simétricas, sem retrações, abaulamentos ou alterações do complexo aréolo-papilar à inspeção estática e dinâmica. Palpação dos 4 quadrantes e região retroareolar sem nódulos dominantes ou espessamentos. Expressão papilar [negativa / descarga láctea bilateral]. Fossas axilares e supraclaviculares livres.
 Abdome & Genitália Externa: Abdome flácido, indolor, sem massas. Vulva eutrófica, pilificação habitual, sem úlceras, fissuras ou lesões verrucosas (condilomas); glândulas de Bartholin e Skene livres.
-Exame Especular: Paredes vaginais [tróficas e rugosas / hipotróficas], conteúdo vaginal [fisiológico hialino sem odor / branco grumoso aderente tipo "leite coalhado" / acinzentado fluido homogêneo com teste das / amarelo-esverdeado bolhoso com colpite focal]. Colo uterino centrado, epitelizado, sem lesões vegetantes ou friabilidade. Coleta de Citopatológico: [Realizada hoje (Ayre + cytobrush) sem / Não realizada por rastreio em dia].
+Exame Especular: Paredes vaginais [tróficas e rugosas / hipotróficas], conteúdo vaginal [fisiológico hialino sem odor / branco grumoso aderente tipo "leite coalhado" / acinzentado fluido homogêneo com teste / amarelo-esverdeado bolhoso com colpite focal]. Colo uterino centrado, epitelizado, sem lesões vegetantes ou friabilidade. Coleta de Citopatológico: [Realizada hoje sem intercorrências / Não realizada por rastreio em dia].
 Toque Bimanual: Colo fibroelástico, móvel, indolor à mobilização (Chandelier/Frenkel negativo). Útero em [AVF / RVF], tamanho normal, móvel e indolor. Anexos livres e indolores bilateralmente.
 
 # HIPÓTESES DIAGNÓSTICAS:
@@ -40,7 +40,7 @@ Toque Bimanual: Colo fibroelástico, móvel, indolor à mobilização (Chandelie
 
 # CONDUTA:
 >> CONDUTA AMBULATORIAL & RASTREAMENTO:
-1. Exames Solicitados: [Citopatológico de colo uterino colhido hoje / Mamografia bilateral de rastreamento / USG Pélvica Transvaginal / Sorologias ISTs + Perfil lipídico, glicemia e].
+1. Exames Solicitados: [Citopatológico de colo uterino colhido hoje / Mamografia bilateral de rastreamento / USG Pélvica Transvaginal / Sorologias ISTs + Perfil lipídico].
 2. Orientada higiene íntima fisiológica (sabonete neutro apenas na vulva externa, calcinha de algodão, proscritas duchas vaginais internas), proteção contra ISTs e autoexame de conscientização mamária.
 3. Retorno agendado com resultados de exames.
 
@@ -48,9 +48,9 @@ Toque Bimanual: Colo fibroelástico, móvel, indolor à mobilização (Chandelie
 [OPÇÃO A — CANDIDÍASE VULVOVAGINAL NÃO COMPLICADA]:
 1. Miconazol Nitrato 2% Creme Vaginal ---------------------------------- 1 bisnaga + 7 aplicadores
    Aplicar 1 aplicador cheio (5 g) via vaginal profunda, à noite ao deitar, durante 7 noites consecutivas.
-   [OU Fluconazol 150 mg: Tomar 1 cápsula via oral].
+   [OU Fluconazol 150 mg: Tomar 1 cápsula via oral em dose].
 
-[OPÇÃO B — VAGINOSE BACTERIANA (GARDNERELLA) / TRICOMONÍASE]:
+[OPÇÃO B — VAGINOSE BACTERIANA / TRICOMONÍASE]:
 1. Metronidazol [250 mg (2 cp 12/12h) / 400 mg (1 cp 12/12h)] ---------- 1 caixa
    Tomar 2 comprimidos de 250 mg (500 mg) via oral, de 12 em 12 horas, durante 7 dias consecutivos.
    [OU Metronidazol Gel Vaginal 100 mg/g (0,75%): 1].

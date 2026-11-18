@@ -10,22 +10,22 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
-Comorbidades: [+ *Hígida / HAS crônica / Pré-eclâmpsia prévia / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d (ou [ ]º dia de puerpério).
+Comorbidades: [+ *Hígida / HAS crônica / Pré-eclâmpsia prévia / Outros].
+Alergias: [*Nega / Outros].
 - Apresentação Clínica: [Pré-Eclâmpsia com sinais de gravidade / Iminência de Eclâmpsia / Eclâmpsia / Síndrome HELLP].
 
 # QP:
-[Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora / dia].
 
 # HMA:
-Queixas & Sinais de Iminência: [Cefaleia fronto-occipital intensa refratária a / Escotomas cintilantes, diplopia ou visão turva / Epigastralgia ou dor em barra no HCD (Sinal de / Náuseas e vômitos / Assintomática com PA >= 160x110 mmHg].
-Sintomas Cardiopulmonares & Obstétricos: [Nega dispneia ou ortopneia / Dispneia com estertores (EAP)] | [Nega sangramento vaginal ou hipertonia uterina / Refere dor abdominal e sangramento].
+[Cefaleia fronto-occipital intensa refratária / Escotomas cintilantes, diplopia ou visão turva / Epigastralgia ou dor em barra no HCD / Náuseas e vômitos / Assintomática com PA >= 160x110 mmHg].
+[Nega dispneia ou ortopneia / Dispneia com estertores] | [Nega sangramento vaginal ou hipertonia uterina / Refere dor abdominal e sangramento].
 
 # EXAME FÍSICO:
 SSVV: PA: [ ] mmHg (confirmada em 15 min) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA. Consciente, ECG [ ], pupilas isocóricas. Reflexos patelares: [Exaltados 3+/4+ ou 4+/4+ com clônus aquileu / Normoativos 2+/4+].
 Cardiopulmonar & Extremidades: RCR 2T BNF, MV+ bilateral [sem ruídos adventícios / com crepitações basais]. Edema de MMII/face [++/4+]. Diurese em SVD: [> 25] mL/h, clara.
-Exame Obstétrico: AU: [ ] cm | Tônus uterino: [Normal (sem hipertonia de DPP)] | DU: [*Ausente / ___ contrações/10 min] | BCF: [ ] bpm, rítmico | CTG: [Categoria I / Categoria II / Categoria III].
+Exame Obstétrico: AU: [ ] cm | Tônus uterino: [Normal] | DU: [*Ausente / contrações/10 min] | BCF: [ ] bpm, rítmico | CTG: [Categoria I / Categoria II / Categoria III].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. [Pré-Eclâmpsia Grave (CID-10: O14.1) / Iminência de Eclâmpsia (O14.1) / Eclâmpsia (O15.0) / Síndrome HELLP (O14.2)] em gestação de [ ]s[ ]d.
@@ -44,7 +44,7 @@ Exame Obstétrico: AU: [ ] cm | Tônus uterino: [Normal (sem hipertonia de DPP)]
 - Dose de Manutenção (1 g/h a 2 g/h EV contínuo por 24h): Diluir 20 mL de Sulfato de Magnésio 50% (10 g) em 480 mL de SF 0,9% ou SG 5% (volume total = 500 mL; concentração 20 mg/mL) e correr em BIC a 50 mL/h (= 1 g/h) [ou 100 mL/h = 2 g/h].
 - [Se nova convulsão após o ataque]: Fazer mais 2 g EV (4 mL de MgSO4 50% + 16 mL de SF 0,9%) em 5 a 10 minutos.
 
-[OPÇÃO 2 — ESQUEMA DE PRITCHARD (ATAQUE EV + IM / TRANSPORTE)]:
+[OPÇÃO 2 — ESQUEMA DE PRITCHARD (ATAQUE EV + IM — / TRANSPORTE)]:
 - Ataque (4 g EV + 10 g IM): 8 mL de MgSO4 50% (4 g) + 12 mL de AD/SF EV lento em 15–20 min MAIS 10 mL de MgSO4 50% (5 g) IM profundo em cada glúteo (total 10 g IM, associado a 1 mL de Lidocaína 2% sem vasoconstritor na mesma seringa).
 - Manutenção: 10 mL de MgSO4 50% (5 g) IM profundo de 4 em 4 horas (alternando glúteos), somente após checar: Reflexo Patelar presente, FR >= 16 irpm e Diurese >= 25 mL/h (100 mL em 4h).
 
@@ -54,7 +54,7 @@ Exame Obstétrico: AU: [ ] cm | Tônus uterino: [Normal (sem hipertonia de DPP)]
 - [OU Escolha 2]: Diluir 1 mL (20 mg) + 19 mL de Água Destilada (concentração = 1 mg/mL). Fazer 5 mL (5 mg) EV lento em 2 min; reavaliar PA em 20 min e repetir 5 a 10 mL (5–10 mg) EV a cada 20 min até controle (máx 20–30 mg).
 
 >> 4. DEFINIÇÃO OBSTÉTRICA & MATURAÇÃO PULMONAR:
-1. [Se IG < 34 semanas e quadro compensado sem]: Iniciar Betametasona 12 mg IM 24/24h (2 doses).
+1. [Se IG < 34 semanas e quadro compensado]: Iniciar Betametasona 12 mg IM 24/24h (2 doses).
 2. Resolução da Gestação (Interrupção após estabilização materna de 4–6h com MgSO4 e controle da PA): Indicada se IG >= 34 semanas (ou >= 37s na PE sem gravidade), ou em qualquer IG se Eclâmpsia, Síndrome HELLP, EAP, DPP, hipertensão refratária ou vitalidade fetal comprometida. Manter Sulfato de Magnésio por 24 horas pós-parto ou após a última crise.
 ```
 

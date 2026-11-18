@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penicilina / Outros].
 - Horário do Trauma: Há cerca de [ ] horas (Trauma ocorrido às [HH:MM]).
 - Mecanismo do Trauma: [Corte por vidro / Lâmina metálica / Queda da própria altura com impacto / Mordedura animal por cão ou gato / Objeto perfurocortante enferrujado / Acidente de trabalho].
 
@@ -34,7 +34,7 @@ Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penici
    - (Nota de segurança: Ausência de vasoconstritor em extremidades como dedos, dorso nasal, orelha ou pênis).
 3. Preparo Cirúrgico: Realizado desbridamento mínimo econômico de bordas teciduais desvitalizadas e hemostasia local por compressão e eletrocautério / pinçamento simples.
 4. Síntese Cirúrgica:
-   - [SE MORDEDURA ANIMAL (CÃO/GATO) OU FERIMENTO]:
+   - [SE MORDEDURA ANIMAL OU FERIMENTO]:
      * NÃO REALIZADA SUTURA PRIMÁRIA OCLUSIVA HERMÉTICA (risco altíssimo de infecção profunda/flegmão).
      * Realizada irrigação abundante e desbridamento; ferida mantida aberta para cicatrização por 2ª intenção ou apenas aproximação frouxa com fita/pontos simples espaçados (exceto se ferimento em face, onde se admite síntese cuidadosa após lavagem vigorosa).
    - [SE FERIMENTO CORTOCONTUSO LIMPO / NÃO MORDEDURA]:
@@ -49,10 +49,10 @@ Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penici
 - CONDUTA DE TÉTANO DEFINIDA:
   * [ ] Nenhuma intervenção antitetânica necessária no momento (vacinado há menos de 5 anos).
   * [ ] Administrada Vacina Dupla Adulto (dT) 0,5 mL IM no deltoide (reforço vacinal indicado).
-  * [ ] Administrada Vacina dT 0,5 mL IM + Imunoglobulina Humana Antitetânica (IGHAT) 250 UI IM profunda em sítio separado (ferimento grave em paciente não vacinado ou incerto) [OU Soro Antitetânico (SAT) 5.000 UI IM se IGHAT].
+  * [ ] Administrada Vacina dT 0,5 mL IM + Imunoglobulina Humana Antitetânica (IGHAT) 250 UI IM profunda em sítio separado (ferimento grave em paciente não vacinado ou incerto) [OU Soro Antitetânico 5.000 UI IM se IGHAT indisponível].
 
 # PROFILAXIA DA RAIVA HUMANA (SE MORDEDURA OU ARRANHADURA ANIMAL):
-- Animal Agressor: [Cão ou Gato passível de observação por 10 dias / Animal raivoso, desaparecido ou morto / Animal silvestre: morcego, macaco, raposa / Não se aplica (trauma não animal)].
+- Animal Agressor: [Cão ou Gato passível de observação por 10 dias / Animal raivoso, desaparecido ou morto / Animal silvestre: morcego, macaco, raposa / Não se aplica].
 - Tipo de Exposição: [Leve / Grave].
 - CONDUTA DE RAIVA DEFINIDA:
   * [ ] Animal (cão/gato) domiciliado e sadio: Paciente orientado a manter o animal em observação domiciliar por 10 dias. Não iniciado soro/vacina no momento. Se o animal adoecer ou morrer em 10 dias, retornar imediatamente para vacinação.

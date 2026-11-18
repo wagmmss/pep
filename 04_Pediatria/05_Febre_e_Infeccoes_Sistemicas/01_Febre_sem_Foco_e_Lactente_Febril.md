@@ -10,9 +10,9 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [dias / meses] (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [ ] [dias / meses] (DN: [DD/MM/AAAA]), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 - Antecedentes & Vacinação: Nascido a termo ([ ] semanas) sem intercorrências neonatais; Vacinação para Pneumococo e Haemophilus B: [*Completa para a idade (≥ 2 doses se > 4 meses) / Incompleta ou < 2 meses].
 - ESTRATIFICAÇÃO ETÁRIA CRÍTICA:
   * [GRUPO 1 — RECÉM-NASCIDO (0 A 28 DIAS DE VIDA)] -> Alto risco de Infecção Bacteriana Grave (10–15%): Internação hospitalar, triagem séptica completa com líquor e ATB venoso obrigatórios.
@@ -24,8 +24,8 @@ Febre aferida de até [ ] °C há [ ] [horas / dias], sem sintomas localizatóri
 
 # HMA:
 Responsável refere picos febris de até [ ] °C iniciados há [ ] horas/dias, a cada [ ] horas.
-Comportamento no Intervalo Afebril (Pós-Antitérmico): [Criança reanima completamente, sorri, interage / Permanece hipoativa, irritada ou gemente mesmo].
-Interrogatório Sistemático Negativo de Focos: Nega tosse, coriza, obstrução nasal, estridor, vômitos, diarreia, choro à micção ou urina fétida, lesões cutâneas ou recusa em movimentar algum membro.
+[Criança reanima completamente / Permanece hipoativa, irritada ou gemente mesmo afebril].
+Nega tosse, coriza, obstrução nasal, estridor, vômitos, diarreia, choro à micção ou urina fétida, lesões cutâneas ou recusa em movimentar algum membro.
 
 # EXAME FÍSICO:
 SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax atual: [ ] °C | TEC < 2s.
@@ -37,8 +37,8 @@ Otoscopia & Oroscopia: Membranas timpânicas translúcidas e sem abaulamento bil
 Cardiopulmonar & Abdome: MV presente sem crepitações e sem taquipneia; RCR 2T BNF sem sopros; abdome flácido e indolor.
 Osteoarticular: Mobilização passiva e ativa indolor de todas as articulações (quadris, joelhos, tornozelos, ombros).
 Exames Complementares Realizados na Emergência:
-Urina Tipo 1 (EAS) + Urocultura colhida por Cateterismo Vesical / Punção Suprapúbica (NUNCA usar saco coletor para urocultura!): [Não indicada / EAS normal (Leucócitos < 10.000/mL, Esterase e / EAS alterado compatível com ITU].
-Hemograma, PCR e Hemocultura: [Não solicitados / Leuco: ___ /mm³ / PCR: ___ mg/L / Procalcitonina: ___ ng/mL].
+Urina Tipo 1 (EAS) + Urocultura colhida por Cateterismo Vesical / Punção Suprapúbica (NUNCA usar saco coletor para urocultura!): [Não indicada / EAS normal (Leucócitos < 10.000/mL / EAS alterado compatível com ITU].
+Hemograma, PCR e Hemocultura: [Não solicitados / Leuco /mm³ / PCR mg/L / Procalcitonina ng/mL].
 Líquor (Punção Lombar): [Não indicada / Realizada (< 28 dias ou sinais de alto risco)].
 
 # HIPÓTESES DIAGNÓSTICAS:

@@ -11,23 +11,23 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / Outros: ___].
-Alergias: [*Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / Outros: ___].
+Comorbidades: [+ *Nega / DPOC / Asma / HAS / DM2 / Insuficiência Cardíaca / Neoplasia / Imunossupressão / Outros].
+Alergias: [*Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / Outros].
 
 # QP:
 Tosse com catarro, febre e dor no peito para respirar há [ ] dias.
 
 # HMA:
-Refere tosse produtiva há cerca de [ ] dias com escarro de aspecto [amarelado / purulento / ferruginoso], associada a picos febris diários (Tax [ ] °C) acompanhados de calafrios, astenia e dor torácica ventilatório-dependente em hemitórax [direito / esquerdo].
-C - Confusão mental aguda no exame (Glasgow < 15 ou desorientação) (+1)
-U - Ureia sérica > 50 mg/dL (BUN > 19 mg/dL) (+1)
-R - Respiração acelerada com FR >= 30 irpm (+1)
-PAS < 90 mmHg ou PAD <= 60 mmHg (+1)
-65 - Idade >= 65 anos (+1)
+Refere tosse produtiva há cerca de [ ] dias com escarro de aspecto [amarelado / purulento / ferruginoso], associada a picos febris diários acompanhados de calafrios, astenia e dor torácica ventilatório-dependente em hemitórax [direito / esquerdo].
+C - Confusão mental aguda no exame (Glasgow < 15 ou desorientação)
+U - Ureia sérica > 50 mg/dL (BUN > 19 mg/dL)
+R - Respiração acelerada com FR >= 30 irpm
+PAS < 90 mmHg ou PAD <= 60 mmHg
+65 - Idade >= 65 anos
 [ ] PONTOS
 Baixo risco de mortalidade -> TRATAMENTO AMBULATORIAL SEGURO EM DOMICÍLIO.
 Risco intermediário -> INTERNAÇÃO EM ENFERMARIA / OBSERVAÇÃO CLÍNICA EM UPA.
-CURB >= 3 pontos: Alto risco de gravidade -> INTERNAÇÃO HOSPITALAR COM AVALIAÇÃO DE UTI.
+Alto risco de gravidade -> INTERNAÇÃO HOSPITALAR COM AVALIAÇÃO DE UTI.
 Nega hemoptise volumosa ou sangramento respiratório ativo.
 Nega estridor respiratório, sensação de asfixia ou tiragem de fúrcula/intercostal.
 Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise.
@@ -36,7 +36,7 @@ Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise.
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente | Tax: [ ] °C.
 Geral: [Bom / Regular / Mau] estado geral, [lúcido / sonolento / confuso], corado, hidratado, acianótico, [eupneico / taquipneico com esforço respiratório leve].
 AR:
-Inspeção: Tórax simétrico, expansibilidade [preservada / discretamente diminuída em base do hemitórax].
+Inspeção: Tórax simétrico, expansibilidade [preservada / discretamente diminuída em base do hemitórax acometido].
 Palpação: Frêmito toracovocal (FTV) aumentado em [terço inferior do hemitórax direito / esquerdo].
 Percussão: Som claro pulmonar fisiológico [ou macicez / submacicez localizada em base].
 Ausculta Pulmonar: Murmúrio vesicular presente bilateralmente, com presença de estertores crepitantes teleinspiratórios em [base pulmonar direita / esquerda / terço médio], associados a broncofonia aumentada. Ausência de sibilos difusos.
@@ -59,7 +59,7 @@ ACV: RCR 2T, BNF, sem sopros audíveis. Extremidades perfundidas, TEC < 2s.
      [OU Opção B - Macrolídeo isolado]: Azitromicina 500 mg VO 1x/dia por 5 dias (ou Claritromicina 500 mg VO de 12/12h por 5 a 7 dias).
    - [PACIENTE COM COMORBIDADES]:
      Amoxicilina + Clavulanato 875/125 mg VO de 12/12h por 7 dias + Azitromicina 500 mg VO 1x/dia por 5 dias.
-     [OU]: Levofloxacino 750 mg VO 1x/dia por 5 dias (ou Moxifloxacino 400 mg VO 1x/dia por 5 a 7 dias).
+     [OU Opção B - Macrolídeo isolado]: Levofloxacino 750 mg VO 1x/dia por 5 dias (ou Moxifloxacino 400 mg VO 1x/dia por 5 a 7 dias).
 2. Analgesia & Antitérmico: Dipirona 1 g VO de 6/6h SOS se febre ou dor pleurítica.
 3. Hidratação oral vigorosa (mínimo 2 a 3 L/dia) e repouso.
 4. Reavaliação clínica obrigatória em 48 a 72 horas na UBS ou UPA se não houver melhora da febre.
@@ -80,7 +80,7 @@ ACV: RCR 2T, BNF, sem sopros audíveis. Extremidades perfundidas, TEC < 2s.
 RECEITUÁRIO MÉDICO — PNEUMONIA ADQUIRIDA NA COMUNIDADE (MANEJO AMBULATORIAL — CURB-65 = 0 OU 1)
 Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
 
-[OPÇÃO A — PACIENTE HÍGIDO SEM COMORBIDADES E]:
+[OPÇÃO A — PACIENTE HÍGIDO SEM COMORBIDADES E SEM USO]:
 1. Amoxicilina 500 mg (ou Amoxicilina 875 mg de 12/12h) ---------------------- 21 cápsulas
    Tomar 1 cápsula (ou 2 cápsulas = 1 g) por via oral de 8 em 8 horas durante 7 dias.
    *[OU Se suspeita de germe atípico / alergia leve]*: Azitromicina 500 mg — Tomar 1 comprimido VO 1x/dia por 5 dias (ou Claritromicina 500 mg VO 12/12h por 7 dias).
@@ -90,7 +90,7 @@ Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
    Tomar 1 comprimido por via oral de 12 em 12 horas, junto às refeições, durante 7 dias.
 2. ASSOCIADO A: Azitromicina 500 mg ------------------------------------------ 5 comprimidos
    Tomar 1 comprimido por via oral 1 vez ao dia durante 5 dias (Terapia combinada Beta-lactâmico + Macrolídeo).
-   *[OU Monoterapia Alternativa com Quinolona]*: Levofloxacino 750 mg — Tomar 1 comprimido VO 1x/dia por 5 dias (ou Moxifloxacino 400 mg VO 1x/dia por 5–7 dias).
+   *[OU Monoterapia Alternativa com Quinolona Respiratória]*: Levofloxacino 750 mg — Tomar 1 comprimido VO 1x/dia por 5 dias (ou Moxifloxacino 400 mg VO 1x/dia por 5–7 dias).
 
 [MEDICAÇÃO SINTOMÁTICA E SUPORTE]:
 3. Dipirona Monoidratada 1 g ------------------------------------------------- 1 caixa

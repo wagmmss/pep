@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / Outros].
 
 # QP:
 Vermelhidão, dor, inchaço e calor na pele [em perna / pé / braço / face] há [ ] dias.
@@ -22,7 +22,7 @@ Relata quadro de início há cerca de [ ] dias caracterizado por dor local progr
 [ ] ERISIPELA: Lesão cutânea eritematosa viva, brilhante, com BORDAS BEM DEMARCADAS E NÍTIDAS EM RELEVO, acometimento superficial da derme e linfáticos dérmicos.
 [ ] CELULITE INFECCIOSA: Lesão eritematosa mais profunda, com BORDAS IMPRECISAS E MAL DELIMITADAS, edema difuso sem relevo acentuado de margem.
 [ ] ABSCESSO CUTÂNEO: Nódulo eritematoso com coleção purulenta subcutânea flutuante central dolorosa à palpação.
-[Micose interdigital ("frieira"/tinea pedis) / Fissura plantar / Picada de inseto / Escoriação traumática / Úlcera vascular prévia / Não identificada].
+[Micose interdigital / Fissura plantar / Picada de inseto / Escoriação traumática / Úlcera vascular prévia / Não identificada].
 Nega dor desproporcionalmente intensa aos achados visuais da pele.
 Nega presença de gás ou estalidos/crepitação à palpação do tecido subcutâneo.
 Nega bolhas escuras hemorrágicas, necrose cutânea franca ou anestesia local no centro da lesão.
@@ -46,10 +46,10 @@ Palpação Linfática: Linfangite ascendente presente com estrias avermelhadas e
 >> [SE INDICAÇÃO DE TRATAMENTO HOSPITALAR / INTRAVENOSO NA UPA] (Febre alta, toxicidade sistêmica, linfangite extensa, comorbidades descompensadas ou intolerância oral):
 1. Hidratação venosa e repouso absoluto no leito com membro elevado.
 2. Antibioticoterapia Endovenosa na UPA:
-   - [Erisipela / Celulite grave sem abscesso - Cobertura]:
+   - [Erisipela / Celulite grave sem abscesso - Cobertura Estreptocócica]:
      Ceftriaxona 1 g a 2 g EV 1x/dia [OU Cefazolina 1 g a 2 g EV de 8/8 horas / Oxacilina 2 g EV de 4/4 horas].
-   - [Se alergia grave a beta-lactâmicos ou suspeita]:
-     Clindamicina 600 mg EV de 8/8 horas [OU Vancomicina 15 a 20 mg/kg EV de 12/12h se].
+   - [Se alergia grave a beta-lactâmicos ou suspeita de MRSA]:
+     Clindamicina 600 mg EV de 8/8 horas [OU Vancomicina 15 a 20 mg/kg EV de 12/12h se choque].
 3. Monitorar extensão da lesão marcada com caneta dermográfica a cada 12 horas.
 
 >> [SE ABSCESSO CUTÂNEO]: NOTA DE PROCEDIMENTO DE DRENAGEM CIRÚRGICA NA UPA:
@@ -65,10 +65,10 @@ Palpação Linfática: Linfangite ascendente presente com estrias avermelhadas e
 # RECEITA:
 1. Antibioticoterapia Oral de 1ª Linha (Duração de 7 a 10 dias):
    - Cefalexina 500 mg - Tomar 1 comprimido VO de 6/6 horas (a cada 6 horas) por 7 a 10 dias consecutivos.
-   - [OU]: Cefadroxila 500 mg VO de 12/12 horas por 10 dias.
-   - [SE SUSPEITA DE MRSA COMUNITÁRIO OU ALERGIA]:
+   - [OU Cefazolina 1 g a 2 g EV de 8/8 horas]: Cefadroxila 500 mg VO de 12/12 horas por 10 dias.
+   - [SE SUSPEITA DE MRSA COMUNITÁRIO OU ALERGIA SEVERA]:
      Sulfametoxazol + Trimetoprima (800/160 mg - Bactrim F) - Tomar 1 comprimido VO de 12/12h por 7 a 10 dias.
-     [OU]: Clindamicina 300 mg VO de 6/6 horas por 7 a 10 dias.
+     [OU Cefazolina 1 g a 2 g EV de 8/8 horas]: Clindamicina 300 mg VO de 6/6 horas por 7 a 10 dias.
 2. Analgesia e Anti-inflamatório:
    - Dipirona 1 g VO de 6/6h se dor ou febre.
 3. Tratamento da Porta de Entrada (Indispensável para não haver recidiva):

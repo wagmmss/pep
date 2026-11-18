@@ -17,14 +17,14 @@
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Leito: [ ].
 
 # 1. MANCHETE OBSTÉTRICA (IDENTIFICAÇÃO + PARTO + RISCO):
-"Preceptor(a), [? Leito :: Leito ___,][Nome], [Idade] anos[? G/P/A :: , G ___ P ___ A], no [1º / 2º / 3º] DPO de [Parto Normal sem intercorrências / Parto Normal com laceração de 2º grau / Cesariana por indicação] com IG de [ ]s[ ]d.
-- Antecedentes: [Hígida / HAG / Pré-eclâmpsia / DMG em dieta / Anemia / Outros: ___] | Alergias: [*Nega alergias / Alérgica a: ___].
-- Intraparto: [Sem intercorrências / Apresentou HPP por atonia revertida com]."
+"Preceptor(a), Leito [ ],[Nome], [Idade] anos, G [ ] P [ ], no [1º / 2º / 3º] DPO de [Parto Normal sem intercorrências / Parto Normal com laceração de 2º grau / Cesariana por indicação] com IG de [ ]s[ ]d.
+- Antecedentes: [Hígida / HAG / Pré-eclâmpsia / DMG em dieta / Anemia / Outros] | Alergias: [*Nega alergias / Alérgica (especificar)].
+- Intraparto: [Sem intercorrências / Apresentou HPP por atonia revertida]."
 
 # 2. EVOLUÇÃO (24H) & AMAMENTAÇÃO:
 "Passou as últimas 24h estável, afebril, deambulando sem ortostatismo e aceitando bem a dieta.
 - Dor & Eliminações: Dor [ausente / leve controlada com dipirona], diurese espontânea clara, flatos presentes, evacuação [presente / ausente] e lóquios fisiológicos sem odor. Nega cefaleia, escotomas, epigastralgia ou dispneia.
-- Amamentação: RN em AME sob livre demanda, com [boa pega, posicionamento adequado e papilas / ajuste de pega realizado]."
+- Amamentação: RN em AME sob livre demanda, com [boa pega, posicionamento adequado e papilas íntegras / ajuste de pega realizado]."
 
 # 3. EXAME FÍSICO DIRIGIDO:
 "Ao exame físico hoje:
@@ -36,14 +36,14 @@ ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Leito: [ ].
 
 # 4. AUDITORIA DE PRONTUÁRIO (DADOS MANDATÓRIOS DA CHEFIA):
 "- Imuno-hematologia: Mãe TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: , RN TS O+ / A+ / B+ / AB+ / O- / A- / B- / AB-, Coombs Direto negativo / Mãe Rh- com RN Rh+].
-- Sorologias & Vacinas: HIV, VDRL e HBsAg [não reagentes / Outros: ___], Toxo [imune / suscetível orientada].
-- Controles Específicos: [Curva pressórica normotensa < 140x90 mmHg / Glicemias capilares normais após suspensão de / Hb de controle pós-HPP: g/dL]."
+- Sorologias & Vacinas: HIV, VDRL e HBsAg [não reagentes / Outros], Toxo [imune / suscetível orientada].
+- Controles Específicos: [Curva pressórica normotensa < 140x90 mmHg / Glicemias capilares normais sem insulina / Hb de controle pós-HPP: g/dL]."
 
 # CONDUTA:
-1. Risco de TEV: [Baixo -> manter deambulação precoce / Alto -> manter Enoxaparina 40 mg SC/dia por].
+1. Risco de TEV: [Baixo -> manter deambulação precoce / Alto -> manter Enoxaparina 40 mg SC/dia por 10–15 dias].
 2. Analgesia & Suporte: Manter Dipirona 1 g 6/6h SOS [sem AINEs por ser hipertensa / + Ibuprofeno 600 mg 8/8h] + Sulfato Ferroso 40 mg Fe elementar/dia.
-3. Planejamento Reprodutivo: [Orientado método ponte com Desogestrel 75 / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / Outros: ___].
-4. Desfecho Proposto: [Condições de alta hospitalar hoje com receita / Manter internada por mais 24h para vigilância]."
+3. Planejamento Reprodutivo: [Ponte c/ Desogestrel 75 mcg/dia / Encaminhada à UBS para inserção de Implanon / Inserido Implanon antes da alta / Encaminhada à UBS para inserção de DIU / Inserido DIU de Cobre pós-placentário / Medroxiprogesterona 150 mg IM trimestral / Laqueadura tubária realizada / Preservativo / Outros].
+4. Desfecho Proposto: [Em condições de alta hoje com receita e retorno UBS 7d / Manter internada por mais 24h para vigilância]."
 ```
 
 ---

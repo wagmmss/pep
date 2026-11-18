@@ -10,42 +10,42 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Alérgico(a) a Penicilinas / Outros: ___].
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Alérgico a Penicilinas / Outros].
 
 # QP:
 Tosse, febre persistente e respiração rápida/cansada há [ ] dias.
 
 # HMA:
-Criança iniciou quadro de IVAS há [ ] dias, evoluindo há [ ] dias com febre alta persistente (Tax aferida de [ ] °C), tosse produtiva, queda do estado geral e percepção materna de "respiração acelerada / peito batendo rápido".
+Criança iniciou quadro de IVAS há [ ] dias, evoluindo há [ ] dias com febre alta persistente, tosse produtiva, queda do estado geral e percepção materna de "respiração acelerada / peito batendo rápido".
 Padrão Clínico-Etiológico:
 [PAC Bacteriana Típica]: Início agudo/hiperagudo de febre alta (> 38,5–39 °C), taquipneia, tosse, dor torácica/abdominal referida e prostração.
 [PAC Atípica]: Início insidioso, febre baixa, cefaleia, mialgia, tosse seca paroxística persistente e sibilância/estertores difusos.
-Tolerância Oral & Vacinação: Aceitação de líquidos e medicação por via oral [preservada sem vômitos / prejudicada por vômitos ou fadiga respiratória]; Vacina Pneumocócica 10-valente e Pentavalente (Hib): [Em dia / Incompleta].
+Aceitação de líquidos e medicação por via oral [preservada sem vômitos / prejudicada por vômitos ou fadiga respiratória]; Vacina Pneumocócica 10-valente e Pentavalente: [Em dia / Incompleta].
 
 # EXAME FÍSICO:
 SSVV:
 FREQUÊNCIA RESPIRATÓRIA: [ ] irpm -> Critério de Taquipneia OMS: [Positivo (≥ 60 se < 2m / ≥ 50 se 2–11m / ≥ 40 se 1–4a / ≥ 30 se ≥ 5a) / Limítrofe].
-Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92–94% — normoxêmica / < 92% — hipoxemia com indicação formal de]).
-FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / ___ segundos].
+Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92–94% — normoxêmica / < 92% — hipoxemia com indicação formal de internação]).
+FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / segundos].
 Geral: [Bom / Regular / Mau] estado geral, [alerta e reativa após defervescência / prostrada mesmo afebril], corada, hidratada, acianótica.
 Exame do Aparelho Respiratório:
-Inspeção: [Eupneica sem tiragens / Taquipneica sem retrações graves / Tiragem subcostal, intercostal, batimento de].
+Inspeção: [Eupneica sem tiragens / Taquipneica sem retrações graves / Tiragem subcostal].
 Palpação & Percussão: Expansibilidade [simétrica / reduzida em base (direita / esquerda)]; percussão [clara pulmonar / submaciça em base / maciça sugerindo derrame pleural].
-Ausculta Pulmonar: Murmúrio vesicular [presente bilateralmente com estertores / base esquerda / terço médio / reduzido em base ___ com sopro tubário / abolido na base sugerindo derrame pleural].
+Ausculta Pulmonar: Murmúrio vesicular [presente bilateralmente com estertores crepitantes / base esquerda / terço médio / reduzido em base com sopro tubário / abolido na base sugerindo derrame pleural].
 Exames Complementares (Solicitados apenas se PAC grave, internação ou dúvida diagnóstica):
-[Manejo ambulatorial clínico sem necessidade de / Radiografia de Tórax PA mostrando consolidação / RX com derrame pleural laminar/moderado].
+[Manejo ambulatorial clínico sem necessidade de RX / Radiografia de Tórax PA mostrando consolidação / RX com derrame pleural laminar/moderado].
 
 # HIPÓTESES DIAGNÓSTICAS & ESTRATIFICAÇÃO DE RISCO (SBP / OMS):
 1. Pneumonia Adquirida na Comunidade — PAC [Não Grave / Grave] (CID-10: J18.9).
 
 # CONDUTA:
 
->> [MODALIDADE A] CONDUTA AMBULATORIAL NA PAC NÃO GRAVE (> 2–3 MESES, SpO2 ≥ 92%, BOA ACEITAÇÃO ORAL):
+>> [MODALIDADE] CONDUTA AMBULATORIAL NA PAC NÃO GRAVE (> 2–3 MESES, SpO2 ≥ 92%, BOA ACEITAÇÃO ORAL):
 1. Antibioticoterapia de 1ª Escolha (Foco em *Streptococcus pneumoniae*):
    - Amoxicilina por via oral na dose de 50 a 90 mg/kg/dia dividida de 8/8h (formulação 250 mg/5 mL) ou de 12/12h (formulação 400 mg/5 mL) durante 7 dias (ou 10 dias se quadro extenso).
-   - *[Se ≥ 5 anos com quadro clínico clássico de PAC]*: Azitromicina 10 mg/kg/dia VO no D1 (máx 500 mg) seguido de 5 mg/kg/dia do D2 ao D5 (ou Claritromicina 15 mg/kg/dia de 12/12h por 7–10 dias).
+   - *[Se ≥ 5 anos com quadro clínico clássico de PAC Atípica]*: Azitromicina 10 mg/kg/dia VO no D1 (máx 500 mg) seguido de 5 mg/kg/dia do D2 ao D5 (ou Claritromicina 15 mg/kg/dia de 12/12h por 7–10 dias).
 2. Antitérmico/analgésico se febre ou dor pleurítica (Dipirona ou Paracetamol gotas) e hidratação oral vigorosa.
 3. REAVALIAÇÃO MÉDICA OBRIGATÓRIA EM 48 A 72 HORAS: Orientada a família que a criança DEVE ser reexaminada em 48–72h para confirmar defervescência e melhora da taquipneia (se mantiver febre em 48–72h, realizar RX de tórax para investigar derrame pleural parapneumônico ou resistência).
 

@@ -14,42 +14,42 @@
 [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 
 # IDENTIFICAÇÃO:
-- [? Leito :: Leito: ___ |]Paciente: [Nome], [Idade] anos | [ ]º Dia de Internação Hospitalar (DIH)
+- Leito: [ ] |Paciente: [Nome], [Idade] anos | [ ]º Dia de Internação Hospitalar (DIH)
 - Diagnóstico Principal: [ ]
 
 # CHECAGEM SISTEMÁTICA DOS 10 DOMINIOS (FAST HUG + BID):
 - [F] FEEDING (Nutrição e Via Alimentar):
   * Via atual: [Dieta via oral / Nutrição Enteral por SNE / Nutrição Parenteral / Jejum programado para procedimento].
   * Aceitação nas últimas 24h: [Plena (> 75% da oferta) / Parcial (50–75%) / Insuficiente (< 50%) — acionada Nutrição] | Meta: 25–30 kcal/kg/dia.
-- [A] ANALGESIA (Controle de Dor):
-  * Escala EVA (0–10): [EVA 0 (Sem dor) / EVA ___ em região ___].
-  * Esquema atual: [Analgesia multimodal eficaz sem sedação ou / Ajustada posologia analgésica hoje].
+- [Analgesia multimodal eficaz sem sedação ou constipação] ANALGESIA (Controle de Dor):
+  * Escala EVA (0–10): [EVA 0 / EVA em região].
+  * Esquema atual: [Analgesia multimodal eficaz sem sedação ou constipação / Ajustada posologia analgésica hoje].
 - [S] SEDATION & SENSORIUM (Nível de Consciência & Rastreio de Delirium):
   * Sensório: [*Alerta, lúcido e orientado (Glasgow 15 / RASS 0) / Sonolento / Agitado].
-  * Rastreio CAM-ICU (Delirium): [*Negativo (sem delirium) / Positivo].
+  * Rastreio CAM-ICU (Delirium): [*Negativo / Positivo].
 - [T] THROMBOPROPHYLAXIS (Profilaxia de TEV):
   * Risco (Pádua/Caprini): [Alto risco / Baixo risco] -> Conduta: [Enoxaparina 40 mg SC 1x/dia / HNF 5.000 UI SC 8/8h / Profilaxia mecânica / Deambulação assistida].
 - [H] HEAD OF BED (Cabeceira Elevada):
-  * Posicionamento: [Cabeceira mantida elevada a 30–45° para / Decúbito específico por restrição].
+  * Posicionamento: [Cabeceira mantida elevada a 30–45° para prevenção / Decúbito específico por restrição].
 - [U] ULCER PROPHYLAXIS (Profilaxia de Úlcera de Estresse):
-  * Indicação formal: [Não indicada (paciente em dieta oral sem / Indicada por VM > 48h, coagulopatia ou choque].
+  * Indicação formal: [Não indicada / Indicada por VM > 48h].
 - [G] GLYCEMIC CONTROL (Controle Glicêmico Hospitalar — Alvo 140 a 180 mg/dL):
   * Variação HGT 24h: Mínima de [ ] mg/dL | Máxima de [ ] mg/dL ([Sem episódios de hipoglicemia (< 70 mg/dL) / Esquema basal-bólus ajustado hoje]).
 - [B] BOWEL MOVEMENT (Função Intestinal):
-  * Última evacuação: [Hoje / Ontem / Ausente há ___ dias] | Aspecto: [Fisiológico (Bristol 3–4) / Ressecado (Bristol 1–2) / Diarreico (Bristol 6–7)].
+  * Última evacuação: [Hoje / Ontem / Ausente há dias] | Aspecto: [Fisiológico (Bristol 3–4) / Ressecado (Bristol 1–2) / Diarreico (Bristol 6–7)].
 - [I] INDWELLING CATHETERS (Auditoria de Dispositivos Invasivos):
-  * Acesso Venoso: [Periférico em MSD / MSE D ___ sem sinais de flebite / CVC em ___ D ___ com curativo limpo / Indicada retirada hoje].
+  * Acesso Venoso: [Periférico em MSD / MSE D sem sinais de flebite / CVC em D com curativo limpo / Indicada retirada hoje].
   * Sonda Vesical (SVD): [*Ausente / Retirada hoje para prevenção de ITU-AC / Mantida por controle estrito de diurese horária].
 - [D] DE-ESCALATION (Descalonamento de Antibióticos & Desospitalização):
-  * Antimicrobianos: [Sem antibiótico / Mantido esquema em D / Descalonado guiado por cultura / Transicionado para via oral (Switch Therapy) / Suspenso hoje].
+  * Antimicrobianos: [Sem antibiótico / Mantido esquema em D / Descalonado guiado por cultura / Transicionado para via oral / Suspenso hoje].
 
 # CONDUTA:
 
 >> AÇÕES IMEDIATAS RESULTANTES DO BUNDLE FAST HUG BID:
-1. Ajuste Nutricional & Hidratação: [Manter dieta atual / Progredir dieta oral / Ajustar vazão de dieta enteral para ___ mL/h].
-2. Desprescrição Segura (Stewardship): [Suspenso Omeprazol/IBP sem indicação formal / Suspensas medicações sedativas ou].
+1. Ajuste Nutricional & Hidratação: [Manter dieta atual / Progredir dieta oral / Ajustar vazão de dieta enteral para mL/h].
+2. Desprescrição Segura (Stewardship): [Suspenso Omeprazol/IBP sem indicação formal / Suspensas medicações sedativas ou anticolinérgicas].
 3. Retirada de Dispositivos Invasivos: [Retirar Sonda Vesical de Demora hoje / Sacar acesso venoso periférico ocioso / Sacar dreno cirúrgico].
-4. Regulação Intestinal & Glicêmica: [Prescrito laxativo osmótico (Lactulose 15 mL VO / Ajustada dose de Insulina NPH basal para ___ UI].
+4. Regulação Intestinal & Glicêmica: [Prescrito laxativo osmótico (Lactulose 15 mL VO 12/12h / Ajustada dose de Insulina NPH basal para UI].
 5. Meta de Desospitalização: [Reabilitação motora ativa com fisioterapia / 48) horas].
 ```
 

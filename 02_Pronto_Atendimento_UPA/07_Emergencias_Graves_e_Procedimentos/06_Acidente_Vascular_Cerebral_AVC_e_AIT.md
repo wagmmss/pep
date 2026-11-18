@@ -10,12 +10,12 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___][? Registro :: , Registro: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg, Leito: Sala Vermelha [ ], Registro: [ ].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 - Data e Hora do Início dos Sintomas / Última vez visto bem (Last Seen Well): [DD/MM/AAAA] às [HH:MM].
 - Tempo de Evolução dos Sintomas: [ ] horas e [ ] minutos.
-- Classificação Temporal: [JANELA DE TROMBÓLISE VÁLIDA (< 4,5 HORAS) / FORA DA JANELA (> 4,5 HORAS) / AVC DO DESPERTAR (WAKE-UP STROKE)].
+- Classificação Temporal: [JANELA DE TROMBÓLISE VÁLIDA (< 4,5 HORAS) / FORA DA JANELA (> 4,5 HORAS) / AVC DO DESPERTAR].
 
 # TRIAGEM RÁPIDA PRÉ-HOSPITALAR (ESCALA DE CINCINNATI):
 [ ] Queda Facial (Paralisia Facial): [Assimetria de rima labial ao sorrir / Desvio para (direita / esquerda) / Normal].
@@ -27,14 +27,14 @@ Alergias: [*Nega / Outros: ___].
 SSVV: PA: [ ]x[ ] mmHg (PAM: [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 Glicemia Capilar Imediata: [ ] mg/dL (Afastada e corrigida prontamente hipoglicemia < 60 mg/dL).
 Escala de Coma de Glasgow: [ ]/15 pontos (Ocular: [ ], Verbal: [ ], Motora: [ ]).
-Pupilas: Isocóricas e fotorreagentes [ou anisocóricas: ( )].
+Pupilas: Isocóricas e fotorreagentes [ou anisocóricas:].
 Escala de Gravidade do AVC (NIHSS - National Institutes of Health Stroke Scale):
 PONTUAÇÃO TOTAL DO NIHSS: [ ] PONTOS (AVC Menor <= 4 | Moderado 5-15 | Grave 16-20 | Muito Grave > 20).
 Detalhamento Executivo: [1a-Consciência: 0 | 1b-Perguntas: 0 | 1c-Comandos: 0 | 2-Olhar: 0 | 3-Campo Visual: 0 | 4-Paralisia Facial: 0 | 5a/5b-MMSS: 0/0 | 6a/6b-MMII: 0/0 | 7-Ataxia: 0 | 8-Sensibilidade: 0 | 9-Linguagem: 0 | 10-Disartria: 0 | 11-Negligência: 0].
 
 # INVESTIGAÇÃO COMPLEMENTAR IMEDIATA:
 - Tomografia Computadorizada de Crânio sem Contraste (Realizada às [HH:MM]):
-  * [Ausência de sangramento intracraniano agudo / Sinais precoces de isquemia no território da / Presença de hemorragia intraparenquimatosa ou].
+  * [Ausência de sangramento intracraniano agudo / Sinais precoces de isquemia no território da ACM / Presença de hemorragia intraparenquimatosa].
 - Laboratório Urgente: Hemograma com plaquetas (Plaquetas: [ ] /mm³), TP/INR: [ ], TTPA: [ ], Creatinina, Eletrólitos.
 - Eletrocardiograma de 12 Derivações: [Ritmo sinusal / Fibrilação atrial aguda ou crônica / Isquemia miocárdica aguda associada].
 
@@ -65,7 +65,7 @@ Detalhamento Executivo: [1a-Consciência: 0 | 1b-Perguntas: 0 | 1c-Comandos: 0 |
 1. Controle Pressórico Permissivo: Permitir hipertensão reativa autorreguladora para manter perfusão da área de penumbra. NÃO tratar PA a menos que PAS > 220 mmHg ou PAD > 120 mmHg.
 2. Antiagregação Plaquetária (iniciar após TC afastar hemorragia):
    - [Monoterapia]: AAS 100 a 300 mg VO (comprimido mastigado ou por SNE) 1x/dia.
-   - [OU Dupla Antiagregação - Se AVCi Menor com]:
+   - [OU Dupla Antiagregação - Se AVCi Menor com NIHSS <= 3]:
      AAS 160 a 300 mg VO mastigado + Clopidogrel 300 mg VO de ataque, mantendo Clopidogrel 75 mg/dia + AAS 100 mg/dia por 21 dias consecutivos, seguido de monoterapia.
 3. Estatina em Alta Potência: Atorvastatina 80 mg VO à noite.
 4. Normoglicemia (manter glicemia entre 140 e 180 mg/dL), normotermia (tratar qualquer febre > 37,5 °C com dipirona) e cabeceira a 0-30 graus.

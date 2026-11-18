@@ -11,13 +11,13 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # CONTEXTO: [Ingesta alcoólica pesada aguda / Suspeita de tentativa de autoextermínio / Acidente ocupacional com agrotóxico / Intoxicação medicamentosa acidental].
 
 # QP:
-[Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora / dia].
 
 # HMA:
 [Álcool etílico / Benzodiazepínicos / Antidepressivo Tricíclico / Agrotóxico / Cocaína/Crack / Paracetamol / Desconhecida].
@@ -25,16 +25,16 @@ Alergias: [*Nega / Sim: ___].
 Há cerca de [ ] horas/minutos.
 [ ] 1. TOXIDROME SEDATIVO-HIPNÓTICA / ALCOÓLICA: Rebaixamento do nível de consciência, fala pastosa/arrastada, ataxia da marcha, hiporreflexia, pupilas de tamanho habitual ou discretamente midriáticas.
 [ ] 2. TOXIDROME OPIÓIDE: Tríade clássica: Miose puntiforme bilateral + Depressão respiratória severa (FR < 8-10 irpm) + Coma.
-[ ] 3. TOXIDROME COLINÉRGICA: Miose puntiforme, bradicardia acentuada, sialorreia profusa ("baba contínua"), broncorreia intensa com estertores, sudorese, fasciculações musculares e diarreia.
-[ ] 4. TOXIDROME SIMPATICOMIMÉTICA (Cocaína, Crack, Anfetaminas): Agitação psicomotora violenta, midríase bilateral fotorreagente, taquicardia extrema, pico hipertensivo grave, sudorese profusa e hipertermia.
-[ ] 5. TOXIDROME ANTICOLINÉRGICA: Midríase paralítica fixa, pele seca e quente, taquicardia, retenção urinária aguda (bexigoma) e delírio agitado.
+[ ] 3. TOXIDROME COLINÉRGICA: Miose puntiforme, bradicardia acentuada, sialorreia profusa, broncorreia intensa com estertores, sudorese, fasciculações musculares e diarreia.
+[ ] 4. TOXIDROME SIMPATICOMIMÉTICA: Agitação psicomotora violenta, midríase bilateral fotorreagente, taquicardia extrema, pico hipertensivo grave, sudorese profusa e hipertermia.
+[ ] 5. TOXIDROME ANTICOLINÉRGICA: Midríase paralítica fixa, pele seca e quente, taquicardia, retenção urinária aguda e delírio agitado.
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 GLICEMIA CAPILAR (HGT) IMEDIATA: [ ] mg/dL (CONFERIDA NA ADMISSÃO).
 Ectoscopia & Nível de Consciência: [Sonolento / Em torpor / Comatoso com Glasgow / Agitado], hálito com odor etílico característico [ou odor de pesticida/solventes].
 Pupilas: [Isocóricas e fotorreagentes / Mióticas puntiformes bilaterais / Midriáticas bilaterais].
-Vias Aéreas & Respiração: [Vias aéreas pérvias com reflexos protetores de / Queda da base da língua com roncos e respiração / Broncorreia exuberante difusa com estertores].
+Vias Aéreas & Respiração: [Vias aéreas pérvias com reflexos protetores de tosse / Queda da base da língua com roncos e respiração / Broncorreia exuberante difusa com estertores bolhosos].
 ACV: Ritmo cardíaco [sinusal / taquicárdico / bradicárdico], pulsos periféricos palpáveis; perfusão periférica com enchimento capilar < 2s.
 
 # HIPÓTESES DIAGNÓSTICAS:
@@ -43,7 +43,7 @@ ACV: Ritmo cardíaco [sinusal / taquicárdico / bradicárdico], pulsos periféri
 
 # CONDUTA:
 
->> [MODALIDADE A]: INTOXICAÇÃO ALCOÓLICA AGUDA COM REBAIXAMENTO:
+>> [MODALIDADE]: INTOXICAÇÃO ALCOÓLICA AGUDA COM REBAIXAMENTO:
 1. Posicionamento Protetor: Manter em decúbito lateral para evitar broncoaspiração em caso de vômitos; cabeceira a 30 graus.
 2. TIAMINA (VITAMINA B1) OBRIGATÓRIA ANTES DE QUALQUER SORO COM GLICOSE:
    - Tiamina 100 mg EV lento direto agora (prevenção imediata de Encefalopatia de Wernicke e Síndrome de Korsakoff em etilistas crônicos).

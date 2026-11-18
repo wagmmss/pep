@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ], DUM: [DD/MM/AAAA].
-Comorbidades: [+ *Hígida / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+Comorbidades: [+ *Hígida / Outros].
+Alergias: [*Nega / Outros].
 - Indicação & Elegibilidade (OMS): Contracepção reversível de longa ação (LARC) [no menacme com β-hCG negativo / no pós-parto imediato]. Ausência de contraindicações Categoria 4 da OMS (nega câncer de mama, TVP/TEP agudo ou hepatopatia grave).
 - Consentimento & Lote: TCLE lido e assinado. Lote do dispositivo: [ ] | Validade de uso: 3 anos (até [DD/MM/AAAA]).
 
@@ -40,7 +40,7 @@ Alergias: [*Nega / Outros: ___].
 USO ORAL:
 1. [Dipirona Monoidratada 500 mg / Paracetamol 750 mg] ---------------- 1 caixa
    Tomar 1 comprimido via oral de 6 em 6 horas se dor no local da aplicação nos primeiros 2 dias.
-2. [Se surgirem escapes/spotting prolongados]:
+2. [Se surgirem escapes/spotting prolongados incômodos nos]:
    [Ácido Mefenâmico 500 mg / Ibuprofeno 600 mg] ------------------------- 1 caixa
    Tomar 1 comprimido via oral de 8 em 8 horas, após as refeições, por 5 dias.
 

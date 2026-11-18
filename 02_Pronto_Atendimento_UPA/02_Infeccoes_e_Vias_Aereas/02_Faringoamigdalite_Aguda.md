@@ -11,19 +11,19 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipirona / Outros].
 
 # QP:
-Dor de garganta intensa (odinofagia) e febre há [ ] dias.
+Dor de garganta intensa e febre há [ ] dias.
 
 # HMA:
 Paciente relata dor de garganta de início súbito há [ ] dias, que piora intensamente à deglutição, associada a febre de [ ] °C aferida em domicílio e mal-estar geral.
-Febre referida ou aferida > 38,0 °C (+1)
-Ausência de tosse (+1)
-Linfonodomegalia cervical anterior dolorosa à palpação (+1)
-Exsudato amigdaliano ou placas purulentas visíveis (+1)
-[3-14 anos (+1) / 15-44 anos (0) / >= 45 anos (-1)]
+Febre referida ou aferida > 38,0 °C
+Ausência de tosse
+Linfonodomegalia cervical anterior dolorosa à palpação
+Exsudato amigdaliano ou placas purulentas visíveis
+[3-14 anos / 15-44 anos (0) / >= 45 anos]
 [ ] PONTOS.
 Nega trismo.
 Nega sialorreia.
@@ -56,7 +56,7 @@ Ausculta Cardiopulmonar: Ritmo cardíaco regular em 2 tempos, sem sopros audíve
 [OPÇÃO A - SE BACTERIANA / CENTOR >= 3-4]:
 1. [Se não recebeu Penicilina Benzatina na unidade]:
    - Amoxicilina 500 mg - Tomar 1 comprimido VO de 8/8h por 10 dias completos (OBRIGATÓRIO completar 10 dias para prevenção de Febre Reumática e Glomerulonefrite).
-   - [OU]: Amoxicilina 875 mg - Tomar 1 comprimido VO de 12/12h por 10 dias.
+   - OU:: Amoxicilina 875 mg - Tomar 1 comprimido VO de 12/12h por 10 dias.
    - [SE ALÉRGICO A PENICILINAS]: Azitromicina 500 mg - Tomar 1 comprimido VO 1x/dia por 5 dias consecutivos (ou Claritromicina 500 mg VO 12/12h por 10 dias).
 2. Anti-inflamatório (para dor aguda): Ibuprofeno 600 mg VO de 8/8h após as refeições por 3 dias (ou Cetoprofeno 100 mg VO 12/12h por 3 dias).
 3. Analgésico: Dipirona 500 mg a 1 g VO de 6/6h se dor por 3 a 5 dias.

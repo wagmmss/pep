@@ -10,13 +10,13 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___][? Registro :: , Registro: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg, Leito: Sala Vermelha [ ], Registro: [ ].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 - Motivo da Avaliação na Sala Vermelha: [MODALIDADE A: HIPERCALEMIA GRAVE / MODALIDADE B: HIPONATREMIA AGUDA SINTOMÁTICA].
 
 =============================================================================
->> [MODALIDADE A]: PROTOCOLO DE HIPERCALEMIA GRAVE (;hiperk)
+>> [MODALIDADE A: HIPERCALEMIA GRAVE]: PROTOCOLO DE HIPERCALEMIA GRAVE (;hiperk)
 =============================================================================
 
 # DADOS LABORATORIAIS & HISTÓRIA:
@@ -72,7 +72,7 @@ Alergias: [*Nega / Outros: ___].
 # CONDUTA DE EMERGÊNCIA NA HIPONATREMIA GRAVE SINTOMÁTICA:
 1. Alvo Inicial de Segurança: Elevar a natremia sérica em 4 a 6 mEq/L nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.
 2. Infusão de Solução Salina Hipertônica a 3% (NaCl 3%):
-   - [Como preparar 500 mL de NaCl 3% na UPA se não]:
+   - [Como preparar 500 mL de NaCl 3% na UPA se não houver]:
      445 mL de Soro Fisiológico a 0,9% + 55 mL de NaCl a 20% (volume total = 500 mL a 3%).
    - Prescrição do Bólus de Ataque:
      Administrar 100 a 150 mL de NaCl a 3% EV em infusão rápida em 10 a 20 minutos (ou 2 mL/kg de peso).

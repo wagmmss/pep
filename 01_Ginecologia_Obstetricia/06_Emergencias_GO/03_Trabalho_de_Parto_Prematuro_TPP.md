@@ -10,17 +10,17 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [+ *Hígida / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ] | TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [+ *Hígida / Outros].
+Alergias: [*Nega / Outros].
 - IG Confirmada: [ ] semanas e [ ] dias (por USG de 1º trimestre) | Fatores de Risco: [Prematuridade prévia / Colo curto < 25 mm / Gemelaridade / ITU ativa / Nega fatores prévios].
 
 # QP:
-[Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora / dia].
 
 # HMA:
-Queixa Principal & HMA: Contrações uterinas dolorosas e rítmicas associadas a pressão pélvica e dor lombar há [ ] horas. Movimentação fetal presente.
-Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido, nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
+Contrações uterinas dolorosas e rítmicas associadas a pressão pélvica e dor lombar há [ ] horas. Movimentação fetal presente.
+Nega perda de líquido amniótico, nega sangramento vaginal vivo ou escuro, nega febre/calafrios ou corrimento fétido, nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
 
 # EXAME FÍSICO:
 SSVV: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C (afebril).

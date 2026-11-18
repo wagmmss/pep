@@ -10,38 +10,38 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [ ] [meses / anos] (6 a 60 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 # QP:
 Episódio de crise convulsiva em vigência de febre há [ ] minutos/horas.
 
 # HMA:
 Semiologia Detalhada do Evento Convulsivo:
-[Crise Generalizada Tônico-Clônica bilateral e / Crise Focal].
+[Crise Generalizada Tônico-Clônica bilateral / Crise Focal].
 [< 5 minutos / 5 a 14 minutos / ≥ 15 minutos].
-[Episódio único nas últimas 24 horas / Múltiplos episódios ( ___ crises) no mesmo].
-[Sonolência pós-ictal breve (< 30–60 min) com / Sonolência persistente ou déficit motor focal].
+[Episódio único nas últimas 24 horas / Múltiplos episódios no mesmo período de 24 horas].
+[Sonolência pós-ictal breve (< 30–60 min) com retorno / Sonolência persistente ou déficit motor focal].
 História da Febre e Antecedentes:
 [ ] °C.
-[Coriza e tosse leve (IVAS) / Dor de ouvido (OMA) / Diarreia aguda / Febre isolada (< 24h)].
+[Coriza e tosse leve / Dor de ouvido / Diarreia aguda / Febre isolada (< 24h)].
 DNPM prévio [normal para a idade]; Crises afebris prévias: [Nega]; História familiar de convulsão febril em pais/irmãos: [Positiva / Negativa]; Vacinação: [Completa em dia / Incompleta].
 
 # EXAME FÍSICO:
 SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Glicemia Capilar (HGT): [ ] mg/dL (Normoglicemia confirmada).
 Exame Neurológico Pós-Ictal (Após defervescência e recuperação do pós-ictal):
-Nível de Consciência: [*Alerta (Glasgow 15), interativo, reconhecendo / Ainda em sonolência pós-ictal imediata / Letárgico].
+Nível de Consciência: [*Alerta (Glasgow 15) / Ainda em sonolência pós-ictal imediata / Letárgico].
 Pupilas & Pares Cranianos: Pupilas isocóricas e fotorreagentes, motricidade ocular extrínseca preservada.
 Força Motora & Tônus: Movimentação ativa e simétrica dos 4 membros, sem déficits motores focais (Paralisia de Todd ausente).
 Pesquisa de Sinais Meníngeos: Fontanela anterior (se aberta) plana e normotensa; nuca livre sem rigidez; Sinais de Kernig e Brudzinski negativos.
 Exame Segmentar para Identificação do Foco da Febre:
 Pele: Íntegra, corada, sem petéquias ou sufusões hemorrágicas.
-Otoscopia & Oroscopia: [Faringe hiperemiada / Membrana timpânica abaulada e hiperemiada (OMA) / Sem foco aparente no exame inicial].
+Otoscopia & Oroscopia: [Faringe hiperemiada / Membrana timpânica abaulada e hiperemiada / Sem foco aparente no exame inicial].
 Cardiopulmonar e Abdome: MV presente bilateralmente sem ruídos adventícios; BNF 2T sem sopros; abdome flácido e indolor.
 
 # HIPÓTESES DIAGNÓSTICAS & CLASSIFICAÇÃO (SBP / AAP / ILAE):
-1. [Crise Convulsiva Febril Simples (Típica) / Crise Convulsiva Febril Complexa (Atípica)] (CID-10: R56.0).
+1. [Crise Convulsiva Febril Simples / Crise Convulsiva Febril Complexa] (CID-10: R56.0).
 2. Etiologia da Febre: [IVAS viral / Otite Média Aguda / Exantema Súbito em fase febril / Gastroenterite].
 
 # CONDUTA:
@@ -55,7 +55,7 @@ Cardiopulmonar e Abdome: MV presente bilateralmente sem ruídos adventícios; BN
 >> [ETAPA 2] CONDUTA PÓS-CRISE NA CONVULSÃO FEBRIL SIMPLES (CRIANÇA JÁ FORA DE CRISE):
 1. Administrar antitérmico (Dipirona ou Paracetamol) para conforto térmico e tratar o foco infeccioso identificado.
 2. Propedêutica Racional (Diretrizes AAP / SBP — Choosing Wisely):
-   - Punção Lombar (LCR): [Não indicada / Indicada por sinais meníngeos, letargia].
+   - Punção Lombar (LCR): [Não indicada / Indicada por sinais meníngeos].
    - Neuroimagem (TC de Crânio), EEG e Eletrólitos de Rotina: NÃO indicados na Convulsão Febril Simples típica com exame neurológico normal.
 3. Observação Clínica na Emergência por 2 a 4 Horas: Confirmada recuperação neurológica basal completa, criança afebril, ativa, aceitando líquidos por via oral e pais tranquilos e orientados -> Alta segura com plano de ação domiciliar.
 

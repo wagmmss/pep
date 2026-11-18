@@ -11,26 +11,26 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / Outros].
 
 # QP:
 Dor lombar insuportável em cólica de início súbito há [ ] horas.
 
 # HMA:
-Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa. Intensidade [ ] na escala analógica.
+Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa. Intensidade [ ] na escala analógica.
 Sintomas Vegetativos & Urinários Associados:
-Náuseas intensas e vômitos ([ ] episódios) desencadeados pelo reflexo autonômico celíaco.
+Náuseas intensas e vômitos desencadeados pelo reflexo autonômico celíaco.
 Paciente inquieto, move-se constantemente e não encontra posição de alívio na maca.
-Sintomas de irritação ureterovesical distal: Polaciúria, disúria e sensação de urgência miccional.
-Hematúria [macroscópica com urina cor de refrigerante de / microscópica na fita reativa].
-[ ] Febre (Tax >= 37,8 °C) ou calafrios referidos.
+Polaciúria, disúria e sensação de urgência miccional.
+Hematúria [macroscópica com urina cor de refrigerante de cola / microscópica na fita reativa].
+[ ] Febre ou calafrios referidos.
 [ ] Rim único funcionante ou rim transplantado.
 [ ] Anúria persistente ou oligúria severa.
 [ ] Dor intratável refratária à analgesia venosa potente na UPA.
 [ ] Gestante em vigência de cólica nefrética.
-[TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: ___].
-[Episódios prévios conhecidos de litíase / Primeiro episódio da vida].
+[TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE].
+[Episódios prévios conhecidos de litíase urinária / Primeiro episódio da vida].
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).

@@ -11,30 +11,30 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso estimado: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 # QP:
 Manchas vermelhas pelo corpo que coçam muito / Inchaço nos lábios / Falta de ar há [ ] minutos.
 
 # HMA:
-Relata aparecimento agudo há cerca de [ ] minutos de placas avermelhadas na pele com intenso prurido, sensação de calor e formigamento difuso, acompanhadas de inchaço (angioedema) em [lábios / pálpebras / orelhas / face / mãos].
-[ ] Ingestão alimentar recente: [Frutos do mar/camarão / Amendoim/castanhas / Ovos / Leite / Outro: ___].
-[ ] Medicamentos recentes: [Uso de anti-inflamatórios / Antibióticos (Amoxicilina/Penicilina) / Dipirona / IECA].
+Relata aparecimento agudo há cerca de [ ] minutos de placas avermelhadas na pele com intenso prurido, sensação de calor e formigamento difuso, acompanhadas de inchaço em [lábios / pálpebras / orelhas / face / mãos].
+[ ] Ingestão alimentar recente: [Frutos do mar/camarão / Amendoim/castanhas / Ovos / Leite / Outro].
+[ ] Medicamentos recentes: [Uso de anti-inflamatórios / Antibióticos / Dipirona / IECA].
 [ ] Picada de inseto: [Abelha / Vespa / Formiga de fogo].
 [ ] Contato com látex ou substância química tópica.
 [ ] PELE & MUCOSA: Urticária difusa, prurido, rubor e/ou angioedema de lábios, língua ou úvula.
 [ ] APARELHO RESPIRATÓRIO: Dispneia, estridor laríngeo inspiratório, sensação de garganta fechando, voz rouca súbita, sibilos difusos ou SpO2 < 92%.
-[ ] APARELHO CARDIOVASCULAR: Hipotensão arterial (PAS < 90 mmHg ou queda > 30% da basal), síncope, tontura severa com lipotímia, extremidades frias e pulso filiforme.
+[ ] APARELHO CARDIOVASCULAR: Hipotensão arterial, síncope, tontura severa com lipotímia, extremidades frias e pulso filiforme.
 [ ] TRATO GASTROINTESTINAL: Dor abdominal em cólica intensa súbita, vômitos em jato repetidos ou diarreia aguda incoercível.
-[ ] URTICÁRIA AGUDA / ANGIOEDEMA ISOLADO (Sem sintomas respiratórios ou hemodinâmicos).
+[ ] URTICÁRIA AGUDA / ANGIOEDEMA ISOLADO.
 [ ] ANAFILAXIA GRAVE EM CURSO.
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.
 Ectoscopia & Pele: Placas eritematosas e edematosas (urticas) confluentes de tamanhos variados, com halo eritematoso e clareamento central, pruriginosas, disseminadas em tronco e membros. Presença de angioedema assimétrico em [lábio superior/inferior, pálpebras].
-Oroscopia & Vias Aéreas: [Úvula centrada sem edema, orofaringe pérvia sem / Presença de edema de úvula e pilares].
-AR: [Murmúrio vesicular limpo sem ruídos adventícios / Presença de estridor inspiratório laríngeo e/ou].
+Oroscopia & Vias Aéreas: [Úvula centrada sem edema / Presença de edema de úvula e pilares amigdalianos].
+AR: [Murmúrio vesicular limpo sem ruídos adventícios / Presença de estridor inspiratório laríngeo].
 ACV: Ritmo cardíaco taquicárdico regular, pulsos [cheios / filiformes e débeis], TEC [ ] segundos.
 
 # HIPÓTESES DIAGNÓSTICAS:
@@ -60,7 +60,7 @@ ACV: Ritmo cardíaco taquicárdico regular, pulsos [cheios / filiformes e débei
    - Corticoide Sistêmico (Prevenção de Reação Bifásica tardia): Hidrocortisona 500 mg EV [ou Metilprednisolona 125 mg EV / Dexametasona 10 mg EV].
    - Beta-2 Agonista se broncoespasmo associado: Salbutamol 4 a 8 jatos com espaçador.
 
->> [MODALIDADE 2 - SE URTICÁRIA AGUDA / REAÇÃO LEVE A MODERADA (SEM ANAFILAXIA)]:
+>> [MODALIDADE 2 - SE URTICÁRIA AGUDA / REAÇÃO LEVE A MODERADA]:
 1. Conduta na Unidade:
    - Dexametasona 4 a 10 mg EV ou IM agora.
    - Prometazina 25 a 50 mg IM profunda no glúteo (ou Difenidramina 50 mg EV lento).

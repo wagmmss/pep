@@ -11,18 +11,18 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # QP:
 Falta de ar, chiado no peito e tosse seca há [ ] horas/dias.
 
 # HMA:
-Paciente com diagnóstico conhecido de asma brônquica [ou primeiro episódio de sibilância] relata piora progressiva da dispneia há cerca de [ ] horas, acompanhada de chiado audível sem estetoscópio, opressão torácica e tosse seca paroxística. Relata fator desencadeante: [sintomas gripais recentes / exposição a alérgenos / poeira / mudança de clima / abandono da medicação de manutenção]. Fez uso prévio de bombinha em casa ([ ] jatos) com alívio transitório e recidiva rápida.
+Paciente com diagnóstico conhecido de asma brônquica [ou primeiro episódio de sibilância] relata piora progressiva da dispneia há cerca de [ ] horas, acompanhada de chiado audível sem estetoscópio, opressão torácica e tosse seca paroxística. Relata fator desencadeante: [sintomas gripais recentes / exposição a alérgenos / poeira / mudança de clima / abandono da medicação de manutenção]. Fez uso prévio de bombinha em casa com alívio transitório e recidiva rápida.
 Fala em frases completas, prefere ficar sentado, FR aumentada, FC 100-120 bpm, SpO2 90-95% em ar ambiente.
-Fala apenas palavras isoladas/entrecortadas, postura curvada para a frente, agitado, uso evidente de musculatura acessória (tiragem intercostal), FC > 120 bpm, FR > 30 irpm, SpO2 < 90%.
-RISCO IMINENTE DE PARADA (ASMA QUASE FATAL): Sonolência, confusão mental, respiração paradoxal toracoabdominal, bradicardia e TÓRAX SILENCIOSO.
-[Nega / Histórico prévio de intubação orotraqueal por / Internação em UTI no último ano / Múltiplas idas à UPA no último mês].
+Fala apenas palavras isoladas/entrecortadas, postura curvada para a frente, agitado, uso evidente de musculatura acessória, FC > 120 bpm, FR > 30 irpm, SpO2 < 90%.
+Sonolência, confusão mental, respiração paradoxal toracoabdominal, bradicardia e TÓRAX SILENCIOSO.
+[Nega / Histórico prévio de intubação orotraqueal por asma / Internação em UTI no último ano / Múltiplas idas à UPA no último mês].
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
@@ -53,7 +53,7 @@ ACV: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas s
    - Prednisona 40 a 60 mg VO de imediato (via oral é rápida e tem a mesma eficácia que a via venosa).
    - [OU se paciente grave/vomitando]: Metilprednisolona 60 mg a 125 mg EV [ou Hidrocortisona 200 mg a 300 mg EV].
 
-4. [SE CRISE GRAVE OU REFRATÁRIA APÓS 3 CICLOS DE]:
+4. [SE CRISE GRAVE OU REFRATÁRIA APÓS 3 CICLOS]:
    - Sulfato de Magnésio 50% (4 mL = 2 g) diluídos em 100 mL de SF 0,9% EV correr em 20 minutos (potente broncodilatador que relaxa a musculatura lisa brônquica e previne intubação).
 
 5. REAVALIAÇÃO CLÍNICA APÓS 1 HORA:
@@ -64,7 +64,7 @@ ACV: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas s
 1. Corticoide Oral (prevenção precoce de recaída):
    - Prednisona 40 mg a 50 mg - Tomar 1 comprimido VO pela manhã por 5 a 7 dias (não necessita de desmame se <= 7 dias).
 2. Terapia de Manutenção & Alívio com Corticoide Inalatório (Diretriz GINA - contraindicado uso de broncodilatador isolado sem corticoide inalatório):
-   - [OPÇÃO PREFERENCIAL GINA - LABA + CORTICOIDE]:
+   - [OPÇÃO PREFERENCIAL GINA - LABA + CORTICOIDE INALATÓRIO]:
      * Fumarato de Formoterol + Budesonida (200/6 mcg ou 400/12 mcg): Inalar 1 cápsula/jato de 12 em 12 horas de uso contínuo + 1 inalação de resgate se falta de ar.
    - [OPÇÃO ALTERNATIVA DA REDE BÁSICA]:
      * Budesonida spray 200 mcg: Inalar 1 a 2 jatos de 12/12h de uso contínuo.

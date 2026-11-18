@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # HISTÓRICO: [Diabetes Mellitus tipo 1 / Diabetes Mellitus tipo 2 sob insulinoterapia / Primeiro diagnóstico de diabetes].
 
@@ -20,12 +20,12 @@ Alergias: [*Nega / Sim: ___].
 Fraqueza extrema, vômitos, dor na barriga e respiração ofegante há [ ] horas/dias.
 
 # HMA:
-Relata quadro de descompensação há cerca de [ ] dias caracterizado pela tétrade de hiperglicemia clássica: poliúria, polidipsia intensa (sede insaciável), polifagia e perda ponderal rápida, evoluindo nas últimas 24 horas com náuseas, vômitos repetidos, dor abdominal difusa em cólica e respiração profunda e cansada.
+Relata quadro de descompensação há cerca de [ ] dias caracterizado pela tétrade de hiperglicemia clássica: poliúria, polidipsia intensa, polifagia e perda ponderal rápida, evoluindo nas últimas 24 horas com náuseas, vômitos repetidos, dor abdominal difusa em cólica e respiração profunda e cansada.
 [ ] Infecção aguda precipitante.
 [ ] Omissão ou suspensão inadvertida da dose de Insulina basal.
 [ ] Infarto agudo do miocárdio silencioso ou AVC agudo.
 Nega cirurgia abdominal recente ou hematêmese.
-Nega uso de drogas simpatomiméticas ilícitas (cocaína).
+Nega uso de drogas simpatomiméticas ilícitas.
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg (hipotensão postural) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (hiperpneia) | SpO2: [ ]% | Tax: [ ] °C.

@@ -10,9 +10,9 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___][? Registro :: , Registro: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg, Leito: Sala Vermelha [ ], Registro: [ ].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 - Queixa Principal: Palpitações taquicárdicas súbitas no peito há cerca de [ ] horas.
 - Antecedentes Cardiovasculares: [Hipertensão / Insuficiência Cardíaca / DAC prévia / FA paroxística / Uso prévio de antiarrítmicos / Nega cardiopatia].
 
@@ -38,7 +38,7 @@ Diagnóstico Eletrocardiográfico Definido:
 
 # CONDUTA:
 
->> [MODALIDADE A]: PACIENTE INSTÁVEL (PRESENÇA DE QUALQUER UM DOS 5 SINAIS DE GRAVIDADE):
+>> [MODALIDADE]: PACIENTE INSTÁVEL (PRESENÇA DE QUALQUER UM DOS 5 SINAIS DE GRAVIDADE):
 1. Cardioversão Elétrica Sincronizada (CVE) Imediata na Sala Vermelha:
    - Paciente posicionado em decúbito dorsal horizontal, oxigênio suplementar sob máscara.
    - Monitor/desfibrilador bifásico conectado às pás adesivas (posição ântero-apical).
@@ -64,19 +64,19 @@ Diagnóstico Eletrocardiográfico Definido:
 1. CHECAGEM OBRIGATÓRIA ANTES DO CONTROLE DE FREQUÊNCIA:
    - ALERTA CRÍTICO: Contraindicação absoluta ao bloqueio do nó AV (Metoprolol, Diltiazem, Verapamil, Deslanosídeo, Adenosina e Amiodarona) se suspeita de FA pré-excitada / Wolff-Parkinson-White (QRS largo, bizarro e irregularmente irregular). Bloquear o nó AV nessa condição desvia a condução 100% para a via acessória, precipitando Fibrilação Ventricular e PCR fatal imediata. Em FA pré-excitada, a conduta é cardioversão elétrica imediata ou procainamida.
 2. Controle de Frequência Cardíaca (Meta inicial: FC < 110 bpm em repouso - QRS estreito habitual):
-   - [Paciente Sem Insuficiência Cardíaca]:
+   - [Paciente Sem Insuficiência Cardíaca Descompensada]:
      * Metoprolol (Seloken) 5 mg EV lento em 2 minutos. Pode repetir a cada 5 minutos até dose máxima de 15 mg.
-     * [OU]: Diltiazem 0,25 mg/kg EV em 2 minutos (dose média: 15 a 20 mg EV).
+     * [OU Diltiazem 0,25 mg/kg EV lento em 2 min]: Diltiazem 0,25 mg/kg EV em 2 minutos (dose média: 15 a 20 mg EV).
    - [Paciente Com Insuficiência Cardíaca Aguda / Fração de Ejeção Reduzida]:
      * Deslanosídeo (Cedilanide) 0,4 mg (1 ampola = 2 mL) EV diluído em 20 mL de SF 0,9% lento.
-     * [OU]: Amiodarona 150 mg a 300 mg EV diluídos em 100 mL de SG 5% infundidos em 20 a 30 minutos.
+     * [OU Diltiazem 0,25 mg/kg EV lento em 2 min]: Amiodarona 150 mg a 300 mg EV diluídos em 100 mL de SG 5% infundidos em 20 a 30 minutos.
 3. Definição do Tempo de Início da Arritmia (Janela de Reversão de Ritmo):
    - [FA iniciada há < 48 horas documentadas]: Paciente elegível para reversão química (Amiodarona 300 mg EV em 1h + manutenção de 900 mg em 24h) ou elétrica com baixo risco tromboembólico.
-   - [FA iniciada há >= 48 horas ou de tempo]: PROIBIDA reversão de ritmo de rotina na UPA sem anticoagulação prévia por 3 semanas ou ECO transesofágico (risco de embolização de trombo atrial e AVC isquêmico extenso). A conduta na UPA deve ser estritamente o controle da frequência ventricular.
+   - [FA iniciada há >= 48 horas ou de tempo indeterminado]: PROIBIDA reversão de ritmo de rotina na UPA sem anticoagulação prévia por 3 semanas ou ECO transesofágico (risco de embolização de trombo atrial e AVC isquêmico extenso). A conduta na UPA deve ser estritamente o controle da frequência ventricular.
 4. Estratificação de Risco Tromboembólico - Escore CHA2DS2-VASc:
    - Escore CHA2DS2-VASc Total: [ ] PONTOS (Homem >= 2 ou Mulher >= 3: anticoagulação indicada).
    - Detalhamento: [C-Insuf.Cardíaca(1): 0 | H-Hipertensão(1): 0 | A2-Idade>=75a(2): 0 | D-Diabetes(1): 0 | S2-AVC/AIT(2): 0 | V-Vascular(1): 0 | A-Idade 65-74a(1): 0 | Sc-Sexo Fem(1): 0].
-   - Conduta de Anticoagulação: [Sem indicação (baixo risco) / Indicada anticoagulação oral plena (DOAC / Rivaroxabana 20 mg VO 1x/dia com alimento)].
+   - Conduta de Anticoagulação: [Sem indicação / Indicada anticoagulação oral plena (DOAC: Apixabana 5 / Rivaroxabana 20 mg VO 1x/dia com alimento)].
 ```
 
 ---

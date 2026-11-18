@@ -12,9 +12,9 @@
 ATENDIMENTO DE EMERGÊNCIA - PARADA CARDIORRESPIRATÓRIA (PCR) ADULTO
 
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg, Leito: Sala Vermelha [ ].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 HORÁRIO DE INÍCIO DA RCP: [ ]h[ ]min
 LOCAL DO EVENTO: [Sala Vermelha / Leito da Enfermaria / Box de Emergência / Pré-hospitalar]
@@ -41,14 +41,14 @@ CICLOS DE RESSUSCITAÇÃO CARDIOPULMONAR (ACLS):
 
 MANEJO DA VIA AÉREA E ACESSO:
 - Acesso vascular obtido: [Venoso periférico calibroso MSD / MSE / Intraósseo tibial].
-- Via aérea avançada: [IOT tubo nº ___ fixado em ___ cm rima labial / Capnografia com ETCO2 = ___ mmHg / Bolsa-Válvula-Máscara com reservatório a 15]. Ventilações 1 a cada 6 segundos após IOT (sem interromper compressões).
+- Via aérea avançada: [IOT tubo nº fixado em cm rima labial / Capnografia com ETCO2 = mmHg / Bolsa-Válvula-Máscara com reservatório a 15 L/min]. Ventilações 1 a cada 6 segundos após IOT (sem interromper compressões).
 
 INVESTIGAÇÃO ATIVA DE CAUSAS REVERSÍVEIS (5 Hs e 5 Ts):
 - Hipovolemia: [Descartada / Infundido 1000ml SF 0,9%]
 - Hipóxia: [Via aérea pérvia, FiO2 100%]
 - Hidrogênio (acidose): [Corrigida ventilação / Bicarbonato de sódio se acidose]
-- Hipo/Hipercalemia: [Glicemia capilar: mg/dL / Gluconato de cálcio 10% administrado se]
-- Hipotermia: [*Ausente / Temperatura axilar: ___ °C]
+- Hipo/Hipercalemia: [Glicemia capilar: mg/dL / Gluconato de cálcio 10% administrado se suspeita]
+- Hipotermia: [*Ausente / Temperatura axilar °C]
 - Tensão no tórax (Pneumotórax hipertensivo): [Ausculta simétrica / Descompressão por toracocentese]
 - Tamponamento cardíaco: [FAST negativo / Sem turgência jugular]
 - Toxinas: [Investigado histórico de intoxicação exógena]

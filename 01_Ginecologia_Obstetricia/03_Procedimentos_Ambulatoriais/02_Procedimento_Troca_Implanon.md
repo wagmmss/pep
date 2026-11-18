@@ -11,10 +11,10 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ].
-Comorbidades: [+ *Hígida / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+Comorbidades: [+ *Hígida / Outros].
+Alergias: [*Nega / Outros].
 - Indicação: [Troca por término da validade de 3 anos / Retirada eletiva por desejo reprodutivo / Retirada por sangramento desfavorável].
-- Consentimento: TCLE lido e assinado. [Novo lote inserido: ___ / Apenas retirada eletiva].
+- Consentimento: TCLE lido e assinado. [Novo lote inserido / Apenas retirada eletiva].
 
 # DESCRIÇÃO TÉCNICA DO PROCEDIMENTO:
 1. Posicionamento & Palpação Prévia Obrigatória: Paciente em decúbito dorsal, braço [esquerdo / direito] abduzido com cotovelo fletido. Implante prévio facilmente localizado por palpação bimanual no plano subdérmico superficial, móvel e íntegro.
@@ -30,11 +30,11 @@ Alergias: [*Nega / Outros: ___].
 5. Síntese & Curativo: Hemostasia compressiva, fechamento com [fita de aproximação estéril *Steri-Strip* / 1 ponto simples de Mononylon 4-0], gaze estéril e faixa compressiva de crepe. Procedimento sem intercorrências.
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. [Remoção e reinserção imediata de implante / Remoção eletiva de implante subdérmico (Z30.5)].
+1. [Remoção e reinserção imediata de implante subdérmico / Remoção eletiva de implante subdérmico (Z30.5)].
 
 # CONDUTA:
 >> CONDUTA & ORIENTAÇÕES PÓS-PROCEDIMENTO:
-1. [Entregue novo Cartão da Usuária com validade de / Se apenas retirada: orientada sobre retorno].
+1. [Entregue novo Cartão da Usuária com validade de 3 anos / Se apenas retirada: orientada sobre retorno imediato].
 
 # RECEITA:
 USO ORAL:

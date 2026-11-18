@@ -10,26 +10,26 @@
 
 ```text
 # IDENTIFICAÇÃO:
-- Paciente: [Nome], [Idade] anos[? Leito :: | Leito: ___] | [ ]º Dia Pós-Operatório (DPO)
+- Paciente: [Nome], [Idade] anos| Leito: [ ] | [ ]º Dia Pós-Operatório (DPO)
 - Procedimento Realizado: [ ] | Via de Acesso: [Videolaparoscópica / Convencional aberta / Ortopédica / Urológica]
-- Antimicrobiano Pós-Operatório: [Profilaxia cirúrgica suspensa em < 24h / Antibioticoterapia terapêutica com ___]
+- Antimicrobiano Pós-Operatório: [Profilaxia cirúrgica suspensa em < 24h / Antibioticoterapia terapêutica]
 
 # HISTÓRIA / RESUMO DA INTERNAÇÃO:
 [ ]
 [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 
 # EVOLUÇÃO (24H):
-Passou as últimas 24h [bem, sem intercorrências agudas / com queixa de: ___].
-[EVA ___ restrita à ferida operatória, bem / Dor moderada (EVA ___ ) controlada após resgate].
+Passou as últimas 24h [bem, sem intercorrências agudas / com queixa].
+[EVA restrita à ferida operatória / Dor moderada (EVA ) controlada após resgate].
 Tolerância Alimentar & Retorno do Trânsito Intestinal:
-[Líquida / Pastosa / Branda / Geral] -> [Boa aceitação plena, nega náuseas ou vômitos / Apresentou náusea isolada controlada com].
+[Líquida / Pastosa / Branda / Geral] -> [Boa aceitação plena, nega náuseas ou vômitos / Apresentou náusea isolada controlada com antiemético].
 [Presentes desde oº DPO / Ainda ausentes, sem distensão].
-[Presente de aspecto habitual / Ausente desde o procedimento, sem dor em cólica].
-Mobilidade & Deambulação: [Deambulando ativamente no quarto e corredor / Deambulação com auxílio / Restrito ao leito por recomendação cirúrgica].
-[Espontânea, clara e sem disúria após retirada / Por SVD com débito límpido].
+[Presente de aspecto habitual / Ausente desde o procedimento].
+[Deambulando ativamente no quarto e corredor / Deambulação com auxílio / Restrito ao leito por recomendação cirúrgica].
+[Espontânea, clara e sem disúria após retirada de SVD / Por SVD com débito límpido].
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax máx 24h: [ ] °C (Afebril) | Diurese 24h: [ ] mL | BH 24h: [Neutro / + ___ mL / - ___ mL].
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax máx 24h: [ ] °C (Afebril) | Diurese 24h: [ ] mL | BH 24h: [Neutro / + mL / - mL].
 Geral: BEG, LOTE, corado(a), hidratado(a), anictérico(a), eupneico(a) em ar ambiente, TEC < 2 segundos.
 Aparelho Cardiopulmonar: Ritmo cardíaco regular em 2T, bulhas normofonéticas sem sopros; murmúrio vesicular presente bilateralmente sem estertores ou atelectasias basais.
 Exame Abdominal: Abdome [plano / globoso], flácido, depressível, dor leve restrita à linha incisional, sem defesa involuntária ou descompressão brusca dolorosa (Blumberg negativo). Ruídos hidroaéreos presentes e normoativos.
@@ -38,7 +38,7 @@ Curativo: [Aberto, ferida limpa e seca exposta / Oclusivo limpo e seco extername
 Bordas e Sutura: Bordas cirúrgicas bem coaptadas, [pontos simples / sutura intradérmica / grampos metálicos] íntegros.
 Sinais Flogísticos: Ausência de eritema perilesional, calor local, edema tenso, hematoma, flutuação ou deiscência. Ausência de secreção purulenta.
 Avaliação de Drenos Cirúrgicos:
-[Sem drenos cirúrgicos / Dreno Portovac / Blake / Penrose em ___ com débito de ___ mL/24h de / sero-hemático fluido, sem pus, bile ou conteúdo].
+[Sem drenos cirúrgicos / Dreno Portovac / Blake / Penrose em com débito de mL/24h de aspecto / sero-hemático fluido].
 EXT: Pulsos periféricos simétricos, sem edema de MMII, panturrilhas livres e indolores (Homans negativo).
 
 # HIPÓTESES DIAGNÓSTICAS:
@@ -50,14 +50,14 @@ EXT: Pulsos periféricos simétricos, sem edema de MMII, panturrilhas livres e i
 
 >> CONDUTA DO DIA NA ENFERMARIA CIRÚRGICA:
 1. Dieta: [Progredir dieta para branda/geral por via oral / Manter dieta atual].
-2. Hidratação Venosa: [Suspender soroterapia de manutenção; manter / Sacar acesso venoso se em programação de alta].
+2. Hidratação Venosa: [Suspender soroterapia de manutenção / Sacar acesso venoso se em programação de alta].
 3. Analgesia Multimodal & Antiemético:
-   - [Transicionar para via oral: Dipirona 1 g VO].
+   - [Transicionar para via oral: Dipirona 1 g VO 6/6h +].
    - Ondansetrona 4 a 8 mg EV/VO de 8/8h se náuseas.
 4. Profilaxia de TEV & Fisioterapia: Manter [Enoxaparina 40 mg SC 1x/dia] + deambulação precoce no corredor e espirometria de incentivo.
 5. Cuidados com Ferida & Dispositivos:
    - Higienizar ferida operatória com água corrente e sabonete neutro no banho; manter seca e descoberta.
-   - [Sacar dreno cirúrgico hoje (débito < 30–50 / Manter dreno com aferição de débito / Retirar SVD hoje].
+   - [Sacar dreno cirúrgico hoje (débito < 30–50 mL/24h / Manter dreno com aferição de débito / Retirar SVD hoje].
 6. Desospitalização: [Alta hospitalar concedida hoje com receita / Previsão de alta para amanhã].
 
 # RECEITA:

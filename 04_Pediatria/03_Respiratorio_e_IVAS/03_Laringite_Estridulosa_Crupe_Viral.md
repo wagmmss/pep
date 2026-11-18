@@ -10,17 +10,17 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [meses / anos] (Faixa típica: 6 meses a 3 anos), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [ ] [meses / anos] (Faixa típica: 6 meses a 3 anos), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 # QP:
 Tosse rouca e barulho agudo para puxar o ar iniciados à noite há [ ] horas.
 
 # HMA:
-Criança apresentou pródromo catarral leve há [1 a 3] dias (coriza hialina e febre baixa de [ ] °C), evoluindo na madrugada de hoje com início abrupto de tosse ladrante metálica, rouquidão vocal e estridor inspiratório laríngeo.
+Criança apresentou pródromo catarral leve há [1 a 3] dias, evoluindo na madrugada de hoje com início abrupto de tosse ladrante metálica, rouquidão vocal e estridor inspiratório laríngeo.
 Exclusão Mandatória de Epiglotite Aguda, Traqueíte Bacteriana e Aspiração de Corpo Estranho:
-[Deglutindo saliva normalmente, sem sialorreia].
+[Deglutindo saliva normalmente].
 Nega início hiperagudo durante alimentação ou brincadeira com peças pequenas/grãos.
 Nega febre alta (> 39,5 °C) com aparência tóxica ou prostração extrema.
 
@@ -28,23 +28,23 @@ Nega febre alta (> 39,5 °C) com aparência tóxica ou prostração extrema.
 SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | TEC < 2s.
 Ectoscopia & Voz: [Bom / Regular] estado geral, examinada no colo materno sem forçar decúbito dorsal, [alerta e ativa / ansiosa pelo esforço respiratório], corada, acianótica. Voz/choro rouco e tosse ladrante característica.
 Avaliação do Escore de Gravidade de Westley (0 a 17 pontos):
-1. Estridor Inspiratório: [*Ausente em repouso, audível apenas ao / Audível em repouso com estetoscópio (+1) / Audível em repouso sem estetoscópio (+2)].
+1. Estridor Inspiratório: [*Ausente em repouso / Audível em repouso com estetoscópio (+1) / Audível em repouso sem estetoscópio (+2)].
 2. Retrações / Tiragens (Fúrcula, Intercostal e Subcostal): [*Ausentes (0) / Leves (+1) / Moderadas (+2) / Graves (+3)].
 3. Entrada de Ar (Murmúrio Vesicular): [*Normal bilateralmente (0) / Diminuída (+1) / Muito diminuída (+2)].
 4. Cianose: [*Ausente (0) / Com agitação (+4) / Em repouso (+5)].
-5. Nível de Consciência: [*Normal e alerta (0) / Desorientado, agitado por hipóxia ou letárgico].
+5. Nível de Consciência: [*Normal e alerta (0) / Desorientado, agitado por hipóxia ou letárgico (+5)].
 ESCORE DE WESTLEY TOTAL: [ ] PONTOS -> Classificação: [Crupe Leve (≤ 2 pts — sem estridor em repouso) / Crupe Moderado / Crupe Grave].
 Nota de Segurança: Não realizada oroscopia forçada com espátula para evitar laringoespasmo reflexo.
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Laringite Viral Aguda / Crupe Viral (CID-10: J05.0 — provável Vírus Parainfluenza tipos 1 e 2).
-2. Gravidade Clínica: [Leve (sem estridor em repouso) / Moderada a Grave].
+2. Gravidade Clínica: [Leve / Moderada a Grave].
 
 # CONDUTA:
 
->> [MODALIDADE A] CONDUTA NO CRUPE LEVE (WESTLEY ≤ 2 — SEM ESTRIDOR EM REPOUSO):
+>> [MODALIDADE] CONDUTA NO CRUPE LEVE (WESTLEY ≤ 2 — SEM ESTRIDOR EM REPOUSO):
 1. Dexametasona Dose Única na Unidade (Padrão-Ouro para TODOS os casos de Crupe, inclusive leves):
-   - Administrada Dexametasona [0,15 a 0,6 mg/kg = ___ mg] por via oral (ou IM se vômito) em dose única agora (Dose máxima: 10 mg).
+   - Administrada Dexametasona [0,15 a 0,6 mg/kg = mg] por via oral (ou IM se vômito) em dose única agora (Dose máxima: 10 mg).
 2. Manter criança tranquila no colo; reavaliar após 1 hora confirmando ausência de estridor em repouso e boa aceitação oral.
 3. Alta segura com receita sintomática e orientação de retorno imediato se surgir estridor com a criança calma/dormindo.
 
@@ -55,7 +55,7 @@ Nota de Segurança: Não realizada oroscopia forçada com espátula para evitar 
    - Administrar Dexametasona 0,6 mg/kg [VO / IM / EV] (Máximo: 10 mg) em dose única agora (ou Budesonida inalatória 2 mg nebulizada junto à adrenalina se impossibilidade de VO/IM).
 3. Observação Clínica Obrigatória por 3 a 4 Horas Pós-Adrenalina (Prevenção do Efeito Rebote):
    - Manter em sala de observação pediátrica por no mínimo 3 a 4 horas após o término da nebulização com adrenalina.
-   - Reavaliação pós-observação às [HH:MM]: [Criança eupneica, sem estridor em repouso, sem / Recorrência do estridor em repouso].
+   - Reavaliação pós-observação às [HH:MM]: [Criança eupneica / Recorrência do estridor em repouso].
 
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO — ALTA DE LARINGITE / CRUPE VIRAL

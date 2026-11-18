@@ -11,20 +11,20 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Alérgico a Penicilinas / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Alérgico a Penicilinas / Outros].
 
 # QP:
 Dor e sensação de pressão na face com secreção nasal amarelada há [ ] dias.
 
 # HMA:
-Refere quadro iniciado há cerca de [ ] dias de congestão nasal bilateral e secreção espessa amarelo-esverdeada, associada a dor e peso em região [maxilar / frontal / periorbitária] que piora intensamente ao abaixar a cabeça. Relata febre baixa, tosse que piora à noite (gotejamento pós-nasal) e dor em dentes superiores.
+Refere quadro iniciado há cerca de [ ] dias de congestão nasal bilateral e secreção espessa amarelo-esverdeada, associada a dor e peso em região [maxilar / frontal / periorbitária] que piora intensamente ao abaixar a cabeça. Relata febre baixa, tosse que piora à noite e dor em dentes superiores.
 Sintomas persistentes por mais de 10 dias sem sinal de melhora clínica.
-Piora clínica secundária ("duplo agravamento"): piora importante de febre e dor após melhora de resfriado prévio.
+Piora importante de febre e dor após melhora de resfriado prévio.
 Início grave com febre alta (> 38,5 °C) e secreção purulenta por mais de 3 dias consecutivos.
-Nega inchaço, vermelhidão ou dor ao redor dos olhos (edema periorbitário).
-Nega olho "saltado" para fora (proptose) ou dor intensa ao movimentar os olhos.
-Nega visão dupla (diplopia) ou perda de visão.
+Nega inchaço, vermelhidão ou dor ao redor dos olhos.
+Nega olho "saltado" para fora ou dor intensa ao movimentar os olhos.
+Nega visão dupla ou perda de visão.
 Nega sonolência excessiva, convulsões, rigidez de nuca ou cefaleia incapacitante em trovoada.
 
 # EXAME FÍSICO:
@@ -54,7 +54,7 @@ Oroscopia evidenciando secreção purulenta escorrendo pela parede posterior da 
 # RECEITA:
 1. Antibioticoterapia de 1ª Linha:
    - Amoxicilina + Clavulanato de Potássio (875 + 125 mg) - Tomar 1 comprimido VO de 12/12h às refeições por 7 a 10 dias.
-   - [OU]: Amoxicilina 500 mg - Tomar 1 comprimido VO de 8/8 horas por 10 dias.
+   - OU:: Amoxicilina 500 mg - Tomar 1 comprimido VO de 8/8 horas por 10 dias.
    - [SE ALERGIA A BETA-LACTÂMICOS]: Claritromicina 500 mg VO de 12/12h por 10 dias (ou Levofloxacino 500 mg VO 1x/dia por 7 dias se adulto com falha prévia).
 2. Corticoide Tópico Nasal (Fundamental para desobstrução do óstio de drenagem):
    - Furoato de Mometasona 50 mcg/dose [ou Budesonida 64 mcg]: Aplicar 2 jatos em cada narina pela manhã e à noite por 14 a 21 dias.

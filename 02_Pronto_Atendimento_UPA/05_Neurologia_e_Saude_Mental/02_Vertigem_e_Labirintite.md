@@ -11,18 +11,18 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # QP:
-Tontura rotatória intensa ("tudo girando"), náuseas e vômitos há [ ] horas/dias.
+Tontura rotatória intensa, náuseas e vômitos há [ ] horas/dias.
 
 # HMA:
 Relata episódio agudo de vertigem rotatória verdadeira iniciada há [ ] horas, acompanhada de instabilidade na marcha, náuseas e vômitos incoercíveis.
-HIPÓTESE A - VERTIGEM POSICIONAL PAROXÍSTICA BENIGNA (VPPB): Vertigem desencadeada por mudanças súbitas de posição da cabeça, com episódios breves de forte intensidade durando menos de 60 segundos cada.
-HIPÓTESE B - NEVRITE VESTIBULAR / LABIRINTITE: Vertigem contínua incapacitante iniciada há 24-48 horas, que persiste mesmo com a cabeça parada em repouso, associada a sintomas de infecção viral recente de vias aéreas superiores.
-Nega diplopia (visão dupla) ou perda visual transitória.
-Nega disfagia (dificuldade de engolir) ou disartria (fala enrolada/pastosa).
+Vertigem desencadeada por mudanças súbitas de posição da cabeça, com episódios breves de forte intensidade durando menos de 60 segundos cada.
+Vertigem contínua incapacitante iniciada há 24-48 horas, que persiste mesmo com a cabeça parada em repouso, associada a sintomas de infecção viral recente de vias aéreas superiores.
+Nega diplopia ou perda visual transitória.
+Nega disfagia ou disartria.
 Nega fraqueza, perda de força muscular ou dormência em um dos lados do corpo.
 Nega incoordenação motora grave.
 Nega cefaleia occipital súbita de início hiperagudo.
@@ -45,7 +45,7 @@ PROTOCOLO HINTS (HEAD IMPULSE, NYSTAGMUS, TEST OF SKEW):
 [ ] Alinhamento ocular estável sem desvio vertical (PADRÃO PERIFÉRICO).
 [ ] Presença de desvio vertical de alinhamento ao desocluir o olho (PADRÃO CENTRAL DE AVC).
 [SE SUSPEITA DE VPPB - MANOBRA DE DIX-HALLPIKE]:
-Realizada manobra posicional: [Presença de nistagmo torsional e vertical / esquerdo) -> VPPB CONFIRMADA / Negativa].
+Realizada manobra posicional: [Presença de nistagmo torsional e vertical superior / esquerdo) -> VPPB CONFIRMADA / Negativa].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome Vestibular Periférica Aguda: [VPPB de canal posterior / Nevrite Vestibular aguda] (CID-10: H81.1 / H81.2).
@@ -56,7 +56,7 @@ Realizada manobra posicional: [Presença de nistagmo torsional e vertical / esqu
 >> CONDUTA NA UNIDADE (SALA DE MEDICAÇÃO):
 1. Antiemético & Sedativo Labiríntico Venoso:
    - Dimenidrinato 50 mg + Cloridrato de Piridoxina 50 mg (Dramin B6 ampola) diluídos em 100 mL de SF 0,9% EV correr em 20 minutos (alívio potente da vertigem e náuseas).
-   - [OU]: Ondansetrona 8 mg EV lento (se náuseas incoercíveis).
+   - OU:: Ondansetrona 8 mg EV lento (se náuseas incoercíveis).
 2. Hidratação Venosa: Soro Fisiológico 0,9% 500 mL EV.
 3. [SE VPPB CONFIRMADA COM DIX-HALLPIKE POSITIVO]:
    - REALIZADA MANOBRA DE REPOSICIONAMENTO DE EPLEY NA MACA DA UPA:
@@ -65,7 +65,7 @@ Realizada manobra posicional: [Presença de nistagmo torsional e vertical / esqu
 # RECEITA:
 1. Sedativo Labiríntico (Apenas nos Primeiros 3 a 5 Dias na Fase Aguda):
    - Cinarizina 25 mg a 75 mg - Tomar 1 comprimido VO à noite ao deitar por até 5 dias (o uso prolongado por semanas retarda a compensação labiríntica central e pode causar parkinsonismo medicamentoso em idosos).
-   - [OU]: Dimenidrinato 50 mg VO de 8/8h SOS se náuseas ou crises agudas por 3 dias.
+   - OU:: Dimenidrinato 50 mg VO de 8/8h SOS se náuseas ou crises agudas por 3 dias.
 2. [Se suspeita de Síndrome de Ménière com zumbido]:
    - Dicloridrato de Betaistina 16 mg a 24 mg - Tomar 1 comprimido VO de 12/12 horas após as refeições.
 

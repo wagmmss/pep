@@ -309,21 +309,33 @@ test('Contrato Editorial PEP v3.2: 88 PEPs padronizados, Pediatria unificada, ze
           if (/^\s*[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ0-9\s/()–-]{5,}:\s*$/.test(sl)) {
             issues.push(`${rel}: subtítulo CAIXA ALTA em prosa (${secTitle}): ${sl.trim()}`);
           }
+          const rotuloMatch = sl.match(/^([^\[\n:]{2,65}):\s+\S/);
+          if (
+            rotuloMatch &&
+            !/^(?:CID-10|PA|FC|FR|Tax|SpO2|HGT|EVA|ECG|D\d+)$/i.test(rotuloMatch[1].trim())
+          ) {
+            issues.push(`${rel}: Rótulo: em prosa (${secTitle}): ${sl.trim().slice(0, 60)}`);
+          }
           const parens = sl.matchAll(/\(([^()]+)\)/g);
           for (const pm of parens) {
             const p = pm[1].trim();
-            if (
-              p.length > 25 &&
-              !/EVA|CID-10|Glasgow|Killip|CURB|APGAR|mg|mcg|mL|kg|mmHg|bpm|irpm|°C|dias|horas|min|sem|DIH|mEq|U\/L|g\/dL/i.test(p)
-            ) {
-              issues.push(`${rel}: parêntese explicativo longo em prosa (${secTitle}): (${p.slice(0, 40)}...)`);
+            const isPlural = /^(?:s|a|es)$/i.test(p);
+            const isObjectiveScoreOrCid = /^(?:EVA|CID-10|Glasgow|Killip|CURB|APGAR|\d|<|>|≥|≤)/i.test(p);
+            const isShortUnit = p.length <= 22 && /\b(?:mg|mcg|g|mL|L|kg|mmHg|bpm|irpm|°C|mEq|U\/L|g\/dL|dias?|horas?|min|sem)\b/i.test(p);
+            if (!isPlural && !isObjectiveScoreOrCid && !isShortUnit) {
+              issues.push(`${rel}: parêntese explicativo em prosa (${secTitle}): (${p.slice(0, 40)})`);
             }
           }
         }
       }
     }
 
-    // Pílulas atômicas (<= 55 chars por opção dentro de [...])
+    // Zero ___ nos blocos PEP
+    if (pep.includes('___')) {
+      issues.push(`${rel}: contém ___ no PEP (usar [ ])`);
+    }
+
+    // Pílulas atômicas (<= 55 chars por opção dentro de [...]) e sem corte em preposição/conjunção
     const bracketMatches = pep.matchAll(/\[([^\[\]\n]+)\]/g);
     for (const bm of bracketMatches) {
       let body = bm[1].trim();
@@ -336,6 +348,9 @@ test('Contrato Editorial PEP v3.2: 88 PEPs padronizados, Pediatria unificada, ze
       for (const opt of opts) {
         if (opt.length > 55) {
           issues.push(`${rel}: pílula gigante (${opt.length} chars > 55): [${opt.slice(0, 45)}...]`);
+        }
+        if (/(?:^|\s)(?:e|de|da|do|das|dos|para|com|em|por|ou|às|a|o|na|no|sem|ao|se)\s*$/i.test(opt)) {
+          issues.push(`${rel}: pílula truncada terminando em preposição/artigo: [${opt}]`);
         }
       }
     }

@@ -13,28 +13,28 @@
 ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d (por [DUM / USG 1º Tri]) | DPP (Nägele): [DD/MM/AAAA].
 TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Rh Negativo — checar Coombs Indireto e Anti-D!].
-Comorbidades: [+ *Hígida / HAS / DM2 / DIP prévia / Endometriose / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+Comorbidades: [+ *Hígida / HAS / DM2 / DIP prévia / Endometriose / Outros].
+Alergias: [*Nega / Outros].
 
 # AP:
 MED: [*Nega / Ácido Fólico / Progesterona]
 HAB: [*Nega tabagismo, etilismo ou drogas ilícitas / Tabagista]
 CX: [*Nega / Cesárea prévia / Ectópica anterior / Cirurgia tubária]
-ALER: [*Nega alergias medicamentosas / Alérgica a: ___]
+ALER: [*Nega alergias medicamentosas / Alérgica (especificar)]
 HF: [*Nega / HAS / DM2]
 
 # CASO: SANGRAMENTO DO 1º TRIMESTRE (ABORTAMENTO VS. GRAVIDEZ ECTÓPICA)
 
-HMA: Gestante procura emergência obstétrica por sangramento vaginal iniciado há [ ] horas/dias, em volume [discreto em borra de café / moderado / intenso com coágulos e restos ovulares], associado a dor pélvica [ausente / cólica hipogástrica leve a moderada / dor em fossa ilíaca unilateral súbita e]. Nega [tontura ou síncope / refere lipotimia e sudorese fria]. Refere [presença prévia de DIU / ectópica anterior / nega fatores de risco para ectópica].
+HMA: Gestante procura emergência obstétrica por sangramento vaginal iniciado há [ ] horas/dias, em volume [discreto em borra de café / moderado / intenso com coágulos e restos ovulares], associado a dor pélvica [ausente / cólica hipogástrica leve a moderada / dor em fossa ilíaca unilateral súbita e lancinante]. Nega [tontura ou síncope / refere lipotimia e sudorese fria]. Refere [presença prévia de DIU / ectópica anterior / nega fatores de risco para ectópica].
 
 CHECO EXAMES (USG TRANSVAGINAL + β-hCG QUANTITATIVO):
 - β-hCG Quantitativo: [ ] mUI/mL (Zona Discriminatória: ≥ 2.000 a 3.500 mUI/mL).
-- USG Transvaginal: [Gestação tópica viável com BCF presente e / Abortamento incompleto com eco endometrial / Abortamento retido com CCN ≥ 7 mm sem BCF ou SG / Útero vazio + massa anexial heterogênea (Sinal].
+- USG Transvaginal: [Gestação tópica viável com BCF presente e hematoma / Abortamento incompleto com eco endometrial heterogêneo / Abortamento retido com CCN ≥ 7 mm sem BCF ou SG médio / Útero vazio + massa anexial heterogênea e líquido].
 
 # EXAME CLÍNICO
 Bom estado geral, corada, hidratada, acianótica, anictérica, afebril [ou hipocorada/taquicárdica se instabilidade].
 - Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | Índice de Choque (FC/PAS): [< 0,7 normal / ≥ 0,9 choque!] | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C (descartar aborto infectado!).
-- Abdome: [Plano, flácido, indolor, sem peritonismo / Doloroso à palpação profunda em hipogástrio ou].
+- Abdome: [Plano, flácido, indolor, sem peritonismo / Doloroso à palpação profunda em hipogástrio ou fossa].
 - Especular: Sangramento [discreto coletado em fundo de saco / ativo pelo OE / saída de material ovular sem odor fétido / secreção purulenta fétida].
 - Toque Vaginal Bimanual: Colo uterino [grosso, posterior e impérvio / pérvio para 1 polpa digital]. Útero de volume [compatível com a IG / menor que a IG], mobilização do colo [indolor / intensamente dolorosa — Sinal de Proust / Grito de Douglas positivo!].
 
@@ -46,7 +46,7 @@ Bom estado geral, corada, hidratada, acianótica, anictérica, afebril [ou hipoc
 2. Imunoprofilaxia Anti-D Obrigatória em Gestantes Rh Negativo (Coombs Indireto Negativo): Administrar Imunoglobulina Anti-D 300 mcg IM até 72h após o início do sangramento ou esvaziamento uterino.
 3. Conduta Específica conforme Classificação:
    - Se Ameaça de Abortamento (colo fechado + BCF presente): Orientação de repouso relativo, abstinência sexual pélvica, analgesia se cólica (Escopolamina + Paracetamol) e reavaliação ultrassonográfica em 7 a 14 dias.
-   - Se Abortamento Incompleto / Retido (< 12 semanas): [Conduta Expectante / Esvaziamento Medicamentoso com Misoprostol (800 / 400 mcg SL ou 600 mcg VO se incompleto) / Aspiração Manual Intrauterina (AMIU) sob].
+   - Se Abortamento Incompleto / Retido (< 12 semanas): [Conduta Expectante / Esvaziamento Medicamentoso com Misoprostol (800 mcg / 400 mcg SL ou 600 mcg VO se incompleto) / Aspiração Manual Intrauterina sob bloqueio].
    - Se Abortamento Infectado (Febre, leucocitose, dor uterina, secreção fétida): Coleta de hemoculturas + Antibioticoterapia IV imediata (Clindamicina 900 mg IV 8/8h + Gentamicina 5 mg/kg/dia IV 24/24h) + Esvaziamento uterino cirúrgico imediato após 1ª dose de antibiótico.
    - Se Gravidez Ectópica Íntegra (Estável, massa < 3,5–4,0 cm, sem BCF ectópico, β-hCG < 5.000 mUI/mL, hemograma/TGO/TGP/creatinina normais e sem aleitamento/imunodeficiência): Tratamento clínico com Metotrexato 50 mg/m² IM em dose única (D1), dosando β-hCG no D4 e D7 (esperada queda ≥ 15% entre D4 e D7).
    - Se Gravidez Ectópica Rota (Instabilidade hemodinâmica, abdome agudo hemorrágico, β-hCG > 5.000 ou BCF ectópico presente): Laparoscopia / Laparotomia exploradora de emergência para Salpingectomia.

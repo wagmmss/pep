@@ -10,25 +10,25 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] meses (Faixa clássica < 24 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
-- Fatores de Risco para BVA Grave: [Nenhum — lactente a termo hígido > 3 meses / Idade < 12 semanas (< 3 meses) / Prematuridade (< 37 semanas) / Cardiopatia congênita hemodinamicamente / Broncodisplasia pulmonar / Imunodeficiência].
+ID: [Nome], [ ] meses (Faixa clássica < 24 meses), Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
+- Fatores de Risco para BVA Grave: [Nenhum — lactente a termo hígido > 3 meses / Idade < 12 semanas (< 3 meses) / Prematuridade (< 37 semanas) / Cardiopatia congênita hemodinamicamente significativa / Broncodisplasia pulmonar / Imunodeficiência].
 
 # QP:
 Tosse, chiado no peito e cansaço para respirar há [ ] dias.
 
 # HMA:
-Lactente apresentou pródromo catarral de vias aéreas superiores há [2 a 4] dias (obstrução nasal, coriza hialina e febre baixa de [ ] °C), evoluindo nas últimas [24 a 48] horas para fase bronquiolar com tosse mais intensa, respiração rápida e sibilância.
+Lactente apresentou pródromo catarral de vias aéreas superiores há [2 a 4] dias, evoluindo nas últimas [24 a 48] horas para fase bronquiolar com tosse mais intensa, respiração rápida e sibilância.
 [1º episódio de sibilância na vida / 2º episódio viral em lactente].
-[Mamando bem com pausas curtas para respirar (> / Redução moderada das mamadas (50 a 75% do / Recusa alimentar grave (< 50% do habitual) por]. Diurese [presente nas últimas 6h / reduzida].
-Nega episódios de apneia ou pausas respiratórias (crucial em < 2 meses), cianose central, gemência contínua ou letargia.
+[Mamando bem com pausas curtas para respirar (> 75% / Redução moderada das mamadas (50 a 75% do habitual) / Recusa alimentar grave (< 50% do habitual) por fadiga]. Diurese [presente nas últimas 6h / reduzida].
+Nega episódios de apneia ou pausas respiratórias, cianose central, gemência contínua ou letargia.
 
 # EXAME FÍSICO:
 SSVV:
 Frequência Respiratória (1 min): [ ] irpm ([< 50 irpm / 50 a 59 irpm / 60 a 69 irpm / ≥ 70 irpm])
 Oximetria de Pulso (SpO2 em AA): [ ]% ([≥ 92% em ar ambiente / 90 a 91% / < 90% — hipoxemia])
-FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / ___ segundos].
+FC: [ ] bpm | Tax: [ ] °C | TEC: [< 2 segundos / segundos].
 Geral: [Bom / Regular / Mau] estado geral, [alerta e reativo / irritado / hipoativo], corado, [hidratado / desidratação leve], acianótico.
 Exame Respiratório Detalhado:
 Inspeção Torácica: [Sem tiragens ou tiragem subcostal muito leve / Tiragem subcostal e intercostal moderada / Tiragem subcostal, intercostal].
@@ -44,7 +44,7 @@ Classificação de Gravidade (Wood-Downes Modificado / Diretriz SBP):
 
 # CONDUTA:
 
->> [MODALIDADE A] CONDUTA NA BVA LEVE (ALTA SEGURA COM REAVALIAÇÃO EM 24–48H):
+>> [MODALIDADE] CONDUTA NA BVA LEVE (ALTA SEGURA COM REAVALIAÇÃO EM 24–48H):
 1. Realizar lavagem nasal com Soro Fisiológico 0,9% na unidade e confirmar que a tiragem e a FR melhoram após desobstrução das narinas.
 2. Prescrever lavagem nasal domiciliar antes de cada mamada, fracionamento das mamadas (volumes menores mais vezes ao dia) e cabeceira elevada a 30°.
 3. Stewardship (O que NÃO prescrever conforme SBP/AAP): Não prescritos corticoides sistêmicos/inalatórios, broncodilatadores orais, antibióticos ou xaropes mucolíticos.

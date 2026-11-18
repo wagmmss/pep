@@ -12,10 +12,10 @@
 AVALIAÇÃO DE INTERCORRÊNCIA EM ENFERMARIA — DELIRIUM HOSPITALAR (MÉTODO CAM)
 
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito ___], no [ ]º DIH por [motivo da internação].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
-- Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular / Doença de Parkinson ou Demência por Corpos de].
+ID: [Nome], [Idade] anos, Leito [ ], no [ ]º DIH por [motivo da internação].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
+- Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular / Doença de Parkinson ou Demência por Corpos de Lewy].
 
 DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2 + [3 OU 4]):
 1. Início Agudo e Curso Flutuante (mudança súbita em horas/dias que piora à noite — *sundowning*): [Presente].
@@ -24,9 +24,9 @@ DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2
 4. Alteração do Nível de Consciência (RASS diferente de 0): [Delirium Hiperativo / Delirium Hipoativo / Delirium Misto].
 
 RASTREIO SISTEMÁTICO DA CAUSA BASE (MNEMÔNICO DELIRIUM):
-- [D] Drugs (Conciliação medicamentosa): Uso recente de [Benzodiazepínicos (Diazepam/Clonazepam) / Anti-histamínicos 1ª geração / Anticolinérgicos (Escopolamina, Amitriptilina / Opioides / Corticoides].
-- [E] Electrolyte & Metabolic: Na+: [ ] mEq/L, Ca2+: [ ], Ureia/Creatinina: [ ], Glicemia Capilar: [ ] mg/dL, Função Hepática/Tireoidiana.
-- [L] Lack of Drugs (Abstinência): [Abstinência alcoólica ou suspensão abrupta de] | Lack of Sleep / Dor não tratada.
+- [D] Drugs (Conciliação medicamentosa): Uso recente de [Benzodiazepínicos / Anti-histamínicos 1ª geração / Anticolinérgicos / Opioides / Corticoides].
+- e Electrolyte & Metabolic: Na+: [ ] mEq/L, Ca2+: [ ], Ureia/Creatinina: [ ], Glicemia Capilar: [ ] mg/dL, Função Hepática/Tireoidiana.
+- [L] Lack of Drugs (Abstinência): [Abstinência alcoólica ou suspensão abrupta] | Lack of Sleep / Dor não tratada.
 - [I] Infection (Sepse oculta): [ITU / Pneumonia aspirativa / Celulite ou infecção de cateter].
 - [R] Reduced Sensory Input: Paciente sem seus [óculos / aparelho auditivo], restrito ao leito sem luz natural.
 - [I] Intracranial: Exame neurológico [sem sinais focais ou meningismo].

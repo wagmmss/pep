@@ -11,15 +11,15 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / Outros: ___].
-Alergias: [*Nega / Alérgico a Dipirona / Outros: ___].
+Comorbidades: [+ *Nega / Idade >= 65 anos / Gestante / HAS / DM2 / Cardiopata / DRC / Hepatopata / Asma / Outros].
+Alergias: [*Nega / Alérgico a Dipirona / Outros].
 
 # QP:
 Febre alta, dor no corpo e dor atrás dos olhos há [ ] dias.
 
 # HMA:
-Refere quadro febril de início súbito há cerca de [ ] dias (Tax máxima [ ] °C), associado a cefaleia holocraniana intensa, dor retro-orbitária que piora à movimentação ocular, mialgia difusa ("dor nos ossos"), artralgia, astenia marcante, náuseas e exantema cutâneo maculopapular [pruriginoso / ausente].
-[Fase Febril (dias 1 a 3) / Fase Crítica de Defervescência (dias 3 a 7].
+Refere quadro febril de início súbito há cerca de [ ] dias, associado a cefaleia holocraniana intensa, dor retro-orbitária que piora à movimentação ocular, mialgia difusa, artralgia, astenia marcante, náuseas e exantema cutâneo maculopapular [pruriginoso / ausente].
+[Fase Febril (dias 1 a 3) / Fase Crítica de Defervescência (dias 3 a 7 - ATENÇÃO].
 Dor abdominal intensa e contínua ou dor à palpação do abdome
 Vômitos persistentes (>= 3 episódios em 1 hora ou >= 4 em 6 horas)
 Acúmulo de líquidos
@@ -27,14 +27,14 @@ Hipotensão postural (queda > 20 mmHg na PAS) ou lipotímia/tontura ao se levant
 Hepatomegalia dolorosa > 2 cm abaixo do rebordo costal direito
 Sangramento de mucosas
 Letargia, sonolência excessiva, desorientação ou irritabilidade
-Aumento progressivo e abrupto do hematócrito (hemoconcentração)
-[TODOS OS SINAIS DE ALARME NEGADOS / SINAL DE ALARME PRESENTE: ___].
+Aumento progressivo e abrupto do hematócrito
+[TODOS OS SINAIS DE ALARME NEGADOS / SINAL DE ALARME PRESENTE].
 
 # EXAME FÍSICO:
 SSVV: PA deitado: [ ]x[ ] mmHg | PA em pé (se tolerar): [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.
 Pressão de Pulso (PAS - PAD): [ ] mmHg (Normal > 20 mmHg | Convergente/Choque se <= 20 mmHg, ex: 90x75 mmHg).
 Geral: BEG, corado, desidratado [+/4+], anictérico, acianótico, perfusão periférica com TEC < 2 segundos.
-Exame Dermatológico: [Exantema maculopapular difuso poupando palmas e / Petéquias isoladas em membros / Pele íntegra sem lesões].
+Exame Dermatológico: [Exantema maculopapular difuso poupando palmas / Petéquias isoladas em membros / Pele íntegra sem lesões].
 Prova do Laço: [Realizada: Negativa / Positiva com petéquias em área de 2,5x2,5 cm / Dispensada por sangramento espontâneo].
 Exame Abdominal: Abdome plano, flácido, RHA+, indolor à palpação superficial e profunda, sem ascite clínica e sem visceromegalias (fígado impalpável).
 Ausculta Cardiopulmonar: Ritmo cardíaco regular em 2 tempos, sem sopros; murmúrio vesicular universalmente audível sem ruídos adventícios ou sinais de derrame pleural.
@@ -53,7 +53,7 @@ Ausculta Cardiopulmonar: Ritmo cardíaco regular em 2 tempos, sem sopros; murmú
 
 # CONDUTA:
 
->> [SE GRUPO A]: CONDUTA DOMICILIAR:
+>> [SE GRUPO]: CONDUTA DOMICILIAR:
 1. HIDRATAÇÃO ORAL INTENSA E OBRIGATÓRIA:
    - Volume Diário: [Peso x 60 mL] = [ ] mL por dia (Cálculo: 60 mL/kg/dia).
    - Composição: 1/3 do volume com Soro de Reidratação Oral (SRO) e 2/3 com líquidos caseiros (água, água de coco, sucos naturais e chás).
@@ -96,7 +96,7 @@ Paciente: [Nome] | Peso Atual: [ ] kg | Dia de Doença: [ ]º dia | Data: [DD/MM
    - Ondansetrona 4 mg (ou Metoclopramida / Bromoprida 10 mg) ---------------- 1 caixa
      Tomar 1 comprimido por via oral de 8 em 8 horas se apresentar enjoo.
 
-4. [Se coceira intensa na pele (exantema da dengue)]:
+4. [Se coceira intensa na pele]:
    - Loratadina 10 mg (ou Dexclorfeniramina 2 mg) ---------------------------- 1 caixa
      Tomar 1 comprimido por via oral 1 a 2 vezes ao dia + banhos frios e loção hidratante.
 

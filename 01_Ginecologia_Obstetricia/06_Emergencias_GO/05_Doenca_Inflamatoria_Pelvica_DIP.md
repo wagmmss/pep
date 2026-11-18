@@ -11,32 +11,32 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, G[ ] P[ ] A[ ] | DUM: [DD/MM/AAAA] | β-hCG: NEGATIVO (obrigatório).
-Comorbidades: [+ *Hígida / Outros: ___].
-Alergias: [*Nega alergias medicamentosas / Alérgica a: ___].
+Comorbidades: [+ *Hígida / Outros].
+Alergias: [*Nega alergias medicamentosas / Alérgica (especificar)].
 - Contexto: [Sem método de barreira / Nova parceria / Uso de DIU / Episódio prévio de IST].
 
 # QP:
-[Queixa principal] há [ ] [hora(s) / dia(s)].
+[Queixa principal] há [ ] [hora / dia].
 
 # HMA:
-Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de ___ °C / calafrios / disúria].
-Nega atraso menstrual. [Nega vômitos incoercíveis, peritonismo difuso / Apresenta febre alta, vômitos e peritonismo].
+Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de °C / calafrios / disúria].
+Nega atraso menstrual. [Nega vômitos incoercíveis / Apresenta febre alta, vômitos e peritonismo].
 
 # EXAME FÍSICO:
 SSVV: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA | Tax: [ ] °C.
-Exame Abdominal: Abdome plano, RHA+, dor à palpação profunda de hipogástrio e fossas ilíacas bilateralmente, [sem sinais de peritonite difusa (DB negativo) / com descompressão brusca dolorosa localizada em]. Sinal de Murphy/dor em HCD (Síndrome de Fitz-Hugh-Curtis): [*Ausente / Presente].
+Exame Abdominal: Abdome plano, RHA+, dor à palpação profunda de hipogástrio e fossas ilíacas bilateralmente, [sem sinais de peritonite difusa / com descompressão brusca dolorosa localizada em pelve]. Sinal de Murphy/dor em HCD (Síndrome de Fitz-Hugh-Curtis): [*Ausente / Presente].
 Exame Especular: Paredes vaginais hiperemiadas, secreção mucopurulenta amarelada fluindo pelo orifício cervical externo (cervicite mucopurulenta) e colo friável ao toque do swab.
 Toque Vaginal Bimanual (3 Critérios Maiores Presentes):
 1. Dor intensa à mobilização do colo uterino (Sinal de Chandelier / Frenkel positivo);
 2. Dor à palpação uterina em hipogástrio;
-3. Dor à palpação das regiões anexiais bilateralmente, [sem massas anexiais palpáveis (Monif I) / com espessamento/massa anexial palpável].
+3. Dor à palpação das regiões anexiais bilateralmente, [sem massas anexiais palpáveis / com espessamento/massa anexial palpável sugerindo].
 Exames Complementares:
 Teste Rápido / β-hCG sérico: NEGATIVO | Testes Rápidos (HIV, Sífilis, Hep B e C): [Não reagentes].
 Laboratório: Leucócitos: [ ]/mm³, PCR: [ ] mg/L, EAS: [ ].
-USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas (Monif / Imagem complexa heterogênea].
+USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas / Imagem complexa heterogênea].
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. Doença Inflamatória Pélvica Aguda (CID-10: N73.0 / N73.9) — Estágio [Monif I (Leve — Ambulatorial) / Monif II / Monif III / Monif IV].
+1. Doença Inflamatória Pélvica Aguda (CID-10: N73.0 / N73.9) — Estágio [Monif I / Monif II / Monif III / Monif IV].
 
 # CONDUTA:
 >> [MODALIDADE 1 — CONDUTA AMBULATORIAL]:

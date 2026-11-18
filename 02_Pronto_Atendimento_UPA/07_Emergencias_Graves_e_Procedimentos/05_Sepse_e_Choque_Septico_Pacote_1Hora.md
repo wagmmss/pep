@@ -10,11 +10,11 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___][? Registro :: , Registro: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg, Leito: Sala Vermelha [ ], Registro: [ ].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 - Horário de Abertura do Protocolo de Sepse: [HH:MM] do dia [DD/MM/AAAA].
-- Foco Infeccioso Suspeito: [Pulmonar (PAC grave / Broncoaspiração) / Urinário (Pielonefrite) / Abdominal (Peritonite / Colangite) / Pele e Partes Moles (Erisipela / Fasciíte) / Foco Indeterminado].
+- Foco Infeccioso Suspeito: [Pulmonar (PAC grave / Broncoaspiração) / Urinário / Abdominal (Peritonite / Colangite) / Pele e Partes Moles (Erisipela / Fasciíte) / Foco Indeterminado].
 
 # CRITÉRIOS DE TRIAGEM RÁPIDA (ESCORE qSOFA - >= 2 PONTOS SUGERE GRAVIDADE):
 [ ] Frequência Respiratória >= 22 irpm (Aferida FR: [ ] irpm).
@@ -36,9 +36,9 @@ SSVV: PA: [ ]x[ ] mmHg (PAM: [ ] mmHg) | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]%
 Geral: [Mau / Regular] estado geral, [sonolento / torporoso / confuso / lúcido], descorado, taquipneico.
 Perfusão Periférica: Extremidades [frias e mal perfundidas / quentes com vasodilatação distributiva]. Tempo de enchimento capilar (TEC): [ ] segundos (alterado se > 3 segundos). Presença de livedo em joelhos: [Sim / Não].
 ACV: Ritmo cardíaco taquicárdico regular em 2 tempos, bulhas normofonéticas, sem sopros.
-AR: Murmúrio vesicular [reduzido em bases / com presença de estertores crepitantes em ___ / sem ruídos adventícios].
+AR: Murmúrio vesicular [reduzido em bases / com presença de estertores crepitantes / sem ruídos adventícios].
 ABD: Flácido, [indolor / dor difusa / dor à palpação de fossa ilíaca / sinais de irritação peritoneal].
-Pele: Ausência de lesões bolhosas, crepitação subcutânea ou áreas necróticas extensas [se presente: ___].
+Pele: Ausência de lesões bolhosas, crepitação subcutânea ou áreas necróticas extensas [se presente].
 
 # CONDUTA:
 1. Lactato Sérico Inicial: Coletado às [HH:MM] -> Resultado: [ ] mmol/L (Alerta se > 2 mmol/L | Hipoperfusão tecidual grave se >= 4 mmol/L). Programada redosagem em 2 a 4 horas para avaliar clareamento do lactato.
@@ -55,13 +55,13 @@ Pele: Ausência de lesões bolhosas, crepitação subcutânea ou áreas necróti
    - Reavaliação dinâmica da resposta volêmica a cada 500 mL (avaliação de estertores pulmonares, pressão venosa e tempo de enchimento capilar).
 6. Vasopressor Precoce (se PAM mantida < 65 mmHg durante ou logo após início da ressuscitação volêmica):
    - Iniciada Noradrenalina por acesso periférico provisório / cateter venoso central: Solução padrão (4 ampolas de 4 mg/4 mL = 16 mL em 234 mL de SG 5% = 250 mL a 64 mcg/mL), titulada em BIC a [ ] mL/h para meta de PAM >= 65 mmHg.
-   - [Se dose de Noradrenalina elevada > 0,25]: Associada Vasopressina em dose fixa (1 ampola 20 UI/1 mL + 99 mL SF 0,9% = 0,2 UI/mL -> Iniciar a 9 mL/h em BIC = 0,03 UI/min).
+   - [Se dose de Noradrenalina elevada > 0,25 mcg/kg/min]: Associada Vasopressina em dose fixa (1 ampola 20 UI/1 mL + 99 mL SF 0,9% = 0,2 UI/mL -> Iniciar a 9 mL/h em BIC = 0,03 UI/min).
    - [Se disfunção miocárdica associada / baixo débito cardíaco]: Associada Dobutamina (1 ampola 250 mg/20 mL + 230 mL SF 0,9%/SG 5% = 1.000 mcg/mL -> Iniciar a 10 a 15 mL/h em BIC = 2,5 a 20 mcg/kg/min).
 7. Cateterismo Vesical de Demora com coletor graduado para mensuração do débito urinário horário (meta: >= 0,5 mL/kg/h).
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Sepse de foco [pulmonar / urinário / abdominal / indefinido] (CID-10: A41.9).
-2. [Evolução para Choque Séptico refratário a / Resposta volêmica satisfatória].
+2. [Evolução para Choque Séptico refratário a volume / Resposta volêmica satisfatória].
 
 # METAS TERAPÊUTICAS DAS PRIMEIRAS 6 HORAS:
 - Pressão Arterial Média (PAM) >= 65 mmHg.

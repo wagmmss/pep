@@ -12,30 +12,30 @@
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Acolhimento / Classificação de Risco: [Azul / *Verde / Amarelo / Vermelho] às [HH:MM].
-Comorbidades: [+ *Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / Outros: ___].
-Alergias: [*NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A: Penicilina / ALÉRGICO(A) A: AINEs / Outros: ___].
-[? Uso contínuo & Hábitos :: Medicações em uso contínuo: *Nega / ___ . / Hábitos: + *Nega tabagismo e etilismo / Tabagismo / Etilismo / ___ .]
+Comorbidades: [+ *Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / Outros].
+Alergias: [*NEGA ALERGIAS CONHECIDAS / ALÉRGICO A: Dipirona / ALÉRGICO A: Penicilina / ALÉRGICO A: AINEs / Outros].
+Medicações em uso contínuo: *Nega / [ ] . / Hábitos: + *Nega tabagismo e etilismo / Tabagismo / Etilismo / [ ] .
 
 # QP:
-[Descrever queixa principal] há [ ] [hora(s) / dia(s) / semana(s)].
+[Descrever queixa principal] há [ ] [hora / dia / semana].
 
 # HMA:
 Início [*súbito / insidioso], intensidade [ ]/10, evolução [ ] e fatores de melhora/piora [ ].
-[+ *Nega outros sintomas / Febre / Náuseas e vômitos / Dispneia / Tontura / Outros: ___].
+[+ *Nega outros sintomas / Febre / Náuseas e vômitos / Dispneia / Tontura / Outros].
 Nega febre alta persistente, dor precordial, dispneia súbita, síncope, cefaleia em trovoada, déficits neurológicos focais, abdome em barra ou sangramentos ativos.
 
 # EXAME FÍSICO:
-SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C[? HGT :: | HGT: ___ mg/dL].
-Geral: [*BEG, LOTE (Glasgow 15), corado, hidratado / REG / MEG / Outros: ___].
-Neurológico: [*Vigil, pupilas isocóricas e fotorreagentes, sem / Outros: ___].
-Cardiovascular: [*RCR em 2T, BNF, sem sopros ou atritos; pulsos / Outros: ___].
-Respiratório: [*Tórax simétrico, MV presente bilateralmente / Sibilos / Crepitações / Outros: ___].
-ABD: [*Plano, RHA+, flácido, indolor à palpação, sem / Outros: ___].
-EXT: [*Bem perfundidas, sem edema de MMII ou dor à / Outros: ___].
+SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C| HGT: [ ] mg/dL.
+Geral: [*BEG, LOTE (Glasgow 15), corado, hidratado, anictérico / REG / MEG / Outros].
+Neurológico: [*Vigil, pupilas isocóricas e fotorreagentes / Outros].
+Cardiovascular: [*RCR em 2T, BNF, sem sopros ou atritos / Outros].
+Respiratório: [*Tórax simétrico / Sibilos / Crepitações / Outros].
+ABD: [*Plano, RHA+, flácido, indolor à palpação / Outros].
+EXT: [*Bem perfundidas / Outros].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. [Descrever diagnóstico sindrômico ou nosológico] (CID-10: [ ]).
-- Estabilidade: [*Hemodinamicamente estável, sem critérios de / Sinais de alerta presentes].
+- Estabilidade: [*Hemodinamicamente estável / Sinais de alerta presentes].
 
 # CONDUTA:
 
@@ -45,8 +45,8 @@ EXT: [*Bem perfundidas, sem edema de MMII ou dor à / Outros: ___].
 2. Reavaliação clínica após medicação e checagem de sinais vitais de controle.
 
 # RECEITA:
-1. [*Dipirona 500 mg a 1 g VO de 6/6h se dor ou / Paracetamol 750 mg VO de 6/6h se dor ou febre].
-[? Medicação domiciliar :: 2. Medicação específica com dose, horário e]
+1. [*Dipirona 500 mg a 1 g VO de 6/6h se dor ou febre / Paracetamol 750 mg VO de 6/6h se dor ou febre].
+[? Medicação domiciliar :: 2. Medicação específica com dose]
 2. Repouso relativo, hidratação oral vigorosa (2 a 3 L/dia) e alimentação leve.
 
 # ORIENTAÇÕES / SINAIS DE ALARME:

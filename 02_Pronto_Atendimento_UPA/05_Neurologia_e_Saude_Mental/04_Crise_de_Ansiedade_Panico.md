@@ -11,20 +11,20 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # QP:
 Falta de ar, taquicardia no peito, tremores e sensação de morte há [ ] minutos/horas.
 
 # HMA:
 Paciente relata início súbito há cerca de [ ] minutos de intensa sensação de angústia, acompanhada de palpitações rápidas no peito, sensação de sufocamento, tremores difusos nos membros, sudorese fria, tontura e sensação de irrealidade / medo de perder o controle ou de morte iminente.
-Refere formigamento (parestesias) ao redor dos lábios/boca e nas pontas dos dedos das mãos e pés.
+Refere formigamento ao redor dos lábios/boca e nas pontas dos dedos das mãos e pés.
 Presença de contratura muscular espasmódica leve nas mãos.
 [Gatilho emocional recente / Estresse profissional ou familiar intenso / Privação de sono / Consumo excessivo de cafeína ou energéticos / Episódios semelhantes prévios].
 Nega dor precordial em aperto com irradiação para mandíbula ou dorso; nega histórico de cardiopatia isquêmica.
 Nega dor pleurítica aguda em pontada, nega tosse ou chiado no peito; nega imobilização recente ou TVP prévia.
-Nega uso de drogas simpaticomiméticas ilícitas (cocaína, ecstasy, anfetaminas) ou anorexígenos.
+Nega uso de drogas simpaticomiméticas ilícitas ou anorexígenos.
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg (discretamente elevada por tônus adrenérgico) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (padrão taquipneico suspiroso) | SpO2: 99% a 100% em ar ambiente | Tax: [ ] °C.
@@ -50,7 +50,7 @@ Eletrocardiograma (ECG de 12 derivações realizado na admissão): Taquicardia s
 
 3. FARMACOTERAPIA ANSIOLÍTICA RÁPIDA (SE CRISE GRAVE OU REFRATÁRIA À ABORDAGEM VERBAL):
    - Clonazepam 0,5 mg a 1,0 mg via sublingual (rápida absorção transmucosa em 10 a 15 minutos).
-   - [OU]: Diazepam 5 mg a 10 mg VO com água.
+   - OU:: Diazepam 5 mg a 10 mg VO com água.
    - Evitar medicação intramuscular ou venosa desnecessária (o ato da injeção aumenta o nível de alerta e ansiedade).
 
 4. REAVALIAÇÃO CLÍNICA APÓS 40 MINUTOS:

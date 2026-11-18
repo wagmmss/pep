@@ -11,19 +11,19 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # QP:
 Dor em queimação, fisgada e bolhinhas com água na pele há [ ] dias.
 
 # HMA:
 Relata quadro iniciado há cerca de [ ] dias com dor prodrômica em queimação intensa, sensação de "choque elétrico", alodinia e formigamento localizado, seguido pelo aparecimento de vesículas agrupadas sobre base avermelhada que coçam e doem intensamente.
-Lesão estritamente UNILATERAL respeitando com precisão a linha média do corpo, localizada no dermátomo [Torácico (T3 a T10) / Lombar (L1 a L3) / Cervical / Oftálmico (ramo V1 do trigêmeo)].
-[ ] ZOSTER OFTÁLMICO (RAMO V1):
-[Pesquisado: Ausência de vesículas na ponta ou / PRESENÇA DE VESÍCULAS NA PONTA DO NARIZ (Sinal].
+Lesão estritamente UNILATERAL respeitando com precisão a linha média do corpo, localizada no dermátomo [Torácico / Lombar / Cervical / Oftálmico].
+[ ] ZOSTER OFTÁLMICO:
+[Pesquisado: Ausência de vesículas na ponta ou asa / PRESENÇA DE VESÍCULAS NA PONTA DO NARIZ].
 Nega dor ocular profunda, fotofobia intensa, olho vermelho ou turvação visual.
-[ ] SÍNDROME DE RAMSAY HUNT (ZOSTER ÓTICO):
+[ ] SÍNDROME DE RAMSAY HUNT:
 Nega paralisia ou fraqueza na mímica facial.
 Nega dor intensa no ouvido com vesículas no conduto auditivo externo ou vertigem súbita.
 [Passado de catapora/varicela na infância / Imunossupressão / Idade > 50 anos].

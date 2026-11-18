@@ -10,10 +10,10 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
-Comorbidades: [+ *Hígida / Outros: ___].
-Alergias: [*Nega / Outros: ___].
-- Equipe: Obstetra: [Dr(a).] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr(a).].
+ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] A[ ] | IG: [ ]s[ ]d | TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB- / Aguarda].
+Comorbidades: [+ *Hígida / Outros].
+Alergias: [*Nega / Outros].
+- Equipe: Obstetra: [Dr.] | Enf. Obstetra: [ ] | Pediatra em Sala: [Dr.].
 - Nascimento: [DD/MM/AAAA] às [HH:MM] | Apresentação: Cefálica fletida em [OP / OEA / ODA] | Bolsa: [Rota intraparto / Amniotomia no expulsivo], LA [claro com grumos / meconial fluido], sem odor.
 - Recém-Nascido: Vivo, sexo [masculino / feminino], Peso: [ ] g, Apgar: [ ] (1º/5º min), colocado em contato pele a pele imediato e clampeamento oportuno do cordão (após 1–3 min).
 
@@ -28,7 +28,7 @@ Alergias: [*Nega / Outros: ___].
    - Tração controlada do cordão umbilical associada à contrapressão suprapúbica do segmento uterino (Manobra de Brandt-Andrews) e rotação placentária sobre seu eixo na saída vulvar (Manobra de Jacob-Dublin) às [HH:MM].
    - Revisão Placentária: Faces materna (cotilédones completos) e fetal íntegras, membranas completas e cordão com 2 artérias e 1 veia. Coletado sangue de cordão para TS/Rh e Coombs Direto (se mãe Rh-).
 4. Revisão do Canal de Parto & 4º Período (Greenberg):
-   - Revisão sob válvulas: Colo uterino íntegro em 360°, paredes vaginais sem hematomas. Períneo: [*Íntegro / Laceração superficial de 1º grau hemostática / Laceração de 2º grau suturada conforme nota de].
+   - Revisão sob válvulas: Colo uterino íntegro em 360°, paredes vaginais sem hematomas. Períneo: [*Íntegro / Laceração superficial de 1º grau hemostática / Laceração de 2º grau suturada].
    - Toque retal confirmatório: Esfíncter anal externo normotônico e mucosa retal íntegra.
    - Globo de Segurança de Pinard formado e firme, lóquios fisiológicos, PA: [ ] mmHg, FC: [ ] bpm.
 

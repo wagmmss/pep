@@ -13,27 +13,27 @@ ATENDIMENTO DE EMERGÊNCIA — TROMBOSE VENOSA PROFUNDA (TVP) & TROMBOEMBOLISMO 
 
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 APRESENTAÇÃO CLÍNICA PRINCIPAL:
 - Quadro Dominante: [Suspeita de TVP de Membro Inferior / Suspeita de TEP Agudo].
-- Fatores de Risco Tromboembólicos (Tríade de Virchow): [Cirurgia ou trauma recente (< 4 semanas) / Imobilização prolongada (> 3 dias) ou viagem / Neoplasia ativa / Uso de anticoncepcional oral combinado ou TRH / Gestação ou puerpério / TEV prévio / Trombofilia].
+- Fatores de Risco Tromboembólicos (Tríade de Virchow): [Cirurgia ou trauma recente (< 4 semanas) / Imobilização prolongada (> 3 dias) ou viagem longa / Neoplasia ativa / Uso de anticoncepcional oral combinado ou TRH / Gestação ou puerpério / TEV prévio / Trombofilia].
 
 EXAME FÍSICO DIRIGIDO:
 - Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
-- Avaliação Cardiorrespiratória: Ausculta pulmonar [limpa — dissociação clínico-auscultatória / estertores localizados]. Turgência jugular: [*Ausente / Presente com hiperfonese de B2 em foco pulmonar].
-- Exame de Membros Inferiores: [Assimetria de panturrilha > 3 cm no membro / Esquerdo, edema depressível (cacifo+) / Membros inferiores simétricos sem sinais de TVP]. Pulsos distais (pedioso e tibial posterior) [presentes e simétricos].
+- Avaliação Cardiorrespiratória: Ausculta pulmonar [limpa — dissociação clínico-auscultatória clássica / estertores localizados]. Turgência jugular: [*Ausente / Presente com hiperfonese de B2 em foco pulmonar].
+- Exame de Membros Inferiores: [Assimetria de panturrilha > 3 cm no membro / Esquerdo, edema depressível unilateral, calor local / Membros inferiores simétricos sem sinais de TVP]. Pulsos distais (pedioso e tibial posterior) [presentes e simétricos].
 
 ESTRATIFICAÇÃO DE PROBABILIDADE E GRAVIDADE:
 - Escore de Wells para TVP: [Baixa probabilidade (≤ 0 pts) / Moderada (1–2 pts) / Alta probabilidade (≥ 3 pts)].
 - Escore de Wells para TEP: [TEP Improvável (≤ 4 pts) / TEP Provável (> 4 pts)].
-- Escore sPESI (Gravidade do TEP): [0 pontos — Baixo Risco / ≥ 1 ponto — Risco Intermediário ou Alto].
+- Escore sPESI (Gravidade do TEP): [0 pontos — Baixo Risco / ≥ 1 ponto — Risco Intermediário ou Alto (Idade > 80a].
 
 EXAMES COMPLEMENTARES:
-- ECG: [Taquicardia sinusal / Padrão S1Q3T3 / Inversão de onda T de V1 a V4 (sobrecarga aguda / BRD novo].
+- ECG: [Taquicardia sinusal / Padrão S1Q3T3 / Inversão de onda T de V1 a V4 / BRD novo].
 - D-Dímero (se probabilidade baixa/intermediária): [ ] ng/mL (Corte ajustado para idade > 50 anos = Idade × 10 ng/mL).
-- Imagem Confirmatoria: [USG Doppler Venoso Colorido de MMII mostrando / Angio-TC de Artérias Pulmonares com falha de].
+- Imagem Confirmatoria: [USG Doppler Venoso Colorido de MMII mostrando / Angio-TC de Artérias Pulmonares com falha].
 
 # CONDUTA:
 1. Suporte Ventilatório e Hemodinâmico (no TEP): Oxigenoterapia suplementar se SpO2 < 90%; em caso de hipotensão por sobrecarga de VD, cautela máxima na expansão volêmica (máximo 500 mL de SF 0,9%, pois hiperdistensão do VD comprime o VE e piora o choque!).

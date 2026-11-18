@@ -11,19 +11,19 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # QP:
 Dor na coluna lombar / Dor que desce para a perna há [ ] dias/horas.
 
 # HMA:
 Relata quadro de dor lombar de início após esforço físico / levantamento de carga / movimento de torção do tronco há cerca de [ ] dias.
-Localização & Irradiação: [Dor estritamente lombar baixa sem irradiação / Dor irradiando para glúteo, face posterior da / esquerdo)].
+[Dor estritamente lombar baixa sem irradiação / Dor irradiando para glúteo / esquerdo)].
 Dor em pontada profunda associada a sensação de espasmo/trava muscular, intensidade [ ]/10.
 Piora ao fletir a coluna para a frente, permanecer sentado ou tossir; alívio parcial em decúbito dorsal com pernas dobradas sobre travesseiros.
-[ ] SÍNDROME DA CAUDA EQUINA (EMERGÊNCIA CIRÚRGICA): Nega anestesia ou perda de sensibilidade em "sela"; nega perda de controle dos esfíncteres; nega fraqueza bilateral progressiva nos pés/pernas.
-[ ] NEOPLASIA / METÁSTASE ÓSSEA: Nega histórico pessoal prévio de câncer (mama, próstata, pulmão); nega dor contínua em repouso que piora de madrugada na cama sem alívio em qualquer posição; nega perda ponderal inexplicada.
+[ ] SÍNDROME DA CAUDA EQUINA: Nega anestesia ou perda de sensibilidade em "sela"; nega perda de controle dos esfíncteres; nega fraqueza bilateral progressiva nos pés/pernas.
+[ ] NEOPLASIA / METÁSTASE ÓSSEA: Nega histórico pessoal prévio de câncer; nega dor contínua em repouso que piora de madrugada na cama sem alívio em qualquer posição; nega perda ponderal inexplicada.
 [ ] INFECÇÃO DA COLUNA: Nega febre, calafrios ou sudorese noturna; nega uso de drogas endovenosas ou infecção urinária/cutânea recente.
 [ ] RISCO DE FRATURA OSTEOPORÓTICA: Idade < 65 anos, nega uso crônico prolongado de corticoides orais e nega trauma contuso de alto impacto.
 
@@ -44,7 +44,7 @@ Raiz L5: Força motora do extensor longo do hálux (elevar o dedão do pé contr
 Raiz S1: Capacidade de ficar na ponta dos pés preservada (grau 5/5 nos gastrocnêmios), reflexo aquileu presente e simétrico bilateral. Sensibilidade na borda lateral do pé normal.
 
 # HIPÓTESES DIAGNÓSTICAS:
-1. [Lombalgia Mecânico-Postural Aguda / Lombociatalgia Aguda por Radiculopatia] (CID-10: M54.5 / M54.4).
+1. [Lombalgia Mecânico-Postural Aguda / Lombociatalgia Aguda por Radiculopatia Lumbossacra] (CID-10: M54.5 / M54.4).
 2. Ausência de sinais de Síndrome da Cauda Equina ou déficits neurológicos motores agudos progressivos.
 
 # CONDUTA:
@@ -61,7 +61,7 @@ Raiz S1: Capacidade de ficar na ponta dos pés preservada (grau 5/5 nos gastrocn
 # RECEITA:
 1. Anti-inflamatório Oral (Duração curta de 5 a 7 dias):
    - Cetoprofeno 150 mg (comprimido de liberação prolongada) - Tomar 1 comprimido VO ao dia após o jantar por 5 dias consecutivos.
-   - [OU]: Ibuprofeno 600 mg VO de 8/8h após as refeições por 5 dias.
+   - OU:: Ibuprofeno 600 mg VO de 8/8h após as refeições por 5 dias.
 2. Relaxante Muscular (Apenas à Noite para Evitar Sonolência Diurna):
    - Cloridrato de Ciclobenzaprina 5 mg - Tomar 1 comprimido VO à noite ao deitar por 5 a 7 dias.
 3. Analgésico de Resgate:

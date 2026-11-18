@@ -10,22 +10,22 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
+ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | IG: [ ]s[ ]d | Classificação de Robson: Grupo [1 a 10].
 TS/Rh: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-].
-Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Anemia / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+Comorbidades: [+ *Hígida / HAS / Pré-eclâmpsia / DMG / Anemia / Outros].
+Alergias: [*Nega / Outros].
 
 # AP:
 MED: [*Nega / Sulfato Ferroso / Metildopa]
 HAB: [Nega tabagismo, etilismo ou drogas ilícitas]
-CX: [*Nega / Cesáreas prévias ( )]
-ALER: [*Nega alergias medicamentosas / Alérgica a: ___]
+CX: [*Nega / Cesáreas prévias]
+ALER: [*Nega alergias medicamentosas / Alérgica (especificar)]
 HF: [*Nega / HAS / DM2]
 
 # CASO: [DESCRIÇÃO CIRÚRGICA DE CESARIANA / ADMISSÃO EM FASE ATIVA DE TRABALHO DE PARTO]
 
-HMA: Gestante admitida no Centro Obstétrico com indicação de cesariana por [desproporção cefalopélvica / falha de indução / sofrimento fetal agudo / apresentação pélvica / iteratividade (≥ 2 cesáreas prévias) / pré-eclâmpsia grave sem condições de parto]. Caderneta de Pré-Natal: HIV/Sífilis/Hep B/Toxoplasmose 3º tri [Não reagentes]; Cultura EGB (35–37s): [*Negativa / Positiva].
+HMA: Gestante admitida no Centro Obstétrico com indicação de cesariana por [desproporção cefalopélvica / falha de indução / sofrimento fetal agudo / apresentação pélvica / iteratividade (≥ 2 cesáreas prévias) / pré-eclâmpsia grave sem condições de parto imediato]. Caderneta de Pré-Natal: HIV/Sífilis/Hep B/Toxoplasmose 3º tri [Não reagentes]; Cultura EGB (35–37s): [*Negativa / Positiva].
 
 # EXAME CLÍNICO
 Bom estado geral, corada, hidratada, acianótica, anictérica, afebril; encaminhada à RPA lúcida, estável e com útero firmemente contraído abaixo da cicatriz umbilical.
@@ -45,7 +45,7 @@ Bom estado geral, corada, hidratada, acianótica, anictérica, afebril; encaminh
 1. Prescrição Pós-Operatória Imediata (Centro Obstétrico / Alojamento Conjunto):
    - Dieta livre precoce após recuperação motora do bloqueio raquidiano (2 a 4 horas pós-operatório).
    - Ocitocina 10 a 20 UI diluídas em 500 mL de SF 0,9% ou Ringer Lactato IV a 125 mL/h nas primeiras 4–6 horas para manutenção do tônus uterino.
-   - Analgesia Multimodal Fixa: Dipirona 1 g IV 6/6h + [Cetoprofeno 100 mg IV 12/12h por 48h / PRÉ-ECLÂMPSIA / NEFROPATA!) / Paracetamol 750 mg VO 6/6h] + Morfina 2 mg IV de resgate se dor intensa (ou conforme morfina intratecal).
+   - Analgesia Multimodal Fixa: Dipirona 1 g IV 6/6h + [Cetoprofeno 100 mg IV 12/12h por 48h (CONTRAINDICADO / PRÉ-ECLÂMPSIA / NEFROPATA!) / Paracetamol 750 mg VO 6/6h] + Morfina 2 mg IV de resgate se dor intensa (ou conforme morfina intratecal).
    - Antiemético e Simeticona: Ondansetrona 4 a 8 mg IV 8/8h se náuseas/prurido + Simeticona 40 a 80 gotas VO 8/8h.
    - Retirada precoce da Sonda Vesical de Demora e estímulo à deambulação assistida após 6 a 8 horas (prevenção de TEV e íleo paralítico); Enoxaparina 40 mg SC/dia se alto risco de TEV (iniciar >= 12h após bloqueio raquidiano e hemostasia segura).
 

@@ -10,17 +10,17 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos[? Leito :: , Leito ___], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
-Comorbidades: [+ *Hígida / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [Idade] anos, Leito [ ], G[ ] P[ ] A[ ] | Parto: [Vaginal / Cesárea] às [HH:MM] | Código Vermelho acionado às: [HH:MM].
+Comorbidades: [+ *Hígida / Outros].
+Alergias: [*Nega / Outros].
 - Perda Sanguínea Estimada: [ ] mL ([> 500 mL pós-parto vaginal / > 1.000 mL pós-cesárea / sangramento com instabilidade hemodinâmica]).
 - Sinais Vitais & Perfusão: PA: [ ] mmHg | FC: [ ] bpm | Índice de Choque Obstétrico (FC/PAS): [ ] (Normal < 0,9 | Alerta >= 0,9 | Transfusão maciça se >= 1,4) | FR: [ ] irpm | SpO2: [ ]% | TEC: [ ]s | Consciência: [Lúcida / Ansiosa / Sonolenta].
 
 # REVISÃO ETIOLÓGICA IMEDIATA DOS "4 Ts" (AO EXAME FÍSICO):
-- [x] 1. TÔNUS (70% — Atonia Uterina): [Útero hipotônico, amolecido e acima da cicatriz / Tônus firme preservado].
-- [ ] 2. TRAUMA (20% — Canal/Rotura/Inversão): Revisão sob válvulas: [Ausência de lacerações cervicais ou vaginais / Suturada laceração de colo/vagina sangrante / Drenado hematoma puerperal / Afastada inversão ou rotura uterina].
-- [ ] 3. TECIDO (10% — Restos Placentários): Revisão da cavidade uterina: [Cavidade vazia e limpa / Realizada curagem uterina com retirada de].
-- [ ] 4. TROMBINA (1% — Coagulopatia): [Sem coagulopatia prévia / Coagulograma e Fibrinogênio de urgência].
+- [x] 1. TÔNUS (70% — Atonia Uterina): [Útero hipotônico / Tônus firme preservado].
+- [ ] 2. TRAUMA (20% — Canal/Rotura/Inversão): Revisão sob válvulas: [Ausência de lacerações cervicais ou vaginais ativas / Suturada laceração de colo/vagina sangrante / Drenado hematoma puerperal / Afastada inversão ou rotura uterina].
+- [ ] 3. TECIDO (10% — Restos Placentários): Revisão da cavidade uterina: [Cavidade vazia e limpa / Realizada curagem uterina com retirada de restos].
+- [ ] 4. TROMBINA (1% — Coagulopatia): [Sem coagulopatia prévia / Coagulograma e Fibrinogênio de urgência coletados].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Hemorragia Pós-Parto Primária por [Atonia Uterina (CID-10: O72.1) / Laceração de Trajeto (O71.3) / Retenção Placentária (O72.0)] com Índice de Choque de [ ].

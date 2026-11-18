@@ -11,8 +11,8 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
 
 # HISTÓRICO RESPIRATÓRIO: Tabagismo pesado prévio ([ ] anos-maço) com diagnóstico de Doença Pulmonar Obstrutiva Crônica (DPOC) / Enfisema / Bronquite crônica. Faz uso de O2 domiciliar: [Não / Sim, L/min].
 
@@ -23,18 +23,18 @@ Piora da falta de ar e aumento do catarro há [ ] dias.
 1. AUMENTO DA DISPNEIA.
 2. AUMENTO DO VOLUME DA SECREÇÃO.
 3. AUMENTO DA PURULÊNCIA DO ESCARRO.
-[ ] Tipo 1 (Exacerbação Grave): 3 sintomas cardinais presentes -> INDICAÇÃO FORMAL DE ANTIBIOTICOTERAPIA.
-[ ] Tipo 2 (Exacerbação Moderada): 2 sintomas cardinais presentes.
-[ ] Tipo 3 (Exacerbação Leve): 1 sintoma cardinal associado a tosse, febre ou sintomas gripais.
+[ ] Tipo 1: 3 sintomas cardinais presentes -> INDICAÇÃO FORMAL DE ANTIBIOTICOTERAPIA.
+[ ] Tipo 2: 2 sintomas cardinais presentes.
+[ ] Tipo 3: 1 sintoma cardinal associado a tosse, febre ou sintomas gripais.
 Nega dor torácica pleurítica aguda súbita.
 Nega dor precordial em aperto.
-Nega edema assimétrico de panturrilhas ou hemoptise (afastado TEP).
+Nega edema assimétrico de panturrilhas ou hemoptise.
 Nega piora de edema de membros inferiores ou ortopneia.
-[Em uso de Formoterol/Budesonida, Tiotrópio].
+[Em uso de Formoterol/Budesonida].
 
 # EXAME FÍSICO:
 SSVV: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
-Geral: Lúcido [ou sonolento/comatoso por retenção hipercápnica], cianose perioral ausente/leve, taquidispneico, uso de musculatura acessória (tiragem intercostal e fúrcula), respiração com lábios semicerrados ("pursed-lip breathing").
+Geral: Lúcido [ou sonolento/comatoso por retenção hipercápnica de CO2], cianose perioral ausente/leve, taquidispneico, uso de musculatura acessória (tiragem intercostal e fúrcula), respiração com lábios semicerrados ("pursed-lip breathing").
 AR:
 Inspeção: Tórax em tonel (aumento do diâmetro anteroposterior), hiperinsuflação pulmonar.
 Percussão: Hipersonoridade pulmonar difusa bilateral, rebaixamento das cúpulas diafragmáticas.
@@ -43,7 +43,7 @@ ACV: Bulhas abafadas pelo enfisema pulmonar, ritmo cardíaco regular, ausência 
 
 # EXAMES COMPLEMENTARES NA UPA:
 - Gasometria Arterial: pH: [ ] | PaO2: [ ] mmHg | PaCO2: [ ] mmHg | HCO3: [ ] mEq/L | BE: [ ] | SatO2: [ ]%.
-  * [Acidose respiratória aguda com hipercapnia (pH / Distúrbio compensado].
+  * [Acidose respiratória aguda com hipercapnia (pH < 7,35 / Distúrbio compensado].
 - Radiografia de Tórax: Hiperinsuflação pulmonar difusa, retificação de cúpulas diafragmáticas, aumento dos espaços intercostais; ausência de pneumotórax ou consolidações lobares francas.
 
 # HIPÓTESES DIAGNÓSTICAS:
@@ -58,17 +58,17 @@ ACV: Bulhas abafadas pelo enfisema pulmonar, ritmo cardíaco regular, ausência 
 
 2. BRONCODILATADORES DE CURTA AÇÃO COMBINADOS:
    - Salbutamol spray 100 mcg (4 a 8 jatos) + Brometo de Ipratrópio spray (4 jatos) com espaçador a cada 20 a 30 minutos na 1ª hora.
-   - [OU]: Nebulização com Fenoterol 10 a 15 gotas + Ipratrópio 30 a 40 gotas em 3 mL de SF 0,9% (usar ar comprimido na nebulização se paciente retentor crônico de CO2).
+   - OU:: Nebulização com Fenoterol 10 a 15 gotas + Ipratrópio 30 a 40 gotas em 3 mL de SF 0,9% (usar ar comprimido na nebulização se paciente retentor crônico de CO2).
 
 3. CORTICOTERAPIA SISTÊMICA CURTA (PADRÃO-OURO - PROTOCOLO REDUCE):
    - Prednisona 40 mg VO 1x/dia pela manhã por exatamente 5 DIAS (o guideline GOLD e o estudo REDUCE provaram que 5 dias são suficientes; não usar por mais de 5 a 7 dias).
 
 4. ANTIBIOTICOTERAPIA (SE ANTHONISEN TIPO 1 OU TIPO 2 COM ESCARRO PURULENTO):
    - Amoxicilina + Clavulanato de Potássio 875/125 mg VO de 12/12h por 5 a 7 dias.
-   - [OU]: Azitromicina 500 mg VO 1x/dia por 5 dias consecutivos.
+   - OU:: Azitromicina 500 mg VO 1x/dia por 5 dias consecutivos.
    - [Se risco de Pseudomonas]: Levofloxacino 500 mg VO 1x/dia por 7 dias.
 
-5. [SE ACIDOSE RESPIRATÓRIA NA GASOMETRIA (pH <]:
+5. [SE ACIDOSE RESPIRATÓRIA NA GASOMETRIA (pH < 7,35]:
    - Indicação Imediata de VENTILAÇÃO NÃO INVASIVA (VNI com BiPAP): Modo Spontaneous/Timed (S/T), IPAP 10-12 cmH2O e EPAP 4-5 cmH2O. Reduz a mortalidade e o esforço ventilatório em mais de 50%.
 
 # RECEITA:

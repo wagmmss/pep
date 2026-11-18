@@ -12,15 +12,15 @@
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Peso: [ ] kg, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ].
 DUM: [DD/MM/AAAA] | MAC: [Nenhum / Método hormonal / DIU].
-TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias / entre 72h e 5 dias: elegível para contracepção]).
-Comorbidades: [+ *Hígida / Hepatite B vacinação: Completa 3 doses / Incompleta ou desconhecida / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+TEMPO DA EXPOSIÇÃO: [ ] horas ([≤ 72h: elegível para PEP HIV e profilaxias completas / entre 72h e 5 dias: elegível para contracepção]).
+Comorbidades: [+ *Hígida / Hepatite B vacinação: Completa 3 doses / Incompleta ou desconhecida / Outros].
+Alergias: [*Nega / Outros].
 
 # AP:
-MED: [*Nega uso contínuo / Em uso de: ___]
+MED: [*Nega uso contínuo / Em uso]
 HAB: [Nega tabagismo ou etilismo]
 CX: [Nega]
-ALER: [*Nega alergias medicamentosas / Alérgica a: ___]
+ALER: [*Nega alergias medicamentosas / Alérgica (especificar)]
 HF: [Nega]
 
 # CASO: ACOLHIMENTO E PROFILAXIA PÓS-VIOLÊNCIA SEXUAL (PORTARIA MS / PCDT)
@@ -32,10 +32,10 @@ CHECO EXAMES E TESTES RÁPIDOS DE TEMPO ZERO (T0):
 - β-hCG Sérico / Urinário (T0): [Negativo]. Coletado hemograma, transaminases (TGO/TGP) e creatinina basal.
 
 # EXAME CLÍNICO
-Bom estado geral [ou emocionalmente abalada, porém lúcida e], corada, hidratada, acianótica, anictérica, afebril (exame realizado com consentimento e acompanhante).
+Bom estado geral [ou emocionalmente abalada, porém lúcida e orientada], corada, hidratada, acianótica, anictérica, afebril (exame realizado com consentimento e acompanhante).
 - Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% AA.
 - Exame Corporal Externo: [Ausência de lesões traumáticas graves / Presença de escoriações ou equimoses descritas].
-- Exame Ginecológico / Perineal: [Sem lacerações ativas ou sangramento / Presença de hiperemia ou fissura mucosa].
+- Exame Ginecológico / Perineal: [Sem lacerações ativas ou sangramento / Presença de hiperemia ou fissura mucosa superficial].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Vítima de violência sexual dentro da janela de [≤ 72h / 72h–5 dias], elegível para profilaxias combinadas (contracepção de emergência, ISTs não virais, Hepatite B e PEP HIV) + Notificação Compulsória SINAN.
@@ -45,7 +45,7 @@ Bom estado geral [ou emocionalmente abalada, porém lúcida e], corada, hidratad
 2. Contracepção de Emergência (se exposição vaginal, β-hCG negativo e sem método seguro, idealmente até 72h, podendo ser usada até 120h / 5 dias):
    - Levonorgestrel 1,5 mg VO em dose única (ou 2 comprimidos de 0,75 mg juntos) + antiemético prévio (Ondansetrona 8 mg VO). Se vômito < 2h, repetir dose; se peso >= 75 kg ou IMC >= 30 kg/m², preferir DIU de Cobre em até 5 dias quando disponível/aceito.
 3. Profilaxia das ISTs Não Virais (Dose Única Supervisionada no Consultório):
-   - Sífilis: Penicilina G Benzatina 2.400.000 UI IM (1.200.000 UI em cada glúteo) [se alergia grave à penicilina: Doxiciclina 100].
+   - Sífilis: Penicilina G Benzatina 2.400.000 UI IM (1.200.000 UI em cada glúteo) [se alergia grave à penicilina: Doxiciclina 100 mg VO].
    - Gonorreia: Ceftriaxona 500 mg IM em dose única.
    - Clamídia e Cancro Mole: Azitromicina 1 g VO (2 comprimidos de 500 mg) em dose única.
    - Tricomoníase: Metronidazol 2 g VO (8 comprimidos de 250 mg ou 5 de 400 mg) em dose única (postergar 48–72h para evitar intolerância gástrica junto com os antirretrovirais).

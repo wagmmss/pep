@@ -11,29 +11,29 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Sim: ___].
-Hábitos: [*Constipação intestinal crônica, baixa ingesta / Outros: ___].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Sim].
+Hábitos: [*Constipação intestinal crônica / Outros].
 
 # QP:
 Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
 
 # HMA:
 Relata quadro com início após esforço evacuatório com fezes ressecadas há cerca de [ ] dias.
-HIPÓTESE A - TROMBOSE HEMORROIDÁRIA EXTERNA: Dor anal de início súbito, contínua, latejante, que piora ao sentar ou deambular, associada ao aparecimento de "nódulo doloroso" duro na margem do ânus.
+Dor anal de início súbito, contínua, latejante, que piora ao sentar ou deambular, associada ao aparecimento de "nódulo doloroso" duro na margem do ânus.
 Dor anal excruciante em queimação durante a evacuação, que persiste por várias horas após evacuar, associada a rajas de sangue vermelho vivo sobre as fezes ou no papel.
 Sangramento indolor vermelho rutilante gotejando no vaso sanitário ao término da evacuação, associado a sensação de peso e prolapso mucoso redutível.
 Nega febre, calafrios ou secreção purulenta fétida anal contínua.
-Nega fezes afiladas ("fezes em fita"), perda involuntária de peso ou astenia severa.
+Nega fezes afiladas, perda involuntária de peso ou astenia severa.
 Nega diarreia crônica alternada com constipação persistente.
 
 # EXAME FÍSICO:
 Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.
 Inspeção Perianal Estática e Dinâmica:
-[Se Trombose Hemorroidária]: Presença de nódulo perianal arredondado, tenso, violáceo, localizado às [ ] horas na margem anal, medindo cerca de [ ] cm, doloroso à palpação, sem necrose tecidual ou sangramento ativo [ou com ulceração central e saída de coágulos].
+[Se Trombose Hemorroidária]: Presença de nódulo perianal arredondado, tenso, violáceo, localizado às [ ] horas na margem anal, medindo cerca de [ ] cm, doloroso à palpação, sem necrose tecidual ou sangramento ativo [ou com ulceração central e saída de coágulos escuros].
 [Se Fissura Anal]: Presença de solução de continuidade longitudinal linear na borda anal, localizada tipicamente na linha média posterior às 6 horas [ou anterior às 12 horas], com fundo avermelhado recente e plicoma sentinela ausente/presente.
 [Se Hemorroida Interna]: Coxins hemorroidários internos prolapsados na manobra de Valsalva [Grau II / Grau III].
-Toque Retal: [Realizado com xilocaina gel: ausência de massas / Dispensado toque retal no momento devido a].
+Toque Retal: [Realizado com xilocaina gel: ausência de massas / Dispensado toque retal no momento devido a hipertonia].
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. [Trombose Hemorroidária Externa aguda / Fissura Anal Aguda / Crise Hemorroidária Interna com prolapso] (CID-10: I84.3 / K60.0 / I84.2).
@@ -56,7 +56,7 @@ Toque Retal: [Realizado com xilocaina gel: ausência de massas / Dispensado toqu
    - Flavonoides micronizados (Diosmina 450 mg + Hesperidina 50 mg) - Tomar 2 comprimidos VO de 8/8h nos primeiros 4 dias; depois 2 comprimidos VO de 12/12h por mais 3 dias; e depois 1 comprimido VO 12/12h até completar 14 dias.
 4. Suplemento de Fibras & Laxativo de Volume:
    - Plantago ovata / Psyllium (Metamucil) - Tomar 1 colher de sopa diluída em 250 mL de água VO 1x/dia, acompanhado de bastante líquido.
-   - [OU]: Óleo Mineral ou Lactulose 15 mL VO à noite se fezes endurecidas.
+   - OU:: Óleo Mineral ou Lactulose 15 mL VO à noite se fezes endurecidas.
 5. Analgésicos Orais:
    - Dipirona 1 g VO de 6/6h se dor + Ibuprofeno 600 mg VO 8/8h após as refeições por até 3 a 5 dias.
 

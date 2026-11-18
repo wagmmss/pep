@@ -12,14 +12,14 @@
 ATENDIMENTO DE EMERGÊNCIA — BRADIARRITMIA SINTOMÁTICA & BLOQUEIO ATRIOVENTRICULAR (ACLS)
 
 # IDENTIFICAÇÃO:
-ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg[? Leito :: , Leito: Sala Vermelha ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg, Leito: Sala Vermelha [ ].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 APRESENTAÇÃO CLÍNICA & SINAIS DE INSTABILIDADE (5 CRITÉRIOS DO ACLS):
 - Queixa Principal: Paciente admitido na Sala Vermelha por [síncope / pré-síncope e tontura intensa / dispneia aguda / dor torácica isquêmica / rebaixamento do nível de consciência] associado a FC < 50 bpm.
-- Critérios de Instabilidade Hemodinâmica pela Bradicardia: [1. Hipotensão (PAS < 90 mmHg) / 2. Alteração aguda do estado mental / 3. Sinais de Choque / 4. Desconforto torácico isquêmico / 5. Insuficiência cardíaca aguda (EAP)].
-- Causas Reversíveis Investigadas (Hs e Ts / Drogas): Uso de [Betabloqueador / Bloqueador de Canal de Cálcio / Digoxina / Amiodarona] | [Hipercalemia / Hipotireoidismo grave / IAM de Parede Inferior (CD) / Hipóxia].
+- Critérios de Instabilidade Hemodinâmica pela Bradicardia: [1. Hipotensão (PAS < 90 mmHg) / 2. Alteração aguda do estado mental / 3. Sinais de Choque / 4. Desconforto torácico isquêmico / 5. Insuficiência cardíaca aguda].
+- Causas Reversíveis Investigadas (Hs e Ts / Drogas): Uso de [Betabloqueador / Bloqueador de Canal de Cálcio / Digoxina / Amiodarona] | [Hipercalemia / Hipotireoidismo grave / IAM de Parede Inferior / Hipóxia].
 
 EXAME FÍSICO & MONITORIZAÇÃO MULTIPARAMÉTRICA:
 - Sinais Vitais: PA: [ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Glicemia Capilar: [ ] mg/dL.

@@ -10,19 +10,19 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável: ___].
-Comorbidades: [+ *Hígido(a) / Outros: ___].
-Alergias: [*Nega / Outros: ___].
+ID: [Nome], [ ] [meses / anos], Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Responsável].
+Comorbidades: [+ *Hígido / Outros].
+Alergias: [*Nega / Outros].
 
 # QP:
 Coriza, obstrução nasal e tosse há [ ] dias.
 
 # HMA:
-Quadro iniciado há [ ] dias com espirros, obstrução nasal e rinorreia [hialina fluida / mucoide amarelada fisiológica da evolução viral], acompanhada de tosse [predominantemente noturna ao deitar por].
-[Afebril / Febre baixa a moderada (< 38,5 °C) nos].
-Estado Geral, Aceitação e Diurese: Criança permanece ativa, brincando e sorrindo quando afebril; aceitando [bem líquidos e seio materno / com leve redução de sólidos pelo nariz entupido]. Diurese clara e preservada.
-Nega dispneia, respiração acelerada (taquipneia), afundamento de costelas (tiragens) ou gemência.
-Nega sibilância (chiado no peito) ou estridor laríngeo inspiratório.
+Quadro iniciado há [ ] dias com espirros, obstrução nasal e rinorreia [hialina fluida / mucoide amarelada fisiológica da evolução viral], acompanhada de tosse [predominantemente noturna ao deitar por gotejamento].
+[Afebril / Febre baixa a moderada (< 38,5 °C) nos primeiros 2–3].
+Criança permanece ativa, brincando e sorrindo quando afebril; aceitando [bem líquidos e seio materno / com leve redução de sólidos pelo nariz entupido]. Diurese clara e preservada.
+Nega dispneia, respiração acelerada, afundamento de costelas ou gemência.
+Nega sibilância ou estridor laríngeo inspiratório.
 Nega febre alta persistente (> 39 °C) por mais de 72 horas ou "dupla curva" (piora após o 5º dia).
 Nega otalgia intensa, otorreia purulenta ou abaulamento retroauricular.
 Nega prostração fora do período febril, vômitos incoercíveis ou petéquias.
