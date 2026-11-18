@@ -43,7 +43,7 @@ Exames Complementares (Solicitados apenas se PAC grave, internação ou dúvida 
 # CONDUTA:
 
 >> [MODALIDADE] CONDUTA AMBULATORIAL NA PAC NÃO GRAVE (> 2–3 MESES, SpO2 ≥ 92%, BOA ACEITAÇÃO ORAL):
-1. Antibioticoterapia de 1ª Escolha (Foco em *Streptococcus pneumoniae*):
+1. Antibioticoterapia de 1ª Escolha (Foco em Streptococcus pneumoniae):
    - Amoxicilina por via oral na dose de 50 a 90 mg/kg/dia dividida de 8/8h (formulação 250 mg/5 mL) ou de 12/12h (formulação 400 mg/5 mL) durante 7 dias (ou 10 dias se quadro extenso).
    - *[Se ≥ 5 anos com quadro clínico clássico de PAC Atípica]*: Azitromicina 10 mg/kg/dia VO no D1 (máx 500 mg) seguido de 5 mg/kg/dia do D2 ao D5 (ou Claritromicina 15 mg/kg/dia de 12/12h por 7–10 dias).
 2. Antitérmico/analgésico se febre ou dor pleurítica (Dipirona ou Paracetamol gotas) e hidratação oral vigorosa.
@@ -54,7 +54,7 @@ Exames Complementares (Solicitados apenas se PAC grave, internação ou dúvida 
 2. Solicitar Radiografia de Tórax, Hemograma, PCR e Hemocultura.
 3. Antibioticoterapia Venosa Empírica:
    - Criança vacinada sem sepse/derrame extenso: Ampicilina 200 mg/kg/dia EV de 6/6h (ou Penicilina Cristalina 200.000 UI/kg/dia EV de 4/4h ou 6/6h).
-   - Criança grave, vacinação incompleta ou derrame pleural complicado: Ceftriaxona 50 a 100 mg/kg/dia EV (+ Oxacilina 200 mg/kg/dia ou Clindamicina se suspeita de *S. aureus*/pneumatocele).
+   - Criança grave, vacinação incompleta ou derrame pleural complicado: Ceftriaxona 50 a 100 mg/kg/dia EV (+ Oxacilina 200 mg/kg/dia ou Clindamicina se suspeita de S. aureus/pneumatocele).
 
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO — PNEUMONIA COMUNITÁRIA (TRATAMENTO AMBULATORIAL)

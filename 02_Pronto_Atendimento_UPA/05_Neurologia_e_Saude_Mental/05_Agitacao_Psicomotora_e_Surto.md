@@ -53,7 +53,7 @@ Risco de Auto ou Heteroagressão: [ELEVADO - RISCO IMINENTE DE VIOLÊNCIA FÍSIC
 2. PROTOCOLO PADRÃO-OURO PARA SURTO PSIQUIÁTRICO / PSICOSE / MANIA (Antipsicótico + Anti-histamínico com ação anticolinérgica):
    - Haloperidol (Haldol) 5 mg (1 ampola = 1 mL) INTRAMUSCULAR profunda no glúteo.
    + Prometazina (Fenergan) 50 mg (1 ampola = 2 mL) INTRAMUSCULAR profunda no outro glúteo.
-   *(Nota: A Prometazina potencializa a sedação do Haloperidol e PREVINE OBRIGATORIAMENTE a ocorrência de distonia aguda, trismo e crise oculógira induzidas pelo haloperidol).*
+   (Nota: A Prometazina potencializa a sedação do Haloperidol e PREVINE OBRIGATORIAMENTE a ocorrência de distonia aguda, trismo e crise oculógira induzidas pelo haloperidol).
 3. [Se paciente muito violento com pico adrenérgico]:
    - Adicionar Midazolam 5 a 10 mg IM profunda (ação sedativa hipnótica em 10 minutos).
 4. [SE PACIENTE IDOSO COM DELIRIUM]:

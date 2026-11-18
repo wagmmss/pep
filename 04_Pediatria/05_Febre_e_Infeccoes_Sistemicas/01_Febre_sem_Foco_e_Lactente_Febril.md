@@ -49,7 +49,7 @@ Líquor (Punção Lombar): [Não indicada / Realizada (< 28 dias ou sinais de al
 >> [CENÁRIO 1 — RECÉM-NASCIDO < 28 DIAS]: INTERNAÇÃO & TRIAGEM SÉPTICA COMPLETA OBRIGATÓRIA:
 1. Internação hospitalar imediata (mesmo que o RN pareça em ótimo estado geral e com exames iniciais normais).
 2. Coletar Hemograma, PCR, 2 Hemoculturas, Urina 1 + Urocultura por sondagem vesical, Radiografia de Tórax (se sintomas respiratórios) e Punção Lombar obrigatória (LCR).
-3. Iniciar antibioticoterapia venosa empírica imediata: Ampicilina 50 mg/kg/dose EV de 6/6h ou 8/8h (cobertura para *Streptococcus agalactiae* e *Listeria*) + Gentamicina 4 a 5 mg/kg/dia EV 1x/dia (ou Cefotaxima 50 mg/kg/dose EV de 8/8h ou 6/6h se suspeita de meningite) para Gram-negativos entéricos (*E. coli*). *(Atenção: Ceftriaxona é estritamente CONTRAINDICADA em recém-nascidos < 28 dias pelo risco de kernicterus por deslocamento da bilirrubina da albumina e precipitação fatal com cálcio).*
+3. Iniciar antibioticoterapia venosa empírica imediata: Ampicilina 50 mg/kg/dose EV de 6/6h ou 8/8h (cobertura para Streptococcus agalactiae e Listeria) + Gentamicina 4 a 5 mg/kg/dia EV 1x/dia (ou Cefotaxima 50 mg/kg/dose EV de 8/8h ou 6/6h se suspeita de meningite) para Gram-negativos entéricos (E. coli). (Atenção: Ceftriaxona é estritamente CONTRAINDICADA em recém-nascidos < 28 dias pelo risco de kernicterus por deslocamento da bilirrubina da albumina e precipitação fatal com cálcio).
 
 >> [CENÁRIO 2 — LACTENTE DE 29 A 90 DIAS]: CONDUTA GUIADA POR CRITÉRIOS DE RISCO (ROCHESTER / STEP-BY-STEP):
 1. Coletar obrigatoriamente EAS + Urocultura por sonda vesical + Hemograma + PCR + Hemocultura.

@@ -56,7 +56,7 @@ Infecção Secundária: [*Ausente / Presença de crostas melicéricas amareladas
    - Ivermectina 6 mg (dose calculada por peso: 200 mcg/kg = 1 comprimido para cada 30 kg):
    - Tomar [ ] comprimidos VO em dose única com água, em jejum, hoje.
    - OBRIGATÓRIO REPETIR A MESMA DOSE DE [ ] COMPRIMIDOS APÓS EXATAMENTE 7 A 14 DIAS.
-   *(Contraindicado em gestantes e crianças com peso < 15 kg).*
+   (Contraindicado em gestantes e crianças com peso < 15 kg).
 
 3. CONTROLE DO PRURIDO NOTURNO (ANTI-HISTAMÍNICO SEDATIVO):
    - Hidroxizina 25 mg [ou Maleato de Dexclorfeniramina 2 mg] - Tomar 1 comprimido VO à noite ao deitar por 5 a 7 dias (alivia a coceira alérgica e melhora o sono).

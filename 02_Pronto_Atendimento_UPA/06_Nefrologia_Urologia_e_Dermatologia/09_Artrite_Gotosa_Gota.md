@@ -40,7 +40,7 @@ Demais articulações periféricas: Livres de sinovite ativa no momento (padrão
 
 # EXAMES LABORATORIAIS NA UPA:
 - Ácido Úrico Sérico: [ ] mg/dL.
-  *(Atenção: O nível de ácido úrico pode estar transitoriamente NORMAL em até 30% a 40% dos pacientes durante a crise aguda, pois os cristais se precipitaram na articulação; valor normal NÃO descarta o diagnóstico de gota!).*
+  (Atenção: O nível de ácido úrico pode estar transitoriamente NORMAL em até 30% a 40% dos pacientes durante a crise aguda, pois os cristais se precipitaram na articulação; valor normal NÃO descarta o diagnóstico de gota!).
 - Provas Inflamatórias: VHS e PCR moderadamente elevados; Leucograma sem leucocitose exuberante.
 
 # HIPÓTESES DIAGNÓSTICAS:

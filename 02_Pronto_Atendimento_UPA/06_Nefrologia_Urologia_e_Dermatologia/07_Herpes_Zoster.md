@@ -49,7 +49,7 @@ Movimentação ocular extrínseca normal; reflexo fotomotor preservado bilateral
 1. Antiviral Oral de Alta Dose (OBRIGATÓRIO PRESCREVER A DOSE CORRETA DE 800 MG):
    - Aciclovir 800 mg (dois comprimidos de 400 mg ou um comprimido de 800 mg):
    - Tomar 800 mg VIA ORAL, CINCO (5) VEZES AO DIA (de 4 em 4 horas durante o dia, ex: às 06h, 10h, 14h, 18h e 22h, pulando a dose da madrugada), por 7 dias consecutivos.
-   *(OU se disponibilidade): Valaciclovir 1.000 mg VO de 8/8 horas por 7 dias (maior comodidade).*
+   (OU se disponibilidade): Valaciclovir 1.000 mg VO de 8/8 horas por 7 dias (maior comodidade).
 2. Manejo da Dor Neuropática Aguda & Prevenção de Neuralgia Pós-Herpética:
    - Gabapentina 300 mg - Tomar 1 cápsula VO à noite ao deitar por 3 dias; aumentar para 1 cápsula VO de 12/12h a partir do 4º dia (reduz a sensibilização central dos nervos e previne dor crônica).
 3. Analgesia de Suporte:

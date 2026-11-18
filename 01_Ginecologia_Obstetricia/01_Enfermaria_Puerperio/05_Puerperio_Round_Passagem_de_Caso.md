@@ -35,7 +35,7 @@ ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Leito: [ ].
 - Extremidades: Sem edemas assimétricos, panturrilhas livres e indolores."
 
 # 4. AUDITORIA DE PRONTUÁRIO (DADOS MANDATÓRIOS DA CHEFIA):
-"- Imuno-hematologia: Mãe TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-][? TS RN :: , RN TS O+ / A+ / B+ / AB+ / O- / A- / B- / AB-, Coombs Direto negativo / Mãe Rh- com RN Rh+].
+"- Imuno-hematologia: Mãe TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-], RN TS [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-], Coombs Direto [*negativo / positivo].
 - Sorologias & Vacinas: HIV, VDRL e HBsAg [não reagentes / Outros], Toxo [imune / suscetível orientada].
 - Controles Específicos: [Curva pressórica normotensa < 140x90 mmHg / Glicemias capilares normais sem insulina / Hb de controle pós-HPP: g/dL]."
 

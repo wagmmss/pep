@@ -10,28 +10,25 @@
 
 ```text
 # IDENTIFICAÇÃO:
-ID: [Nome], [ ] anos e [ ] meses[? DN :: ], Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Avó / Responsável].
+ID: [Nome], [ ] anos e [ ] meses, Sexo: [Masculino / Feminino], Peso: [ ] kg, Acompanhante: [Mãe / Pai / Avó / Responsável].
 Comorbidades: [+ *Hígido / Asma / Sibilância recorrente / APLV / Prematuridade / Outros].
 Alergias: [*Nega alergias conhecidas / Alérgico (especificar)].
-Estatura: [ ] cm / PC (< 2 anos): [ ] cm / Vacinação: *Em dia / Atraso: [ ] .
+Estatura: [ ] cm | PC: [ ] cm | Vacinação: [*Em dia / Atraso].
 
 # QP:
 [ ] há [ ] [hora / dia].
 
 # HMA:
 Responsável informa que a criança iniciou quadro de [ ], evoluindo com [ ].
-[*Nenhuma / Dipirona gotas há h / Paracetamol gotas há h / Ibuprofeno gotas há h].
-[*Reanima, brinca e interage / Permanece prostrada mesmo sem febre].
-[*Mantendo aceitação plena de seio materno e líquidos / Aceitando líquidos com redução de sólidos / Recusa importante].
-[*Preservada / Reduzida / Sem diurese há > 6–8h].
-[*Normal / Diarreia / Constipação há dias].
+Em casa usou [*nenhuma medicação / dipirona gotas / paracetamol gotas / ibuprofeno gotas].
+No momento [*reanima, brinca e interage / permanece prostrada mesmo sem febre], com aceitação alimentar [*plena de seio materno e líquidos / apenas líquidos / recusa importante], diurese [*preservada / reduzida / ausente há > 6–8h] e hábito intestinal [*normal / diarreia / constipação].
 Nega crises convulsivas, gemência contínua, cianose, vômitos incoercíveis/biliosos, petéquias, abaulamento de fontanela ou rigidez de nuca.
-Parto *Normal / Cesárea com [ ] semanas / [ ] .
+Parto [*Normal / Cesárea] com [ ] semanas.
 
 # EXAME FÍSICO:
 TEP (Triângulo Pediátrico): Aparência [*Normal / Irritabilidade inconsolável / Hipoativo/prostrado]; Trabalho Respiratório [*Normal, sem tiragens / Taquipneia e tiragem / Grave]; Circulação [*Corada, extremidades quentes / Palidez ou livedo]. Classificação: [*Estável / Desconforto Respiratório / Falência Respiratória / Choque].
 SSVV: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | TEC: [*< 2s / s].
-Geral & Pele: [*BEG, ativo e reativo, corado, hidratado, anictérico / REG / Desidratado leve-moderado / Outros][? Fontanela (< 18m) :: | Fontanela: *Plana e normotensa / Deprimida / Abaulada].
+Geral & Pele: [*BEG, ativo e reativo, corado, hidratado, anictérico / REG / Desidratado leve-moderado / Outros]. Fontanela: [*Plana e normotensa / Deprimida / Abaulada].
 Respiratório: [*Sem tiragens / Sibilos expiratórios / Estertores crepitantes].
 Cardiovascular: [*RCR em 2T, BNF, sem sopros / Outros].
 Abdome & Genitália: [*Plano/globoso fisiológico / Outros].
@@ -52,7 +49,7 @@ Neurológico: [*Alerta, pupilas isofotorreagentes, tônus preservado / Outros].
 >> CONDUTA DOMICILIAR & ORIENTAÇÕES AOS PAIS:
 1. Prescrição domiciliar calculada pelo peso atual aferido ([ ] kg).
 2. Lavagem nasal frequente com Soro Fisiológico 0,9% morno e oferta fracionada de líquidos/leite materno.
-3. Explicados e entregues por escrito os sinais de alarme para retorno imediato ao Pronto Atendimento Pediátrico (confirmado entendimento pelo método *Teach-Back*).
+3. Explicados e entregues por escrito os sinais de alarme para retorno imediato ao Pronto Atendimento Pediátrico (confirmado entendimento pelo método Teach-Back).
 
 # RECEITA:
 RECEITUÁRIO MÉDICO PEDIÁTRICO (DOSES CALCULADAS PELO PESO)

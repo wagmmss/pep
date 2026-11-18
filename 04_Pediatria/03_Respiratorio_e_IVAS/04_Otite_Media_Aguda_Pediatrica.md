@@ -48,7 +48,7 @@ Rinoscopia, Oroscopia & Ausculta Pulmonar: Mucosa nasal congesta com rinorreia; 
    - [OPÇÃO 2 — Risco de Pneumococo Resistente (< 2 anos]:
      Amoxicilina em Dose Dobrada: 90 mg/kg/dia VO dividida de 12/12h (preferir suspensão concentrada de 400 mg/5 mL).
    - [OPÇÃO 3 — Síndrome Otite-Conjuntivite]:
-     Amoxicilina + Clavulanato na dose de 50 a 90 mg/kg/dia da amoxicilina dividida de 12/12h *(Atenção farmacológica: na apresentação 7:1 de 400 + 57 mg/5 mL, respeitar o teto de ≤ 10 mg/kg/dia de clavulanato — para atingir 90 mg/kg/dia sem diarreia severa, usar formulação 14:1 de 600 + 42,9 mg/5 mL OU combinar 45 mg/kg/dia de Amox+Clav 400+57/5 mL + 45 mg/kg/dia de Amoxicilina pura 400/5 mL)*.
+     Amoxicilina + Clavulanato na dose de 50 a 90 mg/kg/dia da amoxicilina dividida de 12/12h (Atenção farmacológica: na apresentação 7:1 de 400 + 57 mg/5 mL, respeitar o teto de ≤ 10 mg/kg/dia de clavulanato — para atingir 90 mg/kg/dia sem diarreia severa, usar formulação 14:1 de 600 + 42,9 mg/5 mL OU combinar 45 mg/kg/dia de Amox+Clav 400+57/5 mL + 45 mg/kg/dia de Amoxicilina pura 400/5 mL).
    - [OPÇÃO 4 — Alergia à Penicilina/Amoxicilina]: Se reação não-IgE: Cefuroxima 30 mg/kg/dia VO de 12/12h (ou Ceftriaxona 50 mg/kg/dia IM/EV por 1–3 dias). Se anafilaxia/IgE-mediada: Claritromicina 15 mg/kg/dia VO de 12/12h ou Azitromicina 10 mg/kg/dia no D1 e 5 mg/kg/dia do D2 ao D5.
    - Duração do Tratamento: [10 dias / 7 dias / 5 a 7 dias (≥ 6 anos leve-moderada)].
 3. Lavagem nasal frequente com SF 0,9% para desobstruir o óstio faríngeo da tuba auditiva; proscrito uso de gotas otológicas no ouvido se houver suspeita de perfuração timpânica.

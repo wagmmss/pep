@@ -14,7 +14,7 @@ ID: [Nome], [Idade] anos, Profissão: [ ], G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], TS/
 Comorbidades: [+ *Hígida / Outros].
 Alergias: [*Nega alergias conhecidas / Alérgica (especificar)].
 Antecedentes Obstétricos: [*Nulípara / Gestações prévias sem intercorrências / Pré-eclâmpsia prévia / DMG prévio / Parto prematuro prévio / Cesárea prévia há anos]. Último Citopatológico: [*Em dia e normal / Colhido há > 1–3 anos].
-Medicações em uso: *Nega uso contínuo / [ ] / Hábitos: + *Nega tabagismo / Tabagista / Etilismo / [ ] .
+Medicações em uso: [*Nega uso contínuo / Outros]. Hábitos: [+ *Nega tabagismo / Tabagista / Etilismo / Outros].
 - DUM: [DD/MM/AAAA] ([Certa e confiável / Incerta]) -> IG DUM: [ ]s[ ]d | DPP (Nägele): [DD/MM/AAAA].
 - USG Precoce (1º Tri): [Solicitada hoje / Realizada em DD/MM com CCN de mm = IG USG s d].
 - IG Definitiva Adotada: [ ] semanas e [ ] dias.

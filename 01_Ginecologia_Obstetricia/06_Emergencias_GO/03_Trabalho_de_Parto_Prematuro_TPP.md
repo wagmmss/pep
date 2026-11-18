@@ -45,7 +45,7 @@ Toque Vaginal: Colo [centralizado / intermediário], amolecido, apagado [ ]%, di
 [1ª ESCOLHA]:
 - Ataque: Nifedipino 20 mg VO (comprimido deglutido) agora; reavaliar DU e PA em 20–30 min -> se persistirem contrações, administrar 10 a 20 mg VO a cada 20–30 minutos (Dose máxima na 1ª hora = 40 mg).
 - Manutenção (por 48 horas): Nifedipino 10 a 20 mg VO de 6/6h ou 8/8h até completar 24h após a 2ª dose de Betametasona (suspender após 48h!).
-- *Trava de segurança:* Aferir PA e FC a cada 20 min no ataque (suspender se PAS < 90 mmHg) e NUNCA associar Nifedipino com Sulfato de Magnésio em bolus rápido sem monitorização de bloqueio neuromuscular/hipotensão.
+- Trava de segurança: Aferir PA e FC a cada 20 min no ataque (suspender se PAS < 90 mmHg) e NUNCA associar Nifedipino com Sulfato de Magnésio em bolus rápido sem monitorização de bloqueio neuromuscular/hipotensão.
 
 [OU 2ª ESCOLHA (SE CARDIOPATA / GESTAÇÃO MÚLTIPLA) — ATOSIBAN EV]:
 - Etapa 1: Bólus de 6,75 mg (0,9 mL) EV direto em 1 minuto; Etapa 2: 18 mg/h (300 mcg/min) EV em BIC por 3 horas; Etapa 3: 6 mg/h (100 mcg/min) EV em BIC por até 45 horas.

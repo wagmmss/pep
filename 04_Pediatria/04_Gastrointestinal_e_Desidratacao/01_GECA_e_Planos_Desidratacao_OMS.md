@@ -58,7 +58,7 @@ Exame Abdominal: Abdome flácido, indolor à palpação profunda, ruídos hidroa
    - Diretriz Ministério da Saúde / OMS (100 mL/kg divididos em 2 etapas):
      * Menores de 1 ano (Total em 6 horas): 30 mL/kg em 1 hora (ou 30 min se choque) + 70 mL/kg em 5 horas.
      * Maiores de 1 ano (Total em 3 horas): 30 mL/kg em 30 minutos + 70 mL/kg em 2 horas e 30 minutos.
-   - *(No Choque Hipovolêmico PALS: Bólus de 20 mL/kg de SF 0,9% ou RL em 5 a 20 minutos, repetindo até restauração da perfusão e nível de consciência).*
+   - (No Choque Hipovolêmico PALS: Bólus de 20 mL/kg de SF 0,9% ou RL em 5 a 20 minutos, repetindo até restauração da perfusão e nível de consciência).
 3. Assim que a criança estiver consciente e capaz de deglutir, iniciar SRO concomitante (5 mL/kg/h) e reavaliar de hora em hora até transição para Plano B e Plano A.
 
 # RECEITA:

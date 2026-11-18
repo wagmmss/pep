@@ -13,7 +13,7 @@
 ID: [Nome], [Idade] anos, G[ ] P[ ] (PN [ ] / PC [ ]) A[ ], Status: [Menacme / Climatério / Pós-menopausa há anos].
 Comorbidades: [+ *Hígida / HAS / DM2 / Dislipidemia / Hipotireoidismo / Outros].
 Alergias: [*Nega alergias medicamentosas / Alérgica (especificar)].
-HF Câncer (Mama < 50a / Ovário / Endométrio em 1º grau): *Nega / Positivo em: [ ] / Tabagismo: *Nega / Sim.
+HF Câncer: [*Nega / Positivo]. Tabagismo: [*Nega / Sim].
 - DUM: [DD/MM/AAAA] | Ciclos: [Regulares 28/28d, fluxo 4–5d normal / Irregulares / Sangramento uterino aumentado com coágulos / Amenorreia].
 - Contracepção / TRH Atual: [Nenhum / ACO / DIU de Cobre / SIU-LNG Mirena / Implanon / Injetável mensal ou trimestral / Preservativo].
 - Rastreio Oncológico Prévio:

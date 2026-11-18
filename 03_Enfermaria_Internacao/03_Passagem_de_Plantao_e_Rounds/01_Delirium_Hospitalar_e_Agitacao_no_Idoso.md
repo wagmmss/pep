@@ -18,7 +18,7 @@ Alergias: [*Nega / Outros].
 - Cognição Basal Prévia (informada pela família): [Previamente lúcido e independente para AVDs / Portador de Demência de Alzheimer ou Vascular / Doença de Parkinson ou Demência por Corpos de Lewy].
 
 DIAGNÓSTICO BEIRA-LEITO PELO MÉTODO CAM (CONFUSION ASSESSMENT METHOD — 1 + 2 + [3 OU 4]):
-1. Início Agudo e Curso Flutuante (mudança súbita em horas/dias que piora à noite — *sundowning*): [Presente].
+1. Início Agudo e Curso Flutuante (mudança súbita em horas/dias que piora à noite — sundowning): [Presente].
 2. Inatenção (incapaz de dizer os dias da semana de trás para frente ou soletrar MUNDO ao contrário): [Presente].
 3. Pensamento Desorganizado (discurso incoerente, ilógico ou fluxo imprevisível de ideias): [Presente / Ausente].
 4. Alteração do Nível de Consciência (RASS diferente de 0): [Delirium Hiperativo / Delirium Hipoativo / Delirium Misto].

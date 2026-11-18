@@ -372,3 +372,32 @@ test('Central 6º Ano Marco 2: Matriz 9 Rodízios, Autonomia, Regra 3x, Escala, 
   assert.equal(classifyGuiaSectionTheme('Segurança, Travas & Proibições').cls, 'theme-danger');
   assert.ok(formatGuiaInlineHtml('**MgSO4**').includes('<strong'));
 });
+
+test('CSS Integrity: zero classes fantasma em index.html e src/ui/*.ts', () => {
+  const cssPath = path.join(ROOT, 'src/styles/cockpit.css');
+  const css = fs.readFileSync(cssPath, 'utf8');
+  const cssClasses = new Set([...css.matchAll(/\.([a-zA-Z_-][a-zA-Z0-9_-]*)/g)].map((m) => m[1]));
+
+  const uiDir = path.join(ROOT, 'src/ui');
+  const targets = [
+    path.join(ROOT, 'index.html'),
+    ...fs.readdirSync(uiDir)
+      .filter((f) => f.endsWith('.ts'))
+      .map((f) => path.join(uiDir, f)),
+  ];
+
+  const missing: string[] = [];
+  for (const filePath of targets) {
+    const content = fs.readFileSync(filePath, 'utf8');
+    for (const m of content.matchAll(/class=["'`]([^"'`${}]+)["'`]/g)) {
+      for (const cls of m[1].trim().split(/\s+/)) {
+        if (!cls || cls.includes('${')) continue;
+        if (!cssClasses.has(cls)) {
+          missing.push(`${cls} (${path.relative(ROOT, filePath)})`);
+        }
+      }
+    }
+  }
+
+  assert.deepEqual(missing, [], `Classes CSS sem definição em cockpit.css: ${missing.join(', ')}`);
+});

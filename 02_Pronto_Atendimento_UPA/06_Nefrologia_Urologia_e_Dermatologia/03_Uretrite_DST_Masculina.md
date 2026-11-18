@@ -42,14 +42,14 @@ Região Inguinal: Linfonodos inguinais bilaterais discretamente aumentados (1,0 
 
 # HIPÓTESES DIAGNÓSTICAS:
 1. Síndrome do Corrimento Uretral Masculino / Uretrite Infecciosa (CID-10: N34.1).
-2. Alta probabilidade clínica de infecção mista por *Neisseria gonorrhoeae* e *Chlamydia trachomatis*.
+2. Alta probabilidade clínica de infecção mista por Neisseria gonorrhoeae e Chlamydia trachomatis.
 
 # CONDUTA:
 
 >> CONDUTA NA UNIDADE (TERAPIA DE DOSE ÚNICA SUPERVISIONADA):
 1. TRATAMENTO PARA GONORREIA (Neisseria gonorrhoeae):
    - Ceftriaxona 500 mg INTRAMUSCULAR profunda em glúteo, em DOSE ÚNICA agora.
-   *(Diluir a Ceftriaxona em 2 mL de Lidocaína 1% sem vasoconstritor para minimizar a dor local da injeção).*
+   (Diluir a Ceftriaxona em 2 mL de Lidocaína 1% sem vasoconstritor para minimizar a dor local da injeção).
 2. TRATAMENTO PARA CLAMÍDIA (Chlamydia trachomatis):
    - Azitromicina 1 g (dois comprimidos de 500 mg juntos) VIA ORAL, em DOSE ÚNICA agora, deglutidos na frente da equipe de saúde.
    - [OU alternativa se intolerância]: Doxiciclina 100 mg VO de 12/12h por 7 dias consecutivos.

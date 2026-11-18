@@ -82,7 +82,7 @@ USO ORAL (CICLO CURTO ANTI-INFLAMATÓRIO OBRIGATÓRIO PÓS-CRISE PARA EVITAR REC
 USO INALATÓRIO (TRATAMENTO DE MANUTENÇÃO E ALÍVIO — DIRETRIZ GINA):
 2. Formoterol 12 mcg + Budesonida 400 mcg (Alenia / Foraseq / Symbicort) ----- 1 frasco/dispositivo
    Inalar 1 cápsula/dose de 12 em 12 horas todos os dias (tratamento controlador da inflamação brônquica) e, se necessário, fazer 1 inalação extra de alívio se sentir chiado ou falta de ar.
-   *(IMPORTANTE: Sempre enxaguar a boca com água e cuspir após usar a bombinha/cápsula com corticoide para evitar rouquidão e sapinho na boca).*
+   (IMPORTANTE: Sempre enxaguar a boca com água e cuspir após usar a bombinha/cápsula com corticoide para evitar rouquidão e sapinho na boca).
 
 3. [OU Alternativa SUS] Dipropionato de Beclometasona 250 mcg Spray + Salbutamol 100 mcg Spray (Aerolin):
    - Beclometasona 250 mcg (Bombinha Marrom — Manutenção): Aplicar 2 jatos de 12 em 12 horas todos os dias (enxaguar a boca após o uso).

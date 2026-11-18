@@ -14,7 +14,7 @@ ID: [Nome], [Idade] anos, Sexo: [Masculino / Feminino], Peso: [ ] kg.
 Acolhimento / Classificação de Risco: [Azul / *Verde / Amarelo / Vermelho] às [HH:MM].
 Comorbidades: [+ *Nega / HAS / DM2 / Asma / DPOC / DAC prévia / DRC / Neoplasia / Outros].
 Alergias: [*NEGA ALERGIAS CONHECIDAS / ALÉRGICO A: Dipirona / ALÉRGICO A: Penicilina / ALÉRGICO A: AINEs / Outros].
-Medicações em uso contínuo: *Nega / [ ] . / Hábitos: + *Nega tabagismo e etilismo / Tabagismo / Etilismo / [ ] .
+Medicações em uso contínuo: [*Nega / Outros]. Hábitos: [+ *Nega tabagismo e etilismo / Tabagismo / Etilismo / Outros].
 
 # QP:
 [Descrever queixa principal] há [ ] [hora / dia / semana].

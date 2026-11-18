@@ -13,7 +13,7 @@ export function showToast(
   const el = document.getElementById('cockpitToast');
   if (!el) return;
   el.textContent = message;
-  el.className = `cockpit-toast show toast-${variant}`;
+  el.className = `toast show toast-${variant}`;
   if (toastTimer) clearTimeout(toastTimer);
   toastTimer = setTimeout(() => {
     el.classList.remove('show');

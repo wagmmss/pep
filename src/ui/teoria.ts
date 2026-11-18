@@ -1,187 +1,412 @@
-import { FORMACAO_TEORICA_MODULOS } from '../engine/central6ano.ts';
+import {
+  buildContextualAiPrompt,
+  FORMACAO_TEORICA_MODULOS,
+} from '../engine/central6ano.ts';
 import { resolveLinksForTeoriaModule } from '../data/clinical_links.ts';
-import { formatGuiaInlineHtml } from '../engine/diretrizes.ts';
-import { getCentral6AnoState, uiBridge, updateCentral6AnoState } from './context.ts';
-import { escapeHtml, showToast } from './utils.ts';
+import {
+  getCentral6AnoState,
+  PROTOCOL_BY_ID,
+  uiBridge,
+  updateCentral6AnoState,
+} from './context.ts';
+import { copyToClipboard, escapeHtml, showToast } from './utils.ts';
 
-interface ModuleExercise {
-  id: string;
-  prompt: string;
-  placeholder: string;
+function normalizeTeoriaMathInline(raw: string): string {
+  return String(raw || '').replace(/\$([^$\n]+)\$/g, (_, expr: string) =>
+    expr
+      .replace(/\\times/g, '×')
+      .replace(/\\pm/g, '±')
+      .replace(/\\Delta/g, 'Δ')
+      .replace(/\\approx/g, '≈')
+      .replace(/\\leq/g, '≤')
+      .replace(/\\geq/g, '≥')
+      .replace(/\\text\{([^}]*)\}/g, '$1')
+      .replace(/HCO_3\^-/g, 'HCO₃⁻')
+      .replace(/pCO_2/g, 'pCO₂')
+      .replace(/Na\^\+/g, 'Na⁺')
+      .replace(/Cl\^-/g, 'Cl⁻')
+      .replace(/K\^\+/g, 'K⁺')
+      .replace(/Mg\^\{?2\+\}?/g, 'Mg²⁺')
+      .replace(/AG_\{corr\}/g, 'AG_corr')
+      .replace(/\{,\}/g, ',')
+      .replace(/\\,/g, ' ')
+      .replace(/[{}]/g, '')
+      .trim()
+  );
 }
 
-const MODULE_EXERCISES: Record<string, ModuleExercise[]> = {
-  'mod-01': [
-    { id: 'ex-01-a', prompt: 'Escreva 1 frase de Abertura + Captura de Agenda para paciente poliqueixoso:', placeholder: 'Ex.: Além da dor no peito, há mais algo que gostaria de resolver hoje?' },
-    { id: 'ex-01-b', prompt: 'Formule uma pergunta para explorar FICE (Medos/Expectativas) sem induzir:', placeholder: 'Ex.: O que mais te preocupa que possa estar causando isso?' },
-  ],
-  'mod-02': [
-    { id: 'ex-02-a', prompt: 'Descreva um Exame Físico normal em padrão HDPE (sem ping-pong):', placeholder: 'BEG, LOTE, corado, hidratado...' },
-    { id: 'ex-02-b', prompt: 'Cite 1 sinal de alta Razão de Verossimilhança (LR+) do seu rodízio atual:', placeholder: 'Ex.: B3 para IC, Murphy...' },
-  ],
-  'mod-03': [
-    { id: 'ex-03-a', prompt: 'Transforme um caso recente em One-Liner com qualificadores semânticos:', placeholder: 'Homem, 64a, tabagista, com dispneia progressiva subaguda...' },
-    { id: 'ex-03-b', prompt: 'Qual diagnóstico letal ("não posso perder") e qual viés cognitivo evitar?', placeholder: 'Ex.: TEP / Viés de ancoragem...' },
-  ],
-  'mod-04': [
-    { id: 'ex-04-a', prompt: 'Estruture um caso em SBAR (Situação, Background, Avaliação, Recomendação) em 4 linhas:', placeholder: 'S: ... B: ... A: ... R: ...' },
-  ],
-  'mod-05': [
-    { id: 'ex-05-a', prompt: 'Liste os 3 primeiros passos que você sempre esquece ao laudar ECG ou RX:', placeholder: 'Ex.: Calibração, rotação/penetração, seios costofrênicos...' },
-  ],
-  'mod-06': [
-    { id: 'ex-06-a', prompt: 'Quais das 7 Travas de Prescrição você aplica antes de assinar uma receita pediátrica/renal?', placeholder: 'Ex.: Peso em kg, teto adulto, ClCr...' },
-  ],
-  'mod-07': [
-    { id: 'ex-07-a', prompt: 'Descreva o Plano B (contingência) de um procedimento do seu rodízio atual:', placeholder: 'Ex.: Se falha na IOT, chamar ajuda + máscara laríngea...' },
-  ],
-};
+function formatInlineTeoriaMd(text: string): string {
+  const mathClean = normalizeTeoriaMathInline(text || '');
+  let html = escapeHtml(mathClean);
+  const codeSpans: string[] = [];
+  html = html.replace(/`([^`]+)`/g, (_, code: string) => {
+    const idx = codeSpans.length;
+    codeSpans.push(`<code>${code}</code>`);
+    return `@@TCODE_${idx}@@`;
+  });
+  html = html
+    .replace(/&lt;br\s*\/?&gt;/gi, '<br>')
+    .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+  codeSpans.forEach((span, idx) => {
+    html = html.replace(`@@TCODE_${idx}@@`, span);
+  });
+  return html;
+}
 
-let activeModId = FORMACAO_TEORICA_MODULOS[0]?.id || 'mod-01';
+function splitMdTableRow(trimmed: string): string[] {
+  const inner = trimmed.slice(1, -1);
+  const cells: string[] = [];
+  let cur = '';
+  for (let i = 0; i < inner.length; i++) {
+    if (inner[i] === '\\' && inner[i + 1] === '|') {
+      cur += '|';
+      i++;
+    } else if (inner[i] === '|') {
+      cells.push(cur);
+      cur = '';
+    } else {
+      cur += inner[i];
+    }
+  }
+  cells.push(cur);
+  return cells;
+}
 
-export function renderTeoriaSection(container: HTMLElement, initialModId?: string): void {
-  if (initialModId && FORMACAO_TEORICA_MODULOS.some((m) => m.id === initialModId)) {
-    activeModId = initialModId;
+export function renderTeoriaMarkdownToHtml(md: string): string {
+  const lines = String(md || '').split('\n');
+  const out: string[] = [];
+  let inUl = false;
+  let inOl = false;
+  let tableRows: string[][] = [];
+  let quoteBuffer: string[] = [];
+
+  const closeLists = () => {
+    if (inUl) {
+      out.push('</ul>');
+      inUl = false;
+    }
+    if (inOl) {
+      out.push('</ol>');
+      inOl = false;
+    }
+  };
+
+  const flushQuote = () => {
+    if (quoteBuffer.length === 0) return;
+    const innerHtml = quoteBuffer.map((q) => formatInlineTeoriaMd(q)).join('<br>');
+    out.push(`<blockquote>${innerHtml}</blockquote>`);
+    quoteBuffer = [];
+  };
+
+  const flushTable = () => {
+    if (tableRows.length === 0) return;
+    const headerCells = tableRows[0] || [];
+    const bodyRows = tableRows.slice(2);
+    let html = '<div class="mq-table-wrap"><table class="mq-table"><thead><tr>';
+    headerCells.forEach((c) => {
+      html += `<th>${formatInlineTeoriaMd(c.trim())}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+    bodyRows.forEach((row) => {
+      html += '<tr>';
+      row.forEach((c) => {
+        html += `<td>${formatInlineTeoriaMd(c.trim())}</td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table></div>';
+    out.push(html);
+    tableRows = [];
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i];
+    const trimmed = raw.trim();
+    const isIndented = /^\s{2,}/.test(raw);
+
+    if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
+      flushQuote();
+      closeLists();
+      tableRows.push(splitMdTableRow(trimmed));
+      continue;
+    } else if (tableRows.length > 0) {
+      flushTable();
+    }
+
+    if (trimmed.startsWith('> ')) {
+      closeLists();
+      quoteBuffer.push(trimmed.slice(2));
+      continue;
+    } else if (trimmed === '>') {
+      closeLists();
+      quoteBuffer.push('');
+      continue;
+    } else if (quoteBuffer.length > 0) {
+      flushQuote();
+    }
+
+    if (!trimmed) {
+      closeLists();
+      continue;
+    }
+    if (trimmed === '---') {
+      closeLists();
+      out.push('<hr>');
+      continue;
+    }
+    if (trimmed.startsWith('# ')) {
+      closeLists();
+      out.push(`<h1>${formatInlineTeoriaMd(trimmed.slice(2))}</h1>`);
+    } else if (trimmed.startsWith('## ')) {
+      closeLists();
+      out.push(`<h2>${formatInlineTeoriaMd(trimmed.slice(3))}</h2>`);
+    } else if (trimmed.startsWith('### ')) {
+      closeLists();
+      out.push(`<h3>${formatInlineTeoriaMd(trimmed.slice(4))}</h3>`);
+    } else if (/^[-*]\s+/.test(trimmed)) {
+      if (inOl && isIndented) {
+        out.push(
+          `<li style="list-style:disc; margin-left:22px;">${formatInlineTeoriaMd(trimmed.replace(/^[-*]\s+/, ''))}</li>`
+        );
+      } else {
+        if (inOl) {
+          out.push('</ol>');
+          inOl = false;
+        }
+        if (!inUl) {
+          out.push('<ul>');
+          inUl = true;
+        }
+        out.push(`<li>${formatInlineTeoriaMd(trimmed.replace(/^[-*]\s+/, ''))}</li>`);
+      }
+    } else if (/^\d+\.\s+/.test(trimmed)) {
+      if (inUl) {
+        out.push('</ul>');
+        inUl = false;
+      }
+      if (!inOl) {
+        out.push('<ol>');
+        inOl = true;
+      }
+      out.push(`<li>${formatInlineTeoriaMd(trimmed.replace(/^\d+\.\s+/, ''))}</li>`);
+    } else {
+      closeLists();
+      out.push(`<p>${formatInlineTeoriaMd(trimmed)}</p>`);
+    }
   }
 
-  const mod = FORMACAO_TEORICA_MODULOS.find((m) => m.id === activeModId) || FORMACAO_TEORICA_MODULOS[0];
-  if (!mod) return;
+  flushQuote();
+  closeLists();
+  flushTable();
+  return out.join('\n');
+}
 
-  const c6 = getCentral6AnoState();
-  const isRead = (c6.teoriaStatusById?.[mod.id] || 'nao_iniciado') !== 'nao_iniciado';
-  const links = resolveLinksForTeoriaModule(mod.id);
-  const exercises = MODULE_EXERCISES[mod.id] || [
-    { id: `ex-${mod.id}-1`, prompt: 'Síntese prática (1 ação imediata para o próximo plantão):', placeholder: 'Anote sua regra de bolso...' },
-  ];
+export function initTeoria(): (container: HTMLElement, subTab?: string) => void {
+  let activeContainer: HTMLElement | null = null;
 
-  container.innerHTML = `
-    <div class="mq-section-wrap">
-      <header class="mq-workspace-header">
-        <div>
-          <h2>📚 Formação Teórica (7 Módulos)</h2>
-          <p class="mq-workspace-sub">Base conceitual do 6º ano com vínculo direto ao Pré-Porta e exercícios práticos salvos localmente.</p>
-        </div>
-        <button type="button" class="btn ${isRead ? 'btn-primary' : 'btn-secondary'} btn-sm" id="teoriaMarkReadBtn">
-          ${isRead ? '✅ Módulo Concluído' : '☑️ Marcar como Estudado'}
-        </button>
-      </header>
+  const render = (container: HTMLElement, subTab?: string) => {
+    activeContainer = container;
+    const state = getCentral6AnoState();
+    const activeModId = subTab || state.activeTeoriaModId || FORMACAO_TEORICA_MODULOS[0]?.id || 'mod-01';
+    const mod = FORMACAO_TEORICA_MODULOS.find((m) => m.id === activeModId) || FORMACAO_TEORICA_MODULOS[0];
+    if (!mod) return;
 
-      <div class="mq-teoria-layout">
-        <aside class="mq-teoria-nav" id="teoriaModulesNav">
-          ${FORMACAO_TEORICA_MODULOS.map((m) => {
-            const done = (c6.teoriaStatusById?.[m.id] || 'nao_iniciado') !== 'nao_iniciado';
-            return `
-              <button type="button" class="mq-teoria-nav-btn${m.id === mod.id ? ' active' : ''}" data-mod-id="${escapeHtml(m.id)}">
-                <span>${escapeHtml(m.num)}. ${escapeHtml(m.shortTitle)}</span>
-                ${done ? '<span>✅</span>' : ''}
-              </button>
-            `;
-          }).join('')}
-        </aside>
+    if (mod.id !== state.activeTeoriaModId) {
+      updateCentral6AnoState((s) => ({ ...s, activeTeoriaModId: mod.id }));
+    }
 
-        <article class="mq-panel-card mq-teoria-content">
-          <div class="teoria-head">
-            <h3>${escapeHtml(mod.title)}</h3>
-            <p class="mq-hint">${escapeHtml(mod.pilar)}</p>
+    const latestState = getCentral6AnoState();
+    const statusMap = latestState.teoriaStatusById || {};
+    const modStatus = statusMap[mod.id] || 'nao_iniciado';
+    const links = resolveLinksForTeoriaModule(mod.id);
+    const mergedHabIds = Array.from(new Set([...(mod.relatedHabIds || []), ...links.habIds]));
+    const domCount = FORMACAO_TEORICA_MODULOS.filter(
+      (m) => (statusMap[m.id] || 'nao_iniciado') === 'dominado'
+    ).length;
+
+    const exDone = Boolean(latestState.teoriaExercisesDone?.[mod.id]);
+    let exNotes = '';
+    try {
+      const parsed = JSON.parse(localStorage.getItem('mq_teoria_ex_notes_v1') || '{}') as Record<string, string>;
+      exNotes = parsed[mod.id] || '';
+    } catch {
+      exNotes = '';
+    }
+
+    const relatedHabHtml =
+      mergedHabIds.length > 0
+        ? mergedHabIds
+            .map((hid) => {
+              const habCard = PROTOCOL_BY_ID.get(hid);
+              const label = habCard ? habCard.title : hid;
+              return `<button type="button" class="chip-preporta" data-open-hab="${escapeHtml(hid)}">🧠 ${escapeHtml(label)}</button>`;
+            })
+            .join('')
+        : `<span class="mq-hint">Nenhum cartão Pré-Porta específico vinculado.</span>`;
+
+    container.innerHTML = `
+      <section class="mq-section-pane active">
+        <header class="mq-workspace-header">
+          <div>
+            <div class="mq-eyebrow">CURRÍCULO TEÓRICO AVANÇADO · 7 DOMÍNIOS COMPLETOS</div>
+            <h2 class="mq-workspace-title">📚 Formação Teórica em Habilidades Médicas</h2>
+            <p class="mq-workspace-sub">Leitura clínica em ~72ch · Link bidirecional com os 22 Cartões Pré-Porta 30s · Controle de Domínio</p>
           </div>
-
-          ${
-            links.habIds.length > 0
-              ? `<div class="hab-links-row" style="margin-bottom:12px;">
-                  ${links.habIds
-                    .map(
-                      (hid) =>
-                        `<button type="button" class="pep-link-chip chip-preporta" data-open-hab="${escapeHtml(hid)}">🧠 Pré-Porta ${escapeHtml(hid)}</button>`
-                    )
-                    .join('')}
-                </div>`
-              : ''
-          }
-
-          <div class="teoria-sections">
-            <div class="guia-section-body">${formatGuiaInlineHtml(mod.markdown)}</div>
+          <div class="mq-btn-row">
+            <span class="mq-nav-badge">${domCount}/${FORMACAO_TEORICA_MODULOS.length} Dominados</span>
+            <button type="button" class="btn-palette-trigger" id="teoriaZenBtn">🧘 Modo Zen (Alt+Z)</button>
+            <button type="button" class="btn-palette-trigger" id="teoriaGoPrePortaBtn">🧠 Ver Cartões Pré-Porta 30s</button>
           </div>
+        </header>
 
-          <section class="teoria-exercises-box">
-            <h4>✍️ Exercícios Práticos do Módulo (Salvos Localmente)</h4>
-            ${exercises
-              .map((ex) => {
-                const doneFlag = Boolean(c6.teoriaExercisesDone?.[ex.id]);
-                const savedText = localStorage.getItem(`mq_teoria_ans_${ex.id}`) || '';
-                return `
-                  <div class="teoria-ex-item">
-                    <label class="teoria-ex-label">
-                      <input type="checkbox" data-ex-check="${escapeHtml(ex.id)}" ${doneFlag ? 'checked' : ''} />
-                      <span>${escapeHtml(ex.prompt)}</span>
-                    </label>
-                    <textarea class="mq-textarea" rows="2" data-ex-text="${escapeHtml(ex.id)}" placeholder="${escapeHtml(ex.placeholder)}">${escapeHtml(savedText)}</textarea>
+        <div class="mq-teoria-shell">
+          <aside class="mq-teoria-nav" aria-label="Índice dos 7 Módulos Teóricos">
+            ${FORMACAO_TEORICA_MODULOS.map((m) => {
+              const st = statusMap[m.id] || 'nao_iniciado';
+              const badge = st === 'dominado' ? '🏆 Dominado' : st === 'estudado' ? '📖 Estudado' : '⏳ Pendente';
+              const isAct = m.id === mod.id;
+              return `
+                <button type="button" class="mq-teoria-card-btn${isAct ? ' active' : ''}" data-teoria-mod="${escapeHtml(m.id)}">
+                  <div style="display:flex; align-items:center; justify-content:space-between; width:100%; gap:6px;">
+                    <span class="mq-stat-label" style="color:${escapeHtml(m.areaColor || 'var(--primary-bright)')};">MÓDULO ${escapeHtml(m.num)}</span>
+                    <span class="mq-nav-badge">${badge}</span>
                   </div>
-                `;
-              })
-              .join('')}
-            <button type="button" class="btn btn-primary btn-xs" id="teoriaSaveExBtn">💾 Salvar Respostas</button>
-          </section>
-        </article>
-      </div>
-    </div>
-  `;
+                  <div style="font-weight:700; font-size:0.86rem; line-height:1.3;">${escapeHtml(m.shortTitle)}</div>
+                  <div class="mq-hint">${escapeHtml(m.pilar)}</div>
+                </button>`;
+            }).join('')}
+          </aside>
 
-  container.querySelectorAll<HTMLButtonElement>('[data-mod-id]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      activeModId = btn.dataset.modId!;
-      renderTeoriaSection(container);
+          <div class="mq-teoria-reader-wrap">
+            <div class="teoria-head">
+              <div>
+                <span class="mq-eyebrow">${escapeHtml(mod.pilar)}</span>
+                <div class="mq-hint" style="font-family:var(--font-mono);">${escapeHtml(mod.fileName)}</div>
+              </div>
+              <div class="mq-btn-row" id="teoriaStatusBtns">
+                <button type="button" class="mq-counter-btn${modStatus === 'nao_iniciado' ? ' is-active' : ''}" data-tstatus="nao_iniciado">⏳ Não iniciado</button>
+                <button type="button" class="mq-counter-btn${modStatus === 'estudado' ? ' is-active' : ''}" data-tstatus="estudado" id="teoriaMarkReadBtn">📖 Estudado</button>
+                <button type="button" class="mq-counter-btn${modStatus === 'dominado' ? ' is-active' : ''}" data-tstatus="dominado">🏆 Dominado</button>
+              </div>
+            </div>
+
+            <div class="teoria-exercises-box" style="margin-top:0; margin-bottom:18px;">
+              <div class="mq-stat-label" style="margin-bottom:8px;">🔗 Cartões Pré-Porta 30s Conectados (Clique para abrir):</div>
+              <div class="hab-links-row">${relatedHabHtml}</div>
+              <div class="mq-btn-row" style="margin-top:10px; padding-top:8px; border-top:1px dashed var(--line-subtle);">
+                <span class="mq-hint" style="font-weight:700;">🎭 Treinar Módulo com IA (1 Clique):</span>
+                <button type="button" class="mq-counter-btn" data-ai-prompt="paciente">Paciente Simulado</button>
+                <button type="button" class="mq-counter-btn" data-ai-prompt="oratoria">Preceptor SNAPPS/SBAR</button>
+                <button type="button" class="mq-counter-btn" data-ai-prompt="raciocinio">Caso em 3 Etapas (Bayes)</button>
+                <button type="button" class="mq-counter-btn" data-ai-prompt="osce">Estação OSCE</button>
+              </div>
+            </div>
+
+            <article class="mq-prose-clinical" id="teoriaReaderArticle">
+              ${renderTeoriaMarkdownToHtml(mod.markdown)}
+            </article>
+
+            <div class="teoria-exercises-box">
+              <div class="mq-stat-label">✍️ Registro Local do Exercício Prático (Salvo Localmente)</div>
+              <div class="teoria-ex-item">
+                <label class="teoria-ex-label">
+                  <input type="checkbox" id="teoriaExDoneChk" ${exDone ? 'checked' : ''} />
+                  <span>Exercício prático do Módulo ${escapeHtml(mod.num)} concluído</span>
+                </label>
+              </div>
+              <div class="mq-control-group" style="margin-top:10px;">
+                <label class="mq-control-label" for="teoriaExNotesInput">Síntese pessoal, dúvidas ou lacunas encontradas:</label>
+                <textarea id="teoriaExNotesInput" class="mq-textarea" rows="3" placeholder="Ex.: Principais pontos cegos no cálculo de Δ/Δ ou HINTS à beira do leito...">${escapeHtml(exNotes)}</textarea>
+              </div>
+              <div class="mq-btn-row" style="margin-top:8px;">
+                <button type="button" class="btn btn-primary btn-xs" id="teoriaSaveExBtn">💾 Salvar Exercício</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+
+    container.querySelector('#teoriaZenBtn')?.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('mq:toggle-zen'));
     });
-  });
 
-  container.querySelector('#teoriaMarkReadBtn')?.addEventListener('click', () => {
-    updateCentral6AnoState((prev) => {
-      const cur = prev.teoriaStatusById?.[mod.id] || 'nao_iniciado';
-      const nextStatus = cur === 'nao_iniciado' ? 'estudado' : 'nao_iniciado';
-      return {
-        ...prev,
-        teoriaStatusById: { ...(prev.teoriaStatusById || {}), [mod.id]: nextStatus },
-      };
+    container.querySelector('#teoriaGoPrePortaBtn')?.addEventListener('click', () => {
+      uiBridge.navigate('preporta');
     });
-    renderTeoriaSection(container);
-  });
 
-  container.querySelectorAll<HTMLButtonElement>('[data-open-hab]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const hid = btn.dataset.openHab;
-      if (hid) {
-        uiBridge.navigate('preporta', { itemId: hid });
-        uiBridge.selectPrePortaCard(hid);
-      }
+    container.querySelectorAll<HTMLButtonElement>('[data-teoria-mod]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.teoriaMod!;
+        render(container, id);
+      });
     });
-  });
 
-  container.querySelectorAll<HTMLInputElement>('[data-ex-check]').forEach((chk) => {
-    chk.addEventListener('change', () => {
-      const exId = chk.dataset.exCheck!;
-      updateCentral6AnoState((prev) => ({
-        ...prev,
-        teoriaExercisesDone: { ...prev.teoriaExercisesDone, [exId]: chk.checked },
-      }));
-    });
-  });
-
-  container.querySelector('#teoriaSaveExBtn')?.addEventListener('click', () => {
-    container.querySelectorAll<HTMLTextAreaElement>('[data-ex-text]').forEach((ta) => {
-      const exId = ta.dataset.exText!;
-      localStorage.setItem(`mq_teoria_ans_${exId}`, ta.value);
-      if (ta.value.trim()) {
+    container.querySelectorAll<HTMLButtonElement>('[data-tstatus]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const st = btn.dataset.tstatus as 'nao_iniciado' | 'estudado' | 'dominado';
         updateCentral6AnoState((prev) => ({
           ...prev,
-          teoriaExercisesDone: { ...prev.teoriaExercisesDone, [exId]: true },
+          teoriaStatusById: {
+            ...prev.teoriaStatusById,
+            [mod.id]: st,
+          },
         }));
-      }
+        showToast(
+          st === 'dominado'
+            ? `🏆 Módulo ${mod.num} marcado como Dominado!`
+            : st === 'estudado'
+              ? `📖 Módulo ${mod.num} marcado como Estudado.`
+              : `Módulo ${mod.num} reiniciado.`,
+          'success'
+        );
+        render(container, mod.id);
+      });
     });
-    renderTeoriaSection(container);
-    showToast('✅ Exercícios salvos localmente!', 'success');
-  });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-open-hab]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const hid = btn.dataset.openHab!;
+        uiBridge.navigate('preporta', { itemId: hid });
+        uiBridge.selectPrePortaCard(hid);
+      });
+    });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-ai-prompt]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const kind = btn.dataset.aiPrompt as 'paciente' | 'oratoria' | 'raciocinio' | 'osce';
+        const prompt = buildContextualAiPrompt(kind, getCentral6AnoState());
+        void copyToClipboard(prompt, `Prompt ${kind.toUpperCase()}`);
+      });
+    });
+
+    container.querySelector('#teoriaSaveExBtn')?.addEventListener('click', () => {
+      const done = Boolean((container.querySelector('#teoriaExDoneChk') as HTMLInputElement | null)?.checked);
+      const notes = (container.querySelector('#teoriaExNotesInput') as HTMLTextAreaElement | null)?.value || '';
+      updateCentral6AnoState((prev) => ({
+        ...prev,
+        teoriaExercisesDone: {
+          ...(prev.teoriaExercisesDone || {}),
+          [mod.id]: done,
+        },
+      }));
+      try {
+        const parsed = JSON.parse(localStorage.getItem('mq_teoria_ex_notes_v1') || '{}') as Record<string, string>;
+        parsed[mod.id] = notes;
+        localStorage.setItem('mq_teoria_ex_notes_v1', JSON.stringify(parsed));
+      } catch {
+        // Ignore storage error
+      }
+      showToast('Exercício salvo localmente.', 'success');
+    });
+  };
 
   uiBridge.selectTeoriaModule = (modId: string) => {
-    activeModId = modId;
-    renderTeoriaSection(container);
+    updateCentral6AnoState((s) => ({ ...s, activeTeoriaModId: modId }));
+    if (activeContainer) render(activeContainer, modId);
   };
+
+  return render;
 }

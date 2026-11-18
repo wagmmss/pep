@@ -39,7 +39,7 @@ Alergias: [*Nega / Outros].
 >> PRESCRIÇÃO MÉDICA PÓS-PARTO IMEDIATO (CENTRO OBSTÉTRICO -> ALOJAMENTO CONJUNTO):
 1. Dieta geral livre e estímulo à hidratação oral e deambulação assistida após 2 horas.
 2. Vigilância do 4º Período de Greenberg (1ª hora pós-parto): Aferir PA, FC, tônus uterino (Globo de Pinard) e sangramento vaginal a cada 15 minutos na 1ª hora.
-3. Estímulo ao aleitamento materno na 1ª hora de vida (*Golden Hour*).
+3. Estímulo ao aleitamento materno na 1ª hora de vida (Golden Hour).
 4. Dipirona 1 g EV/VO de 6/6h se dor ou febre.
 5. Cetoprofeno 100 mg EV/VO de 12/12h se dor perineal/cólica uterina [NÃO PRESCREVER SE HIPERTENSA / PRÉ-ECLÂMPSIA].
 6. Simeticona 40 gotas VO de 8/8h se desconforto abdominal.

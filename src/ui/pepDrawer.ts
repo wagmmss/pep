@@ -6,7 +6,6 @@ import {
   createFreeEditState,
   detectPendingGaps,
   extractBodiesFromCustomPep,
-  formatMultiChoices,
   getNormalVitalDefaults,
   hasEmptyPediatricWeight,
   isInternalInstructionBracket,
@@ -18,7 +17,6 @@ import {
   sanitizePepOutput,
   undoFreeEditSnapshot,
   type FreeEditSessionState,
-  type PowerActionId,
 } from '../engine/personalizar.ts';
 import { getClinicalSeverity, parsePrescriptionItemsForCart } from '../engine/workstation.ts';
 import { cockpitStore } from '../state/store.ts';
@@ -29,178 +27,220 @@ import { copyToClipboard, escapeHtml, printReceiptDocument, showToast } from './
 type DrawerTab = 'pep' | 'guia' | 'cart';
 
 const SEVEN_TRAVAS = [
-  { id: 'trava-1', label: '1. Alergias checadas antes de prescrever' },
-  { id: 'trava-2', label: '2. Dose ajustada (peso pediátrico / função renal)' },
-  { id: 'trava-3', label: '3. Gestação / Lactação considerada' },
-  { id: 'trava-4', label: '4. Interações graves e contraindicações revisadas' },
-  { id: 'trava-5', label: '5. Via, diluição e tempo de infusão conferidos' },
-  { id: 'trava-6', label: '6. Sinais de alarme e retorno imediato orientados' },
-  { id: 'trava-7', label: '7. Reavaliação / critérios de internação definidos' },
+  { id: 'trava_a', label: 'A — Alergias medicamentosas e reações cruzadas checadas' },
+  { id: 'trava_r', label: 'R — Rim & Fígado: dose ajustada para TFG/Child-Pugh' },
+  { id: 'trava_g', label: 'G — Gestação, Puérpera & Lactação verificadas' },
+  { id: 'trava_i', label: 'I — Interações críticas (soma QTc / sangramento / K+)' },
+  { id: 'trava_v', label: 'V — Via, diluição e velocidade de infusão seguras' },
+  { id: 'trava_p', label: 'P — Peso (pediatria c/ teto adulto) & Idoso frágil' },
+  { id: 'trava_o', label: 'O — Objetivo terapêutico, profilaxias e plano de retorno' },
 ];
 
 export function initPepDrawer(): void {
   const overlay = document.getElementById('drawerOverlay');
-  const panel = document.getElementById('drawerPanel');
+  if (!overlay) return;
+
   const titleEl = document.getElementById('drawerTitle');
   const sevBadge = document.getElementById('drawerSeverityBadge');
   const cidBadge = document.getElementById('drawerCidBadge');
   const triggerEl = document.getElementById('drawerTrigger');
-  const closeBtn = document.getElementById('drawerCloseBtn');
-
   const tabPepBtn = document.getElementById('tabPepBtn');
   const tabGuiaBtn = document.getElementById('tabGuiaBtn');
   const tabCartBtn = document.getElementById('tabCartBtn');
-
   const pepPanel = document.getElementById('drawerInteractivePanel');
   const guiaPanel = document.getElementById('drawerGuiaPanel');
   const cartPanel = document.getElementById('drawerCartPanel');
-
-  if (!overlay || !panel || !pepPanel || !guiaPanel || !cartPanel) return;
+  const drawerFooter = document.getElementById('drawerFooter');
+  const closeBtn = document.getElementById('drawerCloseBtn');
 
   let activeProtocol: ClinicalProtocolItem | null = null;
   let activeTab: DrawerTab = 'pep';
   let fieldValues: Record<string, string | string[]> = {};
+  let highlightGaps = false;
   let freeEditMode = false;
   let freeEditState: FreeEditSessionState = createFreeEditState('');
-  let highlightGaps = false;
 
-  const compileTokens = (rawText: string, prefix = 'tok'): string => {
-    const tokens = parseBalancedBrackets(rawText);
-    if (tokens.length === 0) return rawText;
-
-    const identity = cockpitStore.getState().patientSession.identity;
-    let out = '';
-
-    tokens.forEach((tok, idx) => {
-      if (tok.type === 'text') {
-        out += tok.raw;
-        return;
-      }
-
-      const key = `${prefix}_${idx}`;
-      const inner = (tok.inner || '').trim();
-
-      if (isInternalInstructionBracket(inner) || isSecondaryOptionBracket(inner)) {
-        return;
-      }
-
-      if (inner.startsWith('?')) {
-        const body = inner.slice(1).trim();
-        const sepIdx = body.indexOf('::');
-        const content = sepIdx >= 0 ? body.slice(sepIdx + 2).trim() : body;
-        const enabled = fieldValues[key] === '1';
-        if (enabled) {
-          out += compileTokens(content, `${key}_sub`);
-        }
-        return;
-      }
-
-      const saved = fieldValues[key];
-      if (typeof saved === 'string' && saved.trim()) {
-        out += saved;
-        return;
-      }
-      if (Array.isArray(saved) && saved.length > 0) {
-        out += formatMultiChoices(saved);
-        return;
-      }
-
-      const low = inner.toLowerCase();
-      if (low === 'nome' && identity.nome) {
-        out += identity.nome;
-        return;
-      }
-      if (low === 'idade' && identity.idade) {
-        out += identity.idade;
-        return;
-      }
-      if (low === '' && out.slice(-12).toLowerCase().includes('peso:') && identity.pesoKg) {
-        out += identity.pesoKg;
-        return;
-      }
-
-      const parsed = parseChoiceGroupToken(inner);
-      if (parsed.isExplicitMulti) {
-        const def = parsed.options.find((o) => o.isDefault);
-        out += def ? def.text : '[ ]';
-        return;
-      }
-      if (parsed.options.length > 1) {
-        const def = parsed.options.find((o) => o.isDefault);
-        out += def ? def.text : `[${inner}]`;
-        return;
-      }
-
-      out += `[${inner}]`;
+  const syncDraftToStore = () => {
+    if (!activeProtocol) return;
+    cockpitStore.savePepDraft(activeProtocol.id, {
+      fieldValues,
+      customFreeEditText: freeEditMode ? freeEditState.currentText : undefined,
     });
-
-    return out;
   };
 
   const getCompiledPepText = (): string => {
     if (!activeProtocol) return '';
     if (freeEditMode) return freeEditState.currentText;
-    const compiled = compileTokens(activeProtocol.pep_body || '', 'tok');
-    return sanitizePepOutput(compiled, { keepEmptyBrackets: true, stripMarkdownHeaders: true });
+
+    const raw = activeProtocol.pep_body || '';
+    const compileTokens = (str: string, prefix = 'tok'): string => {
+      const tokens = parseBalancedBrackets(str);
+      let out = '';
+      tokens.forEach((tok, idx) => {
+        if (tok.type === 'text') {
+          out += tok.raw;
+          return;
+        }
+        const key = `${prefix}_${idx}`;
+        const inner = (tok.inner || '').trim();
+        if (isInternalInstructionBracket(inner) || isSecondaryOptionBracket(inner)) return;
+        if (inner.startsWith('?')) {
+          if (fieldValues[key] === '1') {
+            const body = inner.slice(1).trim();
+            const sepIdx = body.indexOf('::');
+            const content = sepIdx >= 0 ? body.slice(sepIdx + 2).trim() : body;
+            out += compileTokens(content, `${key}_sub`);
+          }
+          return;
+        }
+        const parsed = parseChoiceGroupToken(inner);
+        if (parsed.isExplicitMulti) {
+          const selected = fieldValues[key];
+          if (Array.isArray(selected) && selected.length > 0) {
+            out += selected.join(', ');
+          } else {
+            const defs = parsed.options.filter((o) => o.isDefault).map((o) => o.text);
+            out += defs.length > 0 ? defs.join(', ') : `[${inner}]`;
+          }
+          return;
+        }
+        if (parsed.options.length > 1) {
+          const val = fieldValues[key];
+          if (typeof val === 'string' && val.trim()) {
+            out += val;
+          } else {
+            const def = parsed.options.find((o) => o.isDefault);
+            out += def ? def.text : `[${inner}]`;
+          }
+          return;
+        }
+        const val = fieldValues[key];
+        out += typeof val === 'string' && val.trim() ? val : `[${inner}]`;
+      });
+      return out;
+    };
+
+    const rawCompiled = compileTokens(raw, 'tok');
+    const shared = cockpitStore.getState().patientSession.identity;
+    let patched = rawCompiled;
+    if (shared.nome) patched = patched.replace(/\[Nome\]/gi, shared.nome);
+    if (shared.idade) patched = patched.replace(/\[Idade\]/gi, shared.idade);
+    return sanitizePepOutput(patched, { keepEmptyBrackets: true });
   };
 
-  const syncDraftToStore = () => {
-    if (!activeProtocol) return;
-    cockpitStore.savePepDraft(activeProtocol.id, {
-      fieldValues: { ...fieldValues },
-      customFreeEditText: freeEditMode ? freeEditState.currentText : undefined,
+  const renderDrawerFooter = () => {
+    if (!drawerFooter || !activeProtocol) return;
+    const hasReceita = Boolean(activeProtocol.has_receita || activeProtocol.receita_body?.trim());
+    const cartCount = cockpitStore.getState().prescriptionCart.length;
+
+    drawerFooter.innerHTML = `
+      <div class="drawer-hab-meta-footer">
+        <span class="trigger-chip" id="drawerFooterTriggerChip" title="Copiar ;atalho"><code>${escapeHtml(activeProtocol.trigger)}</code></span>
+        <span>Tab · Atalhos ?</span>
+      </div>
+      <div class="mq-btn-row">
+        <button type="button" class="btn btn-primary btn-sm" id="pepCopyAllBtn">📋 Copiar PEP</button>
+        ${hasReceita ? `<button type="button" class="btn btn-secondary btn-sm" id="pepCopyReceitaBtn">📋 Copiar Receita</button>` : ''}
+        <button type="button" class="btn btn-secondary btn-sm" id="pepAddCartBtn" ${hasReceita ? '' : 'title="Protocolo sem receita domiciliar padrão"'}>
+          <span>🛒 + Carrinho</span>
+          <span class="badge-cart-count" id="cartItemCountBadge" style="display:${cartCount > 0 ? 'inline-block' : 'none'};">${cartCount}</span>
+        </button>
+        <button type="button" class="btn btn-ghost btn-sm" id="pepPrintReceiptBtn">🖨️ Imprimir</button>
+      </div>
+    `;
+
+    drawerFooter.querySelector('#drawerFooterTriggerChip')?.addEventListener('click', () => {
+      if (activeProtocol) void copyToClipboard(activeProtocol.trigger, 'Atalho');
+    });
+
+    drawerFooter.querySelector('#pepCopyAllBtn')?.addEventListener('click', async () => {
+      if (!activeProtocol) return;
+      const compiledNow = getCompiledPepText();
+      const result = resolvePowerActionText(1, compiledNow, activeProtocol);
+      const gapCheck = detectPendingGaps(result.text);
+      if (gapCheck.totalGaps > 0) {
+        highlightGaps = true;
+        renderPepTab();
+        showToast(`⚠️ Copiado com ${gapCheck.totalGaps} lacuna(s) [ ] pendente(s).`, 'warning', 2600);
+      }
+      await copyToClipboard(result.text, 'PEP Completo');
+    });
+
+    drawerFooter.querySelector('#pepCopyReceitaBtn')?.addEventListener('click', async () => {
+      if (!activeProtocol) return;
+      const res = resolvePowerActionText(3, getCompiledPepText(), activeProtocol);
+      await copyToClipboard(res.text, 'Receita / Alta');
+    });
+
+    drawerFooter.querySelector('#pepAddCartBtn')?.addEventListener('click', () => {
+      if (!activeProtocol) return;
+      const bodies = extractBodiesFromCustomPep(getCompiledPepText(), activeProtocol);
+      const rawRec = bodies.receita_body || activeProtocol.receita_body || '';
+      const parsedItems = parsePrescriptionItemsForCart(rawRec);
+      if (parsedItems.length === 0) {
+        showToast('Nenhum item numerado encontrado na Receita deste PEP.', 'warning');
+        return;
+      }
+      parsedItems.forEach((line, i) => {
+        const [firstLine, ...rest] = line.split('\n');
+        cockpitStore.addToPrescriptionCart({
+          id: `pep-${activeProtocol!.id}-${Date.now()}-${i}`,
+          name: firstLine.trim(),
+          posology: rest.join(' ').trim() || 'Conforme prescrição.',
+          population: activeProtocol!.mod_id === 'ped' ? 'pediatria' : 'adulto',
+          source: 'pep',
+        });
+      });
+      showToast(`🛒 ${parsedItems.length} item(ns) enviados para o Carrinho!`, 'success');
+      switchTab('cart');
+    });
+
+    drawerFooter.querySelector('#pepPrintReceiptBtn')?.addEventListener('click', () => {
+      if (!activeProtocol) return;
+      const res = resolvePowerActionText(3, getCompiledPepText(), activeProtocol);
+      const nome = cockpitStore.getState().patientSession.identity.nome;
+      printReceiptDocument(activeProtocol.title, res.text, nome);
     });
   };
 
   const switchTab = (tab: DrawerTab) => {
     activeTab = tab;
+    if (pepPanel) pepPanel.style.display = tab === 'pep' ? 'flex' : 'none';
+    if (guiaPanel) guiaPanel.style.display = tab === 'guia' ? 'block' : 'none';
+    if (cartPanel) cartPanel.style.display = tab === 'cart' ? 'block' : 'none';
+
     tabPepBtn?.classList.toggle('active', tab === 'pep');
     tabGuiaBtn?.classList.toggle('active', tab === 'guia');
     tabCartBtn?.classList.toggle('active', tab === 'cart');
+    tabPepBtn?.setAttribute('aria-selected', String(tab === 'pep'));
+    tabGuiaBtn?.setAttribute('aria-selected', String(tab === 'guia'));
+    tabCartBtn?.setAttribute('aria-selected', String(tab === 'cart'));
 
-    pepPanel.style.display = tab === 'pep' ? 'flex' : 'none';
-    guiaPanel.style.display = tab === 'guia' ? 'block' : 'none';
-    cartPanel.style.display = tab === 'cart' ? 'flex' : 'none';
-
-    if (tab === 'cart') {
-      renderCartPanel(cartPanel);
-    } else if (tab === 'guia') {
-      renderGuiaTab();
-    }
+    if (tab === 'guia') renderGuiaTab();
+    if (tab === 'cart' && cartPanel) renderCartPanel(cartPanel);
   };
 
   const renderClinicalLinksBar = (prot: ClinicalProtocolItem): string => {
-    const mode = cockpitStore.getState().clinicalMode;
     const links = resolveClinicalLinksForPep(prot);
+    const mode = cockpitStore.getState().clinicalMode;
     const firstHab = links.habIds[0];
     const firstTeoria = links.teoriaModIds[0];
 
     if (mode === 'consulta') {
       if (!links.showInConsultaMode || !firstHab) return '';
+      const habLabel = PROTOCOL_BY_ID.get(firstHab)?.title || 'Pré-Porta';
       return `
-        <div class="pep-links-bar consulta-mode">
-          <button type="button" class="pep-link-chip chip-preporta" data-link-hab="${escapeHtml(firstHab)}">
-            🧠 Pré-Porta
-          </button>
+        <div class="pep-links-bar" style="margin-bottom:8px;">
+          <button type="button" class="chip-preporta" data-link-hab="${escapeHtml(firstHab)}">🧠 ${escapeHtml(habLabel)}</button>
         </div>
       `;
     }
 
     return `
-      <div class="pep-links-bar treino-mode">
-        ${
-          firstHab
-            ? `<button type="button" class="pep-link-chip chip-preporta" data-link-hab="${escapeHtml(firstHab)}">🧠 Pré-Porta (${links.habIds.length})</button>`
-            : ''
-        }
-        ${
-          firstTeoria
-            ? `<button type="button" class="pep-link-chip chip-teoria" data-link-teoria="${escapeHtml(firstTeoria)}">📚 Formação Teórica</button>`
-            : ''
-        }
-        <button type="button" class="pep-link-chip chip-logbook" id="pepRegisterLogbookBtn">
-          🎯 Registrar Ponto Cego / Caso no Logbook
-        </button>
+      <div class="pep-links-bar hab-links-row" style="margin-bottom:8px;">
+        ${firstHab ? `<button type="button" class="chip-preporta" data-link-hab="${escapeHtml(firstHab)}">🧠 Pré-Porta (${links.habIds.length})</button>` : ''}
+        ${firstTeoria ? `<button type="button" class="chip-teoria" data-link-teoria="${escapeHtml(firstTeoria)}">📚 Formação Teórica</button>` : ''}
+        <button type="button" class="btn btn-ghost btn-xs" id="pepRegisterLogbookBtn">🎯 Registrar Ponto Cego / Caso</button>
       </div>
     `;
   };
@@ -210,16 +250,14 @@ export function initPepDrawer(): void {
     const identity = cockpitStore.getState().patientSession.identity;
     const weightNum = Number(String(identity.pesoKg || '').replace(',', '.'));
     const isPed = activeProtocol.mod_id === 'ped' || hasEmptyPediatricWeight(compiledText);
-
     if (!isPed && !(weightNum > 0)) return '';
 
     if (isPed && (!Number.isFinite(weightNum) || weightNum <= 0)) {
       return `
-        <div class="pep-weight-dose-banner warning">
-          <div class="pep-weight-dose-head">⚖️ Cálculo Pediátrico Bloqueado</div>
-          <p class="mq-hint">Preencha <strong>Peso (kg)</strong> na Identidade Compartilhada acima para liberar as doses automáticas por kg com teto adulto.</p>
-        </div>
-      `;
+        <div class="pep-weight-dose-banner">
+          <div class="pep-weight-dose-head">⚖️ Cálculo Pediátrico Pendente</div>
+          <p class="mq-hint">Preencha o campo de Peso (kg) no texto abaixo para liberar doses por kg com teto adulto.</p>
+        </div>`;
     }
 
     const summary = computeWeightBasedDoses(weightNum);
@@ -232,17 +270,15 @@ export function initPepDrawer(): void {
           ${(summary.items || [])
             .map(
               (d) => `
-            <div class="pep-weight-dose-chip">
-              <strong>${escapeHtml(d.drug)}</strong>
-              <span>${escapeHtml(d.formattedDose)}</span>
-              ${d.ceilingHit ? `<span class="pep-ceiling-badge">TETO ADULTO (${escapeHtml(d.maxAdultCeiling)})</span>` : `<small class="mq-hint">Máx: ${escapeHtml(d.maxAdultCeiling)}</small>`}
-            </div>
-          `
+                <div class="pep-weight-dose-chip">
+                  <strong>${escapeHtml(d.drug)}</strong>
+                  <span>${escapeHtml(d.formattedDose)}</span>
+                  ${d.ceilingHit ? `<span class="pep-ceiling-badge">TETO (${escapeHtml(d.maxAdultCeiling)})</span>` : `<small class="mq-hint">Máx: ${escapeHtml(d.maxAdultCeiling)}</small>`}
+                </div>`
             )
             .join('')}
         </div>
-      </div>
-    `;
+      </div>`;
   };
 
   const renderTokensHtml = (rawText: string, prefix = 'tok'): string => {
@@ -251,19 +287,16 @@ export function initPepDrawer(): void {
 
     tokens.forEach((tok, idx) => {
       if (tok.type === 'text') {
-        const formattedText = escapeHtml(tok.raw)
+        const formatted = escapeHtml(tok.raw)
           .replace(/(^|\n)#{1,6}\s+([^\n]+)/g, '$1<strong class="pep-section-heading">$2</strong>')
           .replace(/\n/g, '<br>');
-        html += formattedText;
+        html += formatted;
         return;
       }
 
       const key = `${prefix}_${idx}`;
       const inner = (tok.inner || '').trim();
-
-      if (isInternalInstructionBracket(inner) || isSecondaryOptionBracket(inner)) {
-        return;
-      }
+      if (isInternalInstructionBracket(inner) || isSecondaryOptionBracket(inner)) return;
 
       if (inner.startsWith('?')) {
         const body = inner.slice(1).trim();
@@ -275,8 +308,7 @@ export function initPepDrawer(): void {
           <label class="pep-opt-toggle${checked ? ' checked' : ''}">
             <input type="checkbox" data-tok-opt="${key}" ${checked ? 'checked' : ''} />
             <span>+ ${escapeHtml(label)}</span>
-          </label>
-        `;
+          </label>`;
         if (checked && content) {
           html += `<span class="pep-opt-inline-body">${renderTokensHtml(content, `${key}_sub`)}</span>`;
         }
@@ -323,30 +355,33 @@ export function initPepDrawer(): void {
       if (lowInner === 'nome') roleAttr = ' data-tok-role="nome"';
       else if (lowInner === 'idade') roleAttr = ' data-tok-role="idade"';
       else if (lowInner === '' && /peso:\s*$/i.test(html.slice(-24))) roleAttr = ' data-tok-role="peso"';
-      html += `<input type="text" class="pep-inline-input${filledCls}${gapCls}" data-tok-input="${key}"${roleAttr} value="${escapeHtml(val)}" placeholder="${escapeHtml(inner || '...')}" size="${Math.max(6, Math.min(28, (val || inner).length + 2))}" />`;
+      html += `<input type="text" class="pep-inline-input${filledCls}${gapCls}" data-tok-input="${key}"${roleAttr} value="${escapeHtml(val)}" placeholder="${escapeHtml(inner || '...')}" size="${Math.max(6, Math.min(28, (val || inner).length + 2))}" aria-label="${escapeHtml(inner || 'Campo PEP')}" />`;
     });
 
     return html;
   };
 
   const renderPepTab = () => {
-    if (!activeProtocol) return;
+    if (!activeProtocol || !pepPanel) return;
     const compiled = getCompiledPepText();
     const gaps = detectPendingGaps(compiled);
     const formHtml = renderTokensHtml(activeProtocol.pep_body || '', 'tok');
 
-    const hasReceita = Boolean(activeProtocol.has_receita || activeProtocol.receita_body?.trim());
-
     pepPanel.innerHTML = `
       ${renderClinicalLinksBar(activeProtocol)}
 
-      <div class="pep-toolbar-row">
-        <span class="pep-fill-counter${gaps.totalGaps > 0 ? ' has-gaps' : ''}" id="pepFillCounter">
-          ${gaps.totalGaps > 0 ? `⚠️ ${gaps.totalGaps} lacuna(s) [ ]` : '✅ Sem lacunas pendentes'}
-        </span>
-        <div class="mq-btn-row">
-          <button type="button" class="btn btn-ghost btn-xs" id="pepVitalsNormalBtn" title="Alt+V">🩺 Normais (Alt+V)</button>
-          <button type="button" class="btn btn-ghost btn-xs" id="pepToggleFreeEditBtn">${freeEditMode ? '🔒 Voltar p/ Guiado' : '✏️ Edição Livre'}</button>
+      <div class="interactive-lead">
+        <div class="interactive-toolbar-left">
+          <span class="pep-fill-counter${gaps.totalGaps > 0 ? ' has-gaps' : ''}" id="pepFillCounter">
+            ${gaps.totalGaps > 0 ? `⚠️ ${gaps.totalGaps} lacuna(s) [ ]` : '✓ Pronto para copiar'}
+          </span>
+        </div>
+        <div class="interactive-toolbar-actions">
+          <button type="button" class="pep-tool-btn btn-primary-tool" id="pepNextFieldBtn" title="Próximo campo em branco (Alt+N)">⏭ Próximo</button>
+          <button type="button" class="pep-tool-btn" id="pepVitalsNormalBtn" title="Preencher sinais vitais normais (Alt+V)">💓 Vitais Normais</button>
+          <button type="button" class="pep-tool-btn${freeEditMode ? ' is-active-mode' : ''}" id="pepToggleFreeEditBtn" title="Alternar Edição Livre (Alt+E)">
+            ${freeEditMode ? '⚡ Voltar às Pílulas' : '✏️ Edição Livre'}
+          </button>
         </div>
       </div>
 
@@ -354,27 +389,19 @@ export function initPepDrawer(): void {
 
       ${
         freeEditMode
-          ? `
-          <div class="pep-free-edit-wrap">
-            <div class="pep-free-edit-bar">
-              <span>🔒 <strong>Edição Livre ativa</strong> — fonte da verdade para cópia.</span>
-              <button type="button" class="btn btn-ghost btn-xs" id="pepFreeUndoBtn" ${freeEditState.undoStack.length === 0 ? 'disabled' : ''}>↩️ Desfazer</button>
-            </div>
-            <textarea id="pepFreeEditTextarea" class="pep-free-edit-textarea" spellcheck="false">${escapeHtml(freeEditState.currentText)}</textarea>
-          </div>
-        `
-          : `<div class="pep-interactive-body">${formHtml}</div>`
+          ? `<div class="pep-free-edit-wrap active">
+               <div class="pep-free-edit-bar">
+                 <span>✏️ Edição Livre ativa — texto abaixo é a fonte final para cópia e impressão.</span>
+                 <button type="button" class="btn btn-secondary btn-xs" id="pepFreeUndoBtn" ${freeEditState.undoStack.length <= 1 ? 'disabled' : ''}>↶ Desfazer (${Math.max(0, freeEditState.undoStack.length - 1)})</button>
+               </div>
+               <textarea id="pepFreeEditTextarea" class="pep-free-edit-textarea" rows="16" aria-label="Editor livre de prontuário">${escapeHtml(freeEditState.currentText)}</textarea>
+             </div>`
+          : `<div class="interactive-rendered" id="pepInteractiveBody">${formHtml}</div>`
       }
-
-      <div class="pep-power-actions-bar">
-        <button type="button" class="btn btn-primary btn-sm" data-power-action="1">📋 Copiar PEP</button>
-        ${hasReceita ? `<button type="button" class="btn btn-secondary btn-sm" data-power-action="4">📋 Copiar Receita</button>` : ''}
-        <button type="button" class="btn btn-ghost btn-sm" id="pepAddCartBtn">🛒 + Carrinho</button>
-        <button type="button" class="btn btn-ghost btn-sm" id="pepPrintReceiptBtn">🖨️ Imprimir</button>
-      </div>
     `;
 
-    // Bind links bar
+    renderDrawerFooter();
+
     pepPanel.querySelectorAll<HTMLButtonElement>('[data-link-hab]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const habId = btn.dataset.linkHab;
@@ -385,6 +412,7 @@ export function initPepDrawer(): void {
         }
       });
     });
+
     pepPanel.querySelectorAll<HTMLButtonElement>('[data-link-teoria]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const modId = btn.dataset.linkTeoria;
@@ -395,6 +423,7 @@ export function initPepDrawer(): void {
         }
       });
     });
+
     pepPanel.querySelector('#pepRegisterLogbookBtn')?.addEventListener('click', () => {
       const title = activeProtocol?.title || '';
       close();
@@ -402,11 +431,17 @@ export function initPepDrawer(): void {
       uiBridge.openLogbookNewCase(`Protocolo: ${title}`);
     });
 
-    // Bind interactive tokens + inline shared identity sync
+    pepPanel.querySelector('#pepNextFieldBtn')?.addEventListener('click', () => {
+      const inputs = Array.from(pepPanel.querySelectorAll<HTMLInputElement>('.pep-inline-input'));
+      const nextEmpty = inputs.find((inp) => !inp.value.trim());
+      (nextEmpty || inputs[0])?.focus();
+    });
+
     pepPanel.querySelectorAll<HTMLInputElement>('[data-tok-input]').forEach((inp) => {
       inp.addEventListener('input', () => {
         const k = inp.dataset.tokInput!;
         fieldValues[k] = inp.value;
+        inp.classList.toggle('is-filled', Boolean(inp.value.trim()));
         const role = inp.dataset.tokRole;
         if (role === 'nome') cockpitStore.updateSharedIdentity({ nome: inp.value });
         else if (role === 'idade') cockpitStore.updateSharedIdentity({ idade: inp.value });
@@ -484,73 +519,16 @@ export function initPepDrawer(): void {
       freeEditState = pushFreeEditSnapshot(freeEditState, freeTa.value);
       syncDraftToStore();
     });
+
     pepPanel.querySelector('#pepFreeUndoBtn')?.addEventListener('click', () => {
       freeEditState = undoFreeEditSnapshot(freeEditState);
       syncDraftToStore();
       renderPepTab();
     });
-
-    // Power Actions 1-5 (não-bloqueante com aviso de lacunas)
-    pepPanel.querySelectorAll<HTMLButtonElement>('[data-power-action]').forEach((btn) => {
-      btn.addEventListener('click', async () => {
-        if (!activeProtocol) return;
-        const actionId = Number(btn.dataset.powerAction) as PowerActionId;
-        const compiledNow = getCompiledPepText();
-        const result = resolvePowerActionText(actionId, compiledNow, activeProtocol);
-        const gapCheck = detectPendingGaps(result.text);
-        if (gapCheck.totalGaps > 0) {
-          highlightGaps = true;
-          renderPepTab();
-          showToast(`⚠️ Copiado com ${gapCheck.totalGaps} lacuna(s) [ ] pendente(s).`, 'warning', 2800);
-        }
-        await copyToClipboard(result.text, result.label);
-      });
-    });
-
-    pepPanel.querySelector('#pepMedsOnlyBtn')?.addEventListener('click', async () => {
-      if (!activeProtocol) return;
-      const bodies = extractBodiesFromCustomPep(getCompiledPepText(), activeProtocol);
-      const meds = bodies.receita_meds_body || bodies.receita_body || activeProtocol.receita_meds_body || '';
-      if (!meds.trim()) {
-        showToast('Este protocolo não possui seção de medicamentos isolada.', 'warning');
-        return;
-      }
-      await copyToClipboard(meds, 'Medicamentos (Meds-Only)');
-    });
-
-    pepPanel.querySelector('#pepAddCartBtn')?.addEventListener('click', () => {
-      if (!activeProtocol) return;
-      const bodies = extractBodiesFromCustomPep(getCompiledPepText(), activeProtocol);
-      const rawRec = bodies.receita_body || activeProtocol.receita_body || '';
-      const parsedItems = parsePrescriptionItemsForCart(rawRec);
-      if (parsedItems.length === 0) {
-        showToast('Nenhum item numerado encontrado na Receita deste PEP.', 'warning');
-        return;
-      }
-      parsedItems.forEach((line, i) => {
-        const [firstLine, ...rest] = line.split('\n');
-        cockpitStore.addToPrescriptionCart({
-          id: `pep-${activeProtocol!.id}-${Date.now()}-${i}`,
-          name: firstLine.trim(),
-          posology: rest.join(' ').trim() || 'Conforme prescrição.',
-          population: activeProtocol!.mod_id === 'ped' ? 'pediatria' : 'adulto',
-          source: 'pep',
-        });
-      });
-      showToast(`🛒 ${parsedItems.length} item(ns) enviados para o Carrinho!`, 'success');
-      switchTab('cart');
-    });
-
-    pepPanel.querySelector('#pepPrintReceiptBtn')?.addEventListener('click', () => {
-      if (!activeProtocol) return;
-      const res = resolvePowerActionText(4, getCompiledPepText(), activeProtocol);
-      const nome = cockpitStore.getState().patientSession.identity.nome;
-      printReceiptDocument(activeProtocol.title, res.text, nome);
-    });
   };
 
   const renderGuiaTab = () => {
-    if (!activeProtocol) return;
+    if (!activeProtocol || !guiaPanel) return;
     const rawGuia = activeProtocol.guia_body || '';
     const sections = rawGuia.split(/^###\s+/m).filter((s) => s.trim());
     const travasChecked = cockpitStore.getState().patientSession.travasCheckedIds;
@@ -570,8 +548,7 @@ export function initPepDrawer(): void {
                     <h4>${escapeHtml(secTitle)}</h4>
                   </div>
                   <div class="guia-section-body">${formatGuiaInlineHtml(secBody)}</div>
-                </article>
-              `;
+                </article>`;
             })
             .join('')
         : `<p class="mq-hint">Nenhuma diretriz estruturada disponível para este protocolo.</p>`;
@@ -582,11 +559,10 @@ export function initPepDrawer(): void {
         <div class="guia-travas-list">
           ${SEVEN_TRAVAS.map(
             (t) => `
-            <label class="guia-trava-item">
-              <input type="checkbox" data-trava-id="${t.id}" ${travasChecked[t.id] ? 'checked' : ''} />
-              <span>${escapeHtml(t.label)}</span>
-            </label>
-          `
+              <label class="guia-trava-item">
+                <input type="checkbox" data-trava-id="${t.id}" ${travasChecked[t.id] ? 'checked' : ''} />
+                <span>${escapeHtml(t.label)}</span>
+              </label>`
           ).join('')}
         </div>
       </div>
@@ -637,7 +613,7 @@ export function initPepDrawer(): void {
     overlay.classList.remove('open');
   };
 
-  uiBridge.openPepDrawer = open;
+  uiBridge.openPepDrawer = (id, tab) => open(id, tab);
   uiBridge.closePepDrawer = close;
   uiBridge.hasActivePep = () => activeProtocol !== null && overlay.classList.contains('open');
   uiBridge.insertTextIntoActivePep = (text: string) => {
@@ -662,6 +638,24 @@ export function initPepDrawer(): void {
   tabCartBtn?.addEventListener('click', () => switchTab('cart'));
   closeBtn?.addEventListener('click', close);
   overlay.addEventListener('click', (ev) => {
-    if (ev.target === overlay) close();
+    if (ev.target === overlay && window.innerWidth < 1024) close();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (!activeProtocol || document.body.dataset.activeSection !== 'pep') return;
+    if (e.altKey && e.key.toLowerCase() === 'n') {
+      e.preventDefault();
+      document.getElementById('pepNextFieldBtn')?.click();
+    } else if (e.altKey && e.key.toLowerCase() === 'v') {
+      e.preventDefault();
+      document.getElementById('pepVitalsNormalBtn')?.click();
+    } else if (e.altKey && e.key.toLowerCase() === 'e') {
+      e.preventDefault();
+      document.getElementById('pepToggleFreeEditBtn')?.click();
+    }
+  });
+
+  cockpitStore.subscribe(() => {
+    if (activeProtocol && activeTab) renderDrawerFooter();
   });
 }

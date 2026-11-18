@@ -3,462 +3,627 @@ import {
   buildDailyTimeline,
   closeWeekly7030Snapshot,
   computeWeekly7030Summary,
+  FERIAS_SEMANAS,
   MARCHAS_6ANO,
+  resolveCalendarContextForDate,
   resolveContextWithSchedule,
   RODIZIOS_6ANO,
+  ROTA_DIAS_SEMANA,
   TIMER_PRESETS,
   type Central6AnoState,
   type MarchaId,
-  type PromptContextualKind,
   type TimerPresetId,
 } from '../engine/central6ano.ts';
 import { getCentral6AnoState, uiBridge, updateCentral6AnoState } from './context.ts';
-import { copyToClipboard, downloadTextFile, escapeHtml, playWebAudioChime, showToast } from './utils.ts';
+import { copyToClipboard, escapeHtml, playWebAudioChime, showToast } from './utils.ts';
 
-let activePreset: TimerPresetId = 'ciclo_90m';
-let timerSecondsLeft = TIMER_PRESETS[activePreset].seconds;
-let timerRunning = false;
-let timerInterval: ReturnType<typeof setInterval> | null = null;
-let domingoStep = 1;
+function getTodayIso(): string {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, '0');
+  const d = String(now.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
 
-function renderWeeklySvgChart(state: Central6AnoState): string {
-  const curWeekIso = new Date().toISOString().slice(0, 10);
-  const currentSummary = computeWeekly7030Summary(state, curWeekIso);
-  const series = [...(state.weeklyHistory || []).slice(-7), currentSummary];
+function getIsoWeekKey(date = new Date()): string {
+  const target = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNr = (target.getUTCDay() + 6) % 7;
+  target.setUTCDate(target.getUTCDate() - dayNr + 3);
+  const firstThursday = target.valueOf();
+  target.setUTCMonth(0, 1);
+  if (target.getUTCDay() !== 4) {
+    target.setUTCMonth(0, 1 + ((4 - target.getUTCDay() + 7) % 7));
+  }
+  const weekNum = 1 + Math.ceil((firstThursday - target.valueOf()) / 604800000);
+  return `${target.getUTCFullYear()}-W${String(weekNum).padStart(2, '0')}`;
+}
 
-  const width = 460;
-  const height = 140;
-  const padX = 28;
-  const padY = 18;
-  const maxVal = Math.max(100, ...series.map((s) => Math.max(s.totalQuestoes, s.metaAlvo)));
-  const barW = Math.max(18, Math.floor((width - padX * 2) / Math.max(1, series.length) - 10));
+function renderHistorySvgChart(
+  history: NonNullable<Central6AnoState['weeklyHistory']>,
+  current: ReturnType<typeof computeWeekly7030Summary>
+): string {
+  const series = [...history.slice(-7), current].slice(-8);
+  const W = 440;
+  const H = 132;
+  const padL = 24;
+  const padR = 14;
+  const padT = 16;
+  const padB = 26;
+  const usableW = W - padL - padR;
+  const usableH = H - padT - padB;
+  const barSlot = usableW / Math.max(1, series.length);
+  const barW = Math.min(28, barSlot * 0.56);
+  const maxY = Math.max(300, ...series.map((s) => Math.max(s.totalQuestoes, s.metaAlvo || 220)));
 
   const bars = series
-    .map((entry, idx) => {
-      const x = padX + idx * (barW + 10);
-      const totalH = Math.round(((entry.totalQuestoes / maxVal) * (height - padY * 2)));
-      const ancH = Math.round(((entry.questoesAncora / maxVal) * (height - padY * 2)));
-      const yTotal = height - padY - totalH;
-      const yAnc = height - padY - ancH;
-      const label = entry.weekIso.slice(5);
+    .map((item, idx) => {
+      const x = padL + idx * barSlot + (barSlot - barW) / 2;
+      const totH = Math.max(2, (item.totalQuestoes / maxY) * usableH);
+      const ancH = (item.questoesAncora / maxY) * usableH;
+      const triH = Math.max(0, totH - ancH);
+      const yBase = padT + usableH;
+      const lbl = item.weekIso.replace(/^\d{4}-/, '');
+
       return `
         <g>
-          <rect x="${x}" y="${yTotal}" width="${barW}" height="${Math.max(2, totalH)}" rx="3" fill="#38bdf8" opacity="0.45" />
-          <rect x="${x}" y="${yAnc}" width="${barW}" height="${Math.max(2, ancH)}" rx="3" fill="#10b981" />
-          <text x="${x + barW / 2}" y="${height - 4}" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">${escapeHtml(label)}</text>
-          <text x="${x + barW / 2}" y="${Math.max(10, yTotal - 3)}" text-anchor="middle" font-size="9" fill="currentColor">${entry.totalQuestoes}</text>
-        </g>
-      `;
+          <rect x="${x.toFixed(1)}" y="${(yBase - ancH).toFixed(1)}" width="${barW.toFixed(1)}" height="${ancH.toFixed(1)}" rx="3" fill="#0284c7" />
+          <rect x="${x.toFixed(1)}" y="${(yBase - totH).toFixed(1)}" width="${barW.toFixed(1)}" height="${triH.toFixed(1)}" rx="3" fill="#10b981" />
+          <text x="${(x + barW / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.72">${escapeHtml(lbl)}</text>
+          <text x="${(x + barW / 2).toFixed(1)}" y="${Math.max(11, yBase - totH - 4).toFixed(1)}" text-anchor="middle" font-size="9.5" font-weight="700" fill="currentColor">${item.totalQuestoes}</text>
+        </g>`;
     })
     .join('');
 
   return `
-    <svg viewBox="0 0 ${width} ${height}" class="hoje-svg-chart" role="img" aria-label="Histórico semanal 70/30">
-      <line x1="${padX}" y1="${height - padY}" x2="${width - padX}" y2="${height - padY}" stroke="currentColor" opacity="0.2" />
+    <svg class="hoje-svg-chart" viewBox="0 0 ${W} ${H}" aria-label="Evolução semanal 70/30 de questões">
+      <line x1="${padL}" y1="${padT + usableH}" x2="${W - padR}" y2="${padT + usableH}" stroke="currentColor" stroke-opacity="0.2" stroke-width="1" />
       ${bars}
-    </svg>
-  `;
+    </svg>`;
 }
 
-export function renderHojeSection(container: HTMLElement): void {
-  const c6 = getCentral6AnoState();
-  const calCtx = resolveContextWithSchedule(new Date(), c6.shiftSchedule || []);
-  const timeline = buildDailyTimeline(c6);
-  const summary7030 = computeWeekly7030Summary(c6, calCtx.dateIso);
-  const activeBlindSpots = (c6.logbookEntries || [])
-    .filter((e) => e.tipo === 'ponto_cego' && e.status !== 'resolvido')
-    .slice(0, 5);
+export function initHoje(): (container: HTMLElement) => void {
+  let timerId: ReturnType<typeof setInterval> | null = null;
+  let timerPreset: TimerPresetId = 'ciclo_90m';
+  let timerRemainingSec = TIMER_PRESETS.ciclo_90m.seconds;
+  let timerRunning = false;
 
-  const fmtSec = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+  const stopTick = () => {
+    if (timerId) {
+      clearInterval(timerId);
+      timerId = null;
+    }
+    timerRunning = false;
+  };
 
-  container.innerHTML = `
-    <div class="mq-section-wrap">
-      <header class="mq-workspace-header">
-        <div>
-          <h2>📅 Hoje (Central 6º Ano)</h2>
-          <p class="mq-workspace-sub">
-            Contexto: <strong>${escapeHtml(calCtx.dateIso)}</strong> · Sugestão: <strong>${escapeHtml(calCtx.arquetipoSugerido)}</strong>
-            ${calCtx.fromSchedule ? `<span class="sev-badge sev-urgente">Escala: ${escapeHtml(calCtx.scheduleLabel || calCtx.arquetipoSugerido)}</span>` : ''}
-          </p>
-        </div>
-        <div class="mq-btn-row">
-          <select id="hojeRodizioSel" class="mq-input" aria-label="Rodízio">
-            ${RODIZIOS_6ANO.map((r) => `<option value="${r.id}"${c6.rodizioId === r.id ? ' selected' : ''}>${escapeHtml(r.nome)}</option>`).join('')}
-          </select>
-          <select id="hojeMarchaSel" class="mq-input" aria-label="Marcha">
-            ${Object.values(MARCHAS_6ANO)
-              .map((m) => `<option value="${m.id}"${c6.marchaId === m.id ? ' selected' : ''}>${escapeHtml(m.nome)} (${m.metaAlvo}q)</option>`)
-              .join('')}
-          </select>
-          <select id="hojeArquetipoSel" class="mq-input" aria-label="Modo do Dia">
-            <option value="dia_cheio"${c6.arquetipoId === 'dia_cheio' ? ' selected' : ''}>Dia Cheio</option>
-            <option value="plantao_12h"${c6.arquetipoId === 'plantao_12h' ? ' selected' : ''}>Plantão 12h</option>
-            <option value="pos_plantao"${c6.arquetipoId === 'pos_plantao' ? ' selected' : ''}>Pós-Plantão</option>
-            <option value="pe_vespera"${c6.arquetipoId === 'pe_vespera' ? ' selected' : ''}>Véspera PE</option>
-            <option value="ferias_4h"${c6.arquetipoId === 'ferias_4h' ? ' selected' : ''}>Férias 4h</option>
-            <option value="fds"${c6.arquetipoId === 'fds' ? ' selected' : ''}>FDS</option>
-          </select>
-        </div>
-      </header>
+  const render = (container: HTMLElement) => {
+    const state = getCentral6AnoState();
+    const cal = resolveContextWithSchedule(new Date(), state.shiftSchedule || []);
+    const todayIso = getTodayIso();
+    const weekIso = getIsoWeekKey();
+    const rodizio = RODIZIOS_6ANO.find((r) => r.id === state.rodizioId) || RODIZIOS_6ANO[0];
+    const marcha = MARCHAS_6ANO[state.marchaId] || MARCHAS_6ANO['3_normal'];
+    const rotaDia = ROTA_DIAS_SEMANA[state.diaSemana];
+    const feriasSem = FERIAS_SEMANAS.find((f) => f.id === state.feriasSemana);
+    const timeline = buildDailyTimeline(state);
 
-      <div class="mq-cards-grid">
-        <!-- Timer Multi-Presets -->
-        <section class="mq-panel-card">
-          <h3>⏱️ Timer Multi-Presets</h3>
-          <div class="mq-btn-row" style="margin-bottom:8px;">
-            ${(Object.keys(TIMER_PRESETS) as TimerPresetId[])
-              .map((pid) => {
-                const p = TIMER_PRESETS[pid];
-                return `<button type="button" class="btn ${activePreset === pid ? 'btn-primary' : 'btn-secondary'} btn-xs" data-timer-preset="${pid}">${escapeHtml(p.label)}</button>`;
-              })
-              .join('')}
+    const dayChecks = state.checkedTimelineByDate?.[todayIso] || state.checkedTimelineIds || {};
+    const doneSteps = timeline.filter((s) => Boolean(dayChecks[s.id])).length;
+    const pctSteps = timeline.length > 0 ? Math.round((doneSteps / timeline.length) * 100) : 0;
+
+    const weeklySummary = computeWeekly7030Summary(state, weekIso);
+    const history = state.weeklyHistory || [];
+    const activeBlindSpots = (state.logbookEntries || [])
+      .filter((e) => e.tipo === 'ponto_cego' && e.status !== 'resolvido')
+      .slice(0, 3);
+
+    const mins = String(Math.floor(timerRemainingSec / 60)).padStart(2, '0');
+    const secs = String(timerRemainingSec % 60).padStart(2, '0');
+
+    const scheduleList = state.shiftSchedule || [];
+    const ankiTodayDone = Boolean(state.ankiDoneByDate?.[todayIso]);
+
+    container.innerHTML = `
+      <section class="mq-section-pane active">
+        <header class="mq-workspace-header">
+          <div>
+            <div class="mq-eyebrow">CENTRAL DO 6º ANO · FMRP-USP &amp; R1 (&gt;80–85%)</div>
+            <h2 class="mq-workspace-title">📅 Painel Hoje — Motor Dinâmico de Rotina</h2>
+            <p class="mq-workspace-sub">Rodízio Atual × Sistema de 4 Marchas × Arquétipo do Dia · Blindagem Biológica de 7h30+ de sono</p>
           </div>
-          <div class="ensaio-timer-bar">
-            <span class="ensaio-clock" id="hojeTimerDisplay">${fmtSec(timerSecondsLeft)}</span>
-            <div class="mq-btn-row">
-              <button type="button" class="btn btn-primary btn-xs" id="hojeTimerStartBtn">${timerRunning ? '⏸️ Pausar' : '▶️ Iniciar'}</button>
-              <button type="button" class="btn btn-ghost btn-xs" id="hojeTimerResetBtn">↺ Reset</button>
+          <div class="mq-btn-row">
+            <button type="button" class="btn-palette-trigger" id="hojeSyncRealBtn">📍 Sincronizar Hoje Real</button>
+            <button type="button" class="btn-palette-trigger" id="domExportMdBtn">📋 Copiar Resumo (.md)</button>
+            <button type="button" class="btn-palette-trigger" id="hojeGoPepBtn">🩺 Protocolos PEP</button>
+            <button type="button" class="btn-palette-trigger" id="hojeGoTeoriaBtn">📚 Formação Teórica</button>
+          </div>
+        </header>
+
+        <!-- Barra de Controles de Rotina -->
+        <div class="mq-controls-bar">
+          <div class="mq-control-group">
+            <label class="mq-control-label" for="hojeRodizioSel">1. Rodízio / Fase Atual (2026–2027)</label>
+            <select id="hojeRodizioSel" class="mq-select">
+              ${RODIZIOS_6ANO.map(
+                (r) =>
+                  `<option value="${escapeHtml(r.id)}" ${state.rodizioId === r.id ? 'selected' : ''}>${escapeHtml(r.nome)} (${escapeHtml(r.periodo)})</option>`
+              ).join('')}
+            </select>
+          </div>
+
+          <div class="mq-control-group">
+            <label class="mq-control-label" for="hojeMarchaSel">2. Marcha da Semana (Anti-Culpa)</label>
+            <select id="hojeMarchaSel" class="mq-select">
+              ${Object.values(MARCHAS_6ANO)
+                .map(
+                  (m) =>
+                    `<option value="${escapeHtml(m.id)}" ${state.marchaId === m.id ? 'selected' : ''}>${escapeHtml(m.nome)} · ${escapeHtml(m.badge)}</option>`
+                )
+                .join('')}
+            </select>
+          </div>
+
+          <div class="mq-control-group">
+            <label class="mq-control-label" for="hojeArquetipoSel">3. Arquétipo do Dia</label>
+            <select id="hojeArquetipoSel" class="mq-select">
+              <option value="ferias_4h" ${state.arquetipoId === 'ferias_4h' ? 'selected' : ''}>🏖️ Férias (4h/dia)</option>
+              <option value="dia_cheio" ${state.arquetipoId === 'dia_cheio' ? 'selected' : ''}>🟦 Arquétipo A: Dia Cheio (07h30–18h)</option>
+              <option value="pe_vespera" ${state.arquetipoId === 'pe_vespera' ? 'selected' : ''}>🟩 Arquétipo B: Dia com PE / Véspera</option>
+              <option value="plantao_12h" ${state.arquetipoId === 'plantao_12h' ? 'selected' : ''}>🟧 Arquétipo C: Plantão 12h Diurno</option>
+              <option value="pos_plantao" ${state.arquetipoId === 'pos_plantao' ? 'selected' : ''}>🟪 Arquétipo D: Pós-Plantão Noturno</option>
+              <option value="fds" ${state.arquetipoId === 'fds' ? 'selected' : ''}>⚡ Fim de Semana Intensivo</option>
+            </select>
+          </div>
+
+          <div class="mq-control-group">
+            <span class="mq-control-label">4. Rotação Temática do Dia</span>
+            <div class="mq-day-pills">
+              ${(['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'] as const)
+                .map(
+                  (d) =>
+                    `<button type="button" class="mq-day-pill${state.diaSemana === d ? ' active' : ''}" data-day-pill="${d}">${d.toUpperCase()}</button>`
+                )
+                .join('')}
             </div>
           </div>
-          <p class="mq-hint" style="margin-top:6px;">Blocos concluídos: <strong>${(c6.timerLogs || []).length}</strong></p>
-        </section>
+        </div>
 
-        <!-- MedQuest / Anki + Gráfico 70/30 -->
-        <section class="mq-panel-card">
-          <h3>📊 MedQuest 70/30 (${summary7030.totalQuestoes}/${summary7030.metaAlvo}q · ${summary7030.pctAncora}% Âncora)</h3>
-          <div class="mq-btn-row" style="margin-bottom:6px;">
-            <span class="mq-hint">Âncora (70%):</span>
-            <button type="button" class="btn btn-secondary btn-xs" data-q-anc="5">+5q</button>
-            <button type="button" class="btn btn-secondary btn-xs" data-q-anc="10">+10q</button>
-            <button type="button" class="btn btn-secondary btn-xs" data-q-anc="20">+20q</button>
+        <!-- Card Herói Plano de Hoje -->
+        <div class="mq-hero-card">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+            <div>
+              <div class="mq-eyebrow">PLANO DE HOJE · ${escapeHtml(rodizio.nome.toUpperCase())}</div>
+              <h3 style="font-size:1.2rem; font-weight:700;">Roteiro Acionável do Dia (${escapeHtml(rotaDia.nome)})</h3>
+              <p class="mq-hint">${escapeHtml(marcha.resumo)}${cal.fromSchedule ? ' · Plantão da escala ativo hoje' : ''}</p>
+            </div>
+            <div class="mq-btn-row">
+              <span class="mq-nav-badge">${doneSteps}/${timeline.length} blocos (${pctSteps}%)</span>
+              <label class="teoria-ex-label" style="font-size:0.78rem;">
+                <input type="checkbox" id="hojeAnkiDailyChk" ${ankiTodayDone ? 'checked' : ''} />
+                <span>🧠 Anki Hoje</span>
+              </label>
+              <button type="button" class="btn btn-primary btn-xs" id="hojeCompleteDayBtn">✅ Concluir Dia (+1 Streak)</button>
+            </div>
           </div>
-          <div class="mq-btn-row" style="margin-bottom:8px;">
-            <span class="mq-hint">Trilha (30%):</span>
-            <button type="button" class="btn btn-secondary btn-xs" data-q-tri="5">+5q</button>
-            <button type="button" class="btn btn-secondary btn-xs" data-q-tri="10">+10q</button>
-            <label class="btn btn-ghost btn-xs" style="cursor:pointer;">
-              ⬆️ Import JSON
-              <input type="file" id="hojeImportSnapInput" accept="application/json,.json" style="display:none;" />
-            </label>
-          </div>
-          ${renderWeeklySvgChart(c6)}
-        </section>
-      </div>
 
-      <div class="mq-cards-grid" style="margin-top:14px;">
-        <!-- Timeline do Dia -->
-        <section class="mq-panel-card">
-          <h3>🗓️ Roteiro Dinâmico do Dia</h3>
-          <div class="hoje-timeline-list">
+          <div class="mq-progress-bar-wrap">
+            <div class="mq-progress-bar-fill" style="width:${pctSteps}%;"></div>
+          </div>
+
+          <!-- Cronômetro de Blocos -->
+          <div class="mq-timer-bar">
+            <div class="mq-btn-row">
+              ${(Object.keys(TIMER_PRESETS) as TimerPresetId[])
+                .map(
+                  (pid) =>
+                    `<button type="button" class="mq-counter-btn${timerPreset === pid ? ' is-active' : ''}" data-timer-preset="${pid}">${escapeHtml(TIMER_PRESETS[pid].label)}</button>`
+                )
+                .join('')}
+            </div>
+            <div class="mq-btn-row">
+              <span class="mq-timer-clock" id="hojeTimerDisplay">${mins}:${secs}</span>
+              <button type="button" class="btn btn-primary btn-xs" id="hojeTimerStartBtn">${timerRunning ? '⏸ Pausar' : '▶ Iniciar'}</button>
+              <button type="button" class="btn btn-ghost btn-xs" id="hojeTimerResetBtn">↺</button>
+            </div>
+          </div>
+
+          <!-- Faixa Contextual 3 Colunas -->
+          <div class="mq-context-strip">
+            <div class="mq-context-box">
+              <div class="mq-stat-label">🎯 Âncora 70% (${escapeHtml(rodizio.periodo)})</div>
+              <div class="mq-hint">${escapeHtml(rodizio.ancora70)}</div>
+              ${feriasSem && state.rodizioId === 'ferias' ? `<div class="mq-hint" style="margin-top:4px;"><strong>${escapeHtml(feriasSem.label)}:</strong> ${escapeHtml(feriasSem.focoConteudo)}</div>` : ''}
+            </div>
+            <div class="mq-context-box">
+              <div class="mq-stat-label">📚 Trilha 30% + Foco de ${escapeHtml(rotaDia.nome)}</div>
+              <div class="mq-hint">${escapeHtml(rodizio.trilha30)}</div>
+              <div class="mq-hint" style="margin-top:4px;"><strong>${escapeHtml(rotaDia.pilarTitulo)}</strong></div>
+            </div>
+            <div class="mq-context-box">
+              <div class="mq-stat-label">🧪 Micro-Dose Exames (25 min)</div>
+              <div class="mq-hint">${escapeHtml(rotaDia.exame25m)}</div>
+              <div class="mq-quick-chips" style="margin-top:8px;">
+                <button type="button" class="mq-quick-chip" id="hojeQuickTeoriaBtn">📖 Abrir ${escapeHtml(rotaDia.moduloRef)}</button>
+                <button type="button" class="mq-quick-chip" id="hojeQuickToolBtn">🧪 Abrir Ferramenta</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checklist da Linha do Tempo do Dia -->
+          <div class="hoje-timeline-list mq-timeline-list">
             ${timeline
-              .map((st) => {
-                const checked = Boolean(c6.checkedTimelineIds?.[st.id]);
+              .map((step) => {
+                const isChecked = Boolean(dayChecks[step.id]);
                 return `
-                  <label class="hab-check-item${checked ? ' checked' : ''}">
-                    <input type="checkbox" data-tl-id="${escapeHtml(st.id)}" ${checked ? 'checked' : ''} />
-                    <span class="hab-check-text"><strong>${escapeHtml(st.horario)}</strong> · ${escapeHtml(st.titulo)} <small class="mq-hint">(${escapeHtml(st.detalhe)})</small></span>
-                  </label>
-                `;
+                  <div class="mq-timeline-item${isChecked ? ' is-done' : ''}">
+                    <input type="checkbox" class="mq-timeline-chk" data-tl-step="${escapeHtml(step.id)}" ${isChecked ? 'checked' : ''} aria-label="${escapeHtml(step.titulo)}" />
+                    <div class="mq-timeline-body">
+                      <div class="mq-timeline-top">
+                        <span class="mq-timeline-time">${escapeHtml(step.horario)}</span>
+                        <span class="mq-timeline-tag" style="border-color:${escapeHtml(step.corCategoria)}; color:${escapeHtml(step.corCategoria)};">${escapeHtml(step.categoria)}</span>
+                        ${
+                          step.atalhoSecao && step.atalhoLabel
+                            ? `<button type="button" class="mq-quick-chip" data-tl-nav="${escapeHtml(step.atalhoSecao)}" data-tl-sub="${escapeHtml(step.atalhoTeoriaMod || step.atalhoFerramentaTab || '')}">${escapeHtml(step.atalhoLabel)} →</button>`
+                            : ''
+                        }
+                      </div>
+                      <div class="mq-timeline-title">${escapeHtml(step.titulo)}</div>
+                      <div class="mq-timeline-detail">${escapeHtml(step.detalhe)}</div>
+                    </div>
+                  </div>`;
               })
               .join('')}
           </div>
-        </section>
+        </div>
 
-        <!-- Mini-Escala de Plantões & PEs -->
-        <section class="mq-panel-card">
-          <h3>🏥 Mini-Escala (Plantões 12h &amp; PEs)</h3>
-          <div class="mq-btn-row" style="margin-bottom:8px;">
-            <input type="date" id="escalaDateInput" class="mq-input" value="${calCtx.dateIso}" style="max-width:155px;" />
-            <select id="escalaTipoSel" class="mq-input" style="max-width:140px;">
-              <option value="plantao_12h">Plantão 12h</option>
-              <option value="pos_plantao">Pós-Plantão</option>
-              <option value="pe_vespera">PE / Prova</option>
-            </select>
-            <button type="button" class="btn btn-primary btn-xs" id="escalaAddBtn">+ Marcar</button>
+        <!-- Linha de Métricas 70/30 + Streak + Radar -->
+        <div class="mq-stat-grid">
+          <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
+            <div class="mq-stat-label">⚖️ Rastreador 70 / 30 da Semana (${escapeHtml(weekIso)})</div>
+            <div class="mq-stat-val">${weeklySummary.totalQuestoes} / ${weeklySummary.metaAlvo} questões</div>
+            <div class="mq-stat-sub">Âncora 70%: <strong>${weeklySummary.pctAncora}%</strong> (${weeklySummary.questoesAncora}q) · Trilha 30%: <strong>${weeklySummary.pctTrilha}%</strong> (${weeklySummary.questoesTrilha}q)</div>
+            <div class="mq-btn-row">
+              <button type="button" class="mq-counter-btn" data-q-add="ancora:10">+10 Âncora</button>
+              <button type="button" class="mq-counter-btn" data-q-add="trilha:10">+10 Trilha</button>
+              <button type="button" class="mq-counter-btn" id="domCloseWeekBtn">📥 Fechar Semana</button>
+            </div>
+            ${renderHistorySvgChart(history, weeklySummary)}
           </div>
-          <div class="escala-list">
-            ${
-              (c6.shiftSchedule || []).length === 0
-                ? `<p class="mq-hint">Nenhum plantão/PE cadastrado na escala.</p>`
-                : (c6.shiftSchedule || [])
-                    .slice(0, 6)
-                    .map(
-                      (s) => `
-                  <div class="escala-chip-row">
-                    <span>${escapeHtml(s.dateIso)} — <strong>${escapeHtml(s.tipo)}</strong></span>
-                    <button type="button" class="btn btn-ghost btn-xs" data-del-escala="${escapeHtml(s.dateIso)}">✕</button>
-                  </div>
-                `
-                    )
-                    .join('')
-            }
-          </div>
-        </section>
-      </div>
 
-      <div class="mq-cards-grid" style="margin-top:14px;">
-        <!-- Radar Top 5 -->
-        <section class="mq-panel-card">
-          <div class="hab-detail-head">
-            <h3>🎯 Radar Top 5 Pontos Cegos</h3>
-            <button type="button" class="btn btn-ghost btn-xs" id="hojeGoLogbookBtn">Abrir Logbook →</button>
-          </div>
-          ${
-            activeBlindSpots.length === 0
-              ? `<p class="mq-hint">Nenhum ponto cego ativo.</p>`
-              : `<ul class="calc-details">${activeBlindSpots.map((b) => `<li><strong>${escapeHtml(b.titulo)}</strong>${b.gatilhoCorrecao ? ` — ${escapeHtml(b.gatilhoCorrecao)}` : ''}</li>`).join('')}</ul>`
-          }
-        </section>
-
-        <!-- Prompts IA com Top 3 Pontos Cegos -->
-        <section class="mq-panel-card">
-          <h3>🤖 Prompts IA Hiper-Contextuais (com Top 3 Pontos Cegos)</h3>
-          <div class="mq-btn-row" style="flex-wrap:wrap;gap:6px;">
-            ${(
-              [
-                ['paciente', '🩺 /simular-paciente'],
-                ['oratoria', '🎙️ Oratória'],
-                ['raciocinio', '🧠 Raciocínio'],
-                ['exames', '🩻 Exames'],
-                ['osce', '🏥 OSCE'],
-              ] as Array<[PromptContextualKind, string]>
-            )
-              .map(([k, lbl]) => `<button type="button" class="btn btn-secondary btn-xs" data-ai-prompt="${k}">${lbl}</button>`)
-              .join('')}
-          </div>
-        </section>
-      </div>
-
-      <!-- Ritual de Domingo Wizard (4 Passos) -->
-      <section class="mq-panel-card" style="margin-top:14px;">
-        <div class="hab-detail-head">
-          <h3>⛪ Ritual de Domingo Wizard (Passo ${domingoStep}/4)</h3>
-          <div class="mq-btn-row">
-            ${[1, 2, 3, 4].map((n) => `<button type="button" class="btn ${domingoStep === n ? 'btn-primary' : 'btn-ghost'} btn-xs" data-dom-step="${n}">Passo ${n}</button>`).join('')}
+          <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
+            <div class="mq-stat-label">🔥 Consistência &amp; Radar de Pontos Cegos</div>
+            <div class="mq-stat-val">${state.streakDias} dia(s) · ${state.semanasConcluidas} sem</div>
+            <div class="mq-stat-sub">Micro-hábito ativo: <strong>${escapeHtml(state.microHabitoSemanal || rodizio.microHabitoSugerido)}</strong></div>
+            <div class="radar-list">
+              ${
+                activeBlindSpots.length === 0
+                  ? `<div class="mq-hint">Nenhum ponto cego ativo registrado ainda.</div>`
+                  : activeBlindSpots
+                      .map(
+                        (bs, idx) => `
+                          <div class="radar-item">
+                            <div class="radar-item-head">
+                              <span class="radar-rank">#${idx + 1}</span>
+                              <strong>${escapeHtml(bs.titulo)}</strong>
+                            </div>
+                          </div>`
+                      )
+                      .join('')
+              }
+            </div>
+            <div>
+              <button type="button" class="btn btn-secondary btn-xs" id="hojeGoLogbookBtn">🎯 Abrir Logbook &amp; Pontos Cegos →</button>
+            </div>
           </div>
         </div>
-        <div id="domingoWizardBody" style="margin-top:10px;">
-          ${renderDomingoStepHtml(domingoStep, c6, summary7030, activeBlindSpots)}
+
+        <!-- Painéis Colapsáveis: Micro-Hábito/Domingo & Mini-Escala de Plantões -->
+        <div class="mq-two-col-grid">
+          <details class="mq-card mq-collapsible-panel" open>
+            <summary>
+              <div>
+                <div class="mq-eyebrow">1 MICRO-HÁBITO POR SEMANA · RITUAL DE DOMINGO</div>
+                <h3 style="font-size:1.02rem; font-weight:700;">🧭 Micro-Hábito Ativo no Hospital</h3>
+              </div>
+              <span class="mq-collapsible-chevron">▶</span>
+            </summary>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
+              <div class="mq-control-group">
+                <label class="mq-control-label" for="hojeMicroInput">Foco comportamental desta semana:</label>
+                <div class="mq-form-row">
+                  <input type="text" id="hojeMicroInput" class="mq-input" style="flex:1;" value="${escapeHtml(state.microHabitoSemanal || rodizio.microHabitoSugerido)}" />
+                  <button type="button" class="btn btn-primary btn-xs" id="domSaveMicroBtn">Salvar</button>
+                </div>
+              </div>
+              <div class="mq-hint">Sugestão do rodízio: <em>${escapeHtml(rodizio.microHabitoSugerido)}</em></div>
+            </div>
+          </details>
+
+          <details class="mq-card mq-collapsible-panel">
+            <summary>
+              <div>
+                <div class="mq-eyebrow">AUTOMATIZAÇÃO DE ARQUÉTIPO POR DATA</div>
+                <h3 style="font-size:1.02rem; font-weight:700;">📆 Mini-Escala de Plantões (${scheduleList.length})</h3>
+              </div>
+              <span class="mq-collapsible-chevron">▶</span>
+            </summary>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
+              <div class="mq-form-grid">
+                <div class="mq-control-group">
+                  <label class="mq-control-label" for="escalaDateInput">Data</label>
+                  <input type="date" id="escalaDateInput" class="mq-input" value="${todayIso}" />
+                </div>
+                <div class="mq-control-group">
+                  <label class="mq-control-label" for="escalaTipoSel">Arquétipo</label>
+                  <select id="escalaTipoSel" class="mq-select">
+                    <option value="plantao_12h">Plantão 12h Diurno</option>
+                    <option value="pos_plantao">Pós-Plantão Noturno</option>
+                    <option value="pe_vespera">Dia com PE / Véspera</option>
+                    <option value="dia_cheio">Dia Cheio</option>
+                    <option value="fds">Fim de Semana</option>
+                  </select>
+                </div>
+                <div class="mq-control-group">
+                  <label class="mq-control-label" for="escalaLabelInput">Etiqueta</label>
+                  <input type="text" id="escalaLabelInput" class="mq-input" placeholder="Ex.: PS HC" />
+                </div>
+              </div>
+              <div>
+                <button type="button" class="btn btn-secondary btn-xs" id="escalaAddBtn">+ Agendar na Escala</button>
+              </div>
+              <div class="escala-list">
+                ${scheduleList
+                  .map(
+                    (s) => `
+                      <div class="escala-chip-row">
+                        <span><strong>${escapeHtml(s.dateIso)}</strong> · ${escapeHtml(s.tipo)}${s.label ? ` (${escapeHtml(s.label)})` : ''}</span>
+                        <button type="button" class="btn btn-ghost btn-xs" data-del-escala="${escapeHtml(s.dateIso)}" aria-label="Remover data">✕</button>
+                      </div>`
+                  )
+                  .join('')}
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Prompts IA Contextuais -->
+        <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
+          <div class="mq-eyebrow">SIMULAÇÃO ATIVA &amp; PRECEPTORIA SOCRÁTICA · 1 CLIQUE</div>
+          <h3 style="font-size:1.05rem; font-weight:700;">🎭 Treinar com IA — Central de Prompts Contextuais</h3>
+          <div class="mq-btn-row">
+            <button type="button" class="mq-counter-btn" data-hoje-prompt="paciente">🎭 1. Paciente Simulado</button>
+            <button type="button" class="mq-counter-btn" data-hoje-prompt="oratoria">🎙️ 2. Preceptor SNAPPS/SBAR</button>
+            <button type="button" class="mq-counter-btn" data-hoje-prompt="raciocinio">🧠 3. Raciocínio Bayesian/Scripts</button>
+            <button type="button" class="mq-counter-btn" data-hoje-prompt="exames">🧪 4. Micro-Dose Exames (25m)</button>
+            <button type="button" class="mq-counter-btn" data-hoje-prompt="osce">🏅 5. Estação OSCE</button>
+          </div>
         </div>
       </section>
-    </div>
-  `;
+    `;
 
-  // Selectors
-  container.querySelector('#hojeRodizioSel')?.addEventListener('change', (e) => {
-    updateCentral6AnoState((prev) => ({ ...prev, rodizioId: (e.target as HTMLSelectElement).value }));
-    renderHojeSection(container);
-  });
-  container.querySelector('#hojeMarchaSel')?.addEventListener('change', (e) => {
-    updateCentral6AnoState((prev) => ({ ...prev, marchaId: (e.target as HTMLSelectElement).value as MarchaId }));
-    renderHojeSection(container);
-  });
-  container.querySelector('#hojeArquetipoSel')?.addEventListener('change', (e) => {
-    updateCentral6AnoState((prev) => ({
-      ...prev,
-      arquetipoId: (e.target as HTMLSelectElement).value as Central6AnoState['arquetipoId'],
-    }));
-    renderHojeSection(container);
-  });
-
-  // Timer
-  const timerDisp = container.querySelector<HTMLElement>('#hojeTimerDisplay');
-  container.querySelectorAll<HTMLButtonElement>('[data-timer-preset]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      if (timerInterval) clearInterval(timerInterval);
-      timerRunning = false;
-      activePreset = btn.dataset.timerPreset as TimerPresetId;
-      timerSecondsLeft = TIMER_PRESETS[activePreset].seconds;
-      renderHojeSection(container);
+    // Listeners
+    container.querySelector('#hojeSyncRealBtn')?.addEventListener('click', () => {
+      const real = resolveCalendarContextForDate(new Date());
+      updateCentral6AnoState((prev) => ({
+        ...prev,
+        diaSemana: real.diaSemana,
+        rodizioId: real.rodizioId,
+        feriasSemana: real.feriasSemana,
+        arquetipoId: real.arquetipoSugerido,
+      }));
+      showToast('📍 Hoje real sincronizado com o calendário FMRP!', 'success');
+      render(container);
     });
-  });
 
-  container.querySelector('#hojeTimerStartBtn')?.addEventListener('click', () => {
-    if (timerRunning) {
-      if (timerInterval) clearInterval(timerInterval);
-      timerRunning = false;
-      renderHojeSection(container);
-    } else {
+    container.querySelector('#domExportMdBtn')?.addEventListener('click', () => {
+      const md = [
+        `# Relatório Semanal 6º Ano (${weekIso})`,
+        `- Rodízio: ${rodizio.nome}`,
+        `- Marcha: ${marcha.nome}`,
+        `- Questões: ${weeklySummary.totalQuestoes}/${weeklySummary.metaAlvo} (${weeklySummary.pctAncora}% Âncora / ${weeklySummary.pctTrilha}% Trilha)`,
+        `- Micro-hábito: ${state.microHabitoSemanal || rodizio.microHabitoSugerido}`,
+        `- Streak: ${state.streakDias} dias`,
+      ].join('\n');
+      void copyToClipboard(md, 'Resumo Semanal (.md)');
+    });
+
+    container.querySelector('#hojeGoPepBtn')?.addEventListener('click', () => uiBridge.navigate('pep'));
+    container.querySelector('#hojeGoTeoriaBtn')?.addEventListener('click', () => uiBridge.navigate('teoria'));
+    container.querySelector('#hojeGoLogbookBtn')?.addEventListener('click', () => uiBridge.navigate('logbook'));
+    container.querySelector('#hojeQuickTeoriaBtn')?.addEventListener('click', () => {
+      uiBridge.navigate('teoria', { subTab: rotaDia.moduloId });
+      uiBridge.selectTeoriaModule(rotaDia.moduloId);
+    });
+    container.querySelector('#hojeQuickToolBtn')?.addEventListener('click', () => {
+      uiBridge.navigate('ferramentas', { subTab: rotaDia.ferramentaTab });
+    });
+
+    container.querySelector<HTMLSelectElement>('#hojeRodizioSel')?.addEventListener('change', (e) => {
+      const rodId = (e.target as HTMLSelectElement).value;
+      updateCentral6AnoState((prev) => ({ ...prev, rodizioId: rodId }));
+      render(container);
+    });
+    container.querySelector<HTMLSelectElement>('#hojeMarchaSel')?.addEventListener('change', (e) => {
+      const mId = (e.target as HTMLSelectElement).value as MarchaId;
+      updateCentral6AnoState((prev) => ({ ...prev, marchaId: mId }));
+      render(container);
+    });
+    container.querySelector<HTMLSelectElement>('#hojeArquetipoSel')?.addEventListener('change', (e) => {
+      const aId = (e.target as HTMLSelectElement).value as Central6AnoState['arquetipoId'];
+      updateCentral6AnoState((prev) => ({ ...prev, arquetipoId: aId }));
+      render(container);
+    });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-day-pill]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const d = btn.dataset.dayPill as Central6AnoState['diaSemana'];
+        updateCentral6AnoState((prev) => ({ ...prev, diaSemana: d }));
+        render(container);
+      });
+    });
+
+    container.querySelector<HTMLInputElement>('#hojeAnkiDailyChk')?.addEventListener('change', (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      updateCentral6AnoState((prev) => ({
+        ...prev,
+        ankiDoneByDate: { ...(prev.ankiDoneByDate || {}), [todayIso]: checked },
+      }));
+    });
+
+    container.querySelectorAll<HTMLInputElement>('[data-tl-step]').forEach((chk) => {
+      chk.addEventListener('change', () => {
+        const sid = chk.dataset.tlStep!;
+        updateCentral6AnoState((prev) => {
+          const prevDateMap = { ...(prev.checkedTimelineByDate?.[todayIso] || prev.checkedTimelineIds || {}) };
+          prevDateMap[sid] = chk.checked;
+          return {
+            ...prev,
+            checkedTimelineIds: prevDateMap,
+            checkedTimelineByDate: { ...(prev.checkedTimelineByDate || {}), [todayIso]: prevDateMap },
+          };
+        });
+        render(container);
+      });
+    });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-tl-nav]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const sec = btn.dataset.tlNav as 'pep' | 'preporta' | 'teoria' | 'ferramentas' | 'logbook';
+        const sub = btn.dataset.tlSub || undefined;
+        uiBridge.navigate(sec, sub ? { subTab: sub } : undefined);
+        if (sec === 'teoria' && sub) uiBridge.selectTeoriaModule(sub);
+      });
+    });
+
+    container.querySelector('#hojeCompleteDayBtn')?.addEventListener('click', () => {
+      if (state.ultimoDiaConcluidoIso === todayIso) {
+        showToast('Dia de hoje já contabilizado no streak.', 'info');
+        return;
+      }
+      updateCentral6AnoState((prev) => ({
+        ...prev,
+        streakDias: (prev.streakDias || 0) + 1,
+        ultimoDiaConcluidoIso: todayIso,
+      }));
+      showToast('🔥 +1 dia de consistência registrado!', 'success');
+      render(container);
+    });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-q-add]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const [bucket, amountStr] = (btn.dataset.qAdd || '').split(':');
+        const amount = Number(amountStr) || 0;
+        updateCentral6AnoState((prev) => ({
+          ...prev,
+          questoesAncoraSem: bucket === 'ancora' ? prev.questoesAncoraSem + amount : prev.questoesAncoraSem,
+          questoesTrilhaSem: bucket === 'trilha' ? prev.questoesTrilhaSem + amount : prev.questoesTrilhaSem,
+        }));
+        render(container);
+      });
+    });
+
+    container.querySelector('#domCloseWeekBtn')?.addEventListener('click', () => {
+      updateCentral6AnoState((prev) => closeWeekly7030Snapshot(prev, weekIso));
+      showToast(`Semana ${weekIso} fechada e salva no histórico 70/30.`, 'success');
+      render(container);
+    });
+
+    // Cronômetro
+    container.querySelectorAll<HTMLButtonElement>('[data-timer-preset]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        stopTick();
+        timerPreset = btn.dataset.timerPreset as TimerPresetId;
+        timerRemainingSec = TIMER_PRESETS[timerPreset].seconds;
+        render(container);
+      });
+    });
+
+    container.querySelector('#hojeTimerStartBtn')?.addEventListener('click', () => {
+      if (timerRunning) {
+        stopTick();
+        render(container);
+        return;
+      }
       timerRunning = true;
-      timerInterval = setInterval(() => {
-        timerSecondsLeft = Math.max(0, timerSecondsLeft - 1);
-        if (timerDisp) timerDisp.textContent = fmtSec(timerSecondsLeft);
-        if (timerSecondsLeft === 0) {
-          if (timerInterval) clearInterval(timerInterval);
-          timerRunning = false;
+      const startBtn = container.querySelector('#hojeTimerStartBtn');
+      if (startBtn) startBtn.textContent = '⏸ Pausar';
+      timerId = setInterval(() => {
+        if (timerRemainingSec <= 1) {
+          stopTick();
+          timerRemainingSec = 0;
           playWebAudioChime();
-          const preset = TIMER_PRESETS[activePreset];
+          const pCfg = TIMER_PRESETS[timerPreset];
           updateCentral6AnoState((prev) => ({
             ...prev,
             timerLogs: [
-              { id: `tm-${Date.now()}`, presetId: activePreset, completedAtIso: new Date().toISOString(), minutes: preset.minutes },
-              ...(prev.timerLogs || []),
+              ...(prev.timerLogs || []).slice(-29),
+              {
+                id: `tmr-${Date.now()}`,
+                presetId: timerPreset,
+                category: pCfg.category,
+                minutes: pCfg.minutes,
+                completedAtIso: new Date().toISOString(),
+              },
             ],
           }));
-          showToast(`⏱️ ${preset.label} concluído!`, 'success');
-          renderHojeSection(container);
+          showToast(`⏱️ Bloco "${pCfg.label}" concluído!`, 'success');
+          render(container);
+          return;
+        }
+        timerRemainingSec -= 1;
+        const disp = document.getElementById('hojeTimerDisplay');
+        if (disp) {
+          disp.textContent = `${String(Math.floor(timerRemainingSec / 60)).padStart(2, '0')}:${String(timerRemainingSec % 60).padStart(2, '0')}`;
         }
       }, 1000);
-      renderHojeSection(container);
-    }
-  });
-
-  container.querySelector('#hojeTimerResetBtn')?.addEventListener('click', () => {
-    if (timerInterval) clearInterval(timerInterval);
-    timerRunning = false;
-    timerSecondsLeft = TIMER_PRESETS[activePreset].seconds;
-    renderHojeSection(container);
-  });
-
-  // MedQuest quick inputs
-  container.querySelectorAll<HTMLButtonElement>('[data-q-anc]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const add = Number(btn.dataset.qAnc || 0);
-      updateCentral6AnoState((prev) => ({ ...prev, questoesAncoraSem: (prev.questoesAncoraSem || 0) + add }));
-      renderHojeSection(container);
     });
-  });
-  container.querySelectorAll<HTMLButtonElement>('[data-q-tri]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const add = Number(btn.dataset.qTri || 0);
-      updateCentral6AnoState((prev) => ({ ...prev, questoesTrilhaSem: (prev.questoesTrilhaSem || 0) + add }));
-      renderHojeSection(container);
+
+    container.querySelector('#hojeTimerResetBtn')?.addEventListener('click', () => {
+      stopTick();
+      timerRemainingSec = TIMER_PRESETS[timerPreset].seconds;
+      render(container);
     });
-  });
 
-  const snapInput = container.querySelector<HTMLInputElement>('#hojeImportSnapInput');
-  snapInput?.addEventListener('change', async () => {
-    const file = snapInput.files?.[0];
-    if (!file) return;
-    try {
-      const parsed = JSON.parse(await file.text()) as { questoesAncoraSem?: number; questoesTrilhaSem?: number };
-      updateCentral6AnoState((prev) => ({
-        ...prev,
-        questoesAncoraSem: Number(parsed.questoesAncoraSem ?? prev.questoesAncoraSem),
-        questoesTrilhaSem: Number(parsed.questoesTrilhaSem ?? prev.questoesTrilhaSem),
-      }));
-      renderHojeSection(container);
-      showToast('✅ Snapshot MedQuest importado!', 'success');
-    } catch {
-      showToast('❌ JSON inválido.', 'danger');
-    }
-  });
-
-  // Timeline
-  container.querySelectorAll<HTMLInputElement>('[data-tl-id]').forEach((chk) => {
-    chk.addEventListener('change', () => {
-      const id = chk.dataset.tlId!;
-      updateCentral6AnoState((prev) => ({
-        ...prev,
-        checkedTimelineIds: { ...(prev.checkedTimelineIds || {}), [id]: chk.checked },
-      }));
-    });
-  });
-
-  // Escala
-  container.querySelector('#escalaAddBtn')?.addEventListener('click', () => {
-    const dateIso = container.querySelector<HTMLInputElement>('#escalaDateInput')?.value || '';
-    const tipo = (container.querySelector<HTMLSelectElement>('#escalaTipoSel')?.value || 'plantao_12h') as Central6AnoState['arquetipoId'];
-    if (!dateIso) return;
-    updateCentral6AnoState((prev) => ({
-      ...prev,
-      shiftSchedule: [
-        ...(prev.shiftSchedule || []).filter((s) => s.dateIso !== dateIso),
-        { dateIso, tipo, label: tipo },
-      ],
-    }));
-    renderHojeSection(container);
-  });
-
-  container.querySelectorAll<HTMLButtonElement>('[data-del-escala]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const d = btn.dataset.delEscala!;
-      updateCentral6AnoState((prev) => ({
-        ...prev,
-        shiftSchedule: (prev.shiftSchedule || []).filter((s) => s.dateIso !== d),
-      }));
-      renderHojeSection(container);
-    });
-  });
-
-  container.querySelector('#hojeGoLogbookBtn')?.addEventListener('click', () => uiBridge.navigate('logbook'));
-
-  container.querySelectorAll<HTMLButtonElement>('[data-ai-prompt]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const kind = btn.dataset.aiPrompt as PromptContextualKind;
-      const prompt = buildContextualAiPrompt(kind, getCentral6AnoState());
-      void copyToClipboard(prompt, `Prompt IA (${kind})`);
-    });
-  });
-
-  // Domingo Wizard
-  container.querySelectorAll<HTMLButtonElement>('[data-dom-step]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      domingoStep = Number(btn.dataset.domStep || 1);
-      renderHojeSection(container);
-    });
-  });
-
-  container.querySelector('#domCloseWeekBtn')?.addEventListener('click', () => {
-    updateCentral6AnoState((prev) => closeWeekly7030Snapshot(prev, new Date().toISOString().slice(0, 10)));
-    domingoStep = 2;
-    renderHojeSection(container);
-    showToast('✅ Semana 70/30 fechada no histórico!', 'success');
-  });
-
-  container.querySelector('#domSaveMicroBtn')?.addEventListener('click', () => {
-    const val = container.querySelector<HTMLInputElement>('#domMicroInput')?.value.trim();
-    if (val) {
+    container.querySelector('#domSaveMicroBtn')?.addEventListener('click', () => {
+      const val = (container.querySelector('#hojeMicroInput') as HTMLInputElement | null)?.value.trim() || '';
       updateCentral6AnoState((prev) => ({ ...prev, microHabitoSemanal: val }));
-    }
-    domingoStep = 4;
-    renderHojeSection(container);
-  });
+      showToast('Micro-hábito atualizado.', 'success');
+      render(container);
+    });
 
-  container.querySelector('#domExportMdBtn')?.addEventListener('click', () => {
-    const st = getCentral6AnoState();
-    const md = [
-      `# Ritual de Domingo — ${new Date().toISOString().slice(0, 10)}`,
-      `- **Rodízio:** ${st.rodizioId} | **Marcha:** ${st.marchaId}`,
-      `- **Micro-Hábito:** ${st.microHabitoSemanal}`,
-      `- **Questões na Semana:** ${summary7030.totalQuestoes} (${summary7030.pctAncora}% Âncora / ${summary7030.pctTrilha}% Trilha)`,
-      `## Top Pontos Cegos Ativos`,
-      ...activeBlindSpots.map((b) => `- ${b.titulo} (${b.gatilhoCorrecao || 'sem gatilho'})`),
-    ].join('\n');
-    downloadTextFile(`resumo-semanal-${new Date().toISOString().slice(0, 10)}.md`, md, 'text/markdown;charset=utf-8');
-    showToast('📄 Resumo semanal .md exportado!', 'success');
-  });
-}
+    container.querySelector('#escalaAddBtn')?.addEventListener('click', () => {
+      const dateIso = (container.querySelector('#escalaDateInput') as HTMLInputElement | null)?.value || '';
+      const tipo = (container.querySelector('#escalaTipoSel') as HTMLSelectElement | null)?.value as Central6AnoState['arquetipoId'];
+      const label = (container.querySelector('#escalaLabelInput') as HTMLInputElement | null)?.value.trim() || '';
+      if (!dateIso) return;
+      updateCentral6AnoState((prev) => {
+        const filtered = (prev.shiftSchedule || []).filter((s) => s.dateIso !== dateIso);
+        return {
+          ...prev,
+          shiftSchedule: [...filtered, { dateIso, tipo, label }].sort((a, b) => a.dateIso.localeCompare(b.dateIso)),
+        };
+      });
+      render(container);
+    });
 
-function renderDomingoStepHtml(
-  step: number,
-  c6: Central6AnoState,
-  summary: ReturnType<typeof computeWeekly7030Summary>,
-  blindSpots: NonNullable<Central6AnoState['logbookEntries']>
-): string {
-  if (step === 1) {
-    return `
-      <p><strong>Passo 1: Fechar Semana 70/30</strong> — Atual: ${summary.totalQuestoes} questões (${summary.pctAncora}% Âncora / ${summary.pctTrilha}% Trilha).</p>
-      <button type="button" class="btn btn-primary btn-xs" id="domCloseWeekBtn" style="margin-top:8px;">📸 Fechar &amp; Arquivar Semana</button>
-    `;
-  }
-  if (step === 2) {
-    return `
-      <p><strong>Passo 2: Revisar Top 5 Pontos Cegos Ativos</strong> (${blindSpots.length} ativos):</p>
-      <ul class="calc-details">${blindSpots.map((b) => `<li>${escapeHtml(b.titulo)}</li>`).join('') || '<li>Nenhum ponto cego pendente!</li>'}</ul>
-    `;
-  }
-  if (step === 3) {
-    return `
-      <p><strong>Passo 3: Definir Micro-Hábito da Próxima Semana</strong></p>
-      <div class="mq-btn-row" style="margin-top:6px;">
-        <input type="text" id="domMicroInput" class="mq-input" value="${escapeHtml(c6.microHabitoSemanal)}" />
-        <button type="button" class="btn btn-primary btn-xs" id="domSaveMicroBtn">Salvar &amp; Avançar →</button>
-      </div>
-    `;
-  }
-  return `
-    <p><strong>Passo 4: Exportar Resumo Semanal (.md)</strong></p>
-    <button type="button" class="btn btn-primary btn-xs" id="domExportMdBtn" style="margin-top:8px;">⬇️ Baixar resumo-semanal.md</button>
-  `;
+    container.querySelectorAll<HTMLButtonElement>('[data-del-escala]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const d = btn.dataset.delEscala!;
+        updateCentral6AnoState((prev) => ({
+          ...prev,
+          shiftSchedule: (prev.shiftSchedule || []).filter((s) => s.dateIso !== d),
+        }));
+        render(container);
+      });
+    });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-hoje-prompt]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const kind = btn.dataset.hojePrompt as 'paciente' | 'oratoria' | 'raciocinio' | 'exames' | 'osce';
+        const prompt = buildContextualAiPrompt(kind, getCentral6AnoState());
+        void copyToClipboard(prompt, `Prompt ${kind.toUpperCase()}`);
+      });
+    });
+  };
+
+  return render;
 }

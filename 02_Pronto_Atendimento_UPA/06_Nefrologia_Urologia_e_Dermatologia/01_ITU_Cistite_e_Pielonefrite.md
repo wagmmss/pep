@@ -53,7 +53,7 @@ Exame Ginecológico / Genital (se corrimento associado): Genitália externa norm
    - OU:: Sulfametoxazol + Trimetoprima (800/160 mg - Bactrim F) - Tomar 1 comprimido VO de 12/12h por 3 dias (apenas se taxa de resistência local de E. coli for < 20%).
 2. Analgésico das Vias Urinárias (alívio do ardor miccional):
    - Cloridrato de Fenazopiridina 200 mg (Pyridium) - Tomar 1 comprimido VO de 8/8h após as refeições por no MÁXIMO 2 DIAS.
-   *(Nota: Orientada expressamente que a medicação altera a coloração da urina para um tom alaranjado/avermelhado intenso fisiológico que pode manchar roupas íntimas).*
+   (Nota: Orientada expressamente que a medicação altera a coloração da urina para um tom alaranjado/avermelhado intenso fisiológico que pode manchar roupas íntimas).
 3. Hidratação oral vigorosa (mínimo de 2,5 litros de água/dia) e urinar a intervalos regulares.
 
 >> [MODALIDADE B]: CONDUTA NA PIELONEFRITE AGUDA (TRATAMENTO NA UNIDADE & SEGUIMENTO):

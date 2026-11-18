@@ -59,12 +59,14 @@ export function renderCartPanel(container: HTMLElement): void {
     badge.textContent = String(items.length);
     badge.style.display = items.length > 0 ? 'inline-block' : 'none';
   }
+  const tabCartBadge = document.getElementById('tabCartBadge');
+  if (tabCartBadge) tabCartBadge.textContent = `(${items.length})`;
 
   container.innerHTML = `
     <div class="cart-header-bar">
       <div>
         <strong>🛒 Carrinho de Prescrição</strong>
-        <span class="mq-hint">${items.length} ${items.length === 1 ? 'item' : 'itens'}</span>
+        <span class="mq-hint">(${items.length} ${items.length === 1 ? 'item' : 'itens'})</span>
       </div>
       <div class="mq-btn-row">
         <button type="button" class="btn btn-secondary btn-xs" id="cartOpenRemumeBtn">💊 Buscar REMUME/HSL</button>
@@ -85,29 +87,33 @@ export function renderCartPanel(container: HTMLElement): void {
         items.length === 0
           ? `<div class="cart-empty-state">
               <p>Nenhum medicamento no carrinho ainda.</p>
-              <p class="mq-hint">Adicione pela aba <strong>Receita</strong> do PEP, pelos atalhos acima ou pelo catálogo <strong>REMUME/HSL</strong>.</p>
+              <p class="mq-hint">Adicione pela aba <strong>Personalizar PEP</strong>, pelos atalhos acima ou pelo catálogo <strong>REMUME/HSL</strong>.</p>
             </div>`
           : items
               .map(
                 (item, idx) => `
-              <div class="cart-item-card" data-cart-id="${escapeHtml(item.id)}">
-                <div class="cart-item-head">
-                  <span class="cart-item-num">${idx + 1}.</span>
-                  <input type="text" class="cart-item-name-input" value="${escapeHtml(item.name)}" data-field="name" aria-label="Nome do medicamento" />
-                  <span class="cart-source-badge">${escapeHtml(item.source || 'manual')}</span>
-                  <button type="button" class="btn btn-ghost btn-xs cart-remove-btn" data-remove-idx="${idx}" aria-label="Remover item">✕</button>
-                </div>
-                <textarea class="cart-item-pos-input" rows="2" data-field="posology" aria-label="Posologia">${escapeHtml(item.posology)}</textarea>
-              </div>
-            `
+                  <div class="cart-item-card" data-cart-id="${escapeHtml(item.id)}">
+                    <div class="cart-item-head">
+                      <span class="cart-item-num">${idx + 1}.</span>
+                      <input type="text" class="cart-item-name-input" value="${escapeHtml(item.name)}" data-field="name" aria-label="Nome do medicamento" />
+                      <span class="cart-source-badge">${escapeHtml(item.source || 'manual')}</span>
+                      <button type="button" class="btn btn-ghost btn-xs cart-remove-btn" data-remove-idx="${idx}" aria-label="Remover item">✕</button>
+                    </div>
+                    <textarea class="cart-item-pos-input" rows="2" data-field="posology" aria-label="Posologia">${escapeHtml(item.posology)}</textarea>
+                  </div>`
               )
               .join('')
       }
     </div>
 
     <div class="cart-manual-add">
-      <input type="text" id="cartManualName" class="mq-input" placeholder="Adicionar item manual (ex.: Amoxicilina 500mg)" />
-      <button type="button" class="btn btn-secondary btn-sm" id="cartManualAddBtn">+ Add</button>
+      <div class="mq-control-group">
+        <label class="mq-control-label" for="cartManualName">Adicionar item manual à receita</label>
+        <div class="mq-form-row">
+          <input type="text" id="cartManualName" class="mq-input" style="flex:1;" placeholder="Ex.: Amoxicilina 500mg VO 8/8h por 7 dias" />
+          <button type="button" class="btn btn-secondary btn-sm" id="cartManualAddBtn">+ Add</button>
+        </div>
+      </div>
     </div>
 
     <div class="cart-actions-footer">

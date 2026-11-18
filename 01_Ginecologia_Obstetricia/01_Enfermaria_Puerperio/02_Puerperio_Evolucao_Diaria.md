@@ -11,7 +11,7 @@
 ```text
 # IDENTIFICAÇÃO:
 ID: [Nome], [Idade] anos, Leito [ ].
-TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-]| TS RN: [ ] (Coombs Direto: *Negativo / Positivo).
+TS Materna: [O+ / A+ / B+ / AB+ / O- / A- / B- / AB-] | TS RN: [ ] | Coombs Direto: [*Negativo / Positivo].
 Comorbidades: [+ *Hígida / Outros].
 Alergias: [*Nega / Outros].
 Sorologias: [Não reagentes / Outros].

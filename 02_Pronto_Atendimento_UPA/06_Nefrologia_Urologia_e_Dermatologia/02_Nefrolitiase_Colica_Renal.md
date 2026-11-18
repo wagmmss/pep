@@ -66,7 +66,7 @@ Sinal de Giordano FRANCAMENTE POSITIVO no hemidorso [direito / esquerdo], com de
 
 3. HIDRATAÇÃO EQUILIBRADA:
    - Soro Fisiológico 0,9% 500 mL EV lento.
-   *(Nota: NÃO realizar hiperidratação venosa forçada de 2 a 3 litros durante a crise aguda, pois o aumento súbito da diurese contra o ureter obstruído eleva a pressão pielocalicial e PIORA a dor).*
+   (Nota: NÃO realizar hiperidratação venosa forçada de 2 a 3 litros durante a crise aguda, pois o aumento súbito da diurese contra o ureter obstruído eleva a pressão pielocalicial e PIORA a dor).
 
 # RECEITA:
 1. Terapia Expulsiva Médica (Para cálculos ureterais de 5 a 10 mm no ureter distal):

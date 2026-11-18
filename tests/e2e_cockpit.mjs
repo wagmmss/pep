@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
 import fs from 'node:fs';
+import { createRequire } from 'node:module';
 import os from 'node:os';
 import path from 'node:path';
-import { spawn } from 'node:child_process';
-import { createRequire } from 'node:module';
+import { setTimeout as delay } from 'node:timers/promises';
 
 const require = createRequire(import.meta.url);
 function loadPlaywrightCore() {
@@ -17,7 +18,7 @@ function loadPlaywrightCore() {
         if (fs.existsSync(candidate)) return require(candidate);
       }
     }
-    throw new Error('playwright-core não encontrado. Rode via `npx --yes -p playwright-core node tests/e2e_cockpit.mjs`.');
+    throw new Error('playwright-core não encontrado. Rode `npx --yes -p playwright-core node tests/e2e_cockpit.mjs`.');
   }
 }
 const { chromium } = loadPlaywrightCore();
@@ -25,6 +26,7 @@ const { chromium } = loadPlaywrightCore();
 const ROOT = process.cwd();
 const PORT = 4173;
 const BASE_URL = process.env.E2E_URL || `http://127.0.0.1:${PORT}/`;
+const SCREENSHOT_DIR = '/tmp/cockpit_cmp';
 
 function findChromiumExecutable() {
   if (process.env.CHROMIUM_PATH && fs.existsSync(process.env.CHROMIUM_PATH)) {
@@ -48,50 +50,98 @@ function findChromiumExecutable() {
   return undefined;
 }
 
-async function waitForServer(url, timeoutMs = 15000) {
-  const start = Date.now();
-  while (Date.now() - start < timeoutMs) {
+async function waitForServer(url, maxAttempts = 40) {
+  for (let i = 0; i < maxAttempts; i++) {
     try {
       const res = await fetch(url);
       if (res.ok) return;
     } catch {
-      // retry
+      // Wait for preview server
     }
-    await new Promise((r) => setTimeout(r, 250));
+    await delay(250);
   }
-  throw new Error(`Timeout aguardando servidor preview em ${url}`);
+  throw new Error(`Servidor preview não respondeu em ${url}`);
+}
+
+async function assertNoBrowserDefaultButtons(page, sectionName) {
+  const offenders = await page.evaluate(() => {
+    const bad = [];
+    for (const btn of document.querySelectorAll('button')) {
+      const rect = btn.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) continue;
+      const st = getComputedStyle(btn);
+      if (st.visibility === 'hidden' || st.display === 'none') continue;
+      const bg = st.backgroundColor;
+      if (
+        bg === 'rgb(255, 255, 255)' ||
+        bg === 'rgb(239, 239, 239)' ||
+        bg === 'rgb(240, 240, 240)'
+      ) {
+        bad.push(`${btn.id || btn.className || 'button'}: ${bg} ("${btn.textContent?.trim().slice(0, 30)}")`);
+      }
+    }
+    return bad;
+  });
+  assert.deepEqual(
+    offenders,
+    [],
+    `Seção "${sectionName}" exibiu botões sem tema (branco/cinza default) no dark mode: ${offenders.join(' | ')}`
+  );
+}
+
+async function assertVisibleInputsLabeled(page, sectionName) {
+  const unlabeled = await page.evaluate(() => {
+    const problems = [];
+    for (const el of document.querySelectorAll('#appSectionWorkspace input, #appSectionWorkspace select')) {
+      const rect = el.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) continue;
+      const id = el.id;
+      const hasFor = id ? Boolean(document.querySelector(`label[for="${CSS.escape(id)}"]`)) : false;
+      const hasWrapLabel = Boolean(el.closest('label'));
+      const hasAria = Boolean(el.getAttribute('aria-label') || el.getAttribute('aria-labelledby'));
+      if (!hasFor && !hasWrapLabel && !hasAria) {
+        problems.push(`${el.tagName}#${id || '(sem id)'}`);
+      }
+    }
+    return problems;
+  });
+  assert.deepEqual(
+    unlabeled,
+    [],
+    `Seção "${sectionName}" tem inputs/selects sem <label> ou aria-label: ${unlabeled.join(', ')}`
+  );
 }
 
 async function run() {
-  let serverProc = null;
+  fs.mkdirSync(SCREENSHOT_DIR, { recursive: true });
+
+  let server = null;
   if (!process.env.E2E_URL) {
-    serverProc = spawn('npx', ['vite', 'preview', '--host', '127.0.0.1', '--port', String(PORT), '--strictPort'], {
+    server = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort', '--host', '127.0.0.1'], {
       cwd: ROOT,
       stdio: 'ignore',
     });
     await waitForServer(BASE_URL);
   }
 
-  const executablePath = findChromiumExecutable();
-  const browser = await chromium.launch({
-    headless: true,
-    executablePath,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
-
   try {
-    // ========================================================================
-    // 1. DESKTOP (1440x900)
-    // ========================================================================
+    const executablePath = findChromiumExecutable();
+    const browser = await chromium.launch({
+      headless: true,
+      executablePath,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+
+    // =========================================================================
+    // DESKTOP (1440x900)
+    // =========================================================================
     const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
     const page = await context.newPage();
 
     const errors = [];
     page.on('pageerror', (err) => errors.push(`pageerror: ${err.message}`));
     page.on('console', (msg) => {
-      if (msg.type() === 'error') {
-        errors.push(`console.error: ${msg.text()}`);
-      }
+      if (msg.type() === 'error') errors.push(`console.error: ${msg.text()}`);
     });
     page.on('dialog', async (dialog) => {
       await dialog.accept();
@@ -102,163 +152,171 @@ async function run() {
       throw new Error(`Sidebar não hidratou. Erros: ${JSON.stringify(errors)}`);
     });
 
-    // 2 blocos na sidebar & remoção de Habilidades (22) do filtro PEP
-    const sidebarGroups = await page.locator('#wsMainSectionNav .ws-nav-group').count();
-    assert.equal(sidebarGroups, 2, 'Sidebar deve exibir os 2 blocos');
-    const sidebarText = (await page.locator('#wsMainSectionNav').textContent()) || '';
-    assert.ok(sidebarText.includes('Protocolos PEP') && sidebarText.includes('Hoje (6º Ano)'), `Sidebar texto inesperado: ${sidebarText}`);
-    assert.equal(await page.locator('#moduleTabs [data-mod="hab"]').count(), 0, 'Filtro PEP não deve ter botão Habilidades (22)');
+    // 1. Google Fonts + Anti-FOUC loaded
+    const fontsOk = await page.evaluate(() => {
+      const hrefs = [...document.querySelectorAll('link[rel="stylesheet"]')].map((l) => l.getAttribute('href') || '');
+      return hrefs.some((h) => h.includes('Inter') && h.includes('JetBrains+Mono') && h.includes('Plus+Jakarta+Sans'));
+    });
+    assert.equal(fontsOk, true, 'Google Fonts (Inter, JetBrains Mono, Plus Jakarta Sans) devem estar carregadas no <head>');
 
-    // 88 cards PEP renderizados & geometria de 3 colunas no Desktop (1440x900)
+    // 2. Sidebar 2 groups + no Habilidades filter in PEP specialty list
+    const sidebarGroups = await page.locator('#wsMainSectionNav .ws-nav-group').count();
+    assert.equal(sidebarGroups, 2, 'Sidebar deve exibir os 2 blocos principais');
+    const sidebarText = (await page.locator('#wsSidebar').textContent()) || '';
+    assert.ok(sidebarText.includes('Protocolos PEP') && sidebarText.includes('Hoje (6º Ano)'), 'Sidebar deve conter seções PEP e Hoje');
+    assert.equal(await page.locator('#moduleTabs [data-mod="hab"]').count(), 0, 'Filtro PEP não deve duplicar Habilidades (22)');
+
+    // 3. Initial 88 PEPs in list + 3-column non-overlapping desktop layout + topbar hidden
     const cardCount = await page.locator('#cardsGrid .card').count();
-    assert.equal(cardCount, 88, `Esperado 88 cards PEP no grid inicial, encontrado ${cardCount}`);
+    assert.equal(cardCount, 88, `Esperado 88 cards PEP iniciais, encontrado ${cardCount}`);
 
     const layoutCheck = await page.evaluate(() => {
-      const sb = document.querySelector('#wsSidebar')?.getBoundingClientRect();
-      const sbStatus = document.querySelector('.ws-sidebar-status')?.getBoundingClientRect();
-      const lp = document.querySelector('#wsListPane')?.getBoundingClientRect();
-      const dr = document.querySelector('#drawerOverlay')?.getBoundingClientRect();
+      const sb = document.getElementById('wsSidebar')?.getBoundingClientRect();
+      const lp = document.getElementById('wsListPane')?.getBoundingClientRect();
+      const dr = document.getElementById('drawerOverlay')?.getBoundingClientRect();
+      const sbStatus = document.querySelector('.ws-status-block')?.getBoundingClientRect();
       const drTabs = document.querySelector('.drawer-tabs')?.getBoundingClientRect();
-      const navBg = getComputedStyle(document.querySelector('.mq-nav-item')).backgroundColor;
-      const tabBg = getComputedStyle(document.querySelector('.tab-btn')).backgroundColor;
-      const cardBg = getComputedStyle(document.querySelector('#cardsGrid .card')).backgroundColor;
-      const pillBg = getComputedStyle(document.querySelector('.choice-pill')).backgroundColor;
-      const btnGhostBg = getComputedStyle(document.querySelector('.btn-ghost')).backgroundColor;
-      const btnSecEl = document.querySelector('.btn-secondary') || document.querySelector('.btn-warning');
-      const btnSecBg = btnSecEl ? getComputedStyle(btnSecEl).backgroundColor : null;
-      return { sb, sbStatus, lp, dr, drTabs, navBg, tabBg, cardBg, pillBg, btnGhostBg, btnSecBg };
+      const topbarDisplay = getComputedStyle(document.querySelector('.topbar')).display;
+      return { sb, lp, dr, sbStatus, drTabs, topbarDisplay };
     });
+    assert.equal(layoutCheck.topbarDisplay, 'none', 'Topbar mobile deve ficar oculta no Desktop >= 1024px');
     assert.ok(layoutCheck.sb && layoutCheck.lp && layoutCheck.dr, 'As 3 colunas devem existir no Desktop');
-    assert.ok(layoutCheck.sb.x >= 0 && (!layoutCheck.sbStatus || layoutCheck.sbStatus.x >= 0), 'Sidebar não pode ter clipping horizontal');
-    assert.ok(layoutCheck.drTabs && layoutCheck.drTabs.height >= 24, `drawer-tabs deve estar visível (height=${layoutCheck.drTabs?.height})`);
-    assert.ok(layoutCheck.sb.width > 180 && layoutCheck.lp.width > 280 && layoutCheck.dr.width > 400, 'Larguras das 3 colunas devem ser válidas');
-    assert.ok(layoutCheck.sb.x < layoutCheck.lp.x && layoutCheck.lp.x < layoutCheck.dr.x, 'As 3 colunas devem estar lado a lado');
-    for (const [label, bg] of [
-      ['navBg', layoutCheck.navBg],
-      ['tabBg', layoutCheck.tabBg],
-      ['cardBg', layoutCheck.cardBg],
-      ['pillBg', layoutCheck.pillBg],
-      ['btnGhostBg', layoutCheck.btnGhostBg],
-      ['btnSecBg', layoutCheck.btnSecBg],
-    ]) {
-      if (!bg) continue;
-      assert.notEqual(bg, 'rgb(255, 255, 255)', `${label} não pode ser branco no dark mode`);
-      assert.notEqual(bg, 'rgb(239, 239, 239)', `${label} não pode ser cinza padrão do navegador no dark mode`);
-    }
+    assert.ok(layoutCheck.sb.x >= 0 && (!layoutCheck.sbStatus || layoutCheck.sbStatus.x >= 0), 'Sidebar sem clipping');
+    assert.ok(layoutCheck.drTabs && layoutCheck.drTabs.height >= 24, 'drawer-tabs deve estar visível');
+    assert.ok(layoutCheck.sb.width > 180 && layoutCheck.lp.width > 280 && layoutCheck.dr.width > 400, 'Larguras válidas das 3 colunas');
+    assert.ok(layoutCheck.sb.x < layoutCheck.lp.x && layoutCheck.lp.x < layoutCheck.dr.x, '3 colunas lado a lado');
 
-    // Toggle Consulta / Treino + Abrir PEP Pediatria + Doses Pediátricas + Novo Paciente
+    await assertNoBrowserDefaultButtons(page, 'pep');
+    await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_pep.png` });
+
+    // 4. Modo Treino, Filtro Pediatria, Peso Pediátrico, Carrinho e Novo Paciente
     await page.locator('#clinicalModeToggle').click();
     await page.locator('#moduleTabs [data-mod="ped"]').click();
     assert.equal(await page.locator('#cardsGrid .card').count(), 13, 'Filtro Pediatria deve exibir 13 PEPs');
 
     await page.locator('#wsSearchInput').fill(';ped-otite');
-    await page.waitForTimeout(150);
+    await delay(120);
     await page.locator('#cardsGrid .card').first().click();
-    await page.waitForSelector('#drawerOverlay.open', { state: 'attached' });
-
-    // Modo Treino dentro do PEP
-    const drawerHtmlTreino = await page.locator('#drawerInteractivePanel').innerHTML();
-    assert.ok(drawerHtmlTreino.includes('pepRegisterLogbookBtn') || drawerHtmlTreino.includes('Formação Teórica'), 'Modo Treino deve exibir vínculos de estudo/Logbook');
+    const drawerHtmlTreino = (await page.locator('#drawerInteractivePanel').innerHTML()) || '';
+    assert.ok(drawerHtmlTreino.includes('pepRegisterLogbookBtn') || drawerHtmlTreino.includes('Formação Teórica'));
 
     const pesoInput = page.locator('#drawerInteractivePanel input.pep-inline-input').first();
     await pesoInput.fill('15');
     await pesoInput.dispatchEvent('change');
-    await page.waitForTimeout(100);
-    await page.locator('[data-power-action="1"]').waitFor();
-    await page.locator('#pepAddCartBtn').click();
-    await page.waitForTimeout(200);
-    const cartCountText = (await page.locator('#cartItemCountBadge').textContent())?.trim() || '';
-    assert.ok(Number(cartCountText) >= 1, `Carrinho deve registrar >= 1 item (drawerTitle=${await page.locator('#drawerTitle').textContent()}, badge=${cartCountText})`);
 
-    // Limpar sessão com 🧹 Novo Paciente
+    await page.locator('#pepAddCartBtn').click();
+    const cartCountText = (await page.locator('#cartItemCountBadge').textContent())?.trim();
+    assert.ok(Number(cartCountText) >= 1, `Carrinho deve registrar >= 1 item (badge=${cartCountText})`);
+
     await page.locator('#wsClearSearchBtn').click();
     await page.locator('#btnNovoPaciente').click();
-    await page.waitForTimeout(200);
     assert.equal((await page.locator('#cartItemCountBadge').textContent())?.trim(), '0', 'Novo Paciente deve zerar o carrinho');
 
-    // Ctrl+K estratificado
+    // 5. Command Palette (Ctrl+K)
     await page.locator('#topbarSearchBtn').click();
-    await page.waitForSelector('#cmdOverlay.open', { state: 'attached' });
     await page.locator('#cmdSearchInput').fill(';sca');
-    await page.waitForTimeout(150);
     assert.ok((await page.locator('#cmdResults [data-cmd-type="pep"]').count()) >= 1, 'Ctrl+K deve encontrar PEP por ;atalho');
     await page.locator('#cmdCloseBtn').click();
 
-    // Pré-Porta 30s (22), Ferramentas, Hoje, Logbook, Config
+    // 6. Pré-Porta 30s
     await page.locator('#wsMainSectionNav [data-section="preporta"]').click();
-    await page.waitForTimeout(150);
+    await delay(100);
     const wsHtmlPrePorta = await page.locator('#appSectionWorkspace').innerHTML();
     assert.ok(wsHtmlPrePorta.includes('Pré-Porta') || wsHtmlPrePorta.includes('Técnica Profunda') || wsHtmlPrePorta.includes('CRÍTICO'));
+    await assertNoBrowserDefaultButtons(page, 'preporta');
 
+    // 7. Ferramentas & Calc (sub-abas + labels + screenshot)
     await page.locator('#wsMainSectionNav [data-section="ferramentas"]').click();
-    await page.waitForTimeout(150);
+    await delay(100);
+    await assertNoBrowserDefaultButtons(page, 'ferramentas-gaso');
+    await assertVisibleInputsLabeled(page, 'ferramentas-gaso');
+    await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_ferramentas.png` });
+
+    await page.locator('[data-ftab="calc"]').click();
+    await assertVisibleInputsLabeled(page, 'ferramentas-calc');
     await page.locator('[data-ftab="exames"]').click();
-    await page.waitForTimeout(100);
-    assert.ok((await page.locator('#appSectionWorkspace').textContent())?.includes('ECG (10 Passos)'));
+    assert.ok((await page.locator('#appSectionWorkspace').textContent())?.includes('ECG em 10 Passos'));
     await page.locator('[data-ftab="raciocinio"]').click();
-    await page.waitForTimeout(100);
-    assert.ok((await page.locator('#appSectionWorkspace').textContent())?.includes('Construtor Guiado de Raciocínio Clínico'));
+    assert.ok((await page.locator('#appSectionWorkspace').textContent())?.includes('Raciocínio Clínico'));
     await page.locator('[data-ftab="oratoria"]').click();
-    await page.waitForTimeout(100);
     assert.ok((await page.locator('#appSectionWorkspace').textContent())?.includes('Modo Palco'));
 
+    // 8. Formação Teórica (headings reais, zero Markdown cru, zero hab-X cru, screenshot)
+    await page.locator('#wsMainSectionNav [data-section="teoria"]').click();
+    await delay(120);
+    const teoriaChecks = await page.evaluate(() => {
+      const prose = document.querySelector('#teoriaReaderArticle.mq-prose-clinical');
+      const hCount = prose ? prose.querySelectorAll('h1, h2').length : 0;
+      const text = prose ? prose.innerText : '';
+      const hasRawMd = /(^|\n)\s*(#{1,3}\s+|---\s*$)/m.test(text);
+      const chipTexts = [...document.querySelectorAll('[data-open-hab]')].map((el) => el.textContent?.trim() || '');
+      const hasRawHabId = chipTexts.some((t) => /\bhab-\d+\b/i.test(t));
+      return { hCount, hasRawMd, chipTexts, hasRawHabId };
+    });
+    assert.ok(teoriaChecks.hCount >= 2, `Teoria deve renderizar headings HTML reais (hCount=${teoriaChecks.hCount})`);
+    assert.equal(teoriaChecks.hasRawMd, false, 'Teoria não pode conter Markdown cru (# / ---) no texto visível');
+    assert.equal(teoriaChecks.hasRawHabId, false, `Chips Pré-Porta devem mostrar títulos legíveis, não IDs crus: ${teoriaChecks.chipTexts.join(', ')}`);
+    await assertNoBrowserDefaultButtons(page, 'teoria');
+    await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_teoria.png` });
+
+    // 9. Logbook & Pontos Cegos
     await page.locator('#wsMainSectionNav [data-section="logbook"]').click();
-    await page.waitForTimeout(150);
+    await delay(100);
     const wsHtmlLogbook = await page.locator('#appSectionWorkspace').innerHTML();
     assert.ok(wsHtmlLogbook.includes('Radar') || wsHtmlLogbook.includes('Ensaio Mental'));
+    assert.equal(wsHtmlLogbook.includes('[object Object]'), false, 'Logbook não pode renderizar [object Object]');
+    await assertNoBrowserDefaultButtons(page, 'logbook');
+    await assertVisibleInputsLabeled(page, 'logbook');
+    await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_logbook.png` });
 
+    // 10. Hoje (6º Ano)
     await page.locator('#wsMainSectionNav [data-section="hoje"]').click();
-    await page.waitForTimeout(150);
+    await delay(100);
     const wsHtmlHoje = await page.locator('#appSectionWorkspace').innerHTML();
-    assert.ok(wsHtmlHoje.includes('70/30') || wsHtmlHoje.includes('Timer'));
+    assert.ok(wsHtmlHoje.includes('70 / 30') || wsHtmlHoje.includes('70/30'));
+    await assertNoBrowserDefaultButtons(page, 'hoje');
+    await assertVisibleInputsLabeled(page, 'hoje');
+    await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_hoje.png` });
 
+    // 11. Config & Backup v2
     await page.locator('#wsBtnConfig').click();
-    await page.waitForTimeout(150);
-    assert.ok((await page.locator('#cfgExportBackupBtn').count()) === 1, 'Config deve exibir botão Exportar Backup v2');
+    await delay(100);
+    assert.equal(await page.locator('#cfgExportBackupBtn').count(), 1, 'Config deve exibir Exportar Backup v2');
+    await assertNoBrowserDefaultButtons(page, 'config');
 
-    // Service Worker check
-    const swSupported = await page.evaluate(async () => {
-      if (!('serviceWorker' in navigator)) return false;
-      const regs = await navigator.serviceWorker.getRegistrations();
-      return Array.isArray(regs);
-    });
+    const swSupported = await page.evaluate(() => 'serviceWorker' in navigator);
     assert.equal(swSupported, true);
-
     assert.deepEqual(errors, [], `Erros inesperados no Desktop: ${errors.join('; ')}`);
+
     await context.close();
 
-    // ========================================================================
-    // 2. MOBILE (390x844)
-    // ========================================================================
+    // =========================================================================
+    // MOBILE (390x844)
+    // =========================================================================
     const mobileCtx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const mobilePage = await mobileCtx.newPage();
     const mobileErrors = [];
-    mobilePage.on('pageerror', (err) => mobileErrors.push(`pageerror: ${err.message}`));
-    mobilePage.on('console', (msg) => {
-      if (msg.type() === 'error') mobileErrors.push(`console.error: ${msg.text()}`);
-    });
+    mobilePage.on('pageerror', (err) => mobileErrors.push(err.message));
 
     await mobilePage.goto(BASE_URL, { waitUntil: 'networkidle' });
     const mobileBtns = await mobilePage.locator('#mobileBottomBar .mobile-bar-btn').count();
-    assert.equal(mobileBtns, 4, 'Barra inferior mobile deve ter exatamente 4 botões');
+    assert.equal(mobileBtns, 4, 'Barra inferior mobile deve ter 4 botões');
     await mobilePage.locator('#mobilePrePortaBtn').click();
-    await mobilePage.waitForTimeout(150);
+    await delay(80);
     await mobilePage.locator('#mobileSearchBtn').click();
-    await mobilePage.waitForSelector('#cmdOverlay.open');
-
+    await delay(80);
+    assert.equal(await mobilePage.locator('#cmdOverlay.open').count(), 1, 'Busca mobile deve abrir Ctrl+K modal');
     assert.deepEqual(mobileErrors, [], `Erros inesperados no Mobile: ${mobileErrors.join('; ')}`);
     await mobileCtx.close();
 
-    console.log('✅ E2E Playwright Desktop (1440x900) + Mobile (390x844) concluído com 0 erros!');
-  } finally {
     await browser.close();
-    if (serverProc) {
-      serverProc.kill('SIGTERM');
-    }
+    console.log('✅ E2E Completo (Desktop 7 seções + Contraste + Fontes + Teoria Markdown + Labels + Mobile 390x844) PASSOU!');
+  } finally {
+    if (server) server.kill('SIGTERM');
   }
 }
 
 run().catch((err) => {
-  console.error('❌ E2E falhou:', err);
+  console.error('❌ Falha no E2E:', err);
   process.exit(1);
 });

@@ -40,7 +40,7 @@ Exames Complementares (se realizados):
 # CONDUTA:
 >> [MODALIDADE A — MASTITE PUERPERAL AGUDA]:
 1. MANTER O ALEITAMENTO MATERNO (Pilar #1 do tratamento): Orientada a NÃO suspender a amamentação na mama afetada (o esvaziamento frequente previne abscesso e não faz mal ao RN a termo). Iniciar mamada pela mama sadia e ordenhar manualmente o leite residual da mama afetada após as mamadas.
-2. Prescritos Cefalexina 500 mg VO 6/6h por 10 a 14 dias (cobertura antiestafilocócica para *S. aureus*) + Ibuprofeno 600 mg VO 8/8h + Dipirona 1 g VO 6/6h SOS + compressas frias após as mamadas.
+2. Prescritos Cefalexina 500 mg VO 6/6h por 10 a 14 dias (cobertura antiestafilocócica para S. aureus) + Ibuprofeno 600 mg VO 8/8h + Dipirona 1 g VO 6/6h SOS + compressas frias após as mamadas.
 3. Reavaliação Obrigatória em 48 a 72 horas: Se persistir febre após 48–72h de ATB ou surgir área de flutuação -> solicitar USG de Mamas e realizar punção aspirativa por agulha grossa / drenagem de Abscesso Mamário (mantendo amamentação).
 
 >> [MODALIDADE B — CONDUTA NA ENDOMETRITE PUERPERAL]:
@@ -48,10 +48,10 @@ Exames Complementares (se realizados):
 2. Antibioticoterapia Endovenosa Padrão-Ouro (Cobertura Polimicrobiana Aeróbia/Anaeróbia):
    - Clindamicina 900 mg EV de 8/8 horas
    - + Gentamicina 5 mg/kg EV em dose única diária (24/24h) [ou 1,5 mg/kg EV de 8/8h se função renal normal].
-   *(Observação: se disfunção renal grave, substituir Gentamicina por Ceftriaxona 2 g EV 1x/dia ou usar Ampicilina-Sulbactam 3 g EV 6/6h)*.
+   (Observação: se disfunção renal grave, substituir Gentamicina por Ceftriaxona 2 g EV 1x/dia ou usar Ampicilina-Sulbactam 3 g EV 6/6h).
 3. Esvaziamento Uterino (Se USG mostrar restos placentários retidos): Realizar curagem/AMIU após 6 a 12 horas de impregnação antibiótica EV.
 4. Critério de Alta (Sem necessidade de antibiótico oral para casa!): Manter Clindamicina + Gentamicina EV até a paciente permanecer afebril por 24 a 48 horas completas, com dor resolvida e leucograma em queda -> Suspender antibiótico e dar alta hospitalar (não prescrever ATB VO na alta!).
-5. *Se febre persistir após 48–72h de Clinda + Genta:* Associar Ampicilina 2 g EV de 6/6h (para cobrir *Enterococcus faecalis*) e investigar hematoma/abscesso pélvico, infecção de ferida operatória ou Tromboflebite Pélvica Séptica (TC de pelve com contraste).
+5. Se febre persistir após 48–72h de Clinda + Genta: Associar Ampicilina 2 g EV de 6/6h (para cobrir Enterococcus faecalis) e investigar hematoma/abscesso pélvico, infecção de ferida operatória ou Tromboflebite Pélvica Séptica (TC de pelve com contraste).
 
 # RECEITA:
 USO ORAL:

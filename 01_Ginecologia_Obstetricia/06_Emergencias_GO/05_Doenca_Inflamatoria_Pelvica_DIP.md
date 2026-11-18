@@ -50,7 +50,7 @@ USG Pélvica Transvaginal: [Útero e ovários sem coleções pélvicas / Imagem 
    - Ceftriaxona 1 g EV de 24/24 horas (ou 2 g EV 1x/dia)
    - + Doxiciclina 100 mg VO (ou EV) de 12/12 horas
    - + Metronidazol 400 mg VO de 12/12h (ou 500 mg EV de 8/8h)
-   *(Manter EV até 24–48h após melhora clínica e defervescência; em seguida, transicionar para Doxiciclina 100 mg VO 12/12h + Metronidazol 400–500 mg VO 12/12h até completar 14 dias totais)*.
+   (Manter EV até 24–48h após melhora clínica e defervescência; em seguida, transicionar para Doxiciclina 100 mg VO 12/12h + Metronidazol 400–500 mg VO 12/12h até completar 14 dias totais).
 3. *[OU Esquema Hospitalar Alternativo]*:
    - Clindamicina 900 mg EV de 8/8 horas + Gentamicina 5 mg/kg EV 1x/dia (ou 2 mg/kg ataque + 1,5 mg/kg 8/8h) + transição oral após 24–48h de melhora até completar 14 dias.
 4. Abordagem Cirúrgica (Laparoscopia / Laparotomia / Drenagem): Imediata se Monif IV (abscesso roto / choque séptico) ou se abscesso tubo-ovariano > 8 cm sem resposta após 48–72h de ATB EV.
@@ -65,7 +65,7 @@ USO ORAL (PARA A PACIENTE — TRATAMENTO COMPLETO DE 14 DIAS):
    Tomar 1 comprimido via oral de 12 em 12 horas (após o café e o jantar, com 1 copo cheio de água e sem deitar por 30 min), durante 14 dias consecutivos.
 3. Metronidazol [250 mg (56 cp) / 400 mg (28 cp)] ---------------------- 14 dias
    Tomar 2 comprimidos de 250 mg (500 mg) via oral de 12 em 12 horas, durante 14 dias consecutivos.
-   *(Atenção: Proibido ingerir bebida alcoólica durante os 14 dias e até 48h após o término — risco de reação grave com vômitos e mal-estar)*.
+   (Atenção: Proibido ingerir bebida alcoólica durante os 14 dias e até 48h após o término — risco de reação grave com vômitos e mal-estar).
 4. Ibuprofeno 600 mg --------------------------------------------------- 1 caixa
    Tomar 1 comprimido via oral de 8 em 8 horas após as refeições por 5 dias se dor.
 

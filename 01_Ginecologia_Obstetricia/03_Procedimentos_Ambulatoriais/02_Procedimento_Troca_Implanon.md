@@ -19,7 +19,7 @@ Alergias: [*Nega / Outros].
 # DESCRIÇÃO TÉCNICA DO PROCEDIMENTO:
 1. Posicionamento & Palpação Prévia Obrigatória: Paciente em decúbito dorsal, braço [esquerdo / direito] abduzido com cotovelo fletido. Implante prévio facilmente localizado por palpação bimanual no plano subdérmico superficial, móvel e íntegro.
 2. Antissepsia & Anestesia Sob a Ponta Distal: Antissepsia com Clorexidina Alcoólica 2% e campo estéril. Infiltração de 0,5 a 1 mL de Lidocaína 2% sem vasoconstritor exatamente ABAIXO da extremidade distal do implante (para elevar a ponta contra a derme, evitando hidrodissecção acima do implante que o esconderia).
-3. Incisão Longitudinal & Extração (*Técnica Pop-Out*):
+3. Incisão Longitudinal & Extração (Técnica Pop-Out):
    - Pressão digital firme na extremidade proximal do implante para projetar a ponta distal contra a pele.
    - Incisão longitudinal de 2 a 3 mm com lâmina nº 11 sobre a extremidade distal.
    - Divulsão delicada da cápsula fibrosa com gaze/lâmina até exteriorização da ponta branca; apreensão com pinça Mosquito curva e extração completa de bastonete íntegro medindo 4,0 cm (apresentado à paciente).
