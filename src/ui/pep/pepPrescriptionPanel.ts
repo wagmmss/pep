@@ -43,7 +43,9 @@ export function renderStandardOrPrescriptionView(
 
   let guardHtml = '';
   if (mode === 'receita' || mode === 'conduta') {
-    const items = extractPrescriptionItemsFromText(bodyText);
+    const items = extractPrescriptionItemsFromText(bodyText, {
+      defaultZone: mode === 'conduta' ? 'conduta' : 'receita',
+    });
     const hints = resolveProtocolPharmaHints(protocol);
     const report = auditPrescription(items, clinicalContext, hints);
     guardHtml = renderPrescriptionGuardBannerHtml(

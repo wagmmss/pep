@@ -235,13 +235,17 @@ const SEQUENTIAL_PHASE_RE =
  * Reconhece seções estruturadas (# CONDUTA vs # RECEITA vs seções narrativas),
  * consome linhas de posologia filhas e sinaliza opções alternativas para evitar falsos positivos.
  */
-export function extractPrescriptionItemsFromText(rawText: string): PrescriptionAuditItem[] {
+export function extractPrescriptionItemsFromText(
+  rawText: string,
+  options?: { defaultZone?: 'ignore' | 'conduta' | 'receita' }
+): PrescriptionAuditItem[] {
   const lines = String(rawText || '').split('\n');
   const items: PrescriptionAuditItem[] = [];
   const seenKeys = new Set<string>();
 
-  const isStructured = STRUCTURED_PEP_DOC_RE.test(normalizeText(rawText));
-  let zone: 'ignore' | 'conduta' | 'receita' = isStructured ? 'ignore' : 'receita';
+  const isStructured = lines.some((l) => STRUCTURED_PEP_DOC_RE.test(normalizeText(l)));
+  let zone: 'ignore' | 'conduta' | 'receita' =
+    options?.defaultZone ?? (isStructured ? 'ignore' : 'receita');
   let rxGroupId = 0;
   let inConditionalBlock = false;
   let nextLineIsAlternative = false;

@@ -1099,8 +1099,10 @@ export function cleanClinicalTextLine(rawLine: string): string {
   const indent = indentMatch ? indentMatch[1] : '';
   let content = line.slice(indent.length);
 
-  // Remove pontuação órfã deixada por omissão de opcionais ou chips removidos
+  // Remove pontuação órfã e conectores "+" duplicados/pendentes deixados por omissão de opcionais ou chips removidos
   content = content
+    .replace(/\+\s*\+/g, '+')
+    .replace(/\s+\+\s*([.,;:]|$)/g, '$1')
     .replace(/\s+([,.;:])/g, '$1')
     .replace(/([,;:])\s*\./g, '.')
     .replace(/:\s*:\s*/g, ': ')
@@ -1163,7 +1165,7 @@ export function computeExcludedBlockIndices(ast: PepDocumentAst, state: AstSelec
       const firstTrava = block.children.find((c): c is TravaAlertNode => c.kind === 'trava-alert');
       if (firstTrava && state.travaExcluded[firstTrava.id]) {
         excluded.add(i);
-        if (/^\d+\.\s*\[/.test(block.rawLine.trim())) {
+        if (/^\d+[.)]\s+/.test(block.rawLine.trim())) {
           skipMode = 'item';
         } else if (block.isConditionalBlockHeader || block.isSecondaryBlockStart) {
           skipMode = 'block';
