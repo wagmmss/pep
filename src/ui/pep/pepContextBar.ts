@@ -19,15 +19,28 @@ import {
 } from '../../engine/personalizar.ts';
 import type { PrescriptionAuditReport } from '../../engine/prescriptionGuard.ts';
 import { cockpitStore } from '../../state/store.ts';
+import { PROTOCOL_BY_ID } from '../context.ts';
 import { escapeHtml } from '../utils.ts';
+
+function formatShortPrePortaLabel(habId: string): string {
+  const title = PROTOCOL_BY_ID.get(habId)?.title?.trim();
+  if (!title) return 'Pré-Porta 30s';
+  const cleaned = title
+    .replace(/^Habilidade Clínica\s*[-–:]\s*/i, '')
+    .replace(/^Cartão Pré-Porta\s*[-–:]\s*/i, '')
+    .replace(/\s*\([^)]*\)\s*$/g, '')
+    .trim();
+  return cleaned.length > 34 ? `${cleaned.slice(0, 33).trimEnd()}…` : cleaned;
+}
 
 export function renderClinicalLinksBarHtml(protocol: ClinicalProtocolItem): string {
   const links = resolveClinicalLinksForPep(protocol);
   const pills: string[] = [];
 
   if (links.habIds.length > 0) {
+    const prePortaLabel = formatShortPrePortaLabel(links.habIds[0]);
     pills.push(
-      `<button type="button" class="pep-link-pill pep-link-preporta" data-link-hab="${escapeHtml(links.habIds[0])}" title="Abrir Pré-Porta 30s vinculado">🧠 Pré-Porta (${escapeHtml(links.prePortaTriggers[0] || links.habIds[0])})</button>`
+      `<button type="button" class="pep-link-pill pep-link-preporta" data-link-hab="${escapeHtml(links.habIds[0])}" title="Abrir Pré-Porta 30s vinculado">🧠 Pré-Porta · ${escapeHtml(prePortaLabel)}</button>`
     );
   }
   if (links.teoriaModIds.length > 0) {

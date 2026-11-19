@@ -1534,7 +1534,7 @@ export const DRUG_CLINICAL_CATALOG: DrugClinicalCatalogRule[] = [
       pregnancyNote: 'Contraindicado no 3º trimestre (risco ductal/renal fetal).',
       allergyCrossGroups: ['aine', 'cetoprofeno', 'aas', 'anti-inflamatorio', 'antiinflamatorio'],
       maxDailyDoseMg: 300,
-      maxSingleDoseMg: 100,
+      maxSingleDoseMg: 150,
     },
   },
   {
@@ -1677,7 +1677,21 @@ export const DRUG_CLINICAL_CATALOG: DrugClinicalCatalogRule[] = [
     },
   },
   {
-    matchPatterns: [/\bampicilina\b|\bsulbactam\b|\bpiperacilina\b|\boxacilina\b/],
+    matchPatterns: [/\bpiperacilina\b|\btazobactam\b/],
+    meta: {
+      canonicalKey: 'piperacilina_tazobactam',
+      therapeuticClass: 'beta_lactamico_penicilina',
+      classLabel: 'Beta-lactâmico (Penicilina Antipseudomonas)',
+      duplicityGroup: 'beta_lactamico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 40, note: 'Ajustar dose/intervalo se ClCr < 40 mL/min.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['penicilina', 'piperacilina', 'beta-lactamico', 'betalactamico'],
+      maxDailyDoseMg: 18000,
+      maxSingleDoseMg: 4500,
+    },
+  },
+  {
+    matchPatterns: [/\bampicilina\b|\bsulbactam\b|\boxacilina\b/],
     meta: {
       canonicalKey: 'ampicilina',
       therapeuticClass: 'beta_lactamico_penicilina',

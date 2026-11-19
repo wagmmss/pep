@@ -64,7 +64,7 @@ Nega febre, calafrios, anúria ou oligúria severa[? Urgência urológica :: ; a
 3. Analgésico de Resgate:
    - Dipirona 1 g VO de 6/6h SOS dor.
 4. Antiespasmódico de Resgate:
-   - Hioscina + Dipirona (Buscopan Composto) - Tomar 1 a 2 comprimidos VO 8/8h se cólica.
+   - Butilbrometo de Escopolamina (Buscopan simples) 10 mg - Tomar 1 comprimido VO 8/8h se cólica (sem Dipirona associada, já prescrita acima).
 
 >> ORIENTAÇÕES & SINAIS DE ALARME DE RETORNO IMEDIATO:
 - Urinar em filtro de café ou peneira fina para capturar o cálculo caso seja expelido (para posterior análise bioquímica).

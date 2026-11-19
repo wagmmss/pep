@@ -16,7 +16,7 @@ Alergias: [*Nega / [ ]].
 - Motivo da Avaliação na Sala Vermelha: [MODALIDADE A: HIPERCALEMIA GRAVE / MODALIDADE B: HIPONATREMIA AGUDA SINTOMÁTICA].
 
 =============================================================================
->> [MODALIDADE A]: PROTOCOLO DE HIPERCALEMIA GRAVE (;hiperk)
+>> [MODALIDADE A]: PROTOCOLO DE HIPERCALEMIA GRAVE
 =============================================================================
 
 # DADOS LABORATORIAIS & HISTÓRIA:
@@ -56,7 +56,7 @@ Potássio sérico de [ ] mEq/L no contexto de [doença renal crônica dialítica
    - Acionada equipe de Nefrologia / Hemodiálise de urgência se hipercalemia refratária, paciente anúrico ou com disfunção renal dialítica.
 
 =============================================================================
->> [MODALIDADE B]: PROTOCOLO DE HIPONATREMIA AGUDA GRAVE (;hipona)
+>> [MODALIDADE B]: PROTOCOLO DE HIPONATREMIA AGUDA GRAVE
 =============================================================================
 
 # DADOS LABORATORIAIS & HISTÓRIA:

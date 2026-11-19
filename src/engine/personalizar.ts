@@ -122,12 +122,12 @@ export function isInternalInstructionBracket(inner: string): boolean {
   const trimmed = String(inner || '').trim();
   if (!trimmed) return false;
   if (/^\?\s*[^:]+::/i.test(trimmed)) return true;
-  return /^(?:SE\s+|Se\s+|Opcional\b|A\s+critério\b|Caso\s+|Conforme\s+|OPÇÃO\s+|MODALIDADE\s+|1ª\s*ESCOLHA|2ª\s*ESCOLHA|3ª\s*ESCOLHA|OU\s+2ª|OU\s+SE\b|Escolha\s+|NÃO\s+PRESCREVER|CONTRAINDICAD|EVITAR\s+SE|ATENÇÃO\b|ALERTA\b|NOTA\b|OBS\b)/i.test(trimmed);
+  return /^(?:SE\s+|Se\s+|Opcional\b|A\s+critério\b|Caso\s+|Conforme\s+|OPÇÃO\s+|MODALIDADE\s+|1ª\s*ESCOLHA|2ª\s*ESCOLHA|3ª\s*ESCOLHA|OU(?:\s|$)|Escolha\s+|NÃO\s+PRESCREVER|CONTRAINDICAD|EVITAR\s+SE|ATENÇÃO\b|ALERTA\b|NOTA\b|OBS\b)/i.test(trimmed);
 }
 
 export function isSecondaryOptionBracket(inner: string): boolean {
   const trimmed = String(inner || '').trim();
-  return /^(?:OPÇÃO\s+[2-9]|MODALIDADE\s+[2-9]|2ª\s*ESCOLHA|3ª\s*ESCOLHA|OU\s+2ª)/i.test(trimmed);
+  return /^(?:OPÇÃO\s+(?:[2-9]|[B-Z]\b|ALTERNATIVA\b)|MODALIDADE\s+(?:[2-9]|[B-Z]\b)|2ª\s*ESCOLHA|3ª\s*ESCOLHA|OU(?:\s|$)|SE\s+(?:ALERGIA|ALÉRGIC|HISTÓRICO\s+DE\s+ANAFILAXIA|USO\s+DE\s+ANTIBIÓTICO\s+RECENTE|FALHA|INTOLERÂNCIA|SUSPEITA\s+DE\s+MRSA))/i.test(trimmed);
 }
 
 export interface ParsedChoiceGroup {
