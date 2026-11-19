@@ -1,10 +1,58 @@
 // ============================================================================
-// CENTRAL DO 6º ANO — MOTOR DINÂMICO DE ROTINA (RODÍZIO × 3 MARCHAS × ARQUÉTIPO)
-// RASTREADOR 70/30, AUDITORIA CURRICULAR, FORMAÇÃO TEÓRICA, GASOMETRIA 5 PASSOS,
-// RAZÕES DE VEROSSIMILHANÇA (LR+/LR-), 7 TRAVAS, INTERCORRÊNCIAS & LOGBOOK
+// CENTRAL DO 6º ANO — MOTOR DE LÓGICA PURA (INTERNATO & R1)
+// Dados estáticos vivem exclusivamente em src/data/central6ano_data.ts.
 // ============================================================================
 
 import { FORMACAO_TEORICA_MODULOS, type TeoriaModuloItem } from '../data/formacao_teorica_data.ts';
+import {
+  CURRICULO_ITEMS_DATA,
+  CURRICULUM_BANKS_CONFIG,
+  CURRICULUM_CATEGORIES_META,
+  DEFAULT_R1_MILESTONES,
+  DEFAULT_WEEKLY_SCHEDULE,
+  ENSAIO_MENTAL_3MIN_PASSOS,
+  ENSAIO_MENTAL_PROCS_DATA,
+  FERIAS_SEMANAS,
+  HOJE_DEEP_LINKS_MAP,
+  LEGACY_CURRICULO_TO_UNIFIED_MAP,
+  LOGBOOK_PROCEDIMENTOS_MATRIX,
+  MARCHAS_6ANO,
+  RITUAL_DOMINGO_DATA,
+  RODIZIOS_6ANO,
+  ROTA_DIAS_SEMANA,
+  SHIFT_TYPE_META,
+  TIMER_PRESETS,
+  UNIFIED_CURRICULUM_CATALOG,
+  WEEKLY_DAYS_ORDER,
+  type BankItemRule,
+  type Central6AnoState,
+  type CurriculoAuditItem,
+  type CurriculumBankConfig,
+  type CurriculumBankId,
+  type CurriculumBlockDef,
+  type CurriculumCatalogItem,
+  type CurriculumCategoryId,
+  type CurriculumEntryState,
+  type DailyTaskCategory,
+  type DailyTaskItem,
+  type EnsaioMentalProcGuide,
+  type LogbookProcedureGoal,
+  type MarchaConfig,
+  type MarchaId,
+  type ProcedureAutonomy,
+  type ProofStatus,
+  type R1Milestone,
+  type RodizioConfig,
+  type ShiftScheduleEntry,
+  type ShiftType,
+  type TimelineStep,
+  type TimerLogEntry,
+  type TimerPresetConfig,
+  type TimerPresetId,
+  type WeeklyDayKey,
+  type WeeklyHistory7030Entry,
+  type WeeklyScheduleMap,
+} from '../data/central6ano_data.ts';
 import {
   calcGasometria5Passos,
   calcPostTestProbability,
@@ -14,449 +62,725 @@ import {
 } from './calculadoras.ts';
 
 export {
+  CURRICULO_ITEMS_DATA,
+  CURRICULUM_BANKS_CONFIG,
+  CURRICULUM_CATEGORIES_META,
+  DEFAULT_R1_MILESTONES,
+  DEFAULT_WEEKLY_SCHEDULE,
+  ENSAIO_MENTAL_3MIN_PASSOS,
+  ENSAIO_MENTAL_PROCS_DATA,
+  FERIAS_SEMANAS,
   FORMACAO_TEORICA_MODULOS,
+  HOJE_DEEP_LINKS_MAP,
+  LEGACY_CURRICULO_TO_UNIFIED_MAP,
+  LOGBOOK_PROCEDIMENTOS_MATRIX,
+  MARCHAS_6ANO,
+  RITUAL_DOMINGO_DATA,
+  RODIZIOS_6ANO,
+  ROTA_DIAS_SEMANA,
+  SHIFT_TYPE_META,
+  TIMER_PRESETS,
+  UNIFIED_CURRICULUM_CATALOG,
+  WEEKLY_DAYS_ORDER,
   calcGasometria5Passos,
   calcPostTestProbability,
-  type TeoriaModuloItem,
+  type BankItemRule,
+  type Central6AnoState,
+  type CurriculoAuditItem,
+  type CurriculumBankConfig,
+  type CurriculumBankId,
+  type CurriculumBlockDef,
+  type CurriculumCatalogItem,
+  type CurriculumCategoryId,
+  type CurriculumEntryState,
+  type DailyTaskCategory,
+  type DailyTaskItem,
+  type EnsaioMentalProcGuide,
   type GasometriaInput,
   type GasometriaResult,
+  type LogbookProcedureGoal,
+  type MarchaConfig,
+  type MarchaId,
+  type ProcedureAutonomy,
+  type ProofStatus,
+  type R1Milestone,
+  type RodizioConfig,
+  type ShiftScheduleEntry,
+  type ShiftType,
+  type TeoriaModuloItem,
+  type TimelineStep,
+  type TimerLogEntry,
+  type TimerPresetConfig,
+  type TimerPresetId,
+  type WeeklyDayKey,
+  type WeeklyHistory7030Entry,
+  type WeeklyScheduleMap,
 };
 
-export interface RodizioConfig {
-  id: string;
-  nome: string;
-  periodo: string;
-  areaBadge: 'cirurgia' | 'clinica' | 'go' | 'pediatria' | 'preventiva';
-  ancora70: string;
-  trilha30: string;
-  procedimentosAlvo: string[];
-  microHabitoSugerido: string;
-}
+// ============================================================================
+// 1. GRADE SEMANAL EDITÁVEL & DETECÇÃO AUTOMÁTICA DE PÓS-PLANTÃO
+// ============================================================================
 
-export type MarchaId = '4_sprint' | '3_normal' | '2_pesada' | '1_sobrevivencia';
+export type ComputedDayLoadMode =
+  | 'pos_plantao'
+  | 'plantao_noturno'
+  | 'integral'
+  | 'meio_periodo'
+  | 'folga';
 
-export interface MarchaConfig {
-  id: MarchaId;
-  nome: string;
-  badge: string;
-  metaMin: number;
-  metaMax: number;
-  metaAlvo: number;
-  cicloDiaUtilMin: number;
-  fdsHorasDia: number;
-  resumo: string;
-}
-
-export interface TimelineStep {
-  id: string;
-  horario: string;
-  titulo: string;
-  detalhe: string;
-  categoria: string;
-  corCategoria: string;
-  atalhoSecao?: string;
-  atalhoLabel?: string;
-  atalhoTeoriaMod?: string;
-  atalhoFerramentaTab?: 'gaso' | 'lr' | 'travas' | 'intercorrencias';
-}
-
-export interface CurriculoAuditItem {
-  id: string;
-  categoria: 'Concluído (Base)' | 'Meta 1º Semestre (até 30/06/27)';
-  titulo: string;
-  detalhe: string;
-  done: boolean;
-}
-
-export type ProcedureAutonomy = 'auxiliei' | 'supervisionado' | 'autonomo';
-
-export interface LogbookProcedureGoal {
-  id: string;
-  rodizioId: string;
-  rodizioNome: string;
-  nome: string;
-  metaAlvo: number;
-  guiaRef: string;
-}
-
-export interface ShiftScheduleEntry {
-  dateIso: string;
-  tipo: Central6AnoState['arquetipoId'];
-  label?: string;
-}
-
-export interface WeeklyHistory7030Entry {
-  weekIso: string;
-  rodizioId: string;
-  marchaId: MarchaId;
-  questoesAncora: number;
-  questoesTrilha: number;
-  totalQuestoes: number;
-  metaAlvo: number;
-  pctAncora: number;
-  pctTrilha: number;
-  metaAtingida: boolean;
-}
-
-export type TimerPresetId = 'anki_15m' | 'exames_25m' | 'ciclo_90m' | 'osce_8m' | 'cochilo_90m';
-
-export interface TimerPresetConfig {
-  id: TimerPresetId;
+export interface ComputedDayStatus {
+  dayKey: WeeklyDayKey;
+  short: string;
   label: string;
-  minutes: number;
-  seconds: number;
-  category: string;
+  shifts: ShiftType[];
+  isPosPlantao: boolean;
+  previousNightShiftDay?: WeeklyDayKey;
+  loadMode: ComputedDayLoadMode;
+  recommendedQuestions: number;
+  recommendedAnkiCards: number;
+  guidanceNote: string;
 }
 
-export interface TimerLogEntry {
-  id: string;
-  presetId: TimerPresetId;
-  completedAtIso: string;
-  minutes: number;
+export interface WeeklyScheduleAnalysis {
+  days: Record<WeeklyDayKey, ComputedDayStatus>;
+  orderedDays: ComputedDayStatus[];
+  today: ComputedDayStatus;
+  nightShiftsCount: number;
+  postCallDaysCount: number;
+  offDaysCount: number;
+  adjustedWeeklyQuestionsGoal: number;
+  adjustedWeeklyAnkiGoal: number;
 }
 
-export interface Central6AnoState {
-  rodizioId: string;
-  feriasSemana: string;
-  marchaId: MarchaId;
-  arquetipoId: 'ferias_4h' | 'dia_cheio' | 'pe_vespera' | 'plantao_12h' | 'pos_plantao' | 'fds';
-  diaSemana: 'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab' | 'dom';
-  microHabitoSemanal: string;
-  linkedHabId?: string;
-  consecutiveCleanByHab?: Record<string, number>;
-  dominadasHabIds?: Record<string, boolean>;
-  questoesAncoraSem: number;
-  questoesTrilhaSem: number;
-  streakDias: number;
-  semanasConcluidas: number;
-  ultimoDiaConcluidoIso: string;
-  checkedTimelineIds: Record<string, boolean>;
-  checkedTimelineByDate?: Record<string, Record<string, boolean>>;
-  ankiDoneByDate?: Record<string, boolean>;
-  autoSyncDiaSemana?: boolean;
-  curriculoDoneIds: Record<string, boolean>;
-  ritualDomingoDoneIds: Record<string, boolean>;
-  teoriaStatusById?: Record<string, 'nao_iniciado' | 'estudado' | 'dominado'>;
-  teoriaExercisesDone?: Record<string, boolean>;
-  teoriaExercisesNotes?: Record<string, string>;
-  activeTeoriaModId?: string;
-  travasCheckedIds?: Record<string, boolean>;
-  procCountsById?: Record<string, number>;
-  procAutonomyById?: Record<string, { auxiliei: number; supervisionado: number; autonomo: number }>;
-  shiftSchedule?: ShiftScheduleEntry[];
-  weeklyHistory?: WeeklyHistory7030Entry[];
-  timerLogs?: TimerLogEntry[];
-  logbookEntries?: Array<{
-    id: string;
-    dateIso: string;
-    rodizio: string;
-    tipo: 'procedimento' | 'ponto_cego';
-    titulo: string;
-    papel: string;
-    aprendizado: string;
-    status?: 'em_treino' | 'resolvido';
-    gatilhoCorrecao?: string;
-  }>;
+const VALID_SHIFT_TYPES = new Set<ShiftType>(['manha', 'tarde', 'plantao_noturno', 'folga']);
+const DAY_SEQUENCE: WeeklyDayKey[] = ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'];
+
+export function getWeekdayKeyForDate(dateObj: Date = new Date()): WeeklyDayKey {
+  const map: WeeklyDayKey[] = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
+  return map[dateObj.getDay()] || 'seg';
 }
 
-export const RODIZIOS_6ANO: RodizioConfig[] = [
-  {
-    id: 'ferias',
-    nome: 'Pré-Temporada de Férias (8 Semanas)',
-    periodo: '30/11/2026 a 24/01/2027',
-    areaBadge: 'cirurgia',
-    ancora70: 'Base Prática Cirurgia Geral + Anestesio/CTI + GO (Apostilas Medway + Questões)',
-    trilha30: 'Domínio dos 7 Módulos de Habilidades Médicas + Leitura Sistemática de Exames',
-    procedimentosAlvo: ['ECG em 10 passos', 'Gasometria (Winter/AG/Delta-Delta)', 'RX Tórax/Abdome & e-FAST', '3 Encontros OSCE em Dupla', '6 Gravações SNAPPS/SBAR'],
-    microHabitoSugerido: 'Anamnese guiada por hipóteses + One-liner com Qualificadores Semânticos'
-  },
-  {
-    id: 'cirurgia',
-    nome: 'Mês 1 — Cirurgia Geral (1 mês)',
-    periodo: '25/01 a 21/02/2027',
-    areaBadge: 'cirurgia',
-    ancora70: 'Abdome agudo, Trauma/ATLS, Pré/Pós-operatório, Hérnias, Vias biliares e Onco-cirurgia',
-    trilha30: 'Preventiva Bloco 1 (SUS, Atenção Primária, Vigilância e Indicadores)',
-    procedimentosAlvo: ['≥ 10 Suturas + Anestesia local', '≥ 3 SVD (M/F)', '≥ 2 SNG/SNE', 'Curativos complexos e retirada de drenos'],
-    microHabitoSugerido: 'Exame de Abdome Agudo guiado por hipóteses (LR+) + Passagem SBAR pós-op'
-  },
-  {
-    id: 'anestesio_cti',
-    nome: 'Mês 2 — Anestesiologia & CTI (1 mês)',
-    periodo: '22/02 a 21/03/2027',
-    areaBadge: 'clinica',
-    ancora70: 'Avaliação pré-anestésica, Via Aérea/IOT, Choque/Sepse/DVA, VM + Clínica Crítica (Cardio/Pneumo/Nefro/Gaso)',
-    trilha30: 'Preventiva Bloco 2 (Estudos Epidemiológicos, Bioestatística e Testes Diagnósticos)',
-    procedimentosAlvo: ['≥ 10 Ventilações BVM (C-E)', '≥ 5 Laringoscopias/IOT', '≥ 5 Gasometrias arteriais/PAI', '≥ 2 Acessos Centrais USG-guiados'],
-    microHabitoSugerido: 'ABCDE nos primeiros 5 min + Checklist das 7 Travas A-R-G-I-V-P-O no CTI'
-  },
-  {
-    id: 'go',
-    nome: 'Meses 3–4 — Ginecologia & Obstetrícia (6 sem)',
-    periodo: '22/03 a 02/05/2027',
-    areaBadge: 'go',
-    ancora70: 'Obstetrícia de Alto Risco (DHEG/HELLP, Hemorragias, Partograma/CTG) + Gineco Endócrina, IST/DIP e Onco',
-    trilha30: 'Clínica Médica Bloco 1 (Endocrinologia: DM/Tireoide + Reumatologia)',
-    procedimentosAlvo: ['≥ 10 Exames especulares/CCO', '≥ 10 Toques obstétricos', '≥ 3 Partos normais/Episiorrafias', 'Leitura sistemática de CTG/Partograma'],
-    microHabitoSugerido: 'Anamnese acolhedora Calgary-Cambridge (ICE) + 4 Manobras de Leopold + SNAPPS'
-  },
-  {
-    id: 'oftalmo_orl_ccp',
-    nome: 'Mês 4,5 — Oftalmo / ORL / CCP (2 sem)',
-    periodo: '03/05 a 16/05/2027',
-    areaBadge: 'cirurgia',
-    ancora70: 'Olho vermelho, Glaucoma, Otites, Vertigem (HINTS), Epistaxe/IVAS + Neurologia (AVC, Cefaleias, Epilepsia)',
-    trilha30: 'Pediatria Bloco 1 (Neonatologia: Reanimação, Icterícia, Sepse e Triagem Neonatal)',
-    procedimentosAlvo: ['≥ 10 Otoscopias', '≥ 5 Testes de Fluoresceína', 'Exame HINTS à beira do leito', 'Manejo de traqueostomia'],
-    microHabitoSugerido: 'Triagem neurológica rápida (HINTS/Pares Cranianos) + Otoscopia técnica'
-  },
-  {
-    id: 'mfc',
-    nome: 'Mês 5 — Medicina de Família e Comunidade (1 mês)',
-    periodo: '17/05 a 13/06/2027',
-    areaBadge: 'preventiva',
-    ancora70: 'Preventiva Completa + APS + Clínica Médica Ambulatorial (HAS, Dislipidemia, Asma/DPOC, Rastreamentos)',
-    trilha30: 'Pediatria Bloco 2 (Puericultura, Aleitamento, DNPM, Vacinação e Crescimento)',
-    procedimentosAlvo: ['Consultas centradas na pessoa (ICE + Teach-Back)', 'Rastreamentos oportunistas', 'Fechamento 100% do Currículo R1 até 30/06'],
-    microHabitoSugerido: 'Explicação compartilhada (Ask-Tell-Ask + Teach-Back) e conciliação medicamentosa'
-  },
-  {
-    id: 'cm',
-    nome: 'Mês 6 — Clínica Médica (1 mês)',
-    periodo: '14/06 a 11/07/2027',
-    areaBadge: 'clinica',
-    ancora70: 'Clínica Médica Pesada: Infectologia, Gastroenterologia/Hepatologia e Hematologia',
-    trilha30: 'Pediatria Bloco 3 (Emergências Pediátricas, BVA, PAC, GECA/Desidratação e ITU)',
-    procedimentosAlvo: ['≥ 3 Paracenteses', '≥ 2 Toracocenteses', '≥ 2 Punções Lombares', 'Autonomia total de evolução e prescrição de enfermaria'],
-    microHabitoSugerido: 'Apresentação de visita pelo Pyramid Principle (60–90s) + Raciocínio Bayesiano'
-  },
-  {
-    id: 'ped',
-    nome: 'Mês 7 — Pediatria (1 mês)',
-    periodo: '12/07 a 08/08/2027',
-    areaBadge: 'pediatria',
-    ancora70: 'Consolidação Total de Pediatria (Neonatologia, Puericultura, Infecto-Ped e Urgências)',
-    trilha30: 'Auditoria e Fechamento de Lacunas (<70% de acerto nas 5 grandes áreas)',
-    procedimentosAlvo: ['≥ 15 Otoscopias pediátricas anti-choro', '≥ 3 Salas de parto', 'Prescrição ponderal segura sem erro de diluição'],
-    microHabitoSugerido: 'Coreografia de Exame Físico Pediátrico (Ordem Anti-Choro + Triângulo de Avaliação)'
-  },
-  {
-    id: 'emergencia_trauma',
-    nome: 'Meses 8–9 — Emergência & Trauma (2 meses)',
-    periodo: '09/08 a 03/10/2027',
-    areaBadge: 'cirurgia',
-    ancora70: 'Até 31/08: Fechar 100% do 1º ciclo | A partir de 01/09: 1 Prova na Íntegra/Semana + Revisão Cirúrgica de Erros',
-    trilha30: 'Treino Semanal de 2ª Fase (2–3 Estações OSCE CRMedway + Multimídia)',
-    procedimentosAlvo: ['≥ 10 e-FAST na Sala Vermelha', '≥ 5 SRI/IOT de emergência', 'Cardioversão/Desfibrilação', '≥ 2 Drenagens torácicas'],
-    microHabitoSugerido: 'Liderança em Sala Vermelha (ABCDE + Comunicação em Alça Fechada + SBAR)'
-  },
-  {
-    id: 'sprint_r1',
-    nome: 'Meses 10–12 — Sprint Final R1 & Provas Práticas',
-    periodo: 'Outubro a Dezembro de 2027',
-    areaBadge: 'preventiva',
-    ancora70: 'Provas Íntegras Cronometradas (USP-RP, USP-SP, UNICAMP, UNIFESP, ENARE) + Caderno de Erros',
-    trilha30: 'Simulados Práticos de 2ª Fase (OSCE em Dupla + Imagens Puras de Exames)',
-    procedimentosAlvo: ['Estações OSCE cronometradas (10 min)', 'Defesa oral de condutas sob pressão', 'Revisão de checklists de procedimentos'],
-    microHabitoSugerido: 'Execução impecável de checklist OSCE em 8 minutos sem esquecer travas de segurança'
+export function cloneWeeklySchedule(raw?: Partial<WeeklyScheduleMap>): WeeklyScheduleMap {
+  const out = {} as WeeklyScheduleMap;
+  for (const key of DAY_SEQUENCE) {
+    const candidate = raw?.[key];
+    if (Array.isArray(candidate) && candidate.length > 0) {
+      const cleaned = Array.from(
+        new Set(candidate.filter((s): s is ShiftType => VALID_SHIFT_TYPES.has(s as ShiftType)))
+      );
+      out[key] = cleaned.length > 0 ? cleaned : [...DEFAULT_WEEKLY_SCHEDULE[key]];
+    } else {
+      out[key] = [...DEFAULT_WEEKLY_SCHEDULE[key]];
+    }
   }
-];
+  return out;
+}
 
-export const FERIAS_SEMANAS: { id: string; label: string; focoConteudo: string; focoExames: string; focoHabilidade: string; isFreeWeek?: boolean }[] = [
-  {
-    id: 'sem1',
-    label: 'Semana 1 (30/11 a 04/12) — Cirurgia: Abdome Agudo Inflamatório/Obstrutivo',
-    focoConteudo: 'Apendicite, colecistite, diverticulite, pancreatite, obstrução intestinal e hérnias (2h/dia)',
-    focoExames: 'ECG sistemático básico (10 passos) + RX de abdome agudo (níveis hidroaéreos, haustrações vs válvulas)',
-    focoHabilidade: 'Modo Rápido de Anamnese (5 min) + HDPE Abdominal + 3 Illness Scripts cirúrgicos + Pyramid Principle'
-  },
-  {
-    id: 'sem2',
-    label: 'Semana 2 (07/12 a 11/12) — Cirurgia: Vascular/Perfurativo, Pós-Op & Trauma',
-    focoConteudo: 'Úlcera perfurada, isquemia mesentérica, complicações pós-op (febre dos 5 Ws, deiscência) e ATLS inicial (2h/dia)',
-    focoExames: 'Pneumoperitônio no RX + Janelas do e-FAST + Introdução aos 5 passos da Gasometria',
-    focoHabilidade: 'SBAR para intercorrência pós-op + ABCDE do trauma + 1º OSCE em Dupla na sexta-feira'
-  },
-  {
-    id: 'sem3',
-    label: 'Semana 3 (14/12 a 18/12) — Anestesio & CTI: Via Aérea, Choque, Sepse e DVA',
-    focoConteudo: 'Avaliação pré-anestésica (ASA, Mallampati, jejum), choque (4 tipos), sepse, noradrenalina/vasopressina e sedação (2h/dia)',
-    focoExames: 'Gasometria (Ânion Gap corrigido pela albumina + lactato) + ECG (isquemia e taquiarritmias)',
-    focoHabilidade: 'Avaliação de via aérea (LEMON/3-3-2) + SBAR de paciente instável no CTI + Raciocínio Bayesiano em sepse'
-  },
-  {
-    id: 'sem4',
-    label: 'Semana 4 (21/12 a 25/12) — Anestesio & CTI: VM Básica, DHE e IRA',
-    focoConteudo: 'Ventilação Mecânica (VCV/PCV, PEEP, driving pressure), distúrbios de Na+/K+/Ca2+, IRA e ACLS (2h/dia)',
-    focoExames: 'Gasometria com Delta-Delta + ECG eletrolítico (hiper/hipocalemia) + RX de tórax no CTI (tubo, congestão, pneumotórax)',
-    focoHabilidade: 'Apresentação de visita em CTI por sistemas (FAST HUG BID) + Protocolo SPIKES com familiar + Gravação de vídeo'
-  },
-  {
-    id: 'sem5',
-    label: 'Semana 5 (28/12 a 01/01) — Ginecologia: SUA, Dor Pélvica, IST/DIP e Rastreio',
-    focoConteudo: 'SUA (PALM-COEIN), gravidez ectópica, torção ovariana, DIP, úlceras/corrimentos e rastreio CA colo/mama (2h/dia)',
-    focoExames: 'Manutenção mista (1 ECG + 1 Gasometria ou 1 Imagem de urgência abdome-pelve)',
-    focoHabilidade: 'Anamnese ginecológica acolhedora (Calgary-Cambridge + ICE) + SNAPPS ambulatorial + Duelo Ectópica vs Torção vs Apendicite'
-  },
-  {
-    id: 'sem6',
-    label: 'Semana 6 (04/01 a 08/01) — Obstetrícia: Pré-Natal, DHEG, Hemorragias e Parto',
-    focoConteudo: 'Pré-eclâmpsia/eclâmpsia/HELLP (MgSO4), DMG, DPP vs Placenta Prévia, HPP (4 Ts) e partograma (2h/dia)',
-    focoExames: 'Mix diário cronometrado (ECG + Gasometria + Leitura sistemática de CTG/Partograma)',
-    focoHabilidade: 'SBAR de emergência obstétrica (Eclâmpsia/HPP) + 2º OSCE em Dupla (GO + Cirurgia/CTI)'
-  },
-  {
-    id: 'sem7',
-    label: 'Semana 7 (11/01 a 17/01/2027) — 🏖️ SEMANA LIVRE DE VIAGEM & DESCANSO TOTAL',
-    focoConteudo: 'ZERO estudo teórico novo. Descanso físico e mental planejado antes do 6º ano.',
-    focoExames: 'Pausa completa.',
-    focoHabilidade: 'Aproveitar a viagem (11 a 17/01) e recarregar bateria para iniciar Cirurgia em 25/01.',
-    isFreeWeek: true
-  },
-  {
-    id: 'sem8',
-    label: 'Semana 8 (18/01 a 24/01) — Ponte Transversal & Simulados Finais Pré-6º Ano',
-    focoConteudo: 'Emergências clínicas (SCA, AVC, TEP, CAD) + noções de Oftalmo/ORL/CCP e MFC (2h/dia)',
-    focoExames: 'TC de Crânio sem contraste (Blood Can Be Very Bad) + Mix final cronometrado (ECG + Gaso + RX)',
-    focoHabilidade: '3º OSCE em Dupla + Gravação final de oratória comparada com a Semana 1'
-  }
-];
+export function toggleDayShift(
+  schedule: WeeklyScheduleMap | undefined,
+  day: WeeklyDayKey,
+  shift: ShiftType
+): WeeklyScheduleMap {
+  const next = cloneWeeklySchedule(schedule);
+  const current = next[day] || [];
 
-export const MARCHAS_6ANO: Record<MarchaId, MarchaConfig> = {
-  '4_sprint': {
-    id: '4_sprint',
-    nome: '🚀 Marcha 4 — Sprint Final R1 (Set–Dez)',
-    badge: '350+ q/sem',
-    metaMin: 350,
-    metaMax: 450,
-    metaAlvo: 380,
-    cicloDiaUtilMin: 90,
-    fdsHorasDia: 5,
-    resumo: '1 Prova na Íntegra/Semana (100–120q no Sáb) + Correção Cirúrgica + OSCE Semanal em Dupla + Anki de Erros.'
-  },
-  '3_normal': {
-    id: '3_normal',
-    nome: '🟢 Marcha 3 — Normal (Tração Máxima)',
-    badge: '200–250 q/sem',
-    metaMin: 200,
-    metaMax: 250,
-    metaAlvo: 220,
-    cicloDiaUtilMin: 90,
-    fdsHorasDia: 4,
-    resumo: '1 Ciclo Invertido (90m) nos dias úteis + FDS intensivo (4h Sáb + 4h Dom) + 100% do Anki nas micro-janelas.'
-  },
-  '2_pesada': {
-    id: '2_pesada',
-    nome: '🟡 Marcha 2 — Semana Pesada (2+ Plantões / Cirurgia / CTI)',
-    badge: '130–170 q/sem',
-    metaMin: 130,
-    metaMax: 170,
-    metaAlvo: 150,
-    cicloDiaUtilMin: 40,
-    fdsHorasDia: 4,
-    resumo: 'Tiro cirúrgico de 35–45m de questões nos dias sem pós-plantão + FDS forte (4h+4h) + Sono blindado.'
-  },
-  '1_sobrevivencia': {
-    id: '1_sobrevivencia',
-    nome: '🔴 Marcha 1 — Sobrevivência (Semana Caótica / Exaustão)',
-    badge: '60–100 q/sem',
-    metaMin: 60,
-    metaMax: 100,
-    metaAlvo: 80,
-    cicloDiaUtilMin: 0,
-    fdsHorasDia: 2.5,
-    resumo: 'Zero teoria nova nos dias úteis (só 15–20m de Anki nas janelas + 7 Travas no hospital) + 1 bloco de 2h30 no FDS. Zero culpa!'
+  if (shift === 'folga') {
+    next[day] = ['folga'];
+    return next;
   }
-};
 
-export const ROTA_DIAS_SEMANA: Record<
-  'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab' | 'dom',
-  {
-    nome: string;
-    exame25m: string;
-    pilarTitulo: string;
-    pilarDetalhe: string;
-    moduloRef: string;
-    moduloId: string;
-    ferramentaTab: 'gaso' | 'lr' | 'travas' | 'intercorrencias';
+  const withoutFolga = current.filter((s) => s !== 'folga');
+  if (withoutFolga.includes(shift)) {
+    const removed = withoutFolga.filter((s) => s !== shift);
+    next[day] = removed.length > 0 ? removed : ['folga'];
+  } else {
+    next[day] = [...withoutFolga, shift];
   }
-> = {
-  seg: {
-    nome: 'Segunda-feira',
-    exame25m: '1 ECG sistemático (10 passos) + 1 Gasometria arterial (Winter + AG)',
-    pilarTitulo: 'Pilar 1A — Anamnese & Comunicação (Calgary-Cambridge)',
-    pilarDetalhe: 'Treinar abertura 60s sem interromper, funil guiado por 3–5 hipóteses desde a QP, Red Flags precoces, bloco ICE e Modo Rápido (5m) vs Modo Amplo (15m).',
-    moduloRef: 'Módulo 01',
-    moduloId: 'mod-01',
-    ferramentaTab: 'gaso'
-  },
-  ter: {
-    nome: 'Terça-feira',
-    exame25m: '1 RX de Tórax (RIPE + ABCDE-F) ou 1 Rotina de Abdome Agudo',
-    pilarTitulo: 'Pilar 1B — Exame Físico Guiado por Hipóteses (HDPE & LR+/LR-)',
-    pilarDetalhe: 'Definir achados discriminatórios antes de tocar no paciente, coreografia zero ping-pong, técnica Stanford 25 e peso real dos sinais (LR+ e LR-).',
-    moduloRef: 'Módulo 02',
-    moduloId: 'mod-02',
-    ferramentaTab: 'lr'
-  },
-  qua: {
-    nome: 'Quarta-feira',
-    exame25m: '1 ECG isquêmico/arritmia + 1 Caso de e-FAST ou TC de Crânio/Abdome',
-    pilarTitulo: 'Pilar 2 — Raciocínio Clínico, Illness Scripts, Vieses & Bayes',
-    pilarDetalhe: 'Traduzir fala leiga em Qualificadores Semânticos, escrever One-Liner cirúrgico, construir/comparar 2 Illness Scripts e aplicar antídoto contra fechamento prematuro.',
-    moduloRef: 'Módulo 03',
-    moduloId: 'mod-03',
-    ferramentaTab: 'lr'
-  },
-  qui: {
-    nome: 'Quinta-feira',
-    exame25m: '1 Gasometria completa (AG corrigido + Delta-Delta) + 1 RX de urgência',
-    pilarTitulo: 'Pilar 3 — Oratória Clínica (Pyramid, SNAPPS & SBAR) + Gravação 1–3 min',
-    pilarDetalhe: 'Gravar áudio/vídeo de 90s passando caso sem ler papel, avaliar na Rubrica 0–10 (One-liner, filtro de pertinentes, comparação de diferenciais, pausa limpa) e regravar Take 2.',
-    moduloRef: 'Módulo 04',
-    moduloId: 'mod-04',
-    ferramentaTab: 'gaso'
-  },
-  sex: {
-    nome: 'Sexta-feira',
-    exame25m: 'Mix Rápido Cronometrado: 3 exames (ECG + Gaso + Imagem) em 15 min + 10 min revisão',
-    pilarTitulo: 'Simulado Integrado Cronometrado ou OSCE em Dupla (40 min)',
-    pilarDetalhe: 'Executar 1 estação completa (Anamnese 7m → HDPE → Exames 3m → Hipóteses + Prescrição 7 Travas → Apresentação SNAPPS/SBAR 2m + Debriefing).',
-    moduloRef: 'Módulo 05 (Exames)',
-    moduloId: 'mod-05',
-    ferramentaTab: 'travas'
-  },
-  sab: {
-    nome: 'Sábado',
-    exame25m: 'Auditoria de Imagens Puras e Traçados das questões da semana',
-    pilarTitulo: 'Manhã Intensiva R1 + Prática Intercalada Cumulativa',
-    pilarDetalhe: '2 Ciclos Invertidos (avanço 70% Âncora) + Bateria Intercalada de 20–30 questões de estágios anteriores. Tarde e noite livres!',
-    moduloRef: 'Módulo 06 (Prescrição)',
-    moduloId: 'mod-06',
-    ferramentaTab: 'travas'
-  },
-  dom: {
-    nome: 'Domingo',
-    exame25m: 'Revisão dos Pontos Cegos da semana (10–15 min)',
-    pilarTitulo: 'Trilha Paralela 30% + Ritual de Domingo (15 min)',
-    pilarDetalhe: 'Avançar na Trilha Paralela R1 (Preventiva/Ped/CM) + Treino de casos complexos (/minicex) + calibrar Marcha e Micro-Hábito da próxima semana.',
-    moduloRef: 'Módulo 07 (Procedimentos)',
-    moduloId: 'mod-07',
-    ferramentaTab: 'intercorrencias'
+  return next;
+}
+
+/**
+ * Avalia os 7 dias da grade semanal:
+ * - Se o dia anterior (incluindo Dom -> Seg) tiver `plantao_noturno`,
+ *   o dia atual entra AUTOMATICAMENTE em `isPosPlantao: true`, reduzindo
+ *   a cobrança de questões para 0 (modo recuperação) e ajustando a meta semanal.
+ */
+export function analyzeWeeklySchedule(
+  schedule: WeeklyScheduleMap | undefined,
+  todayKey: WeeklyDayKey = getWeekdayKeyForDate(new Date()),
+  marchaId: MarchaId = '3_normal'
+): WeeklyScheduleAnalysis {
+  const safeSchedule = cloneWeeklySchedule(schedule);
+  const marchaFactor: Record<MarchaId, number> = {
+    '4_sprint': 1.5,
+    '3_normal': 1.0,
+    '2_pesada': 0.72,
+    '1_sobrevivencia': 0.4,
+  };
+  const mult = marchaFactor[marchaId] ?? 1.0;
+
+  const days = {} as Record<WeeklyDayKey, ComputedDayStatus>;
+  let nightShiftsCount = 0;
+  let postCallDaysCount = 0;
+  let offDaysCount = 0;
+  let weeklyQ = 0;
+  let weeklyAnki = 0;
+
+  for (let i = 0; i < DAY_SEQUENCE.length; i++) {
+    const key = DAY_SEQUENCE[i];
+    const prevKey = DAY_SEQUENCE[(i + DAY_SEQUENCE.length - 1) % DAY_SEQUENCE.length];
+    const dayMeta = WEEKLY_DAYS_ORDER[i];
+    const shifts = safeSchedule[key];
+    const prevShifts = safeSchedule[prevKey];
+
+    const hasNight = shifts.includes('plantao_noturno');
+    const isPosPlantao = prevShifts.includes('plantao_noturno');
+    const isFolga = shifts.length === 1 && shifts[0] === 'folga';
+    const hasManha = shifts.includes('manha');
+    const hasTarde = shifts.includes('tarde');
+
+    if (hasNight) nightShiftsCount += 1;
+    if (isPosPlantao) postCallDaysCount += 1;
+    if (isFolga) offDaysCount += 1;
+
+    let loadMode: ComputedDayLoadMode;
+    let baseQ: number;
+    let baseAnki: number;
+    let guidanceNote: string;
+
+    if (isPosPlantao) {
+      loadMode = 'pos_plantao';
+      baseQ = 0;
+      baseAnki = 20;
+      guidanceNote = 'Pós-Plantão automático: priorize sono de recuperação; no máximo Anki leve (≤ 15 min).';
+    } else if (hasNight) {
+      loadMode = 'plantao_noturno';
+      baseQ = 10;
+      baseAnki = 30;
+      guidanceNote = 'Dia com Plantão Noturno: cochilo profilático antes do plantão e apenas manutenção leve.';
+    } else if (isFolga) {
+      loadMode = 'folga';
+      baseQ = 55;
+      baseAnki = 70;
+      guidanceNote = 'Dia livre / Folga: melhor janela para blocos de questões 70/30 e revisão profunda.';
+    } else if (hasManha && hasTarde) {
+      loadMode = 'integral';
+      baseQ = 25;
+      baseAnki = 50;
+      guidanceNote = 'Dia integral no hospital: Anki nas micro-janelas + tiro curto de questões à noite.';
+    } else {
+      loadMode = 'meio_periodo';
+      baseQ = 40;
+      baseAnki = 60;
+      guidanceNote = 'Meio período livre (PE): excelente janela para 1–2 blocos focados de questões.';
+    }
+
+    const recQ = isPosPlantao ? 0 : Math.max(5, Math.round((baseQ * mult) / 5) * 5);
+    const recAnki = isPosPlantao ? 20 : Math.max(15, Math.round((baseAnki * mult) / 5) * 5);
+
+    weeklyQ += recQ;
+    weeklyAnki += recAnki;
+
+    days[key] = {
+      dayKey: key,
+      short: dayMeta.short,
+      label: dayMeta.label,
+      shifts,
+      isPosPlantao,
+      previousNightShiftDay: isPosPlantao ? prevKey : undefined,
+      loadMode,
+      recommendedQuestions: recQ,
+      recommendedAnkiCards: recAnki,
+      guidanceNote,
+    };
   }
-};
+
+  return {
+    days,
+    orderedDays: DAY_SEQUENCE.map((k) => days[k]),
+    today: days[todayKey] || days.seg,
+    nightShiftsCount,
+    postCallDaysCount,
+    offDaysCount,
+    adjustedWeeklyQuestionsGoal: Math.max(30, weeklyQ),
+    adjustedWeeklyAnkiGoal: Math.max(100, weeklyAnki),
+  };
+}
+
+// ============================================================================
+// 2. TAREFAS REAIS DO DIA & CONTADORES RÁPIDOS (MEDQUEST + ANKI)
+// ============================================================================
+
+export function addDailyTask(
+  state: Central6AnoState,
+  text: string,
+  category: DailyTaskCategory = 'hospital',
+  nowIso = new Date().toISOString()
+): Central6AnoState {
+  const clean = text.trim();
+  if (!clean) return state;
+  const item: DailyTaskItem = {
+    id: `task-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+    text: clean,
+    done: false,
+    category,
+    createdAtIso: nowIso,
+  };
+  return {
+    ...state,
+    dailyTasks: [...(state.dailyTasks || []), item],
+  };
+}
+
+export function toggleDailyTask(state: Central6AnoState, taskId: string): Central6AnoState {
+  return {
+    ...state,
+    dailyTasks: (state.dailyTasks || []).map((t) => (t.id === taskId ? { ...t, done: !t.done } : t)),
+  };
+}
+
+export function moveDailyTask(
+  state: Central6AnoState,
+  taskId: string,
+  direction: 'up' | 'down'
+): Central6AnoState {
+  const list = [...(state.dailyTasks || [])];
+  const idx = list.findIndex((t) => t.id === taskId);
+  if (idx < 0) return state;
+  const target = direction === 'up' ? idx - 1 : idx + 1;
+  if (target < 0 || target >= list.length) return state;
+  const tmp = list[idx];
+  list[idx] = list[target];
+  list[target] = tmp;
+  return { ...state, dailyTasks: list };
+}
+
+export function deleteDailyTask(state: Central6AnoState, taskId: string): Central6AnoState {
+  return {
+    ...state,
+    dailyTasks: (state.dailyTasks || []).filter((t) => t.id !== taskId),
+  };
+}
+
+export function clearCompletedDailyTasks(state: Central6AnoState): Central6AnoState {
+  return {
+    ...state,
+    dailyTasks: (state.dailyTasks || []).filter((t) => !t.done),
+  };
+}
+
+export function incrementStudyCounters(
+  state: Central6AnoState,
+  delta: { ancoraDelta?: number; trilhaDelta?: number; ankiDelta?: number; todayIso?: string }
+): Central6AnoState {
+  const todayIso = delta.todayIso || getLocalTodayIso();
+  const ancoraDelta = Math.trunc(delta.ancoraDelta || 0);
+  const trilhaDelta = Math.trunc(delta.trilhaDelta || 0);
+  const ankiDelta = Math.trunc(delta.ankiDelta || 0);
+
+  const prevQHoje = state.questoesHojeDateIso === todayIso ? Math.max(0, state.questoesHoje || 0) : 0;
+  const prevAnkiHoje = state.ankiCardsDateIso === todayIso ? Math.max(0, state.ankiCardsHoje || 0) : 0;
+
+  const nextAncora = Math.max(0, (state.questoesAncoraSem || 0) + ancoraDelta);
+  const nextTrilha = Math.max(0, (state.questoesTrilhaSem || 0) + trilhaDelta);
+  const nextQHoje = Math.max(0, prevQHoje + ancoraDelta + trilhaDelta);
+  const nextAnkiHoje = Math.max(0, prevAnkiHoje + ankiDelta);
+  const nextAnkiSem = Math.max(0, (state.ankiCardsSem || 0) + ankiDelta);
+
+  return {
+    ...state,
+    questoesAncoraSem: nextAncora,
+    questoesTrilhaSem: nextTrilha,
+    questoesHoje: nextQHoje,
+    questoesHojeDateIso: todayIso,
+    ankiCardsHoje: nextAnkiHoje,
+    ankiCardsSem: nextAnkiSem,
+    ankiCardsDateIso: todayIso,
+    ankiDoneByDate:
+      nextAnkiHoje > 0 ? { ...(state.ankiDoneByDate || {}), [todayIso]: true } : state.ankiDoneByDate,
+  };
+}
+
+// ============================================================================
+// 3. MARCOS R1 & CONTAGEM REGRESSIVA (VISÃO B)
+// ============================================================================
+
+export interface MilestoneCountdown {
+  milestone: R1Milestone;
+  daysLeft: number;
+  weeksLeft: number;
+  monthsApprox: number;
+  status: 'overdue' | 'soon' | 'upcoming';
+  label: string;
+}
+
+export function computeMilestoneCountdown(
+  milestone: R1Milestone,
+  nowDate: Date = new Date()
+): MilestoneCountdown {
+  const [y, m, d] = String(milestone.dateIso || '').split('-').map(Number);
+  if (!y || !m || !d) {
+    return {
+      milestone,
+      daysLeft: 0,
+      weeksLeft: 0,
+      monthsApprox: 0,
+      status: 'upcoming',
+      label: 'Data inválida',
+    };
+  }
+  const todayUtc = Date.UTC(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate());
+  const targetUtc = Date.UTC(y, m - 1, d);
+  const diffDays = Math.round((targetUtc - todayUtc) / 86400000);
+  const weeksLeft = Math.floor(Math.abs(diffDays) / 7);
+  const monthsApprox = Number((Math.abs(diffDays) / 30.4375).toFixed(1));
+
+  if (diffDays < 0) {
+    return {
+      milestone,
+      daysLeft: diffDays,
+      weeksLeft,
+      monthsApprox,
+      status: 'overdue',
+      label: `Passou há ${Math.abs(diffDays)} dia(s)`,
+    };
+  }
+  if (diffDays === 0) {
+    return {
+      milestone,
+      daysLeft: 0,
+      weeksLeft: 0,
+      monthsApprox: 0,
+      status: 'soon',
+      label: 'Hoje',
+    };
+  }
+  const status: MilestoneCountdown['status'] = diffDays <= 60 ? 'soon' : 'upcoming';
+  const label =
+    diffDays >= 60
+      ? `Faltam ${diffDays} dias (${monthsApprox} meses)`
+      : `Faltam ${diffDays} dias (${weeksLeft} sem)`;
+  return {
+    milestone,
+    daysLeft: diffDays,
+    weeksLeft,
+    monthsApprox,
+    status,
+    label,
+  };
+}
+
+// ============================================================================
+// 4. MATRIZ UNIFICADA DE CURRÍCULO (USP-SP 0–100 · USP-RP 0–10 · UNICAMP 0–100)
+// ============================================================================
+
+export interface CurriculumBlockScore {
+  blockId: string;
+  label: string;
+  rawScore: number;
+  cappedScore: number;
+  maxPoints: number;
+  missingToCap: number;
+  pct: number;
+}
+
+export interface BankScoreSummary {
+  bankId: CurriculumBankId;
+  nome: string;
+  sigla: string;
+  escalaMax: number;
+  rawSubtotal: number;
+  multiplier: number;
+  finalScore: number;
+  missingToMax: number;
+  pct: number;
+  blocks: CurriculumBlockScore[];
+}
+
+export interface UnifiedCurriculumEvaluation {
+  banks: Record<CurriculumBankId, BankScoreSummary>;
+  itemPointsByBank: Record<string, Record<CurriculumBankId, number>>;
+  proofCounts: {
+    pdf_pronto: number;
+    em_andamento: number;
+    falta: number;
+    filledItems: number;
+    totalItems: number;
+  };
+}
+
+function round2(n: number): number {
+  return Math.round(n * 100) / 100;
+}
+
+export function evaluateRulePoints(rule: BankItemRule | undefined, unitsRaw: number): number {
+  if (!rule) return 0;
+  const units = Number.isFinite(unitsRaw) ? Math.max(0, unitsRaw) : 0;
+  if (units <= 0) return 0;
+
+  if (Array.isArray(rule.tiers) && rule.tiers.length > 0) {
+    const sorted = [...rule.tiers].sort((a, b) => b.minUnits - a.minUnits);
+    for (const tier of sorted) {
+      if (units >= tier.minUnits) {
+        return Math.min(rule.maxItemPoints, round2(tier.points));
+      }
+    }
+    return 0;
+  }
+
+  return Math.min(rule.maxItemPoints, round2(units * rule.perUnit));
+}
+
+export function computeUnifiedCurriculumScores(
+  entries: Record<string, CurriculumEntryState> | undefined,
+  options: { enamedConcept?: 3 | 4 | 5 } = {}
+): UnifiedCurriculumEvaluation {
+  const safeEntries = entries || {};
+  const enamedConcept = options.enamedConcept ?? 5;
+  const uspSpMultiplier = enamedConcept === 5 ? 1.2 : enamedConcept === 4 ? 1.1 : 1.0;
+
+  const bankIds: CurriculumBankId[] = ['usp_sp', 'usp_rp', 'unicamp'];
+  const blockAccumulator: Record<CurriculumBankId, Record<string, number>> = {
+    usp_sp: {},
+    usp_rp: {},
+    unicamp: {},
+  };
+
+  for (const bId of bankIds) {
+    for (const blk of CURRICULUM_BANKS_CONFIG[bId].blocks) {
+      blockAccumulator[bId][blk.id] = 0;
+    }
+  }
+
+  const itemPointsByBank: Record<string, Record<CurriculumBankId, number>> = {};
+  let pdfPronto = 0;
+  let emAndamento = 0;
+  let falta = 0;
+  let filledItems = 0;
+
+  for (const item of UNIFIED_CURRICULUM_CATALOG) {
+    const entry = safeEntries[item.id];
+    const clampedUnits = Math.min(
+      item.maxInput,
+      Math.max(0, Number(entry?.value) || 0)
+    );
+    const status: ProofStatus = entry?.proofStatus || 'falta';
+
+    if (clampedUnits > 0) {
+      filledItems += 1;
+      if (status === 'pdf_pronto') pdfPronto += 1;
+      else if (status === 'em_andamento') emAndamento += 1;
+      else falta += 1;
+    } else if (status === 'em_andamento') {
+      emAndamento += 1;
+    } else if (status === 'pdf_pronto') {
+      pdfPronto += 1;
+    } else {
+      falta += 1;
+    }
+
+    itemPointsByBank[item.id] = { usp_sp: 0, usp_rp: 0, unicamp: 0 };
+
+    for (const bId of bankIds) {
+      const rule = item.rules[bId];
+      const pts = evaluateRulePoints(rule, clampedUnits);
+      itemPointsByBank[item.id][bId] = pts;
+      if (rule && pts > 0) {
+        blockAccumulator[bId][rule.blockId] = round2((blockAccumulator[bId][rule.blockId] || 0) + pts);
+      }
+    }
+  }
+
+  const banks = {} as Record<CurriculumBankId, BankScoreSummary>;
+
+  for (const bId of bankIds) {
+    const cfg = CURRICULUM_BANKS_CONFIG[bId];
+    const blocks: CurriculumBlockScore[] = cfg.blocks.map((blk) => {
+      const rawScore = round2(blockAccumulator[bId][blk.id] || 0);
+      const cappedScore = Math.min(blk.maxPoints, rawScore);
+      const missingToCap = Math.max(0, round2(blk.maxPoints - cappedScore));
+      const pct = blk.maxPoints > 0 ? Math.min(100, Math.round((cappedScore / blk.maxPoints) * 100)) : 0;
+      return {
+        blockId: blk.id,
+        label: blk.label,
+        rawScore,
+        cappedScore,
+        maxPoints: blk.maxPoints,
+        missingToCap,
+        pct,
+      };
+    });
+
+    const rawSubtotal = round2(blocks.reduce((acc, b) => acc + b.cappedScore, 0));
+    const multiplier = bId === 'usp_sp' ? uspSpMultiplier : 1.0;
+    const finalScore = Math.min(cfg.escalaMax, round2(rawSubtotal * multiplier));
+    const missingToMax = Math.max(0, round2(cfg.escalaMax - finalScore));
+    const pct = cfg.escalaMax > 0 ? Math.min(100, Math.round((finalScore / cfg.escalaMax) * 100)) : 0;
+
+    banks[bId] = {
+      bankId: bId,
+      nome: cfg.nome,
+      sigla: cfg.sigla,
+      escalaMax: cfg.escalaMax,
+      rawSubtotal,
+      multiplier,
+      finalScore,
+      missingToMax,
+      pct,
+      blocks,
+    };
+  }
+
+  return {
+    banks,
+    itemPointsByBank,
+    proofCounts: {
+      pdf_pronto: pdfPronto,
+      em_andamento: emAndamento,
+      falta,
+      filledItems,
+      totalItems: UNIFIED_CURRICULUM_CATALOG.length,
+    },
+  };
+}
+
+// ============================================================================
+// 5. MIGRAÇÃO RETROCOMPATÍVEL (central_6ano_v1 -> v2)
+// ============================================================================
+
+function isPlainObj(v: unknown): v is Record<string, unknown> {
+  return typeof v === 'object' && v !== null && !Array.isArray(v);
+}
+
+export function migrateCentral6AnoState(state: Partial<Central6AnoState>): Central6AnoState {
+  const rodizio = RODIZIOS_6ANO.find((r) => r.id === state.rodizioId) || RODIZIOS_6ANO[0];
+  const weeklySchedule = cloneWeeklySchedule(state.weeklySchedule);
+
+  // Migrar curriculoDoneIds (v1) -> curriculumEntries (v2) somente se ainda não houver entradas v2
+  let curriculumEntries: Record<string, CurriculumEntryState> = {};
+  if (isPlainObj(state.curriculumEntries) && Object.keys(state.curriculumEntries).length > 0) {
+    for (const [k, v] of Object.entries(state.curriculumEntries)) {
+      if (!isPlainObj(v)) continue;
+      const proofStatus: ProofStatus =
+        v.proofStatus === 'pdf_pronto' || v.proofStatus === 'em_andamento' || v.proofStatus === 'falta'
+          ? v.proofStatus
+          : 'falta';
+      curriculumEntries[k] = {
+        value: Number.isFinite(Number(v.value)) ? Math.max(0, Number(v.value)) : 0,
+        proofStatus,
+        notes: typeof v.notes === 'string' ? v.notes : undefined,
+      };
+    }
+  } else {
+    const legacyDone = state.curriculoDoneIds || {};
+    for (const [legacyId, isDone] of Object.entries(legacyDone)) {
+      if (!isDone) continue;
+      const mapped = LEGACY_CURRICULO_TO_UNIFIED_MAP[legacyId];
+      if (!mapped) continue;
+      for (const target of mapped) {
+        const prev = curriculumEntries[target.canonicalId];
+        curriculumEntries[target.canonicalId] = {
+          value: Math.max(prev?.value || 0, target.value),
+          proofStatus: 'em_andamento',
+        };
+      }
+    }
+  }
+
+  const r1Milestones: R1Milestone[] =
+    Array.isArray(state.r1Milestones) && state.r1Milestones.length > 0
+      ? state.r1Milestones
+          .filter((m): m is R1Milestone => Boolean(m && typeof m.id === 'string' && typeof m.titulo === 'string'))
+          .map((m) => ({
+            id: m.id,
+            titulo: m.titulo,
+            dateIso: typeof m.dateIso === 'string' ? m.dateIso : '2027-11-30',
+            categoria: m.categoria || 'estudo',
+            nota: typeof m.nota === 'string' ? m.nota : undefined,
+          }))
+      : DEFAULT_R1_MILESTONES.map((m) => ({ ...m }));
+
+  const dailyTasks: DailyTaskItem[] = Array.isArray(state.dailyTasks)
+    ? state.dailyTasks
+        .filter((t): t is DailyTaskItem => Boolean(t && typeof t.id === 'string' && typeof t.text === 'string'))
+        .map((t) => ({
+          id: t.id,
+          text: t.text,
+          done: Boolean(t.done),
+          category:
+            t.category === 'hospital' ||
+            t.category === 'estudo' ||
+            t.category === 'curriculo' ||
+            t.category === 'pessoal'
+              ? t.category
+              : 'hospital',
+          createdAtIso: typeof t.createdAtIso === 'string' ? t.createdAtIso : '',
+        }))
+    : [];
+
+  const enamed = state.curriculumEnamedConcept;
+  const curriculumEnamedConcept: 3 | 4 | 5 = enamed === 3 || enamed === 4 || enamed === 5 ? enamed : 5;
+
+  return {
+    rodizioId: state.rodizioId || rodizio.id,
+    feriasSemana: typeof state.feriasSemana === 'string' ? state.feriasSemana : 'nao',
+    arquetipoId: state.arquetipoId || 'dia_cheio',
+    marchaId: state.marchaId || '3_normal',
+    diaSemana: state.diaSemana || 'seg',
+    microHabitoSemanal: state.microHabitoSemanal || '',
+    questoesAncoraSem: Math.max(0, Number(state.questoesAncoraSem) || 0),
+    questoesTrilhaSem: Math.max(0, Number(state.questoesTrilhaSem) || 0),
+    semanasConcluidas: Math.max(0, Number(state.semanasConcluidas) || 0),
+    streakDias: Math.max(0, Number(state.streakDias) || 0),
+    ultimoDiaConcluidoIso: typeof state.ultimoDiaConcluidoIso === 'string' ? state.ultimoDiaConcluidoIso : '',
+    checkedTimelineIds: isPlainObj(state.checkedTimelineIds) ? (state.checkedTimelineIds as Record<string, boolean>) : {},
+    curriculoDoneIds: isPlainObj(state.curriculoDoneIds) ? (state.curriculoDoneIds as Record<string, boolean>) : {},
+    ritualDomingoDoneIds: isPlainObj(state.ritualDomingoDoneIds) ? (state.ritualDomingoDoneIds as Record<string, boolean>) : {},
+    procCountsById: isPlainObj(state.procCountsById) ? (state.procCountsById as Record<string, number>) : {},
+    procAutonomyById: isPlainObj(state.procAutonomyById) ? state.procAutonomyById : {},
+    logbookEntries: Array.isArray(state.logbookEntries) ? state.logbookEntries : [],
+    weeklyHistory: Array.isArray(state.weeklyHistory) ? state.weeklyHistory : [],
+    ...state,
+    schemaVersion: 2,
+    weeklySchedule,
+    dailyTasks,
+    focoSemanalAncora70:
+      typeof state.focoSemanalAncora70 === 'string' && state.focoSemanalAncora70.trim()
+        ? state.focoSemanalAncora70
+        : rodizio.ancora70,
+    focoSemanalTrilha30:
+      typeof state.focoSemanalTrilha30 === 'string' && state.focoSemanalTrilha30.trim()
+        ? state.focoSemanalTrilha30
+        : rodizio.trilha30,
+    questoesHoje: Math.max(0, Number(state.questoesHoje) || 0),
+    questoesHojeDateIso: typeof state.questoesHojeDateIso === 'string' ? state.questoesHojeDateIso : '',
+    ankiCardsHoje: Math.max(0, Number(state.ankiCardsHoje) || 0),
+    ankiCardsSem: Math.max(0, Number(state.ankiCardsSem) || 0),
+    ankiCardsDateIso: typeof state.ankiCardsDateIso === 'string' ? state.ankiCardsDateIso : '',
+    ankiMetaSemanal:
+      Number.isFinite(Number(state.ankiMetaSemanal)) && Number(state.ankiMetaSemanal) > 0
+        ? Math.floor(Number(state.ankiMetaSemanal))
+        : 350,
+    r1Milestones,
+    curriculumEntries,
+    curriculumEnamedConcept,
+  };
+}
+
+// ============================================================================
+// 6. FUNÇÕES LEGADAS E COMPATÍVEIS (CALENDÁRIO, LOGBOOK, 70/30, PROMPTS IA)
+// ============================================================================
 
 export function resolveCalendarContextForDate(dateObj: Date): {
   dateIso: string;
-  diaSemana: 'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab' | 'dom';
+  diaSemana: WeeklyDayKey;
   rodizioId: string;
   feriasSemana: string;
   arquetipoSugerido: Central6AnoState['arquetipoId'];
   labelResumo: string;
 } {
   const dateIso = getLocalTodayIso(dateObj);
-  const dayMap: Array<'dom' | 'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab'> = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
-  const diaSemana = dayMap[dateObj.getDay()] || 'seg';
+  const diaSemana = getWeekdayKeyForDate(dateObj);
   const isFds = diaSemana === 'sab' || diaSemana === 'dom';
 
   let rodizioId = 'ferias';
@@ -508,7 +832,9 @@ export function resolveCalendarContextForDate(dateObj: Date): {
 
   const arquetipoSugerido: Central6AnoState['arquetipoId'] = isFds
     ? 'fds'
-    : (rodizioId === 'ferias' ? 'ferias_4h' : 'dia_cheio');
+    : rodizioId === 'ferias'
+      ? 'ferias_4h'
+      : 'dia_cheio';
 
   const rodObj = RODIZIOS_6ANO.find((r) => r.id === rodizioId) || RODIZIOS_6ANO[0];
   const labelResumo = `${dateIso} (${ROTA_DIAS_SEMANA[diaSemana].nome}) · ${rodObj.nome}`;
@@ -519,555 +845,94 @@ export function resolveCalendarContextForDate(dateObj: Date): {
 export function buildDailyTimeline(state: Central6AnoState): TimelineStep[] {
   const rodizio = RODIZIOS_6ANO.find((r) => r.id === state.rodizioId) || RODIZIOS_6ANO[0];
   const rotaDia = ROTA_DIAS_SEMANA[state.diaSemana] || ROTA_DIAS_SEMANA.seg;
-  const feriasSem = FERIAS_SEMANAS.find((f) => f.id === state.feriasSemana) || FERIAS_SEMANAS[0];
   const microHab = state.microHabitoSemanal || rodizio.microHabitoSugerido;
-
-  if (state.rodizioId === 'ferias' && feriasSem.isFreeWeek) {
-    return [{
-      id: 'ferias-livre-1',
-      horario: 'Dia Inteiro',
-      titulo: '🏖️ Semana Livre Planejada (11 a 17/01/2027) — Descanso Total Inegociável',
-      detalhe: 'Zero estudo teórico novo e zero metas de questões. Aproveite a viagem para consolidar energia antes de 25/01/2027.',
-      categoria: 'BLINDAGEM BIOLÓGICA',
-      corCategoria: '#10b981'
-    }];
-  }
-
-  if (state.rodizioId === 'ferias' && (state.diaSemana === 'sab' || state.diaSemana === 'dom' || state.arquetipoId === 'fds')) {
-    const isDom = state.diaSemana === 'dom';
-    return [
-      {
-        id: 'ferias-fds-descanso',
-        horario: 'Fim de Semana das Férias (Seg–Sex = 5x/sem)',
-        titulo: isDom ? '🧘 Domingo das Férias — Descanso + Calibração Rápida (15 min)' : '☀️ Sábado Livre das Férias — Lazer, Esporte & Opcional OSCE em Dupla',
-        detalhe: isDom
-          ? 'Sem metas pesadas hoje: apenas revise em 15 min os 3 Pontos Cegos da semana e deixe a próxima semana calibrada no Ritual abaixo.'
-          : 'O Plano de Férias roda 5x/semana (Seg–Sex). Hoje é dia de recuperação — faça apenas um encontro opcional de OSCE em Dupla (40 min) se combinou com colega.',
-        categoria: 'FDS LIVRE (FÉRIAS)',
-        corCategoria: '#10b981',
-        atalhoSecao: isDom ? 'logbook' : 'preporta',
-        atalhoLabel: isDom ? 'Revisar Pontos Cegos' : 'Ver Pré-Porta OSCE'
-      },
-      {
-        id: 'ferias-fds-sono',
-        horario: 'Noite · Blindagem Biológica',
-        titulo: '🛌 Manutenção Leve de Anki (se quiser, ≤ 20 min) + Sono Reparador',
-        detalhe: 'Não acumule culpa: descansar no fim de semana protege a execução das 4h líquidas de segunda a sexta.',
-        categoria: 'SONO PROTEGIDO',
-        corCategoria: '#2dd4bf'
-      }
-    ];
-  }
-
-  if (state.rodizioId === 'ferias' || state.arquetipoId === 'ferias_4h') {
-    const focoConteudo = state.rodizioId === 'ferias' ? feriasSem.focoConteudo : rodizio.ancora70;
-    const focoExame = state.rodizioId === 'ferias' ? `${rotaDia.exame25m} · (${feriasSem.focoExames})` : rotaDia.exame25m;
-    return [
-      {
-        id: 'ferias-anki-questoes',
-        horario: 'Bloco 1 · 2h00 (50% Conteúdo Puro)',
-        titulo: '📚 Manutenção Anki (máx 30m) + Questões MedQuest & Diretrizes (1h30)',
-        detalhe: `Alvo da semana: ${focoConteudo}. Comece com 5–8 questões pré-teste → Ficha Resumo Medway → bateria de 20–30 questões comentadas.`,
-        categoria: 'CONTEÚDO PURO (50%)',
-        corCategoria: '#0284c7'
-      },
-      {
-        id: 'ferias-exames-25m',
-        horario: 'Bloco 2A · 25 min (Aquecimento de Exames)',
-        titulo: '🧪 Micro-Dose Diária de Interpretação Sistemática de Exames',
-        detalhe: `${focoExame}. Aplique o checklist fixo passo a passo antes de ver o laudo.`,
-        categoria: 'EXAMES (25 MIN)',
-        corCategoria: '#f59e0b',
-        atalhoSecao: 'ferramentas',
-        atalhoLabel: 'Abrir Ferramentas & Exames',
-        atalhoFerramentaTab: rotaDia.ferramentaTab
-      },
-      {
-        id: 'ferias-pilar-95m',
-        horario: 'Bloco 2B · 1h35 (Pilar de Habilidade do Dia)',
-        titulo: `🧠 ${rotaDia.pilarTitulo}`,
-        detalhe: `${rotaDia.pilarDetalhe}${state.rodizioId === 'ferias' ? ' · Meta da semana: ' + feriasSem.focoHabilidade : ''}`,
-        categoria: `HABILIDADE (${rotaDia.moduloRef})`,
-        corCategoria: '#2dd4bf',
-        atalhoSecao: 'teoria',
-        atalhoLabel: `Ler ${rotaDia.moduloRef}`,
-        atalhoTeoriaMod: rotaDia.moduloId
-      },
-      {
-        id: 'ferias-sono',
-        horario: 'Noite · Blindagem Biológica',
-        titulo: '🛌 Descompressão & Sono Protegido (7h30–8h)',
-        detalhe: 'Meta de 4h líquidas concluída! Feche o computador sem esticar horário.',
-        categoria: 'SONO PROTEGIDO',
-        corCategoria: '#10b981'
-      }
-    ];
-  }
+  const ancora = state.focoSemanalAncora70 || rodizio.ancora70;
+  const trilha = state.focoSemanalTrilha30 || rodizio.trilha30;
 
   if (state.arquetipoId === 'pos_plantao') {
     return [
-      { id: 'pos-ancoragem', horario: '07h00 – 12h30', titulo: '🕶️ Saída com Óculos Escuros + Sono de Ancoragem Inegociável (5h)', detalhe: 'Quarto 100% escuro e silencioso. Proibido tentar estudar na manhã pós-plantão.', categoria: 'RECUPERAÇÃO SINÁPTICA', corCategoria: '#10b981' },
-      { id: 'pos-tarde', horario: '12h30 – 18h00', titulo: '☕ Almoço Leve + Dose Única de Café até 13h30 + Turno da Tarde', detalhe: `Proibido cafeína após 14h. No hospital, aplique apenas o Pré-Porta 30s: "${microHab}".`, categoria: 'TURNO LEVE', corCategoria: '#f59e0b', atalhoSecao: 'preporta', atalhoLabel: 'Abrir Pré-Porta 30s' },
-      { id: 'pos-noite', horario: '18h30 – 21h30', titulo: '🧘 Noite Recuperativa (Zero Ciclo Teórico de 90 min!)', detalhe: 'Faça apenas 20–25 min de Anki leve, jante cedo e durma às 21h30 (8h30 de sono reparador).', categoria: 'SONO ÀS 21H30', corCategoria: '#818cf8' }
-    ];
-  }
-
-  if (state.arquetipoId === 'plantao_12h') {
-    return [
-      { id: 'plt12-hospital', horario: '07h00 – 19h00 (No Plantão)', titulo: `🏥 Plantão Ativo (${rodizio.nome}) + Micro-Hábito & Procedimentos`, detalhe: `Micro-hábito: "${microHab}". Procedimentos-alvo: ${rodizio.procedimentosAlvo.join(' · ')}. Nos intervalos calmos, mate 25–35 min de Anki.`, categoria: 'PRÁTICA VIVA', corCategoria: '#2dd4bf', atalhoSecao: 'preporta', atalhoLabel: 'Ver Pré-Porta 30s' },
-      { id: 'plt12-noite', horario: '19h30 – 21h30', titulo: '📓 Registro de 1 Linha no Logbook + Descanso Total (Proibido Abrir Apostila)', detalhe: 'Anote em 2 minutos 1 caso/procedimento marcante do plantão, jante e durma às 21h30.', categoria: 'ZERO TEORIA PÓS-12H', corCategoria: '#10b981', atalhoSecao: 'logbook', atalhoLabel: 'Registrar no Logbook' }
-    ];
-  }
-
-  if (state.arquetipoId === 'fds' || state.diaSemana === 'sab' || state.diaSemana === 'dom') {
-    const isDom = state.diaSemana === 'dom';
-    const isSprintSab = !isDom && (state.marchaId === '4_sprint' || state.rodizioId === 'sprint_r1' || state.rodizioId === 'emergencia_trauma');
-    return [
       {
-        id: 'fds-bloco1',
-        horario: '08h00 – 09h55 (Bloco 1)',
-        titulo: isDom
-          ? `🎯 Ciclo Invertido (90m) — Trilha Paralela 30%: ${rodizio.trilha30}`
-          : isSprintSab
-            ? '🚀 Sprint R1 — Prova Antiga na Íntegra Cronometrada (100–120 questões)'
-            : `🔥 Ciclo Invertido (90m) — Âncora 70%: ${rodizio.ancora70}`,
-        detalhe: isSprintSab
-          ? 'Simule tempo real de prova (USP-RP / USP-SP / UNICAMP / ENARE). Ao final, classifique erros em Lacuna, Armadilha ou Desatenção.'
-          : '15m Pré-teste (5–8q) → 35m Ficha Resumo Medway → 40m Bateria de 20 questões comentadas no MedQuest.',
-        categoria: isDom ? 'TRILHA PARALELA 30%' : (isSprintSab ? 'SPRINT R1 (PROVA)' : 'RODÍZIO-ÂNCORA 70%'),
-        corCategoria: isDom ? '#818cf8' : '#0284c7'
+        id: 'pos-ancoragem',
+        horario: 'Manhã',
+        titulo: 'Sono de Recuperação Pós-Plantão (Protegido)',
+        detalhe: 'Sem metas pesadas de teoria ou questões hoje.',
+        categoria: 'PÓS-PLANTÃO',
+        corCategoria: '#10b981',
       },
       {
-        id: 'fds-exames',
-        horario: '09h55 – 10h20 (25 min)',
-        titulo: `🧪 Aquecimento de Exames: ${rotaDia.exame25m}`,
-        detalhe: 'Treino sistemático de traçados, gasometria e imagem antes do 2º bloco.',
-        categoria: 'EXAMES (25 MIN)',
-        corCategoria: '#f59e0b',
-        atalhoSecao: 'ferramentas',
-        atalhoLabel: 'Abrir Ferramentas',
-        atalhoFerramentaTab: rotaDia.ferramentaTab
+        id: 'pos-noite',
+        horario: 'Tarde / Noite',
+        titulo: 'Anki leve (≤ 15 min) + Descanso',
+        detalhe: `Se for ao hospital, aplique apenas "${microHab}".`,
+        categoria: 'MANUTENÇÃO LEVE',
+        corCategoria: '#818cf8',
       },
-      {
-        id: 'fds-bloco2',
-        horario: '10h30 – 12h15 (Bloco 2)',
-        titulo: isDom ? '🧠 Simulação Prática / OSCE + Ritual de Domingo (15 min)' : '⚡ 2º Ciclo Invertido + Bateria Intercalada Cumulativa (20–30q de áreas passadas)',
-        detalhe: isDom ? `${rotaDia.pilarDetalhe} Feche com o Ritual de Domingo abaixo!` : 'Mantenha o Efeito Catraca resolvendo 20–30 questões mistas dos rodízios anteriores. Tarde e noite livres!',
-        categoria: isDom ? 'OSCE & PLANEJAMENTO' : 'EFEITO CATRACA',
-        corCategoria: '#2dd4bf',
-        atalhoSecao: 'teoria',
-        atalhoLabel: `Ler ${rotaDia.moduloRef}`,
-        atalhoTeoriaMod: rotaDia.moduloId
-      }
     ];
   }
 
-  if (state.arquetipoId === 'pe_vespera') {
-    return [
-      { id: 'pe-hospital', horario: 'Turno Prático (Manhã ou Tarde)', titulo: `🏥 Hospital (${rodizio.nome}) + Anki FSRS nas Micro-Janelas (25–35m)`, detalhe: `Treine seu micro-hábito da semana: "${microHab}".`, categoria: 'HOSPITAL + ANKI', corCategoria: '#2dd4bf', atalhoSecao: 'preporta', atalhoLabel: 'Pré-Porta 30s' },
-      { id: 'pe-ciclos', horario: 'Turno de PE (3h30 líquidas)', titulo: '⚡ 2 Ciclos Invertidos (1º: Âncora 70% | 2º: Trilha Paralela 30%) + 25m Exames', detalhe: `Ciclo 1: ${rodizio.ancora70} | Ciclo 2: ${rodizio.trilha30} | Exame: ${rotaDia.exame25m}.`, categoria: 'TRAÇÃO DUPLA PE', corCategoria: '#0284c7', atalhoSecao: 'ferramentas', atalhoLabel: 'Abrir Exames', atalhoFerramentaTab: rotaDia.ferramentaTab },
-      { id: 'pe-cochilo', horario: '15h45 – 17h15 (Se Véspera de Plantão Noturno)', titulo: '🛌 Cochilo Profilático de 90 min (1 Ciclo Completo de Sono) ou Noite Livre', detalhe: 'Se entrar no plantão às 19h, pare todo estudo às 15h30 e durma 90m. Se não tiver plantão, noite leve e sono às 22h.', categoria: 'BLINDAGEM DE PLANTÃO', corCategoria: '#10b981' }
-    ];
-  }
-
-  const stepsDiaCheio: TimelineStep[] = [
-    { id: 'dc-hospital-anki', horario: '07h30 – 18h00 (Hospital + Micro-Janelas)', titulo: `🏥 ${rodizio.nome}: Micro-Hábito da Semana + 100% do Anki antes das 18h`, detalhe: `Micro-hábito: "${microHab}". Mate os 25–35 min de Anki em 2–3 tiros de 12m + anote dúvidas em 1 linha.`, categoria: 'HOSPITAL & ANKI', corCategoria: '#2dd4bf', atalhoSecao: 'preporta', atalhoLabel: 'Abrir Pré-Porta 30s' },
-    { id: 'dc-descompressao', horario: '18h00 – 19h15', titulo: '🚿 Descompressão Física (Banho, Jantar, Exercício — Zero Tela de Estudo)', detalhe: 'Transição obrigatória para limpar a fadiga hospitalar antes do bloco noturno.', categoria: 'TRANSIÇÃO', corCategoria: '#6b7280' }
+  return [
+    {
+      id: 'dc-hospital',
+      horario: 'Turnos no Hospital',
+      titulo: `${rodizio.nome} · Micro-Hábito & Procedimentos`,
+      detalhe: `Foco prático: ${microHab}.`,
+      categoria: 'PRÁTICA',
+      corCategoria: '#2dd4bf',
+      atalhoSecao: 'preporta',
+      atalhoLabel: 'Pré-Porta 30s',
+    },
+    {
+      id: 'dc-7030',
+      horario: 'Bloco 70/30',
+      titulo: `Questões MedQuest (70% ${ancora.slice(0, 48)})`,
+      detalhe: `Complemento 30%: ${trilha}.`,
+      categoria: 'ESTUDO 70/30',
+      corCategoria: '#0284c7',
+    },
+    {
+      id: 'dc-anki',
+      horario: 'Micro-Janelas',
+      titulo: 'Revisão Anki + Fechamento do Dia',
+      detalhe: `Exame sugerido: ${rotaDia.exame25m}.`,
+      categoria: 'ANKI & EXAMES',
+      corCategoria: '#10b981',
+    },
   ];
-
-  if (state.marchaId === '1_sobrevivencia') {
-    stepsDiaCheio.push({ id: 'dc-marcha1-noite', horario: '19h15 – 21h30 (🔴 Marcha 1 Ativa)', titulo: '🛡️ Modo Sobrevivência: Zero Teoria Nova Hoje — Apenas Revisar 7 Travas & Dormir Cedo', detalhe: 'Em semana caótica, não force estudo exausto à noite. Garanta o Anki nas janelas e durma às 21h30.', categoria: 'MARCHA 1 (SOBREVIVÊNCIA)', corCategoria: '#fb7185', atalhoSecao: 'ferramentas', atalhoLabel: 'Checar 7 Travas', atalhoFerramentaTab: 'travas' });
-  } else if (state.marchaId === '2_pesada') {
-    stepsDiaCheio.push({ id: 'dc-marcha2-noite', horario: '19h15 – 20h25 (🟡 Marcha 2 Ativa — 70 min)', titulo: `🎯 Tiro Cirúrgico: 20m Exames (${rotaDia.exame25m}) + 45m Questões MedQuest`, detalhe: `Resolva 20–25 questões comentadas de ${rodizio.ancora70} sem ler apostila longa.`, categoria: 'MARCHA 2 (PESADA)', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Abrir Exames', atalhoFerramentaTab: rotaDia.ferramentaTab });
-  } else if (state.marchaId === '4_sprint') {
-    stepsDiaCheio.push(
-      { id: 'dc-exames-25m', horario: '19h15 – 19h40 (25 min)', titulo: `🧪 Micro-Dose Multimídia & 2ª Fase: ${rotaDia.exame25m}`, detalhe: `Treine leitura rápida sob cronômetro (${rotaDia.pilarTitulo}).`, categoria: 'MULTIMÍDIA / EXAMES', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Ferramentas & Exames', atalhoFerramentaTab: rotaDia.ferramentaTab },
-      { id: 'dc-sprint-90m', horario: '19h40 – 21h10 (🚀 Marcha 4 — Sprint R1)', titulo: '🚀 Bloco Cirúrgico de Questões (50–70q por Banca) + Correção de Erros', detalhe: `Foco direto em ${rodizio.ancora70} e revisão do Caderno de Erros das provas anteriores.`, categoria: 'SPRINT R1 (350+/SEM)', corCategoria: '#0284c7', atalhoSecao: 'teoria', atalhoLabel: `Revisar ${rotaDia.moduloRef}`, atalhoTeoriaMod: rotaDia.moduloId }
-    );
-  } else {
-    const isTrilhaDay = state.diaSemana === 'qua';
-    stepsDiaCheio.push(
-      { id: 'dc-exames-25m', horario: '19h15 – 19h40 (25 min)', titulo: `🧪 Aquecimento de Exames + Triagem Logbook: ${rotaDia.exame25m}`, detalhe: `10m fechando dúvida do dia + 15m no exame sistemático (${rotaDia.pilarTitulo}).`, categoria: 'EXAMES & LOGBOOK', corCategoria: '#f59e0b', atalhoSecao: 'ferramentas', atalhoLabel: 'Ferramentas & Exames', atalhoFerramentaTab: rotaDia.ferramentaTab },
-      { id: 'dc-ciclo-90m', horario: '19h40 – 21h10 (🟢 Marcha 3 — Ciclo Invertido 90m)', titulo: isTrilhaDay ? `⚡ Ciclo Invertido (Trilha Paralela 30%): ${rodizio.trilha30}` : `⚡ Ciclo Invertido (Âncora 70%): ${rodizio.ancora70}`, detalhe: '15m Pré-teste (5–8q) → 35m Ficha Resumo Medway → 40m Bateria de 15–20q MedQuest + Anki cirúrgico.', categoria: isTrilhaDay ? 'TRILHA 30%' : 'ÂNCORA 70%', corCategoria: isTrilhaDay ? '#818cf8' : '#0284c7', atalhoSecao: 'teoria', atalhoLabel: `Ler ${rotaDia.moduloRef}`, atalhoTeoriaMod: rotaDia.moduloId }
-    );
-  }
-
-  stepsDiaCheio.push({ id: 'dc-sono-22h', horario: '21h30 – 22h00', titulo: '🛌 Desligamento Total de Telas → Sono das 22h00 às 06h00 (7h30–8h)', detalhe: 'Consolidação sináptica dependente do sono profundo.', categoria: 'BLINDAGEM 22H', corCategoria: '#10b981' });
-  return stepsDiaCheio;
 }
-
-// ============================================================================
-// PROMPTS CONTEXTUAIS IA & LOGBOOK MOTOR
-// (calcGasometria5Passos e calcPostTestProbability centralizados em calculadoras.ts)
-// ============================================================================
 
 export type PromptContextualKind = 'paciente' | 'oratoria' | 'raciocinio' | 'exames' | 'osce';
 
 export function buildContextualAiPrompt(kind: PromptContextualKind, state: Central6AnoState): string {
   const rodizio = RODIZIOS_6ANO.find((r) => r.id === state.rodizioId) || RODIZIOS_6ANO[0];
   const rotaDia = ROTA_DIAS_SEMANA[state.diaSemana] || ROTA_DIAS_SEMANA.seg;
+  const ancora = state.focoSemanalAncora70 || rodizio.ancora70;
   const microHab = state.microHabitoSemanal || rodizio.microHabitoSugerido;
   const top3BlindSpots = (state.logbookEntries || [])
     .filter((e) => e.tipo === 'ponto_cego' && e.status !== 'resolvido')
     .slice(-3)
     .map((e) => e.titulo);
-  const blindSpotsSuffix = top3BlindSpots.length > 0
-    ? `\n\n[Pontos Cegos Ativos no Logbook para testar neste treino: ${top3BlindSpots.join(' | ')}]`
-    : '';
+  const blindSpotsSuffix =
+    top3BlindSpots.length > 0
+      ? `\n\n[Pontos Cegos Ativos no Logbook para testar neste treino: ${top3BlindSpots.join(' | ')}]`
+      : '';
 
   switch (kind) {
     case 'paciente':
-      return `Atue como um paciente real em um cenário clínico de [${rodizio.nome} — Foco: ${rodizio.ancora70}]. Escolha uma patologia prevalente desse rodízio, mas NÃO me diga qual é. Comece dizendo apenas sua idade, sexo e queixa principal em 1 frase leiga. Só me dê detalhes se eu perguntar de forma clara e empática. Estou treinando hoje especificamente: "${microHab}" (${rotaDia.pilarTitulo}). Quando eu pedir o exame físico, informe apenas os achados das manobras específicas que eu solicitar (HDPE). Ao final, quando eu encerrar e apresentar meu One-Liner + 3 hipóteses + conduta, saia do personagem e me avalie pelo modelo Calgary-Cambridge: (1) perguntas discriminatórias que faltaram, (2) Red Flags que esqueci, (3) se meu exame físico foi guiado por hipóteses com bom LR+ e (4) se executei meu micro-hábito da semana.${blindSpotsSuffix}`;
+      return `Atue como um paciente real em um cenário clínico de [${rodizio.nome} — Foco: ${ancora}]. Escolha uma patologia prevalente desse rodízio, mas NÃO me diga qual é. Comece dizendo apenas sua idade, sexo e queixa principal em 1 frase leiga. Só me dê detalhes se eu perguntar de forma clara e empática. Estou treinando hoje especificamente: "${microHab}". Quando eu pedir o exame físico, informe apenas os achados das manobras específicas que eu solicitar (HDPE). Ao final, avalie pelo modelo Calgary-Cambridge: (1) perguntas discriminatórias que faltaram, (2) Red Flags que esqueci, (3) exame físico guiado por hipóteses com bom LR+ e (4) execução do micro-hábito.${blindSpotsSuffix}`;
     case 'oratoria':
-      return `Atue como um preceptor exigente da FMRP-USP/HCRP no rodízio de [${rodizio.nome}]. Vou colar abaixo a transcrição do áudio/vídeo de 1 a 3 minutos em que passei um caso clínico usando [SNAPPS / SBAR / Pyramid Principle]. Avalie minha apresentação de 0 a 10 usando esta rubrica: (1) Abertura com One-Liner claro e Qualificadores Semânticos (0–2), (2) Filtro cirúrgico de positivos e negativos pertinentes sem relato cronológico prolixo (0–2), (3) Comparação explícita entre pelo menos 2 diagnósticos diferenciais (0–2), (4) Proposta de plano objetivo com as 7 Travas de segurança (0–2), (5) Firmeza, pausas limpas e ausência de vícios de linguagem (0–2). Em seguida, reescreva minha fala em uma versão Padrão-Ouro de até 75 segundos para eu regravar o Take 2:${blindSpotsSuffix}\n\n[COLE SUA TRANSCRIÇÃO AQUI]`;
+      return `Atue como um preceptor exigente da FMRP-USP/HCRP no rodízio de [${rodizio.nome}]. Vou colar abaixo a transcrição do áudio/vídeo de 1 a 3 minutos em que passei um caso clínico usando [SNAPPS / SBAR / Pyramid Principle]. Avalie minha apresentação de 0 a 10 usando esta rubrica: (1) Abertura com One-Liner claro e Qualificadores Semânticos (0–2), (2) Filtro cirúrgico de positivos e negativos pertinentes (0–2), (3) Comparação explícita entre pelo menos 2 diagnósticos diferenciais (0–2), (4) Proposta de plano objetivo com as 7 Travas de segurança (0–2), (5) Firmeza, pausas limpas e ausência de vícios de linguagem (0–2). Em seguida, reescreva em versão Padrão-Ouro de até 75 segundos:${blindSpotsSuffix}\n\n[COLE SUA TRANSCRIÇÃO AQUI]`;
     case 'raciocinio':
-      return `Quero treinar Raciocínio Clínico, Illness Scripts e Raciocínio Bayesiano para o rodízio de [${rodizio.nome} — Temas: ${rodizio.ancora70}]. Apresente um caso clínico desafiador em 3 etapas progressivas (Etapa 1: apenas queixa principal, idade e contexto; Etapa 2: HMA completa + sinais vitais + exame físico dirigido; Etapa 3: exames complementares). A cada etapa, pare e espere eu responder com: (a) Qualificadores Semânticos, (b) One-Liner atualizado, (c) Top 3 hipóteses comparando seus Illness Scripts, e (d) o diagnóstico mais letal que não posso deixar passar. Critique meu raciocínio apontando vieses cognitivos (ancoragem, fechamento prematuro) antes de liberar a próxima etapa.${blindSpotsSuffix}`;
+      return `Quero treinar Raciocínio Clínico, Illness Scripts e Raciocínio Bayesiano para o rodízio de [${rodizio.nome} — Temas: ${ancora}]. Apresente um caso clínico desafiador em 3 etapas progressivas (Etapa 1: queixa principal, idade e contexto; Etapa 2: HMA + sinais vitais + exame físico dirigido; Etapa 3: exames complementares). A cada etapa, pare e espere eu responder com: (a) Qualificadores Semânticos, (b) One-Liner atualizado, (c) Top 3 hipóteses comparando seus Illness Scripts, e (d) o diagnóstico mais letal que não posso deixar passar.${blindSpotsSuffix}`;
     case 'exames':
-      return `Me dê a Micro-Dose Diária de Interpretação Sistemática de Exames (25 min) calibrada para [${rodizio.nome}] (${rotaDia.exame25m}): gere 1 caso clínico agudo contendo (1) dados completos de Gasometria Arterial com Na+, Cl-, K+, Albumina e Lactato para eu calcular os 5 passos (pH, primário, Fórmula de Winter, Ânion Gap corrigido pela albumina e relação Delta-Delta), e (2) um desafio detalhado de ECG (10 passos) ou Imagem de Urgência (RX Tórax/Abdome, TC de Crânio ou e-FAST). NÃO dê o gabarito ainda: espere eu enviar minha leitura sistemática e minha conduta imediata para então corrigir passo a passo.${blindSpotsSuffix}`;
+      return `Me dê a Micro-Dose de Interpretação Sistemática de Exames calibrada para [${rodizio.nome}] (${rotaDia.exame25m}): gere 1 caso clínico agudo contendo (1) dados completos de Gasometria Arterial com Na+, Cl-, K+, Albumina e Lactato para eu calcular os 5 passos (pH, primário, Winter, AG corrigido e Delta-Delta), e (2) um desafio detalhado de ECG (10 passos) ou Imagem de Urgência. NÃO dê o gabarito ainda: espere minha leitura sistemática.${blindSpotsSuffix}`;
     case 'osce':
-      return `Atue como examinador de uma estação prática de 2ª Fase (OSCE — padrão USP-RP / USP-SP / UNICAMP) do rodízio de [${rodizio.nome}]. Monte uma estação cronometrada de 8 minutos sobre [${rodizio.ancora70}] envolvendo anamnese dirigida, exame físico HDPE, interpretação de 1 exame crítico e prescrição/conduta com as 7 Travas (A-R-G-I-V-P-O). Apresente a folha de porta da estação e aguarde minhas ações passo a passo. Ao final, corrija meu desempenho usando um Checklist Oficial de Banca (0 a 10 pontos) destacando os itens obrigatórios que esqueci.${blindSpotsSuffix}`;
+      return `Atue como examinador de uma estação prática de 2ª Fase (OSCE — padrão USP-RP / USP-SP / UNICAMP) do rodízio de [${rodizio.nome}]. Monte uma estação cronometrada de 8 minutos sobre [${ancora}] envolvendo anamnese dirigida, exame físico HDPE, interpretação de 1 exame crítico e prescrição/conduta com as 7 Travas (A-R-G-I-V-P-O). Apresente a folha de porta e aguarde minhas ações passo a passo.${blindSpotsSuffix}`;
     default: {
       const _exhaustive: never = kind;
       throw new Error(`Tipo de prompt contextual desconhecido: ${String(_exhaustive)}`);
     }
   }
 }
-
-// ============================================================================
-// MATRIZ COMPLETA DOS 9 RODÍZIOS (LOGBOOK_PROCEDIMENTOS_6ANO.md) + ENSAIO 3 MIN
-// + ESCALA DE PLANTÕES + TIMER MULTI-PRESETS + HISTÓRICO 70/30 + REGRA 3x
-// ============================================================================
-
-export const LOGBOOK_PROCEDIMENTOS_MATRIX: LogbookProcedureGoal[] = [
-  // 1. Pré-Temporada Férias / Base
-  { id: 'proc-ecg-10', rodizioId: 'ferias', rodizioNome: 'Pré-Temporada Férias', nome: 'ECG Sistemático (10 passos)', metaAlvo: 15, guiaRef: 'Módulo 05' },
-  { id: 'proc-gaso-5', rodizioId: 'ferias', rodizioNome: 'Pré-Temporada Férias', nome: 'Gasometria em 5 Passos', metaAlvo: 15, guiaRef: 'Módulo 05' },
-  // 2. Cirurgia Geral
-  { id: 'proc-sutura', rodizioId: 'cirurgia', rodizioNome: 'Cirurgia Geral', nome: 'Anestesia local + Sutura (simples/Donati/intradérmica)', metaAlvo: 10, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
-  { id: 'proc-svd', rodizioId: 'cirurgia', rodizioNome: 'Cirurgia Geral', nome: 'Sondagem Vesical de Demora (SVD M/F)', metaAlvo: 3, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
-  { id: 'proc-sng', rodizioId: 'cirurgia', rodizioNome: 'Cirurgia Geral', nome: 'Sondagem Nasogástrica / Enteral (SNG/SNE)', metaAlvo: 2, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
-  { id: 'proc-curativo', rodizioId: 'cirurgia', rodizioNome: 'Cirurgia Geral', nome: 'Curativo complexo / Debridamento / Retirada de dreno', metaAlvo: 3, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
-  // 3. Anestesio / CTI
-  { id: 'proc-bvm', rodizioId: 'anestesio_cti', rodizioNome: 'Anestesio / CTI', nome: 'Ventilação Bolsa-Válvula-Máscara (BVM)', metaAlvo: 10, guiaRef: 'Módulo 07' },
-  { id: 'proc-iot', rodizioId: 'anestesio_cti', rodizioNome: 'Anestesio / CTI', nome: 'Laringoscopia / Intubação Orotraqueal (IOT)', metaAlvo: 5, guiaRef: 'Módulo 07' },
-  { id: 'proc-gaso-art', rodizioId: 'anestesio_cti', rodizioNome: 'Anestesio / CTI', nome: 'Gasometria Arterial / PAI', metaAlvo: 5, guiaRef: 'Módulo 07' },
-  { id: 'proc-cvc', rodizioId: 'anestesio_cti', rodizioNome: 'Anestesio / CTI', nome: 'Acesso Venoso Central (USG-guiado)', metaAlvo: 2, guiaRef: 'Módulo 07' },
-  // 4. Ginecologia & Obstetrícia
-  { id: 'proc-especular', rodizioId: 'go', rodizioNome: 'Ginecologia & Obstetrícia', nome: 'Exame Especular + Coleta CCO', metaAlvo: 10, guiaRef: '02_Exame_Fisico_Anamnese_GO.md' },
-  { id: 'proc-toque-obs', rodizioId: 'go', rodizioNome: 'Ginecologia & Obstetrícia', nome: 'Toque Obstétrico (dilatação/apagamento/plano)', metaAlvo: 10, guiaRef: '02_Exame_Fisico_Anamnese_GO.md' },
-  { id: 'proc-parto-sut', rodizioId: 'go', rodizioNome: 'Ginecologia & Obstetrícia', nome: 'Parto Normal Assistido / Sutura Perineal / Episiorrafia', metaAlvo: 3, guiaRef: '02_Exame_Fisico_Anamnese_GO.md' },
-  // 5. Oftalmo / ORL / CCP
-  { id: 'proc-otoscopia', rodizioId: 'oftalmo_orl_ccp', rodizioNome: 'Oftalmo / ORL / CCP', nome: 'Otoscopia limpa + Remoção de cerume/CE simples', metaAlvo: 10, guiaRef: 'Guias de Semiologia + R1' },
-  { id: 'proc-fluoresceina', rodizioId: 'oftalmo_orl_ccp', rodizioNome: 'Oftalmo / ORL / CCP', nome: 'Avaliação de olho vermelho com Fluoresceína', metaAlvo: 5, guiaRef: 'Guias de Semiologia + R1' },
-  { id: 'proc-tamponamento', rodizioId: 'oftalmo_orl_ccp', rodizioNome: 'Oftalmo / ORL / CCP', nome: 'Tamponamento nasal anterior / Manejo traqueostomia', metaAlvo: 1, guiaRef: 'Guias de Semiologia + R1' },
-  // 6. MFC / Atenção Primária
-  { id: 'proc-mfc-ice', rodizioId: 'mfc', rodizioNome: 'Medicina de Família (MFC)', nome: 'Consulta centrada na pessoa (ICE + Teach-Back)', metaAlvo: 10, guiaRef: 'Módulo 01' },
-  { id: 'proc-mfc-rastreio', rodizioId: 'mfc', rodizioNome: 'Medicina de Família (MFC)', nome: 'Rastreamento oportunista & Conciliação medicamentosa', metaAlvo: 5, guiaRef: 'Módulo 06' },
-  // 7. Clínica Médica
-  { id: 'proc-paracentese', rodizioId: 'cm', rodizioNome: 'Clínica Médica', nome: 'Paracentese diagnóstica / alívio', metaAlvo: 3, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
-  { id: 'proc-toracocentese', rodizioId: 'cm', rodizioNome: 'Clínica Médica', nome: 'Toracocentese', metaAlvo: 2, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
-  { id: 'proc-pl', rodizioId: 'cm', rodizioNome: 'Clínica Médica', nome: 'Punção Lombar (PL)', metaAlvo: 2, guiaRef: '03_Execucao_Motora_Procedimentos_Essenciais.md' },
-  // 8. Pediatria
-  { id: 'proc-ped-oto', rodizioId: 'ped', rodizioNome: 'Pediatria', nome: 'Otoscopia pediátrica com contenção adequada', metaAlvo: 15, guiaRef: '08_Exame_Fisico_Pediatrico.md' },
-  { id: 'proc-ped-sala-parto', rodizioId: 'ped', rodizioNome: 'Pediatria', nome: 'Reanimação Neonatal / Sala de Parto', metaAlvo: 3, guiaRef: '08_Exame_Fisico_Pediatrico.md' },
-  { id: 'proc-ped-diluicao', rodizioId: 'ped', rodizioNome: 'Pediatria', nome: 'Cálculo e preparo de diluições pediátricas', metaAlvo: 5, guiaRef: '08_Exame_Fisico_Pediatrico.md' },
-  // 9. Emergência & Trauma
-  { id: 'proc-efast', rodizioId: 'emergencia_trauma', rodizioNome: 'Emergência & Trauma', nome: 'e-FAST à beira do leito', metaAlvo: 10, guiaRef: '02_Avaliacao_Paciente_Grave_ABCDE.md' },
-  { id: 'proc-sri', rodizioId: 'emergencia_trauma', rodizioNome: 'Emergência & Trauma', nome: 'IOT de Emergência (SRI) / Cardioversão', metaAlvo: 5, guiaRef: '02_Avaliacao_Paciente_Grave_ABCDE.md' },
-  { id: 'proc-dreno-torax', rodizioId: 'emergencia_trauma', rodizioNome: 'Emergência & Trauma', nome: 'Drenagem de Tórax (auxiliar/executar)', metaAlvo: 2, guiaRef: '02_Avaliacao_Paciente_Grave_ABCDE.md' },
-];
-
-export const HOJE_DEEP_LINKS_MAP: Record<string, Array<{ id: string; label: string }>> = {
-  'ferias:sem1': [
-    { id: 'hab-7', label: '🧠 HDPE Abdome Agudo' },
-    { id: ';abdome-agudo', label: '🩺 Dor Abdominal / Abdome Agudo' },
-    { id: 'hab-12', label: '🧠 ECG 10 Passos' },
-    { id: 'hab-13', label: '🧠 RX Tórax' },
-  ],
-  'ferias:sem2': [
-    { id: 'hab-18', label: '🧠 ABCDE & RUSH' },
-    { id: 'hab-4', label: '🧠 SBAR & SNAPPS' },
-    { id: 'hab-14', label: '🧠 Gasometria 5 Passos' },
-    { id: ';abdome-agudo', label: '🩺 Abdome Agudo' },
-  ],
-  'ferias:sem3': [
-    { id: 'hab-22', label: '🧠 Via Aérea LEMON & VM' },
-    { id: ';sepse', label: '🩺 Sepse 1ª Hora' },
-    { id: 'hab-14', label: '🧠 Gasometria 5 Passos' },
-    { id: 'hab-17', label: '🧠 7 Travas Prescrição' },
-  ],
-  'ferias:sem4': [
-    { id: 'hab-22', label: '🧠 VM Protetora' },
-    { id: 'hab-14', label: '🧠 Gasometria & Eletrólitos' },
-    { id: 'hab-12', label: '🧠 ECG Eletrolítico' },
-    { id: 'hab-16', label: '🧠 SPIKES / NURSE' },
-  ],
-  'ferias:sem5': [
-    { id: 'hab-3', label: '🧠 Anamnese/EF em GO' },
-    { id: 'hab-1', label: '🧠 Calgary-Cambridge' },
-    { id: 'hab-4', label: '🧠 SNAPPS Ambulatorial' },
-  ],
-  'ferias:sem6': [
-    { id: ';pre-eclampsia', label: '🩺 Pré-Eclâmpsia / Eclâmpsia' },
-    { id: ';hpp', label: '🩺 Hemorragia Pós-Parto' },
-    { id: 'hab-15', label: '🧠 CTG & Partograma' },
-  ],
-  'ferias:sem7': [{ id: 'hab-1', label: '🏖️ Semana Livre Planejada' }],
-  'ferias:sem8': [
-    { id: ';sca', label: '🩺 SCA / IAM' },
-    { id: ';avc', label: '🩺 AVC Agudo' },
-    { id: 'hab-18', label: '🧠 ABCDE Paciente Grave' },
-  ],
-  cirurgia: [
-    { id: 'hab-7', label: '🧠 HDPE Abdome Agudo' },
-    { id: 'hab-21', label: '🧠 Sutura & Anestesia Local' },
-    { id: ';abdome-agudo', label: '🩺 Abdome Agudo' },
-    { id: ';enf-evo-po', label: '🩺 Evolução Pós-Op' },
-  ],
-  anestesio_cti: [
-    { id: 'hab-22', label: '🧠 IOT, Via Aérea & VM' },
-    { id: 'hab-14', label: '🧠 Gasometria 5 Passos' },
-    { id: 'hab-18', label: '🧠 ABCDE & Choque' },
-    { id: ';sepse', label: '🩺 Sepse & Choque' },
-  ],
-  go: [
-    { id: 'hab-3', label: '🧠 Exame Físico & Leopold GO' },
-    { id: 'hab-15', label: '🧠 CTG & Partograma' },
-    { id: ';pre-eclampsia', label: '🩺 Pré-Eclâmpsia' },
-    { id: ';hpp', label: '🩺 Hemorragia Pós-Parto' },
-  ],
-  oftalmo_orl_ccp: [
-    { id: 'hab-20', label: '🧠 ORL & Olho Vermelho' },
-    { id: 'hab-9', label: '🧠 Exame Neuro & HINTS' },
-    { id: ';vertigem', label: '🩺 Vertigem / HINTS' },
-    { id: ';conjuntivite', label: '🩺 Olho Vermelho' },
-  ],
-  mfc: [
-    { id: 'hab-1', label: '🧠 Calgary-Cambridge & ICE' },
-    { id: 'hab-16', label: '🧠 SPIKES & Teach-Back' },
-    { id: 'hab-17', label: '🧠 7 Travas Prescrição' },
-  ],
-  cm: [
-    { id: 'hab-11', label: '🧠 Método DDx & Bayes' },
-    { id: 'hab-19', label: '🧠 Paracentese / Toraco / PL' },
-    { id: 'hab-5', label: '🧠 Exame Cardiovascular' },
-    { id: 'hab-6', label: '🧠 Exame Pulmonar' },
-  ],
-  ped: [
-    { id: 'hab-10', label: '🧠 EF Pediátrico Anti-Choro' },
-    { id: ';bva', label: '🩺 Bronquiolite (BVA)' },
-    { id: ';ped-febre', label: '🩺 Febre sem Foco' },
-    { id: ';ped-desidratacao', label: '🩺 GECA & Desidratação' },
-  ],
-  emergencia_trauma: [
-    { id: 'hab-18', label: '🧠 ABCDE & Sala Vermelha' },
-    { id: 'hab-22', label: '🧠 SRI & Via Aérea' },
-    { id: ';sca', label: '🩺 SCA / IAM' },
-    { id: ';pcr', label: '🩺 PCR & ACLS' },
-  ],
-  sprint_r1: [
-    { id: 'hab-18', label: '🧠 ABCDE OSCE' },
-    { id: 'hab-17', label: '🧠 7 Travas OSCE' },
-    { id: 'hab-12', label: '🧠 ECG 10 Passos' },
-    { id: 'hab-14', label: '🧠 Gasometria 5 Passos' },
-  ],
-};
-
-export const CURRICULO_ITEMS_DATA: Array<{
-  id: string;
-  categoria: 'Concluído (Base)' | 'Meta 1º Semestre (até 30/06/27)';
-  titulo: string;
-  detalhe: string;
-}> = [
-  {
-    id: 'curr-inst-fmrp',
-    categoria: 'Concluído (Base)',
-    titulo: 'Declaração Institucional FMRP-USP (HU próprio + Pós CAPES + Rede SUS 1º/2º/3º)',
-    detalhe: 'USP-SP: itens 1–3 (até 33 pts) · USP-RP: item 1 (1,5 pt) · UNICAMP: itens 1–2 (25 pts). Solicitar ao Serviço Acadêmico.',
-  },
-  {
-    id: 'curr-ic-2anos',
-    categoria: 'Concluído (Base)',
-    titulo: '2 anos de Iniciação Científica (IC) com bolsa comprovada (término Jan/2027)',
-    detalhe: 'USP-SP: item 5 (até 12 pts c/ artigo) · USP-RP: item 3 (0,7/ano, teto 1,4) · UNICAMP: item 3 (>2 sem c/ bolsa = 20 pts).',
-  },
-  {
-    id: 'curr-2-artigos',
-    categoria: 'Concluído (Base)',
-    titulo: '2 Artigos Científicos Publicados (1 da IC + 1 extra)',
-    detalhe: 'USP-SP: item 6 (PubMed 10 / SciELO 8) · USP-RP: item 3 (1 pt/artigo c/ DOI, teto 3) · UNICAMP: item 4 (PubMed 10 / SciELO 5, teto 15).',
-  },
-  {
-    id: 'curr-liga',
-    categoria: 'Concluído (Base)',
-    titulo: 'Mais de 1 ano como Diretor de Liga Acadêmica',
-    detalhe: 'UNICAMP: item 6 (Diretoria = 5 pts, teto) · USP-RP: item 2 (Membro ≥1 ano = 0,5/ano, teto 1).',
-  },
-  {
-    id: 'curr-natacao',
-    categoria: 'Concluído (Base)',
-    titulo: '1,5 anos de Equipe de Natação da Faculdade (Representação Esportiva)',
-    detalhe: 'UNICAMP: item 11 (Equipe esportiva universitária ≥2 sem = 1 pt, dentro do teto de 5 pts).',
-  },
-  {
-    id: 'curr-monitoria',
-    categoria: 'Meta 1º Semestre (até 30/06/27)',
-    titulo: 'Monitoria Acadêmica Oficial (com carga horária e período assinados)',
-    detalhe: 'USP-SP: item 4 (>2 sem ≥192h = 3 pts) · USP-RP: item 4 (c/ bolsa ≥1 ano = 0,5/ano, teto 1) · UNICAMP: item 8 (>2 sem = 5 pts).',
-  },
-  {
-    id: 'curr-congresso',
-    categoria: 'Meta 1º Semestre (até 30/06/27)',
-    titulo: 'Apresentação em Congresso / Simpósio (Oral ou Pôster, 1º/2º autor)',
-    detalhe: 'USP-SP: item 8 (Oral 1º autor: Nac 7–8 / Internac 8–10) · USP-RP: item 3 (Oral 0,5; Pôster 0,1–0,3) · UNICAMP: item 5 (Oral 10 / Pôster 6).',
-  },
-  {
-    id: 'curr-org-evento',
-    categoria: 'Meta 1º Semestre (até 30/06/27)',
-    titulo: 'Organização de Eventos Científicos / Jornadas / Congressos',
-    detalhe: 'USP-SP: item 7 (Entidade de classe = 4 pts; Liga/DA = 2 pts/evento, teto 6) · USP-RP: item 4 (0,3/evento, teto 0,6).',
-  },
-  {
-    id: 'curr-cursos-suporte',
-    categoria: 'Meta 1º Semestre (até 30/06/27)',
-    titulo: 'Cursos de Suporte de Vida (ACLS/ATLS/PALS/BLS) e ECG/VM/USG (>12h)',
-    detalhe: 'UNICAMP: item 7 (Suporte de vida = 2 pts cada; ECG/VM/USG >12h = 1 pt cada; teto 5 pts).',
-  },
-  {
-    id: 'curr-voluntariado-plantao',
-    categoria: 'Meta 1º Semestre (até 30/06/27)',
-    titulo: 'Trabalho Voluntário Social ou Plantão Voluntário (≥96h–120h)',
-    detalhe: 'USP-RP: item 2 (0,5 pt / 120h, teto 1) · UNICAMP: item 9 (>96h = 5 pts; 48–96h = 2 pts; estágio curricular não conta).',
-  },
-  {
-    id: 'curr-rep-estudantil',
-    categoria: 'Meta 1º Semestre (até 30/06/27)',
-    titulo: 'Representação Discente (Colegiado/CA/Atlética) e Provas (Teste de Progresso)',
-    detalhe: 'USP-RP: itens 4–5 (Teste Progresso 0,5/prova, teto 1; CA/Atlética/Colegiados 0,5/ano, teto 2) · UNICAMP: itens 10–11 (Colegiado 5; CA/Atlética 2).',
-  },
-  {
-    id: 'curr-rev-sist',
-    categoria: 'Meta 1º Semestre (até 30/06/27)',
-    titulo: 'Submeter/Publicar Revisão Sistemática ou Artigo Extra (fechar teto científico)',
-    detalhe: 'Fecha o teto de artigos na USP-RP (3 pts = 3 artigos), UNICAMP (15 pts) e USP-SP (10 pts no item 6).',
-  },
-  {
-    id: 'curr-pasta-unica',
-    categoria: 'Meta 1º Semestre (até 30/06/27)',
-    titulo: 'Organizar Dossiê Único PDF Nomeado + Lattes Atualizado até 30/06/2027',
-    detalhe: 'Deixar certificados frente/verso e DOI prontos 4 meses antes do upload no HCRP (USP-RP), FUVEST (USP-SP) e FCM (UNICAMP).',
-  },
-];
-
-export const RITUAL_DOMINGO_DATA: Array<{ id: string; text: string }> = [
-  {
-    id: 'rit-escala',
-    text: '1. Olhar a escala real da semana seguinte (plantões, PEs, ambulatórios) e escolher a Marcha (🟢 3 / 🟡 2 / 🔴 1).',
-  },
-  {
-    id: 'rit-7030',
-    text: '2. Definir os subtemas exatos da semana: 70% Rodízio-Âncora + 30% Trilha Paralela R1 (Ficha Medway + MedQuest).',
-  },
-  {
-    id: 'rit-habito',
-    text: '3. Escolher 1 único Micro-Hábito Clínico Alvo para praticar no hospital durante a semana inteira.',
-  },
-  {
-    id: 'rit-cegos',
-    text: '4. Revisar os 3 principais Pontos Cegos da semana anterior e suspender cards triviais do Anki.',
-  },
-];
-
-export interface EnsaioMentalProcGuide {
-  id: string;
-  nome: string;
-  indicacao: string;
-  material: string;
-  anatomia: string;
-  armadilha: string;
-}
-
-export const ENSAIO_MENTAL_PROCS_DATA: EnsaioMentalProcGuide[] = [
-  {
-    id: 'proc-sutura',
-    nome: '1. Anestesia Local & Sutura (Simples / Donati)',
-    indicacao: 'Feridas limpas/contaminadas com < 6–12h sem infecção franca; checar status vacinal antitetânico.',
-    material: 'Luva estéril, clorexidina, SF 0,9% sob pressão, lidocaína 1–2%, seringa/agulha, porta-agulhas, pinça dente de rato, tesoura, fio Nylon 3-0 a 5-0.',
-    anatomia: 'Testar sensibilidade/motricidade distal ANTES da lidocaína! Dose máx lido: 4,5 mg/kg s/ vaso (7 mg/kg c/ vaso). Entrar a 90° na derme.',
-    armadilha: 'Esquecer de irrigar abundantemente antes de fechar; dar ponto frouxo ou isquemiante; usar vasoconstritor em extremidade isquêmica.',
-  },
-  {
-    id: 'proc-iot',
-    nome: '2. Ventilação BVM ("C-E") & Laringoscopia (IOT)',
-    indicacao: 'Falência ventilatória/oxigenação, proteção de via aérea (Glasgow ≤ 8), instabilidade refratária.',
-    material: 'BVM com reservatório, O2 15 L/min, aspirador rígido testado, cânula Guedel, laringoscópio testado (lâmina 3/4), TOT com cuff testado + fio-guia, capnógrafo, drogas SRI + vasopressor pronto.',
-    anatomia: 'Posição olfativa (meato acústico alinhado ao esterno). Entrar pela direita da boca, rebater língua p/ esquerda, ponta da Macintosh na valécula e tracionar a 45° sem báscula nos dentes.',
-    armadilha: 'Tentar intubar paciente hipoxêmico/hipotenso sem pré-oxigenar e sem push-dose/noradrenalina; esquecer de checar capnografia e altura do tubo (20–22 cm na rima).',
-  },
-  {
-    id: 'proc-cvc',
-    nome: '3. Acesso Venoso Central USG-Guiado (Jugular Interna / Femoral)',
-    indicacao: 'Infusão contínua de DVA, acesso periférico impossível, monitorização/nutrição parenteral.',
-    material: 'Kit CVC, barreira máxima estéril, USG com capa estéril, lidocaína, agulha de punção, fio-guia em J, bisturi nº 11, dilatador, cateter lavado com SF, Nylon 3-0.',
-    anatomia: 'Triângulo de Sedillot (cabeças esternal e clavicular do ECOM). No USG: veia jugular é compressível e lateral à carótida pulsátil.',
-    armadilha: 'Perder o controle da ponta externa do fio-guia (SEMPRE segurar o guia!); forçar o fio-guia contra resistência ou diante de extrassístoles no monitor.',
-  },
-  {
-    id: 'proc-paracentese',
-    nome: '4. Paracentese Diagnóstica e de Alívio',
-    indicacao: 'Ascite nova, internação de cirrótico (descartar PBE) ou ascite tensa com restrição ventilatória.',
-    material: 'Luva estéril, clorexidina, lidocaína, jelco 14G/16G, seringa 20 mL, equipo macrogotas + frasco coletor, tubos (celularidade/diferencial, albumina, cultura em frasco de hemocultura) + Albumina humana se > 5 L.',
-    anatomia: 'QIE: 2 dedos mediais e 2 dedos cefálicos à EIAS esquerda (lateral aos vasos epigástricos inferiores; evitar QID pelo ceco dilatado). Técnica em Z-track.',
-    armadilha: 'Deixar de colher PBE por INR elevado ou plaquetopenia (não são contraindicações!); retirar > 5 litros sem repor 6–8 g de Albumina por litro total retirado.',
-  },
-  {
-    id: 'proc-toracocentese',
-    nome: '5. Toracocentese Diagnóstica / Alívio',
-    indicacao: 'Derrame pleural novo (> 1 cm no decúbito lateral/USG) ou derrame volumoso causando dispneia.',
-    material: 'Kit estéril, lidocaína, jelco 16G/18G, torneira de 3 vias (three-way), seringa 20–50 mL, equipo, tubos para Critérios de Light (proteínas, DHL, pH, glicose, celularidade, ADA, cultura).',
-    anatomia: 'Paciente sentado inclinado sobre mesa; 1 a 2 espaços abaixo do topo da macicez na linha escapular posterior, SEMPRE na BORDA SUPERIOR da costela inferior (feixe vásculo-nervoso passa na borda inferior!).',
-    armadilha: 'Entrar na borda inferior da costela (laceração da artéria intercostal → hemotórax); drenar > 1.200–1.500 mL de uma só vez (edema pulmonar de reexpansão).',
-  },
-  {
-    id: 'proc-pl',
-    nome: '6. Punção Lombar (Líquor / LCR)',
-    indicacao: 'Suspeita de meningite/encefalite, HSA com TC normal, síndrome de Guillain-Barré.',
-    material: 'Campo/luva estéril, clorexidina, lidocaína, agulha espinhal Quincke ou Whitacre 22G com mandril, 3 a 4 tubos estéreis numerados.',
-    anatomia: 'Linha de Tuffier (cristas ilíacas superiores cruzam L4): puncionar L3–L4 ou L4–L5 na linha média com inclinação cefálica de 15° (mirando a cicatriz umbilical).',
-    armadilha: 'Puncionar sem TC de crânio prévia quando há sinal de alarme (imunossuprimido, Glasgow < 12, déficit focal, convulsão recente ou papiledema); retirar a agulha sem recolocar o mandril.',
-  },
-  {
-    id: 'proc-svd-sng',
-    nome: '7. Sondagem Vesical de Demora (SVD) & Sondagem Nasogástrica (SNG)',
-    indicacao: 'SVD: retenção urinária, balanço hídrico estrito em choque. SNG: obstrução intestinal, HDA, proteção de via aérea.',
-    material: 'SVD: bandeja estéril, Foley 14–16 Fr, água destilada (nunca SF no balonete!), lidocaína gel estéril (15–20 mL no homem), coletor sistema fechado. SNG: sonda Levine, medição NEX (Nariz-Orelha-Xifoide).',
-    anatomia: 'SVD masculina: tracionar pênis a 90° para retificar uretra bulbar e só insuflar o balonete após retorno franco de urina com a sonda inserida até a bifurcação (Y)!',
-    armadilha: 'Insuflar o balonete da Foley na uretra prostática antes de ver retorno de urina; iniciar dieta em SNE sem RX confirmando ponta infradiafragmática.',
-  },
-  {
-    id: 'proc-especular',
-    nome: '8. Exame Especular, Coleta de CCO & Toque Obstétrico',
-    indicacao: 'Rastreio de CA de colo (25–64 anos), avaliação de sangramento/corrimento, bolsa rota ou trabalho de parto.',
-    material: 'Espéculo de Collins (P/M/G), foco de luz, espátula de Ayres (ectocérvice 360°), escova endocervical (giro 360°), lâmina com extremidade fosca identificada + fixador.',
-    anatomia: 'Afastar pequenos lábios, introduzir espéculo fechado em direção oblíqua/posterior apoiando na parede posterior (fúrcula), girar para horizontal e abrir suavemente.',
-    armadilha: 'Usar lubrificante em gel antes do CCO (inviabiliza a lâmina); realizar toque vaginal em sangramento de 2ª metade da gestação antes de excluir Placenta Prévia no USG!',
-  },
-];
-
-export const ENSAIO_MENTAL_3MIN_PASSOS = [
-  { step: 1, title: 'Indicação & Contraindicação Absoluta', prompt: 'Por que estou fazendo agora? O que proíbe (plaquetopenia grave, INR alterado, infecção no sítio, instabilidade)?' },
-  { step: 2, title: 'Material Completo na Bandeja', prompt: 'Cheque mentalmente 100% dos itens antes de calçar luva estéril para não quebrar assepsia no meio.' },
-  { step: 3, title: 'Marco Anatômico & Ângulo', prompt: 'Onde entra a agulha/lâmina, em que ângulo, qual estrutura nobre passa ao lado (vaso, nervo, pleura)?' },
-  { step: 4, title: 'Complicação Imediata & Plano B', prompt: 'Se sangrar / der pneumotórax / não progredir o fio-guia, o que eu faço nos primeiros 10 segundos?' },
-] as const;
-
-export const TIMER_PRESETS: Record<TimerPresetId, TimerPresetConfig> = {
-  anki_15m: { id: 'anki_15m', label: 'Anki 15m', minutes: 15, seconds: 15 * 60, category: 'Micro-Janela' },
-  exames_25m: { id: 'exames_25m', label: 'Exames 25m', minutes: 25, seconds: 25 * 60, category: 'Aquecimento' },
-  ciclo_90m: { id: 'ciclo_90m', label: 'Ciclo 90m', minutes: 90, seconds: 90 * 60, category: 'Estudo Profundo' },
-  osce_8m: { id: 'osce_8m', label: 'OSCE 8m', minutes: 8, seconds: 8 * 60, category: 'Simulação' },
-  cochilo_90m: { id: 'cochilo_90m', label: 'Cochilo 90m', minutes: 90, seconds: 90 * 60, category: 'Blindagem' },
-};
 
 export function registerProcedureExecution(
   state: Central6AnoState,
@@ -1141,6 +1006,14 @@ export function computeWeekly7030Summary(state: Central6AnoState, weekIso: strin
   const pctAncora = total > 0 ? Math.round((ancora / total) * 100) : 0;
   const pctTrilha = total > 0 ? 100 - pctAncora : 0;
 
+  let metaAlvo = marcha.metaAlvo;
+  let metaMin = marcha.metaMin;
+  if (state.weeklySchedule) {
+    const sched = analyzeWeeklySchedule(state.weeklySchedule, state.diaSemana, state.marchaId);
+    metaAlvo = sched.adjustedWeeklyQuestionsGoal;
+    metaMin = Math.round(metaAlvo * 0.85);
+  }
+
   return {
     weekIso,
     rodizioId: state.rodizioId,
@@ -1148,10 +1021,11 @@ export function computeWeekly7030Summary(state: Central6AnoState, weekIso: strin
     questoesAncora: ancora,
     questoesTrilha: trilha,
     totalQuestoes: total,
-    metaAlvo: marcha.metaAlvo,
+    metaAlvo,
     pctAncora,
     pctTrilha,
-    metaAtingida: total >= marcha.metaMin,
+    metaAtingida: total >= metaMin,
+    ankiCardsSem: Math.max(0, Number(state.ankiCardsSem) || 0),
   };
 }
 
@@ -1163,7 +1037,7 @@ export function closeWeekly7030Snapshot(state: Central6AnoState, weekIso: string
     semanasConcluidas: (state.semanasConcluidas || 0) + 1,
     questoesAncoraSem: 0,
     questoesTrilhaSem: 0,
+    ankiCardsSem: 0,
     weeklyHistory: history,
   };
 }
-

@@ -1,6 +1,6 @@
-import { searchGlobalStratified } from '../engine/search.ts';
+import { searchGlobalAsync, warmupSearchWorker } from '../engine/searchClient.ts';
 import type { AppSection } from '../state/router.ts';
-import { ALL_PROTOCOLS, getGlobalSearchIndex, uiBridge } from './context.ts';
+import { uiBridge } from './context.ts';
 import { debounce, escapeHtml } from './utils.ts';
 
 export function initCmdPalette(): void {
@@ -13,23 +13,29 @@ export function initCmdPalette(): void {
   if (!overlay || !input || !resultsEl) return;
 
   let activeIndex = 0;
+  let searchSeq = 0;
 
   const close = () => {
     overlay.classList.remove('open');
   };
 
-  const renderResults = () => {
+  const renderResults = async () => {
+    const mySeq = ++searchSeq;
     const q = input.value.trim();
-    const stratified = searchGlobalStratified(getGlobalSearchIndex(), ALL_PROTOCOLS, q, {
+    const stratified = await searchGlobalAsync(q, {
       pep: 6,
       hab: 4,
       remume: 5,
       tools: 4,
+      tecnica: 3,
     });
+
+    if (mySeq !== searchSeq) return;
 
     const total =
       stratified.peps.length +
       stratified.prePorta.length +
+      stratified.tecnicaHits.length +
       stratified.ferramentasTeoria.length +
       stratified.remumeTop5.length;
 
@@ -97,6 +103,28 @@ export function initCmdPalette(): void {
       `);
     }
 
+    if (stratified.tecnicaHits.length > 0) {
+      groupsHtml.push(`
+        <div class="cmd-group-title">📘 Técnica Profunda (20 Guias)</div>
+        ${stratified.tecnicaHits
+          .map(
+            (t) => `
+              <button type="button" class="cmd-item" data-cmd-type="tecnica" data-id="${escapeHtml(t.id)}">
+                <div class="cmd-item-left">
+                  <div>
+                    <div class="cmd-item-title">${escapeHtml(t.title)}</div>
+                    <div class="cmd-item-cat">${escapeHtml(t.category)}</div>
+                  </div>
+                </div>
+                <div class="cmd-item-right">
+                  <code class="cmd-item-trig">TÉCNICA</code>
+                </div>
+              </button>`
+          )
+          .join('')}
+      `);
+    }
+
     if (stratified.ferramentasTeoria.length > 0) {
       groupsHtml.push(`
         <div class="cmd-group-title">🧪 Calculadoras &amp; Formação Teórica</div>
@@ -148,9 +176,10 @@ export function initCmdPalette(): void {
     if (firstBtn) firstBtn.classList.add('active');
   };
 
-  const debouncedRenderResults = debounce(renderResults, 80);
+  const debouncedRenderResults = debounce(() => {
+    void renderResults();
+  }, 65);
 
-  // Delegação única de cliques para resultados e fallback HSL
   resultsEl.addEventListener('click', (ev) => {
     const target = ev.target as HTMLElement;
     const hslBtn = target.closest<HTMLButtonElement>('#cmdSearchHslBtn');
@@ -171,6 +200,9 @@ export function initCmdPalette(): void {
     } else if (type === 'preporta') {
       const id = btn.dataset.id;
       if (id) uiBridge.navigate('preporta', { itemId: id });
+    } else if (type === 'tecnica') {
+      const id = btn.dataset.id;
+      uiBridge.navigate('preporta', id ? { subTab: 'tecnica', itemId: id } : { subTab: 'tecnica' });
     } else if (type === 'section') {
       const sec = (btn.dataset.section || 'ferramentas') as AppSection;
       const sub = btn.dataset.subtab || undefined;
@@ -185,7 +217,7 @@ export function initCmdPalette(): void {
     overlay.classList.add('open');
     input.value = initialQuery;
     debouncedRenderResults.cancel();
-    renderResults();
+    void renderResults();
     setTimeout(() => input.focus(), 20);
   };
 
@@ -230,6 +262,11 @@ export function initCmdPalette(): void {
       }
     });
   });
+
+  // Aquece o Web Worker em background sem travar o boot inicial
+  if (typeof window !== 'undefined') {
+    setTimeout(() => warmupSearchWorker(), 180);
+  }
 
   uiBridge.openCmdPalette = open;
   uiBridge.closeCmdPalette = close;

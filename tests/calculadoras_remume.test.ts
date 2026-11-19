@@ -14,6 +14,14 @@ import {
   calcWellsTvp,
   calcCha2ds2Vasc,
 } from '../src/engine/calculadoras.ts';
+import { getDrugClinicalMeta } from '../src/data/remume.ts';
+import { resolveProtocolPharmaHints } from '../src/data/clinical_links.ts';
+import { buildClinicalContext } from '../src/engine/clinicalContext.ts';
+import {
+  auditPrescription,
+  extractPrescriptionItemsFromText,
+  parseEstimatedDailyDoseMg,
+} from '../src/engine/prescriptionGuard.ts';
 
 test('REMUME: base possui 252 medicamentos válidos e busca normaliza acentos, vírgula/ponto e unidades', () => {
   assert.equal(REMUME_ITEMS.length, 252);
@@ -164,3 +172,134 @@ test('Calculadoras: validações de borda, faixa etária, unidades e datas invá
   });
   assert.ok(centorBaby.classification.includes('< 3 anos'));
 });
+
+test('Pilar 3 — Enriquecimento REMUME (RemumeClinicalMeta) e Auditor de Prescrição (prescriptionGuard.ts)', () => {
+  // 1. Metadados clínicos hidratados na REMUME (252 itens intactos)
+  assert.equal(REMUME_ITEMS.length, 252);
+  const hydratedCount = REMUME_ITEMS.filter((i) => Boolean(i.clinicalMeta)).length;
+  assert.ok(hydratedCount >= 60, `Esperado >= 60 itens REMUME com clinicalMeta estruturado (obtido: ${hydratedCount})`);
+
+  const amoxMeta = getDrugClinicalMeta('Amoxicilina 500 mg');
+  assert.equal(amoxMeta?.therapeuticClass, 'beta_lactamico_penicilina');
+  assert.equal(amoxMeta?.maxDailyDoseMg, 3000);
+  assert.equal(amoxMeta?.maxDailyDoseMgPerKg, 90);
+
+  // 2. Duplicidade de classe terapêutica (2 AINEs e 2 Beta-lactâmicos)
+  const adultCtx = buildClinicalContext({ nome: 'João', idade: '45a', pesoKg: '75', sexo: 'M', alergias: '' });
+  const dupReport = auditPrescription(
+    [
+      { name: 'Ibuprofeno 600 mg', posology: '1 cp VO 8/8h' },
+      { name: 'Diclofenaco 50 mg', posology: '1 cp VO 8/8h' },
+      { name: 'Amoxicilina 500 mg', posology: '1 cp VO 8/8h' },
+      { name: 'Cefalexina 500 mg', posology: '1 cp VO 6/6h' },
+    ],
+    adultCtx
+  );
+  assert.ok(
+    dupReport.alerts.some((a) => a.category === 'duplicity' && a.ruleCode === 'DUPLICITY_AINE' && a.severity === 'block'),
+    'Dois AINEs devem disparar bloqueio de duplicidade'
+  );
+  assert.ok(
+    dupReport.alerts.some((a) => a.category === 'duplicity' && a.ruleCode === 'DUPLICITY_BETA_LACTAMICO'),
+    'Dois beta-lactâmicos devem disparar alerta de duplicidade'
+  );
+
+  // 3. Conflito direto e cruzado com alergias da sessão (Penicilina + Dipirona)
+  const allergyCtx = buildClinicalContext({
+    nome: 'Ana',
+    idade: '34a',
+    pesoKg: '62',
+    sexo: 'F',
+    alergias: 'Penicilina, Dipirona',
+  });
+  const allergyReport = auditPrescription(
+    [
+      { name: 'Amoxicilina 500 mg', posology: '1 cp 8/8h' },
+      { name: 'Cefalexina 500 mg', posology: '1 cp 6/6h' },
+      { name: 'Dipirona 500 mg', posology: '1 cp 6/6h' },
+    ],
+    allergyCtx
+  );
+  assert.ok(
+    allergyReport.alerts.some((a) => a.category === 'allergy' && a.severity === 'block' && a.drugNames[0].includes('Amoxicilina')),
+    'Alergia a Penicilina deve bloquear Amoxicilina'
+  );
+  assert.ok(
+    allergyReport.alerts.some((a) => a.category === 'allergy' && a.severity === 'warn' && a.drugNames[0].includes('Cefalexina')),
+    'Alergia a Penicilina deve emitir warn de reação cruzada para Cefalexina'
+  );
+  assert.ok(
+    allergyReport.alerts.some((a) => a.category === 'allergy' && a.severity === 'block' && a.drugNames[0].includes('Dipirona')),
+    'Alergia a Dipirona deve bloquear Dipirona'
+  );
+
+  // 4. Contraindicação / ajuste por TFG (DRC grave ClCr < 30) e Gestação 3º trimestre
+  const drcCtx = buildClinicalContext({
+    nome: 'Carlos',
+    idade: '72a',
+    pesoKg: '70',
+    sexo: 'M',
+    creatinina: '3,2',
+    alergias: '',
+  });
+  assert.ok(drcCtx.effectiveGfrMlMin !== null && drcCtx.effectiveGfrMlMin < 30, 'Cr 3,2 em 72a deve resultar em TFG < 30');
+  const drcReport = auditPrescription(
+    [
+      { name: 'Metformina 850 mg', posology: '1 cp 12/12h' },
+      { name: 'Nitrofurantoína 100 mg', posology: '1 cp 6/6h' },
+      { name: 'Ibuprofeno 600 mg', posology: '1 cp 8/8h' },
+    ],
+    drcCtx
+  );
+  assert.equal(
+    drcReport.alerts.filter((a) => a.category === 'renal' && a.severity === 'block').length,
+    3,
+    'Metformina, Nitrofurantoína e Ibuprofeno devem ser bloqueados com TFG < 30'
+  );
+
+  const pregCtx = buildClinicalContext({
+    nome: 'Clara',
+    idade: '29a',
+    pesoKg: '66',
+    sexo: 'F',
+    gestante: true,
+    igSemanas: '30',
+    alergias: '',
+  });
+  const pregReport = auditPrescription(
+    [
+      { name: 'Enalapril 10 mg', posology: '1 cp 12/12h' },
+      { name: 'Ibuprofeno 600 mg', posology: '1 cp 8/8h' },
+      { name: 'Ácido valpróico 500 mg', posology: '1 cp 12/12h' },
+      { name: 'Paracetamol 750 mg', posology: '1 cp 6/6h' },
+    ],
+    pregCtx
+  );
+  assert.equal(
+    pregReport.alerts.filter((a) => a.category === 'pregnancy' && a.severity === 'block').length,
+    3,
+    'Enalapril (D), Ibuprofeno (3º tri) e Ácido valpróico (X) devem ser bloqueados na gestação; Paracetamol liberado'
+  );
+
+  // 5. Dose diária acima do teto (adulto e pediátrico) + Contraindicação por protocolo (Dengue + AINE)
+  const doseEst = parseEstimatedDailyDoseMg('Paracetamol 1000 mg 2 cp de 6/6h');
+  assert.equal(doseEst.dailyDoseMg, 8000);
+  const ceilAdult = auditPrescription([{ name: 'Paracetamol 1000 mg', posology: '2 cp VO de 6/6h' }], adultCtx);
+  assert.ok(ceilAdult.alerts.some((a) => a.category === 'ceiling' && a.ruleCode === 'DOSE_CEILING_ADULT'));
+
+  const pedCtx = buildClinicalContext({ nome: 'Pedro', idade: '3a', pesoKg: '10', sexo: 'M', alergias: '' });
+  const ceilPed = auditPrescription([{ name: 'Ibuprofeno 200 mg', posology: '1 cp VO de 6/6h' }], pedCtx);
+  assert.ok(
+    ceilPed.alerts.some((a) => a.category === 'ceiling' && a.ruleCode === 'DOSE_CEILING_PEDIATRIC'),
+    '800 mg/dia de Ibuprofeno em criança de 10 kg (teto 400 mg/dia) deve bloquear'
+  );
+
+  const dengueHints = resolveProtocolPharmaHints({ trigger: ';dengue' });
+  const dengueItems = extractPrescriptionItemsFromText('1. Dipirona 1 g EV 6/6h\n2. Ibuprofeno 600 mg VO 8/8h');
+  const dengueReport = auditPrescription(dengueItems, adultCtx, dengueHints);
+  assert.ok(
+    dengueReport.alerts.some((a) => a.category === 'protocol' && a.severity === 'block'),
+    'Ibuprofeno em protocolo ;dengue deve disparar bloqueio de protocolo'
+  );
+});
+

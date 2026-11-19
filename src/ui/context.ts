@@ -2,6 +2,7 @@ import protocolsPayload from '../data/protocols.generated.json' with { type: 'js
 import type { ClinicalProtocolItem } from '../data/clinical_data.ts';
 import { createClinicalSearchIndex } from '../engine/search.ts';
 import {
+  migrateCentral6AnoState,
   RODIZIOS_6ANO,
   type Central6AnoState,
   type MarchaId,
@@ -249,10 +250,8 @@ export function getCentral6AnoState(): Central6AnoState {
   const legacyNotes = readLegacyTeoriaNotes();
 
   if (!isRecord(raw)) {
-    if (Object.keys(legacyNotes).length > 0) {
-      return { ...base, teoriaExercisesNotes: legacyNotes };
-    }
-    return base;
+    const initial = Object.keys(legacyNotes).length > 0 ? { ...base, teoriaExercisesNotes: legacyNotes } : base;
+    return migrateCentral6AnoState(initial);
   }
 
   const p = raw as Partial<Central6AnoState>;
@@ -277,8 +276,27 @@ export function getCentral6AnoState(): Central6AnoState {
     }
   }
 
-  return {
+  const sanitizedDrillProgress: NonNullable<Central6AnoState['teoriaDrillProgressById']> = {};
+  if (isRecord(p.teoriaDrillProgressById)) {
+    for (const [drillId, rawEntry] of Object.entries(p.teoriaDrillProgressById)) {
+      if (!isRecord(rawEntry)) continue;
+      const lastResult = rawEntry.lastResult === 'correct' ? 'correct' : 'wrong';
+      sanitizedDrillProgress[drillId] = {
+        drillId: typeof rawEntry.drillId === 'string' && rawEntry.drillId ? rawEntry.drillId : drillId,
+        modId: typeof rawEntry.modId === 'string' ? rawEntry.modId : '',
+        attempts: toSafeNonNegInt(rawEntry.attempts, 0),
+        correctCount: toSafeNonNegInt(rawEntry.correctCount, 0),
+        streakCorrect: toSafeNonNegInt(rawEntry.streakCorrect, 0),
+        lastResult,
+        lastAttemptIso: typeof rawEntry.lastAttemptIso === 'string' ? rawEntry.lastAttemptIso : '',
+        nextReviewIso: typeof rawEntry.nextReviewIso === 'string' ? rawEntry.nextReviewIso : '',
+      };
+    }
+  }
+
+  const rawMerged: Central6AnoState = {
     ...base,
+    schemaVersion: typeof p.schemaVersion === 'number' ? p.schemaVersion : 1,
     rodizioId: typeof p.rodizioId === 'string' && p.rodizioId ? p.rodizioId : base.rodizioId,
     feriasSemana: typeof p.feriasSemana === 'string' && p.feriasSemana ? p.feriasSemana : base.feriasSemana,
     marchaId:
@@ -312,6 +330,7 @@ export function getCentral6AnoState(): Central6AnoState {
     teoriaStatusById: sanitizedTeoriaStatus,
     teoriaExercisesDone: toSafeBooleanRecord(p.teoriaExercisesDone),
     teoriaExercisesNotes: mergedNotes,
+    teoriaDrillProgressById: sanitizedDrillProgress,
     procCountsById: toSafeNumberRecord(p.procCountsById),
     procAutonomyById: toSafeProcAutonomy(p.procAutonomyById),
     checkedTimelineIds: toSafeBooleanRecord(p.checkedTimelineIds),
@@ -320,7 +339,25 @@ export function getCentral6AnoState(): Central6AnoState {
     curriculoDoneIds: toSafeBooleanRecord(p.curriculoDoneIds),
     ritualDomingoDoneIds: toSafeBooleanRecord(p.ritualDomingoDoneIds),
     travasCheckedIds: toSafeBooleanRecord(p.travasCheckedIds),
+    weeklySchedule: p.weeklySchedule,
+    dailyTasks: p.dailyTasks,
+    focoSemanalAncora70: typeof p.focoSemanalAncora70 === 'string' ? p.focoSemanalAncora70 : undefined,
+    focoSemanalTrilha30: typeof p.focoSemanalTrilha30 === 'string' ? p.focoSemanalTrilha30 : undefined,
+    questoesHoje: toSafeNonNegInt(p.questoesHoje, 0),
+    questoesHojeDateIso: typeof p.questoesHojeDateIso === 'string' ? p.questoesHojeDateIso : '',
+    ankiCardsHoje: toSafeNonNegInt(p.ankiCardsHoje, 0),
+    ankiCardsSem: toSafeNonNegInt(p.ankiCardsSem, 0),
+    ankiCardsDateIso: typeof p.ankiCardsDateIso === 'string' ? p.ankiCardsDateIso : '',
+    ankiMetaSemanal: toSafeNonNegInt(p.ankiMetaSemanal, 350) || 350,
+    r1Milestones: p.r1Milestones,
+    curriculumEntries: p.curriculumEntries,
+    curriculumEnamedConcept:
+      p.curriculumEnamedConcept === 3 || p.curriculumEnamedConcept === 4 || p.curriculumEnamedConcept === 5
+        ? p.curriculumEnamedConcept
+        : 5,
   };
+
+  return migrateCentral6AnoState(rawMerged);
 }
 
 export function updateCentral6AnoState(

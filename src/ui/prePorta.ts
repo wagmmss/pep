@@ -1,12 +1,33 @@
 import type { ClinicalProtocolItem, PitfallItem } from '../data/clinical_data.ts';
 import { resolveLinksForPrePorta } from '../data/clinical_links.ts';
 import { getLocalTodayIso } from '../engine/calculadoras.ts';
-import { recordPrePortaExecution } from '../engine/central6ano.ts';
+import {
+  LOGBOOK_PROCEDIMENTOS_MATRIX,
+  recordPrePortaExecution,
+  registerProcedureExecution,
+  type ProcedureAutonomy,
+} from '../engine/central6ano.ts';
+import { findMatchingBlindSpots } from '../engine/clinicalContext.ts';
 import { formatGuiaInlineHtml, renderTeoriaMarkdownToHtml } from '../engine/diretrizes.ts';
 import { getClinicalSeverity } from '../engine/workstation.ts';
 import { cockpitStore } from '../state/store.ts';
 import { getCentral6AnoState, HAB_PROTOCOLS, PROTOCOL_BY_TRIGGER, uiBridge, updateCentral6AnoState } from './context.ts';
+import { renderBlindSpotReminderHtml } from './pep/pepContextBar.ts';
 import { copyToClipboard, escapeHtml, showToast } from './utils.ts';
+
+const HAB_TO_LOGBOOK_PROCS: Record<string, string[]> = {
+  'hab-3': ['proc-especular', 'proc-toque-obs', 'proc-parto-sut'],
+  'hab-10': ['proc-ped-oto', 'proc-ped-sala-parto', 'proc-ped-diluicao'],
+  'hab-12': ['proc-ecg-10'],
+  'hab-14': ['proc-gaso-5', 'proc-gaso-art'],
+  'hab-16': ['proc-mfc-ice'],
+  'hab-17': ['proc-mfc-rastreio'],
+  'hab-18': ['proc-efast', 'proc-sri'],
+  'hab-19': ['proc-paracentese', 'proc-toracocentese', 'proc-pl', 'proc-svd', 'proc-sng'],
+  'hab-20': ['proc-otoscopia', 'proc-fluoresceina', 'proc-tamponamento'],
+  'hab-21': ['proc-sutura', 'proc-curativo'],
+  'hab-22': ['proc-bvm', 'proc-iot', 'proc-sri', 'proc-cvc'],
+};
 
 interface DeepGuideSection {
   title: string;
@@ -534,6 +555,14 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
               </div>
             </div>
 
+            ${renderBlindSpotReminderHtml(
+              findMatchingBlindSpots(centralState.logbookEntries, {
+                title: activeHab.title,
+                category: activeHab.hab_category || activeHab.category,
+                trigger: activeHab.trigger,
+              })
+            )}
+
             ${
               activeHab.anchor
                 ? `<div class="hab-anchor-box">
@@ -569,6 +598,41 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
             </div>
 
             <div class="hab-panel">${activeTabContent}</div>
+
+            ${(() => {
+              const linkedProcIds = HAB_TO_LOGBOOK_PROCS[activeHab.id] || [];
+              const linkedProcs = linkedProcIds
+                .map((pid) => LOGBOOK_PROCEDIMENTOS_MATRIX.find((p) => p.id === pid))
+                .filter((p): p is (typeof LOGBOOK_PROCEDIMENTOS_MATRIX)[number] => Boolean(p));
+              if (linkedProcs.length === 0) return '';
+              return `
+                <div class="pp-quick-logbook-strip" id="habQuickLogbookStrip">
+                  <div class="pp-quick-logbook-head">
+                    <strong>⚡ Registro 1-Toque no Logbook (Acabou de fazer na prática?)</strong>
+                    <span class="c6-meta-line">Soma direto na sua meta motora do 6º ano</span>
+                  </div>
+                  <div class="pp-quick-logbook-list">
+                    ${linkedProcs
+                      .map((proc) => {
+                        const count = centralState.procCountsById?.[proc.id] || 0;
+                        return `
+                          <div class="pp-quick-logbook-row">
+                            <div class="pp-quick-proc-name">
+                              <span>${escapeHtml(proc.nome)}</span>
+                              <span class="pp-quick-proc-count c6-tabular">${count}/${proc.metaAlvo}</span>
+                            </div>
+                            <div class="pp-quick-proc-btns">
+                              <button type="button" class="btn btn-secondary btn-xs" data-pp-log-proc="${escapeHtml(proc.id)}" data-pp-log-auto="auxiliei">+1 Auxiliei</button>
+                              <button type="button" class="btn btn-secondary btn-xs" data-pp-log-proc="${escapeHtml(proc.id)}" data-pp-log-auto="supervisionado">+1 Superv.</button>
+                              <button type="button" class="btn btn-primary btn-xs" data-pp-log-proc="${escapeHtml(proc.id)}" data-pp-log-auto="autonomo">+1 Autônomo</button>
+                            </div>
+                          </div>`;
+                      })
+                      .join('')}
+                  </div>
+                </div>
+              `;
+            })()}
           </article>
         </div>
       </section>
@@ -728,6 +792,22 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
         if (mid) {
           uiBridge.navigate('teoria', { subTab: mid });
         }
+      });
+    });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-pp-log-proc]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const procId = btn.dataset.ppLogProc;
+        const auto = btn.dataset.ppLogAuto as ProcedureAutonomy | undefined;
+        if (!procId || !auto) return;
+        const proc = LOGBOOK_PROCEDIMENTOS_MATRIX.find((p) => p.id === procId);
+        updateCentral6AnoState((prev) => registerProcedureExecution(prev, procId, auto));
+        showToast(
+          `✅ +1 registrado em "${proc?.nome || procId}" (${auto}) no Logbook!`,
+          'success',
+          2000
+        );
+        render(container);
       });
     });
   };

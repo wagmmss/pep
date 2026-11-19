@@ -1,0 +1,996 @@
+/* ============================================================================
+ * FORMAÇÃO TEÓRICA v2 — SUB-ABAS, REVISÃO DO DIA & MOTOR DE TREINO ATIVO
+ * Clinical Calm / Clinical Precision — 9 Módulos · 43 Cenários Offline
+ * ============================================================================ */
+
+/* ---------- Faixa Compacta de Revisão do Dia + Domínios Fracos ---------- */
+.td-review-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-subtle);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+}
+
+.td-review-strip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  color: var(--ink-primary);
+}
+
+/* ---------- Navegação Lateral dos 9 Módulos ---------- */
+.td-nav-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.td-nav-title {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--ink-primary);
+}
+
+.td-nav-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.td-nav-drill-stat {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+}
+
+.td-nav-drill-stat.is-ready {
+  color: var(--normal);
+  background: var(--normal-bg);
+  border-color: var(--normal);
+}
+
+.td-mono-file {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+/* ---------- Sub-abas Teoria vs Treino Ativo ---------- */
+.td-subtab-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0 16px;
+  padding: 6px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-md);
+}
+
+.td-subtab-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.td-subtab-btn:hover {
+  background: var(--bg-elevated);
+  border-color: var(--line-subtle);
+  color: var(--ink-primary);
+}
+
+.td-subtab-btn.active {
+  background: var(--bg-surface);
+  border-color: var(--accent);
+  color: var(--ink-primary);
+}
+
+.td-subtab-count {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 4px;
+  background: var(--bg-elevated);
+  color: var(--accent);
+  border: 1px solid var(--line-subtle);
+}
+
+/* ---------- Banner de Promoção Híbrida ≥80% -> Dominado ---------- */
+.td-mastery-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 11px 14px;
+  margin-bottom: 16px;
+  background: var(--normal-bg);
+  border: 1px solid var(--normal);
+  border-radius: var(--radius-md);
+  color: var(--ink-primary);
+  font-size: 13px;
+}
+
+/* ---------- Blocos Auxiliares da Aba Leitura ---------- */
+.td-links-box {
+  margin: 0 0 18px;
+  padding: 10px 12px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-md);
+}
+
+.td-links-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.td-ai-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-subtle);
+}
+
+.td-ai-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.td-notes-group {
+  margin-top: 12px;
+}
+
+.td-save-row {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* ============================================================================
+ * DRILL SHELL UNIFICADO (4 PRIMITIVAS COMPONÍVEIS)
+ * ============================================================================ */
+.td-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.td-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-md);
+}
+
+.td-queue-strip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.td-q-pill {
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: 30px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-subtle);
+  background: var(--bg-surface);
+  color: var(--ink-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+
+.td-q-pill:hover {
+  border-color: var(--line-strong);
+  color: var(--ink-primary);
+}
+
+.td-q-pill.is-passed {
+  background: var(--normal-bg);
+  border-color: var(--normal);
+  color: var(--normal);
+}
+
+.td-q-pill.is-failed {
+  background: var(--critical-bg);
+  border-color: var(--critical);
+  color: var(--critical);
+}
+
+.td-q-pill.is-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.td-toolbar-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.td-mode-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ---------- Card da Vinheta Clínica ---------- */
+.td-case-card {
+  padding: 16px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-md);
+}
+
+.td-case-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.td-mechanic-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.td-case-title {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink-primary);
+}
+
+.td-case-vignette {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-primary);
+  max-width: 72ch;
+}
+
+.td-case-quote {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  background: var(--bg-surface-subtle);
+  border-left: 3px solid var(--info);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-primary);
+  font-style: italic;
+}
+
+/* ---------- Estágios 1 e 2 ---------- */
+.td-stage-box {
+  padding: 15px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-md);
+}
+
+.td-stage2-box {
+  border-left: 3px solid var(--info);
+}
+
+.td-stage-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.td-stage-prompt {
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ink-primary);
+}
+
+.td-budget-counter {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  color: var(--ink-secondary);
+}
+
+.td-budget-counter.is-ready {
+  background: var(--info-bg);
+  border-color: var(--info);
+  color: var(--info);
+}
+
+.td-seq-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Lista de Opções (Multi-Select / Single-Decision / Folha Prescrição / Documento) ---------- */
+.td-option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.td-sheet-prescription {
+  padding: 10px;
+  background: var(--bg-surface-subtle);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+}
+
+.td-sheet-document {
+  padding: 10px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+}
+
+.td-option-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  padding: 11px 13px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-subtle);
+  background: var(--bg-surface-subtle);
+  color: var(--ink-primary);
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+
+.td-option-btn:hover:not(:disabled) {
+  background: var(--bg-elevated);
+  border-color: var(--line-strong);
+}
+
+.td-option-btn:disabled {
+  cursor: default;
+}
+
+.td-option-btn.is-selected {
+  background: var(--info-bg);
+  border-color: var(--info);
+}
+
+.td-option-btn.is-correct {
+  background: var(--normal-bg);
+  border-color: var(--normal);
+}
+
+.td-option-btn.is-wrong {
+  background: var(--critical-bg);
+  border-color: var(--critical);
+}
+
+.td-option-btn.is-missed {
+  background: var(--warning-bg);
+  border-color: var(--warning);
+}
+
+.td-option-index {
+  flex: 0 0 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-strong);
+  color: var(--ink-secondary);
+  margin-top: 1px;
+}
+
+.td-option-btn.is-selected .td-option-index {
+  background: var(--info);
+  border-color: var(--info);
+  color: #ffffff;
+}
+
+.td-option-btn.is-correct .td-option-index {
+  background: var(--normal);
+  border-color: var(--normal);
+  color: var(--accent-fg);
+}
+
+.td-option-btn.is-wrong .td-option-index {
+  background: var(--critical);
+  border-color: var(--critical);
+  color: #ffffff;
+}
+
+.td-option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.td-option-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink-primary);
+}
+
+.td-option-tag {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-strong);
+  color: var(--ink-secondary);
+}
+
+.td-option-note {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink-secondary);
+}
+
+/* ---------- Tap-to-Order & Grade de Triagem Multi-Paciente ---------- */
+.td-triage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.td-seq-card {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  padding: 12px 13px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-subtle);
+  background: var(--bg-surface-subtle);
+  color: var(--ink-primary);
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+
+.td-seq-card:hover:not(:disabled) {
+  background: var(--bg-elevated);
+  border-color: var(--line-strong);
+}
+
+.td-seq-card:disabled {
+  cursor: default;
+}
+
+.td-seq-card.is-selected {
+  background: var(--info-bg);
+  border-color: var(--info);
+}
+
+.td-seq-card.is-correct {
+  background: var(--normal-bg);
+  border-color: var(--normal);
+}
+
+.td-seq-card.is-wrong {
+  background: var(--critical-bg);
+  border-color: var(--critical);
+}
+
+.td-seq-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.td-rank-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-strong);
+  color: var(--ink-secondary);
+}
+
+.td-seq-card.is-selected .td-rank-box {
+  background: var(--info);
+  border-color: var(--info);
+  color: #ffffff;
+}
+
+.td-seq-card.is-correct .td-rank-box {
+  background: var(--normal);
+  border-color: var(--normal);
+  color: var(--accent-fg);
+}
+
+.td-seq-card.is-wrong .td-rank-box {
+  background: var(--critical);
+  border-color: var(--critical);
+  color: #ffffff;
+}
+
+.td-expected-rank {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink-secondary);
+}
+
+.td-seq-sublabel {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink-secondary);
+}
+
+.td-vitals-line {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.45;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-subtle);
+  color: var(--ink-primary);
+}
+
+/* ---------- Gate de Bloqueio do Estágio 2 ---------- */
+.td-stage-locked {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--line-strong);
+  background: var(--bg-surface-subtle);
+  color: var(--ink-muted);
+  font-size: 12.5px;
+}
+
+.td-stage-banner {
+  padding: 9px 12px;
+  margin-bottom: 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid var(--line-subtle);
+}
+
+.td-stage-banner.is-pass {
+  background: var(--normal-bg);
+  border-color: var(--normal);
+  color: var(--normal);
+}
+
+.td-stage-banner.is-warn {
+  background: var(--warning-bg);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+/* ---------- Barra de Ações do Drill ---------- */
+.td-action-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Painel de Feedback em 3 Blocos ---------- */
+.td-feedback-panel {
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-subtle);
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.td-feedback-panel.is-pass {
+  border-left: 4px solid var(--normal);
+}
+
+.td-feedback-panel.is-fail {
+  border-left: 4px solid var(--critical);
+}
+
+.td-feedback-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.td-verdict-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.td-feedback-panel.is-pass .td-verdict-title {
+  color: var(--normal);
+}
+
+.td-feedback-panel.is-fail .td-verdict-title {
+  color: var(--critical);
+}
+
+.td-feedback-block {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+}
+
+.td-trap-block {
+  background: var(--warning-bg);
+  border-color: var(--warning);
+}
+
+.td-feedback-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-secondary);
+  margin-bottom: 4px;
+}
+
+.td-trap-block .td-feedback-label {
+  color: var(--warning);
+}
+
+.td-feedback-text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-primary);
+}
+
+.td-feedback-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+/* ---------- Ajustes Tema Claro (Alto Contraste em Badges/Banners) ---------- */
+html.light .td-stage-banner.is-warn,
+body.light-theme .td-stage-banner.is-warn,
+html.light .td-trap-block .td-feedback-label,
+body.light-theme .td-trap-block .td-feedback-label {
+  color: #92400e;
+}
+
+html.light .td-subtab-btn,
+body.light-theme .td-subtab-btn {
+  background: var(--bg-surface);
+  border-color: var(--line-subtle);
+}
+
+html.light .td-subtab-btn.active,
+body.light-theme .td-subtab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-fg);
+}
+
+html.light .td-subtab-btn.active .td-subtab-count,
+body.light-theme .td-subtab-btn.active .td-subtab-count {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+/* ---------- Responsivo Mobile (390px+) ---------- */
+@media (max-width: 720px) {
+  .td-triage-grid {
+    grid-template-columns: 1fr;
+  }
+  .td-case-card,
+  .td-stage-box,
+  .td-feedback-panel {
+    padding: 13px 12px;
+  }
+  .td-subtab-bar {
+    gap: 6px;
+  }
+  .td-subtab-btn {
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 8px 10px;
+  }
+}
+
+/* ============================================================================
+ * GUARDRAILS DE SEGURANÇA CLÍNICA & LOOP FECHADO (PEP + PRÉ-PORTA + TEORIA)
+ * ============================================================================ */
+.td-review-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.td-read-cta {
+  margin-top: 20px;
+  margin-bottom: 0;
+  background: var(--bg-surface-subtle);
+  border-color: var(--accent);
+}
+
+/* ---------- Trava de Confirmação em 2 Etapas antes da Cópia ---------- */
+.pep-safety-gate {
+  margin: 8px 0 10px;
+  padding: 12px 14px;
+  background: var(--critical-bg);
+  border: 1px solid var(--critical);
+  border-left: 4px solid var(--critical);
+  border-radius: var(--radius-md);
+  color: var(--ink-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pep-safety-gate-head {
+  font-size: 13px;
+  color: var(--critical);
+}
+
+.pep-safety-gate-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pep-safety-gate-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+/* ---------- Alerta de Sessão do Paciente >20 min ---------- */
+.pep-stale-banner {
+  margin-bottom: 8px;
+  padding: 9px 12px;
+  background: var(--warning-bg);
+  border: 1px solid var(--warning);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: var(--ink-primary);
+}
+
+.pep-stale-text {
+  line-height: 1.4;
+}
+
+.pep-stale-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Alerta de Plausibilidade Idade × Peso ---------- */
+.pep-plausibility-banner {
+  margin-top: 6px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--ink-primary);
+}
+
+.pep-plausibility-banner.is-critical {
+  background: var(--critical-bg);
+  border: 1px solid var(--critical);
+}
+
+.pep-plausibility-banner.is-warn {
+  background: var(--warning-bg);
+  border: 1px solid var(--warning);
+}
+
+/* ---------- Lembrete de Ponto Cego em Loop Fechado (PEP & Pré-Porta) ---------- */
+.pep-blindspot-banner {
+  margin: 8px 0 10px;
+  padding: 10px 12px;
+  background: var(--info-bg);
+  border: 1px solid var(--info);
+  border-left: 3px solid var(--info);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pep-blindspot-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--info);
+}
+
+.pep-blindspot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pep-blindspot-item {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink-primary);
+}
+
+.pep-blindspot-title {
+  font-weight: 700;
+}
+
+/* ---------- Registro 1-Toque no Logbook dentro do Pré-Porta 30s ---------- */
+.pp-quick-logbook-strip {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pp-quick-logbook-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: var(--ink-primary);
+}
+
+.pp-quick-logbook-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pp-quick-logbook-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 8px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.pp-quick-proc-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.pp-quick-proc-count {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  color: var(--accent);
+}
+
+.pp-quick-proc-btns {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+

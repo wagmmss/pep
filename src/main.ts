@@ -270,7 +270,7 @@ function renderActiveWorkspace(): void {
   const param =
     section === 'preporta'
       ? route.itemId
-      : section === 'ferramentas' || section === 'teoria'
+      : section === 'ferramentas' || section === 'teoria' || section === 'hoje'
         ? route.subTab
         : section === 'logbook' && pendingLogbookPrefill !== null
           ? pendingLogbookPrefill

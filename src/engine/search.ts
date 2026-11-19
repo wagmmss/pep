@@ -704,6 +704,8 @@ const BUILTIN_TOOLS_AND_THEORY_INDEX: ToolOrTheorySearchEntry[] = [
   { id: 'mod-05', kind: 'teoria', title: 'Módulo 05 — Interpretação Sistemática de Exames', subtitle: 'Formação Teórica', keywords: 'exames ecg gasometria rx tc efast', routeSection: 'teoria', subTab: 'mod-05' },
   { id: 'mod-06', kind: 'teoria', title: 'Módulo 06 — Farmacologia Prática & 7 Travas', subtitle: 'Formação Teórica', keywords: 'farmacologia prescricao 7 travas intercorrencias', routeSection: 'teoria', subTab: 'mod-06' },
   { id: 'mod-07', kind: 'teoria', title: 'Módulo 07 — Execução Motora & Procedimentos', subtitle: 'Formação Teórica', keywords: 'procedimentos sutura iot via aerea paracentese', routeSection: 'teoria', subTab: 'mod-07' },
+  { id: 'mod-08', kind: 'teoria', title: 'Módulo 08 — Triagem Multi-Paciente & Deterioração', subtitle: 'Formação Teórica', keywords: 'triagem priorizacao mews news2 deterioracao plantao sepse choque quem ver primeiro', routeSection: 'teoria', subTab: 'mod-08' },
+  { id: 'mod-09', kind: 'teoria', title: 'Módulo 09 — Prontuário Defensivo, Alta & Documentos Legais', subtitle: 'Formação Teórica', keywords: 'prontuario defensivo soap receita alta declaracao obito do iml svo cross alta a pedido', routeSection: 'teoria', subTab: 'mod-09' },
 ];
 
 /**
@@ -729,10 +731,11 @@ export function searchGlobalStratified<T extends ClinicalSearchItem>(
   const peps = allRanked.filter((r) => r.item.mod_id !== 'hab').slice(0, pepLimit);
   const prePorta = allRanked.filter((r) => r.item.mod_id === 'hab').slice(0, habLimit);
 
-  const ferramentasTeoria = qNorm
+  const qTokens = qNorm ? qNorm.split(/\s+/).filter(Boolean) : [];
+  const ferramentasTeoria = qTokens.length
     ? BUILTIN_TOOLS_AND_THEORY_INDEX.filter((entry) => {
         const hay = normalizeSearchText(`${entry.title} ${entry.subtitle} ${entry.keywords}`);
-        return hay.includes(qNorm);
+        return qTokens.every((tok) => hay.includes(tok));
       }).slice(0, toolsLimit)
     : BUILTIN_TOOLS_AND_THEORY_INDEX.slice(0, toolsLimit);
 

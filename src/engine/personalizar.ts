@@ -309,16 +309,31 @@ export function sanitizePepOutput(rawText: string, opts?: SanitizePepOptions): s
       builtLine = builtLine.replace(/^>>\s*/, '');
     }
 
+    // Limpar tokens LaTeX residuais ($...$, \rightarrow, \ge, \le, \pm, \times)
+    builtLine = builtLine
+      .replace(/\$([^$\n]+)\$/g, '$1')
+      .replace(/\\rightarrow|\\to\b/g, '→')
+      .replace(/\\ge(?:q)?\b/g, '≥')
+      .replace(/\\le(?:q)?\b/g, '≤')
+      .replace(/\\pm\b/g, '±')
+      .replace(/\\times\b/g, '×')
+      .replace(/\\approx\b/g, '≈');
+
     // Limpar dois-pontos ou hifens órfãos deixados após remoção de [Se ...] no início de item numerado/lista
     builtLine = builtLine.replace(/^(\s*(?:\d+\.|[-*])\s*)[:\-–]\s+/, '$1');
     builtLine = builtLine.replace(/^[:\-–]\s+/, '');
     // Limpar espaços múltiplos antes de traços de receita ou pontuação, preservando indentação inicial
     const leadingIndentMatch = builtLine.match(/^(\s*)/);
     const leadingIndent = leadingIndentMatch ? leadingIndentMatch[1] : '';
-    const contentPart = builtLine.slice(leadingIndent.length).replace(/\s{2,}(?!--)/g, ' ').trimEnd();
+    const contentPart = builtLine
+      .slice(leadingIndent.length)
+      .replace(/\s+([,.;:])/g, '$1')
+      .replace(/([,;:])\s*\./g, '.')
+      .replace(/\s{2,}(?!--)/g, ' ')
+      .trimEnd();
 
-    // Se a linha inteira era apenas um cabeçalho [OPÇÃO 1...] ou [Se ...] sem texto residual, pular
-    if (!contentPart && trimmedRaw.length > 0) {
+    // Se a linha inteira era apenas um cabeçalho [OPÇÃO 1...] ou pontuação órfã sem texto residual, pular
+    if ((!contentPart || /^[.,;:–\-]+$/.test(contentPart.trim())) && trimmedRaw.length > 0) {
       continue;
     }
 

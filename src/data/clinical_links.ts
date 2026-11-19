@@ -374,7 +374,7 @@ const CLINICAL_LINKS_BY_MOD_OR_CAT: Record<string, ClinicalLinkEntry> = {
   'Emergencias Graves e Procedimentos': {
     habIds: ['hab-18', 'hab-19', 'hab-22'],
     prePortaTriggers: [';hab-abcde', ';hab-proc', ';hab-iot'],
-    teoriaModIds: ['mod-06', 'mod-07'],
+    teoriaModIds: ['mod-06', 'mod-07', 'mod-08'],
     showInConsultaMode: true,
   },
 };
@@ -387,6 +387,8 @@ const TEORIA_TO_HAB_LINKS: Record<string, string[]> = {
   'mod-05': ['hab-12', 'hab-13', 'hab-14', 'hab-15'],
   'mod-06': ['hab-17', 'hab-18'],
   'mod-07': ['hab-19', 'hab-21', 'hab-22'],
+  'mod-08': ['hab-18', 'hab-10', 'hab-4'],
+  'mod-09': ['hab-17', 'hab-16', 'hab-4'],
 };
 
 export function resolveClinicalLinksForPep(item: {
@@ -454,3 +456,86 @@ export function resolveLinksForTeoriaModule(modId: string): {
   }
   return { habIds, pepTriggers };
 }
+
+// ============================================================================
+// METADADOS FARMACOLÓGICOS DE PROTOCOLO (para prescriptionGuard.ts)
+// ============================================================================
+
+export interface ProtocolPharmaGuardHint {
+  /** Classes terapêuticas contraindicadas neste protocolo (ex.: 'aine', 'antiplaquetario') */
+  avoidClasses?: string[];
+  /** Chaves canônicas contraindicadas (ex.: 'aas', 'ibuprofeno') */
+  avoidCanonicalKeys?: string[];
+  /** Força auditoria obstétrica mesmo se checkbox gestante não foi marcado */
+  impliedPregnancy?: boolean;
+  /** Protocolo pediátrico — reforça auditoria de teto por peso */
+  impliedPediatric?: boolean;
+  /** Motivo clínico exibido no alerta */
+  reason: string;
+}
+
+const PROTOCOL_PHARMA_HINTS: Record<string, ProtocolPharmaGuardHint> = {
+  ';dengue': {
+    avoidClasses: ['aine'],
+    avoidCanonicalKeys: ['aas'],
+    reason: 'Dengue/Arbovirose: AINEs e AAS são CONTRAINDICADOS (risco de sangramento e síndrome de Reye).',
+  },
+  ';hda': {
+    avoidClasses: ['aine', 'anticoagulante'],
+    avoidCanonicalKeys: ['aas'],
+    reason: 'Hemorragia Digestiva Alta: evitar AINEs, AAS e anticoagulantes na fase aguda.',
+  },
+  ';pre-eclampsia': {
+    impliedPregnancy: true,
+    avoidClasses: ['ieca', 'bra', 'aine'],
+    reason: 'Gestante com Pré-Eclâmpsia: IECA/BRA e AINEs são contraindicados (risco fetal/renal).',
+  },
+  ';pn-1cons': {
+    impliedPregnancy: true,
+    reason: 'Pré-Natal: toda prescrição deve respeitar segurança gestacional.',
+  },
+  ';pn-sub': {
+    impliedPregnancy: true,
+    reason: 'Pré-Natal: toda prescrição deve respeitar segurança gestacional.',
+  },
+  ';tpp': {
+    impliedPregnancy: true,
+    reason: 'Trabalho de Parto Prematuro: auditoria obstétrica ativa.',
+  },
+  ';rpmo': {
+    impliedPregnancy: true,
+    reason: 'RPMO: auditoria obstétrica ativa.',
+  },
+  ';dpp-pp': {
+    impliedPregnancy: true,
+    avoidClasses: ['aine', 'anticoagulante'],
+    reason: 'Sangramento de 2º/3º trimestre: auditoria obstétrica e de sangramento ativa.',
+  },
+  ';abortamento': {
+    impliedPregnancy: true,
+    reason: 'Sangramento de 1º trimestre: auditoria gestacional ativa.',
+  },
+  ';colica-renal': {
+    reason: 'Cólica Renal: checar TFG/ClCr antes de prescrever AINEs.',
+  },
+};
+
+export function resolveProtocolPharmaHints(item: {
+  trigger?: string;
+  category?: string;
+  mod_id?: string;
+} | null | undefined): ProtocolPharmaGuardHint | null {
+  if (!item) return null;
+  const trig = String(item.trigger || '').trim().toLowerCase();
+  if (PROTOCOL_PHARMA_HINTS[trig]) {
+    return PROTOCOL_PHARMA_HINTS[trig];
+  }
+  if (trig.startsWith(';ped-') || String(item.mod_id || '').toLowerCase() === 'ped' || String(item.category || '').includes('Pediatria')) {
+    return {
+      impliedPediatric: true,
+      reason: 'Protocolo Pediátrico: validar dose por kg e teto diário.',
+    };
+  }
+  return null;
+}
+

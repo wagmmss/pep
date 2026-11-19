@@ -1,20 +1,41 @@
 import { cockpitStore } from '../state/store.ts';
+import { buildClinicalContext } from '../engine/clinicalContext.ts';
+import { auditPrescription } from '../engine/prescriptionGuard.ts';
 import { formatCartAsPrescriptionText, QUICK_CART_PRESETS } from '../engine/workstation.ts';
 import { copyToClipboard, escapeHtml, printReceiptDocument, showToast } from './utils.ts';
 import { uiBridge } from './context.ts';
+import { renderPrescriptionGuardBannerHtml } from './pep/pepContextBar.ts';
 
 export { formatCartAsPrescriptionText };
 
 export function renderCartPanel(container: HTMLElement): void {
   const state = cockpitStore.getState();
   const items = state.prescriptionCart;
+  const clinicalContext = buildClinicalContext(state.patientSession.identity);
+  const guardReport = auditPrescription(
+    items.map((item) => ({
+      id: item.id,
+      name: item.name,
+      posology: item.posology,
+      rawText: `${item.name} ${item.posology}`,
+    })),
+    clinicalContext
+  );
+
   const badge = document.getElementById('cartItemCountBadge');
   if (badge) {
     badge.textContent = String(items.length);
     badge.style.display = items.length > 0 ? 'inline-block' : 'none';
   }
   const tabCartBadge = document.getElementById('tabCartBadge');
-  if (tabCartBadge) tabCartBadge.textContent = `(${items.length})`;
+  if (tabCartBadge) {
+    tabCartBadge.textContent = guardReport.blockCount > 0 ? `(${items.length} ⛔)` : `(${items.length})`;
+  }
+
+  const guardBannerHtml = renderPrescriptionGuardBannerHtml(
+    guardReport,
+    '🛡️ Auditoria do Carrinho (Prescription Guard)'
+  );
 
   container.innerHTML = `
     <div class="cart-header-bar">
@@ -27,6 +48,8 @@ export function renderCartPanel(container: HTMLElement): void {
         <button type="button" class="btn btn-ghost btn-xs" id="cartClearBtn" ${items.length === 0 ? 'disabled' : ''}>Limpar</button>
       </div>
     </div>
+
+    <div id="cartGuardBannerSlot">${guardBannerHtml}</div>
 
     <div class="cart-presets-row" id="cartQuickPresets">
       <span class="mq-hint" style="width:100%;margin-bottom:2px;">Atalhos rápidos:</span>
@@ -121,6 +144,7 @@ export function renderCartPanel(container: HTMLElement): void {
         posology: posInput?.value ?? curr[idx].posology,
       };
       cockpitStore.setPrescriptionCart(curr);
+      renderCartPanel(container);
     };
     nameInput?.addEventListener('change', syncItem);
     posInput?.addEventListener('change', syncItem);

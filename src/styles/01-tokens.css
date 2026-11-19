@@ -1,0 +1,142 @@
+:root {
+      /* ==========================================================================
+         DESIGN SYSTEM MEDQUEST — CLINICAL CALM / CLINICAL PRECISION WORKSPACE
+         Base tokens + Compatibilidade legada (#0b0e14, #111620, #182030, #10b981, #f59e0b, #ef4444, #0284c7)
+         ========================================================================== */
+      --bg-canvas: #121417;
+      --bg-surface: #191c20;
+      --bg-surface-subtle: #1e2228;
+      --bg-elevated: #22262c;
+      --bg-popover: #1d2127;
+      --ink-primary: #e4e7eb;
+      --ink-secondary: #9ca3af;
+      --ink-muted: #6b7280;
+      --line-subtle: #282c33;
+      --line-strong: #373d47;
+      --accent: #2dd4bf;
+      --accent-hover: #5eead4;
+      --accent-fg: #0e1013;
+      --critical: #fb7185;
+      --critical-bg: #2f1720;
+      --warning-bg: #2e2412;
+      --normal: #34d399;
+      --normal-bg: #112b22;
+      --info: #38bdf8;
+      --info-bg: #122838;
+
+      /* 5 Grandes Áreas (MedQuest Canonical Badges) */
+      --area-clinica: #2dd4bf;
+      --area-cirurgia: #38bdf8;
+      --area-go: #f472b6;
+      --area-pediatria: #fbbf24;
+      --area-preventiva: #818cf8;
+
+      /* Mapeamento para os seletores do Cockpit */
+      --bg: var(--bg-canvas); /* ref: #0b0e14 */
+      --surface: var(--bg-surface); /* ref: #111620 */
+      --surface-hover: var(--bg-elevated); /* ref: #182030 */
+      --surface-inset: #0e1013;
+      --border: var(--line-subtle);
+      --border-strong: var(--line-strong);
+      --text: var(--ink-primary);
+      --text-secondary: var(--ink-secondary);
+      --text-dim: var(--ink-muted);
+
+      /* Cores Funcionais Médicas Exclusivas (Zero Gradientes IA) */
+      --primary: #0284c7;
+      --primary-bright: var(--accent);
+      --primary-solid: #0284c7;
+      --primary-hover: #0369a1;
+      --success: #10b981;
+      --emerald-solid: #10b981;
+      --emerald-border: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+
+      /* Módulos Clínicos mapeados às Cores das Grandes Áreas */
+      --mod-go: var(--area-go);
+      --mod-upa: #ef4444;
+      --mod-enf: var(--area-clinica);
+      --mod-ped: var(--area-pediatria);
+      --mod-hab: var(--area-preventiva);
+      --hab-solid: #0284c7;
+
+      /* Tipografia Hierárquica MedQuest (Plus Jakarta Sans + Inter + JetBrains Mono) */
+      --font-display: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-sans-clinical: var(--font-sans);
+      --font-mono: "JetBrains Mono", ui-monospace, Consolas, "SF Mono", Menlo, monospace;
+      --font-mono-lab: var(--font-mono);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+    }
+
+    html.light,
+    body.light-theme {
+      color-scheme: light;
+      /* Clinical Calm Light: Papel Fosco Médio (conforto em leitura prolongada 4h+) */
+      --bg-canvas: #dce3ec;
+      --bg-surface: #eaeff5;
+      --bg-surface-subtle: #e2e8f1;
+      --bg-elevated: #d2dbe6;
+      --bg-popover: #f0f4f8;
+      --ink-primary: #142238;
+      --ink-secondary: #435164;
+      --ink-muted: #5d6c80;
+      --line-subtle: #c5d0de;
+      --line-strong: #a7b6c8;
+      --accent: #0a7572;
+      --accent-hover: #085d5a;
+      --accent-fg: #f8fafc;
+      --critical: #be123c;
+      --critical-bg: #fce7ec;
+      --warning-bg: #fef3c7;
+      --normal: #047857;
+      --normal-bg: #d1fae5;
+      --info: #0369a1;
+      --info-bg: #e0f2fe;
+      --area-clinica: #0f766e;
+      --area-cirurgia: #0369a1;
+      --area-go: #be185d;
+      --area-pediatria: #b45309;
+      --area-preventiva: #4338ca;
+
+      --bg: var(--bg-canvas);
+      --surface: var(--bg-surface);
+      --surface-hover: var(--bg-elevated);
+      --surface-inset: #d5dee9;
+      --border: var(--line-subtle);
+      --border-strong: var(--line-strong);
+      --text: var(--ink-primary);
+      --text-secondary: var(--ink-secondary);
+      --text-dim: var(--ink-muted);
+      --primary: #0b2a4a;
+      --primary-bright: #0f9d9a;
+      --primary-solid: #0f9d9a;
+      --primary-hover: #0b827f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { color-scheme: dark; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      letter-spacing: -0.02em;
+    }
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+

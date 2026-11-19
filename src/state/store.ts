@@ -8,6 +8,7 @@ export type StartSectionPreference = 'pep' | 'hoje';
 
 export const STORAGE_KEYS = {
   CENTRAL_6ANO: 'mq_central_6ano_state_v1',
+  CENTRAL_6ANO_LEGACY: 'central_6ano_v1',
   HAB_CHECKLIST_PREFIX: 'hab_checklist_v1:',
   PRESCRIPTION_CART: 'mq_prescription_cart_v1',
   WS_COL_WIDTHS: 'ws_col_widths_v1',
@@ -23,6 +24,10 @@ export interface SharedPatientIdentity {
   idade: string;
   sexo: string;
   pesoKg: string;
+  gestante?: boolean;
+  igSemanas?: string;
+  creatinina?: string;
+  clCr?: string;
   comorbidades: string;
   alergias: string;
   medsUso: string;
@@ -40,6 +45,7 @@ export interface PatientSessionState {
   pepDrafts: Record<string, PepDraftState>;
   travasCheckedIds: Record<string, boolean>;
   activeProtocolId: string | null;
+  updatedAtMs?: number;
 }
 
 export interface PrescriptionCartItem {
@@ -254,6 +260,10 @@ function createEmptyIdentity(): SharedPatientIdentity {
     idade: '',
     sexo: '',
     pesoKg: '',
+    gestante: false,
+    igSemanas: '',
+    creatinina: '',
+    clCr: '',
     comorbidades: '',
     alergias: '',
     medsUso: '',
@@ -266,6 +276,7 @@ function createEmptyPatientSession(): PatientSessionState {
     pepDrafts: {},
     travasCheckedIds: {},
     activeProtocolId: null,
+    updatedAtMs: undefined,
   };
 }
 
@@ -277,6 +288,10 @@ function sanitizeIdentity(raw: unknown): SharedPatientIdentity {
     idade: typeof raw.idade === 'string' ? raw.idade : '',
     sexo: typeof raw.sexo === 'string' ? raw.sexo : '',
     pesoKg: typeof raw.pesoKg === 'string' ? raw.pesoKg : '',
+    gestante: Boolean(raw.gestante),
+    igSemanas: typeof raw.igSemanas === 'string' ? raw.igSemanas : '',
+    creatinina: typeof raw.creatinina === 'string' ? raw.creatinina : '',
+    clCr: typeof raw.clCr === 'string' ? raw.clCr : '',
     comorbidades: typeof raw.comorbidades === 'string' ? raw.comorbidades : '',
     alergias: typeof raw.alergias === 'string' ? raw.alergias : '',
     medsUso: typeof raw.medsUso === 'string' ? raw.medsUso : '',
@@ -444,8 +459,10 @@ class ClinicalCockpitStore {
       [],
       isPrescriptionCartList
     );
+    const rawCentralStr =
+      safeGetItem(ls, STORAGE_KEYS.CENTRAL_6ANO) ?? safeGetItem(ls, STORAGE_KEYS.CENTRAL_6ANO_LEGACY);
     const central6AnoRaw = safeJsonParse<Record<string, unknown> | null>(
-      safeGetItem(ls, STORAGE_KEYS.CENTRAL_6ANO),
+      rawCentralStr,
       null,
       (v): v is Record<string, unknown> | null => v === null || isPlainObject(v)
     );
@@ -463,6 +480,10 @@ class ClinicalCockpitStore {
           travasCheckedIds: normalizeTravasRecord(sessionParsed.travasCheckedIds),
           activeProtocolId:
             typeof sessionParsed.activeProtocolId === 'string' ? sessionParsed.activeProtocolId : null,
+          updatedAtMs:
+            typeof sessionParsed.updatedAtMs === 'number' && Number.isFinite(sessionParsed.updatedAtMs)
+              ? sessionParsed.updatedAtMs
+              : undefined,
         }
       : createEmptyPatientSession();
 
@@ -503,6 +524,7 @@ class ClinicalCockpitStore {
         pepDrafts: draftsCopy,
         travasCheckedIds: { ...this.state.patientSession.travasCheckedIds },
         activeProtocolId: this.state.patientSession.activeProtocolId,
+        updatedAtMs: this.state.patientSession.updatedAtMs,
       },
       habChecklists: habCopy,
       central6AnoRaw: this.state.central6AnoRaw ? cloneJsonSafe(this.state.central6AnoRaw) : null,
@@ -593,6 +615,19 @@ class ClinicalCockpitStore {
       patientSession: {
         ...this.state.patientSession,
         identity: { ...this.state.patientSession.identity, ...partial },
+        updatedAtMs: Date.now(),
+      },
+    };
+    this.persistSession();
+    this.emit();
+  }
+
+  public touchPatientSession(timestampMs: number = Date.now()): void {
+    this.state = {
+      ...this.state,
+      patientSession: {
+        ...this.state.patientSession,
+        updatedAtMs: timestampMs,
       },
     };
     this.persistSession();
@@ -605,6 +640,7 @@ class ClinicalCockpitStore {
       patientSession: {
         ...this.state.patientSession,
         activeProtocolId: protocolId,
+        updatedAtMs: Date.now(),
         pepDrafts: {
           ...this.state.patientSession.pepDrafts,
           [protocolId]: {
@@ -657,6 +693,43 @@ class ClinicalCockpitStore {
     const cloned = cloneJsonSafe(nextState);
     this.state = { ...this.state, central6AnoRaw: cloned };
     safeSetItem(getLocalStore(), STORAGE_KEYS.CENTRAL_6ANO, JSON.stringify(cloned));
+    this.emit();
+  }
+
+  /**
+   * Aplica snapshot sincronizado (GitHub Gist Sync) sobre central6AnoRaw + habChecklists
+   * sem tocar em dados clínicos efêmeros de sessão (patientSession / prescriptionCart).
+   */
+  public applyCentralSyncSnapshot(
+    central6AnoRaw: Record<string, unknown> | null,
+    habChecklists: Record<string, Record<string, boolean>>
+  ): void {
+    const ls = getLocalStore();
+    const clonedCentral = central6AnoRaw ? cloneJsonSafe(central6AnoRaw) : null;
+    const clonedHab: Record<string, Record<string, boolean>> = {};
+    for (const [habKey, checks] of Object.entries(habChecklists || {})) {
+      if (isBooleanRecord(checks)) {
+        clonedHab[habKey] = { ...checks };
+      }
+    }
+
+    for (const oldKey of listHabStorageKeys(ls)) {
+      safeRemoveItem(ls, oldKey);
+    }
+    if (clonedCentral !== null) {
+      safeSetItem(ls, STORAGE_KEYS.CENTRAL_6ANO, JSON.stringify(clonedCentral));
+    } else {
+      safeRemoveItem(ls, STORAGE_KEYS.CENTRAL_6ANO);
+    }
+    for (const [habKey, checks] of Object.entries(clonedHab)) {
+      safeSetItem(ls, `${STORAGE_KEYS.HAB_CHECKLIST_PREFIX}${habKey}`, JSON.stringify(checks));
+    }
+
+    this.state = {
+      ...this.state,
+      central6AnoRaw: clonedCentral,
+      habChecklists: clonedHab,
+    };
     this.emit();
   }
 

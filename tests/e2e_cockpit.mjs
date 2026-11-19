@@ -32,8 +32,12 @@ function findChromiumExecutable() {
   if (process.env.CHROMIUM_PATH && fs.existsSync(process.env.CHROMIUM_PATH)) {
     return process.env.CHROMIUM_PATH;
   }
-  const cacheDir = path.join(os.homedir(), '.cache', 'ms-playwright');
-  if (fs.existsSync(cacheDir)) {
+  const cacheDirs = [
+    path.join(os.homedir(), '.cache', 'ms-playwright'),
+    '/ms-playwright',
+  ];
+  for (const cacheDir of cacheDirs) {
+    if (!fs.existsSync(cacheDir)) continue;
     const entries = fs.readdirSync(cacheDir).sort().reverse();
     for (const entry of entries) {
       const candidates = [
@@ -260,8 +264,54 @@ async function run() {
     await page.keyboard.press('Control+k');
     assert.ok((await page.locator('#cmdQuickNavChips [data-cmd-nav]').count()) >= 6, 'Ctrl+K deve exibir chips de navegação rápida');
     await page.locator('#cmdSearchInput').fill('síndrome coronariana');
+    await delay(140);
     assert.ok((await page.locator('#cmdResults [data-cmd-type="pep"]').count()) >= 1, 'Ctrl+K deve encontrar PEP por busca clínica');
     await page.locator('#cmdCloseBtn').click();
+
+    // 5b. Barra de Contexto Clínico Reativa, Teclado-First na AST (1-9, Space) e Prescription Guard
+    await page.locator('#moduleTabs [data-mod="upa"]').click();
+    await page.locator('#wsSearchInput').fill(';faringo');
+    await delay(150);
+    await page.locator('#cardsGrid .card').first().click();
+    await delay(100);
+    assert.equal(await page.locator('#pepVitalsNormalBtn').count(), 0, 'Botão inseguro Vitais Normais deve ter sido removido');
+    assert.equal(await page.locator('#pepFocusVitalsBtn').count(), 1, 'Botão seguro Focar SSVV deve estar presente no PEP Drawer');
+
+    // Preencher Alergia a Penicilina na barra clínica reativa -> Prescription Guard deve alertar no PEP e reter cópia
+    const allergyCtxInput = page.locator('#pepClinicalContextBar [data-ctx-field="alergias"]');
+    await allergyCtxInput.fill('Penicilina');
+    await delay(120);
+    const guardCountPep = await page.locator('#pepGuardBannerSlot .pep-guard-alert').count();
+    assert.ok(guardCountPep >= 1, 'Alergia a Penicilina na barra clínica deve disparar alerta do Prescription Guard no PEP');
+    await page.locator('#pepCopyAllBtn').click();
+    await delay(80);
+    assert.equal(await page.locator('#pepCopySafetyGate').count(), 1, 'Copiar PEP com bloqueio crítico do Prescription Guard deve exibir Trava de Segurança em 2 etapas');
+    await page.locator('#pepSafetyFixBtn').click();
+    await delay(60);
+    assert.equal(await page.locator('#pepCopySafetyGate').count(), 0, 'Clicar em Corrigir no PEP deve fechar a trava de segurança');
+
+    // Navegação teclado-first em ChoiceGroup (tecla "2" seleciona 2ª pílula) e OptionalNode (Space alterna)
+    const firstChoiceGroup = page.locator('#pepInteractiveBody .choice-group').first();
+    if ((await firstChoiceGroup.locator('.choice-pill').count()) >= 2) {
+      const firstPill = firstChoiceGroup.locator('.choice-pill').first();
+      await firstPill.focus();
+      await page.keyboard.press('2');
+      const secondPillActive = await firstChoiceGroup.locator('.choice-pill').nth(1).evaluate((el) => el.classList.contains('active'));
+      assert.equal(secondPillActive, true, 'Tecla "2" no ChoiceGroup focado deve selecionar a 2ª opção');
+    }
+
+    const firstOptInline = page.locator('#pepInteractiveBody .pep-opt-inline').first();
+    if ((await firstOptInline.count()) === 1) {
+      const wasOff = await firstOptInline.evaluate((el) => el.classList.contains('is-off'));
+      await firstOptInline.locator('.pep-opt-chip').focus();
+      await page.keyboard.press('Space');
+      const isOffNow = await firstOptInline.evaluate((el) => el.classList.contains('is-off'));
+      assert.notEqual(isOffNow, wasOff, 'Tecla Space no OptionalNode focado deve alternar inclusão');
+    }
+
+    // Limpar sessão para seguir limpo para Pré-Porta
+    await page.locator('#wsClearSearchBtn').click();
+    await page.locator('#btnNovoPaciente').click();
 
     // 6. Pré-Porta 30s
     await page.locator('#wsMainSectionNav [data-section="preporta"]').click();
@@ -307,6 +357,13 @@ async function run() {
     assert.equal(techText.includes('```mermaid'), false, 'Técnica Profunda não deve exibir bloco ```mermaid cru');
     await assertNoBrowserDefaultButtons(page, 'preporta-tecnica');
 
+    // Validar registro 1-toque no Logbook em cartão de procedimento (hab-21 Sutura)
+    await page.locator('[data-hab-id="hab-21"]').click();
+    await delay(80);
+    assert.equal(await page.locator('#habQuickLogbookStrip').count(), 1, 'Pré-Porta de procedimento deve exibir faixa de Registro 1-Toque no Logbook');
+    await page.locator('[data-pp-log-proc="proc-sutura"][data-pp-log-auto="supervisionado"]').click();
+    await delay(60);
+
     // 7. Ferramentas & Calc (sub-abas + labels + screenshot)
     await page.locator('#wsMainSectionNav [data-section="ferramentas"]').click();
     await delay(100);
@@ -323,9 +380,15 @@ async function run() {
     await page.locator('[data-ftab="oratoria"]').click();
     assert.ok((await page.locator('#appSectionWorkspace').textContent())?.includes('Modo Palco'));
 
-    // 8. Formação Teórica (headings reais, zero Markdown cru, zero hab-X cru, screenshot)
+    // 8. Formação Teórica (9 módulos, headings reais, zero Markdown cru, zero hab-X cru, Treino Ativo offline)
     await page.locator('#wsMainSectionNav [data-section="teoria"]').click();
     await delay(120);
+    const teoriaModCount = await page.locator('[data-teoria-mod]').count();
+    assert.equal(teoriaModCount, 9, `Formação Teórica deve renderizar 9 módulos (atual=${teoriaModCount})`);
+
+    // Abrir mod-08 (Triagem Multi-Paciente & Deterioração) e validar renderização limpa
+    await page.locator('[data-teoria-mod="mod-08"]').click();
+    await delay(100);
     const teoriaChecks = await page.evaluate(() => {
       const prose = document.querySelector('#teoriaReaderArticle.mq-prose-clinical');
       const hCount = prose ? prose.querySelectorAll('h1, h2').length : 0;
@@ -341,30 +404,88 @@ async function run() {
     await assertNoBrowserDefaultButtons(page, 'teoria');
     await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_teoria.png` });
 
-    // 9. Logbook & Pontos Cegos
+    // Alternar para sub-aba Treino Ativo no mod-08 (Simulador de Triagem 4 Fichas + 2 Estágios)
+    await page.locator('#teoriaTabDrillsBtn').click();
+    await delay(100);
+    assert.equal(await page.locator('#teoriaDrillShell').count(), 1, 'Treino Ativo deve renderizar #teoriaDrillShell');
+    await assertNoBrowserDefaultButtons(page, 'teoria-treino');
+    await assertVisibleInputsLabeled(page, 'teoria-treino');
+
+    // Completar m08-d1 (Etapa 1 tap-sequence -> Confirmar -> Etapa 2 single-decision -> Corrigir -> Feedback + Ponto Cego)
+    await page.locator('[data-td-seq="p_sepse"]').click();
+    await page.locator('[data-td-seq="p_dor_toracica"]').click();
+    await page.locator('[data-td-seq="p_colica"]').click();
+    await page.locator('[data-td-seq="p_has"]').click();
+    await page.locator('#tdConfirmStage1Btn').click();
+    await delay(60);
+    await page.locator('[data-td-s2-choice="a"]').click();
+    await page.locator('#tdSubmitDrillBtn').click();
+    await delay(80);
+    assert.equal(await page.locator('#tdFeedbackPanel').count(), 1, 'Treino Ativo deve exibir painel de feedback em 3 blocos após correção');
+    const feedbackText = (await page.locator('#tdFeedbackPanel').innerText()) || '';
+    assert.ok(/armadilha/i.test(feedbackText), 'Painel de feedback deve exibir bloco de Armadilha Clássica de Internato/R1');
+    await page.locator('#tdSaveBlindSpotBtn').click();
+    await delay(60);
+    assert.equal(await page.locator('#teoriaStartRodizioDrillsBtn').count(), 1, 'Faixa superior de Teoria deve oferecer botão Treino do rodízio');
+    await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_teoria_drills.png` });
+
+
+    // 9. Evolução & Prática (Logbook & Pontos Cegos)
     await page.locator('#wsMainSectionNav [data-section="logbook"]').click();
     await delay(100);
     const wsHtmlLogbook = await page.locator('#appSectionWorkspace').innerHTML();
-    assert.ok(wsHtmlLogbook.includes('Radar') || wsHtmlLogbook.includes('Ensaio Mental'));
+    assert.ok(wsHtmlLogbook.includes('Radar') && wsHtmlLogbook.includes('Logbook'));
     assert.equal(wsHtmlLogbook.includes('[object Object]'), false, 'Logbook não pode renderizar [object Object]');
     await assertNoBrowserDefaultButtons(page, 'logbook');
     await assertVisibleInputsLabeled(page, 'logbook');
     await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_logbook.png` });
 
-    // 10. Hoje (6º Ano)
+    // 10. Hoje (6º Ano) + Grade Semanal + Pós-Plantão automático + R1 & Currículo Unificado
     await page.locator('#wsMainSectionNav [data-section="hoje"]').click();
     await delay(100);
     const wsHtmlHoje = await page.locator('#appSectionWorkspace').innerHTML();
-    assert.ok(wsHtmlHoje.includes('70 / 30') || wsHtmlHoje.includes('70/30'));
+    assert.ok(wsHtmlHoje.includes('70/30') || wsHtmlHoje.includes('70 / 30'));
+    assert.ok(wsHtmlHoje.includes('Grade Semanal'), 'Hoje deve exibir a Grade Semanal');
     await assertNoBrowserDefaultButtons(page, 'hoje');
     await assertVisibleInputsLabeled(page, 'hoje');
+
+    // Testar Plantão Noturno na segunda -> Pós-Plantão automático na terça
+    await page.locator('[data-shift-day="seg"][data-shift-type="plantao_noturno"]').click();
+    await delay(60);
+    assert.ok((await page.locator('.c6-pos-plantao-tag').count()) >= 1, 'Marcar Plantão Noturno deve exibir Pós-Plantão automático no dia seguinte');
+
+    // Testar adicionar tarefa real do dia + contador MedQuest
+    await page.locator('#hojeNewTaskInput').fill('Revisar conduta em pré-eclâmpsia grave');
+    await page.locator('#hojeAddTaskBtn').click();
+    await delay(60);
+    assert.ok((await page.locator('#appSectionWorkspace').innerText()).includes('Revisar conduta em pré-eclâmpsia grave'));
+    await page.locator('[data-q-delta="ancora:10"]').click();
+    await delay(60);
     await page.screenshot({ path: `${SCREENSHOT_DIR}/fixed_hoje.png` });
 
-    // 11. Config & Backup v2
+    // Testar Visão B — R1 & Currículo (Matriz Unificada 3 Bancas)
+    await page.locator('[data-c6-view="r1"]').click();
+    await delay(100);
+    const wsHtmlR1 = await page.locator('#appSectionWorkspace').innerHTML();
+    assert.ok(wsHtmlR1.includes('USP-SP') && wsHtmlR1.includes('USP-RP') && wsHtmlR1.includes('UNICAMP'), 'R1 & Currículo deve renderizar as 3 bancas');
+    await assertNoBrowserDefaultButtons(page, 'r1-curriculo');
+    await assertVisibleInputsLabeled(page, 'r1-curriculo');
+    // Marcar 1 ano (2 x 0.5) de IC com bolsa e validar atualização do placar nas 3 bancas
+    await page.locator('[data-curr-step="ic_com_bolsa"][data-delta="0.5"]').click();
+    await delay(40);
+    await page.locator('[data-curr-step="ic_com_bolsa"][data-delta="0.5"]').click();
+    await delay(60);
+    const bankScores = await page.locator('.c6-bank-score').allInnerTexts();
+    assert.ok(bankScores.length === 3 && bankScores.every((s) => Number(s.replace(',', '.')) > 0), `1 item equivalente deve pontuar nas 3 bancas: ${bankScores.join(', ')}`);
+
+    // 11. Config & GitHub Gist Sync & Backup v2
     await page.locator('#wsBtnConfig').click();
     await delay(100);
     assert.equal(await page.locator('#cfgExportBackupBtn').count(), 1, 'Config deve exibir Exportar Backup v2');
+    assert.equal(await page.locator('#cfgGistTokenInput').count(), 1, 'Config deve exibir campo PAT do GitHub Gist Sync');
+    assert.equal(await page.locator('#cfgGistPushBtn').count(), 1, 'Config deve exibir botão Push Gist Sync');
     await assertNoBrowserDefaultButtons(page, 'config');
+    await assertVisibleInputsLabeled(page, 'config');
 
     const swSupported = await page.evaluate(() => 'serviceWorker' in navigator);
     assert.equal(swSupported, true);

@@ -1,21 +1,37 @@
 import { getLocalTodayIso } from '../engine/calculadoras.ts';
+import {
+  clearGistSyncConfig,
+  loadGistSyncConfig,
+  pullFromGithubGist,
+  pushToGithubGist,
+  saveGistSyncConfig,
+  type GistSyncMergeMode,
+} from '../state/gistSync.ts';
 import { cockpitStore } from '../state/store.ts';
-import { downloadTextFile, guardPiiBeforeSave, showToast } from './utils.ts';
+import { formatSyncTimestamp } from './centralNavHeader.ts';
+import { downloadTextFile, escapeHtml, guardPiiBeforeSave, showToast } from './utils.ts';
 
 export function initConfig(): { render: (container: HTMLElement) => void } {
   let confirmingReset = false;
+  let gistBusy = false;
+  let gistStatusMsg = '';
+  let gistMergeMode: GistSyncMergeMode = 'merge';
 
   const render = (container: HTMLElement) => {
     const state = cockpitStore.getState();
     const startSection = state.startSection;
+    const gistCfg = loadGistSyncConfig();
+    const lastSyncText = gistCfg.lastSyncAtIso
+      ? `${gistCfg.lastSyncDirection === 'pull' ? 'Último Pull' : 'Último Push'}: ${formatSyncTimestamp(gistCfg.lastSyncAtIso)}`
+      : 'Nunca sincronizado';
 
     container.innerHTML = `
       <section class="mq-section-pane active">
         <header class="mq-workspace-header">
           <div>
             <div class="mq-eyebrow">PREFERÊNCIAS DA WORKSTATION &amp; DADOS LOCAIS</div>
-            <h2 class="mq-workspace-title">⚙️ Configurações, Tema Clinical Calm &amp; Backup</h2>
-            <p class="mq-workspace-sub">Tema Claro (papel fosco) / Escuro (grafite), Layout e Backup JSON v2 anti-PII</p>
+            <h2 class="mq-workspace-title">⚙️ Configurações, Tema Clinical Calm &amp; Sync</h2>
+            <p class="mq-workspace-sub">Tema Claro / Escuro, Sincronização Privada via GitHub Gist e Backup JSON v2 anti-PII</p>
           </div>
         </header>
 
@@ -52,10 +68,75 @@ export function initConfig(): { render: (container: HTMLElement) => void } {
           </div>
         </div>
 
+        <!-- SINCRONIZAÇÃO OPCIONAL VIA GITHUB GIST PRIVADO -->
+        <div class="mq-card c6-section-card">
+          <div class="c6-section-head">
+            <div>
+              <div class="mq-eyebrow">SINCRONIZAÇÃO OPCIONAL · CENTRAL 6º ANO &amp; CHECKLISTS</div>
+              <h3 class="c6-card-title">☁️ Sincronização via GitHub Gist Privado</h3>
+              <p class="mq-hint">
+                Sincronize <code>central6AnoRaw</code> e <code>habChecklists</code> entre computador do hospital e notebook pessoal via <code>fetch</code> nativo.
+                O token PAT (escopo <code>gist</code>) permanece salvo <strong>apenas</strong> no <code>localStorage</code> deste navegador e nunca entra em backups JSON.
+              </p>
+            </div>
+            <span class="c6-meta-line c6-tabular" id="cfgGistLastSyncLabel">${escapeHtml(lastSyncText)}</span>
+          </div>
+
+          <div class="mq-controls-bar" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            <div class="mq-control-group">
+              <label class="mq-control-label" for="cfgGistTokenInput">GitHub Personal Access Token (escopo gist)</label>
+              <input
+                type="password"
+                id="cfgGistTokenInput"
+                class="mq-input"
+                autocomplete="off"
+                placeholder="ghp_... ou github_pat_..."
+                value="${escapeHtml(gistCfg.token)}"
+              />
+            </div>
+
+            <div class="mq-control-group">
+              <label class="mq-control-label" for="cfgGistIdInput">Gist ID (vazio no 1º Push cria Gist privado)</label>
+              <input
+                type="text"
+                id="cfgGistIdInput"
+                class="mq-input"
+                autocomplete="off"
+                placeholder="Gerado automaticamente no 1º Push"
+                value="${escapeHtml(gistCfg.gistId)}"
+              />
+            </div>
+
+            <div class="mq-control-group">
+              <label class="mq-control-label" for="cfgGistModeSel">Estratégia ao Baixar (Pull)</label>
+              <select id="cfgGistModeSel" class="mq-select">
+                <option value="merge"${gistMergeMode === 'merge' ? ' selected' : ''}>Mesclar com estado local (seguro)</option>
+                <option value="overwrite"${gistMergeMode === 'overwrite' ? ' selected' : ''}>Sobrescrever estado local pelo Gist</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mq-btn-row">
+            <button type="button" class="btn btn-primary btn-sm" id="cfgGistPushBtn" ${gistBusy ? 'disabled' : ''}>
+              ${gistBusy ? 'Sincronizando...' : '⬆️ Enviar (Push)'}
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="cfgGistPullBtn" ${gistBusy ? 'disabled' : ''}>
+              ⬇️ Baixar (Pull)
+            </button>
+            <button type="button" class="btn btn-ghost btn-xs" id="cfgGistSaveBtn" ${gistBusy ? 'disabled' : ''}>
+              Salvar credenciais localmente
+            </button>
+            <button type="button" class="btn btn-ghost btn-xs" id="cfgGistClearBtn" ${gistBusy ? 'disabled' : ''}>
+              Remover token
+            </button>
+          </div>
+          ${gistStatusMsg ? `<div class="c6-sync-feedback" id="cfgGistStatusMsg">${escapeHtml(gistStatusMsg)}</div>` : ''}
+        </div>
+
         <div class="mq-card" style="display:flex; flex-direction:column; gap:12px;">
-          <div class="mq-eyebrow">EXPORTAÇÃO SEGURA &amp; SINCRONIZAÇÃO OFFLINE</div>
+          <div class="mq-eyebrow">EXPORTAÇÃO SEGURA &amp; BACKUP OFFLINE</div>
           <h3 style="font-size:1.05rem; font-weight:700;">💾 Backup v2 (JSON com Validação Anti-PII LGPD)</h3>
-          <p class="mq-hint">Exporta Central do 6º Ano, Checklists Pré-Porta (22), Preferências e Larguras de Colunas (o Carrinho de Prescrição fica isolado em <code>sessionStorage</code>).</p>
+          <p class="mq-hint">Exporta Central do 6º Ano, Checklists Pré-Porta (22), Preferências e Larguras de Colunas (o Carrinho de Prescrição fica isolado em <code>sessionStorage</code> e o token Gist nunca é exportado).</p>
 
           <div class="mq-btn-row">
             <button type="button" class="btn btn-primary btn-sm" id="cfgExportBackupBtn">⬇️ Baixar Backup v2 (.json)</button>
@@ -129,6 +210,69 @@ export function initConfig(): { render: (container: HTMLElement) => void } {
       render(container);
     });
 
+    // GitHub Gist Sync handlers
+    const readGistInputs = () => ({
+      token: (container.querySelector('#cfgGistTokenInput') as HTMLInputElement | null)?.value.trim() || '',
+      gistId: (container.querySelector('#cfgGistIdInput') as HTMLInputElement | null)?.value.trim() || '',
+    });
+
+    container.querySelector<HTMLSelectElement>('#cfgGistModeSel')?.addEventListener('change', (e) => {
+      gistMergeMode = (e.target as HTMLSelectElement).value as GistSyncMergeMode;
+    });
+
+    container.querySelector('#cfgGistSaveBtn')?.addEventListener('click', () => {
+      const { token, gistId } = readGistInputs();
+      saveGistSyncConfig({ token, gistId });
+      gistStatusMsg = 'Credenciais salvas somente no localStorage deste navegador.';
+      showToast('Credenciais Gist salvas localmente.', 'success');
+      render(container);
+    });
+
+    container.querySelector('#cfgGistClearBtn')?.addEventListener('click', () => {
+      clearGistSyncConfig();
+      gistStatusMsg = 'Token e Gist ID removidos deste navegador.';
+      showToast('Credenciais Gist removidas.', 'info');
+      render(container);
+    });
+
+    container.querySelector('#cfgGistPushBtn')?.addEventListener('click', async () => {
+      const { token, gistId } = readGistInputs();
+      saveGistSyncConfig({ token, gistId });
+      gistBusy = true;
+      gistStatusMsg = 'Enviando snapshot privado para GitHub Gist...';
+      render(container);
+      try {
+        const res = await pushToGithubGist({ token, gistId });
+        gistStatusMsg = res.summary;
+        showToast(res.summary, 'success');
+      } catch (err) {
+        gistStatusMsg = (err as Error).message;
+        showToast(`Erro no Push: ${(err as Error).message}`, 'danger');
+      } finally {
+        gistBusy = false;
+        render(container);
+      }
+    });
+
+    container.querySelector('#cfgGistPullBtn')?.addEventListener('click', async () => {
+      const { token, gistId } = readGistInputs();
+      saveGistSyncConfig({ token, gistId });
+      gistBusy = true;
+      gistStatusMsg = 'Baixando snapshot do GitHub Gist...';
+      render(container);
+      try {
+        const res = await pullFromGithubGist({ token, gistId, mode: gistMergeMode });
+        gistStatusMsg = res.summary;
+        showToast(res.summary, 'success');
+      } catch (err) {
+        gistStatusMsg = (err as Error).message;
+        showToast(`Erro no Pull: ${(err as Error).message}`, 'danger');
+      } finally {
+        gistBusy = false;
+        render(container);
+      }
+    });
+
     container.querySelector('#cfgExportBackupBtn')?.addEventListener('click', async () => {
       const payload = cockpitStore.exportBackupV2();
       const rawJson = JSON.stringify(payload, null, 2);
@@ -157,7 +301,7 @@ export function initConfig(): { render: (container: HTMLElement) => void } {
       }
       try {
         cockpitStore.importBackupV2(raw);
-        showToast('✅ Backup importado do campo com sucesso!', 'success');
+        showToast('Backup importado do campo com sucesso!', 'success');
         render(container);
       } catch (err) {
         showToast(`Erro ao importar JSON: ${(err as Error).message}`, 'danger');
@@ -183,7 +327,7 @@ export function initConfig(): { render: (container: HTMLElement) => void } {
         // Ignore storage errors
       }
       cockpitStore.reload();
-      showToast('🗑️ Dados locais limpos e restaurados para o padrão.', 'info');
+      showToast('Dados locais limpos e restaurados para o padrão.', 'info');
       render(container);
     });
 
@@ -194,7 +338,7 @@ export function initConfig(): { render: (container: HTMLElement) => void } {
         const text = await file.text();
         const parsed = JSON.parse(text);
         cockpitStore.importBackupV2(parsed);
-        showToast('✅ Backup importado! Atualizando estado...', 'success');
+        showToast('Backup importado! Atualizando estado...', 'success');
         render(container);
       } catch (err) {
         showToast(`Erro ao importar JSON: ${(err as Error).message}`, 'danger');

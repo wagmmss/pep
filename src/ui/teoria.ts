@@ -1,20 +1,37 @@
 import {
-  buildContextualAiPrompt,
   FORMACAO_TEORICA_MODULOS,
+  RODIZIOS_6ANO,
 } from '../engine/central6ano.ts';
 import { renderTeoriaMarkdownToHtml } from '../engine/diretrizes.ts';
 import { resolveLinksForTeoriaModule } from '../data/clinical_links.ts';
+import {
+  computeGlobalTeoriaDrillSummary,
+  computeModuleDrillStats,
+  getDrillsForRodizio,
+  getTodayIsoLocal,
+} from '../engine/teoriaDrills.ts';
+import {
+  createInitialDrillSession,
+  renderTeoriaDrillsPanel,
+  type ActiveDrillSessionState,
+} from './teoriaDrills.ts';
 import {
   getCentral6AnoState,
   PROTOCOL_BY_ID,
   uiBridge,
   updateCentral6AnoState,
 } from './context.ts';
-import { copyToClipboard, escapeHtml, guardPiiBeforeSave, showToast } from './utils.ts';
+import { escapeHtml, showToast } from './utils.ts';
 
 export { renderTeoriaMarkdownToHtml };
 
+type TeoriaInnerTab = 'teoria' | 'treino';
+
 export function initTeoria(): { render: (container: HTMLElement, subTab?: string) => void } {
+  let activeInnerTab: TeoriaInnerTab = 'teoria';
+  let activeDrillSession: ActiveDrillSessionState | null = null;
+  let activeSessionModId = '';
+
   const render = (container: HTMLElement, subTab?: string) => {
     const state = getCentral6AnoState();
     const activeModId = subTab || state.activeTeoriaModId || FORMACAO_TEORICA_MODULOS[0]?.id || 'mod-01';
@@ -23,6 +40,13 @@ export function initTeoria(): { render: (container: HTMLElement, subTab?: string
 
     if (mod.id !== state.activeTeoriaModId) {
       updateCentral6AnoState((s) => ({ ...s, activeTeoriaModId: mod.id }));
+    }
+
+    if (activeSessionModId !== mod.id || !activeDrillSession) {
+      activeSessionModId = mod.id;
+      if (!activeDrillSession || !activeDrillSession.isGlobalReview) {
+        activeDrillSession = createInitialDrillSession(mod.id);
+      }
     }
 
     const latestState = getCentral6AnoState();
@@ -34,8 +58,11 @@ export function initTeoria(): { render: (container: HTMLElement, subTab?: string
       (m) => (statusMap[m.id] || 'nao_iniciado') === 'dominado'
     ).length;
 
-    const exDone = Boolean(latestState.teoriaExercisesDone?.[mod.id]);
-    const exNotes = latestState.teoriaExercisesNotes?.[mod.id] || '';
+    const todayIso = getTodayIsoLocal();
+    const globalSummary = computeGlobalTeoriaDrillSummary(latestState.teoriaDrillProgressById, todayIso);
+    const modStats = computeModuleDrillStats(mod.id, latestState.teoriaDrillProgressById, todayIso);
+    const activeRodizio = RODIZIOS_6ANO.find((r) => r.id === latestState.rodizioId) || RODIZIOS_6ANO[0];
+    const rodizioDrills = getDrillsForRodizio(activeRodizio.id, latestState.teoriaDrillProgressById, 5);
 
     const relatedHabHtml =
       mergedHabIds.length > 0
@@ -48,35 +75,93 @@ export function initTeoria(): { render: (container: HTMLElement, subTab?: string
             .join('')
         : `<span class="mq-hint">Nenhum cartão Pré-Porta específico vinculado.</span>`;
 
+    const reviewStripHtml = `
+      <div class="td-review-strip" id="teoriaReviewStrip">
+        <div class="td-review-strip-info">
+          <strong class="c6-tabular">
+            ${
+              globalSummary.dueReviewIds.length > 0
+                ? `Revisão do dia: ${globalSummary.dueReviewIds.length} cenário${globalSummary.dueReviewIds.length === 1 ? '' : 's'} pendente${globalSummary.dueReviewIds.length === 1 ? '' : 's'}`
+                : `Treino Ativo: ${globalSummary.passedCount}/${globalSummary.totalDrills} cenários dominados · Rodízio: ${escapeHtml(activeRodizio.nome)}`
+            }
+          </strong>
+          ${
+            globalSummary.weakestModules.length > 0
+              ? `<span class="c6-meta-line">
+                   Domínios com lacunas: ${globalSummary.weakestModules
+                     .map((w) => `M${w.modNum} (${w.accuracyPct}%)`)
+                     .join(' · ')}
+                 </span>`
+              : `<span class="c6-meta-line">Fila rápida de 5 minutos com cenários filtrados para ${escapeHtml(activeRodizio.nome)}.</span>`
+          }
+        </div>
+        <div class="td-review-actions">
+          ${
+            globalSummary.dueReviewIds.length > 0
+              ? `<button type="button" class="btn btn-warning btn-xs" id="teoriaStartGlobalReviewBtn">
+                   Revisar erros (${globalSummary.dueReviewIds.length})
+                 </button>`
+              : ''
+          }
+          <button type="button" class="btn btn-primary btn-xs" id="teoriaStartRodizioDrillsBtn">
+            ⚡ Treino do rodízio (${rodizioDrills.length})
+          </button>
+        </div>
+      </div>
+    `;
+
+    const masteryBannerHtml =
+      modStats.readyForMastery && modStatus !== 'dominado'
+        ? `
+          <div class="td-mastery-banner" id="teoriaMasteryBanner">
+            <div>
+              <strong>Meta atingida (${modStats.accuracyPct}% nos drills do Módulo ${escapeHtml(mod.num)})</strong>
+              <div class="c6-meta-line">Todos os cenários foram concluídos com ≥80% de acerto.</div>
+            </div>
+            <button type="button" class="btn btn-primary btn-xs" id="teoriaAutoMasterBtn">
+              Promover para 🏆 Dominado
+            </button>
+          </div>
+        `
+        : '';
+
     container.innerHTML = `
       <section class="mq-section-pane active">
         <header class="mq-workspace-header">
           <div>
-            <div class="mq-eyebrow">CURRÍCULO TEÓRICO AVANÇADO · 7 DOMÍNIOS COMPLETOS</div>
+            <div class="mq-eyebrow">CURRÍCULO TEÓRICO AVANÇADO · ${FORMACAO_TEORICA_MODULOS.length} DOMÍNIOS + TREINO ATIVO OFFLINE</div>
             <h2 class="mq-workspace-title">📚 Formação Teórica em Habilidades Médicas</h2>
-            <p class="mq-workspace-sub">Leitura clínica em ~72ch · Link bidirecional com os 22 Cartões Pré-Porta 30s · Controle de Domínio</p>
+            <p class="mq-workspace-sub">Leitura clínica em ~72ch · ${globalSummary.totalDrills} cenários práticos offline · Integração com os 22 Cartões Pré-Porta 30s</p>
           </div>
           <div class="mq-btn-row">
-            <span class="mq-nav-badge">${domCount}/${FORMACAO_TEORICA_MODULOS.length} Dominados</span>
+            <span class="mq-nav-badge c6-tabular">${domCount}/${FORMACAO_TEORICA_MODULOS.length} Dominados · ${globalSummary.passedCount}/${globalSummary.totalDrills} Drills</span>
             <button type="button" class="btn-palette-trigger" id="teoriaZenBtn">🧘 Modo Zen (Alt+Z)</button>
             <button type="button" class="btn-palette-trigger" id="teoriaGoPrePortaBtn">🧠 Ver Cartões Pré-Porta 30s</button>
           </div>
         </header>
 
+        ${reviewStripHtml}
+
         <div class="mq-teoria-shell">
-          <aside class="mq-teoria-nav" aria-label="Índice dos 7 Módulos Teóricos">
+          <aside class="mq-teoria-nav" aria-label="Índice dos ${FORMACAO_TEORICA_MODULOS.length} Módulos Teóricos">
             ${FORMACAO_TEORICA_MODULOS.map((m) => {
               const st = statusMap[m.id] || 'nao_iniciado';
               const badge = st === 'dominado' ? '🏆 Dominado' : st === 'estudado' ? '📖 Estudado' : '⏳ Pendente';
+              const mStat = globalSummary.byModule[m.id];
               const isAct = m.id === mod.id;
               return `
                 <button type="button" class="mq-teoria-card-btn${isAct ? ' active' : ''}" data-teoria-mod="${escapeHtml(m.id)}">
-                  <div style="display:flex; align-items:center; justify-content:space-between; width:100%; gap:6px;">
+                  <div class="td-nav-top-row">
                     <span class="mq-stat-label" style="color:${escapeHtml(m.areaColor || 'var(--primary-bright)')};">MÓDULO ${escapeHtml(m.num)}</span>
                     <span class="mq-nav-badge">${badge}</span>
                   </div>
-                  <div style="font-weight:700; font-size:0.86rem; line-height:1.3;">${escapeHtml(m.shortTitle)}</div>
-                  <div class="mq-hint">${escapeHtml(m.pilar)}</div>
+                  <div class="td-nav-title">${escapeHtml(m.shortTitle)}</div>
+                  <div class="td-nav-foot">
+                    <span class="mq-hint">${escapeHtml(m.pilar)}</span>
+                    <span class="td-nav-drill-stat c6-tabular${mStat && mStat.readyForMastery ? ' is-ready' : ''}">
+                      ${mStat ? `${mStat.passedCount}/${mStat.totalDrills}` : '0/0'}
+                    </span>
+                  </div>
                 </button>`;
             }).join('')}
           </aside>
@@ -85,7 +170,7 @@ export function initTeoria(): { render: (container: HTMLElement, subTab?: string
             <div class="teoria-head">
               <div>
                 <span class="mq-eyebrow">${escapeHtml(mod.pilar)}</span>
-                <div class="mq-hint" style="font-family:var(--font-mono);">${escapeHtml(mod.fileName)}</div>
+                <div class="mq-hint td-mono-file">${escapeHtml(mod.fileName)}</div>
               </div>
               <div class="mq-btn-row" id="teoriaStatusBtns">
                 <button type="button" class="mq-counter-btn${modStatus === 'nao_iniciado' ? ' is-active' : ''}" data-tstatus="nao_iniciado">⏳ Não iniciado</button>
@@ -94,42 +179,71 @@ export function initTeoria(): { render: (container: HTMLElement, subTab?: string
               </div>
             </div>
 
-            <div class="teoria-exercises-box" style="margin-top:0; margin-bottom:18px;">
-              <div class="mq-stat-label" style="margin-bottom:8px;">🔗 Cartões Pré-Porta 30s Conectados (Clique para abrir):</div>
-              <div class="hab-links-row">${relatedHabHtml}</div>
-              <div class="mq-btn-row" style="margin-top:10px; padding-top:8px; border-top:1px dashed var(--line-subtle);">
-                <span class="mq-hint" style="font-weight:700;">🎭 Treinar Módulo com IA (1 Clique):</span>
-                <button type="button" class="mq-counter-btn" data-ai-prompt="paciente">Paciente Simulado</button>
-                <button type="button" class="mq-counter-btn" data-ai-prompt="oratoria">Preceptor SNAPPS/SBAR</button>
-                <button type="button" class="mq-counter-btn" data-ai-prompt="raciocinio">Caso em 3 Etapas (Bayes)</button>
-                <button type="button" class="mq-counter-btn" data-ai-prompt="osce">Estação OSCE</button>
-              </div>
+            <!-- Sub-abas limpas: Teoria (~72ch) | Treino Ativo -->
+            <div class="td-subtab-bar" role="tablist" aria-label="Modo de estudo do módulo">
+              <button
+                type="button"
+                role="tab"
+                class="td-subtab-btn${activeInnerTab === 'teoria' ? ' active' : ''}"
+                aria-selected="${activeInnerTab === 'teoria' ? 'true' : 'false'}"
+                data-teoria-inner="teoria"
+                id="teoriaTabReadBtn"
+              >
+                📖 Teoria
+              </button>
+              <button
+                type="button"
+                role="tab"
+                class="td-subtab-btn${activeInnerTab === 'treino' ? ' active' : ''}"
+                aria-selected="${activeInnerTab === 'treino' ? 'true' : 'false'}"
+                data-teoria-inner="treino"
+                id="teoriaTabDrillsBtn"
+              >
+                ⚡ Treino Ativo <span class="td-subtab-count c6-tabular">${modStats.passedCount}/${modStats.totalDrills}</span>
+              </button>
             </div>
 
-            <article class="mq-prose-clinical" id="teoriaReaderArticle">
-              ${renderTeoriaMarkdownToHtml(mod.markdown)}
-            </article>
+            ${masteryBannerHtml}
 
-            <div class="teoria-exercises-box">
-              <div class="mq-stat-label">✍️ Registro Local do Exercício Prático (Incluído no Backup v2 · Anti-PII)</div>
-              <div class="teoria-ex-item">
-                <label class="teoria-ex-label">
-                  <input type="checkbox" id="teoriaExDoneChk" ${exDone ? 'checked' : ''} />
-                  <span>Exercício prático do Módulo ${escapeHtml(mod.num)} concluído</span>
-                </label>
-              </div>
-              <div class="mq-control-group" style="margin-top:10px;">
-                <label class="mq-control-label" for="teoriaExNotesInput">Síntese pessoal, dúvidas ou lacunas encontradas:</label>
-                <textarea id="teoriaExNotesInput" class="mq-textarea" rows="3" placeholder="Ex.: Principais pontos cegos no cálculo de Δ/Δ ou HINTS à beira do leito...">${escapeHtml(exNotes)}</textarea>
-              </div>
-              <div class="mq-btn-row" style="margin-top:8px;">
-                <button type="button" class="btn btn-primary btn-xs" id="teoriaSaveExBtn">💾 Salvar Exercício</button>
-              </div>
-            </div>
+            ${
+              activeInnerTab === 'teoria'
+                ? `
+                  <div class="teoria-exercises-box td-links-box">
+                    <div class="mq-stat-label td-links-title">🔗 Cartões Pré-Porta 30s Conectados (Clique para abrir):</div>
+                    <div class="hab-links-row">${relatedHabHtml}</div>
+                  </div>
+
+                  <article class="mq-prose-clinical" id="teoriaReaderArticle">
+                    ${renderTeoriaMarkdownToHtml(mod.markdown)}
+                  </article>
+
+                  <div class="td-mastery-banner td-read-cta">
+                    <div>
+                      <strong>Concluiu a leitura do Módulo ${escapeHtml(mod.num)}?</strong>
+                      <div class="c6-meta-line">Teste retenção real nos ${modStats.totalDrills} cenários clínicos offline (${modStats.passedCount}/${modStats.totalDrills} dominados).</div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-xs" id="teoriaQuickGoDrillsBtn">⚡ Ir para Treino Ativo (${modStats.passedCount}/${modStats.totalDrills})</button>
+                  </div>
+                `
+                : `<div id="teoriaDrillsMount"></div>`
+            }
           </div>
         </div>
       </section>
     `;
+
+    // Renderizar motor de treino ativo se sub-aba ativa for 'treino'
+    if (activeInnerTab === 'treino' && activeDrillSession) {
+      const mount = container.querySelector<HTMLElement>('#teoriaDrillsMount');
+      if (mount) {
+        renderTeoriaDrillsPanel({
+          container: mount,
+          modId: mod.id,
+          session: activeDrillSession,
+          onStateChanged: () => render(container, mod.id),
+        });
+      }
+    }
 
     container.querySelector('#teoriaZenBtn')?.addEventListener('click', () => {
       window.dispatchEvent(new CustomEvent('mq:toggle-zen'));
@@ -139,9 +253,66 @@ export function initTeoria(): { render: (container: HTMLElement, subTab?: string
       uiBridge.navigate('preporta');
     });
 
+    container.querySelector('#teoriaStartGlobalReviewBtn')?.addEventListener('click', () => {
+      if (globalSummary.dueReviewIds.length === 0) return;
+      activeInnerTab = 'treino';
+      activeDrillSession = createInitialDrillSession(mod.id, {
+        queueIds: globalSummary.dueReviewIds,
+        onlyErrors: true,
+        isGlobalReview: true,
+      });
+      render(container, mod.id);
+    });
+
+    container.querySelector('#teoriaStartRodizioDrillsBtn')?.addEventListener('click', () => {
+      if (rodizioDrills.length === 0) return;
+      activeInnerTab = 'treino';
+      activeDrillSession = createInitialDrillSession(mod.id, {
+        queueIds: rodizioDrills.map((d) => d.id),
+        onlyErrors: false,
+        isGlobalReview: true,
+      });
+      showToast(`⚡ Fila de ${rodizioDrills.length} cenários filtrada para ${activeRodizio.nome}!`, 'info', 1800);
+      render(container, mod.id);
+    });
+
+    container.querySelector('#teoriaAutoMasterBtn')?.addEventListener('click', () => {
+      updateCentral6AnoState((prev) => ({
+        ...prev,
+        teoriaStatusById: {
+          ...prev.teoriaStatusById,
+          [mod.id]: 'dominado',
+        },
+      }));
+      showToast(`🏆 Módulo ${mod.num} promovido para Dominado!`, 'success');
+      render(container, mod.id);
+    });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-teoria-inner]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const nextTab = btn.dataset.teoriaInner as TeoriaInnerTab;
+        if (nextTab === activeInnerTab) return;
+        activeInnerTab = nextTab;
+        if (nextTab === 'treino' && (!activeDrillSession || activeSessionModId !== mod.id)) {
+          activeSessionModId = mod.id;
+          activeDrillSession = createInitialDrillSession(mod.id);
+        }
+        render(container, mod.id);
+      });
+    });
+
+    container.querySelector('#teoriaQuickGoDrillsBtn')?.addEventListener('click', () => {
+      activeInnerTab = 'treino';
+      activeSessionModId = mod.id;
+      activeDrillSession = createInitialDrillSession(mod.id);
+      render(container, mod.id);
+    });
+
     container.querySelectorAll<HTMLButtonElement>('[data-teoria-mod]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const id = btn.dataset.teoriaMod!;
+        activeSessionModId = id;
+        activeDrillSession = createInitialDrillSession(id);
         render(container, id);
       });
     });
@@ -173,36 +344,6 @@ export function initTeoria(): { render: (container: HTMLElement, subTab?: string
         const hid = btn.dataset.openHab!;
         uiBridge.navigate('preporta', { itemId: hid });
       });
-    });
-
-    container.querySelectorAll<HTMLButtonElement>('[data-ai-prompt]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const kind = btn.dataset.aiPrompt as 'paciente' | 'oratoria' | 'raciocinio' | 'osce';
-        const prompt = buildContextualAiPrompt(kind, getCentral6AnoState());
-        void copyToClipboard(prompt, `Prompt ${kind.toUpperCase()}`);
-      });
-    });
-
-    container.querySelector('#teoriaSaveExBtn')?.addEventListener('click', async () => {
-      const done = Boolean((container.querySelector('#teoriaExDoneChk') as HTMLInputElement | null)?.checked);
-      const rawNotes = (container.querySelector('#teoriaExNotesInput') as HTMLTextAreaElement | null)?.value || '';
-      const safeNotes = await guardPiiBeforeSave(rawNotes, 'Exercício Teórico');
-      if (safeNotes === null) return;
-
-      updateCentral6AnoState((prev) => ({
-        ...prev,
-        teoriaExercisesDone: {
-          ...(prev.teoriaExercisesDone || {}),
-          [mod.id]: done,
-        },
-        teoriaExercisesNotes: {
-          ...(prev.teoriaExercisesNotes || {}),
-          [mod.id]: safeNotes,
-        },
-      }));
-      const ta = container.querySelector<HTMLTextAreaElement>('#teoriaExNotesInput');
-      if (ta && ta.value !== safeNotes) ta.value = safeNotes;
-      showToast('Exercício salvo com segurança (incluído no Backup v2).', 'success');
     });
   };
 

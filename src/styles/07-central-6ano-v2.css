@@ -1,0 +1,880 @@
+/* ============================================================================
+ * CENTRAL 6º ANO v2 — HOJE, R1 & CURRÍCULO UNIFICADO, EVOLUÇÃO & GIST SYNC
+ * Clinical Calm / Clinical Precision — Superfícies planas, hairline 1px,
+ * tipografia tabular e suporte integral a tema escuro + claro + mobile.
+ * ============================================================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.c6-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.c6-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- Barra Superior 3 Visões + Botão Gist Sync ---------- */
+.c6-top-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 8px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-md);
+}
+
+.c6-tab-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.c6-tab-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--bg-surface-subtle);
+  color: var(--ink-secondary);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.c6-tab-btn:hover {
+  background: var(--bg-elevated);
+  border-color: var(--line-strong);
+  color: var(--ink-primary);
+}
+
+.c6-tab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-fg);
+}
+
+.c6-top-nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+/* ---------- Modal GitHub Gist Sync ---------- */
+.c6-sync-modal {
+  max-width: 560px;
+  width: min(560px, calc(100vw - 24px));
+}
+
+.c6-sync-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 18px 20px;
+}
+
+.c6-sync-security-note {
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--ink-secondary);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.c6-sync-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: var(--ink-secondary);
+  padding: 6px 0;
+  border-top: 1px solid var(--line-subtle);
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.c6-sync-feedback {
+  min-height: 20px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-secondary);
+}
+
+.c6-sync-feedback[data-tone="ok"] {
+  color: var(--normal);
+}
+
+.c6-sync-feedback[data-tone="err"] {
+  color: var(--critical);
+}
+
+/* ---------- Cards & Cabeçalhos de Seção ---------- */
+.c6-section-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-md);
+}
+
+.c6-section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.c6-card-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.3;
+}
+
+.c6-meta-line {
+  font-size: 12.5px;
+  color: var(--ink-secondary);
+  line-height: 1.4;
+}
+
+.c6-empty-inline {
+  margin: 4px 0;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.c6-select-compact {
+  min-height: 34px;
+  padding: 5px 10px;
+  font-size: 12.5px;
+}
+
+.c6-inline-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.c6-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Visão A: Banner Pós-Plantão & Seletor Compacto ---------- */
+.c6-postcall-banner {
+  padding: 11px 14px;
+  background: var(--warning-bg);
+  border: 1px solid var(--warning);
+  border-radius: var(--radius-sm);
+  color: var(--ink-primary);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.c6-context-selectors {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.c6-compact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+/* ---------- Grade Semanal Editável (Seg–Dom) ---------- */
+.c6-schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.c6-day-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+  min-width: 0;
+}
+
+.c6-day-col.is-today {
+  border-color: var(--accent);
+  background: var(--bg-elevated);
+}
+
+.c6-day-col.is-pos-plantao {
+  border-color: var(--warning);
+  background: var(--warning-bg);
+}
+
+.c6-day-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.c6-day-name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.c6-day-goal {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.c6-pos-plantao-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--warning);
+  letter-spacing: 0.01em;
+}
+
+.c6-day-mode-text {
+  font-size: 11px;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c6-shift-toggles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: auto;
+}
+
+.c6-shift-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 5px 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 1px solid var(--line-subtle);
+  background: var(--bg-surface);
+  color: var(--ink-secondary);
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.c6-shift-btn:hover {
+  border-color: var(--line-strong);
+  color: var(--ink-primary);
+}
+
+.c6-shift-btn.active {
+  background: var(--info-bg);
+  border-color: var(--info);
+  color: var(--ink-primary);
+}
+
+.c6-shift-btn.is-night.active {
+  background: var(--critical-bg);
+  border-color: var(--critical);
+  color: var(--critical);
+}
+
+/* ---------- Layout 2 Colunas Principais (Tarefas + Estudo 70/30) ---------- */
+.c6-two-col-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.c6-task-add-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.c6-task-add-row .mq-input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.c6-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.c6-task-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.c6-task-row.is-done {
+  opacity: 0.68;
+}
+
+.c6-task-check-wrap {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1 1 auto;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.c6-task-text {
+  font-size: 13.5px;
+  color: var(--ink-primary);
+  word-break: break-word;
+}
+
+.c6-task-row.is-done .c6-task-text {
+  text-decoration: line-through;
+  color: var(--ink-muted);
+}
+
+.c6-task-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* ---------- Foco 70/30 & Contadores Rápidos ---------- */
+.c6-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.c6-counter-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.c6-counter-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.c6-counter-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.c6-counter-total {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.c6-counter-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.c6-ritual-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+/* ---------- Visão B: Marcos & Prazos R1 ---------- */
+.c6-milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+  gap: 10px;
+}
+
+.c6-milestone-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 13px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.c6-milestone-card.is-soon {
+  border-color: var(--warning);
+}
+
+.c6-milestone-card.is-overdue {
+  border-color: var(--critical);
+}
+
+.c6-milestone-card.is-upcoming {
+  border-color: var(--line-subtle);
+}
+
+.c6-milestone-card.is-editing {
+  border-color: var(--accent);
+  background: var(--bg-elevated);
+}
+
+.c6-milestone-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.c6-milestone-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.c6-milestone-title {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.3;
+}
+
+.c6-milestone-countdown {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.c6-milestone-card.is-soon .c6-milestone-countdown {
+  color: var(--warning);
+}
+
+.c6-milestone-card.is-overdue .c6-milestone-countdown {
+  color: var(--critical);
+}
+
+/* ---------- Visão B: Placar Consolidado das 3 Bancas ---------- */
+.c6-banks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.c6-bank-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-md);
+}
+
+.c6-bank-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.c6-bank-title {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.c6-bank-score-box {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  white-space: nowrap;
+}
+
+.c6-bank-score {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.c6-bank-max {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.c6-bank-submeta {
+  font-size: 12px;
+  color: var(--ink-secondary);
+}
+
+.c6-enamed-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--ink-secondary);
+}
+
+.c6-bank-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line-subtle);
+}
+
+.c6-block-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.c6-block-label {
+  color: var(--ink-secondary);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c6-block-val {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.c6-block-val.is-capped {
+  color: var(--normal);
+}
+
+.c6-block-gap {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.c6-bank-foot {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--line-subtle);
+  font-size: 11.5px;
+}
+
+/* ---------- Visão B: Tabela Matriz Unificada de Currículo ---------- */
+.c6-curr-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.c6-curr-thead,
+.c6-curr-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 2.4fr) 150px 72px 72px 78px 136px;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+}
+
+.c6-curr-thead {
+  background: var(--bg-surface-subtle);
+  border-bottom: 1px solid var(--line-strong);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.c6-curr-row {
+  border-bottom: 1px solid var(--line-subtle);
+  background: var(--bg-surface);
+  transition: background 0.12s ease;
+}
+
+.c6-curr-row:last-child {
+  border-bottom: none;
+}
+
+.c6-curr-row.is-filled {
+  background: var(--bg-surface-subtle);
+}
+
+.c6-curr-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.c6-curr-item-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-primary);
+  line-height: 1.3;
+}
+
+.c6-curr-item-desc {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  line-height: 1.35;
+}
+
+.c6-curr-rule-note {
+  font-size: 11px;
+  color: var(--ink-muted);
+  line-height: 1.35;
+}
+
+.c6-curr-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.c6-bool-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-primary);
+  cursor: pointer;
+}
+
+.c6-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: nowrap;
+}
+
+.c6-stepper-input {
+  width: 54px;
+  text-align: center;
+  padding: 4px 6px;
+  min-height: 30px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+
+.c6-unit-label {
+  font-size: 11px;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.c6-num-col {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-muted);
+}
+
+.c6-num-col.is-scored {
+  color: var(--normal);
+  font-weight: 700;
+}
+
+.c6-proof-cell {
+  display: flex;
+  align-items: center;
+}
+
+.c6-proof-sel {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.c6-proof-sel.is-falta {
+  border-color: var(--line-subtle);
+  color: var(--ink-secondary);
+}
+
+.c6-proof-sel.is-em_andamento {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.c6-proof-sel.is-pdf_pronto {
+  border-color: var(--normal);
+  color: var(--normal);
+}
+
+/* ---------- Visão C: Evolução & Prática ---------- */
+.c6-dominated-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--normal);
+}
+
+.c6-history-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.c6-history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 10px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  color: var(--ink-secondary);
+}
+
+/* ---------- Modo Claro (Clinical Calm Light) ---------- */
+html.light .c6-tab-btn,
+body.light-theme .c6-tab-btn {
+  background: var(--bg-surface-subtle);
+  color: var(--ink-secondary);
+  border-color: var(--line-subtle);
+}
+
+html.light .c6-tab-btn.active,
+body.light-theme .c6-tab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-fg);
+}
+
+html.light .c6-shift-btn,
+body.light-theme .c6-shift-btn {
+  background: var(--bg-popover);
+  color: var(--ink-secondary);
+  border-color: var(--line-subtle);
+}
+
+html.light .c6-shift-btn.active,
+body.light-theme .c6-shift-btn.active {
+  background: var(--info-bg);
+  border-color: var(--info);
+  color: var(--ink-primary);
+}
+
+html.light .c6-shift-btn.is-night.active,
+body.light-theme .c6-shift-btn.is-night.active {
+  background: var(--critical-bg);
+  border-color: var(--critical);
+  color: var(--critical);
+}
+
+html.light .c6-pos-plantao-tag,
+body.light-theme .c6-pos-plantao-tag {
+  color: #92400e;
+}
+
+/* ---------- Responsivo (Tablet & Mobile) ---------- */
+@media (max-width: 1140px) {
+  .c6-schedule-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .c6-banks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 920px) {
+  .c6-two-col-main,
+  .c6-focus-grid {
+    grid-template-columns: 1fr;
+  }
+  .c6-curr-thead {
+    display: none;
+  }
+  .c6-curr-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .c6-num-col {
+    text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .c6-schedule-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .c6-section-card {
+    padding: 14px;
+  }
+}

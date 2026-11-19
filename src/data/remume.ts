@@ -4,11 +4,84 @@
 // Gerado por scripts/build_hsl_remume.py — manter compatibilidade com RemumeItem.
 // ============================================================================
 
+export type TherapeuticClass =
+  | 'aine'
+  | 'analgesico_nao_opioide'
+  | 'opioide'
+  | 'beta_lactamico_penicilina'
+  | 'beta_lactamico_cefalosporina'
+  | 'macrolideo'
+  | 'fluoroquinolona'
+  | 'tetraciclina'
+  | 'aminoglicosideo'
+  | 'sulfonamida'
+  | 'nitrofurano'
+  | 'nitroimidazol'
+  | 'lincosamida'
+  | 'corticoide'
+  | 'ibp'
+  | 'antiemetico'
+  | 'benzodiazepinico'
+  | 'anticonvulsivante'
+  | 'ieca'
+  | 'bra'
+  | 'betabloqueador'
+  | 'bcc'
+  | 'diuretico'
+  | 'biguanida'
+  | 'sulfonilureia'
+  | 'anticoagulante'
+  | 'antiplaquetario'
+  | 'estatina'
+  | 'anti_histaminico'
+  | 'broncodilatador'
+  | 'antiviral'
+  | 'antifungico'
+  | 'antiparasitario'
+  | 'antigotoso'
+  | 'antiarritmico'
+  | 'teratogenico_especial'
+  | 'outro';
+
+export type PregnancyRiskCategory = 'A' | 'B' | 'C' | 'D' | 'X' | 'EVITAR_3TRI';
+
+export interface RenalAdjustmentRule {
+  required: boolean;
+  /** TFG/ClCr (mL/min) abaixo do qual exige ajuste de dose ou intervalo */
+  gfrCutoffMlMin?: number;
+  /** TFG/ClCr (mL/min) abaixo do qual é contraindicado / evitar */
+  contraindicatedBelowGfr?: number;
+  note?: string;
+}
+
+export interface RemumeClinicalMeta {
+  canonicalKey: string;
+  therapeuticClass: TherapeuticClass;
+  classLabel: string;
+  /** Grupo amplo para auditoria de duplicidade (ex.: beta_lactamico agrupa penicilina + cefalosporina) */
+  duplicityGroup: string;
+  renalAdjustment: RenalAdjustmentRule;
+  pregnancyRisk: PregnancyRiskCategory;
+  pregnancyNote?: string;
+  /** Grupos de alergia direta e cruzada (normalizados sem acento) */
+  allergyCrossGroups: string[];
+  /** Grupos com risco moderado de reação cruzada (disparam alerta warn) */
+  allergyWarnGroups?: string[];
+  /** Teto diário adulto em mg */
+  maxDailyDoseMg?: number;
+  /** Teto diário pediátrico em mg/kg/dia */
+  maxDailyDoseMgPerKg?: number;
+  /** Teto por tomada única adulto em mg */
+  maxSingleDoseMg?: number;
+  notes?: string;
+}
+
 export interface RemumeItem {
   name: string;
   norm: string;
   hslId?: number;
   hslFarmaco?: string;
+  clinicalMeta?: RemumeClinicalMeta;
 }
 
 export const REMUME_ITEMS: RemumeItem[] = [
@@ -1401,3 +1474,787 @@ export const REMUME_ITEMS: RemumeItem[] = [
     "hslFarmaco": "ÁGUA DESTILADA"
   }
 ];
+
+export interface DrugClinicalCatalogRule {
+  matchPatterns: RegExp[];
+  meta: RemumeClinicalMeta;
+}
+
+function normalizeDrugLookupText(value: string): string {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export const DRUG_CLINICAL_CATALOG: DrugClinicalCatalogRule[] = [
+  // ---- AINEs ----
+  {
+    matchPatterns: [/\bibuprofeno\b/],
+    meta: {
+      canonicalKey: 'ibuprofeno',
+      therapeuticClass: 'aine',
+      classLabel: 'AINE',
+      duplicityGroup: 'aine',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 60, contraindicatedBelowGfr: 30, note: 'Evitar AINE se TFG < 30 mL/min (risco de IRA e hipercalemia).' },
+      pregnancyRisk: 'EVITAR_3TRI',
+      pregnancyNote: 'Contraindicado após 20-30 semanas (oligoâmnio e fechamento precoce do ducto arterioso).',
+      allergyCrossGroups: ['aine', 'ibuprofeno', 'aas', 'anti-inflamatorio', 'antiinflamatorio'],
+      maxDailyDoseMg: 2400,
+      maxDailyDoseMgPerKg: 40,
+      maxSingleDoseMg: 800,
+    },
+  },
+  {
+    matchPatterns: [/\bdiclofenaco\b/],
+    meta: {
+      canonicalKey: 'diclofenaco',
+      therapeuticClass: 'aine',
+      classLabel: 'AINE',
+      duplicityGroup: 'aine',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 60, contraindicatedBelowGfr: 30, note: 'Nefrotóxico; evitar se TFG < 30 mL/min.' },
+      pregnancyRisk: 'EVITAR_3TRI',
+      pregnancyNote: 'Evitar na gestação, especialmente >= 20 semanas (fechamento ductal/oligoâmnio).',
+      allergyCrossGroups: ['aine', 'diclofenaco', 'aas', 'anti-inflamatorio', 'antiinflamatorio'],
+      maxDailyDoseMg: 150,
+      maxSingleDoseMg: 75,
+    },
+  },
+  {
+    matchPatterns: [/\bcetoprofeno\b/],
+    meta: {
+      canonicalKey: 'cetoprofeno',
+      therapeuticClass: 'aine',
+      classLabel: 'AINE',
+      duplicityGroup: 'aine',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 60, contraindicatedBelowGfr: 30, note: 'Evitar AINE se TFG < 30 mL/min.' },
+      pregnancyRisk: 'EVITAR_3TRI',
+      pregnancyNote: 'Contraindicado no 3º trimestre (risco ductal/renal fetal).',
+      allergyCrossGroups: ['aine', 'cetoprofeno', 'aas', 'anti-inflamatorio', 'antiinflamatorio'],
+      maxDailyDoseMg: 300,
+      maxSingleDoseMg: 100,
+    },
+  },
+  {
+    matchPatterns: [/\bcetorolaco\b/],
+    meta: {
+      canonicalKey: 'cetorolaco',
+      therapeuticClass: 'aine',
+      classLabel: 'AINE',
+      duplicityGroup: 'aine',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 60, contraindicatedBelowGfr: 30, note: 'Alto risco nefrotóxico; contraindicado se TFG < 30 mL/min.' },
+      pregnancyRisk: 'EVITAR_3TRI',
+      pregnancyNote: 'Evitar na gestação e no parto (risco de hemorragia e fechamento ductal).',
+      allergyCrossGroups: ['aine', 'cetorolaco', 'aas', 'anti-inflamatorio', 'antiinflamatorio'],
+      maxDailyDoseMg: 120,
+      maxSingleDoseMg: 30,
+    },
+  },
+  {
+    matchPatterns: [/\bnimesulida\b/],
+    meta: {
+      canonicalKey: 'nimesulida',
+      therapeuticClass: 'aine',
+      classLabel: 'AINE',
+      duplicityGroup: 'aine',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 60, contraindicatedBelowGfr: 30, note: 'Evitar se TFG < 30 mL/min ou hepatopatia.' },
+      pregnancyRisk: 'EVITAR_3TRI',
+      pregnancyNote: 'Contraindicado na gestação (risco ductal/oligoâmnio).',
+      allergyCrossGroups: ['aine', 'nimesulida', 'aas', 'anti-inflamatorio', 'antiinflamatorio'],
+      maxDailyDoseMg: 200,
+      maxSingleDoseMg: 100,
+    },
+  },
+  {
+    matchPatterns: [/\bnaproxeno\b/],
+    meta: {
+      canonicalKey: 'naproxeno',
+      therapeuticClass: 'aine',
+      classLabel: 'AINE',
+      duplicityGroup: 'aine',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 60, contraindicatedBelowGfr: 30, note: 'Evitar AINE se TFG < 30 mL/min.' },
+      pregnancyRisk: 'EVITAR_3TRI',
+      pregnancyNote: 'Contraindicado após 20-30 semanas de gestação.',
+      allergyCrossGroups: ['aine', 'naproxeno', 'aas', 'anti-inflamatorio', 'antiinflamatorio'],
+      maxDailyDoseMg: 1250,
+      maxSingleDoseMg: 500,
+    },
+  },
+  {
+    matchPatterns: [/\bmeloxicam\b|\btenoxicam\b|\bpiroxicam\b|\bcelecoxib/],
+    meta: {
+      canonicalKey: 'meloxicam',
+      therapeuticClass: 'aine',
+      classLabel: 'AINE',
+      duplicityGroup: 'aine',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 60, contraindicatedBelowGfr: 30, note: 'Evitar AINE se TFG < 30 mL/min.' },
+      pregnancyRisk: 'EVITAR_3TRI',
+      pregnancyNote: 'Contraindicado na gestação a partir de 20 semanas.',
+      allergyCrossGroups: ['aine', 'meloxicam', 'aas', 'anti-inflamatorio', 'antiinflamatorio'],
+      maxDailyDoseMg: 15,
+      maxSingleDoseMg: 15,
+    },
+  },
+  {
+    matchPatterns: [/\bacido acetilsalicilico\b|\baas\b|\baspirina\b/],
+    meta: {
+      canonicalKey: 'aas',
+      therapeuticClass: 'antiplaquetario',
+      classLabel: 'Antiplaquetário / Salicilato (AAS)',
+      duplicityGroup: 'antiplaquetario_salicilato',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, contraindicatedBelowGfr: 10, note: 'Evitar doses analgésicas se TFG < 30 mL/min.' },
+      pregnancyRisk: 'C',
+      pregnancyNote: 'Dose baixa (100 mg) é segura quando indicada (profilaxia PE); doses altas são contraindicadas.',
+      allergyCrossGroups: ['aas', 'salicilato', 'aspirina', 'aine'],
+      maxDailyDoseMg: 4000,
+      maxSingleDoseMg: 1000,
+    },
+  },
+  // ---- Analgésicos não opioides ----
+  {
+    matchPatterns: [/\bdipirona\b|\bmetamizol\b/],
+    meta: {
+      canonicalKey: 'dipirona',
+      therapeuticClass: 'analgesico_nao_opioide',
+      classLabel: 'Analgésico / Pirazolona',
+      duplicityGroup: 'dipirona',
+      renalAdjustment: { required: false, gfrCutoffMlMin: 30, note: 'Evitar doses elevadas repetidas em DRC grave.' },
+      pregnancyRisk: 'C',
+      pregnancyNote: 'Preferir Paracetamol como 1ª linha na gestação; evitar uso prolongado no 3º trimestre.',
+      allergyCrossGroups: ['dipirona', 'metamizol', 'pirazolona'],
+      maxDailyDoseMg: 4000,
+      maxDailyDoseMgPerKg: 80,
+      maxSingleDoseMg: 1000,
+    },
+  },
+  {
+    matchPatterns: [/\bparacetamol\b|\bacetaminofen\b/],
+    meta: {
+      canonicalKey: 'paracetamol',
+      therapeuticClass: 'analgesico_nao_opioide',
+      classLabel: 'Analgésico / Antipirético',
+      duplicityGroup: 'paracetamol',
+      renalAdjustment: { required: false, gfrCutoffMlMin: 30, note: 'Seguro na DRC; alongar intervalo para 8/8h se TFG < 10 mL/min.' },
+      pregnancyRisk: 'B',
+      pregnancyNote: 'Analgésico de 1ª linha na gestação.',
+      allergyCrossGroups: ['paracetamol', 'acetaminofen'],
+      maxDailyDoseMg: 4000,
+      maxDailyDoseMgPerKg: 75,
+      maxSingleDoseMg: 1000,
+    },
+  },
+  // ---- Beta-lactâmicos (Penicilinas) ----
+  {
+    matchPatterns: [/\bamoxicilina\b.*clavulan|\bclavulanato\b/],
+    meta: {
+      canonicalKey: 'amoxicilina_clavulanato',
+      therapeuticClass: 'beta_lactamico_penicilina',
+      classLabel: 'Beta-lactâmico (Penicilina + Inibidor)',
+      duplicityGroup: 'beta_lactamico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, note: 'Ajustar para 12/12h se TFG 10-30 mL/min; evitar comprimido 875 mg se TFG < 30.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['penicilina', 'amoxicilina', 'beta-lactamico', 'betalactamico', 'clavulanato'],
+      maxDailyDoseMg: 3000,
+      maxDailyDoseMgPerKg: 90,
+      maxSingleDoseMg: 1000,
+    },
+  },
+  {
+    matchPatterns: [/\bamoxicilina\b/],
+    meta: {
+      canonicalKey: 'amoxicilina',
+      therapeuticClass: 'beta_lactamico_penicilina',
+      classLabel: 'Beta-lactâmico (Penicilina)',
+      duplicityGroup: 'beta_lactamico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, note: 'Ajustar intervalo para 12/12h se TFG 10-30 mL/min e 24/24h se < 10.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['penicilina', 'amoxicilina', 'beta-lactamico', 'betalactamico'],
+      maxDailyDoseMg: 3000,
+      maxDailyDoseMgPerKg: 90,
+      maxSingleDoseMg: 1000,
+    },
+  },
+  {
+    matchPatterns: [/\bampicilina\b|\bsulbactam\b|\bpiperacilina\b|\boxacilina\b/],
+    meta: {
+      canonicalKey: 'ampicilina',
+      therapeuticClass: 'beta_lactamico_penicilina',
+      classLabel: 'Beta-lactâmico (Penicilina)',
+      duplicityGroup: 'beta_lactamico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, note: 'Ajustar intervalo se TFG < 50 mL/min.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['penicilina', 'ampicilina', 'beta-lactamico', 'betalactamico'],
+      maxDailyDoseMg: 12000,
+      maxDailyDoseMgPerKg: 200,
+    },
+  },
+  {
+    matchPatterns: [/\bpenicilina\b|\bbenzilpenicilina\b|\bbenze?tacil\b/],
+    meta: {
+      canonicalKey: 'penicilina',
+      therapeuticClass: 'beta_lactamico_penicilina',
+      classLabel: 'Beta-lactâmico (Penicilina)',
+      duplicityGroup: 'beta_lactamico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, note: 'Reduzir dose em penicilina cristalina se TFG < 50 mL/min.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['penicilina', 'benzilpenicilina', 'beta-lactamico', 'betalactamico'],
+    },
+  },
+  // ---- Beta-lactâmicos (Cefalosporinas) ----
+  {
+    matchPatterns: [/\bcefalexina\b/],
+    meta: {
+      canonicalKey: 'cefalexina',
+      therapeuticClass: 'beta_lactamico_cefalosporina',
+      classLabel: 'Beta-lactâmico (Cefalosporina 1ªG)',
+      duplicityGroup: 'beta_lactamico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, note: 'Ajustar intervalo para 8-12h se TFG < 50 mL/min.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['cefalosporina', 'cefalexina'],
+      allergyWarnGroups: ['penicilina', 'amoxicilina', 'beta-lactamico', 'betalactamico'],
+      maxDailyDoseMg: 4000,
+      maxDailyDoseMgPerKg: 100,
+      maxSingleDoseMg: 1000,
+    },
+  },
+  {
+    matchPatterns: [/\bceftriaxona\b/],
+    meta: {
+      canonicalKey: 'ceftriaxona',
+      therapeuticClass: 'beta_lactamico_cefalosporina',
+      classLabel: 'Beta-lactâmico (Cefalosporina 3ªG)',
+      duplicityGroup: 'beta_lactamico',
+      renalAdjustment: { required: false, note: 'Excreção biliar/renal mista; sem ajuste usual na DRC leve/moderada.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['cefalosporina', 'ceftriaxona'],
+      allergyWarnGroups: ['penicilina', 'amoxicilina', 'beta-lactamico', 'betalactamico'],
+      maxDailyDoseMg: 4000,
+      maxDailyDoseMgPerKg: 100,
+      maxSingleDoseMg: 2000,
+    },
+  },
+  {
+    matchPatterns: [/\bcefuroxima\b|\bcefazolina\b|\bcefalotina\b|\bcefepima\b|\bceftazidima\b/],
+    meta: {
+      canonicalKey: 'cefalosporina',
+      therapeuticClass: 'beta_lactamico_cefalosporina',
+      classLabel: 'Beta-lactâmico (Cefalosporina)',
+      duplicityGroup: 'beta_lactamico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, note: 'Avaliar ajuste de intervalo se TFG < 50 mL/min.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['cefalosporina'],
+      allergyWarnGroups: ['penicilina', 'amoxicilina', 'beta-lactamico', 'betalactamico'],
+      maxDailyDoseMg: 4000,
+    },
+  },
+  // ---- Macrolídeos ----
+  {
+    matchPatterns: [/\bazitromicina\b|\bclaritromicina\b|\beritromicina\b|\bespiramicina\b/],
+    meta: {
+      canonicalKey: 'macrolideo',
+      therapeuticClass: 'macrolideo',
+      classLabel: 'Macrolídeo',
+      duplicityGroup: 'macrolideo',
+      renalAdjustment: { required: false, gfrCutoffMlMin: 30, note: 'Claritromicina requer redução de 50% se TFG < 30 mL/min; Azitromicina sem ajuste.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['macrolideo', 'azitromicina', 'claritromicina', 'eritromicina'],
+      maxDailyDoseMg: 1000,
+      maxDailyDoseMgPerKg: 20,
+    },
+  },
+  // ---- Fluoroquinolonas ----
+  {
+    matchPatterns: [/\bciprofloxacin|\blevofloxacin|\bofloxacin|\bnorfloxacin|\bmoxifloxacin/],
+    meta: {
+      canonicalKey: 'fluoroquinolona',
+      therapeuticClass: 'fluoroquinolona',
+      classLabel: 'Fluoroquinolona',
+      duplicityGroup: 'fluoroquinolona',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, note: 'Reduzir dose / alongar intervalo se TFG < 50 mL/min.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Evitar na gestação e pediatria (risco de artropatia cartilaginosa fetal).',
+      allergyCrossGroups: ['fluoroquinolona', 'quinolona', 'ciprofloxacino', 'levofloxacino'],
+      maxDailyDoseMg: 1500,
+      maxSingleDoseMg: 750,
+    },
+  },
+  // ---- Tetraciclinas ----
+  {
+    matchPatterns: [/\bdoxiciclina\b|\btetraciclina\b|\bminociclina\b/],
+    meta: {
+      canonicalKey: 'doxiciclina',
+      therapeuticClass: 'tetraciclina',
+      classLabel: 'Tetraciclina',
+      duplicityGroup: 'tetraciclina',
+      renalAdjustment: { required: false, note: 'Doxiciclina não requer ajuste renal.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Contraindicada na gestação e crianças < 8 anos (descoloração dentária e hipoplasia óssea).',
+      allergyCrossGroups: ['tetraciclina', 'doxiciclina'],
+      maxDailyDoseMg: 200,
+      maxSingleDoseMg: 100,
+    },
+  },
+  // ---- Aminoglicosídeos ----
+  {
+    matchPatterns: [/\bgentamicina\b|\bamicacina\b|\btobramicina\b/],
+    meta: {
+      canonicalKey: 'aminoglicosideo',
+      therapeuticClass: 'aminoglicosideo',
+      classLabel: 'Aminoglicosídeo',
+      duplicityGroup: 'aminoglicosideo',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 60, contraindicatedBelowGfr: 30, note: 'Alto risco nefrotóxico/ototóxico; ajustar rigorosamente pela TFG.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Risco de ototoxicidade fetal; reservar para infecções graves sem alternativa.',
+      allergyCrossGroups: ['aminoglicosideo', 'gentamicina', 'amicacina'],
+    },
+  },
+  // ---- Sulfonamidas ----
+  {
+    matchPatterns: [/\bsulfametoxazol\b|\bbactrim\b|\bsulfadiazina\b/],
+    meta: {
+      canonicalKey: 'sulfonamida',
+      therapeuticClass: 'sulfonamida',
+      classLabel: 'Sulfonamida',
+      duplicityGroup: 'sulfonamida',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, contraindicatedBelowGfr: 15, note: 'Reduzir 50% se TFG 15-30 mL/min; evitar se < 15 mL/min.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Evitar no 1º trimestre (antagonismo de folato) e 3º trimestre (risco de kernicterus).',
+      allergyCrossGroups: ['sulfa', 'sulfonamida', 'sulfametoxazol', 'bactrim'],
+      maxDailyDoseMg: 3200,
+    },
+  },
+  // ---- Nitrofurantoína ----
+  {
+    matchPatterns: [/\bnitrofurantoina\b/],
+    meta: {
+      canonicalKey: 'nitrofurantoina',
+      therapeuticClass: 'nitrofurano',
+      classLabel: 'Nitrofurano (Antisséptico urinário)',
+      duplicityGroup: 'nitrofurano',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 45, contraindicatedBelowGfr: 30, note: 'Contraindicada se TFG < 30 mL/min (ineficaz na urina e toxicidade sistêmica).' },
+      pregnancyRisk: 'EVITAR_3TRI',
+      pregnancyNote: 'Segura no 1º-2º tri; evitar após 37-38 semanas e no trabalho de parto (risco de anemia hemolítica neonatal).',
+      allergyCrossGroups: ['nitrofurantoina', 'nitrofurano'],
+      maxDailyDoseMg: 400,
+      maxSingleDoseMg: 100,
+    },
+  },
+  // ---- Nitroimidazóis ----
+  {
+    matchPatterns: [/\bmetronidazol\b|\bsecnidazol\b|\btinidazol\b/],
+    meta: {
+      canonicalKey: 'metronidazol',
+      therapeuticClass: 'nitroimidazol',
+      classLabel: 'Nitroimidazol',
+      duplicityGroup: 'nitroimidazol',
+      renalAdjustment: { required: false, gfrCutoffMlMin: 10, note: 'Ajustar se TFG < 10 mL/min.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['metronidazol', 'nitroimidazol'],
+      maxDailyDoseMg: 2000,
+    },
+  },
+  // ---- Lincosamidas ----
+  {
+    matchPatterns: [/\bclindamicina\b/],
+    meta: {
+      canonicalKey: 'clindamicina',
+      therapeuticClass: 'lincosamida',
+      classLabel: 'Lincosamida',
+      duplicityGroup: 'lincosamida',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['clindamicina', 'lincosamida'],
+      maxDailyDoseMg: 2700,
+      maxDailyDoseMgPerKg: 40,
+    },
+  },
+  // ---- Corticoides sistêmicos ----
+  {
+    matchPatterns: [/\bprednisona\b|\bprednisolona\b|\bdexametasona\b|\bhidrocortisona\b|\bbetametasona\b|\bmetilprednisolona\b/],
+    meta: {
+      canonicalKey: 'corticoide',
+      therapeuticClass: 'corticoide',
+      classLabel: 'Corticosteroide sistêmico',
+      duplicityGroup: 'corticoide',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'C',
+      allergyCrossGroups: ['corticoide', 'prednisona', 'dexametasona'],
+      maxDailyDoseMgPerKg: 2,
+    },
+  },
+  // ---- IBP ----
+  {
+    matchPatterns: [/\bomeprazol\b|\bpantoprazol\b|\besomeprazol\b|\blansoprazol\b/],
+    meta: {
+      canonicalKey: 'ibp',
+      therapeuticClass: 'ibp',
+      classLabel: 'Inibidor de Bomba de Prótons (IBP)',
+      duplicityGroup: 'ibp',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['ibp', 'omeprazol'],
+      maxDailyDoseMg: 80,
+    },
+  },
+  // ---- Opioides ----
+  {
+    matchPatterns: [/\bmorfina\b|\btramadol\b|\bcodeina\b|\bfentanil|\bmetadona\b/],
+    meta: {
+      canonicalKey: 'opioide',
+      therapeuticClass: 'opioide',
+      classLabel: 'Opioide',
+      duplicityGroup: 'opioide',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, contraindicatedBelowGfr: 15, note: 'Acúmulo de metabólitos ativos na DRC (sedação/depressão respiratória); reduzir dose ou preferir fentanil.' },
+      pregnancyRisk: 'C',
+      allergyCrossGroups: ['opioide', 'morfina', 'tramadol', 'codeina'],
+      maxDailyDoseMg: 400,
+    },
+  },
+  // ---- Benzodiazepínicos ----
+  {
+    matchPatterns: [/\bdiazepam\b|\bclonazepam\b|\bmidazolam\b|\blorazepam\b|\balprazolam\b|\bnitrazepam\b/],
+    meta: {
+      canonicalKey: 'benzodiazepinico',
+      therapeuticClass: 'benzodiazepinico',
+      classLabel: 'Benzodiazepínico',
+      duplicityGroup: 'benzodiazepinico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, note: 'Risco de sedação prolongada em DRC.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Evitar na gestação (risco de síndrome de abstinência/hipotonia neonatal).',
+      allergyCrossGroups: ['benzodiazepinico', 'diazepam', 'clonazepam'],
+    },
+  },
+  // ---- Anticonvulsivantes / Teratogênicos ----
+  {
+    matchPatterns: [/\bacido valproico\b|\bvalproato\b/],
+    meta: {
+      canonicalKey: 'valproato',
+      therapeuticClass: 'anticonvulsivante',
+      classLabel: 'Anticonvulsivante (Valproato)',
+      duplicityGroup: 'anticonvulsivante',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'X',
+      pregnancyNote: 'ALTO RISCO TERATOGÊNICO (defeitos do tubo neural e neurodesenvolvimento). Contraindicado na gestação.',
+      allergyCrossGroups: ['valproato', 'acido valproico'],
+      maxDailyDoseMg: 3000,
+    },
+  },
+  {
+    matchPatterns: [/\bcarbamazepina\b|\bfenitoina\b|\bfenobarbital\b|\bcarbonato de litio\b|\blitio\b/],
+    meta: {
+      canonicalKey: 'anticonvulsivante_risco',
+      therapeuticClass: 'anticonvulsivante',
+      classLabel: 'Anticonvulsivante / Estabilizador',
+      duplicityGroup: 'anticonvulsivante',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, note: 'Lítio exige monitoramento rigoroso/evitar se TFG < 30 mL/min.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Risco teratogênico conhecido; avaliar relação risco-benefício e ácido fólico 5 mg.',
+      allergyCrossGroups: ['carbamazepina', 'fenitoina', 'fenobarbital', 'litio'],
+    },
+  },
+  // ---- IECA / BRA ----
+  {
+    matchPatterns: [/\benalapril\b|\bcaptopril\b|\blisinopril\b|\bramipril\b/],
+    meta: {
+      canonicalKey: 'ieca',
+      therapeuticClass: 'ieca',
+      classLabel: 'IECA',
+      duplicityGroup: 'bloqueio_sraa',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, note: 'Monitorar Cr e K+; evitar início ou suspender se elevação de Cr > 30% ou K+ > 5,5.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'CONTRAINDICADO NA GESTAÇÃO (fetotoxicidade renal, oligoâmnio, anúria fetal). Preferir Metildopa/Nifedipino.',
+      allergyCrossGroups: ['ieca', 'enalapril', 'captopril'],
+      maxDailyDoseMg: 150,
+    },
+  },
+  {
+    matchPatterns: [/\blosartana\b|\bvalsartana\b|\bcandesartana\b|\bolmesartana\b/],
+    meta: {
+      canonicalKey: 'bra',
+      therapeuticClass: 'bra',
+      classLabel: 'BRA',
+      duplicityGroup: 'bloqueio_sraa',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, note: 'Monitorar Cr e K+; evitar associação com IECA.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'CONTRAINDICADO NA GESTAÇÃO (fetotoxicidade renal/oligoâmnio). Preferir Metildopa/Nifedipino.',
+      allergyCrossGroups: ['bra', 'losartana'],
+      maxDailyDoseMg: 100,
+    },
+  },
+  // ---- Antidiabéticos ----
+  {
+    matchPatterns: [/\bmetformina\b/],
+    meta: {
+      canonicalKey: 'metformina',
+      therapeuticClass: 'biguanida',
+      classLabel: 'Biguanida (Metformina)',
+      duplicityGroup: 'biguanida',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 45, contraindicatedBelowGfr: 30, note: 'Reduzir dose (máx 1000 mg/dia) se TFG 30-45; CONTRAINDICADA se TFG < 30 mL/min (acidose láctica).' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['metformina'],
+      maxDailyDoseMg: 2550,
+    },
+  },
+  {
+    matchPatterns: [/\bglibenclamida\b|\bgliclazida\b|\bglimepirida\b/],
+    meta: {
+      canonicalKey: 'sulfonilureia',
+      therapeuticClass: 'sulfonilureia',
+      classLabel: 'Sulfonilureia',
+      duplicityGroup: 'sulfonilureia',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 45, contraindicatedBelowGfr: 30, note: 'Alto risco de hipoglicemia grave se TFG < 30 mL/min (especialmente Glibenclamida).' },
+      pregnancyRisk: 'C',
+      allergyCrossGroups: ['sulfonilureia', 'glibenclamida', 'gliclazida'],
+    },
+  },
+  // ---- Anticoagulantes / Antiplaquetários ----
+  {
+    matchPatterns: [/\bvarfarina\b/],
+    meta: {
+      canonicalKey: 'varfarina',
+      therapeuticClass: 'anticoagulante',
+      classLabel: 'Anticoagulante Oral (Varfarina)',
+      duplicityGroup: 'anticoagulante',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'X',
+      pregnancyNote: 'Teratogênica no 1º trimestre (síndrome varfarínica) e risco hemorrágico fetal; preferir HBPM.',
+      allergyCrossGroups: ['varfarina'],
+    },
+  },
+  {
+    matchPatterns: [/\benoxaparina\b|\bheparina\b|\brivaroxabana\b|\bapixabana\b|\bdabigatrana\b/],
+    meta: {
+      canonicalKey: 'anticoagulante_heparina',
+      therapeuticClass: 'anticoagulante',
+      classLabel: 'Anticoagulante',
+      duplicityGroup: 'anticoagulante',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, note: 'Enoxaparina exige ajuste (1 mg/kg 1x/dia) se ClCr < 30 mL/min.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['heparina', 'enoxaparina'],
+    },
+  },
+  {
+    matchPatterns: [/\bclopidogrel\b|\bticagrelor\b|\bprasugrel\b/],
+    meta: {
+      canonicalKey: 'clopidogrel',
+      therapeuticClass: 'antiplaquetario',
+      classLabel: 'Antiplaquetário (Inibidor P2Y12)',
+      duplicityGroup: 'antiplaquetario_p2y12',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['clopidogrel'],
+      maxDailyDoseMg: 600,
+    },
+  },
+  // ---- Estatinas & Teratogênicos especiais ----
+  {
+    matchPatterns: [/\bsinvastatina\b|\batorvastatina\b|\brosuvastatina\b/],
+    meta: {
+      canonicalKey: 'estatina',
+      therapeuticClass: 'estatina',
+      classLabel: 'Estatina',
+      duplicityGroup: 'estatina',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, note: 'Limitar dose em DRC avançada.' },
+      pregnancyRisk: 'X',
+      pregnancyNote: 'CONTRAINDICADA NA GESTAÇÃO (suspender imediatamente).',
+      allergyCrossGroups: ['estatina', 'sinvastatina', 'atorvastatina'],
+      maxDailyDoseMg: 80,
+    },
+  },
+  {
+    matchPatterns: [/\btalidomida\b|\bmisoprostol\b|\bmetotrexato\b|\bisotretinoina\b/],
+    meta: {
+      canonicalKey: 'teratogenico_x',
+      therapeuticClass: 'teratogenico_especial',
+      classLabel: 'Fármaco Categoria X',
+      duplicityGroup: 'teratogenico_x',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50 },
+      pregnancyRisk: 'X',
+      pregnancyNote: 'CONTRAINDICADO NA GESTAÇÃO (alto risco teratogênico / abortivo).',
+      allergyCrossGroups: [],
+    },
+  },
+  // ---- Diuréticos / Cardiovasculares ----
+  {
+    matchPatterns: [/\bespironolactona\b/],
+    meta: {
+      canonicalKey: 'espironolactona',
+      therapeuticClass: 'diuretico',
+      classLabel: 'Diurético Poupador de K+',
+      duplicityGroup: 'diuretico_poupador_k',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 45, contraindicatedBelowGfr: 30, note: 'Alto risco de hipercalemia grave se TFG < 30 mL/min.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Efeito antiandrogênico fetal; evitar na gestação.',
+      allergyCrossGroups: ['espironolactona'],
+      maxDailyDoseMg: 400,
+    },
+  },
+  {
+    matchPatterns: [/\bfurosemida\b|\bhidroclorotiazida\b/],
+    meta: {
+      canonicalKey: 'diuretico_tiazidico_alca',
+      therapeuticClass: 'diuretico',
+      classLabel: 'Diurético',
+      duplicityGroup: 'diuretico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 30, note: 'Tiazídicos perdem eficácia se TFG < 30 mL/min.' },
+      pregnancyRisk: 'C',
+      allergyCrossGroups: ['furosemida', 'hidroclorotiazida'],
+    },
+  },
+  {
+    matchPatterns: [/\batenolol\b|\bpropranolol\b|\bcarvedilol\b|\bmetoprolol\b/],
+    meta: {
+      canonicalKey: 'betabloqueador',
+      therapeuticClass: 'betabloqueador',
+      classLabel: 'Betabloqueador',
+      duplicityGroup: 'betabloqueador',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 35, note: 'Atenolol requer ajuste de dose se TFG < 35 mL/min.' },
+      pregnancyRisk: 'C',
+      pregnancyNote: 'Atenolol associado a RCIU na gestação; preferir Labetalol/Metildopa/Nifedipino.',
+      allergyCrossGroups: ['betabloqueador'],
+    },
+  },
+  {
+    matchPatterns: [/\banlodipino\b|\bnifedipino\b/],
+    meta: {
+      canonicalKey: 'bcc',
+      therapeuticClass: 'bcc',
+      classLabel: 'Bloqueador de Canal de Cálcio',
+      duplicityGroup: 'bcc',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'C',
+      allergyCrossGroups: ['bcc', 'anlodipino', 'nifedipino'],
+    },
+  },
+  {
+    matchPatterns: [/\bdigoxina\b|\bamiodarona\b/],
+    meta: {
+      canonicalKey: 'antiarritmico',
+      therapeuticClass: 'antiarritmico',
+      classLabel: 'Antiarrítmico / Digitálico',
+      duplicityGroup: 'antiarritmico',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, note: 'Digoxina exige redução rigorosa de dose se TFG < 50 mL/min (intoxicação digitálica).' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Amiodarona é categoria D na gestação (hipotireoidismo fetal).',
+      allergyCrossGroups: ['digoxina', 'amiodarona'],
+    },
+  },
+  // ---- Antieméticos ----
+  {
+    matchPatterns: [/\bondansetrona\b|\bmetoclopramida\b|\bbromoprida\b|\bdomperidona\b/],
+    meta: {
+      canonicalKey: 'antiemetico',
+      therapeuticClass: 'antiemetico',
+      classLabel: 'Antiemético',
+      duplicityGroup: 'antiemetico',
+      renalAdjustment: { required: false, gfrCutoffMlMin: 40, note: 'Metoclopramida: reduzir 50% se ClCr < 40 mL/min.' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['metoclopramida', 'ondansetrona', 'bromoprida'],
+      maxDailyDoseMg: 30,
+    },
+  },
+  // ---- Anti-histamínicos ----
+  {
+    matchPatterns: [/\bloratadina\b|\bdexclorfeniramina\b|\bprometazina\b|\bhidroxizina\b|\bcetirizina\b/],
+    meta: {
+      canonicalKey: 'anti_histaminico',
+      therapeuticClass: 'anti_histaminico',
+      classLabel: 'Anti-histamínico',
+      duplicityGroup: 'anti_histaminico',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['anti-histaminico', 'prometazina', 'loratadina'],
+    },
+  },
+  // ---- Broncodilatadores ----
+  {
+    matchPatterns: [/\bsalbutamol\b|\bfenoterol\b|\bterbutalina\b|\bformoterol\b/],
+    meta: {
+      canonicalKey: 'broncodilatador',
+      therapeuticClass: 'broncodilatador',
+      classLabel: 'Beta-2 Agonista (Broncodilatador)',
+      duplicityGroup: 'broncodilatador_b2',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['salbutamol'],
+    },
+  },
+  // ---- Antivirais / Antifúngicos / Antigotosos / Antiparasitários ----
+  {
+    matchPatterns: [/\baciclovir\b|\bvalaciclovir\b/],
+    meta: {
+      canonicalKey: 'aciclovir',
+      therapeuticClass: 'antiviral',
+      classLabel: 'Antiviral (Aciclovir)',
+      duplicityGroup: 'antiviral',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, note: 'Ajustar intervalo se TFG < 50 mL/min (risco de nefropatia cristalina e neurotoxicidade).' },
+      pregnancyRisk: 'B',
+      allergyCrossGroups: ['aciclovir'],
+      maxDailyDoseMg: 4000,
+    },
+  },
+  {
+    matchPatterns: [/\bfluconazol\b|\bitraconazol\b|\bcetoconazol\b/],
+    meta: {
+      canonicalKey: 'antifungico_azol',
+      therapeuticClass: 'antifungico',
+      classLabel: 'Antifúngico Azólico',
+      duplicityGroup: 'antifungico_azol',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, note: 'Fluconazol: reduzir 50% da dose de manutenção se TFG < 50 mL/min.' },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Fluconazol oral deve ser evitado na gestação (preferir azólico tópico vaginal).',
+      allergyCrossGroups: ['fluconazol', 'azolico'],
+    },
+  },
+  {
+    matchPatterns: [/\balopurinol\b|\bcolchicina\b/],
+    meta: {
+      canonicalKey: 'antigotoso',
+      therapeuticClass: 'antigotoso',
+      classLabel: 'Antigotoso',
+      duplicityGroup: 'antigotoso',
+      renalAdjustment: { required: true, gfrCutoffMlMin: 50, contraindicatedBelowGfr: 15, note: 'Ajustar dose rigorosamente pela TFG (risco de toxicidade grave).' },
+      pregnancyRisk: 'C',
+      allergyCrossGroups: ['alopurinol', 'colchicina'],
+    },
+  },
+  {
+    matchPatterns: [/\balbendazol\b|\bivermectina\b|\bmebendazol\b/],
+    meta: {
+      canonicalKey: 'antiparasitario',
+      therapeuticClass: 'antiparasitario',
+      classLabel: 'Antiparasitário',
+      duplicityGroup: 'antiparasitario',
+      renalAdjustment: { required: false },
+      pregnancyRisk: 'D',
+      pregnancyNote: 'Evitar no 1º trimestre de gestação.',
+      allergyCrossGroups: ['albendazol', 'ivermectina'],
+    },
+  },
+];
+
+/**
+ * Resolve metadados clínicos estruturados a partir do nome ou texto da prescrição
+ * (cobre tanto os 252 itens da REMUME quanto fármacos comuns fora da REMUME como Ibuprofeno/Enoxaparina).
+ */
+export function getDrugClinicalMeta(drugNameOrText: string): RemumeClinicalMeta | null {
+  const norm = normalizeDrugLookupText(drugNameOrText);
+  if (!norm) return null;
+  for (const rule of DRUG_CLINICAL_CATALOG) {
+    if (rule.matchPatterns.some((rx) => rx.test(norm))) {
+      return rule.meta;
+    }
+  }
+  return null;
+}
+
+// Hidrata automaticamente todos os 252 itens da REMUME com seus metadados clínicos tipados
+for (const item of REMUME_ITEMS) {
+  const meta = getDrugClinicalMeta(`${item.name} ${item.hslFarmaco || ''}`);
+  if (meta) {
+    item.clinicalMeta = meta;
+  }
+}
+

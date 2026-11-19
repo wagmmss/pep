@@ -1,9 +1,16 @@
 import type { ClinicalProtocolItem } from '../data/clinical_data.ts';
-import { resolvePowerActionText } from '../engine/personalizar.ts';
+import { resolveProtocolPharmaHints } from '../data/clinical_links.ts';
+import {
+  buildClinicalContext,
+  validateAgeWeightPlausibility,
+} from '../engine/clinicalContext.ts';
+import { hasEmptyPediatricWeight, resolvePowerActionText } from '../engine/personalizar.ts';
+import { auditPrescription, extractPrescriptionItemsFromText } from '../engine/prescriptionGuard.ts';
 import { getClinicalSeverity } from '../engine/workstation.ts';
-import { searchClinicalProtocols } from '../engine/search.ts';
-import { ALL_PROTOCOLS, getGlobalSearchIndex, PEP_PROTOCOLS, PROTOCOL_BY_ID, uiBridge } from './context.ts';
-import { copyToClipboard, escapeHtml } from './utils.ts';
+import { searchProtocolsAsync } from '../engine/searchClient.ts';
+import { cockpitStore } from '../state/store.ts';
+import { ALL_PROTOCOLS, PEP_PROTOCOLS, PROTOCOL_BY_ID, uiBridge } from './context.ts';
+import { copyToClipboard, escapeHtml, showToast } from './utils.ts';
 
 const SVG_COPY_ICON =
   '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
@@ -24,6 +31,8 @@ let currentModFilter = 'all';
 let currentSubcat = 'all';
 let currentQuery = '';
 let selectedProtocolId: string | null = PEP_PROTOCOLS[0]?.id ?? null;
+let lastRenderedItems: ClinicalProtocolItem[] = [];
+let listSearchSeq = 0;
 
 function getModShortLabel(modId: string): string {
   switch (modId) {
@@ -49,7 +58,10 @@ function getBaseItemsByModule(modFilter: string): ClinicalProtocolItem[] {
   return ALL_PROTOCOLS.filter((p) => p.mod_id === modFilter);
 }
 
-function getFilteredProtocols(): { items: ClinicalProtocolItem[]; rankById: Map<string, string | null> } {
+async function getFilteredProtocolsAsync(): Promise<{
+  items: ClinicalProtocolItem[];
+  rankById: Map<string, string | null>;
+}> {
   let pool = getBaseItemsByModule(currentModFilter);
   if (currentSubcat !== 'all') {
     pool = pool.filter((p) => p.category === currentSubcat);
@@ -58,7 +70,7 @@ function getFilteredProtocols(): { items: ClinicalProtocolItem[]; rankById: Map<
   const rankById = new Map<string, string | null>();
   if (!q) return { items: pool, rankById };
 
-  const ranked = searchClinicalProtocols(getGlobalSearchIndex(), ALL_PROTOCOLS, q, 110);
+  const { results: ranked } = await searchProtocolsAsync(q, 110);
   const allowedIds = new Set(pool.map((p) => p.id));
   const byId = new Set<string>();
   const ordered: ClinicalProtocolItem[] = [];
@@ -94,12 +106,14 @@ export function renderSubcatChips(): void {
   ].join('');
 }
 
-export function renderProtocolList(): void {
-  const grid = document.getElementById('cardsGrid');
-  const counter = document.getElementById('wsCenterCounter');
-  if (!grid) return;
+function paintProtocolCards(
+  grid: HTMLElement,
+  counter: HTMLElement | null,
+  items: ClinicalProtocolItem[],
+  rankById: Map<string, string | null>
+): void {
+  lastRenderedItems = items;
 
-  const { items, rankById } = getFilteredProtocols();
   if (counter) {
     if (currentModFilter === 'hab') {
       counter.textContent = `${items.length} ${items.length === 1 ? 'Habilidade' : 'Habilidades'}`;
@@ -180,6 +194,29 @@ export function renderProtocolList(): void {
     .join('');
 }
 
+export function renderProtocolList(): void {
+  const grid = document.getElementById('cardsGrid');
+  const counter = document.getElementById('wsCenterCounter');
+  if (!grid) return;
+
+  const q = currentQuery.trim();
+  const mySeq = ++listSearchSeq;
+
+  if (!q) {
+    let pool = getBaseItemsByModule(currentModFilter);
+    if (currentSubcat !== 'all') {
+      pool = pool.filter((p) => p.category === currentSubcat);
+    }
+    paintProtocolCards(grid, counter, pool, new Map());
+    return;
+  }
+
+  void getFilteredProtocolsAsync().then(({ items, rankById }) => {
+    if (mySeq !== listSearchSeq) return;
+    paintProtocolCards(grid, counter, items, rankById);
+  });
+}
+
 export function setSelectedProtocolId(id: string | null): void {
   selectedProtocolId = id;
   const grid = document.getElementById('cardsGrid');
@@ -190,7 +227,7 @@ export function setSelectedProtocolId(id: string | null): void {
 }
 
 function navigateListByDelta(delta: number): void {
-  const { items } = getFilteredProtocols();
+  const items = lastRenderedItems;
   if (items.length === 0) return;
   const curIdx = items.findIndex((i) => i.id === selectedProtocolId);
   const nextIdx =
@@ -223,6 +260,32 @@ export function initProtocolList(): void {
       const item = copyId ? PROTOCOL_BY_ID.get(copyId) : undefined;
       if (item) {
         const res = resolvePowerActionText(slot, item.pep_body || '', item);
+        const ctx = buildClinicalContext(cockpitStore.getState().patientSession.identity, {
+          modId: item.mod_id,
+          trigger: item.trigger,
+          category: item.category,
+        });
+        const rxItems = extractPrescriptionItemsFromText(res.text);
+        const audit = auditPrescription(rxItems, ctx, resolveProtocolPharmaHints(item));
+        const plausibility = validateAgeWeightPlausibility(ctx.ageYears, ctx.weightKg);
+        const needsPedWeight =
+          (item.mod_id === 'ped' || ctx.isPediatric) &&
+          ctx.weightKg === null &&
+          hasEmptyPediatricWeight(res.text);
+
+        if (audit.blockCount > 0 || plausibility?.severity === 'critical' || needsPedWeight) {
+          setSelectedProtocolId(item.id);
+          uiBridge.openPepDrawer(item.id, 'pep');
+          const reason =
+            audit.blockCount > 0
+              ? `${audit.blockCount} bloqueio(s) do Prescription Guard (alergia/gestação/ClCr)`
+              : plausibility?.severity === 'critical'
+                ? plausibility.title
+                : 'peso pediátrico obrigatório antes de copiar';
+          showToast(`⛔ Cópia rápida retida: ${reason}. Revise no painel.`, 'warning', 3200);
+          return;
+        }
+
         void copyToClipboard(res.text, `${res.label} (${item.title})`);
         quickCopyBtn.classList.add('btn-copied-emerald');
         setTimeout(() => quickCopyBtn.classList.remove('btn-copied-emerald'), 1100);
@@ -273,7 +336,7 @@ export function initProtocolList(): void {
     timer = setTimeout(() => {
       currentQuery = val;
       renderProtocolList();
-    }, 60);
+    }, 55);
   });
 
   searchInput?.addEventListener('keydown', (e) => {
@@ -285,7 +348,7 @@ export function initProtocolList(): void {
       navigateListByDelta(-1);
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      const first = getFilteredProtocols().items[0];
+      const first = lastRenderedItems[0];
       if (first) {
         setSelectedProtocolId(first.id);
         uiBridge.openPepDrawer(first.id, 'pep');

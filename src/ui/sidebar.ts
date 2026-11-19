@@ -40,22 +40,22 @@ const CENTRAL_6ANO_NAV: SidebarNavItem[] = [
     id: 'hoje',
     label: 'Hoje (6º Ano)',
     icon: '📅',
-    badge: '70/30',
-    title: 'Motor dinâmico de rotina, Cronômetro e Auditoria 70/30',
+    badge: 'R1',
+    title: 'Cockpit do Internato & R1: Hoje (Escala/Tarefas/70-30) e R1 & Currículo (USP-SP/USP-RP/UNICAMP)',
+  },
+  {
+    id: 'logbook',
+    label: 'Evolução & Prática',
+    icon: '📓',
+    badge: '3x',
+    title: 'Logbook (Regra 3x), Radar de Pontos Cegos, Histórico 70/30 e Prompts IA',
   },
   {
     id: 'teoria',
     label: 'Formação Teórica',
     icon: '📚',
-    badge: '7 Mód',
-    title: 'Biblioteca de Formação Teórica em Habilidades Médicas',
-  },
-  {
-    id: 'logbook',
-    label: 'Logbook & Pontos Cegos',
-    icon: '📓',
-    badge: 'Log',
-    title: 'Logbook de procedimentos dos 9 rodízios e Radar Top 5',
+    badge: '9 Mód',
+    title: 'Formação Teórica em Habilidades Médicas (9 Módulos + Treino Ativo Offline)',
   },
 ];
 
