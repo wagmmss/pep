@@ -2139,7 +2139,7 @@ export function initPepDrawer(): void {
   window.addEventListener('beforeunload', () => syncDraftToStore.flush());
   window.addEventListener('pagehide', () => syncDraftToStore.flush());
 
-  const triggerPowerActionCopy = async (actionId: 1 | 2 | 3 | 4 | 5) => {
+  const triggerPowerActionCopy = async (actionId: 1 | 2 | 3 | 4 | 5, btnEl?: HTMLElement | null) => {
     if (!activeProtocol) return;
     syncDraftToStore.flush();
     const compiledNow = getCompiledPepText();
@@ -2155,7 +2155,18 @@ export function initPepDrawer(): void {
       showToast(`⚠️ Copiado com ${res.pendingGaps.totalGaps} lacuna(s) [ ] pendente(s).`, 'warning', 2400);
     }
     await copyToClipboard(res.text, res.label);
+    if (btnEl) {
+      btnEl.classList.add('btn-copy-success');
+      setTimeout(() => btnEl.classList.remove('btn-copy-success'), 1000);
+    }
   };
+
+  document.querySelectorAll<HTMLButtonElement>('#cockpitPowerActions [data-power-action]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const actionId = Number(btn.dataset.powerAction) as 1 | 2 | 3 | 4 | 5;
+      void triggerPowerActionCopy(actionId, btn);
+    });
+  });
 
   window.addEventListener('keydown', (e) => {
     if (!activeProtocol || document.body.dataset.activeSection !== 'pep') return;
@@ -2175,27 +2186,27 @@ export function initPepDrawer(): void {
     if (!isTyping && !e.ctrlKey && !e.metaKey && !e.altKey) {
       if (e.key === '1') {
         e.preventDefault();
-        void triggerPowerActionCopy(1);
+        void triggerPowerActionCopy(1, document.getElementById('powerBtnCopyAll'));
         return;
       }
       if (e.key === '2') {
         e.preventDefault();
-        void triggerPowerActionCopy(3);
+        void triggerPowerActionCopy(3, document.getElementById('powerBtnCopyConduta'));
         return;
       }
       if (e.key === '3') {
         e.preventDefault();
-        void triggerPowerActionCopy(4);
+        void triggerPowerActionCopy(4, document.getElementById('powerBtnCopyReceita'));
         return;
       }
       if (e.key === '4') {
         e.preventDefault();
-        void triggerPowerActionCopy(2);
+        void triggerPowerActionCopy(2, document.getElementById('powerBtnCopyEvolucao'));
         return;
       }
       if (e.key === '5') {
         e.preventDefault();
-        void triggerPowerActionCopy(5);
+        void triggerPowerActionCopy(5, document.getElementById('powerBtnCopyOrientacoes'));
         return;
       }
     }
