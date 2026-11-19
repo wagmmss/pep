@@ -1,12 +1,11 @@
 import type { ClinicalProtocolItem, PitfallItem } from '../data/clinical_data.ts';
 import { resolveLinksForPrePorta } from '../data/clinical_links.ts';
-import tecnicaProfundaData from '../data/tecnica_profunda.generated.json' with { type: 'json' };
+import { getLocalTodayIso } from '../engine/calculadoras.ts';
 import { recordPrePortaExecution } from '../engine/central6ano.ts';
-import { formatGuiaInlineHtml } from '../engine/diretrizes.ts';
+import { formatGuiaInlineHtml, renderTeoriaMarkdownToHtml } from '../engine/diretrizes.ts';
 import { getClinicalSeverity } from '../engine/workstation.ts';
 import { cockpitStore } from '../state/store.ts';
 import { getCentral6AnoState, HAB_PROTOCOLS, PROTOCOL_BY_TRIGGER, uiBridge, updateCentral6AnoState } from './context.ts';
-import { renderTeoriaMarkdownToHtml } from './teoria.ts';
 import { copyToClipboard, escapeHtml, showToast } from './utils.ts';
 
 interface DeepGuideSection {
@@ -26,16 +25,44 @@ interface TecnicaProfundaPayload {
   byHabId?: Record<string, string[]>;
 }
 
+interface LoadedTecnicaStore {
+  byId: Map<string, DeepGuideEntry>;
+  byHabId: Record<string, string[]>;
+}
+
 type PrePortaSubTab = 'preporta' | 'checklist' | 'armadilhas' | 'tecnica';
 
-const tpPayload = tecnicaProfundaData as TecnicaProfundaPayload;
-const DEEP_GUIDES: DeepGuideEntry[] = Array.isArray(tpPayload.guides) ? tpPayload.guides : [];
-const DEEP_GUIDE_BY_ID = new Map<string, DeepGuideEntry>(DEEP_GUIDES.map((g) => [g.id, g]));
-const BY_HAB_ID: Record<string, string[]> = tpPayload.byHabId && typeof tpPayload.byHabId === 'object' ? tpPayload.byHabId : {};
+let loadedTecnicaStore: LoadedTecnicaStore | null = null;
+let tecnicaLoadPromise: Promise<LoadedTecnicaStore> | null = null;
+
+async function ensureTecnicaProfundaLoaded(): Promise<LoadedTecnicaStore> {
+  if (loadedTecnicaStore) return loadedTecnicaStore;
+  if (!tecnicaLoadPromise) {
+    tecnicaLoadPromise = import('../data/tecnica_profunda.generated.json')
+      .then((mod) => {
+        const tpPayload = (mod.default ?? mod) as TecnicaProfundaPayload;
+        const guides = Array.isArray(tpPayload?.guides) ? tpPayload.guides : [];
+        const store: LoadedTecnicaStore = {
+          byId: new Map(guides.map((g) => [g.id, g])),
+          byHabId: tpPayload?.byHabId && typeof tpPayload.byHabId === 'object' ? tpPayload.byHabId : {},
+        };
+        loadedTecnicaStore = store;
+        return store;
+      })
+      .catch((err) => {
+        tecnicaLoadPromise = null;
+        throw err;
+      });
+  }
+  return tecnicaLoadPromise;
+}
 
 function resolveDeepGuidesForHab(habId: string): DeepGuideEntry[] {
-  const mappedIds = BY_HAB_ID[habId] || [];
-  return mappedIds.map((gid) => DEEP_GUIDE_BY_ID.get(gid)).filter((g): g is DeepGuideEntry => Boolean(g));
+  if (!loadedTecnicaStore) return [];
+  const mappedIds = loadedTecnicaStore.byHabId[habId] || [];
+  return mappedIds
+    .map((gid) => loadedTecnicaStore!.byId.get(gid))
+    .filter((g): g is DeepGuideEntry => Boolean(g));
 }
 
 function stripOuterMdBold(text: string): string {
@@ -191,8 +218,8 @@ function renderDeepGuideBodyHtml(body: string): string {
   let html = renderTeoriaMarkdownToHtml(text);
   flowBlocks.forEach((blockHtml, idx) => {
     const token = `@@HABFLOW_${idx}@@`;
-    html = html.replace(new RegExp(`<p>${token}</p>`, 'g'), blockHtml);
-    html = html.replace(token, blockHtml);
+    html = html.replace(new RegExp(`<p>${token}</p>`, 'g'), () => blockHtml);
+    html = html.replace(token, () => blockHtml);
   });
 
   return html;
@@ -212,12 +239,12 @@ function getChecksForHab(hab: ClinicalProtocolItem): Record<string, boolean> {
   return all[hab.id] || all[hab.trigger] || {};
 }
 
-export function initPrePorta(): (container: HTMLElement, itemId?: string) => void {
+export function initPrePorta(): { render: (container: HTMLElement, itemId?: string) => void } {
   let activeHabId = HAB_PROTOCOLS[0]?.id || 'hab-1';
   let activeSubTab: PrePortaSubTab = 'preporta';
   let filterQuery = '';
   let selectedCategory = 'todas';
-  let activeContainer: HTMLElement | null = null;
+  let tecnicaLoadError = false;
 
   const categories = Array.from(new Set(HAB_PROTOCOLS.map((h) => h.hab_category || h.category || 'Habilidades Clínicas')));
 
@@ -281,7 +308,6 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
   };
 
   const render = (container: HTMLElement, itemId?: string) => {
-    activeContainer = container;
     if (itemId && HAB_PROTOCOLS.some((h) => h.id === itemId)) {
       if (itemId !== activeHabId) {
         activeHabId = itemId;
@@ -413,8 +439,11 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
            </div>`
         : `<div class="mq-empty-state">Nenhuma armadilha cadastrada nesta estação.</div>`;
 
-    const tecnicaTabHtml =
-      deepGuides.length > 0
+    const tecnicaTabHtml = !loadedTecnicaStore
+      ? tecnicaLoadError
+        ? `<div class="mq-empty-state">Não foi possível carregar os guias de Técnica Profunda offline.</div>`
+        : `<div class="mq-empty-state">Carregando Técnica Profunda sob demanda...</div>`
+      : deepGuides.length > 0
         ? deepGuides
             .map(
               (guide) => `
@@ -536,7 +565,7 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
               <button type="button" class="hab-inner-tab${activeSubTab === 'preporta' ? ' active' : ''}" data-hab-tab="preporta" role="tab" aria-selected="${activeSubTab === 'preporta'}">⚡ Pré-Porta 30s</button>
               <button type="button" class="hab-inner-tab${activeSubTab === 'checklist' ? ' active' : ''}" data-hab-tab="checklist" role="tab" aria-selected="${activeSubTab === 'checklist'}">✅ Checklist <span class="hab-tab-count">${checkedCount}/${totalItems}</span></button>
               <button type="button" class="hab-inner-tab${activeSubTab === 'armadilhas' ? ' active' : ''}" data-hab-tab="armadilhas" role="tab" aria-selected="${activeSubTab === 'armadilhas'}">⚠️ Armadilhas <span class="hab-tab-count">${pitfalls.length}</span></button>
-              <button type="button" class="hab-inner-tab${activeSubTab === 'tecnica' ? ' active' : ''}" data-hab-tab="tecnica" role="tab" aria-selected="${activeSubTab === 'tecnica'}">📘 Técnica Profunda <span class="hab-tab-count">${deepGuides.length}</span></button>
+              <button type="button" class="hab-inner-tab${activeSubTab === 'tecnica' ? ' active' : ''}" data-hab-tab="tecnica" role="tab" aria-selected="${activeSubTab === 'tecnica'}">📘 Técnica Profunda${loadedTecnicaStore ? ` <span class="hab-tab-count">${deepGuides.length}</span>` : ''}</button>
             </div>
 
             <div class="hab-panel">${activeTabContent}</div>
@@ -569,6 +598,24 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
         const nextTab = btn.dataset.habTab as PrePortaSubTab | undefined;
         if (nextTab) {
           activeSubTab = nextTab;
+          if (nextTab === 'tecnica' && !loadedTecnicaStore) {
+            tecnicaLoadError = false;
+            const requestedHabId = activeHabId;
+            render(container);
+            void ensureTecnicaProfundaLoaded()
+              .then(() => {
+                if (container.isConnected && activeSubTab === 'tecnica' && activeHabId === requestedHabId) {
+                  render(container);
+                }
+              })
+              .catch(() => {
+                tecnicaLoadError = true;
+                if (container.isConnected && activeSubTab === 'tecnica') {
+                  render(container);
+                }
+              });
+            return;
+          }
           render(container);
         }
       });
@@ -617,7 +664,7 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
         logbookEntries: [
           {
             id: `lb-${Date.now()}`,
-            dateIso: new Date().toISOString().slice(0, 10),
+            dateIso: getLocalTodayIso(),
             rodizio: prev.rodizioId,
             tipo: 'ponto_cego',
             titulo: `Estação ${activeHab.title} (${checkedCount}/${totalItems})`,
@@ -700,17 +747,10 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
         const mid = btn.dataset.openTeoria;
         if (mid) {
           uiBridge.navigate('teoria', { subTab: mid });
-          uiBridge.selectTeoriaModule(mid);
         }
       });
     });
   };
 
-  uiBridge.selectPrePortaCard = (habId: string) => {
-    activeHabId = habId;
-    activeSubTab = 'preporta';
-    if (activeContainer) render(activeContainer, habId);
-  };
-
-  return render;
+  return { render };
 }

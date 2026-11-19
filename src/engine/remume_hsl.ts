@@ -64,6 +64,7 @@ export interface PrescriptionPreview {
   profile: PatientProfile;
   naRemume: boolean;
   hasHslFicha: boolean;
+  isPlaceholder: boolean;
   notice: string | null;
   apresentacao: string;
   posologia: string;
@@ -76,21 +77,44 @@ export interface PrescriptionPreview {
   editableText: string;
 }
 
-let cachedHslDrugs: HslDrug[] | null = null;
+interface PrecomputedHslEntry {
+  drug: HslDrug;
+  primaryNorm: string;
+  secondaryNorm: string;
+}
 
-/** Normaliza texto farmacológico para busca (sem acentos, vírgula -> ponto, minúsculas). */
+interface PrecomputedHslCache {
+  indexById: Map<number, HslDrug>;
+  entries: PrecomputedHslEntry[];
+}
+
+let cachedHslDrugs: HslDrug[] | null = null;
+const inFlightHslByUrl = new Map<string, Promise<HslDrug[]>>();
+const hslCacheByArray = new WeakMap<readonly HslDrug[], PrecomputedHslCache>();
+
+/**
+ * Normaliza texto farmacológico para busca:
+ * remove diacríticos, converte vírgula decimal em ponto e separa número + unidade (ex: "500mg" -> "500 mg").
+ */
 export function normalizePharmaText(text: string): string {
-  return text
+  return String(text || '')
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
+    .replace(/(\d),(\d)/g, '$1.$2')
     .replace(/,/g, '.')
+    .replace(/(\d)(mg|mcg|g|ml|ui|%)/g, '$1 $2')
     .replace(/\s+/g, ' ')
     .trim();
 }
 
+const PRECOMPUTED_REMUME: ReadonlyArray<{ item: RemumeItem; normText: string }> = REMUME_ITEMS.map((item) => ({
+  item,
+  normText: `${normalizePharmaText(item.norm || item.name)} ${normalizePharmaText(item.hslFarmaco ?? '')}`.trim(),
+}));
+
 /** Constrói índice por ID para busca O(1) nas fichas do Guia HSL. */
-export function buildHslIndex(hslDrugs: readonly HslDrug[]): Map<number, HslDrug> {
+function buildHslIndex(hslDrugs: readonly HslDrug[]): Map<number, HslDrug> {
   const index = new Map<number, HslDrug>();
   for (let i = 0; i < hslDrugs.length; i++) {
     index.set(hslDrugs[i].id, hslDrugs[i]);
@@ -98,23 +122,66 @@ export function buildHslIndex(hslDrugs: readonly HslDrug[]): Map<number, HslDrug
   return index;
 }
 
-/** Carrega e faz cache de public/data/hsl-guia.json sob demanda no navegador. */
+function getOrBuildHslCache(hslDrugs: readonly HslDrug[]): PrecomputedHslCache {
+  const existing = hslCacheByArray.get(hslDrugs);
+  if (existing) return existing;
+
+  const indexById = buildHslIndex(hslDrugs);
+  const entries: PrecomputedHslEntry[] = new Array(hslDrugs.length);
+  for (let i = 0; i < hslDrugs.length; i++) {
+    const drug = hslDrugs[i];
+    entries[i] = {
+      drug,
+      primaryNorm: normalizePharmaText(`${drug.farmaco} ${drug.nome_normalizado}`),
+      secondaryNorm: normalizePharmaText(
+        `${drug.apresentacoes_hsl.join(' ')} ${drug.apresentacoes_remume.join(' ')} ${drug.indicacoes}`
+      ),
+    };
+  }
+  const cache: PrecomputedHslCache = { indexById, entries };
+  hslCacheByArray.set(hslDrugs, cache);
+  return cache;
+}
+
+/** Carrega e faz cache de public/data/hsl-guia.json sob demanda no navegador com deduplicação in-flight por URL. */
 export async function loadHslGuia(
   fetcher: typeof fetch = globalThis.fetch,
   url: string = HSL_GUIA_PUBLIC_PATH
 ): Promise<HslDrug[]> {
-  if (cachedHslDrugs) return cachedHslDrugs;
-  const response = await fetcher(url);
-  if (!response.ok) {
-    throw new Error(`Falha ao carregar Guia HSL (${response.status})`);
+  if (cachedHslDrugs && cachedHslDrugs.length > 0) return cachedHslDrugs;
+  const useSharedMap = fetcher === globalThis.fetch;
+  if (useSharedMap) {
+    const existing = inFlightHslByUrl.get(url);
+    if (existing) return existing;
   }
-  const data = (await response.json()) as HslGuiaCatalog;
-  cachedHslDrugs = Array.isArray(data.medicamentos) ? data.medicamentos : [];
-  return cachedHslDrugs;
+
+  const request = (async () => {
+    const response = await fetcher(url);
+    if (!response.ok) {
+      throw new Error(`Falha ao carregar Guia HSL (${response.status})`);
+    }
+    const data = (await response.json()) as Partial<HslGuiaCatalog> | null;
+    if (!data || !Array.isArray(data.medicamentos) || data.medicamentos.length === 0) {
+      throw new Error('Catálogo Guia HSL vazio ou malformado.');
+    }
+    cachedHslDrugs = data.medicamentos;
+    getOrBuildHslCache(cachedHslDrugs);
+    return cachedHslDrugs;
+  })();
+
+  if (useSharedMap) {
+    const tracked = request.finally(() => {
+      inFlightHslByUrl.delete(url);
+    });
+    inFlightHslByUrl.set(url, tracked);
+    return tracked;
+  }
+
+  return request;
 }
 
 /** Resolve a ficha HSL vinculada a um item REMUME, se disponível. */
-export function resolveHslForRemume(
+function resolveHslForRemume(
   item: RemumeItem,
   hslSource?: Map<number, HslDrug> | readonly HslDrug[]
 ): HslDrug | undefined {
@@ -122,10 +189,8 @@ export function resolveHslForRemume(
   if (hslSource instanceof Map) {
     return hslSource.get(item.hslId);
   }
-  for (let i = 0; i < hslSource.length; i++) {
-    if (hslSource[i].id === item.hslId) return hslSource[i];
-  }
-  return undefined;
+  const cache = getOrBuildHslCache(hslSource);
+  return cache.indexById.get(item.hslId);
 }
 
 function scoreTextMatch(haystackNorm: string, tokens: string[]): number {
@@ -146,7 +211,7 @@ function scoreTextMatch(haystackNorm: string, tokens: string[]): number {
   return score;
 }
 
-/** Busca filtrável entre REMUME (252 itens, padrão) e Guia HSL (976 fármacos). */
+/** Busca filtrável entre REMUME (252 itens, padrão) e Guia HSL (976 fármacos) com índices pré-normalizados. */
 export function searchPharma(
   query: string,
   options: SearchPharmaOptions = {}
@@ -154,24 +219,23 @@ export function searchPharma(
   const source: PharmaSource = options.source ?? 'remume';
   const limit = options.limit ?? 20;
   const hslDrugs = options.hslDrugs ?? cachedHslDrugs ?? [];
-  const hslIndex = hslDrugs.length > 0 ? buildHslIndex(hslDrugs) : undefined;
+  const hslCache = hslDrugs.length > 0 ? getOrBuildHslCache(hslDrugs) : undefined;
   const qNorm = normalizePharmaText(query);
   const tokens = qNorm ? qNorm.split(' ').filter(Boolean) : [];
 
   if (source === 'remume') {
     const scored: Array<{ result: PharmaSearchResult; score: number }> = [];
-    for (let i = 0; i < REMUME_ITEMS.length; i++) {
-      const item = REMUME_ITEMS[i];
-      const normText = `${normalizePharmaText(item.norm)} ${normalizePharmaText(item.hslFarmaco ?? '')}`.trim();
+    for (let i = 0; i < PRECOMPUTED_REMUME.length; i++) {
+      const { item, normText } = PRECOMPUTED_REMUME[i];
       const score = scoreTextMatch(normText, tokens);
       if (score === 0) continue;
 
-      const hslDrug = resolveHslForRemume(item, hslIndex);
+      const hslDrug = resolveHslForRemume(item, hslCache?.indexById);
       const hasHslFicha = item.hslId !== undefined;
       const notice = hasHslFicha ? null : NO_HSL_FICHA_NOTICE;
 
       scored.push({
-        score,
+        score: normText.startsWith(qNorm) && qNorm ? score + 30 : score,
         result: {
           source: 'remume',
           title: item.name,
@@ -191,16 +255,13 @@ export function searchPharma(
     return scored.slice(0, limit).map((entry) => entry.result);
   }
 
+  if (!hslCache) return [];
   const scoredHsl: Array<{ result: PharmaSearchResult; score: number }> = [];
-  for (let i = 0; i < hslDrugs.length; i++) {
-    const drug = hslDrugs[i];
-    const primaryNorm = normalizePharmaText(`${drug.farmaco} ${drug.nome_normalizado}`);
+  for (let i = 0; i < hslCache.entries.length; i++) {
+    const { drug, primaryNorm, secondaryNorm } = hslCache.entries[i];
     let score = scoreTextMatch(primaryNorm, tokens);
 
     if (score === 0 && tokens.length > 0) {
-      const secondaryNorm = normalizePharmaText(
-        `${drug.apresentacoes_hsl.join(' ')} ${drug.apresentacoes_remume.join(' ')} ${drug.indicacoes}`
-      );
       const secScore = scoreTextMatch(secondaryNorm, tokens);
       if (secScore > 0) score = Math.max(1, Math.floor(secScore / 2));
     }
@@ -282,15 +343,13 @@ export function formatPrescriptionPreview(
   const notice = hasHslFicha ? null : NO_HSL_FICHA_NOTICE;
 
   if (!hslDrug) {
-    const manualHint = hasHslFicha
-      ? 'Carregar ficha HSL para preencher posologia automaticamente.'
-      : NO_HSL_FICHA_NOTICE;
     return {
       title,
       profile,
       naRemume,
       hasHslFicha,
-      notice,
+      isPlaceholder: true,
+      notice: notice ?? 'Ficha HSL ainda não carregada — preencher posologia manualmente.',
       apresentacao,
       posologia: '',
       doseMaxima: '',
@@ -299,7 +358,8 @@ export function formatPrescriptionPreview(
       preparoDiluicao: '',
       contraindicacoes: '',
       gestacaoLactacao: '',
-      editableText: `${apresentacao}\nPosologia: [${manualHint}]`,
+      // Evita vazar instruções internas de UI no texto copiável da prescrição
+      editableText: `${apresentacao}\nPosologia: [ ]`,
     };
   }
 
@@ -309,8 +369,14 @@ export function formatPrescriptionPreview(
       : hslDrug.dose_adulto || 'Sem posologia adulto específica na ficha HSL — avaliar prescrição manual.';
 
   const lines: string[] = [apresentacao];
-  if (profile === 'pediatria' && options.weightKg && options.weightKg > 0) {
-    lines.push(`Paciente Pediátrico (Peso: ${options.weightKg} kg)`);
+  const validWeight =
+    options.weightKg !== undefined &&
+    Number.isFinite(options.weightKg) &&
+    options.weightKg >= 0.5 &&
+    options.weightKg <= 200;
+
+  if (profile === 'pediatria' && validWeight) {
+    lines.push(`Paciente Pediátrico (Peso: ${options.weightKg} kg — conferir cálculo ponderal abaixo)`);
   }
   lines.push(`Posologia (${profile === 'pediatria' ? 'Pediatria' : 'Adulto'}): ${rawPosologia}`);
   if (hslDrug.dose_maxima) {
@@ -328,6 +394,7 @@ export function formatPrescriptionPreview(
     profile,
     naRemume,
     hasHslFicha: true,
+    isPlaceholder: false,
     notice: null,
     apresentacao,
     posologia: rawPosologia,

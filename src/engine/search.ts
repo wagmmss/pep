@@ -3,6 +3,7 @@
 // ============================================================================
 import MiniSearch from 'minisearch';
 import { REMUME_ITEMS, type RemumeItem } from '../data/remume.ts';
+import { searchPharma } from './remume_hsl.ts';
 
 export { REMUME_ITEMS, type RemumeItem };
 
@@ -20,7 +21,7 @@ export interface SymptomMatch {
   isDirect: boolean;
 }
 
-export const CATEGORY_SYMPTOM_MAP: Record<string, string[]> = {
+const CATEGORY_SYMPTOM_MAP: Record<string, string[]> = {
   'Cardiovascular e Respiratorio': ['falta de ar', 'dispneia', 'chiado', 'cansaço', 'dor no peito', 'precordialgia', 'pressão alta', 'palpitação'],
   'Infeccoes e Vias Aereas': ['tosse', 'febre', 'dor de garganta', 'dor de ouvido', 'coriza', 'nariz entupido', 'dor no corpo'],
   'Gastrointestinal e Abdominal': ['dor abdominal', 'dor de barriga', 'queimação', 'azia', 'vômitos', 'diarreia', 'sangramento', 'enjoo'],
@@ -33,7 +34,7 @@ export const CATEGORY_SYMPTOM_MAP: Record<string, string[]> = {
   'Febre e Infeccoes Sistemicas': ['febre', 'convulsão', 'prostração', 'irritabilidade'],
 };
 
-export const PROTOCOL_SYMPTOM_MAP: Record<string, { priority: number; tags: string[] }> = {
+const PROTOCOL_SYMPTOM_MAP: Record<string, { priority: number; tags: string[] }> = {
   // --- Emergências Clínicas / Respiratório / Dor Torácica / Neuro ---
   ';asma': {
     priority: 100,
@@ -354,66 +355,90 @@ export const PROTOCOL_SYMPTOM_MAP: Record<string, { priority: number; tags: stri
   ';hab-iot': { priority: 94, tags: ['via aérea', 'intubação', 'laringoscopia', 'lemon', 'ventilação mecânica', 'bvm'] },
 };
 
-export function enrichClinicalProtocolsWithSymptoms<T extends ClinicalSearchItem>(items: T[]): T[] {
-  const normalizedCatMap: Record<string, string[]> = {};
-  for (const [k, v] of Object.entries(CATEGORY_SYMPTOM_MAP)) {
-    normalizedCatMap[normalizeSearchText(k)] = v;
+interface EnrichedSearchMeta {
+  tagsSintomas: string[];
+  tagsNorm: Array<{ raw: string; norm: string; isDirect: boolean }>;
+  symptomPriority: number;
+  titleNorm: string;
+  catNorm: string;
+  triggersNorm: string[];
+  anchorNorm: string;
+  cidNorm: string;
+}
+
+const NORMALIZED_CAT_SYMPTOM_MAP: Record<string, string[]> = Object.fromEntries(
+  Object.entries(CATEGORY_SYMPTOM_MAP).map(([k, v]) => [normalizeSearchText(k), v])
+);
+
+const searchMetaCache = new WeakMap<ClinicalSearchItem, EnrichedSearchMeta>();
+
+function getOrBuildSearchMeta(item: ClinicalSearchItem): EnrichedSearchMeta {
+  const cached = searchMetaCache.get(item);
+  if (cached) return cached;
+
+  const trigKey = String(item.trigger || '').toLowerCase();
+  const protoEntry =
+    PROTOCOL_SYMPTOM_MAP[trigKey] ||
+    (item.id !== undefined ? PROTOCOL_SYMPTOM_MAP[String(item.id)] : undefined) ||
+    (item.all_triggers || []).map((t) => PROTOCOL_SYMPTOM_MAP[String(t).toLowerCase()]).find(Boolean);
+  const catKeyNorm = normalizeSearchText(item.category || '');
+  const catTags =
+    (item.category ? CATEGORY_SYMPTOM_MAP[item.category] : undefined) ||
+    NORMALIZED_CAT_SYMPTOM_MAP[catKeyNorm] ||
+    [];
+
+  const mergedTags: string[] = [];
+  const seen = new Set<string>();
+  const directSet = new Set<string>();
+  const directRaw = [...(protoEntry ? protoEntry.tags : []), ...(item.tags_sintomas || [])];
+
+  for (const t of directRaw) {
+    const clean = String(t || '').trim();
+    const norm = normalizeSearchText(clean);
+    if (clean && !seen.has(norm)) {
+      seen.add(norm);
+      directSet.add(norm);
+      mergedTags.push(clean);
+    }
   }
 
-  for (const item of items) {
-    const trigKey = String(item.trigger || '').toLowerCase();
-    const protoEntry =
-      PROTOCOL_SYMPTOM_MAP[trigKey] ||
-      (item.id ? PROTOCOL_SYMPTOM_MAP[String(item.id)] : undefined) ||
-      (item.all_triggers || []).map((t) => PROTOCOL_SYMPTOM_MAP[String(t).toLowerCase()]).find(Boolean);
-    const catKeyNorm = normalizeSearchText(item.category || '');
-    const catTags =
-      (item.category ? CATEGORY_SYMPTOM_MAP[item.category] : undefined) ||
-      normalizedCatMap[catKeyNorm] ||
-      [];
-
-    const mergedTags: string[] = [];
-    const seen = new Set<string>();
-    const directSet = new Set<string>();
-    const directRaw = [...(protoEntry ? protoEntry.tags : []), ...(item.tags_sintomas || [])];
-
-    for (const t of directRaw) {
-      const clean = String(t || '').trim();
-      const norm = normalizeSearchText(clean);
-      if (clean && !seen.has(norm)) {
-        seen.add(norm);
-        directSet.add(norm);
-        mergedTags.push(clean);
-      }
+  for (const t of catTags) {
+    const clean = String(t || '').trim();
+    const norm = normalizeSearchText(clean);
+    if (clean && !seen.has(norm)) {
+      seen.add(norm);
+      mergedTags.push(clean);
     }
+  }
 
-    for (const t of catTags) {
-      const clean = String(t || '').trim();
-      const norm = normalizeSearchText(clean);
-      if (clean && !seen.has(norm)) {
-        seen.add(norm);
-        mergedTags.push(clean);
-      }
-    }
-
-    item.tags_sintomas = mergedTags;
-    item._tags_norm = mergedTags.map((t) => {
+  const meta: EnrichedSearchMeta = {
+    tagsSintomas: mergedTags,
+    tagsNorm: mergedTags.map((t) => {
       const norm = normalizeSearchText(t);
       return { raw: t, norm, isDirect: directSet.has(norm) };
-    });
-    if (protoEntry && !item.symptom_priority) {
-      item.symptom_priority = protoEntry.priority;
-    } else if (!item.symptom_priority) {
-      item.symptom_priority = 50;
-    }
-    item._title_norm = normalizeSearchText(item.title);
-    item._cat_norm = normalizeSearchText(`${item.category || ''} ${item.module_name || ''}`);
-    item._triggers_norm = (item.all_triggers || (item.trigger ? [item.trigger] : [])).map(normalizeSearchText);
-    item._anchor_norm = normalizeSearchText(item.anchor || '');
-    item._cid_norm = normalizeSearchText(item.cid10 || '');
-  }
+    }),
+    symptomPriority: item.symptom_priority || (protoEntry ? protoEntry.priority : 50),
+    titleNorm: item._title_norm ?? normalizeSearchText(item.title),
+    catNorm: item._cat_norm ?? normalizeSearchText(`${item.category || ''} ${item.module_name || ''}`),
+    triggersNorm:
+      item._triggers_norm ??
+      (item.all_triggers || (item.trigger ? [item.trigger] : [])).map(normalizeSearchText),
+    anchorNorm: item._anchor_norm ?? normalizeSearchText(item.anchor || ''),
+    cidNorm: item._cid_norm ?? normalizeSearchText(item.cid10 || ''),
+  };
 
-  return items;
+  searchMetaCache.set(item, meta);
+  return meta;
+}
+
+function getCanonicalSearchDocId(item: ClinicalSearchItem, fallbackIdx: number): string {
+  if (item.id !== undefined && item.id !== null && String(item.id).trim() !== '') {
+    return `id:${String(item.id)}`;
+  }
+  if (item.trigger && item.trigger.trim() !== '') {
+    return `tr:${item.trigger.trim().toLowerCase()}`;
+  }
+  return `idx:${fallbackIdx}`;
 }
 
 export interface ClinicalSearchItem {
@@ -427,6 +452,7 @@ export interface ClinicalSearchItem {
   gravidade?: string;
   anchor?: string;
   pep_body?: string;
+  pre_porta?: string;
   all_triggers?: string[];
   tags_sintomas?: string[];
   symptom_priority?: number;
@@ -447,16 +473,16 @@ export interface RankedClinicalResult<T extends ClinicalSearchItem = ClinicalSea
   fuzzyMatched: boolean;
 }
 
-export function findMatchedSymptom(
-  item: { _tags_norm?: Array<{ raw: string; norm: string; isDirect: boolean }> },
+function findMatchedSymptomFromTags(
+  tagsNorm: Array<{ raw: string; norm: string; isDirect: boolean }>,
   qNorm: string
 ): SymptomMatch | null {
-  if (!qNorm || !item._tags_norm || item._tags_norm.length === 0) return null;
+  if (!qNorm || tagsNorm.length === 0) return null;
   let best: SymptomMatch | null = null;
   let bestScore = 0;
 
-  for (let i = 0; i < item._tags_norm.length; i++) {
-    const entry = item._tags_norm[i];
+  for (let i = 0; i < tagsNorm.length; i++) {
+    const entry = tagsNorm[i];
     let level = 0;
     if (entry.norm === qNorm) {
       level = 3;
@@ -480,25 +506,23 @@ export function findMatchedSymptom(
 function tokenizeClinicalText(text: string): string[] {
   return normalizeSearchText(text)
     .split(/[^a-z0-9]+/)
-    .filter((token) => token.length >= 2);
+    .filter((token) => token.length >= 1);
 }
 
 /**
  * Cria um índice MiniSearch em memória para busca rápida, fuzzy e sem acento
- * sobre títulos, tags de sintomas, gatilhos Espanso, categorias e corpo clínico.
+ * sobre títulos, tags de sintomas, gatilhos, categorias e corpo clínico.
+ * Indexa por ID canônico (imune a subconjuntos filtrados) e não muta os objetos originais.
  */
 export function createClinicalSearchIndex<T extends ClinicalSearchItem>(
-  items: T[]
+  items: readonly T[]
 ): MiniSearch {
-  enrichClinicalProtocolsWithSymptoms(items);
-
   const miniSearch = new MiniSearch({
     fields: ['title', 'tags', 'triggers', 'cid10', 'anchor', 'category', 'body'],
-    storeFields: ['idx'],
     tokenize: tokenizeClinicalText,
     processTerm: (term: string) => {
       const norm = normalizeSearchText(term);
-      return norm.length >= 2 ? norm : null;
+      return norm.length >= 1 ? norm : null;
     },
     searchOptions: {
       boost: {
@@ -512,23 +536,31 @@ export function createClinicalSearchIndex<T extends ClinicalSearchItem>(
       },
       prefix: true,
       fuzzy: (term: string) => (term.length >= 5 ? 0.2 : false),
-      combineWith: 'OR'
+      combineWith: 'AND'
     }
   });
 
-  const docs = items.map((item, idx) => ({
-    id: idx,
-    idx,
-    title: item.title || '',
-    tags: Array.isArray(item.tags_sintomas) ? item.tags_sintomas.join(' ') : '',
-    triggers: Array.isArray(item.all_triggers) ? item.all_triggers.join(' ') : (item.trigger || ''),
-    cid10: item.cid10 || '',
-    anchor: item.anchor || '',
-    category: `${item.category || ''} ${item.module_name || ''}`,
-    body: typeof (item.pep_body || (item as any).pre_porta) === 'string'
-      ? String(item.pep_body || (item as any).pre_porta).slice(0, 1800)
-      : ''
-  }));
+  const seenIds = new Set<string>();
+  const docs = items.map((item, idx) => {
+    const meta = getOrBuildSearchMeta(item);
+    let docId = getCanonicalSearchDocId(item, idx);
+    if (seenIds.has(docId)) {
+      docId = `${docId}#${idx}`;
+    }
+    seenIds.add(docId);
+
+    const bodyRaw = item.pep_body ?? item.pre_porta ?? '';
+    return {
+      id: docId,
+      title: item.title || '',
+      tags: meta.tagsSintomas.join(' '),
+      triggers: Array.isArray(item.all_triggers) ? item.all_triggers.join(' ') : (item.trigger || ''),
+      cid10: item.cid10 || '',
+      anchor: item.anchor || '',
+      category: `${item.category || ''} ${item.module_name || ''}`,
+      body: typeof bodyRaw === 'string' ? bodyRaw.slice(0, 1800) : ''
+    };
+  });
 
   miniSearch.addAll(docs);
   return miniSearch;
@@ -540,7 +572,7 @@ export function createClinicalSearchIndex<T extends ClinicalSearchItem>(
  */
 export function searchClinicalProtocols<T extends ClinicalSearchItem>(
   searchIndex: MiniSearch | null,
-  items: T[],
+  items: readonly T[],
   query: string,
   limit = 15
 ): RankedClinicalResult<T>[] {
@@ -558,31 +590,38 @@ export function searchClinicalProtocols<T extends ClinicalSearchItem>(
     }));
   }
 
-  const miniScores = new Map<number, number>();
+  const miniScores = new Map<string, number>();
   if (searchIndex) {
-    const hits = searchIndex.search(qNorm);
+    let hits = searchIndex.search(qNorm, { combineWith: 'AND' });
+    if (hits.length < 3 && qNorm.includes(' ')) {
+      const orHits = searchIndex.search(qNorm, { combineWith: 'OR' });
+      const seen = new Set(hits.map((h) => String(h.id)));
+      for (const h of orHits) {
+        if (!seen.has(String(h.id))) {
+          hits.push({ ...h, score: h.score * 0.55 });
+        }
+      }
+    }
     for (let i = 0; i < hits.length; i++) {
-      miniScores.set(Number(hits[i].id), hits[i].score);
+      miniScores.set(String(hits[i].id), hits[i].score);
     }
   }
 
   const scored: RankedClinicalResult<T>[] = [];
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
-    const symMatch = findMatchedSymptom(item, qNorm);
-    const titleNorm = item._title_norm ?? normalizeSearchText(item.title);
-    const catNorm = item._cat_norm ?? normalizeSearchText(`${item.category || ''} ${item.module_name || ''}`);
-    const triggersNorm = item._triggers_norm ?? (item.all_triggers || (item.trigger ? [item.trigger] : [])).map(normalizeSearchText);
-    const anchorNorm = item._anchor_norm ?? normalizeSearchText(item.anchor || '');
-    const cidNorm = item._cid_norm ?? normalizeSearchText(item.cid10 || '');
+    const meta = getOrBuildSearchMeta(item);
+    const symMatch = findMatchedSymptomFromTags(meta.tagsNorm, qNorm);
 
-    const titleMatch = titleNorm.includes(qNorm) || String(item.title || '').toLowerCase().includes(qRaw);
-    const trigMatch = triggersNorm.some((t) => t.includes(qNorm));
-    const trigExact = triggersNorm.some((t) => t === qNorm || t === `;${qNorm}`);
-    const cidMatch = Boolean(cidNorm && cidNorm.includes(qNorm));
-    const catMatch = catNorm.includes(qNorm);
-    const anchorMatch = Boolean(anchorNorm && anchorNorm.includes(qNorm));
-    const miniScore = miniScores.get(i) || 0;
+    const titleMatch = meta.titleNorm.includes(qNorm) || String(item.title || '').toLowerCase().includes(qRaw);
+    const trigMatch = meta.triggersNorm.some((t) => t.includes(qNorm));
+    const trigExact = meta.triggersNorm.some((t) => t === qNorm || t === `;${qNorm}`);
+    const cidMatch = Boolean(meta.cidNorm && meta.cidNorm.includes(qNorm));
+    const catMatch = meta.catNorm.includes(qNorm);
+    const anchorMatch = Boolean(meta.anchorNorm && meta.anchorNorm.includes(qNorm));
+
+    const docKey = getCanonicalSearchDocId(item, i);
+    const miniScore = miniScores.get(docKey) || 0;
 
     if (!symMatch && !titleMatch && !trigMatch && !cidMatch && !catMatch && !anchorMatch && miniScore <= 0) {
       continue;
@@ -590,7 +629,7 @@ export function searchClinicalProtocols<T extends ClinicalSearchItem>(
 
     let score = 0;
     let fuzzyMatched = false;
-    const priority = item.symptom_priority || 50;
+    const priority = meta.symptomPriority;
 
     if (qRaw.startsWith(';') && trigMatch) {
       score = (trigExact ? 1500 : 1250) + priority + Math.min(miniScore, 40);
@@ -603,7 +642,7 @@ export function searchClinicalProtocols<T extends ClinicalSearchItem>(
     } else if (trigMatch) {
       score = 920 + priority + Math.min(miniScore, 40);
     } else if (titleMatch) {
-      score = 840 + (titleNorm.startsWith(qNorm) ? 40 : 0) + priority + Math.min(miniScore, 40);
+      score = 840 + (meta.titleNorm.startsWith(qNorm) ? 40 : 0) + priority + Math.min(miniScore, 40);
     } else if (catMatch || anchorMatch) {
       score = 600 + priority + Math.min(miniScore, 40);
     } else {
@@ -616,7 +655,7 @@ export function searchClinicalProtocols<T extends ClinicalSearchItem>(
       index: i,
       score,
       matchedSymptom: symMatch ? symMatch.tag : null,
-      isTopHighlight: Boolean(symMatch && symMatch.isDirect && (item.symptom_priority || 0) >= 95),
+      isTopHighlight: Boolean(symMatch && symMatch.isDirect && priority >= 95),
       fuzzyMatched
     });
   }
@@ -625,34 +664,13 @@ export function searchClinicalProtocols<T extends ClinicalSearchItem>(
   return scored.slice(0, limit);
 }
 
-function normalizeRemumeSearch(str: string): string {
-  return normalizeSearchText(str)
-    .replace(/(\d),(\d)/g, '$1.$2')
-    .replace(/(\d)(mg|mcg|g|ml|ui|%)/g, '$1 $2');
-}
-
 /**
- * Busca rápida nos medicamentos da REMUME com normalização de acentos, vírgula/ponto e unidades.
+ * Busca rápida nos medicamentos da REMUME delegando ao motor unificado de remume_hsl.ts.
  */
 export function searchRemume(query: string, limit = 8): RemumeItem[] {
-  const qNorm = normalizeRemumeSearch(query);
-  if (!qNorm) return REMUME_ITEMS.slice(0, limit);
-
-  const tokens = qNorm.split(/\s+/).filter(Boolean);
-  const scored: Array<{ item: RemumeItem; score: number }> = [];
-
-  for (let i = 0; i < REMUME_ITEMS.length; i++) {
-    const item = REMUME_ITEMS[i];
-    const itemKey = normalizeRemumeSearch(item.norm || item.name);
-    if (!tokens.every((t) => itemKey.includes(t))) continue;
-    let score = 10;
-    if (itemKey.startsWith(qNorm)) score += 30;
-    else if (itemKey.startsWith(tokens[0])) score += 15;
-    scored.push({ item, score });
-  }
-
-  scored.sort((a, b) => b.score - a.score || a.item.name.localeCompare(b.item.name));
-  return scored.slice(0, limit).map((s) => s.item);
+  return searchPharma(query, { source: 'remume', limit })
+    .map((r) => r.remumeItem)
+    .filter((item): item is RemumeItem => Boolean(item));
 }
 
 export interface ToolOrTheorySearchEntry {
@@ -673,7 +691,7 @@ export interface StratifiedGlobalSearchResult<T extends ClinicalSearchItem = Cli
   showHslQuickAction: boolean;
 }
 
-export const BUILTIN_TOOLS_AND_THEORY_INDEX: ToolOrTheorySearchEntry[] = [
+const BUILTIN_TOOLS_AND_THEORY_INDEX: ToolOrTheorySearchEntry[] = [
   { id: 'tool-ckd', kind: 'ferramenta', title: 'CKD-EPI 2021 & Cockcroft-Gault', subtitle: 'TFGe e Clearance de Creatinina', keywords: 'tfg renal creatinina ckd cockcroft', routeSection: 'ferramentas', subTab: 'calc' },
   { id: 'tool-ig', kind: 'ferramenta', title: 'Idade Gestacional & DPP (DUM / USG)', subtitle: 'Calculadora Obstétrica', keywords: 'ig dpp dum usg gestacional obstetricia', routeSection: 'ferramentas', subTab: 'calc' },
   { id: 'tool-gaso', kind: 'ferramenta', title: 'Gasometria em 5 Passos (Winter / AG / Δ/Δ)', subtitle: 'Equilíbrio Ácido-Básico', keywords: 'gasometria ph pco2 hco3 winter anion gap lactato', routeSection: 'ferramentas', subTab: 'gaso' },

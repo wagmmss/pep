@@ -5,8 +5,22 @@
 // ============================================================================
 
 import { FORMACAO_TEORICA_MODULOS, type TeoriaModuloItem } from '../data/formacao_teorica_data.ts';
+import {
+  calcGasometria5Passos,
+  calcPostTestProbability,
+  getLocalTodayIso,
+  type GasometriaInput,
+  type GasometriaResult,
+} from './calculadoras.ts';
 
-export { FORMACAO_TEORICA_MODULOS, type TeoriaModuloItem };
+export {
+  FORMACAO_TEORICA_MODULOS,
+  calcGasometria5Passos,
+  calcPostTestProbability,
+  type TeoriaModuloItem,
+  type GasometriaInput,
+  type GasometriaResult,
+};
 
 export interface RodizioConfig {
   id: string;
@@ -124,6 +138,7 @@ export interface Central6AnoState {
   ritualDomingoDoneIds: Record<string, boolean>;
   teoriaStatusById?: Record<string, 'nao_iniciado' | 'estudado' | 'dominado'>;
   teoriaExercisesDone?: Record<string, boolean>;
+  teoriaExercisesNotes?: Record<string, string>;
   activeTeoriaModId?: string;
   travasCheckedIds?: Record<string, boolean>;
   procCountsById?: Record<string, number>;
@@ -439,10 +454,7 @@ export function resolveCalendarContextForDate(dateObj: Date): {
   arquetipoSugerido: Central6AnoState['arquetipoId'];
   labelResumo: string;
 } {
-  const y = dateObj.getFullYear();
-  const m = String(dateObj.getMonth() + 1).padStart(2, '0');
-  const d = String(dateObj.getDate()).padStart(2, '0');
-  const dateIso = `${y}-${m}-${d}`;
+  const dateIso = getLocalTodayIso(dateObj);
   const dayMap: Array<'dom' | 'seg' | 'ter' | 'qua' | 'qui' | 'sex' | 'sab'> = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
   const diaSemana = dayMap[dateObj.getDay()] || 'seg';
   const isFds = diaSemana === 'sab' || diaSemana === 'dom';
@@ -685,199 +697,9 @@ export function buildDailyTimeline(state: Central6AnoState): TimelineStep[] {
 }
 
 // ============================================================================
-// FASE 3: GASOMETRIA EM 5 PASSOS, TABELA LR+/LR-, 7 TRAVAS & LOGBOOK MOTOR
+// PROMPTS CONTEXTUAIS IA & LOGBOOK MOTOR
+// (calcGasometria5Passos e calcPostTestProbability centralizados em calculadoras.ts)
 // ============================================================================
-
-export interface GasometriaInput {
-  ph: number;
-  pco2: number;
-  hco3: number;
-  na: number;
-  cl: number;
-  albumina: number;
-  lactato?: number;
-}
-
-export interface GasometriaResult {
-  passo1Ph: string;
-  passo2Primario: string;
-  passo3Compensacao: string;
-  passo4AnionGap: string;
-  passo5DeltaDelta: string;
-  agBruto: number;
-  agCorrigido: number;
-  deltaRatio: number | null;
-  diagnosticoFinal: string;
-  pepSnippet: string;
-}
-
-export function calcGasometria5Passos(input: GasometriaInput): GasometriaResult {
-  const numOr = (v: unknown, def: number) => {
-    const n = Number(v);
-    return Number.isFinite(n) ? n : def;
-  };
-  const phRaw = numOr(input.ph, 7.4);
-  const pco2Raw = numOr(input.pco2, 40);
-  const hco3Raw = numOr(input.hco3, 24);
-  const naRaw = numOr(input.na, 140);
-  const clRaw = numOr(input.cl, 104);
-  const albRaw = numOr(input.albumina, 4.0);
-  const lacRaw = numOr(input.lactato, 1.0);
-
-  const ph = Math.max(6.5, Math.min(8.0, phRaw));
-  const pco2 = Math.max(5, pco2Raw);
-  const hco3 = Math.max(1, hco3Raw);
-  const na = Math.max(80, naRaw);
-  const cl = Math.max(50, clRaw);
-  const albNorm = albRaw > 10 ? albRaw / 10 : albRaw; // aceita acidente em g/L convertendo p/ g/dL com nota
-  const alb = Math.max(0.5, Math.min(7.0, albNorm));
-  const lac = Math.max(0, lacRaw);
-
-  // Passo 1: pH
-  let passo1Ph = 'pH dentro da faixa normal (7,35–7,45) — checar pCO₂, HCO₃⁻ e AG para excluir distúrbio misto!';
-  if (ph < 7.35) passo1Ph = `Acidemia (pH ${ph.toFixed(2)} < 7,35)`;
-  else if (ph > 7.45) passo1Ph = `Alcalemia (pH ${ph.toFixed(2)} > 7,45)`;
-
-  // Passo 4 (calculado cedo para apoiar diagnóstico): AG bruto e corrigido
-  const agBruto = +(na - (cl + hco3)).toFixed(1);
-  const agCorrigido = +(agBruto + 2.5 * Math.max(0, 4.0 - alb)).toFixed(1);
-  const hasHighAg = agCorrigido > 12;
-
-  // Passo 2 & 3: Primário e Compensação
-  let passo2Primario = '';
-  let passo3Compensacao = '';
-  const diagParts: string[] = [];
-  const pushUniqueDiag = (label: string, prefixCheck?: string) => {
-    const exists =
-      diagParts.includes(label) ||
-      (prefixCheck
-        ? diagParts.some((d) => d.toLowerCase().includes(prefixCheck.toLowerCase()))
-        : false);
-    if (!exists) diagParts.push(label);
-  };
-
-  if (hco3 < 22 && (ph < 7.4 || hasHighAg)) {
-    passo2Primario = `Acidose Metabólica Primária (HCO₃⁻ ${hco3.toFixed(1)} mEq/L < 22)`;
-    pushUniqueDiag(hasHighAg ? 'Acidose Metabólica de Ânion Gap Elevado' : 'Acidose Metabólica Hiperclorêmica (AG Normal)');
-    const winterCenter = +(1.5 * hco3 + 8).toFixed(1);
-    const winterMin = +(winterCenter - 2).toFixed(1);
-    const winterMax = +(winterCenter + 2).toFixed(1);
-    if (pco2 > winterMax) {
-      passo3Compensacao = `Fórmula de Winter: pCO₂ esperada = ${winterMin} a ${winterMax} mmHg (medida: ${pco2}) → pCO₂ ACIMA do esperado = Acidose Respiratória Associada (alerta de fadiga ventilatória!).`;
-      pushUniqueDiag('Acidose Respiratória Associada');
-    } else if (pco2 < winterMin) {
-      passo3Compensacao = `Fórmula de Winter: pCO₂ esperada = ${winterMin} a ${winterMax} mmHg (medida: ${pco2}) → pCO₂ ABAIXO do esperado = Alcalose Respiratória Associada (ex: sepse, dor, salicilato).`;
-      pushUniqueDiag('Alcalose Respiratória Associada');
-    } else {
-      passo3Compensacao = `Fórmula de Winter: pCO₂ esperada = ${winterMin} a ${winterMax} mmHg (medida: ${pco2}) → Compensação respiratória adequada.`;
-    }
-  } else if (hco3 > 26 && ph >= 7.4) {
-    passo2Primario = `Alcalose Metabólica Primária (HCO₃⁻ ${hco3.toFixed(1)} mEq/L > 26)`;
-    pushUniqueDiag('Alcalose Metabólica');
-    const expPco2 = +(0.7 * hco3 + 21).toFixed(1);
-    const expMin = +(expPco2 - 2).toFixed(1);
-    const expMax = +(expPco2 + 2).toFixed(1);
-    if (pco2 > expMax) {
-      passo3Compensacao = `pCO₂ esperada ≈ ${expMin}–${expMax} mmHg (medida: ${pco2}) → Acidose Respiratória Associada.`;
-      pushUniqueDiag('Acidose Respiratória Associada');
-    } else if (pco2 < expMin) {
-      passo3Compensacao = `pCO₂ esperada ≈ ${expMin}–${expMax} mmHg (medida: ${pco2}) → Alcalose Respiratória Associada.`;
-      pushUniqueDiag('Alcalose Respiratória Associada');
-    } else {
-      passo3Compensacao = `pCO₂ esperada ≈ ${expMin}–${expMax} mmHg (medida: ${pco2}) → Compensação adequada.`;
-    }
-  } else if (pco2 > 45) {
-    passo2Primario = `Acidose Respiratória Primária (pCO₂ ${pco2} mmHg > 45)`;
-    const deltaPco2 = (pco2 - 40) / 10;
-    const hco3Agudo = +(24 + 1 * deltaPco2).toFixed(1);
-    const hco3Cronico = +(24 + 3.5 * deltaPco2).toFixed(1);
-    passo3Compensacao = `HCO₃⁻ esperado: Agudo ≈ ${hco3Agudo} mEq/L | Crônico (DPOC retentor) ≈ ${hco3Cronico} mEq/L (medido: ${hco3.toFixed(1)}).`;
-    pushUniqueDiag(Math.abs(hco3 - hco3Cronico) < 2.5 ? 'Acidose Respiratória Crônica Compensada/Agudizada' : 'Acidose Respiratória Aguda');
-    if (hco3 < hco3Agudo - 2) {
-      pushUniqueDiag(hasHighAg ? 'Acidose Metabólica de Ânion Gap Elevado Associada' : 'Acidose Metabólica Associada');
-    } else if (hco3 > hco3Cronico + 2) {
-      pushUniqueDiag('Alcalose Metabólica Associada');
-    }
-  } else if (pco2 < 35) {
-    passo2Primario = `Alcalose Respiratória Primária (pCO₂ ${pco2} mmHg < 35)`;
-    const deltaPco2 = (40 - pco2) / 10;
-    const hco3Agudo = +(24 - 2 * deltaPco2).toFixed(1);
-    const hco3Cronico = +(24 - 5 * deltaPco2).toFixed(1);
-    passo3Compensacao = `HCO₃⁻ esperado: Agudo ≈ ${hco3Agudo} mEq/L | Crônico ≈ ${hco3Cronico} mEq/L (medido: ${hco3.toFixed(1)}).`;
-    pushUniqueDiag('Alcalose Respiratória');
-    if (hco3 < Math.min(hco3Agudo, hco3Cronico) - 2) {
-      pushUniqueDiag(hasHighAg ? 'Acidose Metabólica de Ânion Gap Elevado Associada' : 'Acidose Metabólica Associada');
-    } else if (hco3 > Math.max(hco3Agudo, hco3Cronico) + 2) {
-      pushUniqueDiag('Alcalose Metabólica Associada');
-    }
-  } else {
-    passo2Primario = 'pCO₂ (35–45) e HCO₃⁻ (22–26) dentro das faixas de referência.';
-    passo3Compensacao = 'Sem desvio primário aparente — conferir Ânion Gap Corrigido abaixo.';
-    if (hasHighAg) {
-      pushUniqueDiag('Acidose Metabólica de AG Elevado Oculta + Alcalose Metabólica');
-    } else {
-      pushUniqueDiag('Equilíbrio Ácido-Básico Preservado');
-    }
-  }
-
-  const albNote = albRaw > 10 ? ` [convertida de ${albRaw} g/L]` : '';
-  const passo4AnionGap = `AG bruto = ${agBruto} mEq/L | AG corrigido pela albumina (${alb.toFixed(1)} g/dL${albNote}) = ${agCorrigido} mEq/L → ${hasHighAg ? '🔴 AG ELEVADO (> 12): pesquisar GOLDMARK / Lactato / Cetoacidose / Uremia' : '🟢 AG Normal (≤ 12)'}.`;
-
-  let passo5DeltaDelta = 'Não aplicável (Ânion Gap corrigido ≤ 12).';
-  let deltaRatio: number | null = null;
-  if (hasHighAg) {
-    pushUniqueDiag('Acidose Metabólica de Ânion Gap Elevado', 'Acidose Metabólica de AG Elevado');
-    const deltaAg = +(agCorrigido - 12).toFixed(1);
-    const deltaHco3 = +(24 - hco3).toFixed(1);
-    if (deltaHco3 <= 0) {
-      deltaRatio = null;
-      passo5DeltaDelta = `ΔAG (${deltaAg}) com HCO₃⁻ ≥ 24 → Relação Δ/Δ > 2,0: Alcalose Metabólica Associada coexistindo com Acidose de AG Elevado!`;
-      pushUniqueDiag('Alcalose Metabólica Associada (Δ/Δ > 2)', 'Alcalose Metabólica');
-    } else {
-      deltaRatio = +(deltaAg / deltaHco3).toFixed(2);
-      if (deltaRatio < 1.0) {
-        passo5DeltaDelta = `ΔAG (${deltaAg}) / ΔHCO₃⁻ (${deltaHco3}) = ${deltaRatio} (< 1,0) → Acidose Metabólica Hiperclorêmica (AG normal) associada!`;
-        pushUniqueDiag('Acidose Hiperclorêmica Associada (Δ/Δ < 1)', 'Hiperclorêmica');
-      } else if (deltaRatio > 2.0) {
-        passo5DeltaDelta = `ΔAG (${deltaAg}) / ΔHCO₃⁻ (${deltaHco3}) = ${deltaRatio} (> 2,0) → Alcalose Metabólica Associada (ex: vômitos/SNG/diurético) ou retenção crônica prévia de HCO₃⁻!`;
-        pushUniqueDiag('Alcalose Metabólica Associada (Δ/Δ > 2)', 'Alcalose Metabólica');
-      } else {
-        passo5DeltaDelta = `ΔAG (${deltaAg}) / ΔHCO₃⁻ (${deltaHco3}) = ${deltaRatio} (entre 1,0 e 2,0) → Acidose Metabólica de Ânion Gap Elevado Pura.`;
-      }
-    }
-  }
-
-  const diagnosticoFinal = diagParts.join(' + ') + (lac >= 2.0 ? ` (Hiperlactatemia: Lactato ${lac} mmol/L)` : '');
-  const pepSnippet = `Gasometria: pH ${ph.toFixed(2)} | pCO2 ${pco2} mmHg | HCO3 ${hco3} mEq/L | AG corr ${agCorrigido} mEq/L${deltaRatio !== null && deltaRatio !== 99 ? ` (Δ/Δ ${deltaRatio})` : ''} | Lac ${lac} -> ${diagnosticoFinal}.`;
-
-  return {
-    passo1Ph,
-    passo2Primario,
-    passo3Compensacao,
-    passo4AnionGap,
-    passo5DeltaDelta,
-    agBruto,
-    agCorrigido,
-    deltaRatio,
-    diagnosticoFinal,
-    pepSnippet
-  };
-}
-
-export function calcPostTestProbability(preTestPct: number, lr: number): { prePct: number; lr: number; postPct: number; interpretacao: string } {
-  const preVal = Number(preTestPct);
-  const lrVal = Number(lr);
-  const pre = Math.max(1, Math.min(99, Number.isFinite(preVal) ? preVal : 50)) / 100;
-  const ratio = Math.max(0.01, Number.isFinite(lrVal) && lrVal > 0 ? lrVal : 1);
-  const preOdds = pre / (1 - pre);
-  const postOdds = preOdds * ratio;
-  const post = postOdds / (1 + postOdds);
-  const postPct = Math.round(post * 1000) / 10;
-  let interpretacao = 'Mudança discreta — combine com outros achados ou escore clínico.';
-  if (postPct >= 85) interpretacao = 'Alta probabilidade pós-teste (≥ 85%) — forte confirmação diagnóstica!';
-  else if (postPct <= 5) interpretacao = 'Probabilidade pós-teste muito baixa (≤ 5%) — exclui com alta segurança!';
-  return { prePct: Math.round(pre * 100), lr: ratio, postPct, interpretacao };
-}
 
 export type PromptContextualKind = 'paciente' | 'oratoria' | 'raciocinio' | 'exames' | 'osce';
 
@@ -893,19 +715,22 @@ export function buildContextualAiPrompt(kind: PromptContextualKind, state: Centr
     ? `\n\n[Pontos Cegos Ativos no Logbook para testar neste treino: ${top3BlindSpots.join(' | ')}]`
     : '';
 
-  if (kind === 'paciente') {
-    return `Atue como um paciente real em um cenário clínico de [${rodizio.nome} — Foco: ${rodizio.ancora70}]. Escolha uma patologia prevalente desse rodízio, mas NÃO me diga qual é. Comece dizendo apenas sua idade, sexo e queixa principal em 1 frase leiga. Só me dê detalhes se eu perguntar de forma clara e empática. Estou treinando hoje especificamente: "${microHab}" (${rotaDia.pilarTitulo}). Quando eu pedir o exame físico, informe apenas os achados das manobras específicas que eu solicitar (HDPE). Ao final, quando eu encerrar e apresentar meu One-Liner + 3 hipóteses + conduta, saia do personagem e me avalie pelo modelo Calgary-Cambridge: (1) perguntas discriminatórias que faltaram, (2) Red Flags que esqueci, (3) se meu exame físico foi guiado por hipóteses com bom LR+ e (4) se executei meu micro-hábito da semana.${blindSpotsSuffix}`;
+  switch (kind) {
+    case 'paciente':
+      return `Atue como um paciente real em um cenário clínico de [${rodizio.nome} — Foco: ${rodizio.ancora70}]. Escolha uma patologia prevalente desse rodízio, mas NÃO me diga qual é. Comece dizendo apenas sua idade, sexo e queixa principal em 1 frase leiga. Só me dê detalhes se eu perguntar de forma clara e empática. Estou treinando hoje especificamente: "${microHab}" (${rotaDia.pilarTitulo}). Quando eu pedir o exame físico, informe apenas os achados das manobras específicas que eu solicitar (HDPE). Ao final, quando eu encerrar e apresentar meu One-Liner + 3 hipóteses + conduta, saia do personagem e me avalie pelo modelo Calgary-Cambridge: (1) perguntas discriminatórias que faltaram, (2) Red Flags que esqueci, (3) se meu exame físico foi guiado por hipóteses com bom LR+ e (4) se executei meu micro-hábito da semana.${blindSpotsSuffix}`;
+    case 'oratoria':
+      return `Atue como um preceptor exigente da FMRP-USP/HCRP no rodízio de [${rodizio.nome}]. Vou colar abaixo a transcrição do áudio/vídeo de 1 a 3 minutos em que passei um caso clínico usando [SNAPPS / SBAR / Pyramid Principle]. Avalie minha apresentação de 0 a 10 usando esta rubrica: (1) Abertura com One-Liner claro e Qualificadores Semânticos (0–2), (2) Filtro cirúrgico de positivos e negativos pertinentes sem relato cronológico prolixo (0–2), (3) Comparação explícita entre pelo menos 2 diagnósticos diferenciais (0–2), (4) Proposta de plano objetivo com as 7 Travas de segurança (0–2), (5) Firmeza, pausas limpas e ausência de vícios de linguagem (0–2). Em seguida, reescreva minha fala em uma versão Padrão-Ouro de até 75 segundos para eu regravar o Take 2:${blindSpotsSuffix}\n\n[COLE SUA TRANSCRIÇÃO AQUI]`;
+    case 'raciocinio':
+      return `Quero treinar Raciocínio Clínico, Illness Scripts e Raciocínio Bayesiano para o rodízio de [${rodizio.nome} — Temas: ${rodizio.ancora70}]. Apresente um caso clínico desafiador em 3 etapas progressivas (Etapa 1: apenas queixa principal, idade e contexto; Etapa 2: HMA completa + sinais vitais + exame físico dirigido; Etapa 3: exames complementares). A cada etapa, pare e espere eu responder com: (a) Qualificadores Semânticos, (b) One-Liner atualizado, (c) Top 3 hipóteses comparando seus Illness Scripts, e (d) o diagnóstico mais letal que não posso deixar passar. Critique meu raciocínio apontando vieses cognitivos (ancoragem, fechamento prematuro) antes de liberar a próxima etapa.${blindSpotsSuffix}`;
+    case 'exames':
+      return `Me dê a Micro-Dose Diária de Interpretação Sistemática de Exames (25 min) calibrada para [${rodizio.nome}] (${rotaDia.exame25m}): gere 1 caso clínico agudo contendo (1) dados completos de Gasometria Arterial com Na+, Cl-, K+, Albumina e Lactato para eu calcular os 5 passos (pH, primário, Fórmula de Winter, Ânion Gap corrigido pela albumina e relação Delta-Delta), e (2) um desafio detalhado de ECG (10 passos) ou Imagem de Urgência (RX Tórax/Abdome, TC de Crânio ou e-FAST). NÃO dê o gabarito ainda: espere eu enviar minha leitura sistemática e minha conduta imediata para então corrigir passo a passo.${blindSpotsSuffix}`;
+    case 'osce':
+      return `Atue como examinador de uma estação prática de 2ª Fase (OSCE — padrão USP-RP / USP-SP / UNICAMP) do rodízio de [${rodizio.nome}]. Monte uma estação cronometrada de 8 minutos sobre [${rodizio.ancora70}] envolvendo anamnese dirigida, exame físico HDPE, interpretação de 1 exame crítico e prescrição/conduta com as 7 Travas (A-R-G-I-V-P-O). Apresente a folha de porta da estação e aguarde minhas ações passo a passo. Ao final, corrija meu desempenho usando um Checklist Oficial de Banca (0 a 10 pontos) destacando os itens obrigatórios que esqueci.${blindSpotsSuffix}`;
+    default: {
+      const _exhaustive: never = kind;
+      throw new Error(`Tipo de prompt contextual desconhecido: ${String(_exhaustive)}`);
+    }
   }
-  if (kind === 'oratoria') {
-    return `Atue como um preceptor exigente da FMRP-USP/HCRP no rodízio de [${rodizio.nome}]. Vou colar abaixo a transcrição do áudio/vídeo de 1 a 3 minutos em que passei um caso clínico usando [SNAPPS / SBAR / Pyramid Principle]. Avalie minha apresentação de 0 a 10 usando esta rubrica: (1) Abertura com One-Liner claro e Qualificadores Semânticos (0–2), (2) Filtro cirúrgico de positivos e negativos pertinentes sem relato cronológico prolixo (0–2), (3) Comparação explícita entre pelo menos 2 diagnósticos diferenciais (0–2), (4) Proposta de plano objetivo com as 7 Travas de segurança (0–2), (5) Firmeza, pausas limpas e ausência de vícios de linguagem (0–2). Em seguida, reescreva minha fala em uma versão Padrão-Ouro de até 75 segundos para eu regravar o Take 2:${blindSpotsSuffix}\n\n[COLE SUA TRANSCRIÇÃO AQUI]`;
-  }
-  if (kind === 'raciocinio') {
-    return `Quero treinar Raciocínio Clínico, Illness Scripts e Raciocínio Bayesiano para o rodízio de [${rodizio.nome} — Temas: ${rodizio.ancora70}]. Apresente um caso clínico desafiador em 3 etapas progressivas (Etapa 1: apenas queixa principal, idade e contexto; Etapa 2: HMA completa + sinais vitais + exame físico dirigido; Etapa 3: exames complementares). A cada etapa, pare e espere eu responder com: (a) Qualificadores Semânticos, (b) One-Liner atualizado, (c) Top 3 hipóteses comparando seus Illness Scripts, e (d) o diagnóstico mais letal que não posso deixar passar. Critique meu raciocínio apontando vieses cognitivos (ancoragem, fechamento prematuro) antes de liberar a próxima etapa.${blindSpotsSuffix}`;
-  }
-  if (kind === 'exames') {
-    return `Me dê a Micro-Dose Diária de Interpretação Sistemática de Exames (25 min) calibrada para [${rodizio.nome}] (${rotaDia.exame25m}): gere 1 caso clínico agudo contendo (1) dados completos de Gasometria Arterial com Na+, Cl-, K+, Albumina e Lactato para eu calcular os 5 passos (pH, primário, Fórmula de Winter, Ânion Gap corrigido pela albumina e relação Delta-Delta), e (2) um desafio detalhado de ECG (10 passos) ou Imagem de Urgência (RX Tórax/Abdome, TC de Crânio ou e-FAST). NÃO dê o gabarito ainda: espere eu enviar minha leitura sistemática e minha conduta imediata para então corrigir passo a passo.${blindSpotsSuffix}`;
-  }
-  return `Atue como examinador de uma estação prática de 2ª Fase (OSCE — padrão USP-RP / USP-SP / UNICAMP) do rodízio de [${rodizio.nome}]. Monte uma estação cronometrada de 8 minutos sobre [${rodizio.ancora70}] envolvendo anamnese dirigida, exame físico HDPE, interpretação de 1 exame crítico e prescrição/conduta com as 7 Travas (A-R-G-I-V-P-O). Apresente a folha de porta da estação e aguarde minhas ações passo a passo. Ao final, corrija meu desempenho usando um Checklist Oficial de Banca (0 a 10 pontos) destacando os itens obrigatórios que esqueci.${blindSpotsSuffix}`;
 }
 
 // ============================================================================

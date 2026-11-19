@@ -114,26 +114,37 @@ test('Escores UBS/UPA: CURB-65, Centor/McIsaac, Wells TVP e CHA2DS2-VASc', () =>
 });
 
 test('Calculadoras: validações de borda, faixa etária, unidades e datas inválidas', () => {
-  // CKD-EPI: aviso em <18 anos e erro em >120 anos
+  // CKD-EPI: aviso em <18 anos (inclusive no pepSnippet), rejeita >120 anos e creatinina em µmol/L
   const ckdPed = calcCkdEpi2021({ creatinina: 0.7, idade: 14, sexo: 'F' });
   assert.ok(ckdPed.classification.includes('Schwartz'), 'Menores de 18 anos devem receber alerta sobre Schwartz');
+  assert.ok(ckdPed.pepSnippet.includes('Schwartz'), 'Alerta pediátrico deve constar também no pepSnippet');
   assert.throws(() => calcCkdEpi2021({ creatinina: 1.0, idade: 125, sexo: 'M' }), /Idade/);
+  assert.throws(() => calcCkdEpi2021({ creatinina: 88, idade: 55, sexo: 'M' }), /mg\/dL/);
 
-  // Cockcroft-Gault: erro em idade > 120 e aviso pediátrico em <18
+  // Cockcroft-Gault: erro em idade > 120, peso em gramas, creatinina em µmol/L e aviso pediátrico no pepSnippet
   const cgPed = calcCockcroftGault({ creatinina: 0.8, idade: 12, pesoKg: 40, sexo: 'M' });
   assert.ok(cgPed.classification.includes('Schwartz'));
+  assert.ok(cgPed.pepSnippet.includes('Schwartz'));
   assert.throws(() => calcCockcroftGault({ creatinina: 1.0, idade: 125, pesoKg: 70, sexo: 'M' }), /Idade/);
+  assert.throws(() => calcCockcroftGault({ creatinina: 1.0, idade: 55, pesoKg: 70000, sexo: 'M' }), /quilogramas/i);
+  assert.throws(() => calcCockcroftGault({ creatinina: 88, idade: 55, pesoKg: 70, sexo: 'M' }), /mg\/dL/);
 
   // DUM inexistente no calendário (ex: 31/02) deve rejeitar em vez de fazer rollover para março
   assert.throws(() => calcIdadeGestacionalDum({ dumIso: '2026-02-31', refDateIso: '2026-06-01' }), /Data inexistente no calendário/);
 
-  // IMC aceita metros <= 3 (ex: 1.72) e rejeita valores absurdos
+  // USG rejeita semanas fracionárias ou data de USG posterior à data de referência
+  assert.throws(() => calcIdadeGestacionalUsg({ usgDateIso: '2026-10-20', usgWeeks: 10.5, usgDays: 2, refDateIso: '2026-11-17' }), /inteiros/i);
+  assert.throws(() => calcIdadeGestacionalUsg({ usgDateIso: '2026-12-01', usgWeeks: 10, usgDays: 2, refDateIso: '2026-11-17' }), /posterior/i);
+
+  // IMC aceita metros <= 3 (ex: 1.72) e rejeita altura/peso absurdos (ex: peso em gramas)
   const imcMetros = calcImc({ pesoKg: 72, alturaCm: 1.72 });
   assert.equal(imcMetros.valueText, '24,3 kg/m²');
   assert.throws(() => calcImc({ pesoKg: 70, alturaCm: 20 }), /altura/);
+  assert.throws(() => calcImc({ pesoKg: 70000, alturaCm: 170 }), /quilogramas/i);
 
-  // Sódio corrigido rejeita Na+ fora de 80-200 mEq/L e cálcio rejeita albumina > 10 (g/L)
+  // Sódio corrigido rejeita Na+ fora de 80-200 mEq/L, glicemia em mmol/L e cálcio rejeita albumina > 10 (g/L)
   assert.throws(() => calcSodioCorrigido({ sodioMedido: 45, glicemiaMgDl: 200 }), /Sódio/);
+  assert.throws(() => calcSodioCorrigido({ sodioMedido: 135, glicemiaMgDl: 15 }), /mg\/dL/);
   assert.throws(() => calcCalcioCorrigido({ calcioTotal: 8.5, albuminaGdl: 35 }), /g\/dL/);
 
   // Centor/McIsaac rejeita idade negativa ou >120 e avisa quando < 3 anos

@@ -24,7 +24,7 @@ export interface ClinicalLinkResolution {
  * Conecta protocolos críticos e específicos diretamente aos cartões Pré-Porta (hab-1..hab-22)
  * e aos Módulos Teóricos (mod-01..mod-07).
  */
-export const CLINICAL_LINKS_BY_TRIGGER: Record<string, ClinicalLinkEntry> = {
+const CLINICAL_LINKS_BY_TRIGGER: Record<string, ClinicalLinkEntry> = {
   // GO
   ';hpp': {
     habIds: ['hab-3', 'hab-18', 'hab-17'],
@@ -330,7 +330,7 @@ export const CLINICAL_LINKS_BY_TRIGGER: Record<string, ClinicalLinkEntry> = {
 /**
  * Fallback declarativo por módulo/categoria para cobrir 100% dos 88 PEPs.
  */
-export const CLINICAL_LINKS_BY_MOD_OR_CAT: Record<string, ClinicalLinkEntry> = {
+const CLINICAL_LINKS_BY_MOD_OR_CAT: Record<string, ClinicalLinkEntry> = {
   go: {
     habIds: ['hab-3', 'hab-17'],
     prePortaTriggers: [';hab-go', ';hab-presc'],
@@ -379,7 +379,7 @@ export const CLINICAL_LINKS_BY_MOD_OR_CAT: Record<string, ClinicalLinkEntry> = {
   },
 };
 
-export const TEORIA_TO_HAB_LINKS: Record<string, string[]> = {
+const TEORIA_TO_HAB_LINKS: Record<string, string[]> = {
   'mod-01': ['hab-1', 'hab-3', 'hab-16'],
   'mod-02': ['hab-2', 'hab-5', 'hab-6', 'hab-7', 'hab-8', 'hab-9', 'hab-10', 'hab-20'],
   'mod-03': ['hab-11'],

@@ -2,6 +2,7 @@ import {
   buildContextualAiPrompt,
   FORMACAO_TEORICA_MODULOS,
 } from '../engine/central6ano.ts';
+import { renderTeoriaMarkdownToHtml } from '../engine/diretrizes.ts';
 import { resolveLinksForTeoriaModule } from '../data/clinical_links.ts';
 import {
   getCentral6AnoState,
@@ -9,205 +10,12 @@ import {
   uiBridge,
   updateCentral6AnoState,
 } from './context.ts';
-import { copyToClipboard, escapeHtml, showToast } from './utils.ts';
+import { copyToClipboard, escapeHtml, guardPiiBeforeSave, showToast } from './utils.ts';
 
-function normalizeTeoriaMathInline(raw: string): string {
-  return String(raw || '').replace(/\$([^$\n]+)\$/g, (_, expr: string) =>
-    expr
-      .replace(/\\times/g, '×')
-      .replace(/\\pm/g, '±')
-      .replace(/\\Delta/g, 'Δ')
-      .replace(/\\approx/g, '≈')
-      .replace(/\\leq/g, '≤')
-      .replace(/\\geq/g, '≥')
-      .replace(/\\text\{([^}]*)\}/g, '$1')
-      .replace(/HCO_3\^-/g, 'HCO₃⁻')
-      .replace(/pCO_2/g, 'pCO₂')
-      .replace(/Na\^\+/g, 'Na⁺')
-      .replace(/Cl\^-/g, 'Cl⁻')
-      .replace(/K\^\+/g, 'K⁺')
-      .replace(/Mg\^\{?2\+\}?/g, 'Mg²⁺')
-      .replace(/AG_\{corr\}/g, 'AG_corr')
-      .replace(/\{,\}/g, ',')
-      .replace(/\\,/g, ' ')
-      .replace(/[{}]/g, '')
-      .trim()
-  );
-}
+export { renderTeoriaMarkdownToHtml };
 
-function formatInlineTeoriaMd(text: string): string {
-  const mathClean = normalizeTeoriaMathInline(text || '');
-  let html = escapeHtml(mathClean);
-  const codeSpans: string[] = [];
-  html = html.replace(/`([^`]+)`/g, (_, code: string) => {
-    const idx = codeSpans.length;
-    codeSpans.push(`<code>${code}</code>`);
-    return `@@TCODE_${idx}@@`;
-  });
-  html = html
-    .replace(/&lt;br\s*\/?&gt;/gi, '<br>')
-    .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
-  codeSpans.forEach((span, idx) => {
-    html = html.replace(`@@TCODE_${idx}@@`, span);
-  });
-  return html;
-}
-
-function splitMdTableRow(trimmed: string): string[] {
-  const inner = trimmed.slice(1, -1);
-  const cells: string[] = [];
-  let cur = '';
-  for (let i = 0; i < inner.length; i++) {
-    if (inner[i] === '\\' && inner[i + 1] === '|') {
-      cur += '|';
-      i++;
-    } else if (inner[i] === '|') {
-      cells.push(cur);
-      cur = '';
-    } else {
-      cur += inner[i];
-    }
-  }
-  cells.push(cur);
-  return cells;
-}
-
-export function renderTeoriaMarkdownToHtml(md: string): string {
-  const lines = String(md || '').split('\n');
-  const out: string[] = [];
-  let inUl = false;
-  let inOl = false;
-  let tableRows: string[][] = [];
-  let quoteBuffer: string[] = [];
-
-  const closeLists = () => {
-    if (inUl) {
-      out.push('</ul>');
-      inUl = false;
-    }
-    if (inOl) {
-      out.push('</ol>');
-      inOl = false;
-    }
-  };
-
-  const flushQuote = () => {
-    if (quoteBuffer.length === 0) return;
-    const innerHtml = quoteBuffer.map((q) => formatInlineTeoriaMd(q)).join('<br>');
-    out.push(`<blockquote>${innerHtml}</blockquote>`);
-    quoteBuffer = [];
-  };
-
-  const flushTable = () => {
-    if (tableRows.length === 0) return;
-    const headerCells = tableRows[0] || [];
-    const bodyRows = tableRows.slice(2);
-    let html = '<div class="mq-table-wrap"><table class="mq-table"><thead><tr>';
-    headerCells.forEach((c) => {
-      html += `<th>${formatInlineTeoriaMd(c.trim())}</th>`;
-    });
-    html += '</tr></thead><tbody>';
-    bodyRows.forEach((row) => {
-      html += '<tr>';
-      row.forEach((c) => {
-        html += `<td>${formatInlineTeoriaMd(c.trim())}</td>`;
-      });
-      html += '</tr>';
-    });
-    html += '</tbody></table></div>';
-    out.push(html);
-    tableRows = [];
-  };
-
-  for (let i = 0; i < lines.length; i++) {
-    const raw = lines[i];
-    const trimmed = raw.trim();
-    const isIndented = /^\s{2,}/.test(raw);
-
-    if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
-      flushQuote();
-      closeLists();
-      tableRows.push(splitMdTableRow(trimmed));
-      continue;
-    } else if (tableRows.length > 0) {
-      flushTable();
-    }
-
-    if (trimmed.startsWith('> ')) {
-      closeLists();
-      quoteBuffer.push(trimmed.slice(2));
-      continue;
-    } else if (trimmed === '>') {
-      closeLists();
-      quoteBuffer.push('');
-      continue;
-    } else if (quoteBuffer.length > 0) {
-      flushQuote();
-    }
-
-    if (!trimmed) {
-      closeLists();
-      continue;
-    }
-    if (trimmed === '---') {
-      closeLists();
-      out.push('<hr>');
-      continue;
-    }
-    if (trimmed.startsWith('# ')) {
-      closeLists();
-      out.push(`<h1>${formatInlineTeoriaMd(trimmed.slice(2))}</h1>`);
-    } else if (trimmed.startsWith('## ')) {
-      closeLists();
-      out.push(`<h2>${formatInlineTeoriaMd(trimmed.slice(3))}</h2>`);
-    } else if (trimmed.startsWith('### ')) {
-      closeLists();
-      out.push(`<h3>${formatInlineTeoriaMd(trimmed.slice(4))}</h3>`);
-    } else if (/^[-*]\s+/.test(trimmed)) {
-      if (inOl && isIndented) {
-        out.push(
-          `<li style="list-style:disc; margin-left:22px;">${formatInlineTeoriaMd(trimmed.replace(/^[-*]\s+/, ''))}</li>`
-        );
-      } else {
-        if (inOl) {
-          out.push('</ol>');
-          inOl = false;
-        }
-        if (!inUl) {
-          out.push('<ul>');
-          inUl = true;
-        }
-        out.push(`<li>${formatInlineTeoriaMd(trimmed.replace(/^[-*]\s+/, ''))}</li>`);
-      }
-    } else if (/^\d+\.\s+/.test(trimmed)) {
-      if (inUl) {
-        out.push('</ul>');
-        inUl = false;
-      }
-      if (!inOl) {
-        out.push('<ol>');
-        inOl = true;
-      }
-      out.push(`<li>${formatInlineTeoriaMd(trimmed.replace(/^\d+\.\s+/, ''))}</li>`);
-    } else {
-      closeLists();
-      out.push(`<p>${formatInlineTeoriaMd(trimmed)}</p>`);
-    }
-  }
-
-  flushQuote();
-  closeLists();
-  flushTable();
-  return out.join('\n');
-}
-
-export function initTeoria(): (container: HTMLElement, subTab?: string) => void {
-  let activeContainer: HTMLElement | null = null;
-
+export function initTeoria(): { render: (container: HTMLElement, subTab?: string) => void } {
   const render = (container: HTMLElement, subTab?: string) => {
-    activeContainer = container;
     const state = getCentral6AnoState();
     const activeModId = subTab || state.activeTeoriaModId || FORMACAO_TEORICA_MODULOS[0]?.id || 'mod-01';
     const mod = FORMACAO_TEORICA_MODULOS.find((m) => m.id === activeModId) || FORMACAO_TEORICA_MODULOS[0];
@@ -227,13 +35,7 @@ export function initTeoria(): (container: HTMLElement, subTab?: string) => void 
     ).length;
 
     const exDone = Boolean(latestState.teoriaExercisesDone?.[mod.id]);
-    let exNotes = '';
-    try {
-      const parsed = JSON.parse(localStorage.getItem('mq_teoria_ex_notes_v1') || '{}') as Record<string, string>;
-      exNotes = parsed[mod.id] || '';
-    } catch {
-      exNotes = '';
-    }
+    const exNotes = latestState.teoriaExercisesNotes?.[mod.id] || '';
 
     const relatedHabHtml =
       mergedHabIds.length > 0
@@ -309,7 +111,7 @@ export function initTeoria(): (container: HTMLElement, subTab?: string) => void 
             </article>
 
             <div class="teoria-exercises-box">
-              <div class="mq-stat-label">✍️ Registro Local do Exercício Prático (Salvo Localmente)</div>
+              <div class="mq-stat-label">✍️ Registro Local do Exercício Prático (Incluído no Backup v2 · Anti-PII)</div>
               <div class="teoria-ex-item">
                 <label class="teoria-ex-label">
                   <input type="checkbox" id="teoriaExDoneChk" ${exDone ? 'checked' : ''} />
@@ -370,7 +172,6 @@ export function initTeoria(): (container: HTMLElement, subTab?: string) => void 
       btn.addEventListener('click', () => {
         const hid = btn.dataset.openHab!;
         uiBridge.navigate('preporta', { itemId: hid });
-        uiBridge.selectPrePortaCard(hid);
       });
     });
 
@@ -382,31 +183,28 @@ export function initTeoria(): (container: HTMLElement, subTab?: string) => void 
       });
     });
 
-    container.querySelector('#teoriaSaveExBtn')?.addEventListener('click', () => {
+    container.querySelector('#teoriaSaveExBtn')?.addEventListener('click', async () => {
       const done = Boolean((container.querySelector('#teoriaExDoneChk') as HTMLInputElement | null)?.checked);
-      const notes = (container.querySelector('#teoriaExNotesInput') as HTMLTextAreaElement | null)?.value || '';
+      const rawNotes = (container.querySelector('#teoriaExNotesInput') as HTMLTextAreaElement | null)?.value || '';
+      const safeNotes = await guardPiiBeforeSave(rawNotes, 'Exercício Teórico');
+      if (safeNotes === null) return;
+
       updateCentral6AnoState((prev) => ({
         ...prev,
         teoriaExercisesDone: {
           ...(prev.teoriaExercisesDone || {}),
           [mod.id]: done,
         },
+        teoriaExercisesNotes: {
+          ...(prev.teoriaExercisesNotes || {}),
+          [mod.id]: safeNotes,
+        },
       }));
-      try {
-        const parsed = JSON.parse(localStorage.getItem('mq_teoria_ex_notes_v1') || '{}') as Record<string, string>;
-        parsed[mod.id] = notes;
-        localStorage.setItem('mq_teoria_ex_notes_v1', JSON.stringify(parsed));
-      } catch {
-        // Ignore storage error
-      }
-      showToast('Exercício salvo localmente.', 'success');
+      const ta = container.querySelector<HTMLTextAreaElement>('#teoriaExNotesInput');
+      if (ta && ta.value !== safeNotes) ta.value = safeNotes;
+      showToast('Exercício salvo com segurança (incluído no Backup v2).', 'success');
     });
   };
 
-  uiBridge.selectTeoriaModule = (modId: string) => {
-    updateCentral6AnoState((s) => ({ ...s, activeTeoriaModId: modId }));
-    if (activeContainer) render(activeContainer, modId);
-  };
-
-  return render;
+  return { render };
 }

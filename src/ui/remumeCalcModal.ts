@@ -35,11 +35,11 @@ export function initRemumeCalcModal(): void {
 
     const content = body.querySelector<HTMLElement>('#remumeModalTabContent')!;
     if (activeTab === 'remume') {
-      renderPharmaCatalogPanel(content, currentInitialQuery);
+      renderPharmaCatalogPanel(content, currentInitialQuery, 'modal');
     } else if (activeTab === 'calc') {
-      renderUbsUpaCalculators(content);
+      renderUbsUpaCalculators(content, 'modal');
     } else {
-      renderGasometriaPanel(content);
+      renderGasometriaPanel(content, 'modal');
     }
   };
 

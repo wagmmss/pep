@@ -17,11 +17,20 @@ import {
   createFreeEditState,
   pushFreeEditSnapshot,
   undoFreeEditSnapshot,
+  resolvePediatricDoseFieldValue,
 } from '../src/engine/personalizar.ts';
 import {
   getClinicalSeverity,
   parsePrescriptionItemsForCart,
+  QUICK_CART_PRESETS,
+  formatCartAsPrescriptionText,
 } from '../src/engine/workstation.ts';
+import {
+  parseBrDateToIsoStrict,
+  calcIgFromCcnMm,
+  calcObstetricStructuredFromDum,
+  calcObstetricStructuredFromUsg,
+} from '../src/engine/calculadoras.ts';
 import {
   createClinicalSearchIndex,
   searchClinicalProtocols,
@@ -37,7 +46,10 @@ import {
 import {
   formatGuiaInlineHtml,
   classifyGuiaSectionTheme,
+  renderTeoriaMarkdownToHtml,
 } from '../src/engine/diretrizes.ts';
+import { SETE_TRAVAS_SEGURANCA } from '../src/data/clinical_reference_data.ts';
+import { getCentral6AnoState } from '../src/ui/context.ts';
 import {
   RODIZIOS_6ANO,
   MARCHAS_6ANO,
@@ -136,6 +148,21 @@ test('REMUME 252 + Guia HSL 976: searchRemumeHsl, aviso Sem ficha HSL, formatPre
   assert.ok(remumeRes.length > 0);
   assert.ok(remumeRes.every((r) => r.source === 'remume' && r.naRemume));
 
+  // Normalização unificada número+unidade ("500mg" === "500 mg")
+  const amox500Compact = searchPharma('amoxicilina 500mg', { source: 'remume', hslDrugs, limit: 10 });
+  assert.ok(amox500Compact.length > 0, 'searchPharma deve normalizar 500mg para 500 mg');
+
+  // Segurança clínica: fármacos sistêmicos/parenterais NÃO podem apontar para monografia tópica
+  const hidro = searchPharma('hidrocortisona 100 mg fr.', { source: 'remume', hslDrugs, limit: 5 })[0];
+  assert.equal(hidro?.hslDrug?.id, 271);
+  assert.equal(hidro?.hslDrug?.farmaco, 'HIDROCORTISONA');
+  const aciclo = searchPharma('aciclovir 200 mg', { source: 'remume', hslDrugs, limit: 5 })[0];
+  assert.equal(aciclo?.hslDrug?.id, 8);
+  assert.equal(aciclo?.hslDrug?.farmaco, 'ACICLOVIR');
+  const nistOral = searchPharma('nistatina 100.000 ui/ml', { source: 'remume', hslDrugs, limit: 5 })[0];
+  assert.equal(nistOral?.hslDrug?.id, 459);
+  assert.equal(nistOral?.hslDrug?.farmaco, 'NISTATINA');
+
   const hslRes = searchPharma('meropenem', { source: 'hsl', hslDrugs, limit: 10 });
   assert.ok(hslRes.length > 0);
   assert.ok(hslRes.some((r) => r.source === 'hsl'));
@@ -146,13 +173,16 @@ test('REMUME 252 + Guia HSL 976: searchRemumeHsl, aviso Sem ficha HSL, formatPre
 
   const previewNoHsl = formatPrescriptionPreview(noHslItem, { profile: 'adulto' });
   assert.equal(previewNoHsl.notice, NO_HSL_FICHA_NOTICE);
+  assert.equal(previewNoHsl.isPlaceholder, true);
   assert.ok(previewNoHsl.editableText.includes(noHslItem.title));
+  assert.equal(previewNoHsl.editableText.includes('Carregar ficha HSL'), false);
 
   const withHslItem = remumeRes.find((r) => r.hasHslFicha);
   assert.ok(withHslItem);
   const previewPed = formatPrescriptionPreview(withHslItem, { profile: 'pediatria', weightKg: 15 });
   assert.equal(previewPed.profile, 'pediatria');
   assert.equal(previewPed.notice, null);
+  assert.equal(previewPed.isPlaceholder, false);
   assert.ok(previewPed.editableText.length > 10);
 });
 
@@ -176,10 +206,17 @@ test('Store & Router: sessionStorage, clearPatientSession(), Backup v2, anti-PII
   assert.equal(cockpitStore.getState().patientSession.identity.pesoKg, '18');
   assert.equal(cockpitStore.getState().prescriptionCart.length, 1);
 
+  cockpitStore.setHabChecklist('hab-1', { step1: true });
   const backup = cockpitStore.exportBackupV2();
   assert.equal(backup.version, 2);
   assert.equal(backup.clinicalTheme, 'dark');
-  assert.equal(backup.prescriptionCart.length, 1);
+  // Carrinho de prescrição fica isolado em sessionStorage e nunca vaza para Backup v2
+  assert.equal(backup.prescriptionCart.length, 0);
+
+  // Mutação direta no snapshot devolvido por getState() não pode corromper a store interna
+  const snap = cockpitStore.getState();
+  snap.patientSession.identity.nome = 'MUTADO_FORA';
+  assert.equal(cockpitStore.getState().patientSession.identity.nome, 'Maria');
 
   cockpitStore.clearPatientSession();
   assert.equal(cockpitStore.getState().patientSession.identity.nome, '');
@@ -188,12 +225,19 @@ test('Store & Router: sessionStorage, clearPatientSession(), Backup v2, anti-PII
   assert.deepEqual(cockpitStore.getState().patientSession.travasCheckedIds, {});
   assert.equal(cockpitStore.getState().prescriptionCart.length, 0);
 
+  // Importação deve rejeitar JSON malformado e remover checklists órfãos
+  assert.throws(() => cockpitStore.importBackupV2('{json-quebrado'), /malformado/i);
+  cockpitStore.setHabChecklist('hab-orfao', { x: true });
   cockpitStore.importBackupV2(backup);
   assert.equal(cockpitStore.getState().theme, 'dark');
-  assert.equal(cockpitStore.getState().prescriptionCart.length, 1);
+  assert.equal(cockpitStore.getState().habChecklists['hab-orfao'], undefined);
+  assert.deepEqual(cockpitStore.getState().habChecklists['hab-1'], { step1: true });
 
   const pii = detectPiiWarnings('Paciente CPF 123.456.789-00, Tel (16) 99123-4567, email teste@usp.br');
   assert.deepEqual(pii.map((w) => w.type), ['cpf', 'telefone', 'email']);
+  // CPF sem pontuação não deve disparar alerta duplicado de telefone
+  const piiCpfBare = detectPiiWarnings('CPF 12345678901');
+  assert.deepEqual(piiCpfBare.map((w) => w.type), ['cpf']);
   const sanitized = sanitizePiiText('CPF 123.456.789-00 e tel (16) 99123-4567');
   assert.equal(sanitized.includes('123.456.789-00'), false);
 
@@ -267,11 +311,29 @@ test('Vínculos Declarativos (clinical_links.ts), Power Actions 1-5 & Doses Pedi
 
   const doses12 = computeWeightBasedDoses(12)!;
   assert.equal(doses12.dipironaAllowed, true);
-  assert.ok(doses12.items && doses12.items.length >= 6);
+  assert.ok(doses12.items.length >= 9);
   assert.ok(doses12.items.every((i) => !i.ceilingHit), '12 kg não deve atingir teto adulto');
+  assert.ok(doses12.items.some((i) => i.drug.includes('250 mg/5 mL')));
+  assert.ok(doses12.items.some((i) => i.drug.includes('400 mg/5 mL')));
+
+  // 50 kg: Paracetamol = 650 mg (65 gts), ainda abaixo do teto de 750 mg
+  const doses50 = computeWeightBasedDoses(50)!;
+  assert.equal(doses50.paracetamolMg, 650);
+  assert.equal(doses50.paracetamolGotas, 65);
+  assert.equal(doses50.items.find((i) => i.drug.startsWith('Paracetamol'))?.ceilingHit, false);
+
+  // Neonato 3 kg: Dipirona e Ibuprofeno bloqueados (zero vazamento de dose)
+  const doses3 = computeWeightBasedDoses(3)!;
+  assert.equal(doses3.dipironaAllowed, false);
+  assert.equal(doses3.dipironaMg, 0);
+  assert.equal(doses3.dipironaGotas, 0);
+  assert.equal(doses3.ibuprofenoAllowed, false);
+  assert.equal(doses3.ibuprofenoMg, 0);
 
   const doses60 = computeWeightBasedDoses(60)!;
-  assert.ok(doses60.items!.every((i) => i.ceilingHit && i.badge.startsWith('Teto adulto')));
+  assert.equal(doses60.paracetamolMg, 750);
+  assert.equal(doses60.paracetamolGotas, 75);
+  assert.ok(doses60.items.every((i) => i.ceilingHit && i.badge.startsWith('Teto adulto')));
 });
 
 test('Motor Personalizar v3.2: colchetes, sinais vitais, modo edição livre e severidade', () => {
@@ -293,11 +355,20 @@ test('Motor Personalizar v3.2: colchetes, sinais vitais, modo edição livre e s
   assert.equal(getClinicalSeverity({ trigger: ';sca' }).code, 'critico');
   assert.equal(getClinicalSeverity({ gravidade: 'urgente' }).code, 'urgente');
 
-  const cartItems = parsePrescriptionItemsForCart('# RECEITA:\n1. Dipirona 500mg — 1 cp 6/6h\n2. Amoxicilina 500mg — 1 cp 8/8h\nORIENTAÇÕES:\nRepouso');
+  const cartItems = parsePrescriptionItemsForCart(
+    '# RECEITA:\nUSO ORAL:\n1. Dipirona 500mg — 1 cp 6/6h\nUSO TÓPICO:\n2. Creme dermatológico — aplicar 2x/dia\nRETORNO IMEDIATO:\nFebre persistente'
+  );
   assert.equal(cartItems.length, 2);
 
   assert.equal(sanitizePepOutput('**Negrito** [? Opcional :: extra] [*Normal / Alterado]').trim(), 'Negrito Normal');
-  assert.ok(extractBodiesFromCustomPep('# HMA:\nDor.\n# CONDUTA:\nAnalgesia.').conduta_body.includes('Analgesia'));
+  // Contraindicações inline NÃO podem ser removidas silenciosamente deixando o fármaco livre
+  assert.ok(
+    sanitizePepOutput('1. Ibuprofeno 600 mg [NÃO PRESCREVER SE HIPERTENSA]').includes('[NÃO PRESCREVER SE HIPERTENSA]')
+  );
+  // Linha narrativa "Plano de parto:" não pode truncar evolucao_body
+  const bodiesNarrative = extractBodiesFromCustomPep('# HMA:\nPlano de parto: vaginal.\n# CONDUTA:\nAnalgesia.');
+  assert.ok(bodiesNarrative.evolucao_body.includes('Plano de parto: vaginal.'));
+  assert.ok(bodiesNarrative.conduta_body.includes('Analgesia'));
 });
 
 test('Busca Estratificada Ctrl+K (searchGlobalStratified) & MiniSearch', () => {
@@ -384,9 +455,20 @@ test('Central 6º Ano Marco 2: Matriz 9 Rodízios, Autonomia, Regra 3x, Escala, 
 
   const gaso = calcGasometria5Passos({ ph: 7.26, pco2: 32, hco3: 14, na: 138, cl: 102, albumina: 2.0, lactato: 4.5 });
   assert.equal(gaso.agCorrigido, 27);
+  // Validação estrita na gasometria: não aceita NaN nem valores fora da faixa fisiológica
+  assert.throws(() => calcGasometria5Passos({ ph: Number.NaN, pco2: 40, hco3: 24, na: 140, cl: 104 }), /pH/);
+  assert.throws(() => calcGasometria5Passos({ ph: 0, pco2: 40, hco3: 24, na: 140, cl: 104 }), /pH/);
+  // Δ/Δ > 2 quando AG alto com HCO3 >= 24 deve constar no pepSnippet
+  const gasoMisto = calcGasometria5Passos({ ph: 7.42, pco2: 40, hco3: 26, na: 142, cl: 96, albumina: 4.0 });
+  assert.ok(gasoMisto.pepSnippet.includes('Δ/Δ > 2'));
+
   assert.ok(calcPostTestProbability(50, 10).postPct > 90);
+  assert.throws(() => calcPostTestProbability(Number.NaN, 10), /pré-teste/i);
   assert.equal(classifyGuiaSectionTheme('Segurança, Travas & Proibições').cls, 'theme-danger');
   assert.ok(formatGuiaInlineHtml('**MgSO4**').includes('<strong'));
+  // Preservar valores monetários (R$) e expressões matemáticas com asteriscos
+  assert.equal(formatGuiaInlineHtml('Custo R$ 10 a R$ 20'), 'Custo R$ 10 a R$ 20');
+  assert.equal(formatGuiaInlineHtml('Formula: 2 * peso * 4'), 'Formula: 2 * peso * 4');
 });
 
 test('CSS Integrity: zero classes fantasma em index.html e src/ui/*.ts', () => {
@@ -416,4 +498,169 @@ test('CSS Integrity: zero classes fantasma em index.html e src/ui/*.ts', () => {
   }
 
   assert.deepEqual(missing, [], `Classes CSS sem definição em cockpit.css: ${missing.join(', ')}`);
+});
+
+test('Auditoria UI/Engine Fase 2: obstetrícia estruturada, doses pediátricas, carrinho, Teoria Markdown, 7 Travas e sanitização de estado', () => {
+  // 1. parseBrDateToIsoStrict rejeita datas impossíveis (ex.: 31/02) e aceita válidas
+  assert.equal(parseBrDateToIsoStrict('31/02/2026'), null);
+  assert.equal(parseBrDateToIsoStrict('29/02/2025'), null);
+  assert.equal(parseBrDateToIsoStrict('28/02/2026'), '2026-02-28');
+
+  // 2. Robinson & Fleming (CCN em mm)
+  const ccn10 = calcIgFromCcnMm(10);
+  assert.ok(ccn10 && ccn10.weeks === 7);
+  const ccn50 = calcIgFromCcnMm(50);
+  assert.ok(ccn50 && ccn50.weeks === 11);
+  assert.equal(calcIgFromCcnMm(3.9), null);
+  assert.equal(calcIgFromCcnMm(95), null);
+
+  // 3. Obstetrícia estruturada sem depender de regex em strings formatadas
+  const obsDum = calcObstetricStructuredFromDum({ dumIso: '2026-01-01', refDateIso: '2026-03-12' });
+  assert.equal(obsDum.weeks, 10);
+  assert.equal(obsDum.days, 0);
+  assert.equal(obsDum.dppBr, '08/10/2026');
+  assert.equal(obsDum.trimestre, '1º trimestre');
+
+  const obsUsg = calcObstetricStructuredFromUsg({
+    usgDateIso: '2026-02-01',
+    usgWeeks: 8,
+    usgDays: 2,
+    refDateIso: '2026-03-01',
+  });
+  assert.equal(obsUsg.weeks, 12);
+  assert.equal(obsUsg.days, 2);
+  assert.ok(/^\d{2}\/\d{2}\/\d{4}$/.test(obsUsg.dppBr));
+
+  // 4. resolvePediatricDoseFieldValue (motor puro de preenchimento ponderal)
+  const doses15 = computeWeightBasedDoses(15)!;
+  assert.ok(doses15);
+  assert.equal(
+    resolvePediatricDoseFieldValue({
+      isWeightSourceInput: false,
+      lineContext: 'Dipirona 500 mg/mL (gotas) - dar',
+      prevLineContext: '',
+      beforeText: 'dar ',
+      afterText: ' gotas VO',
+      placeholder: 'gotas',
+      weightKg: 15,
+      doses: doses15,
+    }),
+    String(doses15.dipironaGotas)
+  );
+  assert.equal(
+    resolvePediatricDoseFieldValue({
+      isWeightSourceInput: false,
+      lineContext: 'Amoxicilina 400 mg/5 mL - dar',
+      prevLineContext: '',
+      beforeText: 'dar ',
+      afterText: ' mL de 12/12h',
+      placeholder: 'mL',
+      weightKg: 15,
+      doses: doses15,
+    }),
+    doses15.amoxi90Ml12h
+  );
+  assert.equal(
+    resolvePediatricDoseFieldValue({
+      isWeightSourceInput: false,
+      lineContext: 'Amoxicilina 250 mg/5 mL - dar',
+      prevLineContext: '',
+      beforeText: 'dar ',
+      afterText: ' mL de 8/8h',
+      placeholder: 'mL',
+      weightKg: 15,
+      doses: doses15,
+    }),
+    doses15.amoxi50Ml8h
+  );
+  assert.equal(
+    resolvePediatricDoseFieldValue({
+      isWeightSourceInput: false,
+      lineContext: 'Prednisolona 3 mg/mL',
+      prevLineContext: '',
+      beforeText: 'dar ',
+      afterText: ' mg/dia',
+      placeholder: 'mg',
+      weightKg: 15,
+      doses: doses15,
+    }),
+    String(doses15.prednisolonaMgDia)
+  );
+  assert.equal(
+    resolvePediatricDoseFieldValue({
+      isWeightSourceInput: false,
+      lineContext: 'Ondansetrona EV',
+      prevLineContext: '',
+      beforeText: 'aplicar ',
+      afterText: ' mL EV',
+      placeholder: 'mL',
+      weightKg: 15,
+      doses: doses15,
+    }),
+    doses15.ondansetronaMlEv
+  );
+  assert.equal(
+    resolvePediatricDoseFieldValue({
+      isWeightSourceInput: false,
+      lineContext: 'Dexametasona crupe',
+      prevLineContext: '',
+      beforeText: 'dose única ',
+      afterText: ' mg',
+      placeholder: 'mg',
+      weightKg: 15,
+      doses: doses15,
+    }),
+    doses15.dexametasonaCrupeMg
+  );
+
+  // 5. Carrinho & presets migrados para engine/workstation.ts
+  assert.ok(QUICK_CART_PRESETS.length >= 4);
+  const cartText = formatCartAsPrescriptionText([
+    { id: 'c1', name: 'Dipirona 500 mg', posology: '1 cp 6/6h', population: 'adulto', source: 'manual' },
+  ]);
+  assert.ok(cartText.includes('1. Dipirona 500 mg'));
+  assert.ok(cartText.includes('1 cp 6/6h'));
+  assert.equal(formatCartAsPrescriptionText([]), '');
+
+  // 6. renderTeoriaMarkdownToHtml: preserva R$, expressões aritméticas com *, e literal $& em código inline
+  const mdHtml = renderTeoriaMarkdownToHtml(
+    'Custo R$ 50,00 a R$ 80,00.\nFórmula: 2 * 3 * 4 e `regex $& teste` com *ênfase* e $Na^+ \\rightarrow CO_2$.'
+  );
+  assert.ok(mdHtml.includes('R$ 50,00 a R$ 80,00'));
+  assert.ok(mdHtml.includes('2 * 3 * 4'));
+  assert.ok(mdHtml.includes('<code>regex $&amp; teste</code>'));
+  assert.ok(mdHtml.includes('<em>ênfase</em>'));
+  assert.ok(mdHtml.includes('Na⁺ → CO₂'));
+
+  // 7. 7 Travas canônicas + normalização de ID legado trava_a -> trava-a
+  assert.equal(SETE_TRAVAS_SEGURANCA.length, 7);
+  assert.ok(SETE_TRAVAS_SEGURANCA.every((t) => /^trava-[a-z]$/.test(t.id)));
+  cockpitStore.clearPatientSession();
+  cockpitStore.setTravaChecked('trava_a', true);
+  assert.equal(cockpitStore.getState().patientSession.travasCheckedIds['trava-a'], true);
+  assert.equal(cockpitStore.getState().patientSession.travasCheckedIds['trava_a'], undefined);
+
+  // 8. Sanitização profunda de getCentral6AnoState contra payload corrompido / XSS
+  cockpitStore.setCentral6AnoState({
+    streakDias: '<img src=x onerror=alert(1)>',
+    questoesAncoraSem: -12,
+    questoesTrilhaSem: 'abc',
+    weeklyHistory: [
+      {
+        weekKey: '2026-W10',
+        questoesAncora: '99',
+        questoesTrilha: -5,
+        pctAncora: 80,
+        metaAtingida: true,
+      },
+      null,
+    ],
+  });
+  const sanitized = getCentral6AnoState();
+  assert.equal(sanitized.streakDias, 0);
+  assert.equal(sanitized.questoesAncoraSem, 0);
+  assert.equal(sanitized.questoesTrilhaSem, 0);
+  assert.equal(sanitized.weeklyHistory?.length, 1);
+  assert.equal(sanitized.weeklyHistory?.[0].questoesAncora, 99);
+  assert.equal(sanitized.weeklyHistory?.[0].questoesTrilha, 0);
 });

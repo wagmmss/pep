@@ -31,7 +31,7 @@ export function formatGuiaInlineHtml(rawStr: unknown): string {
     .replace(/\$O_2\$/g, 'O₂')
     .replace(/\$CO_2\$/g, 'CO₂')
     .replace(/\$10\^5\$/g, '10⁵')
-    .replace(/\$([^$]+)\$/g, '$1');
+    .replace(/(?<!R)\$([^$\n]+)\$/g, '$1');
 
   const codeTokens: string[] = [];
   s = s.replace(/`([^`]+)`/g, (_, codeContent) => {
@@ -43,7 +43,7 @@ export function formatGuiaInlineHtml(rawStr: unknown): string {
   s = escapeHtml(s);
   s = s.replace(/\*\*\*([^*]+)\*\*\*/g, '<strong class="guia-strong"><em class="guia-em">$1</em></strong>');
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong class="guia-strong">$1</strong>');
-  s = s.replace(/\*([^*]+)\*/g, '<em class="guia-em">$1</em>');
+  s = s.replace(/(?<!\w)\*(?!\s)([^*\n]+?)(?<!\s)\*(?!\w)/g, '<em class="guia-em">$1</em>');
   s = s.replace(/\u0000CODE_(\d+)\u0000/g, (_, idx) => codeTokens[Number(idx)] || '');
   return s;
 }
@@ -91,7 +91,11 @@ export function renderGuiaSectionBodyHtml(bodyText: string): string {
         i++;
       }
       if (tableLines.length >= 2) {
-        const parseRow = (r: string) => r.slice(1, -1).split('|').map((c) => c.trim());
+        const parseRow = (r: string) =>
+          r
+            .slice(1, -1)
+            .split(/(?<!\\)\|/)
+            .map((c) => c.replace(/\\\|/g, '|').trim());
         const headerCells = parseRow(tableLines[0]);
         const theadHtml = `<thead><tr>${headerCells.map((h) => `<th>${formatGuiaInlineHtml(h)}</th>`).join('')}</tr></thead>`;
         const bodyRows: string[] = [];
@@ -182,4 +186,209 @@ export function renderGuiaSectionBodyHtml(bodyText: string): string {
   }
 
   return out.join('');
+}
+
+// ============================================================================
+// RENDERIZADOR MARKDOWN/LATEX UNIFICADO (FORMAÇÃO TEÓRICA & TÉCNICA PROFUNDA)
+// ============================================================================
+
+function normalizeTeoriaMathInline(raw: string): string {
+  return String(raw || '').replace(/(?<!R)\$([^$\n]+)\$/g, (_, expr: string) =>
+    expr
+      .replace(/\\rightarrow/g, '→')
+      .replace(/\\leftarrow/g, '←')
+      .replace(/\\times/g, '×')
+      .replace(/\\pm/g, '±')
+      .replace(/\\Delta/g, 'Δ')
+      .replace(/\\approx/g, '≈')
+      .replace(/\\leq|\\le/g, '≤')
+      .replace(/\\geq|\\ge/g, '≥')
+      .replace(/\\beta/g, 'β')
+      .replace(/\\alpha/g, 'α')
+      .replace(/\\gamma/g, 'γ')
+      .replace(/\\text\{([^}]*)\}/g, '$1')
+      .replace(/HCO_3\^-/g, 'HCO₃⁻')
+      .replace(/pCO_2/g, 'pCO₂')
+      .replace(/Na\^\+/g, 'Na⁺')
+      .replace(/Cl\^-/g, 'Cl⁻')
+      .replace(/K\^\+/g, 'K⁺')
+      .replace(/Mg\^\{?2\+\}?/g, 'Mg²⁺')
+      .replace(/Fe\^\{2\+\}/g, 'Fe²⁺')
+      .replace(/Fe\^\{3\+\}/g, 'Fe³⁺')
+      .replace(/O_2/g, 'O₂')
+      .replace(/CO_2/g, 'CO₂')
+      .replace(/AG_\{corr\}/g, 'AG_corr')
+      .replace(/\{,\}/g, ',')
+      .replace(/\\,/g, ' ')
+      .replace(/[{}]/g, '')
+      .trim()
+  );
+}
+
+function formatInlineTeoriaMd(text: string): string {
+  const codeSpans: string[] = [];
+  const protectedRaw = String(text || '').replace(/`([^`]+)`/g, (_, code: string) => {
+    const idx = codeSpans.length;
+    codeSpans.push(`<code>${escapeHtml(code)}</code>`);
+    return `@@TCODE_${idx}@@`;
+  });
+  const mathClean = normalizeTeoriaMathInline(protectedRaw);
+  let html = escapeHtml(mathClean);
+  html = html
+    .replace(/&lt;br\s*\/?&gt;/gi, '<br>')
+    .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/(?<!\w)\*(?!\s)([^*\n]+?)(?<!\s)\*(?!\w)/g, '<em>$1</em>');
+  codeSpans.forEach((span, idx) => {
+    html = html.replace(`@@TCODE_${idx}@@`, () => span);
+  });
+  return html;
+}
+
+function splitMdTableRow(trimmed: string): string[] {
+  const inner = trimmed.slice(1, -1);
+  const cells: string[] = [];
+  let cur = '';
+  for (let i = 0; i < inner.length; i++) {
+    if (inner[i] === '\\' && inner[i + 1] === '|') {
+      cur += '|';
+      i++;
+    } else if (inner[i] === '|') {
+      cells.push(cur);
+      cur = '';
+    } else {
+      cur += inner[i];
+    }
+  }
+  cells.push(cur);
+  return cells;
+}
+
+export function renderTeoriaMarkdownToHtml(md: string): string {
+  const lines = String(md || '').split('\n');
+  const out: string[] = [];
+  let inUl = false;
+  let inOl = false;
+  let tableRows: string[][] = [];
+  let quoteBuffer: string[] = [];
+
+  const closeLists = () => {
+    if (inUl) {
+      out.push('</ul>');
+      inUl = false;
+    }
+    if (inOl) {
+      out.push('</ol>');
+      inOl = false;
+    }
+  };
+
+  const flushQuote = () => {
+    if (quoteBuffer.length === 0) return;
+    const innerHtml = quoteBuffer.map((q) => formatInlineTeoriaMd(q)).join('<br>');
+    out.push(`<blockquote>${innerHtml}</blockquote>`);
+    quoteBuffer = [];
+  };
+
+  const flushTable = () => {
+    if (tableRows.length === 0) return;
+    const headerCells = tableRows[0] || [];
+    const bodyRows = tableRows.slice(2);
+    let html = '<div class="mq-table-wrap"><table class="mq-table"><thead><tr>';
+    headerCells.forEach((c) => {
+      html += `<th>${formatInlineTeoriaMd(c.trim())}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+    bodyRows.forEach((row) => {
+      html += '<tr>';
+      row.forEach((c) => {
+        html += `<td>${formatInlineTeoriaMd(c.trim())}</td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table></div>';
+    out.push(html);
+    tableRows = [];
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i];
+    const trimmed = raw.trim();
+    const isIndented = /^\s{2,}/.test(raw);
+
+    if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
+      flushQuote();
+      closeLists();
+      tableRows.push(splitMdTableRow(trimmed));
+      continue;
+    } else if (tableRows.length > 0) {
+      flushTable();
+    }
+
+    if (trimmed.startsWith('> ')) {
+      closeLists();
+      quoteBuffer.push(trimmed.slice(2));
+      continue;
+    } else if (trimmed === '>') {
+      closeLists();
+      quoteBuffer.push('');
+      continue;
+    } else if (quoteBuffer.length > 0) {
+      flushQuote();
+    }
+
+    if (!trimmed) {
+      closeLists();
+      continue;
+    }
+    if (trimmed === '---') {
+      closeLists();
+      out.push('<hr>');
+      continue;
+    }
+    if (trimmed.startsWith('# ')) {
+      closeLists();
+      out.push(`<h1>${formatInlineTeoriaMd(trimmed.slice(2))}</h1>`);
+    } else if (trimmed.startsWith('## ')) {
+      closeLists();
+      out.push(`<h2>${formatInlineTeoriaMd(trimmed.slice(3))}</h2>`);
+    } else if (trimmed.startsWith('### ')) {
+      closeLists();
+      out.push(`<h3>${formatInlineTeoriaMd(trimmed.slice(4))}</h3>`);
+    } else if (/^[-*]\s+/.test(trimmed)) {
+      if (inOl && isIndented) {
+        out.push(
+          `<li style="list-style:disc; margin-left:22px;">${formatInlineTeoriaMd(trimmed.replace(/^[-*]\s+/, ''))}</li>`
+        );
+      } else {
+        if (inOl) {
+          out.push('</ol>');
+          inOl = false;
+        }
+        if (!inUl) {
+          out.push('<ul>');
+          inUl = true;
+        }
+        out.push(`<li>${formatInlineTeoriaMd(trimmed.replace(/^[-*]\s+/, ''))}</li>`);
+      }
+    } else if (/^\d+\.\s+/.test(trimmed)) {
+      if (inUl) {
+        out.push('</ul>');
+        inUl = false;
+      }
+      if (!inOl) {
+        out.push('<ol>');
+        inOl = true;
+      }
+      out.push(`<li>${formatInlineTeoriaMd(trimmed.replace(/^\d+\.\s+/, ''))}</li>`);
+    } else {
+      closeLists();
+      out.push(`<p>${formatInlineTeoriaMd(trimmed)}</p>`);
+    }
+  }
+
+  flushQuote();
+  closeLists();
+  flushTable();
+  return out.join('\n');
 }

@@ -1,3 +1,4 @@
+import { getLocalTodayIso } from '../engine/calculadoras.ts';
 import {
   ENSAIO_MENTAL_3MIN_PASSOS,
   ENSAIO_MENTAL_PROCS_DATA,
@@ -6,8 +7,16 @@ import {
   RODIZIOS_6ANO,
   type ProcedureAutonomy,
 } from '../engine/central6ano.ts';
-import { getCentral6AnoState, uiBridge, updateCentral6AnoState } from './context.ts';
-import { copyToClipboard, escapeHtml, guardPiiBeforeSave, playWebAudioChime, showToast } from './utils.ts';
+import { sanitizePiiText } from '../state/store.ts';
+import { getCentral6AnoState, updateCentral6AnoState } from './context.ts';
+import {
+  copyToClipboard,
+  downloadTextFile,
+  escapeHtml,
+  guardPiiBeforeSave,
+  playWebAudioChime,
+  showToast,
+} from './utils.ts';
 
 function buildLogbookMarkdownExport(state: ReturnType<typeof getCentral6AnoState>): string {
   const clean = (s: unknown) => String(s || '').replace(/\r?\n/g, ' ').trim();
@@ -31,8 +40,10 @@ function buildLogbookMarkdownExport(state: ReturnType<typeof getCentral6AnoState
   ].join('\n');
 }
 
-export function initLogbook(): (container: HTMLElement) => void {
-  let activeContainer: HTMLElement | null = null;
+export function initLogbook(): {
+  render: (container: HTMLElement, prefill?: string) => void;
+  cleanup: () => void;
+} {
   let prefillTitle = '';
   let ensaioSecLeft = 180;
   let ensaioRunning = false;
@@ -50,8 +61,54 @@ export function initLogbook(): (container: HTMLElement) => void {
     ensaioRunning = false;
   };
 
-  const render = (container: HTMLElement) => {
-    activeContainer = container;
+  const computeVisibleEntries = (entries: NonNullable<ReturnType<typeof getCentral6AnoState>['logbookEntries']>) => {
+    const qNorm = searchFilter.trim().toLowerCase();
+    return entries
+      .filter((e) => {
+        if (entryFilter !== 'all' && e.tipo !== entryFilter) return false;
+        if (!qNorm) return true;
+        return `${e.titulo} ${e.aprendizado || ''} ${e.rodizio} ${e.gatilhoCorrecao || ''}`
+          .toLowerCase()
+          .includes(qNorm);
+      })
+      .slice(0, 40);
+  };
+
+  const renderHistoryItemsHtml = (
+    visibleEntries: NonNullable<ReturnType<typeof getCentral6AnoState>['logbookEntries']>
+  ): string => {
+    if (visibleEntries.length === 0) {
+      return `<p class="mq-hint">Sem registros neste filtro ainda.</p>`;
+    }
+    return visibleEntries
+      .map(
+        (e) => `
+          <div class="logbook-history-item">
+            <div class="hab-detail-head" style="align-items:center;">
+              <div>
+                <span class="sev-badge ${e.tipo === 'ponto_cego' ? 'sev-urgente' : 'sev-rotina'}">${e.tipo === 'ponto_cego' ? 'PONTO CEGO' : 'PROC'}</span>
+                <strong style="margin-left:6px;">${escapeHtml(e.titulo)}</strong>
+              </div>
+              <div class="mq-btn-row">
+                <span class="mq-hint">${escapeHtml(e.dateIso)} · ${escapeHtml(e.papel)}</span>
+                ${
+                  e.tipo === 'ponto_cego'
+                    ? `<button type="button" class="btn btn-ghost btn-xs" data-resolve-entry="${escapeHtml(e.id)}">${e.status === 'resolvido' ? '✅ Resolvido' : 'Marcar resolvido'}</button>`
+                    : ''
+                }
+                <button type="button" class="btn btn-ghost btn-xs" data-delete-entry="${escapeHtml(e.id)}" aria-label="Excluir registro" title="Excluir registro">🗑️</button>
+              </div>
+            </div>
+            ${e.aprendizado ? `<p class="mq-hint" style="margin-top:6px;">${escapeHtml(e.aprendizado)}</p>` : ''}
+          </div>`
+      )
+      .join('');
+  };
+
+  const render = (container: HTMLElement, prefill?: string) => {
+    if (typeof prefill === 'string') {
+      prefillTitle = prefill;
+    }
     const state = getCentral6AnoState();
     const entries = state.logbookEntries || [];
     const curRodizio = RODIZIOS_6ANO.find((r) => r.id === state.rodizioId) || RODIZIOS_6ANO[0];
@@ -79,16 +136,7 @@ export function initLogbook(): (container: HTMLElement) => void {
     const selectedProc =
       ENSAIO_MENTAL_PROCS_DATA.find((p) => p.id === selectedEnsaioProcId) || ENSAIO_MENTAL_PROCS_DATA[0];
 
-    const qNorm = searchFilter.trim().toLowerCase();
-    const visibleEntries = entries
-      .filter((e) => {
-        if (entryFilter !== 'all' && e.tipo !== entryFilter) return false;
-        if (!qNorm) return true;
-        return `${e.titulo} ${e.aprendizado || ''} ${e.rodizio} ${e.gatilhoCorrecao || ''}`
-          .toLowerCase()
-          .includes(qNorm);
-      })
-      .slice(0, 40);
+    const visibleEntries = computeVisibleEntries(entries);
 
     container.innerHTML = `
       <section class="mq-section-pane active">
@@ -254,7 +302,7 @@ export function initLogbook(): (container: HTMLElement) => void {
         <!-- Histórico -->
         <div class="mq-card" style="display:flex; flex-direction:column; gap:12px;">
           <div class="hab-detail-head">
-            <h3 style="font-size:1.02rem; font-weight:700;">📜 Histórico Recente (${visibleEntries.length})</h3>
+            <h3 style="font-size:1.02rem; font-weight:700;" id="logbookHistoryHeading">📜 Histórico Recente (${visibleEntries.length})</h3>
             <div class="mq-btn-row">
               <input
                 type="search"
@@ -270,35 +318,7 @@ export function initLogbook(): (container: HTMLElement) => void {
               <button type="button" class="mq-counter-btn${entryFilter === 'ponto_cego' ? ' is-active' : ''}" data-lb-filter="ponto_cego">🎯 Pontos Cegos</button>
             </div>
           </div>
-          <div class="logbook-history-list">
-            ${
-              visibleEntries.length === 0
-                ? `<p class="mq-hint">Sem registros neste filtro ainda.</p>`
-                : visibleEntries
-                    .map(
-                      (e) => `
-                        <div class="logbook-history-item">
-                          <div class="hab-detail-head" style="align-items:center;">
-                            <div>
-                              <span class="sev-badge ${e.tipo === 'ponto_cego' ? 'sev-urgente' : 'sev-rotina'}">${e.tipo === 'ponto_cego' ? 'PONTO CEGO' : 'PROC'}</span>
-                              <strong style="margin-left:6px;">${escapeHtml(e.titulo)}</strong>
-                            </div>
-                            <div class="mq-btn-row">
-                              <span class="mq-hint">${escapeHtml(e.dateIso)} · ${escapeHtml(e.papel)}</span>
-                              ${
-                                e.tipo === 'ponto_cego'
-                                  ? `<button type="button" class="btn btn-ghost btn-xs" data-resolve-entry="${escapeHtml(e.id)}">${e.status === 'resolvido' ? '✅ Resolvido' : 'Marcar resolvido'}</button>`
-                                  : ''
-                              }
-                              <button type="button" class="btn btn-ghost btn-xs" data-delete-entry="${escapeHtml(e.id)}" aria-label="Excluir registro" title="Excluir registro">🗑️</button>
-                            </div>
-                          </div>
-                          ${e.aprendizado ? `<p class="mq-hint" style="margin-top:6px;">${escapeHtml(e.aprendizado)}</p>` : ''}
-                        </div>`
-                    )
-                    .join('')
-            }
-          </div>
+          <div class="logbook-history-list" id="logbookHistoryList">${renderHistoryItemsHtml(visibleEntries)}</div>
         </div>
       </section>
     `;
@@ -316,40 +336,58 @@ export function initLogbook(): (container: HTMLElement) => void {
 
     container.querySelector('#lbDownloadMdBtn')?.addEventListener('click', () => {
       const md = buildLogbookMarkdownExport(getCentral6AnoState());
-      const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `logbook-6ano-${new Date().toISOString().slice(0, 10)}.md`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      downloadTextFile(`logbook-6ano-${getLocalTodayIso()}.md`, md, 'text/markdown;charset=utf-8');
       showToast('⬇️ Logbook baixado como arquivo .md!', 'success');
     });
 
+    const historyListEl = container.querySelector<HTMLElement>('#logbookHistoryList');
+    const historyHeadingEl = container.querySelector<HTMLElement>('#logbookHistoryHeading');
+
     container.querySelector<HTMLInputElement>('#lbSearchFilterInp')?.addEventListener('input', (e) => {
       searchFilter = (e.target as HTMLInputElement).value;
-      render(container);
+      const latestVisible = computeVisibleEntries(getCentral6AnoState().logbookEntries || []);
+      if (historyHeadingEl) {
+        historyHeadingEl.textContent = `📜 Histórico Recente (${latestVisible.length})`;
+      }
+      if (historyListEl) {
+        historyListEl.innerHTML = renderHistoryItemsHtml(latestVisible);
+      }
     });
 
-    container.querySelectorAll<HTMLButtonElement>('[data-delete-entry]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const id = btn.dataset.deleteEntry!;
+    historyListEl?.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const delBtn = target.closest<HTMLButtonElement>('[data-delete-entry]');
+      if (delBtn) {
+        const id = delBtn.dataset.deleteEntry!;
         updateCentral6AnoState((prev) => ({
           ...prev,
           logbookEntries: (prev.logbookEntries || []).filter((ent) => ent.id !== id),
         }));
         showToast('Registro removido do Logbook.', 'info');
         render(container);
-      });
+        return;
+      }
+
+      const resolveBtn = target.closest<HTMLButtonElement>('[data-resolve-entry]');
+      if (resolveBtn) {
+        const id = resolveBtn.dataset.resolveEntry!;
+        updateCentral6AnoState((prev) => ({
+          ...prev,
+          logbookEntries: (prev.logbookEntries || []).map((ent) =>
+            ent.id === id ? { ...ent, status: ent.status === 'resolvido' ? 'em_treino' : 'resolvido' } : ent
+          ),
+        }));
+        render(container);
+      }
     });
+
     container.querySelector('#ensaioStartBtn')?.addEventListener('click', () => {
       if (ensaioRunning) {
         stopEnsaio();
         render(container);
         return;
       }
+      stopEnsaio();
       ensaioRunning = true;
       ensaioTimerId = setInterval(() => {
         if (ensaioSecLeft <= 1) {
@@ -357,12 +395,16 @@ export function initLogbook(): (container: HTMLElement) => void {
           ensaioSecLeft = 0;
           playWebAudioChime();
           showToast('🧘 Ensaio mental de 3 minutos concluído!', 'success');
-          render(container);
+          if (container.isConnected && document.body.dataset.activeSection === 'logbook') {
+            render(container);
+          }
           return;
         }
         ensaioSecLeft -= 1;
         const clk = document.getElementById('ensaioClockDisplay');
-        if (clk) clk.textContent = `${String(Math.floor(ensaioSecLeft / 60)).padStart(2, '0')}:${String(ensaioSecLeft % 60).padStart(2, '0')}`;
+        if (clk) {
+          clk.textContent = `${String(Math.floor(ensaioSecLeft / 60)).padStart(2, '0')}:${String(ensaioSecLeft % 60).padStart(2, '0')}`;
+        }
       }, 1000);
       render(container);
     });
@@ -396,7 +438,7 @@ export function initLogbook(): (container: HTMLElement) => void {
       });
     });
 
-    container.querySelector('#lbSaveEntryBtn')?.addEventListener('click', () => {
+    container.querySelector('#lbSaveEntryBtn')?.addEventListener('click', async () => {
       const tipo = (container.querySelector('#lbTipo') as HTMLSelectElement).value as 'procedimento' | 'ponto_cego';
       const titulo = (container.querySelector('#lbTitulo') as HTMLInputElement).value.trim();
       const gatilho = (container.querySelector('#lbGatilho') as HTMLInputElement).value.trim();
@@ -407,22 +449,27 @@ export function initLogbook(): (container: HTMLElement) => void {
         return;
       }
 
-      const safeCombined = guardPiiBeforeSave(`${titulo}\n${aprendizadoRaw}`, 'Logbook');
-      if (safeCombined === null) return;
-      const safeLearning = guardPiiBeforeSave(aprendizadoRaw, 'Aprendizado') ?? aprendizadoRaw;
+      const combinedForAudit = [titulo, gatilho, aprendizadoRaw].filter(Boolean).join('\n');
+      const approved = await guardPiiBeforeSave(combinedForAudit, 'Logbook');
+      if (approved === null) return;
+
+      const wasSanitized = approved !== combinedForAudit;
+      const safeTitulo = wasSanitized ? sanitizePiiText(titulo) : titulo;
+      const safeGatilho = wasSanitized ? sanitizePiiText(gatilho) : gatilho;
+      const safeLearning = wasSanitized ? sanitizePiiText(aprendizadoRaw) : aprendizadoRaw;
 
       updateCentral6AnoState((prev) => ({
         ...prev,
         logbookEntries: [
           {
             id: `lb-${Date.now()}`,
-            dateIso: new Date().toISOString().slice(0, 10),
+            dateIso: getLocalTodayIso(),
             rodizio: prev.rodizioId,
             tipo,
-            titulo,
+            titulo: safeTitulo,
             papel: tipo === 'procedimento' ? 'Registro Manual' : 'Autoavaliação',
             aprendizado: safeLearning,
-            gatilhoCorrecao: gatilho || undefined,
+            gatilhoCorrecao: safeGatilho || undefined,
             status: 'em_treino',
           },
           ...(prev.logbookEntries || []),
@@ -432,25 +479,7 @@ export function initLogbook(): (container: HTMLElement) => void {
       showToast('Registro salvo com segurança no Logbook!', 'success');
       render(container);
     });
-
-    container.querySelectorAll<HTMLButtonElement>('[data-resolve-entry]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const id = btn.dataset.resolveEntry!;
-        updateCentral6AnoState((prev) => ({
-          ...prev,
-          logbookEntries: (prev.logbookEntries || []).map((ent) =>
-            ent.id === id ? { ...ent, status: ent.status === 'resolvido' ? 'em_treino' : 'resolvido' } : ent
-          ),
-        }));
-        render(container);
-      });
-    });
   };
 
-  uiBridge.openLogbookNewCase = (prefill = '') => {
-    prefillTitle = prefill;
-    if (activeContainer) render(activeContainer);
-  };
-
-  return render;
+  return { render, cleanup: stopEnsaio };
 }

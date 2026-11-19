@@ -2,7 +2,7 @@ import type { ClinicalProtocolItem } from '../data/clinical_data.ts';
 import { resolvePowerActionText } from '../engine/personalizar.ts';
 import { getClinicalSeverity } from '../engine/workstation.ts';
 import { searchClinicalProtocols } from '../engine/search.ts';
-import { ALL_PROTOCOLS, GLOBAL_SEARCH_INDEX, PEP_PROTOCOLS, PROTOCOL_BY_ID, uiBridge } from './context.ts';
+import { ALL_PROTOCOLS, getGlobalSearchIndex, PEP_PROTOCOLS, PROTOCOL_BY_ID, uiBridge } from './context.ts';
 import { copyToClipboard, escapeHtml } from './utils.ts';
 
 const SVG_COPY_ICON =
@@ -58,7 +58,7 @@ function getFilteredProtocols(): { items: ClinicalProtocolItem[]; rankById: Map<
   const rankById = new Map<string, string | null>();
   if (!q) return { items: pool, rankById };
 
-  const ranked = searchClinicalProtocols(GLOBAL_SEARCH_INDEX, ALL_PROTOCOLS, q, 110);
+  const ranked = searchClinicalProtocols(getGlobalSearchIndex(), ALL_PROTOCOLS, q, 110);
   const allowedIds = new Set(pool.map((p) => p.id));
   const byId = new Set<string>();
   const ordered: ClinicalProtocolItem[] = [];

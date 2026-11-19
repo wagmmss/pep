@@ -17,16 +17,9 @@ import {
   type MarchaId,
   type TimerPresetId,
 } from '../engine/central6ano.ts';
+import { getLocalTodayIso } from '../engine/calculadoras.ts';
 import { getCentral6AnoState, PROTOCOL_BY_ID, PROTOCOL_BY_TRIGGER, uiBridge, updateCentral6AnoState } from './context.ts';
 import { copyToClipboard, escapeHtml, playWebAudioChime, showToast } from './utils.ts';
-
-function getTodayIso(): string {
-  const now = new Date();
-  const y = now.getFullYear();
-  const m = String(now.getMonth() + 1).padStart(2, '0');
-  const d = String(now.getDate()).padStart(2, '0');
-  return `${y}-${m}-${d}`;
-}
 
 function getIsoWeekKey(date = new Date()): string {
   const target = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
@@ -72,7 +65,7 @@ function renderHistorySvgChart(
           <rect x="${x.toFixed(1)}" y="${(yBase - ancH).toFixed(1)}" width="${barW.toFixed(1)}" height="${ancH.toFixed(1)}" rx="3" fill="#0284c7" />
           <rect x="${x.toFixed(1)}" y="${(yBase - totH).toFixed(1)}" width="${barW.toFixed(1)}" height="${triH.toFixed(1)}" rx="3" fill="#10b981" />
           <text x="${(x + barW / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle" font-size="9.5" fill="currentColor" opacity="0.72">${escapeHtml(lbl)}</text>
-          <text x="${(x + barW / 2).toFixed(1)}" y="${Math.max(11, yBase - totH - 4).toFixed(1)}" text-anchor="middle" font-size="9.5" font-weight="700" fill="currentColor">${item.totalQuestoes}</text>
+          <text x="${(x + barW / 2).toFixed(1)}" y="${Math.max(11, yBase - totH - 4).toFixed(1)}" text-anchor="middle" font-size="9.5" font-weight="700" fill="currentColor">${escapeHtml(String(item.totalQuestoes))}</text>
         </g>`;
     })
     .join('');
@@ -84,7 +77,7 @@ function renderHistorySvgChart(
     </svg>`;
 }
 
-export function initHoje(): (container: HTMLElement) => void {
+export function initHoje(): { render: (container: HTMLElement) => void; cleanup: () => void } {
   let timerId: ReturnType<typeof setInterval> | null = null;
   let timerPreset: TimerPresetId = 'ciclo_90m';
   let timerRemainingSec = TIMER_PRESETS.ciclo_90m.seconds;
@@ -101,7 +94,7 @@ export function initHoje(): (container: HTMLElement) => void {
   const render = (container: HTMLElement) => {
     const state = getCentral6AnoState();
     const cal = resolveContextWithSchedule(new Date(), state.shiftSchedule || []);
-    const todayIso = getTodayIso();
+    const todayIso = getLocalTodayIso();
     const weekIso = getIsoWeekKey();
     const rodizio = RODIZIOS_6ANO.find((r) => r.id === state.rodizioId) || RODIZIOS_6ANO[0];
     const marcha = MARCHAS_6ANO[state.marchaId] || MARCHAS_6ANO['3_normal'];
@@ -341,7 +334,7 @@ export function initHoje(): (container: HTMLElement) => void {
 
           <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
             <div class="mq-stat-label">🔥 Consistência &amp; Radar de Pontos Cegos</div>
-            <div class="mq-stat-val">${state.streakDias} dia(s) · ${state.semanasConcluidas} sem</div>
+            <div class="mq-stat-val">${escapeHtml(String(state.streakDias))} dia(s) · ${escapeHtml(String(state.semanasConcluidas))} sem</div>
             <div class="mq-stat-sub">Micro-hábito ativo: <strong>${escapeHtml(state.microHabitoSemanal || rodizio.microHabitoSugerido)}</strong></div>
             <div class="radar-list">
               ${
@@ -527,7 +520,6 @@ export function initHoje(): (container: HTMLElement) => void {
     container.querySelector('#hojeGoLogbookBtn')?.addEventListener('click', () => uiBridge.navigate('logbook'));
     container.querySelector('#hojeQuickTeoriaBtn')?.addEventListener('click', () => {
       uiBridge.navigate('teoria', { subTab: rotaDia.moduloId });
-      uiBridge.selectTeoriaModule(rotaDia.moduloId);
     });
     container.querySelector('#hojeQuickToolBtn')?.addEventListener('click', () => {
       uiBridge.navigate('ferramentas', { subTab: rotaDia.ferramentaTab });
@@ -562,10 +554,8 @@ export function initHoje(): (container: HTMLElement) => void {
         if (!prot) return;
         if (prot.mod_id === 'hab') {
           uiBridge.navigate('preporta', { itemId: prot.id });
-          uiBridge.selectPrePortaCard(prot.id);
         } else {
           uiBridge.navigate('pep', { itemId: prot.id });
-          uiBridge.openPepDrawer(prot.id, 'pep');
         }
       });
     });
@@ -645,7 +635,6 @@ export function initHoje(): (container: HTMLElement) => void {
         const sec = btn.dataset.tlNav as 'pep' | 'preporta' | 'teoria' | 'ferramentas' | 'logbook';
         const sub = btn.dataset.tlSub || undefined;
         uiBridge.navigate(sec, sub ? { subTab: sub } : undefined);
-        if (sec === 'teoria' && sub) uiBridge.selectTeoriaModule(sub);
       });
     });
 
@@ -698,6 +687,7 @@ export function initHoje(): (container: HTMLElement) => void {
         render(container);
         return;
       }
+      stopTick();
       timerRunning = true;
       const startBtn = container.querySelector('#hojeTimerStartBtn');
       if (startBtn) startBtn.textContent = '⏸ Pausar';
@@ -721,7 +711,9 @@ export function initHoje(): (container: HTMLElement) => void {
             ],
           }));
           showToast(`⏱️ Bloco "${pCfg.label}" concluído!`, 'success');
-          render(container);
+          if (container.isConnected && document.body.dataset.activeSection === 'hoje') {
+            render(container);
+          }
           return;
         }
         timerRemainingSec -= 1;
@@ -782,5 +774,5 @@ export function initHoje(): (container: HTMLElement) => void {
     });
   };
 
-  return render;
+  return { render, cleanup: stopTick };
 }

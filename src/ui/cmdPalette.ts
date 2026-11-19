@@ -1,7 +1,7 @@
 import { searchGlobalStratified } from '../engine/search.ts';
 import type { AppSection } from '../state/router.ts';
-import { ALL_PROTOCOLS, GLOBAL_SEARCH_INDEX, uiBridge } from './context.ts';
-import { escapeHtml } from './utils.ts';
+import { ALL_PROTOCOLS, getGlobalSearchIndex, uiBridge } from './context.ts';
+import { debounce, escapeHtml } from './utils.ts';
 
 export function initCmdPalette(): void {
   const overlay = document.getElementById('cmdOverlay');
@@ -14,9 +14,13 @@ export function initCmdPalette(): void {
 
   let activeIndex = 0;
 
+  const close = () => {
+    overlay.classList.remove('open');
+  };
+
   const renderResults = () => {
     const q = input.value.trim();
-    const stratified = searchGlobalStratified(GLOBAL_SEARCH_INDEX, ALL_PROTOCOLS, q, {
+    const stratified = searchGlobalStratified(getGlobalSearchIndex(), ALL_PROTOCOLS, q, {
       pep: 6,
       hab: 4,
       remume: 5,
@@ -37,13 +41,9 @@ export function initCmdPalette(): void {
       resultsEl.innerHTML = `
         <div class="mq-empty-state">
           <p>Nenhum resultado para <strong>"${escapeHtml(q)}"</strong>.</p>
-          <button type="button" class="btn btn-secondary btn-xs" id="cmdSearchHslBtn">🏨 Pesquisar no Guia HSL (976 fármacos)</button>
+          <button type="button" class="btn btn-secondary btn-xs" id="cmdSearchHslBtn" data-hsl-query="${escapeHtml(q)}">🏨 Pesquisar no Guia HSL (976 fármacos)</button>
         </div>
       `;
-      resultsEl.querySelector('#cmdSearchHslBtn')?.addEventListener('click', () => {
-        close();
-        uiBridge.openRemumeCalcModal('remume', q);
-      });
       return;
     }
 
@@ -144,46 +144,52 @@ export function initCmdPalette(): void {
     resultsEl.innerHTML = groupsHtml.join('');
     activeIndex = 0;
 
-    const itemBtns = Array.from(resultsEl.querySelectorAll<HTMLButtonElement>('.cmd-item'));
-    if (itemBtns[0]) itemBtns[0].classList.add('active');
-
-    itemBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const type = btn.dataset.cmdType;
-        close();
-        if (type === 'pep') {
-          const id = btn.dataset.id!;
-          uiBridge.navigate('pep', { itemId: id });
-          uiBridge.openPepDrawer(id, 'pep');
-        } else if (type === 'preporta') {
-          const id = btn.dataset.id!;
-          uiBridge.navigate('preporta', { itemId: id });
-          uiBridge.selectPrePortaCard(id);
-        } else if (type === 'section') {
-          const sec = (btn.dataset.section || 'ferramentas') as AppSection;
-          const sub = btn.dataset.subtab || undefined;
-          uiBridge.navigate(sec, sub ? { subTab: sub } : undefined);
-          if (sec === 'teoria' && sub) uiBridge.selectTeoriaModule(sub);
-        } else if (type === 'remume') {
-          const drug = btn.dataset.drug || '';
-          uiBridge.openRemumeCalcModal('remume', drug);
-        }
-      });
-    });
+    const firstBtn = resultsEl.querySelector<HTMLButtonElement>('.cmd-item');
+    if (firstBtn) firstBtn.classList.add('active');
   };
 
-  const open = () => {
+  const debouncedRenderResults = debounce(renderResults, 80);
+
+  // Delegação única de cliques para resultados e fallback HSL
+  resultsEl.addEventListener('click', (ev) => {
+    const target = ev.target as HTMLElement;
+    const hslBtn = target.closest<HTMLButtonElement>('#cmdSearchHslBtn');
+    if (hslBtn) {
+      const q = hslBtn.dataset.hslQuery || input.value.trim();
+      close();
+      uiBridge.openRemumeCalcModal('remume', q);
+      return;
+    }
+
+    const btn = target.closest<HTMLButtonElement>('.cmd-item');
+    if (!btn) return;
+    const type = btn.dataset.cmdType;
+    close();
+    if (type === 'pep') {
+      const id = btn.dataset.id;
+      if (id) uiBridge.navigate('pep', { itemId: id });
+    } else if (type === 'preporta') {
+      const id = btn.dataset.id;
+      if (id) uiBridge.navigate('preporta', { itemId: id });
+    } else if (type === 'section') {
+      const sec = (btn.dataset.section || 'ferramentas') as AppSection;
+      const sub = btn.dataset.subtab || undefined;
+      uiBridge.navigate(sec, sub ? { subTab: sub } : undefined);
+    } else if (type === 'remume') {
+      const drug = btn.dataset.drug || '';
+      uiBridge.openRemumeCalcModal('remume', drug);
+    }
+  });
+
+  const open = (initialQuery = '') => {
     overlay.classList.add('open');
-    input.value = '';
+    input.value = initialQuery;
+    debouncedRenderResults.cancel();
     renderResults();
     setTimeout(() => input.focus(), 20);
   };
 
-  const close = () => {
-    overlay.classList.remove('open');
-  };
-
-  input.addEventListener('input', renderResults);
+  input.addEventListener('input', () => debouncedRenderResults());
   input.addEventListener('keydown', (e) => {
     const items = Array.from(resultsEl.querySelectorAll<HTMLButtonElement>('.cmd-item'));
     if (items.length === 0) return;
@@ -202,7 +208,9 @@ export function initCmdPalette(): void {
       items[activeIndex]?.scrollIntoView({ block: 'nearest' });
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      items[activeIndex]?.click();
+      debouncedRenderResults.flush();
+      const refreshedItems = Array.from(resultsEl.querySelectorAll<HTMLButtonElement>('.cmd-item'));
+      refreshedItems[activeIndex]?.click();
     }
   });
 

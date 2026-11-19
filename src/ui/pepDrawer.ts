@@ -1,6 +1,13 @@
 import type { ClinicalProtocolItem } from '../data/clinical_data.ts';
 import { resolveClinicalLinksForPep } from '../data/clinical_links.ts';
-import { calcIdadeGestacionalUsg } from '../engine/calculadoras.ts';
+import { SETE_TRAVAS_SEGURANCA } from '../data/clinical_reference_data.ts';
+import {
+  calcIgFromCcnMm,
+  calcImc,
+  calcObstetricStructuredFromDum,
+  calcObstetricStructuredFromUsg,
+  parseBrDateToIsoStrict,
+} from '../engine/calculadoras.ts';
 import { classifyGuiaSectionTheme, renderGuiaSectionBodyHtml } from '../engine/diretrizes.ts';
 import {
   computeWeightBasedDoses,
@@ -16,6 +23,7 @@ import {
   parseBalancedBrackets,
   parseChoiceGroupToken,
   pushFreeEditSnapshot,
+  resolvePediatricDoseFieldValue,
   resolvePowerActionText,
   sanitizePepOutput,
   undoFreeEditSnapshot,
@@ -25,7 +33,7 @@ import { getClinicalSeverity, parsePrescriptionItemsForCart } from '../engine/wo
 import { cockpitStore } from '../state/store.ts';
 import { renderCartPanel } from './cart.ts';
 import { PROTOCOL_BY_ID, uiBridge } from './context.ts';
-import { copyToClipboard, escapeHtml, printReceiptDocument, showToast } from './utils.ts';
+import { copyToClipboard, debounce, escapeHtml, printReceiptDocument, showToast } from './utils.ts';
 
 type DrawerTab = 'standard' | 'pep' | 'conduta' | 'receita' | 'guia' | 'cart';
 
@@ -37,16 +45,6 @@ interface InteractiveDomSnapshot {
   condChipsOff: boolean[];
   lineChecks: boolean[];
 }
-
-const SEVEN_TRAVAS = [
-  { id: 'trava_a', label: 'A — Alergias medicamentosas e reações cruzadas checadas' },
-  { id: 'trava_r', label: 'R — Rim & Fígado: dose ajustada para TFG/Child-Pugh' },
-  { id: 'trava_g', label: 'G — Gestação, Puérpera & Lactação verificadas' },
-  { id: 'trava_i', label: 'I — Interações críticas (soma QTc / sangramento / K+)' },
-  { id: 'trava_v', label: 'V — Via, diluição e velocidade de infusão seguras' },
-  { id: 'trava_p', label: 'P — Peso (pediatria c/ teto adulto) & Idoso frágil' },
-  { id: 'trava_o', label: 'O — Objetivo terapêutico, profilaxias e plano de retorno' },
-];
 
 function isLikelyMultiGroup(beforeText: string, options: string[]): boolean {
   const bef = String(beforeText || '').toLowerCase();
@@ -168,16 +166,6 @@ function inferChoiceSubInputPlaceholder(
     return 'Digitar...';
   }
   return inferSmartPlaceholder(subInner, bef, aft);
-}
-
-function parseBrDateToIso(brDate: string): string | null {
-  const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(brDate.trim());
-  if (!m) return null;
-  const dd = Number(m[1]);
-  const mm = Number(m[2]);
-  const yyyy = Number(m[3]);
-  if (dd < 1 || dd > 31 || mm < 1 || mm > 12 || yyyy < 2018 || yyyy > 2035) return null;
-  return `${yyyy}-${String(mm).padStart(2, '0')}-${String(dd).padStart(2, '0')}`;
 }
 
 export function initPepDrawer(): void {
@@ -399,7 +387,7 @@ export function initPepDrawer(): void {
     return { inputs, subInputs, choiceGroups, optToggles, condChipsOff, lineChecks };
   };
 
-  const syncDraftToStore = () => {
+  const syncDraftToStoreNow = () => {
     if (!activeProtocol) return;
     const snap = captureDomSnapshot();
     const fv: Record<string, string | string[]> = {};
@@ -412,6 +400,8 @@ export function initPepDrawer(): void {
     });
   };
 
+  const syncDraftToStore = debounce(syncDraftToStoreNow, 250);
+
   const updateInteractiveCounterAndWeightBanner = () => {
     if (!pepPanel || !interactiveBodyEl || !activeProtocol) return;
     const compiled = getCompiledPepText();
@@ -422,6 +412,16 @@ export function initPepDrawer(): void {
       counterEl.textContent =
         gaps.totalGaps > 0 ? `⚠️ ${gaps.totalGaps} lacuna(s) [ ]` : '✓ Pronto para copiar';
     }
+  };
+
+  const refreshWeightBannerInPlace = () => {
+    if (!pepPanel || !activeProtocol) return;
+    const slot = pepPanel.querySelector<HTMLElement>('#pepWeightBannerSlot');
+    if (!slot) return;
+    slot.innerHTML = renderWeightBannerHtml(getCompiledPepText());
+    slot.querySelector('#pepApplyWeightDosesBtn')?.addEventListener('click', () => {
+      applyWeightDosesToPrescription();
+    });
   };
 
   const toggleConditionalBlockLines = (headerLineDiv: HTMLElement, isOff: boolean) => {
@@ -547,38 +547,30 @@ export function initPepDrawer(): void {
 
   const tryRecalcObstetricFromDUM = (dumStr: string) => {
     if (!interactiveBodyEl) return;
-    const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(dumStr.trim());
-    if (!m) return;
-    const dd = parseInt(m[1], 10);
-    const mm = parseInt(m[2], 10);
-    const yyyy = parseInt(m[3], 10);
-    if (dd < 1 || dd > 31 || mm < 1 || mm > 12 || yyyy < 2020 || yyyy > 2035) return;
+    const dumIso = parseBrDateToIsoStrict(dumStr);
+    if (!dumIso) return;
 
-    const dumDate = new Date(yyyy, mm - 1, dd, 12, 0, 0);
-    if (Number.isNaN(dumDate.getTime())) return;
-
-    const dppDate = new Date(dumDate.getTime() + 280 * 86400000);
-    const dppStr = `${String(dppDate.getDate()).padStart(2, '0')}/${String(dppDate.getMonth() + 1).padStart(2, '0')}/${dppDate.getFullYear()}`;
+    let obs: ReturnType<typeof calcObstetricStructuredFromDum>;
+    try {
+      obs = calcObstetricStructuredFromDum({ dumIso });
+    } catch {
+      return;
+    }
 
     interactiveBodyEl.querySelectorAll<HTMLInputElement>('input[data-obstetric-role="dpp"]').forEach((inp) => {
-      inp.value = dppStr;
+      inp.value = obs.dppBr;
       inp.classList.add('is-filled');
       inp.closest('.pep-date-widget')?.classList.add('is-filled');
       autoSizeInlineInput(inp);
     });
 
-    const now = new Date();
-    const todayNoon = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0);
-    const diffDays = Math.round((todayNoon.getTime() - dumDate.getTime()) / 86400000);
-    if (diffDays >= 0 && diffDays <= 308) {
-      const weeks = Math.floor(diffDays / 7);
-      const days = diffDays % 7;
-      setObstetricIgFields('ig-dum', weeks, days);
+    if (obs.totalDays >= 0 && obs.totalDays <= 308) {
+      setObstetricIgFields('ig-dum', obs.weeks, obs.days);
 
-      // Preencher IG Definitiva Adotada apenas se não houver USG calculada
+      // Preencher IG Definitiva Adotada apenas se não houver USG/edição manual
       const defW = interactiveBodyEl.querySelector<HTMLInputElement>('input[data-obstetric-role="ig-def-w"]');
       if (defW && !defW.dataset.userEdited) {
-        setObstetricIgFields('ig-def', weeks, days);
+        setObstetricIgFields('ig-def', obs.weeks, obs.days);
       }
     }
     updateInteractiveCounterAndWeightBanner();
@@ -597,20 +589,18 @@ export function initPepDrawer(): void {
     const hojeWInp = subInputs.find((i) => i.dataset.usgRole === 'usg-hoje-w');
     const hojeDInp = subInputs.find((i) => i.dataset.usgRole === 'usg-hoje-d');
 
-    // 1. Se CCN foi digitado (5 a 90 mm), calcular IG na data da USG pela fórmula de Robinson & Fleming
+    // 1. Se CCN foi digitado (4 a 90 mm), calcular IG na data da USG pela fórmula de Robinson & Fleming
     if (triggerSource === 'ccn' && ccnInp) {
       const ccnMm = parseFloat(ccnInp.value.replace(',', '.'));
-      if (Number.isFinite(ccnMm) && ccnMm >= 4 && ccnMm <= 90) {
-        const totalDaysAtUsg = Math.round(8.052 * Math.sqrt(ccnMm * 1.037) + 23.73);
-        const w = Math.floor(totalDaysAtUsg / 7);
-        const d = totalDaysAtUsg % 7;
+      const ccnIg = calcIgFromCcnMm(ccnMm);
+      if (ccnIg) {
         if (igWInp) {
-          igWInp.value = String(w);
+          igWInp.value = String(ccnIg.weeks);
           igWInp.classList.add('is-filled');
           autoSizeInlineInput(igWInp);
         }
         if (igDInp) {
-          igDInp.value = String(d);
+          igDInp.value = String(ccnIg.days);
           igDInp.classList.add('is-filled');
           autoSizeInlineInput(igDInp);
         }
@@ -619,38 +609,31 @@ export function initPepDrawer(): void {
 
     // 2. Se Data da USG + IG na USG estiverem preenchidas, calcular IG USG hoje + IG Definitiva + DPP
     if (dateInp && igWInp) {
-      const usgIso = parseBrDateToIso(dateInp.value);
+      const usgIso = parseBrDateToIsoStrict(dateInp.value);
       const w = parseInt(igWInp.value.trim(), 10);
       const d = igDInp && igDInp.value.trim() ? parseInt(igDInp.value.trim(), 10) : 0;
 
       if (usgIso && Number.isFinite(w) && w >= 4 && w <= 42 && Number.isFinite(d) && d >= 0 && d <= 6) {
         try {
-          const res = calcIdadeGestacionalUsg({ usgDateIso: usgIso, usgWeeks: w, usgDays: d });
-          const igMatch = /^(\d+)s(\d+)d$/.exec(res.valueText);
-          const dppMatch = /DPP:\s*(\d{2}\/\d{2}\/\d{4})/.exec(res.classification);
-          if (igMatch) {
-            const hw = Number(igMatch[1]);
-            const hd = Number(igMatch[2]);
-            if (hojeWInp) {
-              hojeWInp.value = String(hw);
-              hojeWInp.classList.add('is-filled');
-              autoSizeInlineInput(hojeWInp);
-            }
-            if (hojeDInp) {
-              hojeDInp.value = String(hd);
-              hojeDInp.classList.add('is-filled');
-              autoSizeInlineInput(hojeDInp);
-            }
-            setObstetricIgFields('ig-def', hw, hd);
+          const obs = calcObstetricStructuredFromUsg({ usgDateIso: usgIso, usgWeeks: w, usgDays: d });
+          if (hojeWInp) {
+            hojeWInp.value = String(obs.weeks);
+            hojeWInp.classList.add('is-filled');
+            autoSizeInlineInput(hojeWInp);
           }
-          if (dppMatch) {
-            const dppInp = interactiveBodyEl.querySelector<HTMLInputElement>('input[data-obstetric-role="dpp"]');
-            if (dppInp && !dppInp.value.trim()) {
-              dppInp.value = dppMatch[1];
-              dppInp.classList.add('is-filled');
-              dppInp.closest('.pep-date-widget')?.classList.add('is-filled');
-              autoSizeInlineInput(dppInp);
-            }
+          if (hojeDInp) {
+            hojeDInp.value = String(obs.days);
+            hojeDInp.classList.add('is-filled');
+            autoSizeInlineInput(hojeDInp);
+          }
+          setObstetricIgFields('ig-def', obs.weeks, obs.days);
+
+          const dppInp = interactiveBodyEl.querySelector<HTMLInputElement>('input[data-obstetric-role="dpp"]');
+          if (dppInp && !dppInp.value.trim()) {
+            dppInp.value = obs.dppBr;
+            dppInp.classList.add('is-filled');
+            dppInp.closest('.pep-date-widget')?.classList.add('is-filled');
+            autoSizeInlineInput(dppInp);
           }
         } catch {
           // Data inválida ou fora da faixa gestacional; ignorar silenciosamente enquanto digita
@@ -670,30 +653,41 @@ export function initPepDrawer(): void {
     if (!pesoInp || !altInp || !imcInp) return;
 
     const peso = parseFloat(pesoInp.value.replace(',', '.'));
-    let alt = parseFloat(altInp.value.replace(',', '.'));
-    if (!peso || !alt || peso <= 15 || peso > 300) return;
-    if (alt > 3) alt = alt / 100;
-    if (alt < 1.1 || alt > 2.3) return;
+    const rawAlt = parseFloat(altInp.value.replace(',', '.'));
+    if (!Number.isFinite(peso) || !Number.isFinite(rawAlt) || peso <= 15 || peso > 300) return;
 
-    const imc = peso / (alt * alt);
-    imcInp.value = imc.toFixed(1).replace('.', ',');
+    const altM = rawAlt > 3 ? rawAlt / 100 : rawAlt;
+    if (altM < 1.1 || altM > 2.3) return;
+
+    let res: ReturnType<typeof calcImc>;
+    try {
+      res = calcImc({ pesoKg: peso, alturaCm: altM * 100 });
+    } catch {
+      return;
+    }
+
+    const numericImc = peso / (altM * altM);
+    imcInp.value = res.valueText.replace(/\s*kg\/m²$/i, '');
     imcInp.classList.add('is-filled');
     autoSizeInlineInput(imcInp);
 
-    const lineEl = imcInp.closest('.pep-line');
-    if (lineEl) {
-      const groupEl = lineEl.querySelector('.choice-group');
-      if (groupEl) {
-        let targetLabel = 'eutrófica';
-        if (imc < 18.5) targetLabel = 'baixo peso';
-        else if (imc >= 30) targetLabel = 'obesidade';
-        else if (imc >= 25) targetLabel = 'sobrepeso';
+    // Segurança Obstétrica: em protocolos de GO (gestantes), a classificação de IMC segue a Curva de Atalah por IG — não marcar automaticamente faixas de adulto não-gestante.
+    if (activeProtocol?.mod_id !== 'go') {
+      const lineEl = imcInp.closest('.pep-line');
+      if (lineEl) {
+        const groupEl = lineEl.querySelector('.choice-group');
+        if (groupEl) {
+          let targetLabel = 'eutrófica';
+          if (numericImc < 18.5) targetLabel = 'baixo peso';
+          else if (numericImc >= 30) targetLabel = 'obesidade';
+          else if (numericImc >= 25) targetLabel = 'sobrepeso';
 
-        const pills = Array.from(groupEl.querySelectorAll('.choice-pill'));
-        const matchPill = pills.find((p) => (p.textContent || '').toLowerCase().includes(targetLabel));
-        if (matchPill) {
-          pills.forEach((p) => p.classList.remove('active'));
-          matchPill.classList.add('active');
+          const pills = Array.from(groupEl.querySelectorAll('.choice-pill'));
+          const matchPill = pills.find((p) => (p.textContent || '').toLowerCase().includes(targetLabel));
+          if (matchPill) {
+            pills.forEach((p) => p.classList.remove('active'));
+            matchPill.classList.add('active');
+          }
         }
       }
     }
@@ -720,60 +714,29 @@ export function initPepDrawer(): void {
       const activePills = Array.from(lineEl.querySelectorAll('.choice-pill.active'))
         .map((p) => (p.textContent || '').trim())
         .join(' ');
-      const lineCtx = ((lineEl.dataset.rawLine || '').replace(/\[[^\]]+\]/g, ' ') + ' ' + activePills).toLowerCase();
+      const lineCtx = (lineEl.dataset.rawLine || '').replace(/\[[^\]]+\]/g, ' ') + ' ' + activePills;
       const prevEl = i > 0 ? lines[i - 1] : null;
-      const prevCtx = prevEl ? (prevEl.dataset.rawLine || '').toLowerCase() : '';
-      const combined = `${prevCtx} ${lineCtx}`;
+      const prevCtx = prevEl ? prevEl.dataset.rawLine || '' : '';
 
       lineEl.querySelectorAll<HTMLInputElement>('.pep-inline-input').forEach((inp) => {
-        const ph = (inp.placeholder || '').toLowerCase();
         const prevNode = inp.previousSibling;
-        const beforeTxt = (prevNode && prevNode.nodeType === Node.TEXT_NODE ? prevNode.textContent || '' : '').toLowerCase();
+        const beforeTxt = prevNode && prevNode.nodeType === Node.TEXT_NODE ? prevNode.textContent || '' : '';
         const nextNode = inp.nextSibling;
-        const afterTxt = (nextNode && nextNode.nodeType === Node.TEXT_NODE ? nextNode.textContent || '' : '').toLowerCase();
+        const afterTxt = nextNode && nextNode.nodeType === Node.TEXT_NODE ? nextNode.textContent || '' : '';
 
-        if (inp !== pesoInp && (afterTxt.includes('kg') || ph.includes('kg')) && (lineCtx.includes('peso') || beforeTxt.includes('peso'))) {
-          inp.value = String(peso).replace('.', ',');
-          inp.classList.add('is-filled');
-          autoSizeInlineInput(inp);
-          filled++;
-          return;
-        }
-        if (afterTxt.includes('gota') || ph.includes('gota')) {
-          if (combined.includes('dipirona') && doses.dipironaAllowed) {
-            inp.value = String(doses.dipironaGotas);
-            inp.classList.add('is-filled');
-            autoSizeInlineInput(inp);
-            filled++;
-          } else if (combined.includes('paracetamol')) {
-            inp.value = String(doses.paracetamolGotas);
-            inp.classList.add('is-filled');
-            autoSizeInlineInput(inp);
-            filled++;
-          } else if (combined.includes('ibuprofeno') && doses.ibuprofenoAllowed) {
-            inp.value = String(doses.ibuprofenoGotas100);
-            inp.classList.add('is-filled');
-            autoSizeInlineInput(inp);
-            filled++;
-          }
-        } else if ((afterTxt.includes('ml') || ph === 'ml') && combined.includes('amoxicilina')) {
-          const is400 = lineCtx.includes('400') || prevCtx.includes('400') || combined.includes('12 em 12') || combined.includes('12/12');
-          inp.value = is400 ? doses.amoxi90Ml12h : doses.amoxi50Ml8h;
-          inp.classList.add('is-filled');
-          autoSizeInlineInput(inp);
-          filled++;
-        } else if (combined.includes('prednisolona') && (afterTxt.includes('ml') || ph === 'ml' || afterTxt.includes('mg') || ph === 'mg')) {
-          inp.value = afterTxt.includes('mg') || ph === 'mg' ? String(doses.prednisolonaMgDia) : doses.prednisolonaMlDia;
-          inp.classList.add('is-filled');
-          autoSizeInlineInput(inp);
-          filled++;
-        } else if (combined.includes('ondansetrona') && (afterTxt.includes('mg') || ph === 'mg' || afterTxt.includes('ml') || ph === 'ml')) {
-          inp.value = afterTxt.includes('ml') || ph === 'ml' ? doses.ondansetronaMlEv : doses.ondansetronaMg;
-          inp.classList.add('is-filled');
-          autoSizeInlineInput(inp);
-          filled++;
-        } else if (combined.includes('dexametasona') && (afterTxt.includes('mg') || ph === 'mg')) {
-          inp.value = doses.dexametasonaCrupeMg;
+        const resolvedValue = resolvePediatricDoseFieldValue({
+          isWeightSourceInput: inp === pesoInp,
+          lineContext: lineCtx,
+          prevLineContext: prevCtx,
+          beforeText: beforeTxt,
+          afterText: afterTxt,
+          placeholder: inp.placeholder || '',
+          weightKg: peso,
+          doses,
+        });
+
+        if (resolvedValue !== null) {
+          inp.value = resolvedValue;
           inp.classList.add('is-filled');
           autoSizeInlineInput(inp);
           filled++;
@@ -783,7 +746,7 @@ export function initPepDrawer(): void {
 
     interactiveEditCount += filled;
     updateInteractiveCounterAndWeightBanner();
-    syncDraftToStore();
+    syncDraftToStore.flush();
     showToast(
       filled > 0
         ? `⚡ ${filled} dose(s) preenchida(s) automaticamente na receita!`
@@ -1078,7 +1041,7 @@ export function initPepDrawer(): void {
 
     if (inp.dataset.anthroRole === 'peso-atual') {
       inp.addEventListener('change', () => {
-        if (activeTab === 'pep') renderPepTab();
+        if (activeTab === 'pep') refreshWeightBannerInPlace();
       });
     }
 
@@ -1680,6 +1643,7 @@ export function initPepDrawer(): void {
 
     drawerFooter.querySelector('#pepCopyAllBtn')?.addEventListener('click', async () => {
       if (!activeProtocol) return;
+      syncDraftToStore.flush();
       if (activeTab === 'standard') {
         const std = resolvePowerActionText(1, activeProtocol.pep_body || '', activeProtocol, {
           sanitizeOpts: { keepEmptyBrackets: true },
@@ -1711,12 +1675,14 @@ export function initPepDrawer(): void {
 
     drawerFooter.querySelector('#pepCopyReceitaBtn')?.addEventListener('click', async () => {
       if (!activeProtocol) return;
+      syncDraftToStore.flush();
       const res = resolvePowerActionText(4, getCompiledPepText(), activeProtocol);
       await copyToClipboard(res.text, 'Receita / Alta');
     });
 
     drawerFooter.querySelector('#pepAddCartBtn')?.addEventListener('click', () => {
       if (!activeProtocol) return;
+      syncDraftToStore.flush();
       const bodies = extractBodiesFromCustomPep(getCompiledPepText(), activeProtocol);
       const rawRec = bodies.receita_body || activeProtocol.receita_body || '';
       const parsedItems = parsePrescriptionItemsForCart(rawRec);
@@ -1740,6 +1706,7 @@ export function initPepDrawer(): void {
 
     drawerFooter.querySelector('#pepPrintReceiptBtn')?.addEventListener('click', () => {
       if (!activeProtocol) return;
+      syncDraftToStore.flush();
       const res = resolvePowerActionText(4, getCompiledPepText(), activeProtocol);
       const nome = cockpitStore.getState().patientSession.identity.nome;
       printReceiptDocument(activeProtocol.title, res.text, nome);
@@ -1778,6 +1745,7 @@ export function initPepDrawer(): void {
   };
 
   const switchTab = (tab: DrawerTab) => {
+    syncDraftToStore.flush();
     activeTab = tab;
     const isStdView = tab === 'standard' || tab === 'conduta' || tab === 'receita';
 
@@ -1837,7 +1805,7 @@ export function initPepDrawer(): void {
         </div>
       </div>
 
-      ${renderWeightBannerHtml(compiledInitial)}
+      <div id="pepWeightBannerSlot">${renderWeightBannerHtml(compiledInitial)}</div>
 
       ${
         freeEditMode
@@ -1876,7 +1844,6 @@ export function initPepDrawer(): void {
         close();
         if (habId) {
           uiBridge.navigate('preporta', { itemId: habId });
-          uiBridge.selectPrePortaCard(habId);
         }
       });
     });
@@ -1887,7 +1854,6 @@ export function initPepDrawer(): void {
         close();
         if (modId) {
           uiBridge.navigate('teoria', { subTab: modId });
-          uiBridge.selectTeoriaModule(modId);
         }
       });
     });
@@ -1895,7 +1861,6 @@ export function initPepDrawer(): void {
     pepPanel.querySelector('#pepRegisterLogbookBtn')?.addEventListener('click', () => {
       const title = activeProtocol?.title || '';
       close();
-      uiBridge.navigate('logbook');
       uiBridge.openLogbookNewCase(`Protocolo: ${title}`);
     });
 
@@ -1983,6 +1948,7 @@ export function initPepDrawer(): void {
 
     pepPanel.querySelector('#pepResetBtn')?.addEventListener('click', () => {
       if (!activeProtocol) return;
+      syncDraftToStore.cancel();
       interactiveEditCount = 0;
       freeEditMode = false;
       freeEditState = createFreeEditState('');
@@ -1998,7 +1964,7 @@ export function initPepDrawer(): void {
       } else {
         freeEditMode = false;
       }
-      syncDraftToStore();
+      syncDraftToStoreNow();
       renderPepTab();
     });
 
@@ -2010,7 +1976,7 @@ export function initPepDrawer(): void {
 
     pepPanel.querySelector('#pepFreeUndoBtn')?.addEventListener('click', () => {
       freeEditState = undoFreeEditSnapshot(freeEditState);
-      syncDraftToStore();
+      syncDraftToStoreNow();
       renderPepTab();
     });
 
@@ -2089,11 +2055,11 @@ export function initPepDrawer(): void {
       <div class="guia-travas-box">
         <h4>🛡️ 7 Travas de Segurança Clínica (Sessão Atual)</h4>
         <div class="guia-travas-list">
-          ${SEVEN_TRAVAS.map(
+          ${SETE_TRAVAS_SEGURANCA.map(
             (t) => `
               <label class="guia-trava-item">
-                <input type="checkbox" data-trava-id="${t.id}" ${travasChecked[t.id] ? 'checked' : ''} />
-                <span>${escapeHtml(t.label)}</span>
+                <input type="checkbox" data-trava-id="${escapeHtml(t.id)}" ${travasChecked[t.id] ? 'checked' : ''} />
+                <span>${escapeHtml(t.shortLabel)}</span>
               </label>`
           ).join('')}
         </div>
@@ -2117,7 +2083,19 @@ export function initPepDrawer(): void {
     });
   };
 
+  const syncDrawerDialogSemantics = () => {
+    const isMobileDialog = window.innerWidth < 1024 && overlay.classList.contains('open');
+    if (isMobileDialog) {
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+    } else {
+      overlay.removeAttribute('role');
+      overlay.removeAttribute('aria-modal');
+    }
+  };
+
   const open = (protocolId: string, initialTab: DrawerTab = 'pep') => {
+    syncDraftToStore.flush();
     const prot = PROTOCOL_BY_ID.get(protocolId);
     if (!prot) return;
     activeProtocol = prot;
@@ -2150,12 +2128,15 @@ export function initPepDrawer(): void {
     if (tabReceitaBtn) tabReceitaBtn.style.display = hasReceita ? '' : 'none';
 
     overlay.classList.add('open');
+    syncDrawerDialogSemantics();
     renderPepTab();
     switchTab(initialTab);
   };
 
   const close = () => {
+    syncDraftToStore.flush();
     overlay.classList.remove('open');
+    syncDrawerDialogSemantics();
   };
 
   uiBridge.openPepDrawer = (id, tab) => open(id, tab);
@@ -2163,13 +2144,14 @@ export function initPepDrawer(): void {
   uiBridge.hasActivePep = () => activeProtocol !== null && overlay.classList.contains('open');
   uiBridge.insertTextIntoActivePep = (text: string) => {
     if (!activeProtocol) return false;
+    syncDraftToStore.flush();
     if (!freeEditMode) {
       freeEditState = createFreeEditState(getCompiledPepText());
       freeEditMode = true;
     }
     const next = `${freeEditState.currentText.trimEnd()}\n\n${text.trim()}`;
     freeEditState = pushFreeEditSnapshot(freeEditState, next);
-    syncDraftToStore();
+    syncDraftToStoreNow();
     if (overlay.classList.contains('open')) {
       renderPepTab();
       switchTab('pep');
@@ -2188,9 +2170,13 @@ export function initPepDrawer(): void {
   overlay.addEventListener('click', (ev) => {
     if (ev.target === overlay && window.innerWidth < 1024) close();
   });
+  window.addEventListener('resize', syncDrawerDialogSemantics);
+  window.addEventListener('beforeunload', () => syncDraftToStore.flush());
+  window.addEventListener('pagehide', () => syncDraftToStore.flush());
 
   const triggerPowerActionCopy = async (actionId: 1 | 2 | 3 | 4 | 5, btnEl?: HTMLElement | null) => {
     if (!activeProtocol) return;
+    syncDraftToStore.flush();
     const compiledNow = getCompiledPepText();
     const res = resolvePowerActionText(actionId, compiledNow, activeProtocol, {
       sanitizeOpts: { keepEmptyBrackets },
@@ -2223,6 +2209,14 @@ export function initPepDrawer(): void {
 
   window.addEventListener('keydown', (e) => {
     if (!activeProtocol || document.body.dataset.activeSection !== 'pep') return;
+    if (
+      document.getElementById('cmdOverlay')?.classList.contains('open') ||
+      document.getElementById('remumeCalcOverlay')?.classList.contains('open') ||
+      document.getElementById('shortcutsOverlay')?.classList.contains('open') ||
+      document.getElementById('piiConfirmOverlay')?.classList.contains('open')
+    ) {
+      return;
+    }
     const target = e.target as HTMLElement | null;
     const tag = target?.tagName || '';
     const isTyping =
@@ -2271,7 +2265,20 @@ export function initPepDrawer(): void {
     }
   });
 
-  cockpitStore.subscribe(() => {
-    if (activeProtocol && activeTab) renderDrawerFooter();
+  let lastCartSignature = cockpitStore
+    .getState()
+    .prescriptionCart.map((c) => `${c.id}:${c.name}:${c.posology}`)
+    .join('|');
+
+  cockpitStore.subscribe((nextState) => {
+    const sig = nextState.prescriptionCart.map((c) => `${c.id}:${c.name}:${c.posology}`).join('|');
+    if (sig === lastCartSignature) return;
+    lastCartSignature = sig;
+    if (activeProtocol && activeTab) {
+      renderDrawerFooter();
+      if (activeTab === 'cart' && cartPanel) {
+        renderCartPanel(cartPanel);
+      }
+    }
   });
 }

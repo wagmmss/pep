@@ -200,13 +200,18 @@ export function renderSidebar(): void {
     </div>
   `;
 
+  const closeMobileSidebar = () => {
+    sidebar.classList.remove('mobile-open');
+    document.getElementById('wsSidebarBackdrop')?.classList.remove('open');
+  };
+
   sidebar.querySelector('#wsMainSectionNav')?.addEventListener('click', (e) => {
     const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-section]');
     if (!btn) return;
     const sec = btn.dataset.section as AppSection | undefined;
     if (sec) {
       uiBridge.navigate(sec);
-      sidebar.classList.remove('mobile-open');
+      closeMobileSidebar();
     }
   });
 
@@ -221,22 +226,22 @@ export function renderSidebar(): void {
     sidebar.querySelectorAll('#moduleTabs .tab-btn').forEach((el) => {
       el.classList.toggle('active', (el as HTMLElement).dataset.mod === mod);
     });
-    sidebar.classList.remove('mobile-open');
+    closeMobileSidebar();
   });
 
   sidebar.querySelector('#wsBtnConfig')?.addEventListener('click', () => {
     uiBridge.navigate('config');
-    sidebar.classList.remove('mobile-open');
+    closeMobileSidebar();
   });
 
   sidebar.querySelector('#wsBtnRemumeModal')?.addEventListener('click', () => {
     uiBridge.openRemumeCalcModal('remume');
-    sidebar.classList.remove('mobile-open');
+    closeMobileSidebar();
   });
 
   sidebar.querySelector('#wsBtnShortcutsModal')?.addEventListener('click', () => {
     uiBridge.openShortcutsModal();
-    sidebar.classList.remove('mobile-open');
+    closeMobileSidebar();
   });
 }
 

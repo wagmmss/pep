@@ -1,19 +1,13 @@
+import { getLocalTodayIso } from '../engine/calculadoras.ts';
 import { cockpitStore } from '../state/store.ts';
-import { copyToClipboard, escapeHtml, guardPiiBeforeSave, showToast } from './utils.ts';
+import { copyToClipboard, downloadTextFile, guardPiiBeforeSave, showToast } from './utils.ts';
 
-const START_SECTION_KEY = 'mq_default_start_section_v1';
-
-export function initConfig(): (container: HTMLElement) => void {
+export function initConfig(): { render: (container: HTMLElement) => void } {
   let confirmingReset = false;
 
   const render = (container: HTMLElement) => {
     const state = cockpitStore.getState();
-    let startSection = 'pep';
-    try {
-      if (localStorage.getItem(START_SECTION_KEY) === 'hoje') startSection = 'hoje';
-    } catch {
-      startSection = 'pep';
-    }
+    const startSection = state.startSection;
 
     container.innerHTML = `
       <section class="mq-section-pane active">
@@ -62,7 +56,7 @@ export function initConfig(): (container: HTMLElement) => void {
         <div class="mq-card" style="display:flex; flex-direction:column; gap:12px;">
           <div class="mq-eyebrow">EXPORTAÇÃO SEGURA &amp; SINCRONIZAÇÃO OFFLINE</div>
           <h3 style="font-size:1.05rem; font-weight:700;">💾 Backup v2 (JSON com Validação Anti-PII LGPD)</h3>
-          <p class="mq-hint">Exporta Central do 6º Ano, Checklists Pré-Porta (22), Carrinho, Preferências e Larguras de Colunas.</p>
+          <p class="mq-hint">Exporta Central do 6º Ano, Checklists Pré-Porta (22), Preferências e Larguras de Colunas (o Carrinho de Prescrição fica isolado em <code>sessionStorage</code>).</p>
 
           <div class="mq-btn-row">
             <button type="button" class="btn btn-primary btn-sm" id="cfgExportBackupBtn">⬇️ Baixar Backup v2 (.json)</button>
@@ -112,12 +106,12 @@ export function initConfig(): (container: HTMLElement) => void {
     });
 
     container.querySelector('#cfgStartPep')?.addEventListener('click', () => {
-      try { localStorage.setItem(START_SECTION_KEY, 'pep'); } catch {}
+      cockpitStore.setStartSection('pep');
       showToast('Tela inicial definida: Protocolos PEP.', 'success');
       render(container);
     });
     container.querySelector('#cfgStartHoje')?.addEventListener('click', () => {
-      try { localStorage.setItem(START_SECTION_KEY, 'hoje'); } catch {}
+      cockpitStore.setStartSection('hoje');
       showToast('Tela inicial definida: Hoje (6º Ano).', 'success');
       render(container);
     });
@@ -137,33 +131,29 @@ export function initConfig(): (container: HTMLElement) => void {
       showToast('🧹 Sessão do paciente limpa com sucesso.', 'success');
     });
 
-    container.querySelector('#cfgExportBackupBtn')?.addEventListener('click', () => {
+    container.querySelector('#cfgExportBackupBtn')?.addEventListener('click', async () => {
       const payload = cockpitStore.exportBackupV2();
       const rawJson = JSON.stringify(payload, null, 2);
-      const safeJson = guardPiiBeforeSave(rawJson, 'Backup JSON');
+      const safeJson = await guardPiiBeforeSave(rawJson, 'Backup JSON');
       if (safeJson === null) return;
 
-      const blob = new Blob([safeJson], { type: 'application/json;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `cockpit-clinico-backup-v2-${new Date().toISOString().slice(0, 10)}.json`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      downloadTextFile(
+        `cockpit-clinico-backup-v2-${getLocalTodayIso()}.json`,
+        safeJson,
+        'application/json;charset=utf-8'
+      );
 
       const preview = container.querySelector('#cfgBackupPreview');
       if (preview) {
-        preview.textContent = `Backup v2 exportado (${escapeHtml(payload.exportedAt)} · versão ${payload.version}).`;
+        preview.textContent = `Backup v2 exportado (${payload.exportedAt} · versão ${payload.version}).`;
       }
       showToast('Backup v2 JSON exportado com sucesso!', 'success');
     });
 
-    container.querySelector('#cfgCopyBackupTextBtn')?.addEventListener('click', () => {
+    container.querySelector('#cfgCopyBackupTextBtn')?.addEventListener('click', async () => {
       const payload = cockpitStore.exportBackupV2();
       const rawJson = JSON.stringify(payload, null, 2);
-      const safeJson = guardPiiBeforeSave(rawJson, 'Backup JSON');
+      const safeJson = await guardPiiBeforeSave(rawJson, 'Backup JSON');
       if (safeJson === null) return;
       const ta = container.querySelector<HTMLTextAreaElement>('#configBackupJsonArea');
       if (ta) ta.value = safeJson;
@@ -224,5 +214,5 @@ export function initConfig(): (container: HTMLElement) => void {
     });
   };
 
-  return render;
+  return { render };
 }

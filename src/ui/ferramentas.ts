@@ -1,3 +1,10 @@
+import {
+  EXAM_CHECKLISTS,
+  SEIS_INTERCORRENCIAS_DATA,
+  SETE_TRAVAS_SEGURANCA,
+  TABELA_LR_CLINICA_DATA,
+} from '../data/clinical_reference_data.ts';
+import { getLocalTodayIso } from '../engine/calculadoras.ts';
 import { calcPostTestProbability, ENSAIO_MENTAL_3MIN_PASSOS } from '../engine/central6ano.ts';
 import { cockpitStore } from '../state/store.ts';
 import { getCentral6AnoState, uiBridge, updateCentral6AnoState } from './context.ts';
@@ -19,56 +26,10 @@ type FerramentasSubTab =
   | 'travas'
   | 'intercorrencias';
 
-interface LrClinicalRow {
-  sindrome: string;
-  manobra: string;
-  lrPos: number;
-  lrNeg: number;
-  nota: string;
-}
-
-const TABELA_LR_CLINICA_DATA: LrClinicalRow[] = [
-  { sindrome: 'Abdome Agudo / Peritonite', manobra: 'Defesa involuntária ("abdome em tábua") ou dor à tosse/percussão suave', lrPos: 5.2, lrNeg: 0.4, nota: 'Mais fidedigna e humana que Blumberg brusco; rigidez verdadeira multiplica >5x a chance de peritonite.' },
-  { sindrome: 'Colecistite Aguda', manobra: 'Sinal de Murphy positivo (parada inspiratória no ponto cístico)', lrPos: 2.8, lrNeg: 0.5, nota: 'Murphy positivo apoia fortemente, mas Murphy negativo NÃO exclui colecistite (idosos/DM).' },
-  { sindrome: 'Apendicite Aguda', manobra: 'Migração da dor (periumbilical → FID) + dor em FID', lrPos: 3.2, lrNeg: 0.5, nota: 'Nenhum sinal isolado fecha ou exclui; somar no Alvarado/AIR + USG/TC.' },
-  { sindrome: 'Ascite', manobra: 'Onda líquida (Piparote) positiva', lrPos: 6.0, lrNeg: 0.6, nota: 'Ótima especificidade (>90%), baixa sensibilidade (negativo não exclui).' },
-  { sindrome: 'Ascite', manobra: 'Macicez móvel de decúbito presente', lrPos: 2.7, lrNeg: 0.3, nota: 'Boa sensibilidade (~83%); ausência ajuda a afastar ascite moderada.' },
-  { sindrome: 'Insuficiência Cardíaca', manobra: 'Presença de B3 (terceira bulha)', lrPos: 11.0, lrNeg: 0.88, nota: 'LR+ altíssimo (>10): B3 real praticamente confirma sobrecarga ventricular.' },
-  { sindrome: 'Insuficiência Cardíaca', manobra: 'Turgência Jugular (PVJ > 3–4 cm acima do ângulo esternal a 45°)', lrPos: 5.1, lrNeg: 0.66, nota: 'Excelente marcador de pressão de enchimento direita elevada à beira do leito.' },
-  { sindrome: 'Derrame Pleural', manobra: 'Macicez à percussão + redução assimétrica do FTV/MV', lrPos: 8.7, lrNeg: 0.21, nota: 'Altíssimo rendimento diagnóstico para POCUS/RX e toracocentese.' },
-  { sindrome: 'Hipovolemia', manobra: 'Taquicardia postural (↑FC ≥ 30 bpm) ou hipotensão ortostática', lrPos: 9.8, lrNeg: 0.45, nota: 'Muito mais sensível e específica que mucosa seca isolada.' },
-  { sindrome: 'Meningite Aguda', manobra: 'Rigidez de nuca / Kernig / Brudzinski', lrPos: 4.5, lrNeg: 0.7, nota: 'Alta especificidade, mas sensibilidade baixa (30–50%): ausência NÃO exclui meningite.' },
-  { sindrome: 'TVP', manobra: 'Assimetria de panturrilha ≥ 3 cm (10 cm abaixo da tuberosidade tibial)', lrPos: 2.6, lrNeg: 0.5, nota: 'Sempre medir com fita métrica; compõe o Escore de Wells.' },
-  { sindrome: 'Vertigem Aguda (AVCi Fossa Posterior)', manobra: 'HINTS central (Head Impulse normal OU Nistagmo mutável OU Skew)', lrPos: 15.0, lrNeg: 0.04, nota: 'Em síndrome vestibular contínua, HINTS supera RNM nas primeiras 24–48h.' },
-];
-
-const SETE_TRAVAS_DATA = [
-  { id: 'trava-a', letra: 'A', titulo: 'Alergias & Reação Cruzada', detalhe: 'Perguntou e diferenciou anafilaxia de intolerância GI? Checou penicilina/cefalosporina, AINEs e dipirona?' },
-  { id: 'trava-r', letra: 'R', titulo: 'Rim & Fígado (TFG / Child)', detalhe: 'Calculou CKD-EPI antes de vancomicina, aminoglicosídeo, enoxaparina (<30 mL/min!), metformina ou AINE?' },
-  { id: 'trava-g', letra: 'G', titulo: 'Gestação, Puerpério & Lactação', detalhe: 'Idade fértil sem β-hCG? Afastou IECA/BRA, warfarina, quinolona e AINE em puérpera hipertensa?' },
-  { id: 'trava-i', letra: 'I', titulo: 'Interações Graves (QTc / Sangramento / K⁺)', detalhe: 'Somando QTc (ondansetrona + haloperidol + macrolídeo/fluoroquinolona)? IECA + espironolactona + Bactrim?' },
-  { id: 'trava-v', letra: 'V', titulo: 'Via, Diluição & Velocidade Segura', detalhe: 'Zero KCl em bolus! Conferiu diluição/bomba de fenitoína, vancomicina (≥60m), noradrenalina e insulina?' },
-  { id: 'trava-p', letra: 'P', titulo: 'Peso (mg/kg) & Idade (Pediatria / Idoso Frágil)', detalhe: 'Conferiu teto adulto em pediatria, peso predito na VM (6 mL/kg) e redução de sedativos no idoso?' },
-  { id: 'trava-o', letra: 'O', titulo: 'Objetivo Clínico, Profilaxias (FAST HUG) & Reavaliação', detalhe: 'Meta explícita (PAM ≥65, SpO₂ 92–96%, HGT 140–180), profilaxia TEV/IBP e horário de reavaliação?' },
-];
-
-const SEIS_INTERCORRENCIAS_DATA = [
-  { num: '1', titulo: 'Hipotensão / Choque na Enfermaria ou Pós-Op', checar2m: 'Consciência, TEC, extremidades, pulsos, PVJ, pulmão, diurese e débito de drenos.', causas3: 'Sangramento oculto pós-op · Sepse · TEP / Tamponamento / Cardiogênico', conduta: 'Elevar MMII; 2 acessos calibrosos; prova volêmica guiada (250–500 mL RL); colher Hb/gaso/lactato e chamar sênior/CTI (Noradrenalina se refratário).' },
-  { num: '2', titulo: 'Dispneia Aguda / Dessaturação', checar2m: 'FR, musculatura acessória, curva do oxímetro, ausculta (sibilos, crepitações, MV abolido) e panturrilhas.', causas3: 'EAP · TEP · Pneumotórax / Broncoaspiração / Broncoespasmo', conduta: 'Cabeceira 45–90°; O₂ alvo 92–96% (88–92% DPOC); ECG + RX tórax no leito + gasometria; tratar causa.' },
-  { num: '3', titulo: 'Dor Torácica Aguda no Internado', checar2m: 'Dor e irradiação, PA nos 2 braços, FC, SpO₂ e ausculta cardiopulmonar.', causas3: 'SCA · TEP · Dissecção de Aorta / Pneumotórax', conduta: 'ECG 12 derivações < 10 min! Monitor + acesso + troponina + RX. Nunca apenas analgésico.' },
-  { num: '4', titulo: 'Oligúria (< 0,5 mL/kg/h por ≥ 2–6h)', checar2m: 'SVD dobrada/obstruída? Bexigoma palpável? Hipovolemia vs congestão?', causas3: 'Obstrução da SVD (pós-renal) · Hipovolemia (pré-renal) · NTA / Sepse', conduta: 'Checar/lavar SVD e palpar bexigoma ANTES de dar soro ou furosemida.' },
-  { num: '5', titulo: 'Febre Pós-Operatória (5 Ws)', checar2m: 'DPO, ferida operatória, pulmão, cateteres, panturrilhas e sonda.', causas3: 'Wind (D1–2) · Water (D3+) · Wound (D4–7) · Walking (TVP/TEP) · Drugs/Deiscência', conduta: 'Examinar FO, pulmão e acessos antes de escalar ATB cegamente.' },
-  { num: '6', titulo: 'Hipoglicemia (<70) ou Hiperglicemia (>250–300)', checar2m: 'Confirmar HGT, nível de consciência vs Kussmaul/desidratação.', causas3: 'Jejum c/ insulina (hipo) · Sepse / Corticoide / Omissão basal (CAD/EHH)', conduta: '<70: 15g CHO VO ou 30–40 mL G50% EV + rechecar 15m. >250: checar cetonemia e gaso antes de só dar insulina rápida.' },
-];
-
-const EXAM_CHECKLISTS: Record<string, { title: string; steps: string[] }> = {
-  ecg: { title: '🫀 ECG em 10 Passos', steps: ['1. Calibração: 25 mm/s e 10 mm/mV; comparar derivações.', '2. Frequência Cardíaca: 300 / quadradões (ou R em 6s × 10).', '3. Ritmo: P antes de todo QRS; P (+) DI/DII/aVF, (-) aVR.', '4. Eixo: DI e aVF (+/+ = normal; +/- checar DII).', '5. Onda P: <120 ms, <2,5 mm.', '6. Intervalo PR: 120–200 ms (BAV 1º/Mobitz I/II/BAVT).', '7. QRS: <120 ms; se largo checar BRD/BRE + Sgarbossa.', '8. ST e T: supra/infra por território (pedir V3R/V4R + V7-V9 se inferior!).', '9. QTc: QTc = QT / √RR (alerta Torsades se > 500 ms).', '10. Correlação clínica: troponina/potássio (apiculada = hiperK+).'] },
-  rx: { title: '🩻 RX Tórax (RIPE + ABCDE)', steps: ['R — Rotação: processos espinhosos equidistantes das clavículas.', 'I — Inspiração: 9–10 costelas posteriores visíveis.', 'P — Penetração: vértebras visíveis atrás do coração.', 'A — Via Aérea: traqueia centrada, TOT 2–5 cm acima da carina.', 'B — Campos pulmonares: ápices (pneumotórax), bases (menisco), silhueta.', 'C — Silhueta cardíaca (ICT <0,5 em PA) e mediastino (<8 cm).', 'D/E/F — Costelas, pneumoperitônio subdiafragmático, SNE/cateter.'] },
-  ctg: { title: '🤰 Cardiotocografia (NICHD)', steps: ['1. FCF Basal: normal 110–160 bpm (taqui >160 / bradi <110).', '2. Variabilidade: moderada 6–25 bpm (vital para bem-estar fetal).', '3. Acelerações transitórias: ≥15 bpm por ≥15s (>32s IG).', '4. Desacelerações: Precoces (cefálico), Tardias (insuf. placentária!), Variáveis (cordão).', '5. Categoria I (tranquilizador), II (indeterminado), III (emergência obstétrica!).'] },
-  efast: { title: '📡 e-FAST 5 Janelas (< 3 min)', steps: ['1. Subxifoide: derrame pericárdico / tamponamento (colabamento de VD).', '2. Morrison (HCD): interface fígado-rim direito.', '3. Esplenorrenal (HCE): baço-rim esquerdo e subfrênico.', '4. Suprapúbica / Pelve: fundo de saco atrás da bexiga.', '5. Pleural anterior (2º–4º EIC): lung sliding ("sinal da praia" vs "código de barras").'] },
-};
-
-export function initFerramentas(): (container: HTMLElement, subTab?: string) => void {
+export function initFerramentas(): {
+  render: (container: HTMLElement, subTab?: string) => void;
+  cleanup: () => void;
+} {
   let activeSub: FerramentasSubTab = 'gaso';
   let activeExamTab: keyof typeof EXAM_CHECKLISTS = 'ecg';
   let stageRunning = false;
@@ -86,10 +47,51 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
     stageRunning = false;
   };
 
+  const renderLrRowsHtml = (filterValue: string): string => {
+    const q = filterValue.trim().toLowerCase();
+    const filteredRows = TABELA_LR_CLINICA_DATA.filter(
+      (r) =>
+        !q ||
+        r.sindrome.toLowerCase().includes(q) ||
+        r.manobra.toLowerCase().includes(q) ||
+        r.nota.toLowerCase().includes(q)
+    );
+    if (filteredRows.length === 0) {
+      return `<tr><td colspan="5">Nenhuma manobra encontrada para "${escapeHtml(filterValue)}".</td></tr>`;
+    }
+    return filteredRows
+      .map(
+        (row) => `
+          <tr data-lr-pick="${row.lrPos}" style="cursor:pointer;">
+            <td><strong>${escapeHtml(row.sindrome)}</strong></td>
+            <td>${escapeHtml(row.manobra)}</td>
+            <td><strong>${row.lrPos.toFixed(1)}</strong></td>
+            <td>${row.lrNeg.toFixed(2)}</td>
+            <td>${escapeHtml(row.nota)}</td>
+          </tr>`
+      )
+      .join('');
+  };
+
   const render = (container: HTMLElement, subTab?: string) => {
-    const valid: FerramentasSubTab[] = ['gaso', 'calc', 'remume', 'lr', 'exames', 'raciocinio', 'oratoria', 'travas', 'intercorrencias'];
+    const valid: FerramentasSubTab[] = [
+      'gaso',
+      'calc',
+      'remume',
+      'lr',
+      'exames',
+      'raciocinio',
+      'oratoria',
+      'travas',
+      'intercorrencias',
+    ];
     if (subTab && valid.includes(subTab as FerramentasSubTab)) {
+      if (activeSub === 'oratoria' && subTab !== 'oratoria') {
+        stopStageTimer();
+      }
       activeSub = subTab as FerramentasSubTab;
+    } else if (activeSub !== 'oratoria') {
+      stopStageTimer();
     }
 
     container.innerHTML = `
@@ -134,18 +136,20 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
     const body = container.querySelector<HTMLElement>('#ferramentasBody')!;
 
     if (activeSub === 'gaso') {
-      renderGasometriaPanel(body);
+      renderGasometriaPanel(body, 'fer');
     } else if (activeSub === 'calc') {
-      renderUbsUpaCalculators(body);
+      renderUbsUpaCalculators(body, 'fer');
     } else if (activeSub === 'remume') {
       body.innerHTML = `<div class="mq-card" id="ferPharmaWrap"></div>`;
-      renderPharmaCatalogPanel(body.querySelector('#ferPharmaWrap')!);
+      renderPharmaCatalogPanel(body.querySelector('#ferPharmaWrap')!, '', 'fer');
     } else if (activeSub === 'lr') {
-      const bayes = calcPostTestProbability(bayesPrePct, bayesLr);
-      const filteredRows = TABELA_LR_CLINICA_DATA.filter((r) => {
-        const q = lrFilter.trim().toLowerCase();
-        return !q || r.sindrome.toLowerCase().includes(q) || r.manobra.toLowerCase().includes(q) || r.nota.toLowerCase().includes(q);
-      });
+      let bayesHtml = '';
+      try {
+        const bayes = calcPostTestProbability(bayesPrePct, bayesLr);
+        bayesHtml = `<strong>Pós-teste estimada: ${bayes.postPct}%</strong> (${escapeHtml(bayes.interpretacao)})`;
+      } catch (err) {
+        bayesHtml = `<strong>⚠️ ${escapeHtml((err as Error).message)}</strong>`;
+      }
 
       body.innerHTML = `
         <div class="mq-card" style="display:flex; flex-direction:column; gap:14px;">
@@ -156,16 +160,14 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
               <div class="calc-inputs-row">
                 <div class="mq-control-group">
                   <label class="mq-control-label" for="inpBayesPre">Prob. Pré-Teste (%)</label>
-                  <input type="number" id="inpBayesPre" class="mq-input" min="1" max="99" value="${bayesPrePct}" />
+                  <input type="number" id="inpBayesPre" class="mq-input" min="1" max="99" value="${Number.isFinite(bayesPrePct) ? bayesPrePct : ''}" />
                 </div>
                 <div class="mq-control-group">
                   <label class="mq-control-label" for="inpBayesLr">Razão Verossim. (LR)</label>
-                  <input type="number" id="inpBayesLr" class="mq-input" step="0.1" value="${bayesLr}" />
+                  <input type="number" id="inpBayesLr" class="mq-input" step="0.1" value="${Number.isFinite(bayesLr) ? bayesLr : ''}" />
                 </div>
               </div>
-              <div class="mq-step-result-box" id="bayesOutBox">
-                <strong>Pós-teste estimada: ${bayes.postPct}%</strong> (${escapeHtml(bayes.interpretacao)})
-              </div>
+              <div class="mq-step-result-box" id="bayesOutBox">${bayesHtml}</div>
             </div>
 
             <div class="mq-context-box" style="display:flex; flex-direction:column; gap:8px;">
@@ -182,54 +184,52 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
               <thead>
                 <tr><th>Síndrome</th><th>Achado / Manobra</th><th>LR+</th><th>LR-</th><th>Interpretação</th></tr>
               </thead>
-              <tbody>
-                ${filteredRows
-                  .map(
-                    (row) => `
-                      <tr data-lr-pick="${row.lrPos}" style="cursor:pointer;">
-                        <td><strong>${escapeHtml(row.sindrome)}</strong></td>
-                        <td>${escapeHtml(row.manobra)}</td>
-                        <td><strong>${row.lrPos.toFixed(1)}</strong></td>
-                        <td>${row.lrNeg.toFixed(2)}</td>
-                        <td>${escapeHtml(row.nota)}</td>
-                      </tr>`
-                  )
-                  .join('')}
-              </tbody>
+              <tbody id="lrTableBody">${renderLrRowsHtml(lrFilter)}</tbody>
             </table>
           </div>
         </div>
       `;
 
       const updateBayesBox = () => {
-        const b = calcPostTestProbability(bayesPrePct, bayesLr);
         const box = body.querySelector('#bayesOutBox');
-        if (box) box.innerHTML = `<strong>Pós-teste estimada: ${b.postPct}%</strong> (${escapeHtml(b.interpretacao)})`;
+        if (!box) return;
+        try {
+          const b = calcPostTestProbability(bayesPrePct, bayesLr);
+          box.innerHTML = `<strong>Pós-teste estimada: ${b.postPct}%</strong> (${escapeHtml(b.interpretacao)})`;
+        } catch (err) {
+          box.innerHTML = `<strong>⚠️ ${escapeHtml((err as Error).message)}</strong>`;
+        }
       };
 
       body.querySelector<HTMLInputElement>('#inpBayesPre')?.addEventListener('input', (e) => {
-        bayesPrePct = Number((e.target as HTMLInputElement).value) || 30;
+        const raw = (e.target as HTMLInputElement).value.trim();
+        bayesPrePct = raw === '' ? Number.NaN : Number(raw);
         updateBayesBox();
       });
       body.querySelector<HTMLInputElement>('#inpBayesLr')?.addEventListener('input', (e) => {
-        bayesLr = Number((e.target as HTMLInputElement).value) || 1;
+        const raw = (e.target as HTMLInputElement).value.trim();
+        bayesLr = raw === '' ? Number.NaN : Number(raw);
         updateBayesBox();
       });
+
+      const tbodyEl = body.querySelector<HTMLElement>('#lrTableBody');
       body.querySelector<HTMLInputElement>('#inpFilterLr')?.addEventListener('input', (e) => {
         lrFilter = (e.target as HTMLInputElement).value;
-        render(container);
+        if (tbodyEl) {
+          tbodyEl.innerHTML = renderLrRowsHtml(lrFilter);
+        }
       });
-      body.querySelectorAll<HTMLTableRowElement>('[data-lr-pick]').forEach((tr) => {
-        tr.addEventListener('click', () => {
-          bayesLr = Number(tr.dataset.lrPick) || 1;
-          const lrInp = body.querySelector<HTMLInputElement>('#inpBayesLr');
-          if (lrInp) lrInp.value = String(bayesLr);
-          updateBayesBox();
-        });
+
+      tbodyEl?.addEventListener('click', (e) => {
+        const tr = (e.target as HTMLElement).closest<HTMLTableRowElement>('[data-lr-pick]');
+        if (!tr) return;
+        bayesLr = Number(tr.dataset.lrPick) || 1;
+        const lrInp = body.querySelector<HTMLInputElement>('#inpBayesLr');
+        if (lrInp) lrInp.value = String(bayesLr);
+        updateBayesBox();
       });
     } else if (activeSub === 'exames') {
       const cfg = EXAM_CHECKLISTS[activeExamTab];
-      const canInsert = uiBridge.hasActivePep();
       body.innerHTML = `
         <div class="mq-card" style="display:flex; flex-direction:column; gap:12px;">
           <div class="hab-detail-head">
@@ -243,7 +243,7 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
             </div>
             <div class="mq-btn-row">
               <button type="button" class="btn btn-secondary btn-xs" id="examCopyReportBtn">📋 Copiar Laudo</button>
-              <button type="button" class="btn btn-primary btn-xs" id="examInsertReportBtn" ${canInsert ? '' : 'disabled'}>📥 Inserir no PEP</button>
+              <button type="button" class="btn btn-primary btn-xs" id="examInsertReportBtn">📥 Inserir no PEP</button>
             </div>
           </div>
 
@@ -281,14 +281,13 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
         void copyToClipboard(buildReport(), cfg.title);
       });
       body.querySelector('#examInsertReportBtn')?.addEventListener('click', () => {
-        if (uiBridge.insertTextIntoActivePep(buildReport())) {
+        if (uiBridge.hasActivePep() && uiBridge.insertTextIntoActivePep(buildReport())) {
           showToast('📥 Laudo sistemático inserido no PEP.', 'success');
         } else {
           showToast('Abra um protocolo PEP primeiro.', 'warning');
         }
       });
     } else if (activeSub === 'raciocinio') {
-      const canInsert = uiBridge.hasActivePep();
       body.innerHTML = `
         <div class="mq-card" style="display:flex; flex-direction:column; gap:12px;">
           <div class="hab-detail-head">
@@ -298,7 +297,7 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
             </div>
             <div class="mq-btn-row">
               <button type="button" class="btn btn-secondary btn-xs" id="rcCopyBtn">📋 Copiar Síntese</button>
-              <button type="button" class="btn btn-primary btn-xs" id="rcInsertBtn" ${canInsert ? '' : 'disabled'}>📥 Inserir no PEP</button>
+              <button type="button" class="btn btn-primary btn-xs" id="rcInsertBtn">📥 Inserir no PEP</button>
               <button type="button" class="btn btn-ghost btn-xs" id="rcSaveLogbookBtn">🎯 Salvar Ponto Cego</button>
             </div>
           </div>
@@ -330,22 +329,26 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
 
       body.querySelector('#rcCopyBtn')?.addEventListener('click', () => void copyToClipboard(buildSummary(), 'Raciocínio Clínico'));
       body.querySelector('#rcInsertBtn')?.addEventListener('click', () => {
-        if (uiBridge.insertTextIntoActivePep(buildSummary())) showToast('📥 Inserido no PEP.', 'success');
+        if (uiBridge.hasActivePep() && uiBridge.insertTextIntoActivePep(buildSummary())) {
+          showToast('📥 Inserido no PEP.', 'success');
+        } else {
+          showToast('Abra um protocolo PEP primeiro.', 'warning');
+        }
       });
-      body.querySelector('#rcSaveLogbookBtn')?.addEventListener('click', () => {
+      body.querySelector('#rcSaveLogbookBtn')?.addEventListener('click', async () => {
         const txt = buildSummary();
         if (!txt) {
           showToast('Preencha ao menos um campo antes de salvar.', 'warning');
           return;
         }
-        const safe = guardPiiBeforeSave(txt, 'Caderno de Raciocínio');
+        const safe = await guardPiiBeforeSave(txt, 'Caderno de Raciocínio');
         if (safe === null) return;
         updateCentral6AnoState((prev) => ({
           ...prev,
           logbookEntries: [
             {
               id: `lb-${Date.now()}`,
-              dateIso: new Date().toISOString().slice(0, 10),
+              dateIso: getLocalTodayIso(),
               rodizio: prev.rodizioId,
               tipo: 'ponto_cego',
               titulo: 'Revisão de Raciocínio Clínico',
@@ -399,6 +402,7 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
           render(container);
           return;
         }
+        stopStageTimer();
         stageRunning = true;
         stageTimerId = setInterval(() => {
           if (stageSecLeft <= 1) {
@@ -406,12 +410,16 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
             stageSecLeft = 0;
             playWebAudioChime();
             showToast('⏱️ 90 segundos concluídos!', 'success');
-            render(container);
+            if (container.isConnected && document.body.dataset.activeSection === 'ferramentas' && activeSub === 'oratoria') {
+              render(container);
+            }
             return;
           }
           stageSecLeft -= 1;
           const clk = document.getElementById('oratoriaClock');
-          if (clk) clk.textContent = `${String(Math.floor(stageSecLeft / 60)).padStart(2, '0')}:${String(stageSecLeft % 60).padStart(2, '0')}`;
+          if (clk) {
+            clk.textContent = `${String(Math.floor(stageSecLeft / 60)).padStart(2, '0')}:${String(stageSecLeft % 60).padStart(2, '0')}`;
+          }
         }, 1000);
         render(container);
       });
@@ -445,7 +453,7 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
           <div class="mq-eyebrow">CHECKLIST ANTI-IATROGENIA DO PACIENTE ATUAL</div>
           <h3 style="font-size:1.06rem; font-weight:700;">🛡️ As 7 Travas de Segurança Clínica (A-R-G-I-V-P-O)</h3>
           <div class="guia-travas-list">
-            ${SETE_TRAVAS_DATA.map(
+            ${SETE_TRAVAS_SEGURANCA.map(
               (t) => `
                 <label class="guia-trava-item">
                   <input type="checkbox" data-trava-check="${t.id}" ${checked[t.id] ? 'checked' : ''} />
@@ -480,5 +488,5 @@ export function initFerramentas(): (container: HTMLElement, subTab?: string) => 
     }
   };
 
-  return render;
+  return { render, cleanup: stopStageTimer };
 }

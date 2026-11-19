@@ -19,8 +19,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
   {
     "name": "Aciclovir 200 mg",
     "norm": "aciclovir 200 mg",
-    "hslId": 9,
-    "hslFarmaco": "ACICLOVIR (Tópico)"
+    "hslId": 8,
+    "hslFarmaco": "ACICLOVIR"
   },
   {
     "name": "Adenosina 3 mg/mL ap. 2 mL",
@@ -731,14 +731,14 @@ export const REMUME_ITEMS: RemumeItem[] = [
   {
     "name": "Hidrocortisona 100 mg fr.",
     "norm": "hidrocortisona 100 mg fr.",
-    "hslId": 272,
-    "hslFarmaco": "HIDROCORTISONA (tópico)"
+    "hslId": 271,
+    "hslFarmaco": "HIDROCORTISONA"
   },
   {
     "name": "Hidrocortisona 500 mg fr.",
     "norm": "hidrocortisona 500 mg fr.",
-    "hslId": 272,
-    "hslFarmaco": "HIDROCORTISONA (tópico)"
+    "hslId": 271,
+    "hslFarmaco": "HIDROCORTISONA"
   },
   {
     "name": "Hioscina + dipirona 4 mg + 500 mg",
@@ -1017,8 +1017,8 @@ export const REMUME_ITEMS: RemumeItem[] = [
   {
     "name": "Nistatina 100.000 UI/mL",
     "norm": "nistatina 100.000 ui/ml",
-    "hslId": 460,
-    "hslFarmaco": "NISTATINA (Tópico)"
+    "hslId": 459,
+    "hslFarmaco": "NISTATINA"
   },
   {
     "name": "Nistatina 25.000 UI/g tb.",

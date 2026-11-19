@@ -6,12 +6,6 @@ import { initPwaPrompt } from './ui/pwaPrompt.ts';
 import { initSidebar } from './ui/sidebar.ts';
 import { initProtocolList, renderProtocolList } from './ui/protocolList.ts';
 import { initPepDrawer } from './ui/pepDrawer.ts';
-import { initPrePorta } from './ui/prePorta.ts';
-import { initFerramentas } from './ui/ferramentas.ts';
-import { initHoje } from './ui/hoje.ts';
-import { initTeoria } from './ui/teoria.ts';
-import { initLogbook } from './ui/logbook.ts';
-import { initConfig } from './ui/config.ts';
 import { initCmdPalette } from './ui/cmdPalette.ts';
 import { initRemumeCalcModal } from './ui/remumeCalcModal.ts';
 import { initMobileBar } from './ui/mobileBar.ts';
@@ -19,11 +13,24 @@ import { showToast } from './ui/utils.ts';
 
 const DEFAULT_SIDEBAR_W = 232;
 const DEFAULT_LIST_W = 460;
-const SIDEBAR_COLLAPSED_KEY = 'mq_sidebar_collapsed_v1';
-const START_SECTION_KEY = 'mq_default_start_section_v1';
 
 let isZenMode = false;
 let isSidebarCollapsed = false;
+
+interface WorkspaceController {
+  render: (container: HTMLElement, param?: string) => void;
+  cleanup?: () => void;
+}
+
+const sectionControllers = new Map<Exclude<AppSection, 'pep'>, WorkspaceController>();
+let activeCleanup: (() => void) | null = null;
+let workspaceRenderSeq = 0;
+let pendingLogbookPrefill: string | null = null;
+
+function setMobileSidebarOpen(open: boolean): void {
+  document.getElementById('wsSidebar')?.classList.toggle('mobile-open', open);
+  document.getElementById('wsSidebarBackdrop')?.classList.toggle('open', open);
+}
 
 function clampSidebarWidth(val?: number): number {
   const n = Number(val);
@@ -116,21 +123,25 @@ function toggleZenMode(forceZen?: boolean): void {
   window.dispatchEvent(new CustomEvent('mq:shell-state-changed'));
 }
 
-function toggleSidebarCollapse(forceCollapsed?: boolean): void {
-  isSidebarCollapsed = typeof forceCollapsed === 'boolean' ? forceCollapsed : !isSidebarCollapsed;
+function applySidebarCollapsedUi(collapsed: boolean): void {
+  isSidebarCollapsed = collapsed;
   document.body.classList.toggle('sidebar-collapsed', isSidebarCollapsed);
   const btnCol = document.getElementById('btnCollapseSidebar');
   if (btnCol) {
     btnCol.textContent = isSidebarCollapsed ? '⇥' : '⇤';
     btnCol.classList.toggle('active', isSidebarCollapsed);
   }
-  try {
-    localStorage.setItem(SIDEBAR_COLLAPSED_KEY, isSidebarCollapsed ? '1' : '0');
-  } catch {
-    // Ignore storage error
-  }
+}
+
+function toggleSidebarCollapse(forceCollapsed?: boolean): void {
+  const next = typeof forceCollapsed === 'boolean' ? forceCollapsed : !isSidebarCollapsed;
+  applySidebarCollapsedUi(next);
+  cockpitStore.setSidebarCollapsed(next);
   window.dispatchEvent(new CustomEvent('mq:shell-state-changed'));
 }
+
+let lastAppliedTheme: 'dark' | 'light' | null = null;
+let lastCartCount = -1;
 
 function applyTheme(theme: 'dark' | 'light'): void {
   const isLight = theme === 'light';
@@ -150,31 +161,82 @@ function applyTheme(theme: 'dark' | 'light'): void {
 
 function syncTopbarControls(): void {
   const state = cockpitStore.getState();
-  applyTheme(state.theme);
-
-  const badge = document.getElementById('cartItemCountBadge');
-  const count = state.prescriptionCart.length;
-  if (badge) {
-    badge.textContent = String(count);
-    badge.style.display = count > 0 ? 'inline-block' : 'none';
+  if (state.theme !== lastAppliedTheme) {
+    lastAppliedTheme = state.theme;
+    applyTheme(state.theme);
   }
-  const tabCartBadge = document.getElementById('tabCartBadge');
-  if (tabCartBadge) {
-    tabCartBadge.textContent = `(${count})`;
+
+  const count = state.prescriptionCart.length;
+  if (count !== lastCartCount) {
+    lastCartCount = count;
+    const badge = document.getElementById('cartItemCountBadge');
+    if (badge) {
+      badge.textContent = String(count);
+      badge.style.display = count > 0 ? 'inline-block' : 'none';
+    }
+    const tabCartBadge = document.getElementById('tabCartBadge');
+    if (tabCartBadge) {
+      tabCartBadge.textContent = `(${count})`;
+    }
   }
 }
 
-let renderPrePortaFn: (c: HTMLElement, itemId?: string) => void = () => {};
-let renderFerramentasFn: (c: HTMLElement, subTab?: string) => void = () => {};
-let renderHojeFn: (c: HTMLElement) => void = () => {};
-let renderTeoriaFn: (c: HTMLElement, subTab?: string) => void = () => {};
-let renderLogbookFn: (c: HTMLElement) => void = () => {};
-let renderConfigFn: (c: HTMLElement) => void = () => {};
+async function loadSectionController(section: Exclude<AppSection, 'pep'>): Promise<WorkspaceController> {
+  const cached = sectionControllers.get(section);
+  if (cached) return cached;
+
+  let controller: WorkspaceController;
+  switch (section) {
+    case 'preporta': {
+      const mod = await import('./ui/prePorta.ts');
+      controller = mod.initPrePorta();
+      break;
+    }
+    case 'ferramentas': {
+      const mod = await import('./ui/ferramentas.ts');
+      controller = mod.initFerramentas();
+      break;
+    }
+    case 'hoje': {
+      const mod = await import('./ui/hoje.ts');
+      controller = mod.initHoje();
+      break;
+    }
+    case 'teoria': {
+      const mod = await import('./ui/teoria.ts');
+      controller = mod.initTeoria();
+      break;
+    }
+    case 'logbook': {
+      const mod = await import('./ui/logbook.ts');
+      controller = mod.initLogbook();
+      break;
+    }
+    case 'config': {
+      const mod = await import('./ui/config.ts');
+      controller = mod.initConfig();
+      break;
+    }
+    default: {
+      const _exhaustive: never = section;
+      throw new Error(`Seção de rota não tratada: ${String(_exhaustive)}`);
+    }
+  }
+
+  sectionControllers.set(section, controller);
+  return controller;
+}
 
 function renderActiveWorkspace(): void {
   const route = getCurrentRoute();
   const ws = document.getElementById('appSectionWorkspace');
   const subnav = document.getElementById('wsPepSubnavSection');
+  const seq = ++workspaceRenderSeq;
+
+  if (activeCleanup) {
+    activeCleanup();
+    activeCleanup = null;
+  }
 
   document.body.dataset.activeSection = route.section;
 
@@ -204,26 +266,38 @@ function renderActiveWorkspace(): void {
   uiBridge.closePepDrawer();
   if (!ws) return;
 
-  switch (route.section) {
-    case 'preporta':
-      renderPrePortaFn(ws, route.itemId);
-      break;
-    case 'ferramentas':
-      renderFerramentasFn(ws, route.subTab);
-      break;
-    case 'hoje':
-      renderHojeFn(ws);
-      break;
-    case 'teoria':
-      renderTeoriaFn(ws, route.subTab);
-      break;
-    case 'logbook':
-      renderLogbookFn(ws);
-      break;
-    case 'config':
-      renderConfigFn(ws);
-      break;
+  const section = route.section;
+  const param =
+    section === 'preporta'
+      ? route.itemId
+      : section === 'ferramentas' || section === 'teoria'
+        ? route.subTab
+        : section === 'logbook' && pendingLogbookPrefill !== null
+          ? pendingLogbookPrefill
+          : undefined;
+
+  if (section === 'logbook') {
+    pendingLogbookPrefill = null;
   }
+
+  const cached = sectionControllers.get(section);
+  if (cached) {
+    activeCleanup = cached.cleanup ?? null;
+    cached.render(ws, param);
+    return;
+  }
+
+  ws.innerHTML = '<div class="mq-empty-state"><p>Carregando módulo clínico...</p></div>';
+  void loadSectionController(section)
+    .then((controller) => {
+      if (seq !== workspaceRenderSeq) return;
+      activeCleanup = controller.cleanup ?? null;
+      controller.render(ws, param);
+    })
+    .catch(() => {
+      if (seq !== workspaceRenderSeq) return;
+      ws.innerHTML = '<div class="mq-empty-state"><p>Não foi possível carregar esta seção offline. Recarregue a página.</p></div>';
+    });
 }
 
 function initShortcutsModal(): void {
@@ -286,7 +360,7 @@ function setupGlobalShortcuts(): void {
       uiBridge.closeShortcutsModal();
       if (window.innerWidth < 1024) {
         uiBridge.closePepDrawer();
-        document.getElementById('wsSidebar')?.classList.remove('mobile-open');
+        setMobileSidebarOpen(false);
       }
       return;
     }
@@ -313,16 +387,24 @@ function bootstrap(): void {
   uiBridge.navigate = (section: AppSection, params) => {
     navigateTo(section, params);
   };
+  uiBridge.selectPrePortaCard = (habId: string) => {
+    navigateTo('preporta', { itemId: habId });
+  };
+  uiBridge.selectTeoriaModule = (modId: string) => {
+    navigateTo('teoria', { subTab: modId });
+  };
+  uiBridge.openLogbookNewCase = (prefill?: string) => {
+    pendingLogbookPrefill = prefill ?? '';
+    if (getCurrentRoute().section === 'logbook') {
+      renderActiveWorkspace();
+    } else {
+      navigateTo('logbook');
+    }
+  };
 
   initSidebar();
   initProtocolList();
   initPepDrawer();
-  renderPrePortaFn = initPrePorta();
-  renderFerramentasFn = initFerramentas();
-  renderHojeFn = initHoje();
-  renderTeoriaFn = initTeoria();
-  renderLogbookFn = initLogbook();
-  renderConfigFn = initConfig();
   initCmdPalette();
   initRemumeCalcModal();
   initShortcutsModal();
@@ -331,25 +413,24 @@ function bootstrap(): void {
   setupGlobalShortcuts();
   initPwaPrompt();
 
-  try {
-    if (localStorage.getItem(SIDEBAR_COLLAPSED_KEY) === '1') {
-      toggleSidebarCollapse(true);
-    }
-    if (!window.location.hash) {
-      const startPref = localStorage.getItem(START_SECTION_KEY);
-      if (startPref === 'hoje') {
-        navigateTo('hoje');
-      }
-    }
-  } catch {
-    // Ignore storage access errors
+  const initialState = cockpitStore.getState();
+  if (initialState.sidebarCollapsed) {
+    applySidebarCollapsedUi(true);
+  }
+  if (!window.location.hash && initialState.startSection === 'hoje') {
+    navigateTo('hoje');
   }
 
   document.getElementById('topbarSearchBtn')?.addEventListener('click', () => uiBridge.openCmdPalette());
   document.getElementById('mobileTopSearchBtn')?.addEventListener('click', () => uiBridge.openCmdPalette());
 
   document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
-    document.getElementById('wsSidebar')?.classList.toggle('mobile-open');
+    const sidebar = document.getElementById('wsSidebar');
+    const willOpen = !sidebar?.classList.contains('mobile-open');
+    setMobileSidebarOpen(willOpen);
+  });
+  document.getElementById('wsSidebarBackdrop')?.addEventListener('click', () => {
+    setMobileSidebarOpen(false);
   });
 
   document.getElementById('btnNovoPaciente')?.addEventListener('click', handleNovoPacienteAction);
