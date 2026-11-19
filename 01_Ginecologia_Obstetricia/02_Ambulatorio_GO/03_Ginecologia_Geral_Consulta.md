@@ -69,8 +69,7 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Raciocínio Diagnóstico das Vulvovaginites (Por Que o pH e o KOH Decidem?)**
+### 🧠 1. Raciocínio Diagnóstico das Vulvovaginites (Por Que o pH e o KOH Decidem?)
 - O ecossistema vaginal normal no menacme é dominado pelos **Lactobacilos de Döderlein**, que convertem o glicogênio epitelial (estimulado pelo estrogênio) em **ácido lático** e peróxido de hidrogênio, mantendo o **pH vaginal ácido entre `3,8 e 4,5`**.
 - Quando você examina o corrimento no espéculo, a combinação de **aspecto + pH + Teste das Aminas (Whiff test com KOH 10%)** separa imediatamente as 3 etiologias:
 
@@ -80,18 +79,11 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 | **Candidíase Vulvovaginal** (*Candida albicans*) | **`< 4,5` (Normal!)** | **Negativo** | O fungo prolifera sem destruir os lactobacilos (por isso o pH continua ácido `< 4,5`!) e desencadeia intensa reação inflamatória mucosa (prurido intenso, ardor, dispareunia e placas brancas grumosas aderidas). Tratada com **Azólico tópico (Miconazol 7n) ou Fluconazol 150 mg VO dose única**. |
 | **Tricomoníase** (*Trichomonas vaginalis*) | **`> 5,0`** | **Positivo ou Fraco** | Protozoário flagelado **sexualmente transmissível** que lesa diretamente o epitélio escamoso, criando microulcerações subepiteliais (**Colo em Framboesa / "Pele de Onça" no Schiller**) e corrimento amarelo-esverdeado bolhoso. **Obriga tratar o parceiro sexual** (Metronidazol 2g DU ou 500mg 12/12h 7d) e solicitar sorologias de ISTs! |
 
-**🩺 3. Por Que Usamos o Sistema PALM-COEIN no Sangramento Uterino Anormal (SUA)?**
+### 🩺 3. Por Que Usamos o Sistema PALM-COEIN no Sangramento Uterino Anormal (SUA)?
 - A FIGO dividiu o SUA em dois blocos mnemônicos que guiam exatamente qual exame pedir:
   - **Causas Estruturais (`P-A-L-M`: Pólipo, Adenomiose, Leiomioma, Malignidade/Hiperplasia):** Diagnosticadas por **USG Transvaginal / Histeroscopia**. Atenção: toda paciente **> 45 anos com SUA** ou com **sangramento pós-menopausa + espessura endometrial > 4 mm (sem TRH)** exige **biópsia endometrial / histeroscopia** para excluir hiperplasia atípica e adenocarcinoma de endométrio!
   - **Causas Não-Estruturais (`C-O-E-I-N`: Coagulopatia, Ovulatória/SOP, Endometrial, Iatrogênica, Não classificada):** Diagnosticadas pela história clínica, TSH, Prolactina, Coagulograma e exclusão de gravidez (β-hCG).
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 2. Por Que o Rastreamento de Colo Uterino (INCA/MS) Segue a Regra 25–64 Anos (1-1-3)?**
+### 🧭 2. Por Que o Rastreamento de Colo Uterino (INCA/MS) Segue a Regra 25–64 Anos (1-1-3)?
 - **Por que NÃO coletamos Papanicolaou antes dos 25 anos?** Em adolescentes e jovens `< 25 anos`, a incidência de infecção pelo HPV é altíssima, mas **> 85–90% das lesões de baixo grau (LSIL/NIC I) regridem espontaneamente** pela imunidade celular em 12 a 24 meses. Rastrear antes dos 25 anos leva a cauterizações e conizações desnecessárias que destroem o estroma cervical e causam **Incompetência Istmocervical e Parto Prematuro** no futuro!
 - **Por que o intervalo passa para 3 anos após 2 exames anuais normais?** Um único esfregaço citológico tem sensibilidade de `~60–70%`; dois exames anuais consecutivos negativos reduzem a chance de falso-negativo a quase zero, e como a história natural de evolução de NIC II/III para câncer invasor leva **10 a 15 anos**, o intervalo trienal é 100% seguro até os 64 anos.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

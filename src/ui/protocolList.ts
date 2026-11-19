@@ -1,8 +1,24 @@
 import type { ClinicalProtocolItem } from '../data/clinical_data.ts';
+import { resolvePowerActionText } from '../engine/personalizar.ts';
 import { getClinicalSeverity } from '../engine/workstation.ts';
 import { searchClinicalProtocols } from '../engine/search.ts';
 import { ALL_PROTOCOLS, GLOBAL_SEARCH_INDEX, PEP_PROTOCOLS, PROTOCOL_BY_ID, uiBridge } from './context.ts';
-import { escapeHtml } from './utils.ts';
+import { copyToClipboard, escapeHtml } from './utils.ts';
+
+const SVG_COPY_ICON =
+  '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+
+function buildCardPreviewText(item: ClinicalProtocolItem): string {
+  const raw = String(item.pep_body || item.pre_porta || '')
+    .replace(/\*\*([^*\n]+)\*\*/g, '$1')
+    .replace(/^#+\s*/gm, '')
+    .replace(/^>>\s*/gm, '');
+  const lines = raw
+    .split('\n')
+    .map((l) => l.trim())
+    .filter(Boolean);
+  return lines.slice(0, 2).join(' · ').slice(0, 140);
+}
 
 let currentModFilter = 'all';
 let currentSubcat = 'all';
@@ -121,6 +137,8 @@ export function renderProtocolList(): void {
       const modLabel = getModShortLabel(item.mod_id);
       const hasSplit = Boolean(item.has_split);
       const hasGuia = Boolean(item.has_guia);
+      const hasReceita = Boolean(item.has_receita || item.receita_body?.trim());
+      const previewText = buildCardPreviewText(item);
 
       return `
         <article
@@ -143,12 +161,20 @@ export function renderProtocolList(): void {
 
           <div class="card-body-block">
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
-            ${item.anchor ? `<p class="hab-card-anchor">${escapeHtml(item.anchor)}</p>` : ''}
+            ${item.anchor ? `<p class="hab-card-anchor">${escapeHtml(item.anchor)}</p>` : `<p class="card-preview-text">${escapeHtml(previewText)}</p>`}
           </div>
 
           <div class="card-footer">
-            <code class="card-trigger">${escapeHtml(item.trigger)}</code>
             <div class="btn-group">
+              <button type="button" class="btn btn-primary" data-quick-copy="1" data-copy-id="${escapeHtml(item.id)}" title="Copiar evolução e conduta completas">
+                ${SVG_COPY_ICON}
+                <span>Copiar Tudo</span>
+              </button>
+              ${hasSplit ? `<button type="button" class="btn btn-subtle" data-quick-copy="3" data-copy-id="${escapeHtml(item.id)}" title="Copiar apenas Conduta / Prescrição imediata">Conduta</button>` : ''}
+              ${hasReceita ? `<button type="button" class="btn btn-subtle" data-quick-copy="4" data-copy-id="${escapeHtml(item.id)}" title="Copiar apenas Receita estruturada">Receita</button>` : ''}
+            </div>
+            <div class="btn-group">
+              <code class="card-trigger">${escapeHtml(item.trigger)}</code>
               ${item.cid10 ? `<span class="card-cid-badge">${escapeHtml(item.cid10)}</span>` : ''}
               ${matched ? `<span class="card-symptom-match-badge">🎯 ${escapeHtml(matched)}</span>` : ''}
             </div>
@@ -192,7 +218,23 @@ export function initProtocolList(): void {
   const subcatEl = document.getElementById('subcatContainer');
 
   grid?.addEventListener('click', (e) => {
-    const card = (e.target as HTMLElement).closest<HTMLElement>('.card[data-protocol-id]');
+    const targetEl = e.target as HTMLElement;
+    const quickCopyBtn = targetEl.closest<HTMLButtonElement>('[data-quick-copy]');
+    if (quickCopyBtn) {
+      e.stopPropagation();
+      const copyId = quickCopyBtn.dataset.copyId;
+      const slot = Number(quickCopyBtn.dataset.quickCopy) as 1 | 3 | 4;
+      const item = copyId ? PROTOCOL_BY_ID.get(copyId) : undefined;
+      if (item) {
+        const res = resolvePowerActionText(slot, item.pep_body || '', item);
+        void copyToClipboard(res.text, `${res.label} (${item.title})`);
+        quickCopyBtn.classList.add('btn-copied-emerald');
+        setTimeout(() => quickCopyBtn.classList.remove('btn-copied-emerald'), 1100);
+      }
+      return;
+    }
+
+    const card = targetEl.closest<HTMLElement>('.card[data-protocol-id]');
     if (!card) return;
     const id = card.dataset.protocolId;
     if (id && PROTOCOL_BY_ID.has(id)) {

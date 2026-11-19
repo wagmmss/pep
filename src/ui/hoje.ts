@@ -3,10 +3,13 @@ import {
   buildDailyTimeline,
   closeWeekly7030Snapshot,
   computeWeekly7030Summary,
+  CURRICULO_ITEMS_DATA,
   FERIAS_SEMANAS,
+  HOJE_DEEP_LINKS_MAP,
   MARCHAS_6ANO,
   resolveCalendarContextForDate,
   resolveContextWithSchedule,
+  RITUAL_DOMINGO_DATA,
   RODIZIOS_6ANO,
   ROTA_DIAS_SEMANA,
   TIMER_PRESETS,
@@ -14,7 +17,7 @@ import {
   type MarchaId,
   type TimerPresetId,
 } from '../engine/central6ano.ts';
-import { getCentral6AnoState, uiBridge, updateCentral6AnoState } from './context.ts';
+import { getCentral6AnoState, PROTOCOL_BY_ID, PROTOCOL_BY_TRIGGER, uiBridge, updateCentral6AnoState } from './context.ts';
 import { copyToClipboard, escapeHtml, playWebAudioChime, showToast } from './utils.ts';
 
 function getTodayIso(): string {
@@ -121,6 +124,17 @@ export function initHoje(): (container: HTMLElement) => void {
 
     const scheduleList = state.shiftSchedule || [];
     const ankiTodayDone = Boolean(state.ankiDoneByDate?.[todayIso]);
+    const mapKey = state.rodizioId === 'ferias' ? `ferias:${state.feriasSemana}` : state.rodizioId;
+    const quickLinks = HOJE_DEEP_LINKS_MAP[mapKey] || HOJE_DEEP_LINKS_MAP[state.rodizioId] || [];
+
+    const nowMs = Date.now();
+    const diffCurrDays = Math.max(0, Math.ceil((new Date('2027-06-30T23:59:59').getTime() - nowMs) / 86400000));
+    const diffCicloDays = Math.max(0, Math.ceil((new Date('2027-08-31T23:59:59').getTime() - nowMs) / 86400000));
+    const currDoneMap = state.curriculoDoneIds || {};
+    const currDoneCount = CURRICULO_ITEMS_DATA.filter((c) => Boolean(currDoneMap[c.id])).length;
+    const currPct = Math.round((currDoneCount / CURRICULO_ITEMS_DATA.length) * 100);
+    const ritualMap = state.ritualDomingoDoneIds || {};
+    let focusAssigned = false;
 
     container.innerHTML = `
       <section class="mq-section-pane active">
@@ -149,6 +163,20 @@ export function initHoje(): (container: HTMLElement) => void {
               ).join('')}
             </select>
           </div>
+
+          ${
+            state.rodizioId === 'ferias'
+              ? `<div class="mq-control-group" id="grpHojeFeriasSem">
+                   <label class="mq-control-label" for="hojeFeriasSemSel">1B. Semana das Férias (Seg–Sex · 4h/dia)</label>
+                   <select id="hojeFeriasSemSel" class="mq-select">
+                     ${FERIAS_SEMANAS.map(
+                       (fs) =>
+                         `<option value="${escapeHtml(fs.id)}" ${state.feriasSemana === fs.id ? 'selected' : ''}>${escapeHtml(fs.label)}</option>`
+                     ).join('')}
+                   </select>
+                 </div>`
+              : ''
+          }
 
           <div class="mq-control-group">
             <label class="mq-control-label" for="hojeMarchaSel">2. Marcha da Semana (Anti-Culpa)</label>
@@ -192,7 +220,7 @@ export function initHoje(): (container: HTMLElement) => void {
           <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:12px;">
             <div>
               <div class="mq-eyebrow">PLANO DE HOJE · ${escapeHtml(rodizio.nome.toUpperCase())}</div>
-              <h3 style="font-size:1.2rem; font-weight:700;">Roteiro Acionável do Dia (${escapeHtml(rotaDia.nome)})</h3>
+              <h3 style="font-size:1.2rem; font-weight:700;">${state.rodizioId === 'ferias' && feriasSem ? escapeHtml(feriasSem.label) : `Roteiro Acionável do Dia (${escapeHtml(rotaDia.nome)})`}</h3>
               <p class="mq-hint">${escapeHtml(marcha.resumo)}${cal.fromSchedule ? ' · Plantão da escala ativo hoje' : ''}</p>
             </div>
             <div class="mq-btn-row">
@@ -201,7 +229,9 @@ export function initHoje(): (container: HTMLElement) => void {
                 <input type="checkbox" id="hojeAnkiDailyChk" ${ankiTodayDone ? 'checked' : ''} />
                 <span>🧠 Anki Hoje</span>
               </label>
-              <button type="button" class="btn btn-primary btn-xs" id="hojeCompleteDayBtn">✅ Concluir Dia (+1 Streak)</button>
+              <button type="button" class="btn btn-primary btn-xs" id="hojeCompleteDayBtn">
+                ${state.ultimoDiaConcluidoIso === todayIso ? '✅ Dia Computado Hoje' : '✅ Concluir Dia (+1 Streak)'}
+              </button>
             </div>
           </div>
 
@@ -239,8 +269,9 @@ export function initHoje(): (container: HTMLElement) => void {
               <div class="mq-hint" style="margin-top:4px;"><strong>${escapeHtml(rotaDia.pilarTitulo)}</strong></div>
             </div>
             <div class="mq-context-box">
-              <div class="mq-stat-label">🧪 Micro-Dose Exames (25 min)</div>
+              <div class="mq-stat-label">🧪 Micro-Dose Exames (25 min) &amp; Procedimentos</div>
               <div class="mq-hint">${escapeHtml(rotaDia.exame25m)}</div>
+              <div class="mq-hint" style="margin-top:4px;"><strong>Alvos do estágio:</strong> ${escapeHtml(rodizio.procedimentosAlvo.join(' · '))}</div>
               <div class="mq-quick-chips" style="margin-top:8px;">
                 <button type="button" class="mq-quick-chip" id="hojeQuickTeoriaBtn">📖 Abrir ${escapeHtml(rotaDia.moduloRef)}</button>
                 <button type="button" class="mq-quick-chip" id="hojeQuickToolBtn">🧪 Abrir Ferramenta</button>
@@ -248,23 +279,39 @@ export function initHoje(): (container: HTMLElement) => void {
             </div>
           </div>
 
+          <!-- Faixa Deep-Links do Estágio/Semana -->
+          <div class="mq-quick-chips" id="hojeDeepLinksStrip" style="padding:4px 0;">
+            <span class="mq-stat-label" style="margin-right:4px;">⚡ Foco Prático Hoje:</span>
+            ${quickLinks
+              .map(
+                (ql) =>
+                  `<button type="button" class="mq-quick-chip" data-hoje-deeplink="${escapeHtml(ql.id)}">${escapeHtml(ql.label)}</button>`
+              )
+              .join('')}
+          </div>
+
           <!-- Checklist da Linha do Tempo do Dia -->
           <div class="hoje-timeline-list mq-timeline-list">
             ${timeline
               .map((step) => {
                 const isChecked = Boolean(dayChecks[step.id]);
+                const isCurrentFocus = !isChecked && !focusAssigned;
+                if (isCurrentFocus) focusAssigned = true;
                 return `
-                  <div class="mq-timeline-item${isChecked ? ' is-done' : ''}">
+                  <div class="mq-timeline-item${isChecked ? ' is-done' : ''}${isCurrentFocus ? ' is-current-focus' : ''}">
                     <input type="checkbox" class="mq-timeline-chk" data-tl-step="${escapeHtml(step.id)}" ${isChecked ? 'checked' : ''} aria-label="${escapeHtml(step.titulo)}" />
                     <div class="mq-timeline-body">
                       <div class="mq-timeline-top">
                         <span class="mq-timeline-time">${escapeHtml(step.horario)}</span>
-                        <span class="mq-timeline-tag" style="border-color:${escapeHtml(step.corCategoria)}; color:${escapeHtml(step.corCategoria)};">${escapeHtml(step.categoria)}</span>
-                        ${
-                          step.atalhoSecao && step.atalhoLabel
-                            ? `<button type="button" class="mq-quick-chip" data-tl-nav="${escapeHtml(step.atalhoSecao)}" data-tl-sub="${escapeHtml(step.atalhoTeoriaMod || step.atalhoFerramentaTab || '')}">${escapeHtml(step.atalhoLabel)} →</button>`
-                            : ''
-                        }
+                        <div class="mq-btn-row">
+                          ${isCurrentFocus ? '<span class="mq-focus-pill">▶ AGORA</span>' : ''}
+                          <span class="mq-timeline-tag" style="border-color:${escapeHtml(step.corCategoria)}; color:${escapeHtml(step.corCategoria)};">${escapeHtml(step.categoria)}</span>
+                          ${
+                            step.atalhoSecao && step.atalhoLabel
+                              ? `<button type="button" class="mq-quick-chip" data-tl-nav="${escapeHtml(step.atalhoSecao)}" data-tl-sub="${escapeHtml(step.atalhoTeoriaMod || step.atalhoFerramentaTab || '')}">${escapeHtml(step.atalhoLabel)} →</button>`
+                              : ''
+                          }
+                        </div>
                       </div>
                       <div class="mq-timeline-title">${escapeHtml(step.titulo)}</div>
                       <div class="mq-timeline-detail">${escapeHtml(step.detalhe)}</div>
@@ -283,7 +330,10 @@ export function initHoje(): (container: HTMLElement) => void {
             <div class="mq-stat-sub">Âncora 70%: <strong>${weeklySummary.pctAncora}%</strong> (${weeklySummary.questoesAncora}q) · Trilha 30%: <strong>${weeklySummary.pctTrilha}%</strong> (${weeklySummary.questoesTrilha}q)</div>
             <div class="mq-btn-row">
               <button type="button" class="mq-counter-btn" data-q-add="ancora:10">+10 Âncora</button>
+              <button type="button" class="mq-counter-btn" data-q-add="ancora:20">+20 Âncora</button>
               <button type="button" class="mq-counter-btn" data-q-add="trilha:10">+10 Trilha</button>
+              <button type="button" class="mq-counter-btn" data-q-add="trilha:20">+20 Trilha</button>
+              <button type="button" class="mq-counter-btn" id="domResetQuestionsBtn" title="Zerar contadores da semana">↺ Zerar</button>
               <button type="button" class="mq-counter-btn" id="domCloseWeekBtn">📥 Fechar Semana</button>
             </div>
             ${renderHistorySvgChart(history, weeklySummary)}
@@ -322,7 +372,7 @@ export function initHoje(): (container: HTMLElement) => void {
             <summary>
               <div>
                 <div class="mq-eyebrow">1 MICRO-HÁBITO POR SEMANA · RITUAL DE DOMINGO</div>
-                <h3 style="font-size:1.02rem; font-weight:700;">🧭 Micro-Hábito Ativo no Hospital</h3>
+                <h3 style="font-size:1.02rem; font-weight:700;">🧭 Micro-Hábito Ativo &amp; Ritual de Domingo (15m)</h3>
               </div>
               <span class="mq-collapsible-chevron">▶</span>
             </summary>
@@ -335,6 +385,17 @@ export function initHoje(): (container: HTMLElement) => void {
                 </div>
               </div>
               <div class="mq-hint">Sugestão do rodízio: <em>${escapeHtml(rodizio.microHabitoSugerido)}</em></div>
+              <div style="display:flex; flex-direction:column; gap:6px; margin-top:6px; padding-top:8px; border-top:1px dashed var(--line-subtle);">
+                <div class="mq-stat-label">📋 Checklist do Ritual de Domingo (15 min):</div>
+                ${RITUAL_DOMINGO_DATA.map((r) => {
+                  const isChecked = Boolean(ritualMap[r.id]);
+                  return `
+                    <label class="mq-check-row${isChecked ? ' is-done' : ''}">
+                      <input type="checkbox" class="mq-timeline-chk" data-ritual-chk="${escapeHtml(r.id)}" ${isChecked ? 'checked' : ''} />
+                      <span>${escapeHtml(r.text)}</span>
+                    </label>`;
+                }).join('')}
+              </div>
             </div>
           </details>
 
@@ -385,6 +446,33 @@ export function initHoje(): (container: HTMLElement) => void {
           </details>
         </div>
 
+        <!-- Auditoria Curricular R1 (10% da Nota Final) & Marcos 2027 -->
+        <details class="mq-card mq-collapsible-panel">
+          <summary>
+            <div>
+              <div class="mq-eyebrow">AUDITORIA CURRICULAR R1 (10% DA NOTA) · PRAZO TETO: 30/06/2027</div>
+              <h3 style="font-size:1.02rem; font-weight:700;">🎓 Checklist de Currículo (${currDoneCount}/${CURRICULO_ITEMS_DATA.length} · ${currPct}%) · Faltam ${diffCurrDays}d p/ 30/06 e ${diffCicloDays}d p/ fim do 1º Ciclo (31/08)</h3>
+            </div>
+            <span class="mq-collapsible-chevron">▶</span>
+          </summary>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:12px;">
+            <div class="mq-progress-bar-wrap">
+              <div class="mq-progress-bar-fill" style="width:${currPct}%;"></div>
+            </div>
+            ${CURRICULO_ITEMS_DATA.map((item) => {
+              const isChecked = Boolean(currDoneMap[item.id]);
+              return `
+                <label class="mq-check-row${isChecked ? ' is-done' : ''}">
+                  <input type="checkbox" class="mq-timeline-chk" data-curr-chk="${escapeHtml(item.id)}" ${isChecked ? 'checked' : ''} />
+                  <div>
+                    <div style="font-weight:600;">${escapeHtml(item.titulo)} <span class="mq-nav-badge" style="margin-left:4px;">${escapeHtml(item.categoria)}</span></div>
+                    <div class="mq-hint">${escapeHtml(item.detalhe)}</div>
+                  </div>
+                </label>`;
+            }).join('')}
+          </div>
+        </details>
+
         <!-- Prompts IA Contextuais -->
         <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
           <div class="mq-eyebrow">SIMULAÇÃO ATIVA &amp; PRECEPTORIA SOCRÁTICA · 1 CLIQUE</div>
@@ -396,6 +484,14 @@ export function initHoje(): (container: HTMLElement) => void {
             <button type="button" class="mq-counter-btn" data-hoje-prompt="exames">🧪 4. Micro-Dose Exames (25m)</button>
             <button type="button" class="mq-counter-btn" data-hoje-prompt="osce">🏅 5. Estação OSCE</button>
           </div>
+          <textarea
+            id="contextualPromptPreview"
+            class="pep-free-edit-textarea"
+            style="min-height:92px; font-size:0.78rem;"
+            readonly
+            aria-label="Pré-visualização do prompt contextual para IA"
+            placeholder="Clique em qualquer um dos 5 botões acima para gerar, visualizar e copiar automaticamente o prompt contextualizado..."
+          ></textarea>
         </div>
       </section>
     `;
@@ -442,6 +538,11 @@ export function initHoje(): (container: HTMLElement) => void {
       updateCentral6AnoState((prev) => ({ ...prev, rodizioId: rodId }));
       render(container);
     });
+    container.querySelector<HTMLSelectElement>('#hojeFeriasSemSel')?.addEventListener('change', (e) => {
+      const semId = (e.target as HTMLSelectElement).value;
+      updateCentral6AnoState((prev) => ({ ...prev, feriasSemana: semId }));
+      render(container);
+    });
     container.querySelector<HTMLSelectElement>('#hojeMarchaSel')?.addEventListener('change', (e) => {
       const mId = (e.target as HTMLSelectElement).value as MarchaId;
       updateCentral6AnoState((prev) => ({ ...prev, marchaId: mId }));
@@ -451,6 +552,60 @@ export function initHoje(): (container: HTMLElement) => void {
       const aId = (e.target as HTMLSelectElement).value as Central6AnoState['arquetipoId'];
       updateCentral6AnoState((prev) => ({ ...prev, arquetipoId: aId }));
       render(container);
+    });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-hoje-deeplink]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = (btn.dataset.hojeDeeplink || '').trim();
+        if (!target) return;
+        const prot = PROTOCOL_BY_ID.get(target) || PROTOCOL_BY_TRIGGER.get(target.toLowerCase());
+        if (!prot) return;
+        if (prot.mod_id === 'hab') {
+          uiBridge.navigate('preporta', { itemId: prot.id });
+          uiBridge.selectPrePortaCard(prot.id);
+        } else {
+          uiBridge.navigate('pep', { itemId: prot.id });
+          uiBridge.openPepDrawer(prot.id, 'pep');
+        }
+      });
+    });
+
+    container.querySelector('#domResetQuestionsBtn')?.addEventListener('click', () => {
+      updateCentral6AnoState((prev) => ({
+        ...prev,
+        questoesAncoraSem: 0,
+        questoesTrilhaSem: 0,
+      }));
+      showToast('Contadores semanais de questões zerados.', 'info');
+      render(container);
+    });
+
+    container.querySelectorAll<HTMLInputElement>('[data-ritual-chk]').forEach((chk) => {
+      chk.addEventListener('change', () => {
+        const rid = chk.dataset.ritualChk!;
+        updateCentral6AnoState((prev) => ({
+          ...prev,
+          ritualDomingoDoneIds: {
+            ...(prev.ritualDomingoDoneIds || {}),
+            [rid]: chk.checked,
+          },
+        }));
+        render(container);
+      });
+    });
+
+    container.querySelectorAll<HTMLInputElement>('[data-curr-chk]').forEach((chk) => {
+      chk.addEventListener('change', () => {
+        const cid = chk.dataset.currChk!;
+        updateCentral6AnoState((prev) => ({
+          ...prev,
+          curriculoDoneIds: {
+            ...(prev.curriculoDoneIds || {}),
+            [cid]: chk.checked,
+          },
+        }));
+        render(container);
+      });
     });
 
     container.querySelectorAll<HTMLButtonElement>('[data-day-pill]').forEach((btn) => {
@@ -620,6 +775,8 @@ export function initHoje(): (container: HTMLElement) => void {
       btn.addEventListener('click', () => {
         const kind = btn.dataset.hojePrompt as 'paciente' | 'oratoria' | 'raciocinio' | 'exames' | 'osce';
         const prompt = buildContextualAiPrompt(kind, getCentral6AnoState());
+        const previewEl = container.querySelector<HTMLTextAreaElement>('#contextualPromptPreview');
+        if (previewEl) previewEl.value = prompt;
         void copyToClipboard(prompt, `Prompt ${kind.toUpperCase()}`);
       });
     });

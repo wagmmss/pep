@@ -65,17 +65,7 @@ USO ORAL (RECEITA DOMICILIAR PEDIÁTRICA — ITU / PIELONEFRITE EM > 3 MESES EST
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**As 3 Regras Inegociáveis na ITU Pediátrica (SBP / AAP)**
+### As 3 Regras Inegociáveis na ITU Pediátrica (SBP / AAP)
 - **Por que nunca iniciar antibiótico baseado apenas em saco coletor positivo:** A coleta por saco coletor plástico aderido ao períneo apresenta taxa de **falso-positivo de até 85%** pela flora cutânea e fecal. Iniciar antibiótico sem urocultura confiável (cateterismo vesical ou jato médio) submete o lactente a antibioticoterapia desnecessária e exames invasivos futuros.
 - **Por que o Nitrito negativo no EAS não afasta ITU no lactente:** A conversão de nitrato dietético em nitrito pelas enterobactérias (*E. coli*) exige que a urina permaneça armazenada na bexiga por pelo menos **4 horas**; como o lactente esvazia a bexiga a cada 1–2 horas, a sensibilidade do nitrito em menores de 2 anos é de apenas 30–50% (mas sua especificidade é > 98%).
 - **Por que nunca tratar ITU Febril (Pielonefrite) com Nitrofurantoína ou Fosfomicina:** Esses antimicrobianos atingem concentração exclusivamente na luz vesical (urina), sem penetração tecidual no parênquima renal, sendo incapazes de tratar pielonefrite ou prevenir cicatriz renal.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

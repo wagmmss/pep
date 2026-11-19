@@ -249,8 +249,17 @@ async function run() {
 
     await page.locator('#wsClearSearchBtn').click();
 
-    // 5. Command Palette (Ctrl+K)
+    // 5. Command Palette (Ctrl+K) + Busca Semântica por Sintomas + Quick Copy + Power Actions 1-5
+    await page.locator('#moduleTabs [data-mod="all"]').click();
+    await page.locator('#wsSearchInput').fill('dor no peito');
+    await delay(120);
+    assert.ok((await page.locator('#cardsGrid .card-symptom-match-badge').count()) >= 1, 'Busca por sintoma deve exibir badge 🎯 de sintoma correspondente');
+    assert.ok((await page.locator('#cardsGrid .card [data-quick-copy="1"]').count()) >= 1, 'Cards da lista devem ter botão rápido Copiar Tudo');
+    assert.ok((await page.locator('#cockpitPowerActions [data-power-action]').count()) === 5, 'Cabeçalho do Cockpit deve ter os 5 botões de Power Action (1-5)');
+    await page.locator('#wsClearSearchBtn').click();
+
     await page.locator('#topbarSearchBtn').click();
+    assert.ok((await page.locator('#cmdQuickNavChips [data-cmd-nav]').count()) >= 6, 'Ctrl+K deve exibir chips de navegação rápida');
     await page.locator('#cmdSearchInput').fill(';sca');
     assert.ok((await page.locator('#cmdResults [data-cmd-type="pep"]').count()) >= 1, 'Ctrl+K deve encontrar PEP por ;atalho');
     await page.locator('#cmdCloseBtn').click();

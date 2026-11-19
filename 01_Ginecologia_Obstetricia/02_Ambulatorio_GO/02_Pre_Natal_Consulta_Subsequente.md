@@ -72,8 +72,7 @@ ORIENTAÇÕES DE SINAIS DE ALARME:
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que Examinamos Assim a Cada Retorno? (Semiologia Obstétrica Explicada)**
+### 🧠 1. Por Que Examinamos Assim a Cada Retorno? (Semiologia Obstétrica Explicada)
 - **Por que a Altura Uterina (AU) equivale à IG entre 20 e 32 semanas?** Nesse intervalo, o crescimento uterino é linear (`~1 cm/semana`), guardando correlação direta com a idade gestacional (`± 2 a 3 cm`, entre os percentis 10 e 90 da curva).
   - **AU abaixo do esperado para a IG:** Pensar em **Restrição de Crescimento Fetal (RCIU)**, **Oligoâmnio**, erro de datação ou óbito fetal → solicitar USG Obstétrica com Doppler (artéria umbilical e cerebral média).
   - **AU acima do esperado para a IG:** Pensar em **Macrossomia (DMG descompensado)**, **Polidrâmnio**, **Gemelaridade** ou miomatose uterina.
@@ -83,8 +82,7 @@ ORIENTAÇÕES DE SINAIS DE ALARME:
   3. **3ª Manobra (Pawlik — Apreensão Suprapúbica):** Avalia a **Apresentação** (Cefálica vs. Pélvica) e sua mobilidade acima do estreito superior.
   4. **4ª Manobra (Escava Pélvica — de costas para o rosto da paciente):** Define a **Insinuação** (se o maior diâmetro biparietal já ultrapassou o estreito superior da bacia).
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 2. Cronograma do 2º e 3º Trimestre: Por Que Nessa Idade Gestacional Exata?**
+### 🧭 2. Cronograma do 2º e 3º Trimestre: Por Que Nessa Idade Gestacional Exata?
 | Marco Gestacional | Exame / Conduta Obrigatória | O Porquê Fisiopatológico & Clínico |
 | :--- | :--- | :--- |
 | **`20 a 24 semanas`** | **USG Morfológica de 2º Trimestre + Medida do Colo TV** | Todos os órgãos fetais já estão formados com bom volume de líquido amniótico para janela acústica. Se **colo uterino `< 25 mm`** à via transvaginal → iniciar **Progesterona Micronizada 200 mg VV/noite** até 36s (reduz prematuridade em 45%). |
@@ -93,11 +91,7 @@ ORIENTAÇÕES DE SINAIS DE ALARME:
 | **`28 semanas (se Rh-)`** | **Coombs Indireto + Imunoglobulina Anti-D 300 mcg IM** | Previne a sensibilização materna por microtransfusões feto-maternas silenciosas do 3º trimestre (caso o Coombs Indireto esteja negativo). |
 | **`35 a 37 semanas`** | **Swab Vagino-Retal (1/3 distal da vagina + ânus) p/ GBS** | A colonização pelo *Streptococcus agalactiae* (EGB) é transitória; a cultura tem validade preditiva de **5 semanas** (colher em 35–37s garante cobertura até 40–41 semanas). |
 
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**🚫 3. Quando NÃO Precisa Colher o Swab de GBS (Indicação Direta de Penicilina Intraparto)**
+### 🚫 3. Quando NÃO Precisa Colher o Swab de GBS (Indicação Direta de Penicilina Intraparto)
 - Você **não precisa colher swab** entre 35–37 semanas em duas situações, porque elas **já têm indicação obrigatória de profilaxia intraparto com Penicilina Cristalina** (5 milhões UI EV ataque + 2,5 milhões UI 4/4h até o parto):
   1. **Urocultura positiva para *Streptococcus agalactiae* (GBS)** em qualquer trimestre da gestação atual (indica alta carga de colonização urogenital).
   2. **Filho anterior que teve sepse/meningite neonatal precoce por GBS**.

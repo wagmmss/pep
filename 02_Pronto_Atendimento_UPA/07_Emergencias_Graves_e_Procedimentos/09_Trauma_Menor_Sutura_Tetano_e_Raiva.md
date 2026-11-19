@@ -82,18 +82,10 @@ Alergias: [*Nega alergias / Alérgico a anestésicos locais / Alérgico a Penici
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que Avaliar Tendões e Nervos Antes da Anestesia Local?**
+### 🧠 1. Por Que Avaliar Tendões e Nervos Antes da Anestesia Local?
 - **Por Que Nunca Anestesiar Mãos, Punhos ou Pés Antes do Exame Neurotendíneo?** O bloqueio anestésico abole a dor e pode mascarar lesões parciais ou completas de nervos digitais e tendões flexores/extensores. Teste sempre **força contra resistência de cada dedo e sensibilidade distal** antes de infiltrar lidocaína.
 - **Por Que Evitar Vasoconstritor em Circulação Terminal (ou Usá-lo com Critério)?** Em extremidades com artérias terminais sem colaterais robustas (asa nasal, pavilhão auricular, pênis e dedos com vasculopatia), o uso clássico sem adrenalina evita vasoespasmo sustentado e **isquemia/necrose tecidual**.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**💉 2. Por Que Profilaxia de Tétano e Raiva Seguem Travas Rígidas?**
+### 💉 2. Por Que Profilaxia de Tétano e Raiva Seguem Travas Rígidas?
 - **Por Que Mordedura ou Contato com Morcego é Sempre Acidente Grave?** Pelo protocolo do Ministério da Saúde, qualquer contato físico direto com morcego (inclusive arranhadura imperceptível ou acordar no mesmo ambiente) implica risco real de vírus rábico e exige **Vacina Antirrábica (4 doses) + Soro/Imunoglobulina Antirrábica**, sem observação do animal.
 - **Tétano em Ferimento Sujo/Profundo:** Se vacinação incompleta/incerta (`< 3 doses` ou `> 5 anos` em ferimento de alto risco), além da dose de reforço (`dT`), é obrigatória a aplicação de **SAT ou Imunoglobulina Antitetânica (IGHAT)** em sítio anatômico diferente.

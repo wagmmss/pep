@@ -66,16 +66,14 @@ ORIENTAÇÕES DE SINAIS DE ALARME:
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que Datamos a Gestação Assim? (DUM vs. USG de 1º Trimestre)**
+### 🧠 1. Por Que Datamos a Gestação Assim? (DUM vs. USG de 1º Trimestre)
 - **Por que a USG de 1º Trimestre (CCN entre 7 e 13s6d) é o Padrão-Ouro da Datação?** No 1º trimestre, a velocidade de crescimento embrionário é geneticamente uniforme (quase não sofre influência de fatores nutricionais ou placentários), dando ao **Comprimento Cabeça-Nádega (CCN)** uma margem de erro de apenas `± 5 a 7 dias`. Já a DUM depende da memória materna e assume erroneamente que toda mulher ovula exatamente no 14º dia do ciclo.
 - **Regra de Redatação (FEBRASGO / ACOG):**
   - Até `8s6d`: Redatar pela USG se a diferença para a DUM for **> 5 dias**.
   - De `9s0d a 13s6d`: Redatar pela USG se a diferença para a DUM for **> 7 dias**.
   - **Trava de Ouro:** Uma vez definida a Data Provável do Parto (DPP) pelo 1º trimestre, **nunca mais recalcule a DPP por ultrassons de 2º ou 3º trimestre**! No 3º trimestre a margem de erro do USG chega a `± 3 semanas` — mudar a DPP no final da gravidez mascara uma **Restrição de Crescimento Fetal (RCIU)** ou uma **Macrossomia**.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Interpretação Rápida da Rotina de 1º Trimestre**
+### 🧭 3. Interpretação Rápida da Rotina de 1º Trimestre
 | Exame do 1º Trimestre | Resultado / Ponto de Corte | Conduta & O Porquê Clínico |
 | :--- | :--- | :--- |
 | **Glicemia de Jejum** | `< 92 mg/dL` | **Normal no 1º Tri** → Obrigatoriamente solicitar **TOTG-75g entre 24 e 28 semanas** (pico dos hormônios contrainsulínicos placentários). |
@@ -84,8 +82,7 @@ ORIENTAÇÕES DE SINAIS DE ALARME:
 | **Toxoplasmose (IgG / IgM)** | `IgG(+) e IgM(+)` com IG `< 16 sem` | Iniciar **Espiramicina 1 g VO de 8/8h imediatamente** (concentra na placenta e bloqueia a passagem do *Toxoplasma* para o feto) e pedir **Avidez de IgG** na mesma amostra (`> 60%` = infecção antiga antes de engravidar; `< 30%` = infecção aguda na gestação → Amniocentese c/ 18s e troca para **Sulfadiazina + Pirimetamina + Ácido Folínico** se feto infectado). |
 | **Urocultura** | `≥ 100.000 UFC/mL` (mesmo sem disúria!) | **Bacteriúria Assintomática** → Tratar sempre na gestante (30% viram pielonefrite aguda pela estase ureteral induzida pela progesterona) e repetir urocultura de controle 7 dias após. |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Prescrevemos Cada Suplemento Assim? (Farmacologia Explicada)**
+### 💊 2. Por Que Prescrevemos Cada Suplemento Assim? (Farmacologia Explicada)
 - **Ácido Fólico 400 mcg (0,4 mg) vs. 5 mg:** O tubo neural fetal se fecha completamente até o **28º dia pós-concepção** (6ª semana de IG). A dose de `400 mcg/dia` (iniciada idealmente 30 dias antes da concepção até a 12ª–14ª semana) previne defeitos de fechamento do tubo neural (anencefalia/espinha bífida) sem excesso de folato não-metabolizado. Reservamos a dose alta de **`5 mg/dia`** apenas para pacientes com **epilepsia em uso de anticonvulsivantes, filho anterior com defeito de tubo neural, cirurgia bariátrica ou IMC > 35**.
 - **Por que o Sulfato Ferroso é tomado 30 min antes do almoço com suco cítrico, e LONGE do Cálcio?**
   - O ferro não-heme precisa de **meio ácido e Vitamina C (ácido ascórbico)** para manter-se na forma reduzida ferroso (Fe²⁺), que é absorvida no duodeno.
@@ -93,6 +90,3 @@ ORIENTAÇÕES DE SINAIS DE ALARME:
 - **Por que fazemos AAS (100–150 mg à noite) + Cálcio (1,5–2 g/dia) entre 12–16s até 36s no risco de Pré-Eclâmpsia?**
   - A Pré-Eclâmpsia nasce da falha na **2ª onda de invasão trofoblástica** das artérias espiraladas miometriais (que ocorre entre `12 e 16 semanas`).
   - O **AAS em baixa dose (100 a 150 mg tomado à noite)** inibe irreversivelmente a COX-1 plaquetária, bloqueando o **Tromboxano A2** (vasoconstritor e pró-agregante) sem inibir a **Prostaciclina (PGI₂)** endotelial (vasodilatadora). Iniciar antes de 16 semanas reduz em **> 60% a Pré-Eclâmpsia precoce (< 34s)** (Estudo ASPRE). Suspende-se com **36 semanas** para renovar o pool plaquetário antes do parto.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

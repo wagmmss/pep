@@ -75,20 +75,10 @@ Alergias: [*Nega / [ ]].
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**⏱️ 1. Por Que o Pacote de 1 Hora Muda a Sobrevida na Sepse?**
+### ⏱️ 1. Por Que o Pacote de 1 Hora Muda a Sobrevida na Sepse?
 - **Por Que Cada Hora de Atraso no Antibiótico Aumenta a Mortalidade?** No choque séptico, cada hora de atraso até a primeira dose do antibiótico endovenoso eleva o risco de óbito em cerca de **7% a 8%**. Coletar hemoculturas imediatamente é mandatório, mas **nunca atrase o início do antimicrobiano** por dificuldade de coleta ou demora de exames de imagem.
 - **Lactato Arterial/Venoso como Marcador de Hipoperfusão Oculta:** Mesmo com PA limítrofe, lactato `≥ 2 mmol/L` (ou `> 4 mmol/L`) denuncia metabolismo anaeróbio por microcirculação comprometida e exige ressuscitação guiada e reavaliação seriada em 2–4 horas (*clearance* de lactato).
 
 **💧 2. Por Que Preferimos Ringer Lactato e Vasopressor Periférico Precoce?**
 - **Por Que Cristaloides Balanceados (Ringer Lactato) São Melhores que SF 0,9%?** Grandes volumes de SF 0,9% (concentração suprafisiológica de cloreto `154 mEq/L`) causam **acidose metabólica hiperclorêmica**, vasoconstrição da arteríola aferente renal e maior risco de lesão renal aguda.
 - **Por Que Não Esperar o Acesso Central para Iniciar Noradrenalina?** Se a `PAM < 65 mmHg` persiste durante ou após o início da expansão (`30 mL/kg`), iniciar **Noradrenalina em veia periférica calibrosa** (preferencialmente antecubital, com vigilância do sítio) restaura rapidamente a perfusão coronariana e cerebral enquanto o acesso venoso central é providenciado.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

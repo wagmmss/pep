@@ -73,15 +73,13 @@ Antecedentes Cirúrgicos/Pessoais: [*Nega cirurgias prévias / Relata laparotomi
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que a Dor Visceral Começa no Meio da Barriga e Depois Migra para o Ponto Cirúrgico (Dor Parietal)? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que a Dor Visceral Começa no Meio da Barriga e Depois Migra para o Ponto Cirúrgico (Dor Parietal)? (Fisiopatologia & Raciocínio)
 - **A neuroanatomia da migração da dor abdominal (Fibras C Viscerais vs Fibras A-delta Somáticas):**
   - **Fase Inicial (Dor Visceral Pura):** A distensão da luz do apêndice, da vesícula ou do intestino delgado estimula fibras autonômicas aferentes tipo **C** (não mielinizadas, bilaterais), que entram na medula espinhal conforme a origem embriológica do intestino: **Intestino Anterior** (estômago, duodeno, fígado, vias biliares, pâncreas) dói no **Epigástrio**; **Intestino Médio** (intestino delgado, apêndice, ceco) dói na **Região Periumbilical**; **Intestino Posterior** (cólon esquerdo, sigmoide, reto) dói no **Hipogástrio**. É uma dor mal localizada, surda ou em cólica.
   - **Fase Tardia (Dor Somática / Peritoneal):** Quando a inflamação transmural atinge o **peritônio parietal** (ex: apêndice inflamado tocando o peritônio da Fossa Ilíaca Direita), são ativadas as fibras somáticas mielinizadas **A-delta** unilaterais. A dor torna-se **aguda, milimetricamente localizada, contínua, piora à tosse/movimento e gera defesa muscular involuntária e descompressão brusca dolorosa (Sinal de Blumberg)**!
 - **Regra de Ouro:** Em toda mulher em idade fértil (`12 a 50 anos`) com dor abdominal aguda, **solicitar β-hCG na triagem é obrigatório** (mesmo que refira laqueadura, DIU ou menstruação recente) para excluir **Gravidez Ectópica Rota**!
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Topografia Semiotécnica, Sinais Clássicos e Exame de Imagem de 1ª Escolha no Abdome Agudo**
+### 🧭 3. Topografia Semiotécnica, Sinais Clássicos e Exame de Imagem de 1ª Escolha no Abdome Agudo
 | Hipótese Cirúrgica | Sinais Semiológicos Clássicos na Beira do Leito | Exame de Imagem Padrão-Ouro e Laboratório |
 | :--- | :--- | :--- |
 | **1. Apendicite Aguda** *(FID)* | Migração epigástrio → FID; **Blumberg** (ponto de McBurney), **Rovsing** (palpa FIE → dói FID), **Dunphy** (dor na FID ao tossir), **Psoas** (apêndice retrocecal) e **Obturador** (pélvico). | **TC de Abdome e Pelve com contraste EV** (ou USG de abdome em crianças/gestantes) + Hemograma, PCR, EAS e β-hCG. |
@@ -91,10 +89,6 @@ Antecedentes Cirúrgicos/Pessoais: [*Nega cirurgias prévias / Relata laparotomi
 | **5. Diverticulite Aguda** *(FIE — "Apendicite à Esquerda")* | Paciente `> 50 anos` com dor em Fossa Ilíaca Esquerda, febre e alteração do hábito intestinal. | **TC de Abdome e Pelve** (Classificação de **Hinchey I a IV** — define tratamento clínico vs drenagem/Hartmann). |
 | **6. Isquemia Mesentérica Aguda** | Idoso com **Fibrilação Atrial** ou aterosclerose grave com **dor abdominal lancinante desproporcional ao exame físico inocente**. | **Angiotomografia (Angio-TC) de Vasos Mesentéricos** + Gasometria com **Lactato arterial elevado** e acidose metabólica. |
 
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**💊 2. Por Que o Mito de "Não Dar Analgesia no Abdome Agudo para Não Mascarar o Exame" Foi Abolido? (Racional Farmacológico)**
+### 💊 2. Por Que o Mito de "Não Dar Analgesia no Abdome Agudo para Não Mascarar o Exame" Foi Abolido? (Racional Farmacológico)
 - **A evidência científica definitiva (*Cochrane* / Colégio Americano de Cirurgiões):** Durante décadas ensinou-se erroneamente que medicar um paciente com dor abdominal aguda "mascararia a peritonite". Mais de 12 ensaios clínicos randomizados provaram que a analgesia endovenosa (Dipirona, Escopolamina e até doses tituladas de **Morfina `2 a 4 mg EV`** ou **Fentanil**) **alivia o sofrimento humano, reduz a contratura voluntária de defesa por medo da dor e NÃO elimina a descompressão brusca verdadeira (Blumberg), melhorando ou mantendo a acurácia diagnóstica do cirurgião e do ultrassonografista!**
 - **Por que evitamos AINEs (Cetoprofeno/Diclofenaco) no abdome agudo cirúrgico:** Se o paciente tiver uma úlcera péptica perfurada, diverticulite, isquemia mesentérica ou for para cirurgia de urgência nas próximas horas com hipovolemia, o AINE aumenta o sangramento cirúrgico (antiagregação plaquetária) e precipita **lesão renal aguda pré-renal**.

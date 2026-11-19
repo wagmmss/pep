@@ -60,16 +60,6 @@ ORIENTAÇÕES MÉDICAS E MEDIDAS DE PREVENÇÃO DOMICILIAR (SÍNCOPE VASOVAGAL /
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Atendimento de Pronto Atendimento - Síncope na Emergência (Vasovagal, Ortostática e Cardiogênica)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**Escore de San Francisco (CHESS) e os Sinais Eletrocardiográficos de Síncope Cardiogênica**
+### Escore de San Francisco (CHESS) e os Sinais Eletrocardiográficos de Síncope Cardiogênica
 - **Por que nunca pedir TC de Crânio ou EEG de rotina na síncope não traumática:** A síncope é definida por hipoperfusão cerebral global transitória (queda súbita do débito cardíaco ou da resistência vascular periférica), e não por descarga elétrica cortical ou AVC hemorrágico focal (exceto se houver déficit neurológico focal ou trauma craniano secundário à queda).
 - **Por que o mnemônico CHESS identifica quem não pode ter alta da UPA:** Presença de qualquer 1 dos 5 itens (**C**ongestive Heart Failure / IC, **H**ematócrito < 30%, **E**CG anormal, **S**hortness of breath / dispneia, **S**ystolic BP < 90 mmHg na triagem), além de síncope **durante o exercício**, **em decúbito** ou com **história familiar de morte súbita**, impõe internação para investigação cardiológica.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

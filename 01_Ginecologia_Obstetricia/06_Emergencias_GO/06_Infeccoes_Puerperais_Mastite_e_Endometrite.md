@@ -73,8 +73,7 @@ ORIENTAÇÕES PRÁTICAS PARA A AMAMENTAÇÃO NA MASTITE:
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Endometrite Puerperal Aguda: Fisiopatologia, Tríade de Bumm e Microbiologia Polimicrobiana**
+### 🧠 1. Endometrite Puerperal Aguda: Fisiopatologia, Tríade de Bumm e Microbiologia Polimicrobiana
 - **Fatores de Risco & Patogênese:** A endometrite puerperal é a principal causa de febre puerperal. A **Cesariana** é o principal fator de risco isolado (multiplica a incidência em 10 a 20 vezes em relação ao parto vaginal), potencializada por bolsa rota prolongada (> 18 horas), múltiplos toques vaginais durante o trabalho de parto, corioamnionite prévia e anemia materna.
 - **A Tríade Semiológica de Bumm (Diagnóstico Clínico à Beira do Leito):**
   1. **Febre Puerperal:** Temperatura axilar ≥ 38,0 °C em dois dias quaisquer nos primeiros 10 dias de puerpério (excluindo as primeiras 24h fisiológicas);
@@ -95,11 +94,7 @@ ORIENTAÇÕES PRÁTICAS PARA A AMAMENTAÇÃO NA MASTITE:
   - Suspeitar de abscesso diante de **massa mamária palpável com ponto de flutuação**, persistência da febre após 48–72 horas de antibioticoterapia correta ou coleção líquida documentada à Ultrassonografia de mamas.
   - **Conduta:** Punção aspirativa por agulha grossa (calibre 14G–16G) guiada por USG (repetida se recidiva) ou drenagem cirúrgica aberta com incisão periareolar/submamária se coleções > 5 cm. O aleitamento materno deve ser mantido na mama sadia e mantido ou ordenhado na mama afetada.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-**💉 2. Esquema Antibiótico Padrão-Ouro de Slight (Clindamicina + Gentamicina EV)**
+### 💉 2. Esquema Antibiótico Padrão-Ouro de Slight (Clindamicina + Gentamicina EV)
 - **Internação Hospitalar Obrigatória:** Toda paciente com endometrite puerperal exige internação hospitalar e antibioticoterapia venosa de largo espectro.
 - **O Esquema Padrão-Ouro:**
   - **Clindamicina 900 mg EV de 8 em 8 horas**
@@ -114,6 +109,3 @@ ORIENTAÇÕES PRÁTICAS PARA A AMAMENTAÇÃO NA MASTITE:
   1. **1º Passo:** Associar **Ampicilina 2 g EV de 6/6 horas** para cobrir ***Enterococcus faecalis*** (o único patógeno frequente que escapa da dupla Clinda + Genta).
   2. **2º Passo:** Solicitar Ultrassonografia ou Tomografia de Pelve para investigar coleções pélvicas, abscessos de parede abdominal ou hematomas infectados.
   3. **3º Passo:** Se exames de imagem forem normais, suspeitar de **Tromboflebite Pélvica Séptica** (trombo infectado na veia ovariana que cursa com febre em agulha e paciente em bom estado geral — *Sinal de Michaelis*). O diagnóstico é presuntivo e responde rapidamente à introdução de **Heparina / Enoxaparina em dose terapêutica plena** mantendo a antibioticoterapia.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

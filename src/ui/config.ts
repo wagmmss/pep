@@ -1,9 +1,11 @@
 import { cockpitStore } from '../state/store.ts';
-import { escapeHtml, guardPiiBeforeSave, showToast } from './utils.ts';
+import { copyToClipboard, escapeHtml, guardPiiBeforeSave, showToast } from './utils.ts';
 
 const START_SECTION_KEY = 'mq_default_start_section_v1';
 
 export function initConfig(): (container: HTMLElement) => void {
+  let confirmingReset = false;
+
   const render = (container: HTMLElement) => {
     const state = cockpitStore.getState();
     let startSection = 'pep';
@@ -63,15 +65,39 @@ export function initConfig(): (container: HTMLElement) => void {
           <p class="mq-hint">Exporta Central do 6º Ano, Checklists Pré-Porta (22), Carrinho, Preferências e Larguras de Colunas.</p>
 
           <div class="mq-btn-row">
-            <button type="button" class="btn btn-primary btn-sm" id="cfgExportBackupBtn">⬇️ Exportar Backup v2 (.json)</button>
+            <button type="button" class="btn btn-primary btn-sm" id="cfgExportBackupBtn">⬇️ Baixar Backup v2 (.json)</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="cfgCopyBackupTextBtn">📋 Copiar Backup JSON</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="cfgImportFromTextBtn">⬆️ Importar do Campo Abaixo</button>
+          </div>
+
+          <div class="mq-control-group">
+            <label class="mq-control-label" for="configBackupJsonArea">Visualizar / Colar Backup JSON</label>
+            <textarea
+              id="configBackupJsonArea"
+              class="pep-free-edit-textarea"
+              style="min-height:120px; font-size:0.76rem;"
+              placeholder="Clique em 'Copiar Backup JSON' para visualizar seu estado completo ou cole aqui um JSON salvo para restaurar..."
+            ></textarea>
           </div>
 
           <div class="mq-control-group" style="max-width:420px;">
-            <label class="mq-control-label" for="cfgImportBackupInput">Importar Arquivo de Backup JSON (.json)</label>
+            <label class="mq-control-label" for="cfgImportBackupInput">Ou Importar Arquivo de Backup JSON (.json)</label>
             <input type="file" id="cfgImportBackupInput" class="mq-input" accept="application/json" />
           </div>
 
           <div id="cfgBackupPreview" class="mq-hint"></div>
+
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; padding-top:8px; border-top:1px dashed var(--line-subtle);">
+            <span class="mq-hint">Zona de Risco: limpa todos os dados locais no navegador (faça backup antes).</span>
+            <div class="mq-btn-row" id="configResetControls">
+              ${
+                !confirmingReset
+                  ? `<button type="button" class="btn btn-ghost btn-xs" id="cfgReqResetAllBtn" style="color:var(--critical);">🗑️ Limpar Dados Locais</button>`
+                  : `<button type="button" class="btn btn-warning btn-xs" id="cfgConfirmResetAllBtn">⚠️ Confirmar Reset Total</button>
+                     <button type="button" class="btn btn-secondary btn-xs" id="cfgCancelResetAllBtn">Cancelar</button>`
+              }
+            </div>
+          </div>
         </div>
       </section>
     `;
@@ -132,6 +158,55 @@ export function initConfig(): (container: HTMLElement) => void {
         preview.textContent = `Backup v2 exportado (${escapeHtml(payload.exportedAt)} · versão ${payload.version}).`;
       }
       showToast('Backup v2 JSON exportado com sucesso!', 'success');
+    });
+
+    container.querySelector('#cfgCopyBackupTextBtn')?.addEventListener('click', () => {
+      const payload = cockpitStore.exportBackupV2();
+      const rawJson = JSON.stringify(payload, null, 2);
+      const safeJson = guardPiiBeforeSave(rawJson, 'Backup JSON');
+      if (safeJson === null) return;
+      const ta = container.querySelector<HTMLTextAreaElement>('#configBackupJsonArea');
+      if (ta) ta.value = safeJson;
+      void copyToClipboard(safeJson, 'Backup JSON v2');
+    });
+
+    container.querySelector('#cfgImportFromTextBtn')?.addEventListener('click', () => {
+      const ta = container.querySelector<HTMLTextAreaElement>('#configBackupJsonArea');
+      const raw = ta?.value.trim() || '';
+      if (!raw) {
+        showToast('Cole o conteúdo JSON no campo antes de importar.', 'warning');
+        return;
+      }
+      try {
+        cockpitStore.importBackupV2(raw);
+        showToast('✅ Backup importado do campo com sucesso!', 'success');
+        render(container);
+      } catch (err) {
+        showToast(`Erro ao importar JSON: ${(err as Error).message}`, 'danger');
+      }
+    });
+
+    container.querySelector('#cfgReqResetAllBtn')?.addEventListener('click', () => {
+      confirmingReset = true;
+      render(container);
+    });
+
+    container.querySelector('#cfgCancelResetAllBtn')?.addEventListener('click', () => {
+      confirmingReset = false;
+      render(container);
+    });
+
+    container.querySelector('#cfgConfirmResetAllBtn')?.addEventListener('click', () => {
+      confirmingReset = false;
+      try {
+        localStorage.clear();
+        sessionStorage.clear();
+      } catch {
+        // Ignore storage errors
+      }
+      cockpitStore.reload();
+      showToast('🗑️ Dados locais limpos e restaurados para o padrão.', 'info');
+      render(container);
     });
 
     container.querySelector<HTMLInputElement>('#cfgImportBackupInput')?.addEventListener('change', async (e) => {

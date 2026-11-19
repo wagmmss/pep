@@ -112,15 +112,53 @@ SINAIS DE ALARME DA DENGUE (VOLTAR IMEDIATAMENTE À UPA — PRINCIPALMENTE QUAND
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO & PLANO DE HIDRATAÇÃO — DENGUE (GRUPOS A E B — MINISTÉRIO DA SAÚDE)
+Paciente: [Nome] | Peso Atual: [ ] kg | Dia de Doença: [ ]º dia | Data: [DD/MM/AAAA]
+
+1. PRESCRIÇÃO DE HIDRATAÇÃO ORAL VIGOROSA (O REMÉDIO QUE SALVA VIDAS NA DENGUE):
+   - Meta diária calculada pelo seu peso (60 mL/kg/dia): Beber [ ] Litros de líquidos por dia (divididos ao longo do dia).
+   - 1/3 deste volume ([ ] mL/dia) DEVE ser de Sais de Reidratação Oral (SRO) (diluir 1 envelope em 1 litro de água filtrada) ou soro caseiro / água de coco.
+   - 2/3 deste volume ([ ] mL/dia) em água pura, sucos naturais de frutas, chás claros ou sopas.
+   - Manter essa hidratação durante todo o período de febre e por até 24 a 48 horas após a febre desaparecer!
+
+2. MEDICAÇÃO PARA FEBRE E DOR:
+   - Dipirona Monoidratada 500 mg (ou 1 g) ----------------------------------- 1 caixa
+     Tomar 1 comprimido de 1 g (ou 2 comprimidos de 500 mg) por via oral até de 6 em 6 horas se febre ou dor no corpo/cabeça.
+   - [OU Alternativa] Paracetamol 500 mg a 750 mg ---------------------------- 1 caixa
+     Tomar 1 comprimido por via oral de 6 em 6 horas se febre ou dor (Máximo de 4 comprimidos em 24 horas).
+
+3. MEDICAÇÃO PARA NÁUSEAS / ENJOO:
+   - Ondansetrona 4 mg (ou Metoclopramida / Bromoprida 10 mg) ---------------- 1 caixa
+     Tomar 1 comprimido por via oral de 8 em 8 horas se apresentar enjoo.
+
+4. [Se coceira intensa na pele (exantema da dengue)]:
+   - Loratadina 10 mg (ou Dexclorfeniramina 2 mg) ---------------------------- 1 caixa
+     Tomar 1 comprimido por via oral 1 a 2 vezes ao dia + banhos frios e loção hidratante.
+
+PROIBIÇÃO ABSOLUTA (RISCO DE HEMORRAGIA GRAVE):
+- É TERMINANTEMENTE PROIBIDO tomar AAS (Aspirina) e qualquer Anti-inflamatório (Ibuprofeno, Diclofenaco, Cetoprofeno, Nimesulida, Naproxeno, Celecoxibe) ou Corticoides, nem aplicar injeções intramusculares!
+
+SINAIS DE ALARME DA DENGUE (VOLTAR IMEDIATAMENTE À UPA — PRINCIPALMENTE QUANDO A FEBRE BAIXAR NO 3º AO 7º DIA!):
+1. Dor na barriga (dor abdominal) intensa e contínua.
+2. Vômitos persistentes (não consegue segurar líquidos).
+3. Tontura, sensação de vista escura ou desmaio ao ficar de pé (hipotensão postural).
+4. Qualquer sangramento (gengiva, nariz, manchas vermelhas/roxas na pele, fezes escuras, vômito com sangue ou menstruação excessiva).
+5. Sonolência excessiva, confusão mental, irritabilidade ou falta de ar.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que a Fase Crítica da Dengue Começa Exatamente Quando a Febre Vai Embora (3º ao 7º Dia)? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que a Fase Crítica da Dengue Começa Exatamente Quando a Febre Vai Embora (3º ao 7º Dia)? (Fisiopatologia & Raciocínio)
 - **A armadilha mortal da Defervescência (Extravasamento Plasmático Endotelial):** Nos primeiros 1 a 3 dias da Dengue (**Fase Febril**), predomina a viremia intensa com febre alta, cefaleia retro-orbitária e mialgia. Entre o **3º e o 7º dia de doença**, quando a febre cai abruptamente, a resposta imune mediada por citocinas (`TNF-α`, `IL-6`, `IFN-γ`) e pela proteína viral **NS1** ataca o glicocálice do endotélio capilar, abrindo junções intercelulares e causando **extravasamento maciço de plasma rico em albumina do intravascular para o terceiro espaço** (cavidade pleural, ascite, parede da vesícula biliar e retroperitônio).
 - **Por que o Hematócrito sobe antes de a Pressão Arterial cair:** Como sai plasma (água + albumina) do vaso sanguíneo e as hemácias ficam lá dentro, o sangue fica espesso e concentrado (**hemoconcentração = subida de 10–20% do hematócrito basal**). A hemoconcentração reduz o retorno venoso, causa **dor abdominal intensa e contínua** (por edema agudo da cápsula de Glisson hepática, parede da vesícula biliar e serosa intestinal), hipotensão postural e, se não hidratada imediatamente com cristaloides, choque hipovolêmico irreversível (**Grupo D**)!
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Estadiamento Clínico e Manejo dos Grupos A, B, C e D da Dengue (Diretriz Ministério da Saúde)**
+### 🧭 3. Estadiamento Clínico e Manejo dos Grupos A, B, C e D da Dengue (Diretriz Ministério da Saúde)
 | Classificação MS | Critérios Clínicos Definidores | Conduta Imediata de Hidratação e Exames |
 | :--- | :--- | :--- |
 | **GRUPO A** *(Azul)* | Dengue **sem sinais de alarme**, **sem comorbidades/risco social**, **sem sangramento** e **Prova do Laço Negativa**. | **Ambulatorial:** Hidratação Oral **`60 mL/kg/dia`** (`1/3 SRO` + `2/3 líquidos`). Hemograma não obrigatório (solicitar se possível). Retorno no dia da queda da febre ou se alarme. |
@@ -128,10 +166,6 @@ SINAIS DE ALARME DA DENGUE (VOLTAR IMEDIATAMENTE À UPA — PRINCIPALMENTE QUAND
 | **GRUPO C** *(Amarelo)* | Presença de **QUALQUER SINAL DE ALARME:** Dor abdominal intensa e contínua, vômitos persistentes, hipotensão postural/lipotímia, hepatomegalia `> 2 cm`, sangramento de mucosa, letargia/irritabilidade, derrame seroso (ascite/pleural) ou queda abrupta de plaquetas com subida do Ht. | **Internação Hospitalar (Mínimo 48h):**<br>• **Fase de Expansão Imediata:** **`10 mL/kg` de SF 0,9% ou Ringer Lactato EV na 1ª hora** + colher Ht, Plaq, Albumina e Transaminases.<br>• Reavaliar em 1h (diurese `≥ 1 mL/kg/h`) e repetir `10 mL/kg/h` na 2ª hora (até 3 fases; se não melhorar → **Grupo D**). |
 | **GRUPO D** *(Vermelho)* | Presença de **SINAIS DE CHOQUE** (taquicardia, extremidades frias, pulso fino, `TEC > 2s`, `PA convergente < 20 mmHg`, hipotensão arterial), **Hemorragia Grave** ou **Disfunção Orgânica Grave** (miocardite, encefalite, hepatite fulminante). | **Sala Vermelha / UTI Imediata:**<br>• **Fase de Expansão Rápida:** **`20 mL/kg` de SF 0,9% ou RL EV em até 20 minutos!**<br>• Repetir até 3 vezes se necessário; reavaliação clínica a cada 15–30 min e Ht a cada 2h. Se Ht em queda com choque refratário → Transfusão de Concentrado de Hemácias (`10 mL/kg`). |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Calculamos 60 mL/kg/dia (1/3 SRO + 2/3 Líquidos) e Proibimos Estritamente AINEs, AAS e Via Intramuscular? (Racional Farmacológico)**
+### 💊 2. Por Que Calculamos 60 mL/kg/dia (1/3 SRO + 2/3 Líquidos) e Proibimos Estritamente AINEs, AAS e Via Intramuscular? (Racional Farmacológico)
 - **Por que a Hidratação Precoce (60 mL/kg/dia nos Grupos A e B; 20 mL/kg EV nos Grupos C e D) é o único tratamento que reduz a mortalidade para `< 1%`:** Na dengue, o paciente não morre de plaquetopenia isolada — o paciente morre de **choque hipovolêmico por extravasamento plasmático**! Repor volume isotônico continuamente à medida que o plasma extravasa mantém a pressão de perfusão tecidual até que as fendas endoteliais se fechem espontaneamente após 24–48 horas da fase crítica.
 - **Por que AINEs e AAS são venenos na Dengue:** A dengue já causa plaquetopenia (por destruição periférica mediada por anticorpos anti-NS1 e supressão medular transitória) e disfunção endotelial. O AAS e os AINEs (Ibuprofeno, Diclofenaco, Cetoprofeno, Nimesulida) bloqueiam a cicloxigenase-1 (`COX-1`) plaquetária e o **Tromboxano A2**, paralisando a agregação das poucas plaquetas restantes e lesando a mucosa gástrica, desencadeando **hemorragia digestiva maciça**. Injeções intramusculares (IM) também são proscritas pelo risco de hematoma muscular expansivo.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

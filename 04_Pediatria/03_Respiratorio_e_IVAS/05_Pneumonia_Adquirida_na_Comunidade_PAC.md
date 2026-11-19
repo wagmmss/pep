@@ -80,13 +80,37 @@ COMPROMISSO OBRIGATÓRIO DE RETORNO EM 48 HORAS & SINAIS DE ALARME:
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO PEDIÁTRICO — PNEUMONIA COMUNITÁRIA (TRATAMENTO AMBULATORIAL)
+Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
+
+USO ORAL E NASAL:
+1. [Amoxicilina Suspensão Oral 250 mg / 5 mL (50 mg/mL) / Amoxicilina Suspensão Oral 400 mg / 5 mL (80 mg/mL)] --- [ ] frasco(s)
+   Dar [ ] mL por via oral de [8 em 8 horas / 12 em 12 horas], rigorosamente nos horários, durante 7 dias completos (Não interromper o antibiótico mesmo que a febre desapareça no 2º dia).
+   *(Dose calculada para [ ] kg: [50 / 90] mg/kg/dia).*
+
+2. Dipirona Solução Oral Gotas (500 mg/mL) (ou Paracetamol 200 mg/mL) ---------- 1 frasco
+   Dar [ ] gotas por via oral até de 6 em 6 horas se houver febre (≥ 37,8 °C) ou dor no peito/barriga para respirar.
+
+3. Soro Fisiológico 0,9% ------------------------------------------------------- 1 frasco
+   Lavar as narinas com seringa de [3 a 5 / 5 a 10] mL em cada narina 4 a 6 vezes ao dia e oferecer bastante líquido (água, leite materno, sucos naturais ou água de coco).
+
+COMPROMISSO OBRIGATÓRIO DE RETORNO EM 48 HORAS & SINAIS DE ALARME:
+- RETORNO AGENDADO EM 48 HORAS ([DD/MM/AAAA]): Toda criança em tratamento de pneumonia em casa precisa ser reavaliada pelo médico em 48 a 72 horas para confirmar que a febre cedeu e que a respiração desacelerou.
+- VOLTAR IMEDIATAMENTE AO PRONTO-SOCORRO (ANTES DE 48H) SE:
+  1. A febre continuar alta após 48 horas do início da Amoxicilina ou o cansaço para respirar aumentar.
+  2. Surgir afundamento abaixo das costelas, gemido constante a cada respiração ou cor arroxeada nos lábios.
+  3. A criança vomitar as doses do antibiótico ou ficar muito sonolenta/prostrada mesmo sem febre.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Pneumonia Adquirida na Comunidade (PAC) Pediátrica** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Critérios Formais de Internação Hospitalar na PAC Pediátrica (SBP / OMS)**
+### 🧭 3. Critérios Formais de Internação Hospitalar na PAC Pediátrica (SBP / OMS)
 | Critério Clínico ou Demográfico | Conduta Obrigatória | Justificativa Fisiopatológica e de Segurança |
 | :--- | :---: | :--- |
 | **Idade `< 2 a 3 meses`** | **INTERNAÇÃO HOSPITALAR** | Imunidade imatura, risco elevado de apneia, rápida evolução para sepse e etiologias perinatais (*Strepto B*, Gram-negativos, *Chlamydia trachomatis*). |
@@ -95,14 +119,10 @@ COMPROMISSO OBRIGATÓRIO DE RETORNO EM 48 HORAS & SINAIS DE ALARME:
 | **Intolerância à Via Oral / Vômitos Incoercíveis** | **INTERNAÇÃO HOSPITALAR** | Inviabiliza a absorção da Amoxicilina oral e leva rapidamente à desidratação hipernatrêmica/hipovolêmica. |
 | **Complicação Radiológica** (Derrame pleural moderado/volumoso, pneumatocele, abscesso) | **INTERNAÇÃO HOSPITALAR** | Exige antibioticoterapia venosa, avaliação de líquido pleural (pH, glicose, LDH, cultura) e suporte cirúrgico torácico se empiema. |
 
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**🧠 1. Por Que a Taquipneia É o Sinal Mais Sensível de Pneumonia na Criança e o RX Não É Obrigatório no Caso Leve? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que a Taquipneia É o Sinal Mais Sensível de Pneumonia na Criança e o RX Não É Obrigatório no Caso Leve? (Fisiopatologia & Raciocínio)
 - **Por que a criança com pneumonia fica taquipneica antes mesmo de ter estertores audíveis:** O preenchimento alveolar por exsudato inflamatório reduz a **complacência pulmonar** (o pulmão fica "duro"). Para manter o volume-minuto (VM = Volume Corrente 	imes FR) gastando menos trabalho mecânico contra um pulmão pouco complacente, o centro respiratório bulbar adota uma respiração **superficial e rápida (taquipneia)**. Em lactentes pequenos, o tórax curto e a parede fina podem não gerar crepitações clássicas no início, tornando a **taquipneia contada em 1 minuto inteiro (sem febre)** o marcador isolado de maior sensibilidade e valor preditivo negativo segundo a OMS e a SBP!
 - **Por que NÃO pedimos Radiografia de Tórax de rotina na PAC Não Grave ambulatorial:** Ensaios clínicos randomizados demonstram que, na criança `> 2 meses`, hidratada, com `SpO2 ≥ 92%` e sem sinais de gravidade, o diagnóstico clínico permite início imediato de Amoxicilina sem expor a criança à radiação ionizante e sem o viés de interpretação de atelectasias virais. O RX de tórax é reservado para **todos os casos com critério de internação**, **dúvida diagnóstica** ou **falha terapêutica em 48–72h**.
 
-**💊 2. Por Que a Amoxicilina É Superior às Cefalosporinas Orais/Azitromicina e o Que Pensar se a Febre Não Cair em 48–72h?**
+### 💊 2. Por Que a Amoxicilina É Superior às Cefalosporinas Orais/Azitromicina e o Que Pensar se a Febre Não Cair em 48–72h?
 - **Por que a Amoxicilina é imbatível contra o *Streptococcus pneumoniae*:** O pneumococo é o principal agente bacteriano da PAC pediátrica em todas as faixas etárias (após o período neonatal). A **Amoxicilina oral (`50 a 90 mg/kg/dia`)** atinge concentrações no fluido de revestimento epitelial alveolar muito superiores às das cefalosporinas orais de 1ª/2ª geração (cefalexina) e macrolídeos (azitromicina, à qual o pneumococo apresenta taxas de resistência de 20–30%).
 - **A Regra das 48–72 Horas (Por que a febre persistente exige Radiografia de Tórax):** Na PAC pneumocócica não complicada tratada com Amoxicilina, a febre cai e o estado geral melhora em **24 a 48 horas**. Se a criança retorna com **febre persistente e toxemia após 48–72 horas de Amoxicilina correta**, a primeira hipótese **NÃO é simplesmente "trocar o antibiótico no escuro"**, e sim **Derrame Pleural Parapneumônico / Empiema Pleural** (que exige RX + Ultrassonografia de tórax e eventual toracocentese/drenagem!).

@@ -78,10 +78,37 @@ Alergias: [*Nega / Sim: [ ]].
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+RECEITUÁRIO MÉDICO — VERTIGEM PERIFÉRICA AGUDA (VPPB / NEURITE VESTIBULAR)
+Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
+
+USO ORAL (USO CURTO APENAS NOS PRIMEIROS 3 A 5 DIAS DE CRISE):
+1. Dimenidrinato 50 mg + Piridoxina (Vitamina B6) 10 mg (Dramin B6) ------------- 1 caixa
+   Tomar 1 comprimido por via oral de 6 em 6 horas (ou de 8 em 8 horas) durante apenas 3 a 5 dias para alívio da tontura rotatória aguda e do enjoo (Atenção: causa sonolência; proibido dirigir ou operar máquinas).
+
+2. [Se Vertigem Posicional Paroxística Benigna (VPPB) residual ou Doença de Ménière]:
+   Dicloridrato de Betaistina 24 mg (Labirin) ----------------------------------- 1 caixa
+   Tomar 1 comprimido por via oral de 12 em 12 horas, junto às refeições, por 15 a 30 dias (a Betaistina NÃO dá sono e não atrapalha a compensação do labirinto).
+
+3. Ondansetrona 4 mg (ou Meclizina 25 mg) --------------------------------------- 1 caixa
+   Tomar 1 comprimido por via oral de 8 em 8 horas se houver náuseas ou vômitos.
+
+ORIENTAÇÕES CRÍTICAS SOBRE REABILITAÇÃO DO LABIRINTO E SINAIS DE ALARME (AVC):
+- Por que NÃO usar Dramin, Cinarizina ou Flunarizina por mais de 3 a 5 dias: Os remédios que "sedam o labirinto" servem apenas para os primeiros 3 dias de crise forte. Se usados por semanas ou meses, eles impedem o cérebro de reequilibrar o labirinto (compensação vestibular central) e, em pessoas idosas, a Cinarizina/Flunarizina causa tremores e rigidez iguais à Doença de Parkinson!
+- Se o seu diagnóstico foi VPPB ("cristais soltos no labirinto" tratados hoje com a Manobra de Epley): Evitar movimentos bruscos da cabeça hoje, levantar-se da cama em duas etapas (primeiro sentar na beira da cama por 1 minuto e só depois levantar) e caminhar normalmente dentro de casa com apoio assim que a crise aliviar.
+- RETORNAR IMEDIATAMENTE À EMERGÊNCIA SE APRESENTAR (SINAIS DE AVC DE TRONCO/CEREBELO):
+  1. Incapacidade de ficar em pé ou caminhar sozinho (queda para os lados / ataxia severa).
+  2. Visão dupla (diplopia), fala enrolada (disartria), dificuldade para engolir (disfagia), dormência no rosto ou fraqueza em um braço/perna.
+  3. Dor de cabeça ou dor na nuca súbita e intensa, ou perda súbita da audição em um ouvido.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que o Protocolo HINTS na Beira do Leito É Mais Sensível que a Tomografia e a Ressonância nas Primeiras 48h para AVC de Fossa Posterior? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que o Protocolo HINTS na Beira do Leito É Mais Sensível que a Tomografia e a Ressonância nas Primeiras 48h para AVC de Fossa Posterior? (Fisiopatologia & Raciocínio)
 - **A Síndrome Vestibular Aguda (SVA = Vertigem contínua há horas/dias + Náuseas/Vômitos + Nistagmo espontâneo + Intolerância ao movimento cefálico):** O grande desafio na UPA diante de uma Síndrome Vestibular Aguda contínua é diferenciar a **Neurite Vestibular Periférica benigna** (inflamação viral do VIII par craniano) do **AVC Isquêmico de Fossa Posterior (Tronco Encefálico / Cerebelo — territórios de PICA e AICA)**!
 - **Por que pedir uma Tomografia (TC) de Crânio e dar alta quando ela vem "normal" é um erro gravíssimo:** Os ossos densos da base do crânio (rochedo temporal e occipital) geram artefatos de endurecimento de feixe que cegam a Tomografia Computadorizada na fossa posterior: a **sensibilidade da TC de crânio para AVC isquêmico agudo de tronco/cerebelo é de apenas `16% a 26%`** (errando 3 em cada 4 AVCs)! Mais impressionante ainda: mesmo a **Ressonância Magnética (RM com difusão — DWI)** tem até **12% a 15% de falsos-negativos nas primeiras 24 a 48 horas**!
 - **Por que o exame físico HINTS (`Head Impulse` + `Nystagmus` + `Test of Skew` + avaliação da Marcha e Audição — *HINTS Plus*) tem `100% de sensibilidade` quando realizado corretamente em pacientes com SVA e nistagmo:**
@@ -89,8 +116,7 @@ Alergias: [*Nega / Sim: [ ]].
   2. **Nystagmo (Nistagmo):** Na lesão **Periférica**, o nistagmo é **unidirecional horizontal-torcional** (bate sempre para o mesmo lado, independentemente de para onde o paciente olha). Se o nistagmo **muda de direção conforme o olhar** (olha para a direita → bate para a direita; olha para a esquerda → bate para a esquerda) ou é **puramente vertical/torcional** = **AVC CENTRAL**!
   3. **Test of Skew (Desvio Vertical do Olhar no *Cover-Uncover Test*):** Qualquer realinhamento vertical de um olho ao tampar/destampar alternadamente os olhos = **AVC CENTRAL de tronco encefálico**!
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Quadro Comparativo do Protocolo HINTS Plus: Vertigem Periférica (Neurite Vestibular) vs Vertigem Central (AVC de Fossa Posterior)**
+### 🧭 3. Quadro Comparativo do Protocolo HINTS Plus: Vertigem Periférica (Neurite Vestibular) vs Vertigem Central (AVC de Fossa Posterior)
 | Etapa do Exame à Beira do Leito | Achado Compatível com LESÃO PERIFÉRICA (Neurite Vestibular — Todos os 4 precisam estar presentes!) | Achado de ALARME CENTRAL (AVC de Tronco/Cerebelo — Basta 1 alterado para internar!) |
 | :--- | :--- | :--- |
 | **1. Head Impulse (Impulso Cefálico — HIT)** | **ANORMAL / POSITIVO** (Presença de **sacada corretiva** ao girar a cabeça para o lado lesado) | ⚠️ **NORMAL / NEGATIVO** (Olhos permanecem fixos no alvo sem sacada corretiva em paciente com vertigem contínua!) |
@@ -98,10 +124,6 @@ Alergias: [*Nega / Sim: [ ]].
 | **3. Test of Skew (*Cover Test*)** | **Ausente** (sem desvio vertical ocular ao alternar a oclusão) | ⚠️ **Presente (*Skew Deviation*)** — realinhamento vertical do olho ao destampar |
 | **4. Marcha, Equilíbrio & Audição (*HINTS Plus*)** | Consegue ficar de pé/andar com auxílio; audição preservada (exceto labirintite/Ménière) | ⚠️ **Ataxia axial grave (incapaz de ficar sentado ou em pé sem cair)**, disartria, dismetria, diplopia ou **surdez súbita unilateral (infarto de AICA)** |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Como Diferenciar VPPB (Segundos, Posicional) de Neurite Vestibular (Dias, Contínua) e Por Que Proscrevemos Cinarizina/Flunarizina Contínuas? (Racional Farmacológico)**
+### 💊 2. Como Diferenciar VPPB (Segundos, Posicional) de Neurite Vestibular (Dias, Contínua) e Por Que Proscrevemos Cinarizina/Flunarizina Contínuas? (Racional Farmacológico)
 - **Se a tontura dura `< 1 minuto` e só acontece ao virar na cama ou olhar para cima (sem nistagmo em repouso):** **NÃO aplique o HINTS!** Trata-se de **Vertigem Posicional Paroxística Benigna (VPPB)** por otólitos (cristais de carbonato de cálcio — otocônias) soltos no canal semicircular posterior! O diagnóstico é confirmado pela **Manobra de Dix-Hallpike** (nistagmo vertical-torcional para cima com latência de 2–5s, duração `< 30–60s` e fatigabilidade) e o **tratamento curativo na própria maca da UPA é a Manobra de Reposicionamento Canalicular de Epley** (taxa de cura de 80–90% em uma única sessão, sem precisar de remédio!).
 - **Por que usar Dramin (Dimenidrinato), Meclizina, Cinarizina ou Flunarizina por mais de 3–5 dias é prejudicial:** Os depressores vestibulares só devem ser usados nos primeiros **3 dias** de uma crise aguda intensa. Após 72 horas, o cerebelo precisa sentir o desequilíbrio entre os dois labirintos para promover a **compensação vestibular central**; manter sedativos labirínticos impede essa neuroplasticidade (deixando o paciente cronicamente tonto) e, em idosos, a **Cinarizina e a Flunarizina bloqueiam receptores dopaminérgicos D₂ estriatais, sendo a principal causa de Parkinsonismo Induzido por Drogas no Brasil**!
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

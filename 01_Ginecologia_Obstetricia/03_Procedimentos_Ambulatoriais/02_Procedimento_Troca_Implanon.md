@@ -61,15 +61,10 @@ CUIDADOS COM O CURATIVO E SINAIS DE ALARME:
   2. Faz-se uma microincisão longitudinal de `2 mm` exatamente sobre a ponta distal saliente.
   3. Empurra-se o bastão até que a ponta branca recoberta pela cápsula fibrosa apareça na ferida, e **abre-se a cápsula fibrosa com a ponta do bisturi nº 11**. Assim que a cápsula é aberta, o bastão branco brilhante desliza quase sozinho para fora, sendo apreendido com a pinça de Halsted/Mosquito sem rasgar o tecido subcutâneo!
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 2. Por Que na Troca Imediata Usamos a Mesma Incisão de 2 mm?**
+### 🧭 2. Por Que na Troca Imediata Usamos a Mesma Incisão de 2 mm?
 - Na troca no mesmo tempo cirúrgico, **não é necessário fazer um segundo corte**: introduz-se a ponta da agulha do novo aplicador de Implanon NXT pela própria microincisão de `2 mm` da retirada, avançando no plano subdérmico exatamente na mesma direção anatômica segura (3–5 cm posterior ao sulco bicipital), após infiltrar mais `0,5 a 1 mL` de lidocaína no trajeto se necessário.
 - **Vantagem Clínica e Contraceptiva:** Uma única cicatriz puntiforme de 2 mm fechada com *Steri-Strip* e **transição hormonal contínua imediata** (sem necessidade de 7 dias de abstinência/preservativo se a troca ocorreu dentro da validade de 3 anos).
 
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**🚫 3. Regra de Ouro de Segurança: Implante Profundo ou Não Palpável**
+### 🚫 3. Regra de Ouro de Segurança: Implante Profundo ou Não Palpável
 - **Proibido explorar o braço às cegas no consultório:** Se você não conseguir palpar nitidamente ambas as extremidades do bastão antes de anestesiar, **suspenda o procedimento**.
 - **Como localizar:** Solicitar **Ultrassonografia de Partes Moles com transdutor linear de alta frequência (10–15 MHz)** ou **Radiografia simples do braço** (o Implanon NXT possui **sulfato de bário** na matriz de etileno-vinil-acetato, sendo visível ao Raio-X!).

@@ -71,8 +71,7 @@ ORIENTAÇÕES DE ALTA PUERPERAL:
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que Avaliamos Assim na Enfermaria? (Fisiopatologia do Puerpério)**
+### 🧠 1. Por Que Avaliamos Assim na Enfermaria? (Fisiopatologia do Puerpério)
 - **Involução Uterina Fisiológica (1 cm/dia) & Globo de Pinard:** Logo após a dequitação, a contração tônica das fibras miometriais oblíquas estrangula as artérias espiraladas (*ligaduras vivas de Pinard*). No 1º DPO o fundo uterino está na cicatriz umbilical e regride cerca de **1 cm por dia**, tornando-se intrapélvico por volta do `10º–14º dia`.
   - **Por que útero alto e desviado para a direita no 1º DPO quase sempre é Bexigoma?** Após raquianestesia ou parto vaginal instrumentalizado, há hiporreflexia detrusora transitória. A bexiga cheia empurra o útero para cima e para a direita, impedindo sua contração eficaz — por isso **sempre mandamos urinar ou sondamos antes de diagnosticar atonia tardia**.
 - **Evolução Fisiológica dos Lóquios (*Rubra → Serosa → Alba*):**
@@ -81,19 +80,14 @@ ORIENTAÇÕES DE ALTA PUERPERAL:
   - `Após 10º dia`: **Lóquios Albos** (esbranquiçados/amarelados por epitelização endometrial). Lóquios com **odor fétido (pútrido)** ou retorno de sangramento vivo intenso sugerem **Endometrite ou Retenção de Restos Placentários (ou gaze esquecida na vagina!)**.
 - **Apojadura Fisiológica vs. Mastite Puerperal:** No `3º ao 4º dia pós-parto`, a queda abrupta da progesterona placentária libera a ação da prolactina, causando a **apojadura** (mamas túrgidas, quentes, **bilaterais** e febrícula transitória `< 38 °C` por menos de 24h — o *"calafrio fisiológico do leite"*). Já a **mastite infecciosa** surge geralmente após o `10º dia`, é **unilateral**, com eritema em cunha e febre alta `≥ 38,3 °C`.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Checklist de Decisão Antes da Alta Hospitalar (Binômio Mãe-RN)**
+### 🧭 3. Checklist de Decisão Antes da Alta Hospitalar (Binômio Mãe-RN)
 | Eixo de Segurança | O Que Checar no Prontuário | Por Que é Mandatório? |
 | :--- | :--- | :--- |
 | **Imuno-hematologia (Rh)** | TS Materna + TS do RN + Coombs Direto | Se **Mãe Rh(-) + RN Rh(+) + Coombs Direto(-)** → Aplicar **Imunoglobulina Anti-D 300 mcg IM em até 72h** do parto para evitar aloimunização na próxima gestação. |
 | **Sorologias de Admissão** | Teste Rápido / VDRL e HIV maternos | VDRL reagente exige investigar Sífilis Congênita antes da alta; HIV+ contraindica amamentação (cabergolina + fórmula). |
 | **Vigilância Mínima** | `≥ 24h` (Parto Normal) a `≥ 48h` (Cesárea / Risco) | Capta hemorragias tardias, icterícia neonatal precoce (`< 24h` é sempre patológica!) e cardiopatias ducto-dependentes (Teste do Coraçãozinho entre 24–48h). |
 
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**💊 2. Por Que Prescrevemos Assim? (Farmacologia & Travas de Segurança)**
+### 💊 2. Por Que Prescrevemos Assim? (Farmacologia & Travas de Segurança)
 - **Por que é PROIBIDO prescrever AINEs (Cetoprofeno, Ibuprofeno, Diclofenaco) em Hipertensas / Pré-Eclâmpsia?** Entre o `3º e o 6º DPO`, todo o líquido acumulado no espaço extravascular durante a gestação retorna para o intravascular. Os AINEs bloqueiam as prostaglandinas renais (PGE₂ e PGI₂), causando vasoconstrição da arteríola aferente, retenção aguda de sódio/água e perda do efeito dos anti-hipertensivos — precipitando **Crise Hipertensiva, Eclâmpsia Tardia e Edema Agudo de Pulmão** no pós-parto! Em hipertensas, use apenas **Dipirona + Paracetamol**.
 - **Por que suplementamos Sulfato Ferroso (40 mg de Fe elementar/dia) por 60 a 90 dias?** Repõe o estoque de ferritina depletado pela perda sanguínea periparto (`300–500 mL` no parto normal; `600–1.000 mL` na cesárea) e garante ferro para a lactação.
 - **Por que iniciamos Desogestrel 75 mcg/dia (ou DIU/Implanon) e NUNCA anticoncepcional combinado com estrogênio?** O Etinilestradiol nas primeiras **6 semanas pós-parto** soma-se ao estado pró-trombótico puerperal (multiplicando o risco de **TVP/TEP**) e inibe a ação da prolactina no alvéolo mamário, **secando o leite materno**.

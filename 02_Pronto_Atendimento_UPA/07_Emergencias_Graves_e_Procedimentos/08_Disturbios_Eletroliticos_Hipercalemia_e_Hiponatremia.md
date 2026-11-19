@@ -89,20 +89,12 @@ Alergias: [*Nega / [ ]].
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Distúrbios Eletrolíticos Graves - Hipercalemia e Hiponatremia** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-**💊 2. Hiponatremia Aguda Sintomática vs. Crônica: O Limite Seguro de 8 a 10 mEq/L em 24 Horas**
+### 💊 2. Hiponatremia Aguda Sintomática vs. Crônica: O Limite Seguro de 8 a 10 mEq/L em 24 Horas
 Na hiponatremia (Na⁺ < 135 mEq/L), o cérebro adapta-se à hipotonicidade em 48 horas expulsando osmóis orgânicos das células gliais. Por isso:
 - **Salina Hipertônica (NaCl 3% — 100 a 150 mL IV em 10–20 min)** é reservada **exclusivamente para Hiponatremia Grave com Sintomas Neurológicos Ameaçadores à Vida** (convulsões, coma, rebaixamento torporoso, sinais de herniação), visando elevar o Na⁺ em **4 a 6 mEq/L nas primeiras horas** (o suficiente para reduzir o edema cerebral em 50% e cessar a convulsão).
 - **A Regra de Ouro da Segurança**: a elevação total do sódio sérico **NUNCA deve ultrapassar 8 a 10 mEq/L em 24 horas** (ou 6 a 8 mEq/L em 24h em etilistas, desnutridos, cirróticos e hipocalêmicos), sob pena de desencadear a devastadora **Síndrome de Desmielinização Osmótica (Mielinólise Pontina Central)** com tetraparesia espástica e síndrome do encarceramento (*locked-in*).
 
-### 🚫 4. Segurança, Travas & Proibições
-**🧠 1. Os 3 Pilares da Hipercalemia: Por Que o Gluconato de Cálcio NÃO Baixa o Potássio, Mas Salva a Vida?**
+### 🧠 1. Os 3 Pilares da Hipercalemia: Por Que o Gluconato de Cálcio NÃO Baixa o Potássio, Mas Salva a Vida?
 O potássio extracelular elevado reduz o potencial de repouso da membrana miocárdica, gerando evolução eletrocardiográfica clássica: **ondas T apiculadas ("em tenda") → achatamento/perda da onda P e alargamento do PR → alargamento bizarro do QRS → padrão sinusoidal → Assistolia/FV**. Diante de **K⁺ > 6,5 mEq/L ou qualquer alteração no ECG**, o manejo segue 3 etapas simultâneas:
 1. **Estabilizar a membrana cardíaca (Ação em 1–3 min)**: **Gluconato de Cálcio 10% — 10 a 30 mL IV lento em 5 min**. O cálcio **não altera o K⁺ sérico**, mas restaura o limiar de excitabilidade do miócito, protegendo contra PCR por 30–60 minutos.
 2. **Desviar o K⁺ para o intracelular (*Shift* — Ação em 15–30 min)**: **Solução Polarizante (10 UI de Insulina Regular + 50 g de Glicose = 100 mL de SG 50% IV em 15–30 min)** + **Salbutamol nebulizado em dose alta (10–20 mg = 40–80 gotas)** + HCO₃⁻ IV (se acidose metabólica associada).

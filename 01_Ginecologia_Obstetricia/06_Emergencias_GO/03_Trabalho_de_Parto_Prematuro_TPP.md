@@ -62,8 +62,7 @@ Alergias: [*Nega / [ ]].
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Diagnóstico e Raciocínio Clínico no Trabalho de Parto Prematuro (TPP)**
+### 🧠 1. Diagnóstico e Raciocínio Clínico no Trabalho de Parto Prematuro (TPP)
 - **Definição Diagnóstica:** O Trabalho de Parto Prematuro ocorre entre **20–22 semanas e 36 semanas e 6 dias**, caracterizado pela presença simultânea de:
   1. **Contrações uterinas rítmicas e dolorosas:** Pelo menos **≥ 2 a 3 contrações em 10 minutos** de ≥ 30 segundos mantidas; **E**
   2. **Modificação cervical progressiva:** Dilatação cervical ≥ 2–3 cm e/ou apagamento cervical ≥ 50–80% (ou colo uterino < 25 mm à ultrassonografia transvaginal).
@@ -76,11 +75,7 @@ Alergias: [*Nega / [ ]].
   - **Ampicilina:** **2 g EV** de ataque, seguida de **1 g EV de 4/4 horas** até o parto.
   - Se a tocólise for bem-sucedida e o trabalho de parto for interrompido, a profilaxia antibiótica para EGB é suspensa.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-**💊 2. Tocólise Farmacológica: Por Que Inibir por Apenas 48 Horas?**
+### 💊 2. Tocólise Farmacológica: Por Que Inibir por Apenas 48 Horas?
 - **O Objetivo Real da Tocólise:** A inibição farmacológica das contrações **não impede o parto prematuro a longo prazo**. Seu propósito exclusivo é postergar o nascimento por **48 horas**, permitindo tempo hábil para:
   1. Atuação plena da **Corticoterapia Antenatal** (pico de eficácia 24 a 48 horas após a 2ª dose);
   2. Infusão de **Sulfato de Magnésio para Neuroproteção Fetal** (se < 32 semanas);
@@ -98,6 +93,3 @@ Alergias: [*Nega / [ ]].
 - **Neuroproteção Fetal com Sulfato de Magnésio (< 32 semanas e Parto Iminente):**
   - Indicada para toda gestante < 32 semanas com trabalho de parto prematuro ativo estabelecido ou interrupção programada em até 24 horas.
   - **Esquema de Zuspan:** Ataque de **4 g EV** em 20 a 30 minutos (8 mL de MgSO4 50% + 92 mL SF 0,9%), seguido de manutenção de **1 g/h EV contínuo** (20 mL de MgSO4 50% + 480 mL SF 0,9% a 50 mL/h) até o parto ou por no máximo 24 horas. Reduz expressivamente a incidência de Paralisia Cerebral e disfunção motora no prematuro extremo.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

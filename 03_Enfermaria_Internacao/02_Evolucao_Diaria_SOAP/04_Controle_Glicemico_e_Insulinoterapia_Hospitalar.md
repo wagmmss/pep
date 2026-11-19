@@ -63,16 +63,6 @@ Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia at�
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**Por Que o Esquema "Sliding Scale" Isolado é Proscrito nas Enfermarias (Estudos RABBIT-2)**
+### Por Que o Esquema "Sliding Scale" Isolado é Proscrito nas Enfermarias (Estudos RABBIT-2)
 - **Por que nunca prescrever apenas "Insulina Regular conforme HGT" sem insulina basal:** A insulina de correção isolada (*Sliding Scale*) atua de forma puramente reativa — espera a glicemia subir acima de 180–250 mg/dL para só então aplicar um bolus, gerando o efeito "montanha-russa" (picos hiperglicêmicos seguidos de hipoglicemia iatrogênica). Os ensaios clínicos **RABBIT-2 Medicine e Surgery** provaram que o esquema **Basal-Bolus** atinge a meta de 140–180 mg/dL com menor taxa de infecção hospitalar, deiscência cirúrgica e insuficiência renal aguda.
 - **Por que a hiperglicemia induzida por Prednisona matinal exige NPH pela manhã:** A Prednisona administrada às 08h tem pico hiperglicemiante entre **14h e 20h** (tarde e início da noite), coincidindo exatamente com a curva de ação da **Insulina NPH aplicada às 07h–08h da manhã**.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

@@ -58,16 +58,6 @@ USO INALATÓRIO E ORAL (RECEITA DE ALTA PEDIÁTRICA — PESO DE REFERÊNCIA: [15
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Asma Aguda e Crise de Sibilância / Broncoespasmo na Infância (GINA Pediátrico)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-**Por Que o Spray com Espaçador Supera a Nebulização e Quando Usar o Sulfato de Magnésio (GINA)**
+### Por Que o Spray com Espaçador Supera a Nebulização e Quando Usar o Sulfato de Magnésio (GINA)
 - **Por que o pMDI (bombinha) com espaçador é superior ao nebulizador a jato:** O espaçador deposita maior fração de partículas respiráveis nas vias aéreas inferiores em 1/5 do tempo, com **menor taquicardia, menor tremor, menor queda transitória de SpO2 e zero dispersão de aerossóis virais** no pronto-socorro.
 - **Por que associar Ipratrópio e Sulfato de Magnésio IV na crise grave:** A adição de 3 doses de **Brometo de Ipratrópio** ao Salbutamol na 1ª hora reduz significativamente a taxa de hospitalização. Nas crises graves refratárias após a 1ª hora, o **Sulfato de Magnésio IV (50 mg/kg em 20 min, máx 2 g)** bloqueia a entrada de cálcio no músculo liso brônquico, promovendo broncodilatação de resgate e evitando intubação.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

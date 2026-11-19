@@ -55,11 +55,7 @@ Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia at�
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Round Matinal e Passagem de Plantão (Formato SBAR)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Estrutura Prática dos 4 Tempos do SBAR no Round de Enfermaria**
+### 🧭 3. Estrutura Prática dos 4 Tempos do SBAR no Round de Enfermaria
 | Etapa SBAR | Tempo Alvo | O Que Incluir Obrigatoriamente | O Que NUNCA Fazer no Round |
 | :--- | :---: | :--- | :--- |
 | **1. Situation (S)** | **15 seg** | Leito, nome, idade, DIH/DPO, diagnóstico principal e dia do antibiótico (`D_`). | Começar contando a história da emergência de 10 dias atrás sem dizer qual é o diagnóstico atual. |
@@ -67,12 +63,10 @@ Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia at�
 | **3. Assessment (A)** | **30 seg** | Intercorrências das 24h, curva térmica, balanço hídrico, exame dirigido, dispositivos e curvas de PCR/Leuco/Cr. | Ler todos os valores normais do laboratório sem destacar a tendência (ex: *"PCR caiu de 180 para 42"*). |
 | **4. Recommendation (R)** | **20 seg** | Metas do dia (dieta, *switch* oral, retirada de sondas) e pendências no formato **"Se X → Fazer Y"**. | Sair do leito sem definir se a sonda vesical/acesso venoso permanece e qual é o critério exato para a alta. |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Toda Pendência Deve Ter "Dono, Horário e Gatilho de Ação (Se X → Fazer Y)"?**
+### 💊 2. Por Que Toda Pendência Deve Ter "Dono, Horário e Gatilho de Ação (Se X → Fazer Y)"?
 - **Por que "checar laboratório" é uma pendência perigosa:** Quando o médico diarista passa para o plantonista noturno apenas *"checar o controle de sódio e hemoglobina das 18h"*, o plantonista que não conhece a história basal do paciente não sabe se `Hb = 7,8 g/dL` é uma queda aguda de `11,0 g/dL` ou o basal crônico do paciente.
 - **O padrão de ouro de segurança (*Contingency Planning*):** Toda pendência deve ser transferida com o gatilho terapêutico explícito: *"Colhemos Hb às 16h por suspeita de melena; o basal de manhã era 9,2 g/dL. Se vier `< 7,5 g/dL` ou tiver taquicardia, transfundir 1 concentrado de hemácias e acionar endoscopia"*.
 
-### 🚫 4. Segurança, Travas & Proibições
-**🧠 1. Por Que Estruturamos a Passagem de Plantão no Método SBAR? (Fisiopatologia & Segurança do Paciente)**
+### 🧠 1. Por Que Estruturamos a Passagem de Plantão no Método SBAR? (Fisiopatologia & Segurança do Paciente)
 - **Por que falhas de comunicação na troca de turno são a principal causa de eventos sentinela:** Estudos da *Joint Commission* e da OMS demonstram que até **70% dos erros médicos graves em pacientes internados** resultam de falhas de comunicação durante a passagem de plantão (*handoff*). Passagens narrativas desestruturadas omitem o código de gravidade, esquecem doses de antibiótico e deixam pendências vagas ("ver exames à tarde") sem plano de contingência.
 - **Por que a Regra dos 60–90 Segundos transforma o Round Matinal:** O cérebro humano retém informações acionáveis quando apresentadas em sequência previsível: **Quem é o paciente e por que está aqui (`S`), o que tem de base (`B`), como passou as últimas 24h (`A`) e o que precisa ser decidido agora (`R`)**.

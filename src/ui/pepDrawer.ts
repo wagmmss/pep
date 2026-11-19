@@ -1831,6 +1831,7 @@ export function initPepDrawer(): void {
           <button type="button" class="pep-tool-btn${freeEditMode ? ' is-active-mode' : ''}" id="pepToggleFreeEditBtn" title="Alternar Edição Livre (Alt+E)">
             ${freeEditMode ? '⚡ Voltar às Pílulas' : '✏️ Edição Livre'}
           </button>
+          <button type="button" class="pep-tool-btn" id="pepCopyOrientacoesBtn" title="Copiar apenas Orientações de Alta & Sinais de Alarme (Tecla 5)">📢 Orientações</button>
           <button type="button" class="pep-tool-btn" id="pepEmptyModeBtn" title="Alternar formato de cópia de campos vazios">${keepEmptyBrackets ? '[ ] Vazios: Manter' : '[ ] Vazios: ___'}</button>
           <button type="button" class="pep-tool-btn" id="pepResetBtn" title="Restaurar opções e campos para o padrão">↺ Restaurar</button>
         </div>
@@ -1843,7 +1844,10 @@ export function initPepDrawer(): void {
           ? `<div class="pep-free-edit-wrap is-open">
                <div class="pep-free-edit-bar">
                  <span>✏️ Edição Livre ativa — texto abaixo é a fonte final para cópia e impressão.</span>
-                 <button type="button" class="btn btn-secondary btn-xs" id="pepFreeUndoBtn" ${freeEditState.undoStack.length <= 1 ? 'disabled' : ''}>↶ Desfazer (${Math.max(0, freeEditState.undoStack.length - 1)})</button>
+                 <div class="mq-btn-row">
+                   <button type="button" class="btn btn-secondary btn-xs" id="pepFreeUndoBtn" ${freeEditState.undoStack.length <= 1 ? 'disabled' : ''}>↶ Desfazer (${Math.max(0, freeEditState.undoStack.length - 1)})</button>
+                   <button type="button" class="btn btn-secondary btn-xs" id="pepFreeCopyMedsOnlyBtn" title="Copiar apenas os medicamentos numerados da receita (sem orientações)">💊 Só Medicamentos</button>
+                 </div>
                </div>
                <textarea id="pepFreeEditTextarea" class="pep-free-edit-textarea" rows="16" aria-label="Editor livre de prontuário">${escapeHtml(freeEditState.currentText)}</textarea>
              </div>`
@@ -2009,6 +2013,26 @@ export function initPepDrawer(): void {
       syncDraftToStore();
       renderPepTab();
     });
+
+    pepPanel.querySelector('#pepCopyOrientacoesBtn')?.addEventListener('click', () => {
+      if (!activeProtocol) return;
+      const res = resolvePowerActionText(5, getCompiledPepText(), activeProtocol);
+      if (!res.text.trim()) {
+        showToast('Este protocolo não possui bloco separado de Orientações.', 'warning', 1600);
+        return;
+      }
+      void copyToClipboard(res.text, 'Orientações');
+    });
+
+    pepPanel.querySelector('#pepFreeCopyMedsOnlyBtn')?.addEventListener('click', () => {
+      if (!activeProtocol) return;
+      const res = resolvePowerActionText(4, getCompiledPepText(), activeProtocol, { medsOnly: true });
+      if (!res.text.trim()) {
+        showToast('Nenhum medicamento numerado encontrado na Receita.', 'warning', 1600);
+        return;
+      }
+      void copyToClipboard(res.text, 'Receita (Só Medicamentos)');
+    });
   };
 
   const renderGuiaTab = () => {
@@ -2017,27 +2041,51 @@ export function initPepDrawer(): void {
     const sections = rawGuia.split(/^###\s+/m).filter((s) => s.trim());
     const travasChecked = cockpitStore.getState().patientSession.travasCheckedIds;
 
+    const parsedSections = sections.map((sec, idx) => {
+      const [firstLine, ...rest] = sec.split('\n');
+      const secTitle = firstLine.trim();
+      const secBody = rest.join('\n').trim();
+      const theme = classifyGuiaSectionTheme(secTitle);
+      const shortNav = secTitle.replace(/^[^\wÀ-ÿ]+\s*/, '').split('(')[0].trim().slice(0, 38);
+      return { id: `guia-sec-${idx}`, secTitle, secBody, theme, shortNav };
+    });
+
+    const navPillsHtml =
+      parsedSections.length > 1
+        ? `<div class="guia-lead-banner">
+             <div class="guia-lead-left">
+               <span class="guia-lead-eyebrow">📖 Raciocínio Clínico &amp; Fundamentação das Condutas</span>
+               <span class="guia-lead-sub">Explicação fisiopatológica, farmacológica e critérios práticos do porquê cada conduta é tomada desta maneira.</span>
+             </div>
+             <div class="guia-nav-pills">
+               ${parsedSections
+                 .map(
+                   (s) =>
+                     `<button type="button" class="guia-nav-pill" data-guia-jump="${s.id}">${escapeHtml(s.shortNav)}</button>`
+                 )
+                 .join('')}
+             </div>
+           </div>`
+        : '';
+
     const guiaCardsHtml =
-      sections.length > 0
-        ? sections
-            .map((sec) => {
-              const [firstLine, ...rest] = sec.split('\n');
-              const secTitle = firstLine.trim();
-              const secBody = rest.join('\n').trim();
-              const theme = classifyGuiaSectionTheme(secTitle);
-              return `
-                <article class="guia-section-card ${theme.cls}">
+      parsedSections.length > 0
+        ? parsedSections
+            .map(
+              (s) => `
+                <article class="guia-section-card ${s.theme.cls}" id="${s.id}">
                   <div class="guia-section-header">
-                    <h4 class="guia-section-title">${escapeHtml(secTitle)}</h4>
-                    <span class="guia-tag">${escapeHtml(theme.tag)}</span>
+                    <h4 class="guia-section-title">${escapeHtml(s.secTitle)}</h4>
+                    <span class="guia-tag">${escapeHtml(s.theme.tag)}</span>
                   </div>
-                  <div class="guia-section-body">${renderGuiaSectionBodyHtml(secBody)}</div>
-                </article>`;
-            })
+                  <div class="guia-section-body">${renderGuiaSectionBodyHtml(s.secBody)}</div>
+                </article>`
+            )
             .join('')
         : `<p class="mq-hint">Nenhuma diretriz estruturada disponível para este protocolo.</p>`;
 
     guiaPanel.innerHTML = `
+      ${navPillsHtml}
       <div class="guia-travas-box">
         <h4>🛡️ 7 Travas de Segurança Clínica (Sessão Atual)</h4>
         <div class="guia-travas-list">
@@ -2052,6 +2100,15 @@ export function initPepDrawer(): void {
       </div>
       <div class="guia-sections-stack">${guiaCardsHtml}</div>
     `;
+
+    guiaPanel.querySelectorAll<HTMLButtonElement>('[data-guia-jump]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.dataset.guiaJump;
+        if (targetId) {
+          guiaPanel.querySelector(`#${CSS.escape(targetId)}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
 
     guiaPanel.querySelectorAll<HTMLInputElement>('[data-trava-id]').forEach((chk) => {
       chk.addEventListener('change', () => {
@@ -2132,8 +2189,73 @@ export function initPepDrawer(): void {
     if (ev.target === overlay && window.innerWidth < 1024) close();
   });
 
+  const triggerPowerActionCopy = async (actionId: 1 | 2 | 3 | 4 | 5, btnEl?: HTMLElement | null) => {
+    if (!activeProtocol) return;
+    const compiledNow = getCompiledPepText();
+    const res = resolvePowerActionText(actionId, compiledNow, activeProtocol, {
+      sanitizeOpts: { keepEmptyBrackets },
+    });
+    if (!res.text.trim()) {
+      showToast(`Este protocolo não possui bloco separado de ${res.label}.`, 'warning', 1800);
+      return;
+    }
+    if (actionId === 1 && res.pendingGaps.totalGaps > 0) {
+      highlightGaps = true;
+      showToast(`⚠️ Copiado com ${res.pendingGaps.totalGaps} lacuna(s) [ ] pendente(s).`, 'warning', 2400);
+    }
+    await copyToClipboard(res.text, res.label);
+    if (btnEl) {
+      btnEl.classList.add('btn-copy-success');
+      setTimeout(() => btnEl.classList.remove('btn-copy-success'), 1000);
+    }
+  };
+
+  document.querySelectorAll<HTMLButtonElement>('#cockpitPowerActions [data-power-action]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const actionId = Number(btn.dataset.powerAction) as 1 | 2 | 3 | 4 | 5;
+      void triggerPowerActionCopy(actionId, btn);
+    });
+  });
+
+  document.getElementById('powerBtnResetPatient')?.addEventListener('click', () => {
+    document.getElementById('pepResetBtn')?.click();
+  });
+
   window.addEventListener('keydown', (e) => {
     if (!activeProtocol || document.body.dataset.activeSection !== 'pep') return;
+    const target = e.target as HTMLElement | null;
+    const tag = target?.tagName || '';
+    const isTyping =
+      tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || Boolean(target?.isContentEditable);
+
+    if (!isTyping && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      if (e.key === '1') {
+        e.preventDefault();
+        void triggerPowerActionCopy(1, document.getElementById('powerBtnCopyAll'));
+        return;
+      }
+      if (e.key === '2') {
+        e.preventDefault();
+        void triggerPowerActionCopy(3, document.getElementById('powerBtnCopyConduta'));
+        return;
+      }
+      if (e.key === '3') {
+        e.preventDefault();
+        void triggerPowerActionCopy(4, document.getElementById('powerBtnCopyReceita'));
+        return;
+      }
+      if (e.key === '4') {
+        e.preventDefault();
+        void triggerPowerActionCopy(2, document.getElementById('powerBtnCopyEvolucao'));
+        return;
+      }
+      if (e.key === '5') {
+        e.preventDefault();
+        void triggerPowerActionCopy(5, document.getElementById('powerBtnCopyOrientacoes'));
+        return;
+      }
+    }
+
     if (e.altKey && e.key.toLowerCase() === 'n') {
       e.preventDefault();
       document.getElementById('pepNextFieldBtn')?.click();

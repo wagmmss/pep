@@ -47,22 +47,14 @@ Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia at�
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que Estruturamos o Round em 5 Tempos? (Método SNAPPS Obstétrico)**
+### 🧠 1. Por Que Estruturamos o Round em 5 Tempos? (Método SNAPPS Obstétrico)
 - **A Psicologia Cognitiva do Preceptor no Round:** Na visita de enfermaria com 15 a 30 leitos, o preceptor precisa construir uma imagem mental imediata de **gravidade e pendências de alta**. Quando você abre o caso com a **Manchete Obstétrica completa** (*Idade, G/P/A, DPO, Via de Parto + Indicação, IG e Comorbidades*), o preceptor já sabe em 5 segundos se está ouvindo uma puérpera de baixo risco pronta para alta ou uma pré-eclâmpsia grave que exige vigilância pressórica.
 - **Por que nunca terminar perguntando *"O que fazemos com ela?"*:** O interno de excelência sempre encerra no **Tempo 5 (Plano Proposto)** amarrando os **3 pilares da enfermaria puerperal**: (1) Profilaxia de TEV e Analgesia segura; (2) Contracepção pós-parto já alinhada; e (3) Status objetivo de alta (ou qual pendência exata impede a alta hoje).
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 2. As 3 Perguntas Clássicas da Chefia (E o Raciocínio por Trás Delas)**
+### 🧭 2. As 3 Perguntas Clássicas da Chefia (E o Raciocínio por Trás Delas)
 1. ***"Qual a tipagem da mãe, do RN e o Coombs? Já tomou o Matergam (Anti-D)?"***
    - **Por quê:** Durante o descolamento placentário há hemorragia feto-materna. Se a mãe é `Rh negativo` e o RN é `Rh positivo`, a **Imunoglobulina Anti-D 300 mcg IM** precisa neutralizar até 30 mL de sangue fetal **dentro de 72 horas** antes que o sistema imune materno produza IgG anti-D definitiva (que atravessaria a placenta na gestação seguinte causando eritroblastose/hidropisia fetal).
 2. ***"Ela teve Pré-Eclâmpsia ou HAG? Você tirou o Cetoprofeno/Ibuprofeno da prescrição?"***
    - **Por quê:** O pico de pressão arterial no puerpério ocorre entre o **3º e o 6º DPO** (quando o edema intersticial acumulado na gravidez é reabsorvido para o espaço intravascular). AINEs bloqueiam a natriurese mediada por prostaglandinas renais e são a principal causa iatrogênica de crise hipertensiva pós-parto.
 3. ***"Como estão o Globo de Pinard, os lóquios e a pega da mamada?"***
    - **Por quê:** São os três marcadores clínicos que excluem as três maiores causas de reinternação puerperal: **Hemorragia tardia**, **Endometrite puerperal** e **Mastite/Desmame precoce por fissura mamilar**.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

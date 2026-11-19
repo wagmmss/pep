@@ -48,16 +48,6 @@ RASTREIO SISTEMÁTICO DA CAUSA BASE (MNEMÔNICO DELIRIUM):
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**Por Que o Delirium Hipoativo é o Mais Letal e Por Que Evitar Benzodiazepínicos e Prometazina**
+### Por Que o Delirium Hipoativo é o Mais Letal e Por Que Evitar Benzodiazepínicos e Prometazina
 - **Por que o Delirium Hipoativo passa despercebido em até 70% das enfermarias:** O idoso quieto, sonolento e que "não dá trabalho" à enfermagem frequentemente é rotulado como deprimido ou cansado, atrasando o diagnóstico de sepse urinária/pulmonar, hiponatremia, retenção urinária ou intoxicação medicamentosa.
 - **Por que nunca fazer Haloperidol no paciente com Parkinson ou Demência por Corpos de Lewy (e nunca associar Prometazina no idoso):** O bloqueio dopaminérgico D2 potente do Haloperidol no Parkinson/Lewy desencadeia **rigidez acinética grave, síndrome neuroléptica maligna e broncoaspiração fatal** (nesses casos, use **Quetiapina 12,5 a 25 mg VO**). Já a **Prometazina (Fenergan)** possui fortíssima ação anticolinérgica central, aprofundando dramaticamente a confusão mental no idoso.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

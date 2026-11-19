@@ -82,13 +82,36 @@ COMO AGIR EM CASA SE ACONTECER UM NOVO EPISÓDIO (PASSO A PASSO DE SEGURANÇA):
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO PEDIÁTRICO & PLANO DE AÇÃO DOMICILIAR — CONVULSÃO FEBRIL SIMPLES
+Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
+
+USO ORAL:
+1. Dipirona Solução Oral Gotas (500 mg/mL) ------------------------------------- 1 frasco
+   Dar [ ] gotas (0,8 a 1 gota/kg; máx 35 gotas) por via oral até de 6 em 6 horas se houver febre (temperatura axilar ≥ 37,8 °C) ou dor, para proporcionar conforto à criança.
+
+2. [Se identificado foco bacteriano associado — ex: Otite Média Aguda]:
+   [Apenas tratamento sintomático da virose / Amoxicilina conforme prescrição específica].
+
+ESCLARECIMENTOS FUNDAMENTAIS PARA TRANQUILIZAR A FAMÍLIA:
+1. A Convulsão Febril Simples é Benigna: Apesar de ser muito assustadora para quem assiste, uma crise convulsiva febril curta (< 15 minutos) NÃO causa dano cerebral, NÃO afeta a inteligência ou o desenvolvimento e NÃO significa que a criança tem epilepsia (mais de 97% das crianças com convulsão febril simples nunca terão epilepsia).
+2. Sobre os Antitérmicos: Dar antitérmico ajuda a criança a se sentir melhor, mas nenhum antitérmico impede 100% que uma nova crise aconteça (pois a convulsão geralmente ocorre na subida rápida da primeira febre). Também NÃO se deve usar remédio controlado anticonvulsivante de uso diário (como Fenobarbital ou Ácido Valproico) para prevenir convulsão febril simples.
+
+COMO AGIR EM CASA SE ACONTECER UM NOVO EPISÓDIO (PASSO A PASSO DE SEGURANÇA):
+1. Mantenha a calma e olhe no relógio para marcar a hora em que a crise começou (a maioria para sozinha em 1 a 3 minutos).
+2. Deite a criança DE LADO (decúbito lateral) no chão sobre um tapete ou na cama, longe de quinas ou objetos duros, para que a saliva escorra para fora e ela respire livremente.
+3. NUNCA tente abrir a boca da criança à força, NUNCA puxe a língua e NUNCA coloque o dedo, colher, pano ou água/remédio na boca durante a crise (a língua NÃO enrola nem é engolida, e colocar objetos na boca pode quebrar dentes ou sufocar a criança).
+4. Leve imediatamente ao Pronto-Socorro (ou ligue 192 — SAMU) se a crise durar MAIS DE 5 MINUTOS, se um lado só do corpo tremer ou se a criança não voltar a ficar esperta 30 a 60 minutos após a crise parar.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Crise Convulsiva Febril na Infância** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Diferenciação Estrita: Convulsão Febril Simples vs Complexa e Risco de Recorrência**
+### 🧭 3. Diferenciação Estrita: Convulsão Febril Simples vs Complexa e Risco de Recorrência
 | Critério Diagnóstico | Convulsão Febril SIMPLES (Típica — 80% dos casos) | Convulsão Febril COMPLEXA (Atípica — 20% dos casos) |
 | :--- | :--- | :--- |
 | **1. Morfologia da Crise** | **Generalizada** (tônico-clônica ou atônica bilateral simétrica) | **Focal** (início em apenas 1 membro/hemicorpo ou desvio lateral fixo do olhar) |
@@ -97,8 +120,7 @@ COMO AGIR EM CASA SE ACONTECER UM NOVO EPISÓDIO (PASSO A PASSO DE SEGURANÇA):
 | **4. Exame Pós-Ictal** | Retorno completo ao basal normal em 30–60 min, sem déficits | **Paralisia de Todd** (paresia transitória pós-ictal) ou letargia prolongada |
 | **Conduta & Exames** | **Não pedir TC, RM, EEG ou eletrólitos**; observar 2–4h e alta orientada | Investigar etiologia, considerar LCR/neuroimagem/observação hospitalar prolongada |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Quando a Punção Lombar (LCR) É Realmente Necessária na Criança com Febre + Convulsão? (Diretriz AAP / SBP)**
+### 💊 2. Quando a Punção Lombar (LCR) É Realmente Necessária na Criança com Febre + Convulsão? (Diretriz AAP / SBP)
 - **O dilema clínico central na emergência (Convulsão Febril Benigna vs Meningite Bacteriana Aguda):** A única emergência infecciosa fatal que se apresenta com `Febre + Crise Convulsiva` é a **Meningite / Meningoencefalite Aguda**. Porém, em crianças com **Convulsão Febril Simples típica** que acordam rapidamente após o pós-ictal, olham nos olhos, interagem no colo e não têm sinais meníngeos, a prevalência de meningite bacteriana na era pós-vacinal é **`< 0,2%`**.
 - **As 4 Indicações Formais de Punção Lombar (Coleta de Líquor) segundo a AAP e a SBP:**
   1. **Obrigatória:** Presença de qualquer **sinal meníngeo** (rigidez de nuca, Kernig, Brudzinski, fontanela abaulada) ou **alteração persistente do sensório/letargia** após 30–60 minutos do término da crise;
@@ -106,7 +128,6 @@ COMO AGIR EM CASA SE ACONTECER UM NOVO EPISÓDIO (PASSO A PASSO DE SEGURANÇA):
   3. **Fortemente Considerada se a criança já estava em uso de antibiótico oral nos dias anteriores** (porque o antibiótico oral pode mascarar parcialmente os sinais clínicos da meningite — *"meningite decapitada"*);
   4. **Convulsão Febril Complexa** sem retorno rápido ao estado neurológico basal.
 
-### 🚫 4. Segurança, Travas & Proibições
-**🧠 1. Por Que a Convulsão Febril Ocorre entre 6 Meses e 5 Anos e Por Que Antitérmico de Horário Não Previne a Crise? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que a Convulsão Febril Ocorre entre 6 Meses e 5 Anos e Por Que Antitérmico de Horário Não Previne a Crise? (Fisiopatologia & Raciocínio)
 - **A janela de vulnerabilidade do cérebro em maturação (`6 a 60 meses`, pico aos `18 meses`):** Nessa faixa etária, o córtex cerebral em rápido desenvolvimento possui alta densidade de sinapses excitatórias glutamatérgicas (receptores NMDA/AMPA) e maturação ainda incompleta das sinapses inibitórias GABAérgicas. Em crianças geneticamente predispostas, as citocinas pirogênicas (`IL-1β`) e a alcalose respiratória induzida pela hipertermia diminuem abruptamente o limiar convulsivo neuronal durante a **inclinação ascendente rápida da temperatura corporal**.
 - **Por que dar antitérmico de 4/4h ou dar Fenobarbital contínuo NÃO é indicado:** Múltiplos ensaios clínicos randomizados demonstraram que administrar Dipirona, Paracetamol ou Ibuprofeno profilaticamente de horário **não reduz a taxa de recorrência da convulsão febril**, porque a crise frequentemente é o **primeiro sinal** de que a temperatura começou a subir! Além disso, anticonvulsivantes contínuos (Fenobarbital, Valproato) não são prescritos na convulsão febril porque os efeitos adversos cognitivos, comportamentais e hepatotóxicos superam em muito o risco de uma condição benigna que desaparece espontaneamente até os 5 anos de idade.

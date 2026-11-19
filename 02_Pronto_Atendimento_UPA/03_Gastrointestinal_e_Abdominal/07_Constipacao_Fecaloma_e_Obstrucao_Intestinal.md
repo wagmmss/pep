@@ -59,16 +59,6 @@ USO ORAL (PREVENÇÃO DE REIMPACTAÇÃO E MANEJO DOMICILIAR DA CONSTIPAÇÃO):
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Atendimento de Pronto Atendimento - Constipação Aguda, Fecaloma e Suspeita de Obstrução Intestinal** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**Armadilhas Clínicas no Fecaloma e no Uso de Fleet Enema**
+### Armadilhas Clínicas no Fecaloma e no Uso de Fleet Enema
 - **Por que a "diarreia" no idoso acamado frequentemente é um Fecaloma:** O bolo fecal pétreo impactado no reto dilata o esfíncter interno por reflexo retoesfincteriano inibitório contínuo, permitindo que apenas o muco e o líquido entérico proximal escorram ao redor da massa (**incontinência por transbordamento ou diarreia paradoxal**). Prescrever Loperamida sem fazer toque retal transforma a impactação em megacólon tóxico ou perfuração estercoral.
 - **Por que evitar Fleet Enema (Fosfato de Sódio) em idosos e renais crônicos:** O enema hipertônico de fosfato pode ser absorvido pela mucosa retal distendida, desencadeando **hiperfosfatemia aguda grave, hipocalcemia tetânica, hipocalemia e injúria renal aguda**. Prefira sempre **Clister Glicerinado 12%** ou solução fisiológica morna.

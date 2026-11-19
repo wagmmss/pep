@@ -748,9 +748,11 @@ export function calcGasometria5Passos(input: GasometriaInput): GasometriaResult 
   let passo3Compensacao = '';
   const diagParts: string[] = [];
   const pushUniqueDiag = (label: string, prefixCheck?: string) => {
-    const exists = prefixCheck
-      ? diagParts.some(d => d.toLowerCase().includes(prefixCheck.toLowerCase()))
-      : diagParts.includes(label);
+    const exists =
+      diagParts.includes(label) ||
+      (prefixCheck
+        ? diagParts.some((d) => d.toLowerCase().includes(prefixCheck.toLowerCase()))
+        : false);
     if (!exists) diagParts.push(label);
   };
 
@@ -948,6 +950,253 @@ export const LOGBOOK_PROCEDIMENTOS_MATRIX: LogbookProcedureGoal[] = [
   { id: 'proc-efast', rodizioId: 'emergencia_trauma', rodizioNome: 'Emergência & Trauma', nome: 'e-FAST à beira do leito', metaAlvo: 10, guiaRef: '02_Avaliacao_Paciente_Grave_ABCDE.md' },
   { id: 'proc-sri', rodizioId: 'emergencia_trauma', rodizioNome: 'Emergência & Trauma', nome: 'IOT de Emergência (SRI) / Cardioversão', metaAlvo: 5, guiaRef: '02_Avaliacao_Paciente_Grave_ABCDE.md' },
   { id: 'proc-dreno-torax', rodizioId: 'emergencia_trauma', rodizioNome: 'Emergência & Trauma', nome: 'Drenagem de Tórax (auxiliar/executar)', metaAlvo: 2, guiaRef: '02_Avaliacao_Paciente_Grave_ABCDE.md' },
+];
+
+export const HOJE_DEEP_LINKS_MAP: Record<string, Array<{ id: string; label: string }>> = {
+  'ferias:sem1': [
+    { id: 'hab-7', label: '🧠 HDPE Abdome Agudo' },
+    { id: ';abdome-agudo', label: '🩺 Dor Abdominal / Abdome Agudo' },
+    { id: 'hab-12', label: '🧠 ECG 10 Passos' },
+    { id: 'hab-13', label: '🧠 RX Tórax' },
+  ],
+  'ferias:sem2': [
+    { id: 'hab-18', label: '🧠 ABCDE & RUSH' },
+    { id: 'hab-4', label: '🧠 SBAR & SNAPPS' },
+    { id: 'hab-14', label: '🧠 Gasometria 5 Passos' },
+    { id: ';abdome-agudo', label: '🩺 Abdome Agudo' },
+  ],
+  'ferias:sem3': [
+    { id: 'hab-22', label: '🧠 Via Aérea LEMON & VM' },
+    { id: ';sepse', label: '🩺 Sepse 1ª Hora' },
+    { id: 'hab-14', label: '🧠 Gasometria 5 Passos' },
+    { id: 'hab-17', label: '🧠 7 Travas Prescrição' },
+  ],
+  'ferias:sem4': [
+    { id: 'hab-22', label: '🧠 VM Protetora' },
+    { id: 'hab-14', label: '🧠 Gasometria & Eletrólitos' },
+    { id: 'hab-12', label: '🧠 ECG Eletrolítico' },
+    { id: 'hab-16', label: '🧠 SPIKES / NURSE' },
+  ],
+  'ferias:sem5': [
+    { id: 'hab-3', label: '🧠 Anamnese/EF em GO' },
+    { id: 'hab-1', label: '🧠 Calgary-Cambridge' },
+    { id: 'hab-4', label: '🧠 SNAPPS Ambulatorial' },
+  ],
+  'ferias:sem6': [
+    { id: ';pre-eclampsia', label: '🩺 Pré-Eclâmpsia / Eclâmpsia' },
+    { id: ';hpp', label: '🩺 Hemorragia Pós-Parto' },
+    { id: 'hab-15', label: '🧠 CTG & Partograma' },
+  ],
+  'ferias:sem7': [{ id: 'hab-1', label: '🏖️ Semana Livre Planejada' }],
+  'ferias:sem8': [
+    { id: ';sca', label: '🩺 SCA / IAM' },
+    { id: ';avc', label: '🩺 AVC Agudo' },
+    { id: 'hab-18', label: '🧠 ABCDE Paciente Grave' },
+  ],
+  cirurgia: [
+    { id: 'hab-7', label: '🧠 HDPE Abdome Agudo' },
+    { id: 'hab-21', label: '🧠 Sutura & Anestesia Local' },
+    { id: ';abdome-agudo', label: '🩺 Abdome Agudo' },
+    { id: ';enf-evo-po', label: '🩺 Evolução Pós-Op' },
+  ],
+  anestesio_cti: [
+    { id: 'hab-22', label: '🧠 IOT, Via Aérea & VM' },
+    { id: 'hab-14', label: '🧠 Gasometria 5 Passos' },
+    { id: 'hab-18', label: '🧠 ABCDE & Choque' },
+    { id: ';sepse', label: '🩺 Sepse & Choque' },
+  ],
+  go: [
+    { id: 'hab-3', label: '🧠 Exame Físico & Leopold GO' },
+    { id: 'hab-15', label: '🧠 CTG & Partograma' },
+    { id: ';pre-eclampsia', label: '🩺 Pré-Eclâmpsia' },
+    { id: ';hpp', label: '🩺 Hemorragia Pós-Parto' },
+  ],
+  oftalmo_orl_ccp: [
+    { id: 'hab-20', label: '🧠 ORL & Olho Vermelho' },
+    { id: 'hab-9', label: '🧠 Exame Neuro & HINTS' },
+    { id: ';vertigem', label: '🩺 Vertigem / HINTS' },
+    { id: ';conjuntivite', label: '🩺 Olho Vermelho' },
+  ],
+  mfc: [
+    { id: 'hab-1', label: '🧠 Calgary-Cambridge & ICE' },
+    { id: 'hab-16', label: '🧠 SPIKES & Teach-Back' },
+    { id: 'hab-17', label: '🧠 7 Travas Prescrição' },
+  ],
+  cm: [
+    { id: 'hab-11', label: '🧠 Método DDx & Bayes' },
+    { id: 'hab-19', label: '🧠 Paracentese / Toraco / PL' },
+    { id: 'hab-5', label: '🧠 Exame Cardiovascular' },
+    { id: 'hab-6', label: '🧠 Exame Pulmonar' },
+  ],
+  ped: [
+    { id: 'hab-10', label: '🧠 EF Pediátrico Anti-Choro' },
+    { id: ';bva', label: '🩺 Bronquiolite (BVA)' },
+    { id: ';ped-febre', label: '🩺 Febre sem Foco' },
+    { id: ';ped-desidratacao', label: '🩺 GECA & Desidratação' },
+  ],
+  emergencia_trauma: [
+    { id: 'hab-18', label: '🧠 ABCDE & Sala Vermelha' },
+    { id: 'hab-22', label: '🧠 SRI & Via Aérea' },
+    { id: ';sca', label: '🩺 SCA / IAM' },
+    { id: ';pcr', label: '🩺 PCR & ACLS' },
+  ],
+  sprint_r1: [
+    { id: 'hab-18', label: '🧠 ABCDE OSCE' },
+    { id: 'hab-17', label: '🧠 7 Travas OSCE' },
+    { id: 'hab-12', label: '🧠 ECG 10 Passos' },
+    { id: 'hab-14', label: '🧠 Gasometria 5 Passos' },
+  ],
+};
+
+export const CURRICULO_ITEMS_DATA: Array<{
+  id: string;
+  categoria: 'Concluído (Base)' | 'Meta 1º Semestre (até 30/06/27)';
+  titulo: string;
+  detalhe: string;
+}> = [
+  {
+    id: 'curr-ic-2anos',
+    categoria: 'Concluído (Base)',
+    titulo: '2 anos de Iniciação Científica (IC) com bolsa comprovada',
+    detalhe: 'Ciclo encerrando em Janeiro de 2027 — garantir declaração oficial e comprovante de bolsa.',
+  },
+  {
+    id: 'curr-2-artigos',
+    categoria: 'Concluído (Base)',
+    titulo: '2 Artigos Científicos Publicados (1 da IC + 1 extra)',
+    detalhe: 'PDF final publicado, DOI e comprovante de indexação salvos.',
+  },
+  {
+    id: 'curr-natacao',
+    categoria: 'Concluído (Base)',
+    titulo: '1,5 anos de Equipe de Natação da Faculdade (Representação Esportiva)',
+    detalhe: 'Pontua em atividades esportivas/extracurriculares (USP/UNICAMP).',
+  },
+  {
+    id: 'curr-liga',
+    categoria: 'Concluído (Base)',
+    titulo: 'Mais de 1 ano como Diretor de Liga Acadêmica',
+    detalhe: 'Certificado de diretoria/gestão emitido.',
+  },
+  {
+    id: 'curr-audit-editais',
+    categoria: 'Meta 1º Semestre (até 30/06/27)',
+    titulo: 'Auditar Editais Vigentes (USP-RP, USP-SP, UNICAMP e ENARE) em Jan/Fev',
+    detalhe: 'Cruzar os tetos de cada barema em /Currículo/Editais/ para focar apenas no que soma ponto líquido.',
+  },
+  {
+    id: 'curr-rev-sist',
+    categoria: 'Meta 1º Semestre (até 30/06/27)',
+    titulo: 'Submeter/Publicar Revisão Sistemática ou Relato de Caso adicional (se necessário p/ teto)',
+    detalhe: 'Fechar pendências científicas até 30/06/2027 (zero currículo no 2º semestre).',
+  },
+  {
+    id: 'curr-congresso',
+    categoria: 'Meta 1º Semestre (até 30/06/27)',
+    titulo: 'Apresentação de Trabalho em Congresso / Simpósio (1º autor ou coautor)',
+    detalhe: 'Garantir certificado de apresentação com ISBN/anais.',
+  },
+  {
+    id: 'curr-pasta-unica',
+    categoria: 'Meta 1º Semestre (até 30/06/27)',
+    titulo: 'Organizar Pasta Única de Certificados PDF Nomeados & Auditados até 30/06/2027',
+    detalhe: 'Deixar dossiê pronto 4 meses antes das inscrições de residência.',
+  },
+];
+
+export const RITUAL_DOMINGO_DATA: Array<{ id: string; text: string }> = [
+  {
+    id: 'rit-escala',
+    text: '1. Olhar a escala real da semana seguinte (plantões, PEs, ambulatórios) e escolher a Marcha (🟢 3 / 🟡 2 / 🔴 1).',
+  },
+  {
+    id: 'rit-7030',
+    text: '2. Definir os subtemas exatos da semana: 70% Rodízio-Âncora + 30% Trilha Paralela R1 (Ficha Medway + MedQuest).',
+  },
+  {
+    id: 'rit-habito',
+    text: '3. Escolher 1 único Micro-Hábito Clínico Alvo para praticar no hospital durante a semana inteira.',
+  },
+  {
+    id: 'rit-cegos',
+    text: '4. Revisar os 3 principais Pontos Cegos da semana anterior e suspender cards triviais do Anki.',
+  },
+];
+
+export interface EnsaioMentalProcGuide {
+  id: string;
+  nome: string;
+  indicacao: string;
+  material: string;
+  anatomia: string;
+  armadilha: string;
+}
+
+export const ENSAIO_MENTAL_PROCS_DATA: EnsaioMentalProcGuide[] = [
+  {
+    id: 'proc-sutura',
+    nome: '1. Anestesia Local & Sutura (Simples / Donati)',
+    indicacao: 'Feridas limpas/contaminadas com < 6–12h sem infecção franca; checar status vacinal antitetânico.',
+    material: 'Luva estéril, clorexidina, SF 0,9% sob pressão, lidocaína 1–2%, seringa/agulha, porta-agulhas, pinça dente de rato, tesoura, fio Nylon 3-0 a 5-0.',
+    anatomia: 'Testar sensibilidade/motricidade distal ANTES da lidocaína! Dose máx lido: 4,5 mg/kg s/ vaso (7 mg/kg c/ vaso). Entrar a 90° na derme.',
+    armadilha: 'Esquecer de irrigar abundantemente antes de fechar; dar ponto frouxo ou isquemiante; usar vasoconstritor em extremidade isquêmica.',
+  },
+  {
+    id: 'proc-iot',
+    nome: '2. Ventilação BVM ("C-E") & Laringoscopia (IOT)',
+    indicacao: 'Falência ventilatória/oxigenação, proteção de via aérea (Glasgow ≤ 8), instabilidade refratária.',
+    material: 'BVM com reservatório, O2 15 L/min, aspirador rígido testado, cânula Guedel, laringoscópio testado (lâmina 3/4), TOT com cuff testado + fio-guia, capnógrafo, drogas SRI + vasopressor pronto.',
+    anatomia: 'Posição olfativa (meato acústico alinhado ao esterno). Entrar pela direita da boca, rebater língua p/ esquerda, ponta da Macintosh na valécula e tracionar a 45° sem báscula nos dentes.',
+    armadilha: 'Tentar intubar paciente hipoxêmico/hipotenso sem pré-oxigenar e sem push-dose/noradrenalina; esquecer de checar capnografia e altura do tubo (20–22 cm na rima).',
+  },
+  {
+    id: 'proc-cvc',
+    nome: '3. Acesso Venoso Central USG-Guiado (Jugular Interna / Femoral)',
+    indicacao: 'Infusão contínua de DVA, acesso periférico impossível, monitorização/nutrição parenteral.',
+    material: 'Kit CVC, barreira máxima estéril, USG com capa estéril, lidocaína, agulha de punção, fio-guia em J, bisturi nº 11, dilatador, cateter lavado com SF, Nylon 3-0.',
+    anatomia: 'Triângulo de Sedillot (cabeças esternal e clavicular do ECOM). No USG: veia jugular é compressível e lateral à carótida pulsátil.',
+    armadilha: 'Perder o controle da ponta externa do fio-guia (SEMPRE segurar o guia!); forçar o fio-guia contra resistência ou diante de extrassístoles no monitor.',
+  },
+  {
+    id: 'proc-paracentese',
+    nome: '4. Paracentese Diagnóstica e de Alívio',
+    indicacao: 'Ascite nova, internação de cirrótico (descartar PBE) ou ascite tensa com restrição ventilatória.',
+    material: 'Luva estéril, clorexidina, lidocaína, jelco 14G/16G, seringa 20 mL, equipo macrogotas + frasco coletor, tubos (celularidade/diferencial, albumina, cultura em frasco de hemocultura) + Albumina humana se > 5 L.',
+    anatomia: 'QIE: 2 dedos mediais e 2 dedos cefálicos à EIAS esquerda (lateral aos vasos epigástricos inferiores; evitar QID pelo ceco dilatado). Técnica em Z-track.',
+    armadilha: 'Deixar de colher PBE por INR elevado ou plaquetopenia (não são contraindicações!); retirar > 5 litros sem repor 6–8 g de Albumina por litro total retirado.',
+  },
+  {
+    id: 'proc-toracocentese',
+    nome: '5. Toracocentese Diagnóstica / Alívio',
+    indicacao: 'Derrame pleural novo (> 1 cm no decúbito lateral/USG) ou derrame volumoso causando dispneia.',
+    material: 'Kit estéril, lidocaína, jelco 16G/18G, torneira de 3 vias (three-way), seringa 20–50 mL, equipo, tubos para Critérios de Light (proteínas, DHL, pH, glicose, celularidade, ADA, cultura).',
+    anatomia: 'Paciente sentado inclinado sobre mesa; 1 a 2 espaços abaixo do topo da macicez na linha escapular posterior, SEMPRE na BORDA SUPERIOR da costela inferior (feixe vásculo-nervoso passa na borda inferior!).',
+    armadilha: 'Entrar na borda inferior da costela (laceração da artéria intercostal → hemotórax); drenar > 1.200–1.500 mL de uma só vez (edema pulmonar de reexpansão).',
+  },
+  {
+    id: 'proc-pl',
+    nome: '6. Punção Lombar (Líquor / LCR)',
+    indicacao: 'Suspeita de meningite/encefalite, HSA com TC normal, síndrome de Guillain-Barré.',
+    material: 'Campo/luva estéril, clorexidina, lidocaína, agulha espinhal Quincke ou Whitacre 22G com mandril, 3 a 4 tubos estéreis numerados.',
+    anatomia: 'Linha de Tuffier (cristas ilíacas superiores cruzam L4): puncionar L3–L4 ou L4–L5 na linha média com inclinação cefálica de 15° (mirando a cicatriz umbilical).',
+    armadilha: 'Puncionar sem TC de crânio prévia quando há sinal de alarme (imunossuprimido, Glasgow < 12, déficit focal, convulsão recente ou papiledema); retirar a agulha sem recolocar o mandril.',
+  },
+  {
+    id: 'proc-svd-sng',
+    nome: '7. Sondagem Vesical de Demora (SVD) & Sondagem Nasogástrica (SNG)',
+    indicacao: 'SVD: retenção urinária, balanço hídrico estrito em choque. SNG: obstrução intestinal, HDA, proteção de via aérea.',
+    material: 'SVD: bandeja estéril, Foley 14–16 Fr, água destilada (nunca SF no balonete!), lidocaína gel estéril (15–20 mL no homem), coletor sistema fechado. SNG: sonda Levine, medição NEX (Nariz-Orelha-Xifoide).',
+    anatomia: 'SVD masculina: tracionar pênis a 90° para retificar uretra bulbar e só insuflar o balonete após retorno franco de urina com a sonda inserida até a bifurcação (Y)!',
+    armadilha: 'Insuflar o balonete da Foley na uretra prostática antes de ver retorno de urina; iniciar dieta em SNE sem RX confirmando ponta infradiafragmática.',
+  },
+  {
+    id: 'proc-especular',
+    nome: '8. Exame Especular, Coleta de CCO & Toque Obstétrico',
+    indicacao: 'Rastreio de CA de colo (25–64 anos), avaliação de sangramento/corrimento, bolsa rota ou trabalho de parto.',
+    material: 'Espéculo de Collins (P/M/G), foco de luz, espátula de Ayres (ectocérvice 360°), escova endocervical (giro 360°), lâmina com extremidade fosca identificada + fixador.',
+    anatomia: 'Afastar pequenos lábios, introduzir espéculo fechado em direção oblíqua/posterior apoiando na parede posterior (fúrcula), girar para horizontal e abrir suavemente.',
+    armadilha: 'Usar lubrificante em gel antes do CCO (inviabiliza a lâmina); realizar toque vaginal em sangramento de 2ª metade da gestação antes de excluir Placenta Prévia no USG!',
+  },
 ];
 
 export const ENSAIO_MENTAL_3MIN_PASSOS = [

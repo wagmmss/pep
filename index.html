@@ -123,6 +123,31 @@
           </div>
 
           <div class="drawer-header-actions">
+            <div class="cockpit-power-actions" id="cockpitPowerActions" role="toolbar" aria-label="Ações rápidas de cópia para prontuário">
+              <button type="button" class="power-action-btn primary-action" id="powerBtnCopyAll" data-power-action="1" title="Copiar Prontuário Completo Sanitizado (Tecla 1)">
+                <span class="kbd-num">1</span>
+                <span>Tudo</span>
+              </button>
+              <button type="button" class="power-action-btn" id="powerBtnCopyConduta" data-power-action="3" title="Copiar apenas Conduta / Plano (Tecla 2)">
+                <span class="kbd-num">2</span>
+                <span>Conduta</span>
+              </button>
+              <button type="button" class="power-action-btn" id="powerBtnCopyReceita" data-power-action="4" title="Copiar apenas Receita / Prescrição de Alta (Tecla 3)">
+                <span class="kbd-num">3</span>
+                <span>Receita</span>
+              </button>
+              <button type="button" class="power-action-btn" id="powerBtnCopyEvolucao" data-power-action="2" title="Copiar apenas Evolução / Anamnese + Exame Físico (Tecla 4)">
+                <span class="kbd-num">4</span>
+                <span>Evolução</span>
+              </button>
+              <button type="button" class="power-action-btn" id="powerBtnCopyOrientacoes" data-power-action="5" title="Copiar apenas Orientações de Alta &amp; Sinais de Alarme (Tecla 5)">
+                <span class="kbd-num">5</span>
+                <span>Orientações</span>
+              </button>
+              <button type="button" class="power-action-btn icon-only-btn" id="powerBtnResetPatient" title="Restaurar campos para o padrão" aria-label="Restaurar Padrão">
+                <span>↺</span>
+              </button>
+            </div>
             <button type="button" class="close-btn" id="drawerCloseBtn" aria-label="Fechar painel" title="Fechar (Esc)">✕</button>
           </div>
         </div>
@@ -170,6 +195,15 @@
         />
         <span class="meta-label" id="cmdCount">0 resultados</span>
         <button type="button" class="close-btn" id="cmdCloseBtn" aria-label="Fechar">✕</button>
+      </div>
+      <div class="subcat-chips" id="cmdQuickNavChips" style="padding:8px 14px; border-bottom:1px solid var(--border);">
+        <button type="button" class="subcat-chip" data-cmd-nav="hoje">📅 Hoje (6º Ano)</button>
+        <button type="button" class="subcat-chip" data-cmd-nav="pep">🩺 Protocolos PEP</button>
+        <button type="button" class="subcat-chip" data-cmd-nav="preporta">🧠 Pré-Porta 30s</button>
+        <button type="button" class="subcat-chip" data-cmd-nav="teoria">📚 Formação Teórica</button>
+        <button type="button" class="subcat-chip" data-cmd-nav="ferramentas">🧪 Ferramentas &amp; Calc</button>
+        <button type="button" class="subcat-chip" data-cmd-nav="logbook">📓 Logbook</button>
+        <button type="button" class="subcat-chip" data-cmd-nav="remume">💊 REMUME / HSL</button>
       </div>
       <div class="cmd-results" id="cmdResults"></div>
       <div class="cmd-footer">

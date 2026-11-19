@@ -53,14 +53,7 @@ Alergias: [*Nega / [ ]].
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Manejo de Emergência - Hemorragia Pós-Parto (HPP) / Protocolo Código Vermelho** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que a Sequência de Uterotônicos e o Ácido Tranexâmico Seguem Esta Ordem?**
+### 💊 2. Por Que a Sequência de Uterotônicos e o Ácido Tranexâmico Seguem Esta Ordem?
 | Passo Terapêutico | Dose & Via Exata | O Porquê Farmacológico & Travas Vitais |
 | :--- | :--- | :--- |
 | **1. Massagem Bimanual (Hamilton) + SVD** | Compressão do fundo abdominal contra o punho fechado no fórnice vaginal anterior + Sonda Vesical | Comprime mecanicamente as artérias uterinas, elimina coágulos que distendem a cavidade e esvazia a bexiga (bexigoma impede mecanicamente a contração do segmento inferior!). |
@@ -70,15 +63,14 @@ Alergias: [*Nega / [ ]].
 | **5. Misoprostol** | `800 mcg via Sublingual ou Retal` (4 cp de 200 mcg) | Análogo da Prostaglandina E1 termoestável; age por via independente quando os receptores miometriais de ocitocina já sofreram *down-regulation* (dessensibilização). |
 | **6. Balão Intrauterino (Bakri / Artesanal)** | Preenchido com `300 a 500 mL` de SF 0,9% morno por até 24h | Cria pressão hidrostática intraluminal superior à pressão arterial das artérias espiraladas, estancando o sangramento em 85% dos casos e servindo como *Teste do Tamponamento* antes da laparotomia (Sutura de B-Lynch / Ligadura / Histerectomia). |
 
-### 🚫 4. Segurança, Travas & Proibições
-**🧠 1. Por Que Não Esperamos a PA Cair para Acionar o Código Vermelho? (Fisiopatologia do Choque Obstétrico)**
+### 🧠 1. Por Que Não Esperamos a PA Cair para Acionar o Código Vermelho? (Fisiopatologia do Choque Obstétrico)
 - **A Armadilha da Reserva Volêmica da Gestante:** Ao final da gestação, o volume sanguíneo materno expandiu em `40 a 50%` (`~6 a 7 litros`) e o fluxo sanguíneo uterino consome **`600 a 800 mL por minuto`**.
 - Graças à intensa vasoconstrição simpática compensatória, uma puérpera saudável consegue perder **1.000 a 1.500 mL de sangue mantendo Pressão Arterial normal (`110x70 mmHg`)**! Quando a PAS finalmente cai abaixo de 90 mmHg, ela já perdeu `> 30–40%` da volemia total e já entrou na **Tríade Letal (Acidose + Hipotermia + Coagulopatia de Consumo)**.
 - **Por que usamos o Índice de Choque (`IC = FC / PAS`) como gatilho imediato?**
   - Na obstetrícia, o Índice de Choque normal é `0,5 a 0,7`.
   - Sempre que a **Frequência Cardíaca igualar ou superar a PA Sistólica (`IC ≥ 0,9` — ex.: FC 105 bpm com PA 110x70)**, há hipovolemia grave em curso: acione o **Código Vermelho**, pegue 2 acessos 14G–16G e inicie a Hora de Ouro imediatamente!
 
-**🧭 3. Os 4 "Ts" da HPP: Como Não Esquecer as Outras 3 Causas**
+### 🧭 3. Os 4 "Ts" da HPP: Como Não Esquecer as Outras 3 Causas
 - **Tônus (70% — Atonia Uterina):** Útero mole e esponjoso acima da cicatriz umbilical.
 - **Trauma (20% — Laceração de colo/vagina, Hematoma pélvico ou Rotura/Inversão uterina):** Sangramento vermelho vivo contínuo **com o útero firme e bem contraído (Globo de Pinard presente)!** Exige revisão com valvas de Doyen sob boa luz.
 - **Tecido (9% — Retenção placentária / Cotilédone acessório / Acretismo):** Placenta incompleta à inspeção → curagem digital ou curetagem romba com cureta de Wallich.

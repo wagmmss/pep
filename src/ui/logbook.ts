@@ -1,12 +1,35 @@
 import {
   ENSAIO_MENTAL_3MIN_PASSOS,
+  ENSAIO_MENTAL_PROCS_DATA,
   LOGBOOK_PROCEDIMENTOS_MATRIX,
   registerProcedureExecution,
   RODIZIOS_6ANO,
   type ProcedureAutonomy,
 } from '../engine/central6ano.ts';
 import { getCentral6AnoState, uiBridge, updateCentral6AnoState } from './context.ts';
-import { escapeHtml, guardPiiBeforeSave, playWebAudioChime, showToast } from './utils.ts';
+import { copyToClipboard, escapeHtml, guardPiiBeforeSave, playWebAudioChime, showToast } from './utils.ts';
+
+function buildLogbookMarkdownExport(state: ReturnType<typeof getCentral6AnoState>): string {
+  const clean = (s: unknown) => String(s || '').replace(/\r?\n/g, ' ').trim();
+  const procLines = LOGBOOK_PROCEDIMENTOS_MATRIX.map((p) => {
+    const auto = state.procAutonomyById?.[p.id] || { auxiliei: 0, supervisionado: 0, autonomo: 0 };
+    const total = auto.auxiliei + auto.supervisionado + auto.autonomo;
+    return `- [${total >= p.metaAlvo ? 'x' : ' '}] **${p.nome}** (${p.rodizioNome}): ${total}/${p.metaAlvo} (Auto: ${auto.autonomo}, Sup: ${auto.supervisionado})`;
+  });
+  const entryLines = (state.logbookEntries || []).map(
+    (e) =>
+      `### [${clean(e.dateIso)}] ${e.tipo === 'ponto_cego' ? '🎯 Ponto Cego' : '💉 Procedimento'} — ${clean(e.titulo)} (${clean(e.rodizio)})\n- **Aprendizado / Síntese:** ${clean(e.aprendizado)}${e.gatilhoCorrecao ? `\n- **Gatilho:** ${clean(e.gatilhoCorrecao)}` : ''}`
+  );
+  return [
+    '# 📓 Logbook de Procedimentos & Radar de Pontos Cegos — 6º Ano (FMRP-USP)',
+    '',
+    '## 1. Progresso das Metas Motoras dos 9 Rodízios',
+    ...procLines,
+    '',
+    '## 2. Histórico de Casos, Procedimentos & Debriefings',
+    ...(entryLines.length > 0 ? entryLines : ['*(Nenhum registro individual salvo ainda)*']),
+  ].join('\n');
+}
 
 export function initLogbook(): (container: HTMLElement) => void {
   let activeContainer: HTMLElement | null = null;
@@ -14,8 +37,10 @@ export function initLogbook(): (container: HTMLElement) => void {
   let ensaioSecLeft = 180;
   let ensaioRunning = false;
   let ensaioTimerId: ReturnType<typeof setInterval> | null = null;
+  let selectedEnsaioProcId = ENSAIO_MENTAL_PROCS_DATA[0]?.id || 'proc-sutura';
   let onlyCurrentRodizio = false;
   let entryFilter: 'all' | 'procedimento' | 'ponto_cego' = 'all';
+  let searchFilter = '';
 
   const stopEnsaio = () => {
     if (ensaioTimerId) {
@@ -51,8 +76,19 @@ export function initLogbook(): (container: HTMLElement) => void {
 
     const mins = String(Math.floor(ensaioSecLeft / 60)).padStart(2, '0');
     const secs = String(ensaioSecLeft % 60).padStart(2, '0');
+    const selectedProc =
+      ENSAIO_MENTAL_PROCS_DATA.find((p) => p.id === selectedEnsaioProcId) || ENSAIO_MENTAL_PROCS_DATA[0];
 
-    const visibleEntries = entries.filter((e) => entryFilter === 'all' || e.tipo === entryFilter).slice(0, 30);
+    const qNorm = searchFilter.trim().toLowerCase();
+    const visibleEntries = entries
+      .filter((e) => {
+        if (entryFilter !== 'all' && e.tipo !== entryFilter) return false;
+        if (!qNorm) return true;
+        return `${e.titulo} ${e.aprendizado || ''} ${e.rodizio} ${e.gatilhoCorrecao || ''}`
+          .toLowerCase()
+          .includes(qNorm);
+      })
+      .slice(0, 40);
 
     container.innerHTML = `
       <section class="mq-section-pane active">
@@ -64,6 +100,8 @@ export function initLogbook(): (container: HTMLElement) => void {
           </div>
           <div class="mq-btn-row">
             <span class="mq-nav-badge">${entries.length} registros</span>
+            <button type="button" class="btn-palette-trigger" id="lbExportMdBtn">📋 Copiar Logbook (.md)</button>
+            <button type="button" class="btn-palette-trigger" id="lbDownloadMdBtn">⬇️ Baixar .md</button>
           </div>
         </header>
 
@@ -73,6 +111,21 @@ export function initLogbook(): (container: HTMLElement) => void {
             <div>
               <div class="mq-eyebrow">PRÉ-PROCEDIMENTO OBRIGATÓRIO</div>
               <h3 style="font-size:1.05rem; font-weight:700;">🧘 Ensaio Mental (3 Minutos) Antes de Executar</h3>
+            </div>
+            <div class="mq-control-group">
+              <label class="mq-control-label" for="selEnsaioMentalProc">Guia Rápido do Procedimento (8 procedimentos essenciais):</label>
+              <select id="selEnsaioMentalProc" class="mq-select">
+                ${ENSAIO_MENTAL_PROCS_DATA.map(
+                  (p) =>
+                    `<option value="${escapeHtml(p.id)}" ${p.id === selectedProc.id ? 'selected' : ''}>${escapeHtml(p.nome)}</option>`
+                ).join('')}
+              </select>
+            </div>
+            <div class="mq-context-box" style="display:flex; flex-direction:column; gap:6px; font-size:0.8rem;">
+              <div><strong>1. Indicação &amp; Contraindicação:</strong> ${escapeHtml(selectedProc.indicacao)}</div>
+              <div><strong>2. Bandeja &amp; Material Completo:</strong> ${escapeHtml(selectedProc.material)}</div>
+              <div><strong>3. Marco Anatômico &amp; Passo Crítico:</strong> ${escapeHtml(selectedProc.anatomia)}</div>
+              <div style="color:var(--critical);"><strong>4. Armadilha Fatal a Evitar:</strong> ${escapeHtml(selectedProc.armadilha)}</div>
             </div>
             <div class="ensaio-timer-bar">
               <span class="ensaio-clock" id="ensaioClockDisplay">${mins}:${secs}</span>
@@ -203,6 +256,15 @@ export function initLogbook(): (container: HTMLElement) => void {
           <div class="hab-detail-head">
             <h3 style="font-size:1.02rem; font-weight:700;">📜 Histórico Recente (${visibleEntries.length})</h3>
             <div class="mq-btn-row">
+              <input
+                type="search"
+                id="lbSearchFilterInp"
+                class="mq-input"
+                style="max-width:220px;"
+                aria-label="Filtrar histórico do logbook"
+                placeholder="Filtrar registros..."
+                value="${escapeHtml(searchFilter)}"
+              />
               <button type="button" class="mq-counter-btn${entryFilter === 'all' ? ' is-active' : ''}" data-lb-filter="all">Todos</button>
               <button type="button" class="mq-counter-btn${entryFilter === 'procedimento' ? ' is-active' : ''}" data-lb-filter="procedimento">💉 Procedimentos</button>
               <button type="button" class="mq-counter-btn${entryFilter === 'ponto_cego' ? ' is-active' : ''}" data-lb-filter="ponto_cego">🎯 Pontos Cegos</button>
@@ -228,6 +290,7 @@ export function initLogbook(): (container: HTMLElement) => void {
                                   ? `<button type="button" class="btn btn-ghost btn-xs" data-resolve-entry="${escapeHtml(e.id)}">${e.status === 'resolvido' ? '✅ Resolvido' : 'Marcar resolvido'}</button>`
                                   : ''
                               }
+                              <button type="button" class="btn btn-ghost btn-xs" data-delete-entry="${escapeHtml(e.id)}" aria-label="Excluir registro" title="Excluir registro">🗑️</button>
                             </div>
                           </div>
                           ${e.aprendizado ? `<p class="mq-hint" style="margin-top:6px;">${escapeHtml(e.aprendizado)}</p>` : ''}
@@ -241,6 +304,46 @@ export function initLogbook(): (container: HTMLElement) => void {
     `;
 
     // Bindings
+    container.querySelector<HTMLSelectElement>('#selEnsaioMentalProc')?.addEventListener('change', (e) => {
+      selectedEnsaioProcId = (e.target as HTMLSelectElement).value;
+      render(container);
+    });
+
+    container.querySelector('#lbExportMdBtn')?.addEventListener('click', () => {
+      const md = buildLogbookMarkdownExport(getCentral6AnoState());
+      void copyToClipboard(md, 'Logbook (.md)');
+    });
+
+    container.querySelector('#lbDownloadMdBtn')?.addEventListener('click', () => {
+      const md = buildLogbookMarkdownExport(getCentral6AnoState());
+      const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `logbook-6ano-${new Date().toISOString().slice(0, 10)}.md`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      showToast('⬇️ Logbook baixado como arquivo .md!', 'success');
+    });
+
+    container.querySelector<HTMLInputElement>('#lbSearchFilterInp')?.addEventListener('input', (e) => {
+      searchFilter = (e.target as HTMLInputElement).value;
+      render(container);
+    });
+
+    container.querySelectorAll<HTMLButtonElement>('[data-delete-entry]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.deleteEntry!;
+        updateCentral6AnoState((prev) => ({
+          ...prev,
+          logbookEntries: (prev.logbookEntries || []).filter((ent) => ent.id !== id),
+        }));
+        showToast('Registro removido do Logbook.', 'info');
+        render(container);
+      });
+    });
     container.querySelector('#ensaioStartBtn')?.addEventListener('click', () => {
       if (ensaioRunning) {
         stopEnsaio();

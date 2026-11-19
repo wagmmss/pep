@@ -89,19 +89,35 @@ SINAIS DE ALERTA DE ANAFILAXIA (RETORNO IMEDIATO):
 
 ---
 
+## 💊 Receita Domiciliar / Alta (Pronta para Copiar)
+
+> **Como usar:** Clique no botão **`💊 Receita`** no topo do card ou na aba **Receita** para copiar apenas a prescrição de alta pronta para impressão/entrega ao paciente.
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+USO ORAL:
+
+1. Dicloridrato de Cetirizina 10 mg (ou Loratadina 10 mg / Bilastina 20 mg) -- 10 comprimidos
+   Tomar 01 comprimido por via oral de 24/24 horas por 5 a 7 dias.
+   (Nota: Em urticária aguda refratária, o anti-H1 de 2ª geração pode ser escalonado até 1 comprimido de 12/12h sob orientação médica).
+
+2. Prednisolona 20 mg ------------------------------------------ 10 comprimidos
+   Tomar 02 comprimidos (40 mg) por via oral pela manhã, após o café, por 3 a 5 dias (em caso de urticária extensa ou angioedema associado).
+
+SINAIS DE ALERTA DE ANAFILAXIA (RETORNO IMEDIATO):
+- Suspender imediatamente medicamentos suspeitos (especialmente AINEs, AAS, Dipirona ou antibióticos recém-iniciados).
+- Retornar IMEDIATAMENTE ao Pronto-Socorro se surgir: inchaço nos lábios ou língua, voz rouca/abafada, sensação de garganta fechando, falta de ar, chiado no peito ou tontura/desmaio.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Urticária Simples vs. Anafilaxia: Por Que a Adrenalina IM É Insubstituível?**
+### 🧠 1. Urticária Simples vs. Anafilaxia: Por Que a Adrenalina IM É Insubstituível?
 A **urticária aguda** caracteriza-se por pápulas/placas eritemato-edematosas pruriginosas e **fugazes** (cada lesão individual desaparece em < 24h sem deixar cicatriz), mediadas pela degranulação de mastócitos cutâneos. Porém, quando ao quadro cutâneo associa-se **comprometimento respiratório** (dispneia, broncoespasmo, estridor, edema de língua/úvula), **cardiovascular** (hipotensão, síncope) ou **gastrointestinal grave** (vômitos/dor abdominal em cólica após alérgeno), configura-se **ANAFILAXIA**. Na anafilaxia, anti-histamínicos e corticoides demoram horas para agir e **não revertem o choque distributivo nem o edema laríngeo**: a única droga que salva a vida no minuto zero é a **Adrenalina 0,3 a 0,5 mg IM no vasto lateral da coxa** (ação \alpha_1 vasoconstritora que reduz o edema de mucosa e ação \beta_2 broncodilatadora e estabilizadora da membrana mastocitária).
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Observação para Reação Bifásica e Prescrição de Anti-H1 de 2ª Geração**
+### 🧭 3. Observação para Reação Bifásica e Prescrição de Anti-H1 de 2ª Geração
 Em até 5 a 20% das anafilaxias, ocorre **reação bifásica** (recrudescimento dos sintomas 4 a 12 horas após a resolução inicial sem nova exposição ao antígeno). Por isso, todo paciente que recebeu Adrenalina IM deve permanecer em observação hospitalar por **no mínimo 4 a 8 horas** (ou 24h se hipotensão grave/asma). Na alta da urticária aguda, priorizam-se **anti-histamínicos H₁ de 2ª geração não sedativos** (Cetirizina, Loratadina, Fexofenadina ou Bilastina), que atravessam pouco a barreira hematoencefálica e permitem escalonamento seguro de dose se necessário.
 
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**💊 2. Angioedema Histaminérgico vs. Angioedema por Bradicinina (IECA): O Erro Clássico no PS**
+### 💊 2. Angioedema Histaminérgico vs. Angioedema por Bradicinina (IECA): O Erro Clássico no PS
 Nem todo paciente que chega com lábio ou língua inchados tem alergia! Se o angioedema for **isolado (sem placas de urticária e sem prurido)** em usuário de **IECA (Enalapril, Captopril, Ramipril)** — mesmo que tome o remédio há anos —, o mediador não é a histamina, mas o acúmulo de **bradicinina** por bloqueio da enzima degradadora (cininase II). Esse angioedema bradicininérgico responde mal a anti-histamínicos e corticoides, exigindo **suspensão definitiva e vitalícia de toda a classe dos IECA**, vigilância rigorosa da via aérea e, se houver estridor ou voz abafada ("batata quente"), intubação precoce com profissional experiente.

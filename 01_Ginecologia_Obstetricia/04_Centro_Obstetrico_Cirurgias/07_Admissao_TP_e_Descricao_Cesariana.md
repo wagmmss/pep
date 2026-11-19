@@ -73,19 +73,11 @@ USO ORAL (RECEITA DE ALTA PÓS-CESARIANA):
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Admissão em Trabalho de Parto & Descrição Cirúrgica de Cesariana** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-**🧠 1. Por Que Fazemos Antibioticoprofilaxia Pré-Incisional e Fechamento do Subcutâneo > 2 cm?**
+### 🧠 1. Por Que Fazemos Antibioticoprofilaxia Pré-Incisional e Fechamento do Subcutâneo > 2 cm?
 - **Por que administrar Cefazolina 2 g IV 30 a 60 minutos ANTES da incisão na pele (e não após o clampeamento do cordão):** Estudos randomizados e diretrizes da OMS/ACOG demonstram que a administração pré-incisional reduz em quase **50% as taxas de endometrite puerperal e infecção de ferida operatória**, sem impacto adverso neonatal. Em gestantes com peso `≥ 120 kg`, a dose deve ser ajustada para **`3 g IV`**.
 - **Por que aproximar o tecido subcutâneo quando a espessura for > 2 cm:** A sutura do espaço subcutâneo em pacientes com panículo adiposo `> 2 cm` oblitera espaço morto e reduz significativamente seroma, hematoma e deiscência de ferida operatória.
 
-### 🚫 4. Segurança, Travas & Proibições
-**💊 2. Travas Críticas Pós-Raquianestesia: Ocitocina, AINEs e Enoxaparina**
+### 💊 2. Travas Críticas Pós-Raquianestesia: Ocitocina, AINEs e Enoxaparina
 - **Por que NUNCA fazer Ocitocina 10 UI IV em bolus rápido na cesariana?** A raquianestesia já promove bloqueio simpático com vasodilatação periférica. Injetar `10 UI` de ocitocina IV rápido causa queda abrupta da resistência vascular sistêmica, hipotensão severa, taquicardia reflexa e risco de isquemia miocárdica. Use **`3 a 5 UI IV lento` (em 3–5 min)** seguido de infusão contínua.
 - **Por que bloquear Cetoprofeno/Ibuprofeno na cesárea por Pré-Eclâmpsia/HAS?** AINEs precipitam vasoconstrição renal, retenção hidrossalina e crise hipertensiva/EAP no puerpério (`3º–6º DPO`). Nesses casos, manter **Dipirona + Paracetamol (+ opioide de resgate)**.
 - **Por que aguardar ≥ 12 horas pós-raqui para Enoxaparina?** Respeitar o intervalo neuroaxial mínimo previne **hematoma espinhal/epidural** sem perder a proteção contra TEV (a cesárea dobra o risco tromboembólico comparado ao parto vaginal).

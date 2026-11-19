@@ -85,15 +85,42 @@ CUIDADOS COM A FERIDA OPERATÓRIA & ORIENTAÇÕES PÓS-ALTA:
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO — ALTA PÓS-OPERATÓRIA CIRÚRGICA
+Paciente: [Nome] | Procedimento: [ ] | Data: [DD/MM/AAAA]
+
+USO ORAL:
+1. Dipirona Monoidratada 500 mg (ou 1 g) ------------------------------------- 1 caixa
+   Tomar 1 comprimido de 1 g (ou 2 comprimidos de 500 mg) por via oral de 6 em 6 horas em horário fixo nos primeiros 3 dias, e depois se houver dor.
+
+2. Cetoprofeno 100 mg (ou Ibuprofeno 600 mg) --------------------------------- 1 caixa
+   Tomar 1 comprimido por via oral de 12 em 12 horas, sempre após as refeições, durante 3 a 5 dias (Suspender se histórico de gastrite, úlcera ou doença renal).
+
+3. Cloridrato de Tramadol 50 mg (Resgate para dor forte) --------------------- 1 caixa
+   Tomar 1 comprimido por via oral até de 8 em 8 horas APENAS se dor moderada a intensa que não ceda com a Dipirona.
+
+4. Ondansetrona 4 mg (ou Bromoprida 10 mg) ----------------------------------- 1 caixa
+   Tomar 1 comprimido por via oral de 8 em 8 horas se apresentar náuseas ou enjoos.
+
+CUIDADOS COM A FERIDA OPERATÓRIA & ORIENTAÇÕES PÓS-ALTA:
+- Lavar a incisão cirúrgica diariamente durante o banho com água corrente e sabonete neutro, secando suavemente com toalha limpa (sem esfregar). Não aplicar pomadas caseiras, óleos ou pós sobre os pontos.
+- Caminhar dentro de casa várias vezes ao dia para prevenir trombose nas pernas; evitar esforço físico intenso, pegar peso (> 5 kg) ou dirigir por [15 a 30] dias.
+- Retorno agendado no Ambulatório de Cirurgia / UBS em [7 a 14] dias para revisão cirúrgica e retirada de pontos.
+- SINAIS DE ALARME (RETORNO IMEDIATO AO PRONTO-SOCORRO): Febre aferida (≥ 37,8 °C), vermelhidão quente que se espalha ao redor do corte, saída de pus ou abertura dos pontos, dor abdominal progressiva, vômitos persistentes, parada de eliminação de gases/fezes, dor/inchaço na panturrilha ou falta de ar súbita.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que Realimentamos e Mobilizamos Precocemente o Paciente Cirúrgico? (Protocolo ACERTO / ERAS)**
+### 🧠 1. Por Que Realimentamos e Mobilizamos Precocemente o Paciente Cirúrgico? (Protocolo ACERTO / ERAS)
 - **Por que o jejum prolongado pós-operatório e o repouso no leito foram abolidos (Protocolo ACERTO/ERAS):** A antiga prática de aguardar a presença de flatos ou evacuação para iniciar dieta oral após cirurgias eletivas aumentava o catabolismo proteico, a resistência insulínica e a translocação bacteriana intestinal. A realimentação oral precoce (nas primeiras 6–24h na maioria das cirurgias) estimula o reflexo gastrocólico, reduz o íleo paralítico pós-operatório e acelera a cicatrização anastomótica.
 - **Por que a deambulação no 1º DPO previne atelectasia e TEP:** A dor incisional abdominal/torácica reduz o volume corrente inspiratório, colabando os alvéolos basais (atelectasia). Sentar fora do leito e caminhar restaura a capacidade residual funcional pulmonar e ativa a bomba muscular da panturrilha.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Os "5 Ws" da Febre Pós-Operatória e Critérios para Retirada de Drenos**
+### 🧭 3. Os "5 Ws" da Febre Pós-Operatória e Critérios para Retirada de Drenos
 | Mnemônico ("5 Ws") | Cronologia Típica | Etiologia Principal | Conduta Diagnóstica e Terapêutica |
 | :--- | :---: | :--- | :--- |
 | **1. Wind (Pulmão)** | **D1 a D2** (24–48h) | **Atelectasia pulmonar** (ou resposta inflamatória cirúrgica benigna) | Analgesia eficaz, fisioterapia respiratória, espirometria de incentivo e deambulação (NÃO dar antibiótico para atelectasia!). |
@@ -104,10 +131,6 @@ CUIDADOS COM A FERIDA OPERATÓRIA & ORIENTAÇÕES PÓS-ALTA:
 
 - **Quando retirar drenos cirúrgicos:** Drenos de sucção fechada (`Portovac` / `Blake`) devem ser sacados assim que o débito for **`< 30 a 50 mL/24h`** de aspecto seroso ou sero-hemático claro (descartadas fístula biliar, entérica, quilosa ou sangramento ativo).
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Suspender a Profilaxia Antibiótica em 24h e Usar Analgesia Multimodal?**
+### 💊 2. Por Que Suspender a Profilaxia Antibiótica em 24h e Usar Analgesia Multimodal?
 - **Por que o antibiótico profilático (Cefazolina) NÃO deve continuar na enfermaria:** A antibiótico-profilaxia cirúrgica serve exclusivamente para garantir nível tecidual bactericida durante a incisão até o fechamento da pele. Manter Cefazolina ou Ceftriaxona no 1º, 2º e 3º DPO em cirurgias limpas ou potencialmente contaminadas sem infecção ativa **não reduz a taxa de infecção de sítio cirúrgico (ISC)** e seleciona bactérias multirresistentes e *C. difficile*.
 - **Por que combinamos Dipirona + AINE em vez de opioides isolados:** A dor pós-operatória é mediada por prostaglandinas periféricas na ferida cirúrgica. O uso de opioides (Morfina/Tramadol) em altas doses paralisa o plexo mioentérico de Auerbach, agravando o **íleo paralítico pós-operatório**, náuseas e retenção urinária. A analgesia multimodal poupadora de opioides permite retorno intestinal precoce.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

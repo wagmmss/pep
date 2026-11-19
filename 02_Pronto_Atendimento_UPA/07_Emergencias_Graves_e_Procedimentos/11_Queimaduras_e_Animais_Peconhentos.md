@@ -71,16 +71,6 @@ USO ORAL E TÓPICO (ALTA AMBULATORIAL — QUEIMADURA PEQUENA DE 1º OU 2º GRAU 
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Atendimento de Emergência - Queimaduras Agudas (Parkland) e Acidentes por Animais Peçonhentos** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**Critérios de Transferência para Centro de Tratamento de Queimados (CTQ) e Regras de Ouro da Soroterapia**
+### Critérios de Transferência para Centro de Tratamento de Queimados (CTQ) e Regras de Ouro da Soroterapia
 - **Por que nunca dar antibiótico sistêmico profilático no grande queimado e quando transferir para o CTQ:** O antibiótico sistêmico profilático seleciona germes multirresistentes (*Pseudomonas*, *Acinetobacter*, MRSA) sem reduzir infecção. São indicações formais de transferência para CTQ: queimaduras de 2º grau **> 10% SCQ**, qualquer queimadura de **3º grau**, queimaduras em **face, mãos, pés, genitália, períneo ou grandes articulações**, queimaduras **elétricas**, **químicas** ou com **lesão inalatória**.
 - **Por que a dose de Soro Antiveneno na criança é idêntica à do adulto:** O soro antiveneno neutraliza a quantidade de **peçonha circulante inoculada pelo animal**, e não o peso corporal da vítima; portanto, uma criança picada recebe exatamente o mesmo número de ampolas que um adulto para a mesma classificação de gravidade.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

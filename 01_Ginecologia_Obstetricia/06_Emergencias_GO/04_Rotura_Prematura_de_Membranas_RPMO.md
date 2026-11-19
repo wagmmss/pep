@@ -62,8 +62,7 @@ Alergias: [*Nega / [ ]].
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Diagnóstico e Propedêutica Segura na RPMO (Por Que o Toque é Proscrito?)**
+### 🧠 1. Diagnóstico e Propedêutica Segura na RPMO (Por Que o Toque é Proscrito?)
 - **Apresentação Clínica:** A Rotura Prematura de Membranas Ovulares (RPMO) define-se como a perda da integridade das membranas coriônicas e amnióticas antes do início do trabalho de parto, ocorrendo em cerca de 8 a 10% das gestações a termo e em 30% dos partos prematuros.
 - **Padrão-Ouro Diagnóstico (Exame Especular Estéril):**
   - O diagnóstico é **essencialmente clínico**, realizado com espéculo estéril sem lubrificante: visualiza-se líquido amniótico claro com grumos acumulado em fundo de saco vaginal posterior ou exteriorizando-se pelo orifício externo do colo com a **Manobra de Valsalva ou Manobra de Tarnier** (rechaço suave da apresentação fetal para cima, liberando o fluxo de líquido).
@@ -87,8 +86,7 @@ Alergias: [*Nega / [ ]].
   - Se a gestante entrar em trabalho de parto franco ou houver necessidade de interrupção com IG < 32 semanas: administrar **MgSO4 50% 4 g EV ataque em 20–30 min + 1 g/h EV de manutenção** por até 24 horas ou até o nascimento, visando reduzir a paralisia cerebral.
 - **Uso de Tocolíticos na RPMO:** Proscrito o uso profilático ou de manutenção. A tocólise rápida por no máximo 24–48 horas só é aceitável se houver contrações uterinas na admissão sem qualquer sinal de corioamnionite, unicamente para permitir o ciclo de corticoide e a neuroproteção ou transferência materna.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🚨 5. Diagnóstico e Conduta Imediata na Corioamnionite Clínica (Critérios de Gibbs)**
+### 🚨 5. Diagnóstico e Conduta Imediata na Corioamnionite Clínica (Critérios de Gibbs)
 - A presença de **Corioamnionite Clínica contraindica imediatamente qualquer conduta conservadora**, independentemente da idade gestacional!
 - **Critérios Diagnósticos de Gibbs:**
   - **Critério Obrigatório:** Febre materna com **Temperatura axilar ≥ 37,8 °C a 38,0 °C**; **MAIS**
@@ -106,12 +104,8 @@ Alergias: [*Nega / [ ]].
   2. **Interrupção Imediata da Gestação:** O esvaziamento uterino é a cura do foco infeccioso. A via de parto é obstétrica (a indução de parto vaginal é preferível se dinâmica favorável e vitalidade fetal mantida; cesariana reservada para distocias ou SFA).
   3. **Manutenção do Tratamento:** Manter os antibióticos venosos até a puérpera permanecer afebril e assintomática por **24 a 48 horas pós-parto**.
 
-### 💊 3. Farmacologia & Doses
-**💊 3. Antibioticoterapia de Latência (Protocolo ACOG / FEBRASGO — 7 Dias)**
+### 💊 3. Antibioticoterapia de Latência (Protocolo ACOG / FEBRASGO — 7 Dias)
 - O uso de antibióticos na RPMO entre 24 e 34 semanas prolonga o período de latência até o parto, previne a corioamnionite e reduz morbidades neonatais críticas (broncodisplasia, leucomalácia periventricular e enterocolite):
   - **Fase Endovenosa (Primeiras 48 horas):** **Ampicilina 2 g EV de 6 em 6 horas** associada a **Azitromicina 1 g VO em dose única** na admissão (a Azitromicina substitui a Eritromicina histórica com maior tolerabilidade gástrica e eficácia equivalente contra *Mycoplasma* e *Chlamydia*).
   - **Fase Oral (Dias 3 a 7 — por mais 5 dias):** **Amoxicilina 500 mg VO de 8 em 8 horas** por 5 dias consecutivos (completando 7 dias de tratamento total).
 - **TRAVA FARMACOLÓGICA ABSOLUTA:** **NUNCA utilize Amoxicilina + Clavulanato** na RPMO! O ácido clavulânico está formalmente associado a um aumento dramático de **Enterocolite Necrotizante (ECN) grave no recém-nascido** (*Estudo ORACLE I*).
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

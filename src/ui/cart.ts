@@ -2,8 +2,9 @@ import { cockpitStore, type PrescriptionCartItem } from '../state/store.ts';
 import { copyToClipboard, escapeHtml, printReceiptDocument, showToast } from './utils.ts';
 import { uiBridge } from './context.ts';
 
-const QUICK_CART_PRESETS: Array<Omit<PrescriptionCartItem, 'id'>> = [
+const QUICK_CART_PRESETS: Array<Omit<PrescriptionCartItem, 'id'> & { shortLabel?: string }> = [
   {
+    shortLabel: 'Dipirona 1g',
     name: 'Dipirona 500mg comprimido',
     presentation: 'Comprimido 500mg',
     posology: 'Tomar 1 a 2 comprimidos VO a cada 6 horas se dor ou febre (máx. 4g/dia).',
@@ -11,6 +12,7 @@ const QUICK_CART_PRESETS: Array<Omit<PrescriptionCartItem, 'id'>> = [
     source: 'remume',
   },
   {
+    shortLabel: 'Paracetamol',
     name: 'Paracetamol 500mg comprimido',
     presentation: 'Comprimido 500mg',
     posology: 'Tomar 1 comprimido VO a cada 6 horas se dor ou febre.',
@@ -18,6 +20,7 @@ const QUICK_CART_PRESETS: Array<Omit<PrescriptionCartItem, 'id'>> = [
     source: 'remume',
   },
   {
+    shortLabel: 'Ondansetrona',
     name: 'Ondansetrona 4mg comprimido',
     presentation: 'Comprimido 4mg',
     posology: 'Tomar 1 comprimido VO a cada 8 horas se náuseas ou vômitos.',
@@ -25,6 +28,7 @@ const QUICK_CART_PRESETS: Array<Omit<PrescriptionCartItem, 'id'>> = [
     source: 'remume',
   },
   {
+    shortLabel: 'Omeprazol',
     name: 'Omeprazol 20mg cápsula',
     presentation: 'Cápsula 20mg',
     posology: 'Tomar 1 cápsula VO em jejum pela manhã.',
@@ -32,11 +36,42 @@ const QUICK_CART_PRESETS: Array<Omit<PrescriptionCartItem, 'id'>> = [
     source: 'remume',
   },
   {
+    shortLabel: 'Lavagem Nasal SF',
     name: 'Soro Fisiológico 0,9% nasal',
-    presentation: 'Frasco spray/gotas',
-    posology: 'Aplicar 2 a 3 jatos em cada narina várias vezes ao dia.',
+    presentation: 'Frasco 250/500 mL',
+    posology: 'Realizar lavagem nasal com 10 a 20 mL em cada narina várias vezes ao dia.',
     population: 'adulto',
     source: 'remume',
+  },
+  {
+    shortLabel: 'Simeticona',
+    name: 'Simeticona 125mg cápsula (ou 75mg/mL gotas)',
+    presentation: 'Cápsula 125mg / Frasco gotas',
+    posology: 'Tomar 1 cápsula (ou 40 gotas) VO de 8/8h se distensão abdominal ou gases.',
+    population: 'adulto',
+    source: 'remume',
+  },
+  {
+    shortLabel: 'SRO OMS',
+    name: 'Sais de Reidratação Oral (SRO)',
+    presentation: 'Envelope 27,9g',
+    posology: 'Dissolver 1 envelope em 1 litro de água filtrada e beber após cada evacuação líquida ou vômito.',
+    population: 'adulto',
+    source: 'remume',
+  },
+  {
+    shortLabel: 'Hidratação/Repouso',
+    name: 'Orientações de Hidratação e Repouso',
+    posology: 'Repouso domiciliar relativo, alimentação leve e hidratação oral abundante (2 a 3 litros de água/líquidos por dia).',
+    population: 'adulto',
+    source: 'manual',
+  },
+  {
+    shortLabel: 'Sinais de Alarme',
+    name: 'Sinais de Alarme — Retorno Imediato à UPA',
+    posology: 'Retornar imediatamente à UPA se sinais de alarme: febre persistente > 72h, falta de ar, dor torácica, vômitos incoercíveis, confusão ou piora clínica.',
+    population: 'adulto',
+    source: 'manual',
   },
 ];
 
@@ -78,7 +113,7 @@ export function renderCartPanel(container: HTMLElement): void {
       <span class="mq-hint" style="width:100%;margin-bottom:2px;">Atalhos rápidos:</span>
       ${QUICK_CART_PRESETS.map(
         (p, idx) =>
-          `<button type="button" class="btn btn-ghost btn-xs cart-preset-chip" data-preset-idx="${idx}">+ ${escapeHtml(p.name.split(' ')[0])}</button>`
+          `<button type="button" class="btn btn-ghost btn-xs cart-preset-chip" data-preset-idx="${idx}">+ ${escapeHtml(p.shortLabel || p.name.split(' ')[0])}</button>`
       ).join('')}
     </div>
 

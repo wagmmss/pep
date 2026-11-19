@@ -51,25 +51,19 @@ Alergias: [*Nega / [ ]].
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. O Porquê Fisiológico de Cada Passo da Assistência ao Parto Normal**
+### 🧠 1. O Porquê Fisiológico de Cada Passo da Assistência ao Parto Normal
 - **Proteção Perineal (*Hands-on* / Manobra de Ritgen Modificada) & Episiotomia Seletiva:** A deflexão controlada e lenta do polo cefálico permite que as fibras musculares do levantador do ânus e do corpo perineal sofram distensão elástica gradual. A episiotomia de rotina foi abolida pela OMS/FEBRASGO porque **não previne lacerações de 3º e 4º graus** e aumenta a perda sanguínea e a dispareunia; hoje ela é **estritamente seletiva** (`< 10–15%`, reservada para sofrimento fetal agudo no período expulsivo ou períneo rígido intransponível).
 - **Por que fazemos Clampeamento Oportuno do Cordão (1 a 3 minutos) no RN Vigoroso?** Nos primeiros `60 a 180 segundos` após o nascimento, a placenta transfunde cerca de **`80 a 100 mL` de sangue** (`20–30 mL/kg`) para o recém-nascido. Isso fornece **40 a 50 mg/kg de ferro extra**, reduzindo em 60% a anemia ferropriva no primeiro semestre de vida e estabilizando a transição hemodinâmica cardiopulmonar neonatal. *(Exceção: clampeamento imediato se RN hipotônico/apneico precisando de reanimação na mesa aquecida ou descolamento placentário agudo)*.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Baudelocque-Schultze vs. Baudelocque-Duncan: Qual a Diferença Prática?**
+### 🧭 3. Baudelocque-Schultze vs. Baudelocque-Duncan: Qual a Diferença Prática?
 | Mecanismo de Descolamento | Frequência | Como Descola e Sai | Implicação Clínica |
 | :--- | :---: | :--- | :--- |
 | **Baudelocque-Schultze** (*"Shiny Schultze"*) | **75–80%** | Placenta fúndica; descola pelo centro formando coágulo retroplacentário e sai pela **face fetal brilhante** (em guarda-chuva invertido). | O sangramento só se exterioriza **depois** da saída da placenta; menor taxa de retenção de membranas. |
 | **Baudelocque-Duncan** (*"Dirty Duncan"*) | **20–25%** | Placenta inserida na parede lateral; descola pela borda inferior e desliza saindo pela **face materna carnosa/vermelha**. | Sangra continuamente desde o início do descolamento e tem **maior risco de retenção de fragmentos de membranas** (revisar os cotilédones com atenção!). |
 
-### 💊 3. Farmacologia & Doses
-**💉 2. Manejo Ativo do 3º Período (Secundamento): Por Que Salva Vidas?**
+### 💉 2. Manejo Ativo do 3º Período (Secundamento): Por Que Salva Vidas?
 O **Manejo Ativo do 3º Período** reduz em **mais de 60% a incidência de Hemorragia Pós-Parto (HPP)** e é composto por 3 ações sequenciais inegociáveis:
 1. **Ocitocina 10 UI IM no 1º minuto após o desprendimento dos ombros/feto:** Garante contração miometrial tônica imediata para colabar as artérias espiraladas do leito placentário assim que a placenta se descola.
 2. **Tração Controlada do Cordão com Manobra de Brandt-Andrews:** Uma mão traciona o cordão de forma sustentada enquanto a **mão abdominal suprapúbica empurra o corpo uterino para cima e para trás**.
    - **Por que a mão suprapúbica de Brandt-Andrews é obrigatória?** Tracionar o cordão umbilical sem segurar e elevar o segmento uterino inferior por via suprapúbica puxa o fundo uterino para dentro da vagina, causando **Inversão Uterina Aguda** e choque neurogênico/hemorrágico grave!
 3. **Manobra de Jacob-Dublin na saída da placenta:** Girar a placenta sobre seu próprio eixo transforma as membranas amnióticas e coriônicas em um cordão torcido resistente, evitando que se rasguem e deixem restos ovulares retidos na cavidade.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

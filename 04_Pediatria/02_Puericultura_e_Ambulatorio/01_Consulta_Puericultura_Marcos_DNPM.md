@@ -83,25 +83,43 @@ ORIENTAÇÕES NUTRICIONAIS E DE SEGURANÇA (SBP / MINISTÉRIO DA SAÚDE):
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO DE PUERICULTURA — SUPLEMENTAÇÃO PROFILÁTICA (SBP)
+Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] meses | Data: [DD/MM/AAAA]
+
+USO ORAL DIÁRIO:
+1. Colecalciferol (Vitamina D3) Gotas (200 UI por gota) ------------------------ 1 frasco
+   Dar [2 gotas (= 400 UI/dia para menores de 1 ano) / 3 gotas (= 600 UI/dia de 1 a 2 anos)] por via oral, 1 vez ao dia, todos os dias, até completar 24 meses de idade.
+
+2. Sulfato Ferroso (ou Ferro Polimaltosado / Quelato) Solução Gotas ------------ 1 frasco
+   (Concentração padrão: 25 mg de Ferro Elementar/mL ≈ 1 mg de Ferro Elementar por gota)
+   Dar [ ] gotas (Dose SBP: [1 mg/kg/dia a partir dos 6 meses (termo sem risco) / 1 mg/kg/dia a partir dos 3 meses (termo com fator de risco) / 2 mg/kg/dia a partir de 30 dias (prematuro ou peso 1.500–2.499 g) / 3 a 4 mg/kg/dia a partir de 30 dias (< 1.500 g)]) por via oral, 1 vez ao dia, 30 minutos antes do almoço (preferencialmente junto com fruta cítrica rica em vitamina C, longe do leite), até os 24 meses.
+
+3. Soro Fisiológico 0,9% ------------------------------------------------------- 1 frasco
+   Para higiene nasal com seringa de 3 a 5 mL em cada narina antes das mamadas e antes de dormir se houver congestão nasal.
+
+ORIENTAÇÕES NUTRICIONAIS E DE SEGURANÇA (SBP / MINISTÉRIO DA SAÚDE):
+- Zero açúcar, zero mel (risco de botulismo intestinal em < 1 ano), zero sucos (mesmo naturais) no 1º ano de vida e zero alimentos ultraprocessados (biscoitos, iogurtes açucarados, embutidos) nos primeiros 2 anos.
+- Posição de Sono Seguro: Sempre de barriga para cima (decúbito dorsal), em colchão firme, sem travesseiros fofos, protetores de berço ou cobertores soltos.
+- Zero exposição a telas (celular, tablet, televisão) antes dos 2 anos de idade.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que os Primeiros 1.000 Dias (Gestação aos 24 Meses) Determinam o Potencial Neurológico? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que os Primeiros 1.000 Dias (Gestação aos 24 Meses) Determinam o Potencial Neurológico? (Fisiopatologia & Raciocínio)
 - **Por que a anemia ferropriva no lactente causa déficit cognitivo irreversível mesmo após correção posterior:** Nos primeiros 24 meses de vida ocorre o pico de mielinização do sistema nervoso central, sinaptogênese do hipocampo e maturação das vias dopaminérgicas estriatais — processos estritamente dependentes de enzimas que contêm **ferro**. Como o estoque de ferro recebido da mãe no 3º trimestre esgota-se por volta do 4º ao 6º mês de vida (e no 1º mês no prematuro!), a suplementação profilática universal impede que a deficiência de ferro se instale durante a janela crítica de desenvolvimento cerebral.
 - **Por que proscrevemos mel (< 1 ano), sucos (< 1 ano) e açúcar/ultraprocessados (< 2 anos):** O mel pode conter esporos de *Clostridium botulinum*; como a microbiota intestinal do lactente `< 12 meses` ainda é imatura, os esporos germinam na luz colônica e liberam toxina botulínica (**botulismo infantil** com paralisia flácida descendente). Já o suco de fruta (mesmo natural sem açúcar) perde as fibras da fruta inteira, gerando pico glicêmico/insulínico rápido, saciedade precoce que substitui refeições salgadas ricas em ferro e programação metabólica para obesidade.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**💊 2. Por Que Suplementamos Vitamina D Desde a 1ª Semana e Ferro Conforme Peso/Idade Gestacional?**
+### 💊 2. Por Que Suplementamos Vitamina D Desde a 1ª Semana e Ferro Conforme Peso/Idade Gestacional?
 - **Por que Vitamina D3 (400 UI < 1 ano; 600 UI de 1 a 2 anos) é universal:** O leite materno contém baixíssimas concentrações de vitamina D (`< 25 a 40 UI/L`), e a exposição solar direta desprotegida é restrita no lactente jovem pelo risco dermatológico. A suplementação de colecalciferol previne o raquitismo carencial e modula a imunidade inata.
 - **Como corrigir a idade do prematuro (< 37 semanas) na puericultura:** Em todo prematuro, devemos usar a **Idade Corrigida** (`Idade Cronológica − [40 semanas − IG ao nascer]`) até os **24 meses de idade** (ou 36 meses se extremo baixo peso `< 28 semanas`) para avaliar Peso, Estatura, Perímetro Cefálico e Marcos do DNPM — mas **NUNCA corrigimos a idade para o Calendário Vacinal** (as vacinas seguem a idade cronológica real de nascimento!).
 
-**🧭 3. Esquema de Profilaxia de Ferro Elementar (SBP) e Marcos Essenciais do DNPM**
+### 🧭 3. Esquema de Profilaxia de Ferro Elementar (SBP) e Marcos Essenciais do DNPM
 | Grupo de Risco Neonatal | Quando Iniciar o Ferro Elementar | Dose Diária Recomendada (SBP) | Duração da Profilaxia |
 | :--- | :---: | :---: | :--- |
 | **RN a Termo (Peso ≥ 2.500 g) sem fatores de risco** | **Aos 6 meses** (180 dias) | **`1 mg/kg/dia`** de ferro elementar | Até os 24 meses de idade |

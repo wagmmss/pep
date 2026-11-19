@@ -257,11 +257,19 @@ test('Contrato Editorial PEP v3.2: 88 PEPs padronizados, Pediatria unificada, ze
       issues.push(`${rel}: ausente ## 🎯 Diretrizes & Raciocínio Clínico`);
     }
 
-    // 4 sub-blocos de Diretrizes
-    if (!/^### 🧠 1\. Fisiopatologia & Porquê$/m.test(content)) issues.push(`${rel}: ausente sub-bloco 1 de Diretrizes`);
-    if (!/^### 🧭 2\. Critérios & Decisão/m.test(content)) issues.push(`${rel}: ausente sub-bloco 2 de Diretrizes`);
-    if (!/^### 💊 3\. Farmacologia & Doses$/m.test(content)) issues.push(`${rel}: ausente sub-bloco 3 de Diretrizes`);
-    if (!/^### 🚫 4\. Segurança, Travas & Proibições$/m.test(content)) issues.push(`${rel}: ausente sub-bloco 4 de Diretrizes`);
+    // Sub-blocos H3 reais de Diretrizes (proibindo preenchimento genérico de IA)
+    const guiaMatch = content.match(/## 🎯 Diretrizes & Raciocínio Clínico\n+([\s\S]*)$/);
+    const guiaBody = guiaMatch ? guiaMatch[1].trim() : '';
+    if (!/^###\s+\S+/m.test(guiaBody)) {
+      issues.push(`${rel}: ausente sub-bloco ### em Diretrizes`);
+    }
+    if (
+      guiaBody.includes('Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.') ||
+      guiaBody.includes('Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.') ||
+      guiaBody.includes('Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.')
+    ) {
+      issues.push(`${rel}: contém frase genérica de preenchimento de IA em Diretrizes`);
+    }
 
     // Validação estrita do bloco PEP
     const pepMatch = content.match(/## 📋 Snippet para Prontuário Eletrônico \(PEP\)\n\n```text\n([\s\S]*?)\n```/);

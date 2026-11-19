@@ -54,15 +54,11 @@ CUIDADOS COM O CURATIVO E SINAIS DE ALARME:
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que o Implanon (Etonogestrel 68 mg) é o Método Mais Eficaz da Medicina?**
+### 🧠 1. Por Que o Implanon (Etonogestrel 68 mg) é o Método Mais Eficaz da Medicina?
 - **Duplo Mecanismo de Ação Central e Periférico (Índice de Pearl = `0,05` — superior à laqueadura tubária!):**
   1. **Bloqueio Hipotalâmico-Hipofisário do Pico de LH:** O etonogestrel liberado continuamente na corrente sanguínea suprime o pico ovulatório de LH, impedindo a ovulação em `> 99%` dos ciclos (sem suprimir totalmente o FSH, de modo que os folículos continuam produzindo estradiol endógeno fisiológico — evitando fogachos e perda de massa óssea!).
   2. **Espessamento Hostil do Muco Cervical:** Torna o muco cervical escasso e altamente viscoso, bloqueando a penetração dos espermatozoides.
   3. **Atrofia/Decidualização Endometrial:** Impede a receptividade endometrial e reduz drasticamente a dismenorreia e o volume menstrual.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
 
 ### 💊 3. Farmacologia & Doses
 **💊 3. Por Que Ocorre o *Spotting* (Escape) e Como Tratamos na Prática?**
@@ -72,8 +68,7 @@ CUIDADOS COM O CURATIVO E SINAIS DE ALARME:
   2. **1ª Linha Medicamentosa (AINE por 5 a 7 dias):** **Ibuprofeno 600 mg VO de 8/8h** ou **Ácido Mefenâmico 500 mg VO de 8/8h por 5 dias** (inibe prostaglandinas vasodilatadoras endometriais e estabiliza os capilares).
   3. **2ª Linha (se sem contraindicação ao estrogênio):** **ACO Combinado** (Etinilestradiol 30 mcg + Levonorgestrel 150 mcg) 1 cp/dia por **21 a 42 dias** para proliferar e reepitelizar a camada basal do endométrio.
 
-### 🚫 4. Segurança, Travas & Proibições
-**📐 2. Por Que a Anatomia da Inserção Mudou? (Trava Contra Lesão Neural e Vascular)**
+### 📐 2. Por Que a Anatomia da Inserção Mudou? (Trava Contra Lesão Neural e Vascular)
 - **A Zona de Perigo (Sulco Bicipital Medial):** No sulco entre o bíceps e o tríceps correm superficialmente o **nervo mediano, o nervo ulnar, a artéria braquial e a veia basílica**.
 - **A Técnica Atualizada da Fabricante (Sobre o Tríceps):**
   - Marca-se o ponto de entrada **8 a 10 cm proximal ao epicôndilo medial do úmero** e **3 a 5 cm POSTERIORMENTE ao sulco bicipital** (diretamente sobre o ventre do músculo tríceps, longe do feixe neurovascular).

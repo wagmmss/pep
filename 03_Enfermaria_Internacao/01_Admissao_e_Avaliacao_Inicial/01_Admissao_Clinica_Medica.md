@@ -74,13 +74,11 @@
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por QueFazemos Reconciliação Medicamentosa e Estratificação de Pádua na Admissão? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por QueFazemos Reconciliação Medicamentosa e Estratificação de Pádua na Admissão? (Fisiopatologia & Raciocínio)
 - **Por que a Reconciliação Medicamentosa nas primeiras 24h evita iatrogenias graves:** Cerca de 40% dos eventos adversos medicamentosos hospitalares ocorrem na transição entre o domicílio/UPA e a enfermaria. Suspender abruptamente um betabloqueador crônico desencadeia taquicardia reflexa e isquemia miocárdica; por outro lado, manter metformina, iSGLT2 ou IECA/BRA em um paciente admitido com sepse, desidratação ou lesão renal aguda precipita **acidose lática**, cetoacidose euglicêmica e hipercalemia grave.
 - **Por que calculamos o Escore de Pádua em todo paciente clínico internado:** A imobilidade aguda no leito associada ao estado pró-inflamatório sistêmico (infecção, insuficiência cardíaca, neoplasia) ativa a Tríade de Virchow (estase venosa nas válvulas profundas da panturrilha + hipercoagulabilidade endotelial). O tromboembolismo pulmonar (TEP) é a principal causa de morte súbita evitável em pacientes hospitalizados.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Escore de Pádua para Profilaxia de TEV e Metas Glicêmicas Hospitalares**
+### 🧭 3. Escore de Pádua para Profilaxia de TEV e Metas Glicêmicas Hospitalares
 | Critério Clínico do Escore de Pádua | Pontuação | Racional Fisiopatológico |
 | :--- | :---: | :--- |
 | **Neoplasia ativa** (metástases ou químio/rádio nos últimos 6 meses) | **3 pontos** | Liberação tumoral de fator tecidual pró-coagulante |
@@ -93,10 +91,6 @@
 - **Regra de Decisão (Pádua):** `< 4 pontos` = Baixo risco (apenas deambulação precoce e hidratação); `≥ 4 pontos` = Alto risco (iniciar profilaxia farmacológica se sem sangramento ativo ou plaquetas `< 50.000/mm³`).
 - **Por que o alvo glicêmico na enfermaria é 140 a 180 mg/dL (estudo NICE-SUGAR):** Metas excessivamente rígidas (`80–110 mg/dL`) aumentam a mortalidade cardiovascular por episódios de hipoglicemia neuroglicopênica silenciosa, enquanto glicemias `> 180 mg/dL` paralisam a quimiotaxia de neutrófilos, perpetuam a infecção e causam diurese osmótica.
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Prescrevemos Estes Fármacos e Doses? (Racional Farmacológico)**
+### 💊 2. Por Que Prescrevemos Estes Fármacos e Doses? (Racional Farmacológico)
 - **Por que Enoxaparina 40 mg SC 1x/dia (e ajuste se ClCr < 30 mL/min):** A heparina de baixo peso molecular (HBPM) inibe seletivamente o Fator Xa via antitrombina III, com meia-vida previsível de 12–24 horas e menor risco de plaquetopenia induzida por heparina (HIT) do que a HNF. Como sua excreção é predominantemente renal, se o *clearance* de creatinina for `< 30 mL/min`, a dose padrão acumula e causa sangramento retroperitoneal; nesses casos, reduz-se a Enoxaparina para `20 mg SC 1x/dia` ou utiliza-se **Heparina Não Fracionada (HNF) 5.000 UI SC de 8/8h** (metabolismo reticuloendotelial/hepático).
 - **Por que NÃO prescrevemos Omeprazol/Pantoprazol de rotina para todo internado:** A acidez gástrica fisiológica (`pH < 2`) é a principal barreira bactericida do trato digestivo. O uso indiscriminado de IBP em pacientes de enfermaria que se alimentam por via oral alcaliniza o estômago, favorecendo a translocação bacteriana com **pneumonia nosocomial** e triplicando o risco de **colite pseudomembranosa por *Clostridioides difficile***. IBP profilático só tem benefício comprovado em ventilação mecânica `> 48h`, coagulopatia grave (`Plaquetas < 50.000` ou `INR > 1,5`), choque ou úlcera péptica recente.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

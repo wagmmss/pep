@@ -84,15 +84,44 @@ SINAIS DE ALARME PARA RETORNO IMEDIATO AO PRONTO-SOCORRO:
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO PEDIÁTRICO — ALTA DE LARINGITE / CRUPE VIRAL
+Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
+
+NOTA DE MEDICAÇÃO JÁ REALIZADA NO PRONTO ATENDIMENTO:
+- A criança já recebeu na unidade a dose única anti-inflamatória de Dexametasona ([ ] mg), que possui ação prolongada por 48 a 72 horas para desinchar a laringe (não sendo necessário repetir corticoide em casa, salvo nova prescrição médica).
+
+USO ORAL E NASAL DOMICILIAR:
+1. Dipirona Solução Oral Gotas (500 mg/mL) (ou Paracetamol 200 mg/mL) ---------- 1 frasco
+   Dar [ ] gotas por via oral até de 6 em 6 horas se houver febre (≥ 37,8 °C) ou dor de garganta.
+
+2. Soro Fisiológico 0,9% ------------------------------------------------------- 1 frasco
+   Lavar as narinas com seringa de 3 a 5 mL suavemente se houver secreção nasal, sem forçar caso a criança chore muito.
+
+ORIENTAÇÕES AOS PAIS PARA ALÍVIO DA TOSSE ROUCA À NOITE:
+- Manter a Criança Calma: O choro aumenta o turbilhonamento do ar na garganta e piora o barulho (estridor). Acolha a criança no colo em posição sentada.
+- Ar Fresco ou Vapor Úmido: Em caso de crise de tosse "de cachorro" à noite, sente-se com a criança no banheiro com o chuveiro morno ligado formando vapor por 10 a 15 minutos, ou leve-a próxima à janela para respirar ar fresco noturno.
+- Hidratação: Oferecer líquidos frios ou em temperatura ambiente em pequenos goles.
+
+SINAIS DE ALARME PARA RETORNO IMEDIATO AO PRONTO-SOCORRO:
+1. Barulho agudo para puxar o ar (estridor) presente mesmo quando a criança está CALMA, quieta no colo ou dormindo.
+2. Afundamento na furculinha do pescoço ou abaixo das costelas para respirar.
+3. Criança babando sem conseguir engolir a própria saliva (sialorreia) ou pescoço esticado para frente.
+4. Agitação intensa, sonolência anormal ou cor arroxeada ao redor da boca.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que o Estridor Ocorre na Inspiração e Por Que Nunca Usamos Abaixador de Língua no Crupe Grave? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que o Estridor Ocorre na Inspiração e Por Que Nunca Usamos Abaixador de Língua no Crupe Grave? (Fisiopatologia & Raciocínio)
 - **A Lei de Poiseuille (R ∝ 1/r⁴) na região subglótica:** Na criança de 6 meses a 3 anos, a cartilagem cricoide (região subglótica) é o ponto mais estreito de toda a via aérea superior e o único anel cartilaginoso completo (não distensível). Como a resistência ao fluxo aéreo é inversamente proporcional à **quarta potência do raio**, apenas **`1 mm` de edema inflamatório viral** na subglote do lactente reduz a área de secção transversal em **mais de 65% a 75%**. Durante a inspiração, a pressão intraluminal negativa na traqueia extratorácica colapsa ainda mais a parede edemaciada, gerando o **estridor inspiratório** e a tiragem de fúrcula.
 - **Por que o choro piora o estridor e o abaixador de língua é proscrito na suspeita de epiglotite/crupe grave:** O choro transforma o fluxo laminar em fluxo turbulento (aumentando dramaticamente a resistência), e a tentativa forçada de visualizar a orofaringe com espátula pode desencadear **laringoespasmo reflexo vagal agudo** e oclusão completa de uma via aérea que já estava pérvia por poucos milímetros.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Diagnóstico Diferencial Crítico: Crupe Viral vs Epiglotite Aguda vs Traqueíte Bacteriana**
+### 🧭 3. Diagnóstico Diferencial Crítico: Crupe Viral vs Epiglotite Aguda vs Traqueíte Bacteriana
 | Característica Clínica | Crupe Viral (Laringotraqueobronquite) | Epiglotite Aguda (Emergência Cirúrgica) | Traqueíte Bacteriana (*S. aureus*) |
 | :--- | :--- | :--- | :--- |
 | **Agente & Idade Típica** | *Parainfluenza 1 e 2* (`6 meses a 3 anos`) | *Haemophilus influenzae B* / *Streptococcus* (`2 a 7 anos`) | *Staphylococcus aureus* secundário a IVAS |
@@ -100,12 +129,8 @@ SINAIS DE ALARME PARA RETORNO IMEDIATO AO PRONTO-SOCORRO:
 | **Tosse & Voz** | **Tosse ladrante ("de foca")** e rouquidão | **Ausência de tosse ladrante**; voz abafada ("batata quente") | Tosse produtiva espessa com estridor bifásico |
 | **Deglutição & Postura** | Engole saliva normalmente; confortável no colo | **Sialorreia intensa (baba)**, disfagia extrema e **Posição em Tripé** | Toxemiado; **não responde à nebulização com adrenalina** |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Associamos Adrenalina Inalatória Pura + Dexametasona e Observamos por 3 a 4 Horas? (Racional Farmacológico)**
+### 💊 2. Por Que Associamos Adrenalina Inalatória Pura + Dexametasona e Observamos por 3 a 4 Horas? (Racional Farmacológico)
 - **O casamento farmacocinético perfeito (Adrenalina = Ponte Rápida | Dexametasona = Efeito Sustentado):**
   - A **Adrenalina 1:1.000 pura (`0,5 mL/kg`, máx `5 mL = 5 ampolas`)** estimula os receptores \alpha_1-adrenérgicos das arteríolas da mucosa subglótica, causando vasoconstrição imediata e reabsorção do edema em **10 a 15 minutos**. Porém, sua meia-vida tópica dura apenas **90 a 120 minutos**!
   - A **Dexametasona (`0,15 a 0,6 mg/kg`, máx `10 mg`)** tem meia-vida biológica longa (`36 a 54 horas`) e inibe a síntese nuclear de citocinas inflamatórias, mas demora **2 a 4 horas** para iniciar seu efeito clínico máximo.
 - **Por que dar alta 30 minutos após a nebulização com Adrenalina é um erro grave ("Efeito Rebote"):** A criança que chegou com estridor em repouso, recebeu adrenalina e ficou ótima em 20 minutos parecerá "curada". Se for liberada para casa imediatamente, após 2 horas o efeito da adrenalina termina antes de a dexametasona fazer efeito completo, e o edema subglótico retorna no caminho para casa. Por isso, **toda criança que recebe nebulização com adrenalina exige 3 a 4 horas de observação no PS**.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

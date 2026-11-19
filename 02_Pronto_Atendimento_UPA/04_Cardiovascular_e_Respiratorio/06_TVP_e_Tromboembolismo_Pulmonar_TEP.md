@@ -66,16 +66,6 @@ USO ORAL (TRATAMENTO AMBULATORIAL DE TVP ESTÁVEL OU TEP DE BAIXO RISCO sPESI = 
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Atendimento de Pronto Atendimento - Trombose Venosa Profunda (TVP) e Tromboembolismo Pulmonar (TEP)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**Escore de Wells, Regra PERC e D-Dímero Ajustado pela Idade (Diretriz ESC / CHEST)**
+### Escore de Wells, Regra PERC e D-Dímero Ajustado pela Idade (Diretriz ESC / CHEST)
 - **Por que ajustar o D-Dímero pela idade acima dos 50 anos:** A especificidade do corte fixo de `500 ng/mL` cai drasticamente em idosos. Multiplicar a **Idade × 10 ng/mL** (em pacientes > 50 anos com probabilidade clínica baixa ou intermediária) aumenta a capacidade de excluir TEP com segurança sem aumentar falsos negativos.
 - **Por que a Rivaroxabana de 15 mg e 20 mg deve ser tomada obrigatoriamente junto com refeição:** Em jejum, a biodisponibilidade oral das doses de 15 mg e 20 mg de Rivaroxabana cai para cerca de 66%, reduzindo o nível sérico e aumentando o risco de recorrência trombótica; com alimentos, a absorção atinge > 80–90%.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

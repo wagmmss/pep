@@ -172,12 +172,30 @@ export function renderSidebar(): void {
     <div class="ws-sidebar-footer" id="wsSidebarFooter">
       <button
         type="button"
+        class="ws-sidebar-cmd-btn"
+        id="wsBtnRemumeModal"
+        title="Abrir Catálogo REMUME (252) & Guia HSL (976) + Calculadoras"
+      >
+        <span>💊 REMUME &amp; Calc</span>
+        <span class="kbd-shortcut">HSL</span>
+      </button>
+      <button
+        type="button"
         class="ws-sidebar-cmd-btn${route.section === 'config' ? ' active' : ''}"
         id="wsBtnConfig"
         data-section="config"
       >
         <span>⚙️ Config &amp; Backup</span>
         <span class="kbd-shortcut">JSON</span>
+      </button>
+      <button
+        type="button"
+        class="ws-sidebar-cmd-btn"
+        id="wsBtnShortcutsModal"
+        title="Abrir Mapa de Atalhos do Cockpit (?)"
+      >
+        <span>⌨️ Mapa de Atalhos</span>
+        <span class="kbd-shortcut">?</span>
       </button>
     </div>
   `;
@@ -208,6 +226,16 @@ export function renderSidebar(): void {
 
   sidebar.querySelector('#wsBtnConfig')?.addEventListener('click', () => {
     uiBridge.navigate('config');
+    sidebar.classList.remove('mobile-open');
+  });
+
+  sidebar.querySelector('#wsBtnRemumeModal')?.addEventListener('click', () => {
+    uiBridge.openRemumeCalcModal('remume');
+    sidebar.classList.remove('mobile-open');
+  });
+
+  sidebar.querySelector('#wsBtnShortcutsModal')?.addEventListener('click', () => {
+    uiBridge.openShortcutsModal();
     sidebar.classList.remove('mobile-open');
   });
 }

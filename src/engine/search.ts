@@ -20,6 +20,402 @@ export interface SymptomMatch {
   isDirect: boolean;
 }
 
+export const CATEGORY_SYMPTOM_MAP: Record<string, string[]> = {
+  'Cardiovascular e Respiratorio': ['falta de ar', 'dispneia', 'chiado', 'cansaço', 'dor no peito', 'precordialgia', 'pressão alta', 'palpitação'],
+  'Infeccoes e Vias Aereas': ['tosse', 'febre', 'dor de garganta', 'dor de ouvido', 'coriza', 'nariz entupido', 'dor no corpo'],
+  'Gastrointestinal e Abdominal': ['dor abdominal', 'dor de barriga', 'queimação', 'azia', 'vômitos', 'diarreia', 'sangramento', 'enjoo'],
+  'Neurologia e Saude Mental': ['dor de cabeça', 'enxaqueca', 'snoop10', 'tontura', 'vertigem', 'convulsão', 'ansiedade', 'agitação'],
+  'Nefrologia Urologia e Dermatologia': ['dor para urinar', 'disúria', 'cólica renal', 'dor nas costas', 'lombalgia', 'coceira', 'alergia', 'lesão de pele'],
+  'Emergencias Graves e Procedimentos': ['falta de ar', 'sangramento', 'febre', 'inconsciente', 'boca torta', 'palpitação', 'corte', 'intoxicação'],
+  'Emergencias GO': ['sangramento', 'sangramento vaginal', 'dor pélvica', 'pressão alta na gestante', 'perda de líquido', 'febre', 'contração'],
+  'Respiratorio e IVAS': ['tosse', 'falta de ar', 'dispneia', 'chiado', 'febre', 'coriza', 'obstrução nasal'],
+  'Gastrointestinal e Desidratacao': ['diarreia', 'vômitos', 'desidratação', 'dor de barriga'],
+  'Febre e Infeccoes Sistemicas': ['febre', 'convulsão', 'prostração', 'irritabilidade'],
+};
+
+export const PROTOCOL_SYMPTOM_MAP: Record<string, { priority: number; tags: string[] }> = {
+  // --- Emergências Clínicas / Respiratório / Dor Torácica / Neuro ---
+  ';asma': {
+    priority: 100,
+    tags: ['falta de ar', 'dispneia', 'chiado', 'chiado no peito', 'cansaço', 'sibilos', 'broncoespasmo', 'crise de asma', 'sufocamento', 'tosse seca'],
+  },
+  ';dpoc': {
+    priority: 99,
+    tags: ['falta de ar', 'dispneia', 'chiado', 'cansaço', 'tosse', 'catarro', 'escarro', 'dpoc', 'enfisema', 'bronquite', 'dessaturação'],
+  },
+  ';eap': {
+    priority: 98,
+    tags: ['falta de ar', 'dispneia', 'chiado', 'cansaço', 'ortopneia', 'edema agudo de pulmão', 'afogamento', 'inchaço nas pernas', 'insuficiência cardíaca'],
+  },
+  ';sca': {
+    priority: 100,
+    tags: ['dor no peito', 'precordialgia', 'queimação', 'angina', 'aperto no peito', 'infarto', 'iam', 'dor torácica', 'dor no braço esquerdo', 'sudorese fria'],
+  },
+  ';cefaleia': {
+    priority: 100,
+    tags: ['dor de cabeça', 'enxaqueca', 'snoop10', 'cefaleia', 'migrânea', 'fotofobia', 'dor na cabeça', 'cefaleia em trovoada'],
+  },
+  ';pcr': {
+    priority: 100,
+    tags: ['parada cardíaca', 'inconsciente', 'sem pulso', 'desmaio súbito', 'pcr', 'reanimação', 'rcp'],
+  },
+  ';sepse': {
+    priority: 97,
+    tags: ['febre', 'calafrios', 'infecção grave', 'pressão baixa', 'hipotensão', 'sepse', 'choque séptico', 'confusão mental', 'falta de ar'],
+  },
+  ';avc': {
+    priority: 99,
+    tags: ['boca torta', 'perda de força', 'fraqueza de um lado', 'fala enrolada', 'derrame', 'avc', 'ait', 'dor de cabeça súbita'],
+  },
+  ';sri': {
+    priority: 96,
+    tags: ['insuficiência respiratória', 'falta de ar grave', 'intubação', 'sri', 'iot', 'hipoxemia', 'rebaixamento'],
+  },
+  ';tvp-tep': {
+    priority: 97,
+    tags: ['falta de ar', 'dispneia súbita', 'dor torácica pleurítica', 'perna inchada', 'edema assimétrico', 'tep', 'tvp', 'embolia pulmonar'],
+  },
+  ';sincope': {
+    priority: 93,
+    tags: ['desmaio', 'síncope', 'lipotimia', 'perda de consciência', 'tontura'],
+  },
+  ';taqui': {
+    priority: 95,
+    tags: ['palpitação', 'coração acelerado', 'batedeira', 'arritmia', 'taquicardia', 'fibrilação atrial', 'dor no peito', 'tontura'],
+  },
+  ';bradi': {
+    priority: 95,
+    tags: ['coração lento', 'bradicardia', 'bav', 'bloqueio atrioventricular', 'desmaio', 'tontura', 'marcapasso'],
+  },
+  ';hiperk': {
+    priority: 94,
+    tags: ['fraqueza muscular', 'potássio alto', 'hipercalemia', 'sódio baixo', 'hiponatremia', 'confusão mental', 'convulsão'],
+  },
+  ';cad': {
+    priority: 96,
+    tags: ['glicemia alta', 'cetoacidose', 'diabetes descompensada', 'sede excessiva', 'confusão mental', 'falta de ar', 'vômitos'],
+  },
+  ';intoxicacao': {
+    priority: 93,
+    tags: ['intoxicação', 'envenenamento', 'overdose', 'embriaguez', 'coma alcoólico', 'chumbinho', 'tentativa de suicídio'],
+  },
+  ';queimadura': {
+    priority: 93,
+    tags: ['queimadura', 'fogo', 'escaldadura', 'parkland', 'picada de cobra', 'escorpião', 'animal peçonhento'],
+  },
+  ';sutura': {
+    priority: 90,
+    tags: ['sangramento', 'corte', 'ferimento', 'mordida de cachorro', 'mordedura', 'acidente com prego', 'sutura', 'tétano', 'raiva'],
+  },
+  // --- Infecções e Vias Aéreas (Adulto) ---
+  ';resfriado': {
+    priority: 90,
+    tags: ['tosse', 'coriza', 'nariz entupido', 'espirros', 'resfriado', 'gripe', 'congestão nasal', 'mal-estar'],
+  },
+  ';amigdalite': {
+    priority: 92,
+    tags: ['dor de garganta', 'odinofagia', 'febre', 'garganta inflamada', 'placas na garganta', 'amigdalite', 'dificuldade para engolir'],
+  },
+  ';otite': {
+    priority: 88,
+    tags: ['dor de ouvido', 'otalgia', 'ouvido tampado', 'secreção no ouvido', 'otorreia', 'febre'],
+  },
+  ';sinusite': {
+    priority: 86,
+    tags: ['dor na face', 'sinusite', 'nariz entupido', 'secreção nasal', 'tosse', 'dor de cabeça frontal', 'peso no rosto'],
+  },
+  ';pneumonia': {
+    priority: 95,
+    tags: ['tosse', 'tosse com catarro', 'febre', 'falta de ar', 'dispneia', 'dor ao respirar', 'dor no peito ventilatório-dependente', 'pneumonia', 'pac'],
+  },
+  ';conjuntivite': {
+    priority: 85,
+    tags: ['olho vermelho', 'remela', 'secreção ocular', 'coceira no olho', 'ardência nos olhos', 'conjuntivite'],
+  },
+  ';dengue': {
+    priority: 96,
+    tags: ['febre', 'dor no corpo', 'mialgia', 'dor atrás dos olhos', 'dor de cabeça', 'manchas vermelhas', 'exantema', 'sangramento', 'dengue'],
+  },
+  // --- Gastrointestinal e Abdominal ---
+  ';geca': {
+    priority: 92,
+    tags: ['diarreia', 'vômitos', 'náusea', 'enjoo', 'dor de barriga', 'cólica intestinal', 'desidratação', 'febre'],
+  },
+  ';drge': {
+    priority: 88,
+    tags: ['queimação', 'azia', 'dor no estômago', 'epigastralgia', 'refluxo', 'empachamento', 'má digestão'],
+  },
+  ';abdome-agudo': {
+    priority: 96,
+    tags: ['dor abdominal', 'dor de barriga', 'apendicite', 'colecistite', 'barriga dura', 'vômitos', 'abdome agudo'],
+  },
+  ';hda': {
+    priority: 97,
+    tags: ['sangramento', 'vômito com sangue', 'hematêmese', 'melena', 'fezes escuras', 'hemorragia digestiva', 'sangue'],
+  },
+  ';hemorroida': {
+    priority: 88,
+    tags: ['sangramento', 'sangue nas fezes', 'dor ao evacuar', 'dor anal', 'hemorroida', 'fissura anal'],
+  },
+  ';parasitose': {
+    priority: 80,
+    tags: ['verme', 'coceira anal', 'prurido anal', 'dor de barriga', 'diarreia'],
+  },
+  ';constipacao': {
+    priority: 84,
+    tags: ['prisão de ventre', 'constipação', 'fecaloma', 'obstrução intestinal', 'sem evacuar', 'barriga estufada'],
+  },
+  // --- Crise HAS / Neuro / Saúde Mental / Uro / Dermato ---
+  ';has-crise': {
+    priority: 91,
+    tags: ['pressão alta', 'pico de pressão', 'hipertensão', 'dor na nuca', 'dor de cabeça', 'tontura'],
+  },
+  ';vertigem': {
+    priority: 92,
+    tags: ['tontura', 'vertigem', 'labirintite', 'tudo girando', 'desequilíbrio', 'enjoo', 'nistagmo', 'hints'],
+  },
+  ';convulsao': {
+    priority: 96,
+    tags: ['convulsão', 'crise convulsiva', 'ataque epiléptico', 'desmaio', 'tremores', 'abalo motor', 'epilepsia'],
+  },
+  ';ansiedade': {
+    priority: 85,
+    tags: ['ansiedade', 'crise de pânico', 'batedeira', 'palpitação', 'falta de ar', 'dor no peito', 'formigamento', 'angústia'],
+  },
+  ';surto': {
+    priority: 88,
+    tags: ['agitação', 'surto', 'agressividade', 'delírio', 'alucinação', 'confusão mental'],
+  },
+  ';itu': {
+    priority: 92,
+    tags: ['dor para urinar', 'ardência ao urinar', 'disúria', 'infecção urinária', 'polaciúria', 'dor lombar', 'febre', 'pielonefrite', 'cistite'],
+  },
+  ';colica-renal': {
+    priority: 93,
+    tags: ['cólica renal', 'pedra no rim', 'dor lombar intensa', 'dor nas costas', 'sangue na urina', 'hematúria'],
+  },
+  ';uretrite': {
+    priority: 84,
+    tags: ['corrimento uretral', 'ardência para urinar', 'disúria', 'ist', 'pus'],
+  },
+  ';lombalgia': {
+    priority: 91,
+    tags: ['dor nas costas', 'dor lombar', 'lombalgia', 'ciático', 'travou a coluna', 'dor na perna'],
+  },
+  ';alergia': {
+    priority: 94,
+    tags: ['alergia', 'coceira', 'prurido', 'urticária', 'placas vermelhas', 'inchaço no rosto', 'falta de ar', 'anafilaxia'],
+  },
+  ';celulite': {
+    priority: 87,
+    tags: ['perna vermelha', 'inchaço quente', 'celulite', 'erisipela', 'abscesso', 'furúnculo', 'pus', 'febre'],
+  },
+  ';zoster': {
+    priority: 85,
+    tags: ['cobreiro', 'bolhas na pele', 'vesículas', 'queimação na pele', 'herpes zoster'],
+  },
+  ';escabiose': {
+    priority: 84,
+    tags: ['sarna', 'coceira à noite', 'prurido noturno', 'escabiose'],
+  },
+  ';gota': {
+    priority: 86,
+    tags: ['dor no dedão', 'junta inchada', 'artrite', 'gota', 'ácido úrico'],
+  },
+  // --- GO & Centro Obstétrico ---
+  ';gin-amb': {
+    priority: 82,
+    tags: ['corrimento vaginal', 'coceira vaginal', 'sangramento uterino', 'cólica menstrual', 'dor pélvica'],
+  },
+  ';perineorrafia': {
+    priority: 83,
+    tags: ['sangramento', 'laceração perineal', 'dor perineal', 'sutura no parto', 'episiotomia'],
+  },
+  ';hpp': {
+    priority: 99,
+    tags: ['sangramento', 'hemorragia pós-parto', 'hpp', 'sangramento vaginal intenso', 'atonia uterina', 'sangue'],
+  },
+  ';pre-eclampsia': {
+    priority: 98,
+    tags: ['pressão alta na gestação', 'pré-eclâmpsia', 'eclâmpsia', 'dor de cabeça', 'cefaleia na gestante', 'visão turva', 'escotomas', 'dor no estômago', 'convulsão'],
+  },
+  ';tpp': {
+    priority: 91,
+    tags: ['contração', 'dor no pé da barriga', 'cólica na gravidez', 'parto prematuro', 'tpp'],
+  },
+  ';rpmo': {
+    priority: 91,
+    tags: ['perda de líquido', 'bolsa rota', 'líquido amniótico', 'rpmo'],
+  },
+  ';dip': {
+    priority: 88,
+    tags: ['dor pélvica', 'dor no pé da barriga', 'corrimento com mau cheiro', 'febre', 'dip'],
+  },
+  ';mastite': {
+    priority: 89,
+    tags: ['febre', 'febre no pós-parto', 'dor na mama', 'mama empedrada', 'mastite', 'endometrite', 'sangramento fétido'],
+  },
+  ';abortamento': {
+    priority: 94,
+    tags: ['sangramento vaginal na gravidez', 'aborto', 'abortamento', 'gravidez ectópica', 'cólica no 1º trimestre'],
+  },
+  ';dpp-pp': {
+    priority: 97,
+    tags: ['sangramento 3º trimestre', 'descolamento prematuro de placenta', 'dpp', 'placenta prévia', 'vasa prévia'],
+  },
+  ';violencia-sexual': {
+    priority: 95,
+    tags: ['violência sexual', 'abuso', 'pep hiv', 'profilaxia pós-exposição', 'contracepção de emergência'],
+  },
+  // --- Enfermaria ---
+  ';enf-insulina': {
+    priority: 89,
+    tags: ['glicemia alta na enfermaria', 'insulina', 'basal-bolus', 'hiperglicemia hospitalar'],
+  },
+  ';enf-delirium': {
+    priority: 91,
+    tags: ['delirium', 'confusão mental no idoso', 'agitação na enfermaria', 'cam'],
+  },
+  ';fasthug': {
+    priority: 88,
+    tags: ['uti', 'enfermaria', 'fast hug', 'profilaxia tvp', 'profilaxia úlcera'],
+  },
+  ';obito-do': {
+    priority: 86,
+    tags: ['óbito', 'declaração de óbito', 'constatação de óbito'],
+  },
+  // --- Pediatria ---
+  ';ped-resfriado': {
+    priority: 85,
+    tags: ['tosse', 'coriza', 'nariz entupido', 'obstrução nasal', 'febre baixa', 'espirros', 'criança'],
+  },
+  ';bva': {
+    priority: 93,
+    tags: ['falta de ar', 'dispneia', 'chiado', 'tosse', 'cansacinho no bebê', 'tiragem', 'bronquiolite', 'lactente'],
+  },
+  ';crupe': {
+    priority: 93,
+    tags: ['tosse', 'tosse ladrante', 'tosse de cachorro', 'rouquidão', 'estridor', 'falta de ar', 'crupe'],
+  },
+  ';ped-otite': {
+    priority: 86,
+    tags: ['dor de ouvido', 'otalgia', 'febre', 'choro ao mamar', 'oma pediátrica'],
+  },
+  ';ped-pneumonia': {
+    priority: 93,
+    tags: ['tosse', 'febre', 'falta de ar', 'dispneia', 'respiração rápida', 'taquipneia', 'pneumonia infantil'],
+  },
+  ';ped-desidratacao': {
+    priority: 91,
+    tags: ['diarreia', 'vômitos', 'desidratação', 'soro de reidratação', 'tro', 'plano b', 'dor de barriga', 'febre'],
+  },
+  ';ped-febre': {
+    priority: 94,
+    tags: ['febre', 'febre sem foco', 'febre no bebê', 'lactente febril', 'prostração'],
+  },
+  ';convulsao-febril': {
+    priority: 94,
+    tags: ['febre', 'convulsão', 'convulsão febril', 'tremor com febre', 'criança'],
+  },
+  ';ped-asma': {
+    priority: 96,
+    tags: ['falta de ar na criança', 'crise de asma infantil', 'sibilância', 'chiado infantil', 'broncoespasmo pediátrico', 'salbutamol'],
+  },
+  ';ped-exantema': {
+    priority: 91,
+    tags: ['manchas vermelhas na criança', 'exantema febril', 'kawasaki', 'escarlatina', 'roséola', 'varicela'],
+  },
+  ';ped-itu': {
+    priority: 90,
+    tags: ['infecção urinária infantil', 'disúria na criança', 'febre sem foco', 'pielonefrite pediátrica', 'itu infantil'],
+  },
+  // --- Habilidades Clínicas (Pré-Porta 30s) ---
+  ';hab-anam': { priority: 84, tags: ['anamnese', 'entrevista', 'semiogênese', 'oldcarts', 'hmp'] },
+  ';hab-efg': { priority: 84, tags: ['exame físico geral', 'ectoscopia', 'sinais vitais', 'zero ping-pong'] },
+  ';hab-go': { priority: 84, tags: ['exame ginecológico', 'exame obstétrico', 'leopold', 'altura uterina', 'especular', 'toque'] },
+  ';hab-sbar': { priority: 85, tags: ['sbar', 'snapps', 'one-minute preceptor', 'apresentação de caso', 'passagem de plantão'] },
+  ';hab-cardio': { priority: 86, tags: ['exame cardiovascular', 'sopro cardíaco', 'ictu', 'turgência jugular', 'hemodinâmica'] },
+  ';hab-pulm': { priority: 86, tags: ['exame pulmonar', 'ausculta pulmonar', 'derrame pleural', 'pneumotórax', 'fremito'] },
+  ';hab-abd': { priority: 87, tags: ['exame abdominal', 'blumberg', 'murphy', 'rovsing', 'abdome agudo', 'ascite'] },
+  ';hab-osteo': { priority: 84, tags: ['lasegue', 'lachman', 'ottawa', 'neer', 'phalen', 'ortopedia', 'ombro', 'joelho'] },
+  ';hab-neuro': { priority: 89, tags: ['exame neurológico', 'nihss', 'glasgow', 'pares cranianos', 'hints', 'rigidez de nuca'] },
+  ';hab-ped': { priority: 86, tags: ['triângulo de avaliação pediátrica', 'tap', 'fontanela', 'desidratação infantil'] },
+  ';hab-ddx': { priority: 84, tags: ['diagnóstico diferencial', 'ddx', 'qualificadores semânticos', 'vieses cognitivos'] },
+  ';hab-ecg': { priority: 90, tags: ['leitura de ecg', 'eletrocardiograma', 'supra st', 'arritmia', 'eixo', 'intervalo qt'] },
+  ';hab-rx': { priority: 88, tags: ['raio x de tórax', 'rx de tórax', 'ripe', 'silhueta cardíaca', 'pneumotórax'] },
+  ';hab-gaso': { priority: 90, tags: ['gasometria arterial', 'winter', 'anion gap', 'delta-delta', 'acidose', 'alcalose'] },
+  ';hab-ctg': { priority: 86, tags: ['cardiotocografia', 'ctg', 'partograma', 'desaceleração', 'dip', 'categoria ii'] },
+  ';hab-spikes': { priority: 84, tags: ['spikes', 'más notícias', 'comunicação difícil', 'teach-back', 'empatia'] },
+  ';hab-presc': { priority: 88, tags: ['7 travas', 'prescrição segura', 'argivpo', 'alergia', 'ajuste renal'] },
+  ';hab-abcde': { priority: 93, tags: ['abcde', 'paciente grave', 'rush', 'pocus', 'sala vermelha'] },
+  ';hab-proc': { priority: 87, tags: ['paracentese', 'toracocentese', 'punção lombar', 'sondagem vesical', 'svd', 'sng'] },
+  ';hab-orl': { priority: 85, tags: ['otoscopia', 'oroscopia', 'olho vermelho', 'fluoresceína', 'epistaxe', 'glaucoma agudo'] },
+  ';hab-sutura': { priority: 86, tags: ['sutura', 'nó cirúrgico', 'anestesia local', 'lidocaína', 'bloqueio digital', 'fios'] },
+  ';hab-iot': { priority: 94, tags: ['via aérea', 'intubação', 'laringoscopia', 'lemon', 'ventilação mecânica', 'bvm'] },
+};
+
+export function enrichClinicalProtocolsWithSymptoms<T extends ClinicalSearchItem>(items: T[]): T[] {
+  const normalizedCatMap: Record<string, string[]> = {};
+  for (const [k, v] of Object.entries(CATEGORY_SYMPTOM_MAP)) {
+    normalizedCatMap[normalizeSearchText(k)] = v;
+  }
+
+  for (const item of items) {
+    const trigKey = String(item.trigger || '').toLowerCase();
+    const protoEntry =
+      PROTOCOL_SYMPTOM_MAP[trigKey] ||
+      (item.id ? PROTOCOL_SYMPTOM_MAP[String(item.id)] : undefined) ||
+      (item.all_triggers || []).map((t) => PROTOCOL_SYMPTOM_MAP[String(t).toLowerCase()]).find(Boolean);
+    const catKeyNorm = normalizeSearchText(item.category || '');
+    const catTags =
+      (item.category ? CATEGORY_SYMPTOM_MAP[item.category] : undefined) ||
+      normalizedCatMap[catKeyNorm] ||
+      [];
+
+    const mergedTags: string[] = [];
+    const seen = new Set<string>();
+    const directSet = new Set<string>();
+    const directRaw = [...(protoEntry ? protoEntry.tags : []), ...(item.tags_sintomas || [])];
+
+    for (const t of directRaw) {
+      const clean = String(t || '').trim();
+      const norm = normalizeSearchText(clean);
+      if (clean && !seen.has(norm)) {
+        seen.add(norm);
+        directSet.add(norm);
+        mergedTags.push(clean);
+      }
+    }
+
+    for (const t of catTags) {
+      const clean = String(t || '').trim();
+      const norm = normalizeSearchText(clean);
+      if (clean && !seen.has(norm)) {
+        seen.add(norm);
+        mergedTags.push(clean);
+      }
+    }
+
+    item.tags_sintomas = mergedTags;
+    item._tags_norm = mergedTags.map((t) => {
+      const norm = normalizeSearchText(t);
+      return { raw: t, norm, isDirect: directSet.has(norm) };
+    });
+    if (protoEntry && !item.symptom_priority) {
+      item.symptom_priority = protoEntry.priority;
+    } else if (!item.symptom_priority) {
+      item.symptom_priority = 50;
+    }
+    item._title_norm = normalizeSearchText(item.title);
+    item._cat_norm = normalizeSearchText(`${item.category || ''} ${item.module_name || ''}`);
+    item._triggers_norm = (item.all_triggers || (item.trigger ? [item.trigger] : [])).map(normalizeSearchText);
+    item._anchor_norm = normalizeSearchText(item.anchor || '');
+    item._cid_norm = normalizeSearchText(item.cid10 || '');
+  }
+
+  return items;
+}
+
 export interface ClinicalSearchItem {
   id?: string | number;
   title?: string;
@@ -94,6 +490,8 @@ function tokenizeClinicalText(text: string): string[] {
 export function createClinicalSearchIndex<T extends ClinicalSearchItem>(
   items: T[]
 ): MiniSearch {
+  enrichClinicalProtocolsWithSymptoms(items);
+
   const miniSearch = new MiniSearch({
     fields: ['title', 'tags', 'triggers', 'cid10', 'anchor', 'category', 'body'],
     storeFields: ['idx'],

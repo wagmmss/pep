@@ -99,18 +99,47 @@ ORIENTAÇÕES CRÍTICAS E SINAIS DE ALARME:
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO — ALTA DE EXACERBAÇÃO AGUDA DE DPOC (GOLD)
+Paciente: [Nome] | Idade: [ ] anos | Data: [DD/MM/AAAA]
+
+USO ORAL (ESQUEMA CURTO DE 5 DIAS — DIRETRIZ GOLD):
+1. Prednisona 20 mg ----------------------------------------------------------- 1 caixa (10 comprimidos)
+   Tomar 2 comprimidos (total de 40 mg) por via oral, 1 vez ao dia, pela manhã após o café, durante exatamente 5 dias (Estudo REDUCE: 5 dias têm a mesma eficácia que 14 dias, com metade dos efeitos colaterais).
+
+2. [SE PRESENÇA DE ESCARRO PURULENTO (CRITÉRIOS DE ANTHONISEN) — ANTIBIÓTICO POR 5 A 7 DIAS]:
+   Amoxicilina + Clavulanato 875/125 mg --------------------------------------- 14 comprimidos
+   Tomar 1 comprimido por via oral de 12 em 12 horas, junto às refeições, durante 5 a 7 dias.
+   *[OU Alternativa]*: Azitromicina 500 mg — Tomar 1 comprimido VO 1x/dia por 5 dias (ou Levofloxacino 750 mg VO 1x/dia por 5 dias se DPOC muito grave/bronquiectasias).
+
+USO INALATÓRIO (BRONCODILATADORES DE LONGA DURAÇÃO E RESGATE):
+3. Manter (ou iniciar) broncodilatador de longa duração de uso contínuo:
+   [Brometo de Tiotrópio 2,5 mcg (Spiriva Respimat — 2 jatos 1x/dia) + Formoterol/Budesonida 12/400 mcg de 12/12h / Dupla broncodilatação LAMA + LABA].
+
+4. Salbutamol 100 mcg Spray + Brometo de Ipratrópio 20 mcg Spray (ou Combivent / Duovent):
+   Aplicar 2 a 4 jatos por via inalatória (com espaçador) de 6 em 6 horas nos primeiros 3 a 5 dias ou se falta de ar.
+
+ORIENTAÇÕES CRÍTICAS E SINAIS DE ALARME:
+- Cessação completa do tabagismo e atualização vacinal (Vacina Influenza anual e Pneumocócica).
+- Se faz uso de oxigênio domiciliar: NUNCA aumentar o fluxo de oxigênio por conta própria acima do prescrito (normalmente 1 a 2 L/min para manter a saturação entre 88% e 92%), pois o excesso de oxigênio no DPOC retém gás carbônico no sangue e causa sonolência/coma!
+- RETORNAR IMEDIATAMENTE À UPA SE APRESENTAR: Piora da falta de ar mesmo em repouso, sonolência excessiva, confusão mental, dor de cabeça matinal intensa, febre persistente ou inchaço nas pernas.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que Dar Oxigênio Demais (SpO2 > 93–95%) Pode Matar o Paciente com DPOC Exacerbado (Narcose Hipercápnica)? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que Dar Oxigênio Demais (SpO2 > 93–95%) Pode Matar o Paciente com DPOC Exacerbado (Narcose Hipercápnica)? (Fisiopatologia & Raciocínio)
 - **A meta rigorosa de Oximetria no DPOC (`SpO2 entre 88% e 92%` — NUNCA 98–100%!):** Colocar uma máscara de oxigênio a 10–15 L/min deixando um paciente com DPOC grave com `SpO2 = 99%` precipita **acidose respiratória aguda hipercapnica (`PaCO2 > 60–80 mmHg`), narcose carbônica (coma) e parada respiratória** por **3 mecanismos fisiopatológicos combinados**:
   1. **Efeito Haldane (Deslocamento do CO₂ da Hemoglobina):** A hemoglobina desoxigenada carrega o CO₂ periférico (sob a forma de carbamino-hemoglobina) muito melhor do que a oxi-hemoglobina. Quando você hiperoxigena o sangue, o O₂ expulsa o CO₂ da hemoglobina para o plasma, elevando abruptamente a `PaCO2`!
   2. **Perda da Vasoconstrição Pulmonar Hipóxica (Piora do Espaço Morto Fisiológico V/Q — O mecanismo principal!):** No pulmão enfisematoso, alvéolos destruídos e mal ventilados sofrem vasoconstrição arteriolar reflexa para desviar o sangue para alvéolos bons. Quando você inunda o pulmão com O₂ em alto fluxo, essa vasoconstrição é abolida e o sangue volta a perfundir unidades alveolares que não ventilam, impedindo a eliminação de CO₂!
   3. **Redução do *Drive* Ventilatório Hipóxico Periférico:** Nos retentores crônicos de CO₂ (cujo centro bulbar já se adaptou ao bicarbonato alto no líquor), os quimiorreceptores carotídeos periféricos respondem à hipoxemia; a hiperóxia reduz o volume-minuto.
 - **Solução prática na UPA:** Ofertar O₂ em **baixo fluxo controlado** (Cateter nasal a **`1 a 2 L/min`** ou **Máscara de Venturi a `24% ou 28%`**) titulando estritamente para **`SpO2 de 88% a 92%`**! *(E se for nebulizar Salbutamol+Ipratrópio, nebulizar com **Ar Comprimido** enquanto mantém o cateter nasal de O2 a 1–2 L/min, e não nebulizar com O2 a 8 L/min por 20 minutos!).*
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Resumo Algorítmico da Exacerbação Aguda de DPOC na Sala de Emergência (Diretriz GOLD)**
+### 🧭 3. Resumo Algorítmico da Exacerbação Aguda de DPOC na Sala de Emergência (Diretriz GOLD)
 | Pilar Terapêutico no DPOC Exacerbado | Conduta Exata na UPA / Sala Vermelha | Armadilha Clássica de Plantão a Evitar |
 | :--- | :--- | :--- |
 | **1. Oxigenoterapia Alvo-Guiada** | Cateter nasal `1–2 L/min` ou Venturi `24–28%` para manter **`SpO2 entre 88% e 92%`** + colher Gasometria Arterial se moderado/grave. | Colocar máscara não reinalante a `15 L/min` deixando `SpO2 99%` → paciente entra em narcose por CO₂ (`PaCO2 > 80`). |
@@ -119,8 +148,7 @@ ORIENTAÇÕES CRÍTICAS E SINAIS DE ALARME:
 | **4. Antibioticoterapia (5–7 dias)** | Prescrever se **escarro purulento** (Anthonisen I ou II com pus) ou necessidade de **VNI/IOT**. | Deixar de cobrir *Pseudomonas aeruginosa* (usar `Ciprofloxacino`, `Levofloxacino 750` ou `Cefepime/Tazocin`) em pacientes com bronquiectasias ou uso frequente de ATB/corticoide. |
 | **5. Suporte Ventilatório (VNI — BiPAP)** | Iniciar **BiPAP imediato** se **`pH ≤ 7,35` + `PaCO2 > 45 mmHg`** ou dispneia grave com uso de musculatura acessória. | Esperar o paciente entrar em coma/apneia para iniciar VNI (quando já entrou em coma/PCR, a indicação passa a ser IOT!). |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Quando Dar Antibiótico no DPOC (Critérios de Anthonisen), Por Que 5 Dias de Prednisona Bastam e Como a VNI (BiPAP) Evita a Intubação? (Racional Farmacológico)**
+### 💊 2. Quando Dar Antibiótico no DPOC (Critérios de Anthonisen), Por Que 5 Dias de Prednisona Bastam e Como a VNI (BiPAP) Evita a Intubação? (Racional Farmacológico)
 - **1. Os 3 Sintomas Cardinais de Anthonisen (Quando prescrever Antibiótico na Exacerbação do DPOC):**
   - Os 3 sintomas cardinais são: **(1) Aumento da dispneia**, **(2) Aumento do volume do escarro** e **(3) Mudança do escarro para PURULENTO**.
   - **Indica-se Antibiótico por 5 a 7 dias** (`Amoxicilina+Clavulanato 875/125 mg 12/12h`, `Azitromicina 500 mg/d` ou `Levofloxacino 750 mg/d`) quando o paciente apresenta:
@@ -129,6 +157,3 @@ ORIENTAÇÕES CRÍTICAS E SINAIS DE ALARME:
     * **Qualquer exacerbação grave que exija Ventilação Não Invasiva (VNI) ou Ventilação Mecânica Invasiva (IOT)**!
 - **2. Por que 5 dias de Prednisona `40 mg VO/dia` são o Padrão-Ouro (Estudo REDUCE — *JAMA*):** Cinco dias de Prednisona 40 mg/dia aceleram a recuperação do `VEF1`, melhoram a oxigenação e reduzem a falha terapêutica exatamente igual a 14 dias, evitando miopatia esteroidal diafragmática e hiperglicemia!
 - **3. Por que a VNI (BiPAP) é a intervenção nº 1 que reduz mortalidade e intubação no DPOC hipercápnico:** Na acidose respiratória aguda do DPOC (**`pH ≤ 7,35` e `PaCO2 > 45 mmHg`** com paciente alerta/cooperativo), o **BiPAP** aplica uma pressão expiratória (**EPAP/PEEP de `4–6 cmH2O`**) que neutraliza a *Auto-PEEP* intrínseca do aprisionamento aéreo e uma pressão inspiratória (**IPAP de `12–16 cmH2O`**) que descansa a musculatura respiratória e lava o CO₂, reduzindo a mortalidade em **mais de 45%**!
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

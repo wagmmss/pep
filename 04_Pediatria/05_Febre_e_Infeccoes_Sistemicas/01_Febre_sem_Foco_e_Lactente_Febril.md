@@ -84,29 +84,49 @@ SINAIS DE ALARME DE EMERGÊNCIA (VOLTAR IMEDIATAMENTE AO PRONTO-SOCORRO):
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO PEDIÁTRICO — FEBRE SEM FOCO (CRITÉRIOS DE BAIXO RISCO COM REAVALIAÇÃO EM 24–48H)
+Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
+
+USO ORAL:
+1. Dipirona Solução Oral Gotas (500 mg/mL) ------------------------------------- 1 frasco
+   Dar [ ] gotas (0,8 a 1 gota/kg; máx 35 gotas) por via oral até de 6 em 6 horas se houver febre (temperatura axilar ≥ 37,8 °C) associada a desconforto ou irritabilidade.
+
+2. [OU Alternativa] Paracetamol Solução Oral Gotas (200 mg/mL) ---------------- 1 frasco
+   Dar [ ] gotas (1 gota/kg; máx 35 gotas) por via oral até de 6 em 6 horas se houver febre ou dor.
+
+ORIENTAÇÕES DE OBSERVAÇÃO EM CASA & REAVALIAÇÃO PROGRAMADA:
+- Hidratação: Oferecer seio materno em livre demanda, água ou soro de reidratação oral com frequência (a febre aumenta a perda de água pela pele e respiração). Vestir a criança com roupas leves e frescas (não agasalhar em excesso).
+- O que Observar após o Antitérmico: O sinal mais tranquilizador na pediatria é ver que, 40 a 60 minutos após o remédio da febre, a criança volta a ficar ativa, olha nos olhos, sorri e aceita líquidos.
+- RETORNO PROGRAMADO: Retornar para reavaliação médica em [24 / 48] horas (se a febre persistir por mais de 48 horas sem aparecer gripe, será necessário colher exame de urina para descartar infecção urinária oculta).
+
+SINAIS DE ALARME DE EMERGÊNCIA (VOLTAR IMEDIATAMENTE AO PRONTO-SOCORRO):
+1. Teste do Copo na Pele: Surgimento de pintinhas vermelhas ou manchas roxas na pele que NÃO desaparecem quando você pressiona um copo de vidro transparente contra a mancha (sinal de alerta máximo para infecção grave).
+2. Criança que continua muito molinha, gemendo, chorando sem consolo ou difícil de acordar MESMO DEPOIS que a febre abaixou.
+3. Respiração muito rápida, afundamento das costelas ou moleira (fontanela) estufada/alta.
+4. Vômitos repetidos ou crise convulsiva.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Febre sem Foco & Manejo do Lactente Febril** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧠 1. Por Que o Recém-Nascido (< 28 Dias) Febril Sempre Interna e Por Que a ITU É o Grande Vilão Oculto Após os 2 Meses? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que o Recém-Nascido (< 28 Dias) Febril Sempre Interna e Por Que a ITU É o Grande Vilão Oculto Após os 2 Meses? (Fisiopatologia & Raciocínio)
 - **Por que o exame físico normal NÃO descarta sepse ou meningite no recém-nascido (`0 a 28 dias`):** No neonato, a quimiotaxia de neutrófilos, a opsonização por anticorpos IgG e a função esplênica de depuração de bactérias encapsuladas são profundamente imaturas. Por isso, **até 10% a 15% dos recém-nascidos com temperatura axilar `≥ 38,0 °C`** possuem uma **Infecção Bacteriana Grave (IBG)** — como sepse neonatal tardia, meningite ou pielonefrite por *Streptococcus agalactiae* (Grupo B), *Escherichia coli* ou *Listeria monocytogenes* — **mesmo apresentando exame físico normal e mamando no peito!**.
 - **Como a vacinação (Pneumo-10 e Hib) mudou completamente a Febre Sem Sinais Localizatórios (FSSL) em lactentes `> 3 meses`:** Na era pré-vacinal, o protocolo de Baraff exigia hemograma e hemocultura para toda febre `≥ 39 °C` pelo risco de ~5% de bacteremia oculta por *S. pneumoniae* e *H. influenzae* tipo B. Hoje, em crianças com **2 ou mais doses das vacinas conjugadas (Pneumo-10 e Pentavalente)** e bom estado geral (TEP normal), a taxa de bacteremia oculta caiu para **`< 0,5%`** — e a **Infecção do Trato Urinário (ITU)** passou a representar **mais de 80% a 90% de todas as infecções bacterianas ocultas** na FSSL!
 
-**🧭 3. Algoritmo Estratificado da Febre Sem Sinais Localizatórios (`Tax ≥ 38 °C`) por Faixa Etária**
+### 🧭 3. Algoritmo Estratificado da Febre Sem Sinais Localizatórios (`Tax ≥ 38 °C`) por Faixa Etária
 | Faixa Etária | Risco de Infecção Bacteriana Grave (IBG) | Agentes Bacterianos Principais | Conduta Algorítmica Padrão-Ouro (SBP / AAP) |
 | :--- | :---: | :--- | :--- |
 | **1. Recém-Nascido (`0 a 28 dias`)** | **Muito Alto (`10% a 15%`)** | *Streptococcus agalactiae* (GBS), *Escherichia coli*, *Listeria monocytogenes*, *Enterococcus* | **Internação Hospitalar Obrigatória em 100% dos casos** + Triagem Séptica Completa (Hemograma, PCR, Hemocultura, EAS/Urocultura por sonda e **Punção Lombar/LCR**) + **Ampicilina + Gentamicina (ou Cefotaxima) EV**. |
 | **2. Lactente Jovem (`29 a 90 dias`)** | **Intermediário (`3% a 8%` — maior para ITU)** | *E. coli* (ITU), *S. agalactiae*, *S. pneumoniae*, *N. meningitidis* | **Estratificar Risco (Rochester / Step-by-Step):** Colher sempre **EAS + Urocultura por sonda**, Hemograma, PCR e Hemocultura. Se **Baixo Risco** (`Leuco 5k–15k`, `Bast < 1.500`, `PCR normal`, `EAS normal`, termo hígido): observação ambulatorial com **retorno obrigatório em 24h**. Se **Alto Risco**: Internar + LCR + **Ceftriaxona EV**. |
 | **3. Lactente de `3 a 36 meses` (Vacinado)** | **Baixo para Bacteremia (`< 0,5%`); `5–8%` para ITU** | *E. coli* (ITU), *S. pneumoniae*, *N. meningitidis* | Avaliar **TEP após baixar a febre**: se toxemiado → Sala Vermelha (Sepse). Se **Bom Estado Geral e Vacinado**: pesquisar **ITU (EAS + Urocultura por sonda)** se febre `> 24–48h` ou `≥ 39 °C`; se EAS normal → alta sintomática com reavaliação em 24–48h. |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que "Urocultura de Saco Coletor" Positiva É Proscrita para Diagnóstico de ITU no Lactente?**
+### 💊 2. Por Que "Urocultura de Saco Coletor" Positiva É Proscrita para Diagnóstico de ITU no Lactente?
 - **A armadilha do Saco Coletor Perineal (85% de Falsos-Positivos!):** A pele do períneo e do prepúcio/vulva do lactente que usa fralda é densamente colonizada por *E. coli*, *Proteus* e *Klebsiella* fecais. Quando a urina cai no saco plástico colado na pele, ela lava essa flora perineal e a urocultura cresce `> 100.000 UFC/mL` em **até 85% das vezes em crianças que NÃO têm infecção urinária**, levando a internações desnecessárias, antibióticos venosos e investigação urológica invasiva.
 - **A regra de ouro da SBP e da AAP para coleta urinária em lactentes sem controle esfincteriano:**
   - O saco coletor serve **exclusivamente como triagem para EXCLUIR ITU** se o EAS vier 100% normal (sem leucocitúria e nitrito negativo).
   - **NUNCA se envia urocultura de saco coletor e NUNCA se inicia antibiótico para ITU sem antes colher Urina 1 + Urocultura por Cateterismo Vesical (Sondagem de Alívio estéril) ou Punção Suprapúbica!**
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

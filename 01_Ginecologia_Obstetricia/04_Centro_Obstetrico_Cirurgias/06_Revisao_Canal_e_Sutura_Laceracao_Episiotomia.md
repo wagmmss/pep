@@ -56,11 +56,7 @@ ORIENTAÇÕES DE CUIDADOS COM OS PONTOS:
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Revisão de Canal de Parto e Perineorrafia (Lacerações e Episiotomia)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧠 1. Por Que a Classificação Anatômica (1º ao 4º Grau / OASIS) Muda Toda a Sutura?**
+### 🧠 1. Por Que a Classificação Anatômica (1º ao 4º Grau / OASIS) Muda Toda a Sutura?
 Antes de dar o primeiro ponto de uma perineorrafia, é **obrigatório realizar inspeção sob boa iluminação + toque retal digital** para classificar a lesão:
 
 | Grau da Laceração | Estruturas Anatômicas Atingidas | Conduta Cirúrgica & Fio Ideal |
@@ -77,9 +73,3 @@ Antes de dar o primeiro ponto de uma perineorrafia, é **obrigatório realizar i
    - A sutura contínua frouxa (não-ancorada) distribui a tensão uniformemente conforme o edema pós-parto regride, e o fechamento **intradérmico/subcuticular** da pele reduz em **50% a dor perineal e a dispareunia** nos primeiros 3 meses comparado aos pontos simples na pele (Donatti/separados).
 3. **Por que o Toque Retal Final + Retirada do Tampão Vaginal são obrigatórios antes de tirar as luvas?**
    - O toque retal final confirma que nenhuma laçada da camada muscular transfixou a mucosa do reto (caso haja ponto transfixante no reto, ele deve ser desfeito imediatamente na hora para evitar **fístula retovaginal**!). E retirar a gaze/tampão vaginal com fio de reparo evita retenção de corpo estranho.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

@@ -81,13 +81,41 @@ ORIENTAÇÕES E SINAIS DE ALARME (MASTOIDITE):
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO PEDIÁTRICO — OTITE MÉDIA AGUDA (OMA)
+Criança: [Nome] | Peso Atual: [ ] kg | Idade: [ ] | Data: [DD/MM/AAAA]
+
+USO ORAL E NASAL:
+1. [Amoxicilina Suspensão Oral 400 mg / 5 mL (80 mg/mL) / Amoxicilina 250 mg / 5 mL (50 mg/mL) / Amoxicilina + Clavulanato 400 + 57 mg / 5 mL] --- [ ] frasco(s)
+   Dar [ ] mL por via oral de [12 em 12 horas / 8 em 8 horas], rigorosamente nos horários, durante [10 / 7] dias consecutivos.
+   *(Cálculo conferido pelo peso de [ ] kg na dose de [50 / 90] mg/kg/dia).*
+
+2. Ibuprofeno Solução Oral Gotas (100 mg/mL) ----------------------------------- 1 frasco
+   Dar [ ] gotas (1 gota por kg de peso; máx 40 gotas) por via oral de 8 em 8 horas nos primeiros 2 a 3 dias para controle da dor e inflamação do tímpano.
+
+3. Dipirona Solução Oral Gotas (500 mg/mL) ------------------------------------- 1 frasco
+   Dar [ ] gotas por via oral até de 6 em 6 horas se houver febre (≥ 37,8 °C) ou dor intensa.
+
+4. Soro Fisiológico 0,9% ------------------------------------------------------- 1 frasco
+   Realizar lavagem nasal com seringa de [3 a 5 / 5 a 10] mL em cada narina 4 a 6 vezes ao dia para desentupir o canal que liga o nariz ao ouvido (tuba auditiva).
+
+ORIENTAÇÕES E SINAIS DE ALARME (MASTOIDITE):
+- Não pingar nenhuma gota, óleo morno ou remédio caseiro dentro do ouvido da criança. Se estiver saindo secreção (otorreia), limpe apenas a parte externa da orelha e proteja o ouvido da entrada de água do banho com algodão embebido em óleo mineral/vaselina na concha externa.
+- O antibiótico demora de 24 a 48 horas para fazer a febre e a dor desaparecerem; por isso, dê o analgésico prescrito regularmente nos primeiros 2 dias.
+- RETORNAR IMEDIATAMENTE AO PRONTO-SOCORRO SE:
+  1. Surgir vermelhidão, inchaço ou dor atrás da orelha, ou se a orelha parecer "empurrada para frente" (sinal de Mastoidite Aguda).
+  2. Persistir febre alta ou dor intensa após 48 a 72 horas do início do antibiótico.
+  3. Surgir sonolência excessiva, vômitos repetidos ou rigidez no pescoço.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Otite Média Aguda (OMA) Pediátrica** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Regra Prática de Cálculo Rápido no Plantão e Quando Observar vs Tratar Imediatamente**
+### 🧭 3. Regra Prática de Cálculo Rápido no Plantão e Quando Observar vs Tratar Imediatamente
 | Apresentação Comercial da Amoxicilina | Concentração (`mg/mL`) | Regra Rápida para Dose Padrão (`50 mg/kg/dia`) | Regra Rápida para Dose Dobrada (`90 mg/kg/dia`) |
 | :--- | :---: | :--- | :--- |
 | **Amoxicilina `250 mg / 5 mL`** | `50 mg/mL` | **`Peso ÷ 3` = mL de 8/8h** *(Ex: 12 kg → `4 mL VO 8/8h`, máx 10 mL/dose)* | `Peso × 0,6` = mL de 8/8h *(volume alto; preferir 400 mg/5 mL)* |
@@ -98,13 +126,11 @@ ORIENTAÇÕES E SINAIS DE ALARME (MASTOIDITE):
   2. Todas as crianças com **otorreia purulenta aguda** ou **doença grave** (otalgia moderada/intensa por `≥ 48h` ou febre `≥ 39 °C`);
   3. Crianças de **`6 a 23 meses` com OMA bilateral** (mesmo sem sinais de gravidade).
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Dobramos a Amoxicilina para 90 mg/kg/dia no Risco de Pneumococo e Adicionamos Clavulanato na Conjuntivite? (Racional Farmacológico)**
+### 💊 2. Por Que Dobramos a Amoxicilina para 90 mg/kg/dia no Risco de Pneumococo e Adicionamos Clavulanato na Conjuntivite? (Racional Farmacológico)
 - **Por que `Amoxicilina 90 mg/kg/dia` vence o *Streptococcus pneumoniae* resistente, mas NÃO vence o *Haemophilus* produtor de β-lactamase:**
   - O mecanismo de resistência do **Pneumococo (*S. pneumoniae*)** aos beta-lactâmicos **NÃO** é produção de beta-lactamase, e sim **mutação nas Proteínas Ligadoras de Penicilina (PBPs)**. Esse mecanismo é superado simplesmente **dobrando a dose de Amoxicilina de `50 mg/kg/dia` para `90 mg/kg/dia`**, aumentando o tempo acima da concentração inibitória mínima (`T > MIC`) na orelha média! Indica-se `90 mg/kg/dia` se a criança tem **`< 2 anos`**, **frequenta creche** ou **usou antibiótico nos últimos 30 dias**.
   - Já o ***Haemophilus influenzae* não-tipável** (fortemente associado à **Síndrome Otite-Conjuntivite purulenta ipsilateral**) e a *Moraxella catarrhalis* resistem produzindo a enzima **beta-lactamase**, que destrói a amoxicilina independentemente da dose. Nesses casos (ou na falha terapêutica após 48–72h de amoxicilina pura), é obrigatório associar um inibidor de beta-lactamase: **Amoxicilina + Clavulanato**. **Cuidado com o teto do Clavulanato (`≤ 10 mg/kg/dia`):** na apresentação brasileira 7:1 (`400 mg + 57 mg / 5 mL`), dar `90 mg/kg/dia` direto forneceria `12,8 mg/kg/dia` de clavulanato (causando diarreia intensa); por isso, para atingir `90 mg/kg/dia`, usa-se a apresentação **14:1 (`600 + 42,9 mg / 5 mL`)** ou prescreve-se **`45 mg/kg/dia` de Amox+Clav (400+57/5 mL) + `45 mg/kg/dia` de Amoxicilina pura (400/5 mL)**!
 
-### 🚫 4. Segurança, Travas & Proibições
-**🧠 1. Por Que Hiperemia Isolada Não É OMA e o Abaulamento Timpânico É o Sinal-Chave? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que Hiperemia Isolada Não É OMA e o Abaulamento Timpânico É o Sinal-Chave? (Fisiopatologia & Raciocínio)
 - **Por que 40% dos antibióticos prescritos para "dor de ouvido" na infância são desnecessários:** Quando uma criança chora intensamente durante o exame ou está com febre alta por uma virose qualquer, ocorre vasodilatação periférica dos vasos radiais da membrana timpânica — deixando o tímpano **vermelho (hiperemiado)**, mas **plano, translúcido e sem efusão**. Hiperemia timpânica isolada sem abaulamento **NÃO é Otite Média Aguda**!
 - **A tríade microbiológica da OMA (*S. pneumoniae*, *H. influenzae* não-tipável e *Moraxella catarrhalis*):** Na OMA verdadeira, a obstrução inflamatória viral da **tuba auditiva** (que na criança é mais curta, mais horizontalizada e menos cartilaginosa) gera pressão negativa na orelha média, aspirando bactérias colonizadoras da rinofaringe. A proliferação bacteriana forma pus sob pressão na caixa timpânica, produzindo o achado patognomônico na otoscopia: **abaulamento moderado a grave da membrana timpânica com perda da translucidez** (ou otorreia aguda por perfuração espontânea).

@@ -80,21 +80,11 @@ USO ORAL (KIT DE ALTA — PROFILAXIA PÓS-EXPOSIÇÃO SEXUAL / PEP):
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Manejo de Emergência - Violência Sexual e Profilaxias Pós-Exposição (ISTs, HIV e Contracepção)** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-**🧠 1. Por Que 72 Horas é o Limite da PEP para HIV, Mas Não das Demais Medidas?**
+### 🧠 1. Por Que 72 Horas é o Limite da PEP para HIV, Mas Não das Demais Medidas?
 - **Janelas Críticas (PCDT Ministério da Saúde):** A replicação sistêmica do HIV nos linfonodos regionais consolida-se após `72 horas` da inoculação mucosa; por isso, **TDF + 3TC + Dolutegravir por 28 dias** deve ser iniciado o mais rápido possível (idealmente nas primeiras 2 horas e no máximo até 72h). Contudo, a **contracepção de emergência** funciona até **5 dias (120h)**, a **IGHAHB** até **14 dias**, e a **profilaxia de ISTs bacterianas** e a **vacinação HPV (9–45 anos)** devem ser administradas mesmo em apresentações mais tardias.
 - **Por que postergar o Metronidazol 2 g em 48–72 horas?** Administrar Azitromicina 1 g + Levonorgestrel + Metronidazol 2 g + antirretrovirais no mesmo minuto provoca alta taxa de êmese aguda, levando à perda da dose da contracepção de emergência e da PEP.
 
-**💊 2. Por Que Não Exigimos Boletim de Ocorrência e Quais Travas Checamos na PEP/IST?**
+### 💊 2. Por Que Não Exigimos Boletim de Ocorrência e Quais Travas Checamos na PEP/IST?
 - **Lei nº 12.845/2013 & Sigilo:** O atendimento na rede pública e privada é **imediato, obrigatório e gratuito sem exigência de Boletim de Ocorrência ou exame do IML prévio** (realizar apenas Notificação Compulsória no SINAN em até 24h).
 - **Travas Farmacológicas na Prescrição:**
   1. **Gestantes:** **Dolutegravir (DTG)** é seguro e 1ª escolha na gestação atual pelo PCDT/OMS; evitar apenas Doxiciclina (na sífilis em alérgica gestante, indicar dessensibilização à penicilina).

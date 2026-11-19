@@ -94,19 +94,46 @@ SINAIS DE ALERTA:
 
 ---
 
+## 💊 Receita Domiciliar / Alta (Pronta para Copiar)
+
+> **Como usar:** Clique no botão **`💊 Receita`** no topo do card ou na aba **Receita** para copiar apenas a prescrição de alta pronta para impressão/entrega ao paciente.
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+USO ORAL (ESCOLHER CONFORME CLASSIFICAÇÃO CLÍNICA):
+
+[OPÇÃO 1 - CISTITE AGUDA NÃO COMPLICADA (1ª LINHA - DOSE ÚNICA)]:
+1. Fosfomicina Trometamol 3 g (envelope 8 g) ------------------- 01 envelope
+   Dissolver o conteúdo de 01 envelope em meio copo de água e tomar em dose única, preferencialmente à noite, após esvaziar completamente a bexiga.
+
+[OPÇÃO 2 - CISTITE AGUDA NÃO COMPLICADA (ALTERNATIVA 5 DIAS)]:
+1. Nitrofurantoína 100 mg -------------------------------------- 20 cápsulas
+   Tomar 01 cápsula por via oral de 6/6 horas, junto às refeições, por 5 dias.
+
+[OPÇÃO 3 - PIELONEFRITE AGUDA NÃO COMPLICADA AMBULATORIAL]:
+1. Ciprofloxacino 500 mg --------------------------------------- 14 comprimidos
+   Tomar 01 comprimido por via oral de 12/12 horas por 7 dias.
+
+[SINTOMÁTICOS DE APOIO]:
+2. Fenazopiridina (Pyridium) 200 mg ---------------------------- 06 comprimidos
+   Tomar 01 comprimido por via oral de 8/8 horas, após as refeições, por 2 dias (alívio da disúria). Avisar que deixa a urina alaranjada/avermelhada.
+3. Dipirona Sódica 1 g ----------------------------------------- 01 caixa
+   Tomar 01 comprimido de 6/6 horas se dor suprapúbica, lombar ou febre.
+
+SINAIS DE ALERTA:
+- Ingerir ao menos 2,5 litros de água ao dia e não postergar a micção.
+- Retornar imediatamente se febre persistente após 48-72h de antibiótico, calafrios, vômitos incoercíveis ou queda do estado geral.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Cistite Baixa vs. Pielonefrite Aguda: A Fronteira Anatômica e Fisiopatológica**
+### 🧠 1. Cistite Baixa vs. Pielonefrite Aguda: A Fronteira Anatômica e Fisiopatológica
 Na **Cistite Aguda Não Complicada** (mulher jovem, não gestante, sem anormalidades do trato urinário), a infecção uropatogênica (*E. coli* em 80%) restringe-se à mucosa vesical superficial, manifestando-se por disúria, polaciúria e urgência miccional **sem febre e sem dor lombar**. O diagnóstico é **puramente clínico** (disúria + polaciúria sem corrimento vaginal tem VPP > 90%), dispensando EAS ou urocultura de rotina. Já a presença de **febre, calafrios, náuseas/vômitos ou Sinal de Giordano positivo** indica invasão parenquimatosa renal (**Pielonefrite Aguda**), exigindo urocultura obrigatória e antimicrobiano com alta concentração tecidual e sérica.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Critérios de Internação e Quando Suspeitar de Pielonefrite Obstrutiva Cirúrgica**
+### 🧭 3. Critérios de Internação e Quando Suspeitar de Pielonefrite Obstrutiva Cirúrgica
 Interna-se toda pielonefrite com: **gestação** (alto risco de parto prematuro e SDRA materna), **intolerância à via oral (vômitos)**, **instabilidade hemodinâmica/sepse**, **imunossupressão/diabetes descompensado**, **rim único** ou **suspeita de obstrução ureteral associada (ureterolitíase)**. Pielonefrite associada a cálculo obstrutivo ("pioidronefrose") é uma emergência urológica cirúrgica que requer TC/USG imediato e descompressão com cateter duplo J ou nefrostomia.
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Fosfomicina e Nitrofurantoína Servem para Cistite, Mas NUNCA para Pielonefrite?**
+### 💊 2. Por Que Fosfomicina e Nitrofurantoína Servem para Cistite, Mas NUNCA para Pielonefrite?
 A **Fosfomicina trometamol (3 g dose única)** e a **Nitrofurantoína (100 mg 6/6h por 5 dias)** são a 1ª linha para cistite porque atingem concentrações urinárias altíssimas com mínimo impacto ecológico na microbiota intestinal. Contudo, ambas possuem **penetração nula no parênquima renal e no sangue**: prescrevê-las em pielonefrite equivale a deixar a infecção renal sem tratamento, precipitando sepse urinária. Na pielonefrite não complicada ambulatorial, utilizam-se fluoroquinolonas (**Ciprofloxacino 500 mg 12/12h por 7 dias**, precedido de 1 dose de Ceftriaxona 1 g IV/IM no PS) ou Cefalosporinas de 3ª geração.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

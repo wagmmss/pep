@@ -47,16 +47,6 @@ LAUDO DO ECG DE 12 DERIVAÇÕES:
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**Diferenciação Anatômica e Prognóstica: BAV Nodal vs. Infranodal (Mobitz II e BAVT)**
+### Diferenciação Anatômica e Prognóstica: BAV Nodal vs. Infranodal (Mobitz II e BAVT)
 - **Por que a Atropina funciona no BAV Mobitz I, mas falha no Mobitz II e no BAVT de QRS largo:** O BAV de 1º grau e o BAV de 2º grau **Mobitz I (Wenckebach)** ocorrem quase sempre no **nó AV (supranodal)**, que é ricamente inervado pelo nervo vago — por isso respondem bem ao bloqueio vagal da Atropina. Já o **BAV de 2º grau Mobitz II** e o **BAVT com escape de QRS largo** localizam-se no **sistema His-Purkinje (infranodal)**, onde a Atropina não atua; esses bloqueios têm alto risco de degenerar subitamente para assistolia ou Torsades de Pointes e exigem **Marcapasso Transcutâneo / Transvenoso imediato**.
 - **Por que nunca checar a captura mecânica do Marcapasso Transcutâneo pelo pulso carotídeo:** As contrações da musculatura peitoral e cervical induzidas pelo estímulo elétrico do MPTC simulam batimentos no pescoço; a confirmação da captura mecânica real exige palpação do **pulso femoral** ou leitura da curva de oximetria de pulso/PAI.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

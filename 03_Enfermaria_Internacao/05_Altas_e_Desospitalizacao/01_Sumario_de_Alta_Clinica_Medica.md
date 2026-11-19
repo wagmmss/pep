@@ -78,23 +78,49 @@ ORIENTAÇÕES GERAIS E SINAIS DE ALARME:
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO DE ALTA HOSPITALAR — CLÍNICA MÉDICA
+Paciente: [Nome] | Data da Alta: [DD/MM/AAAA]
+
+1. MEDICAÇÃO PARA TERMINAR O TRATAMENTO AGUDO (COM PRAZO DE TÉRMINO):
+   - [Amoxicilina + Clavulanato 875/125 mg (ou outro antimicrobiano em transição oral)]
+     Tomar 1 comprimido por via oral de [12 em 12] horas durante mais [ ] dias corridos (Último dia de tomada: [DD/MM/AAAA]). Não interromper antes desta data.
+
+2. MEDICAÇÕES DE USO CONTÍNUO DIÁRIO (TOMAR TODOS OS DIAS):
+   - [Medicamento Contínuo 1 — ex: Losartana 50 mg]
+     Tomar [1] comprimido por via oral pela manhã ([08:00]h) — Uso contínuo.
+   - [Medicamento Contínuo 2 — ex: Anlodipino 5 mg / Metformina 850 mg / Sinvastatina 20 mg]
+     Tomar [1] comprimido por via oral [após o almoço e/ou jantar] — Uso contínuo.
+
+3. MEDICAÇÃO SINTOMÁTICA (APENAS SE NECESSÁRIO):
+   - Dipirona Monoidratada 500 mg (ou 1 g)
+     Tomar 1 comprimido por via oral até de 6 em 6 horas se apresentar dor ou febre (Tax ≥ 37,8 °C).
+
+ATENÇÃO — REMÉDIOS ANTIGOS SUSPENSOS (NÃO TOMAR MAIS EM CASA):
+- Suspender definitivamente o uso de: [Nenhum / [ ] — substituído pela nova receita acima].
+
+ORIENTAÇÕES GERAIS E SINAIS DE ALARME:
+- Manter dieta [geral saudável / com restrição de sal / para diabetes] e boa hidratação oral ([1,5 a 2] litros de água/dia, salvo restrição médica).
+- Levar este Receituário e o Sumário de Alta na sua consulta na UBS em [7 a 14] dias.
+- Procurar imediatamente a UPA / Pronto-Socorro se apresentar febre (≥ 37,8 °C), falta de ar, dor no peito, vômitos que impeçam tomar os comprimidos ou sonolência excessiva.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Sumário de Alta Hospitalar - Clínica Médica** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧠 1. Por Que os Primeiros 7 a 14 Dias Pós-Alta São o Período de Maior Vulnerabilidade? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que os Primeiros 7 a 14 Dias Pós-Alta São o Período de Maior Vulnerabilidade? (Fisiopatologia & Raciocínio)
 - **A Síndrome Pós-Hospitalização (*Post-Hospital Syndrome*):** Cerca de 15% a 20% dos pacientes clínicos idosos sofrem reinternação não planejada em até 30 dias após a alta. Durante a internação, o paciente sofre descondicionamento muscular, alteração da microbiota, privação de sono e mudanças no regime pressórico/diurético.
 - **Por que mais de 50% das reinternações precoces são causadas por erro de medicação no domicílio:** Quando o médico entrega apenas uma receita nova sem fazer a **Reconciliação de Alta explícita** (O que manter / O que mudou / O que parar de tomar), o paciente chega em casa e soma a receita nova às caixas antigas que já tinha no armário — tomando, por exemplo, Enalapril antigo junto com a Losartana nova, evoluindo com hipotensão sincopal, lesão renal aguda e hipercalemia fatal.
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Especificamos a Data Exata de Término do Antibiótico e Aplicamos o "Teach-Back"?**
+### 💊 2. Por Que Especificamos a Data Exata de Término do Antibiótico e Aplicamos o "Teach-Back"?
 - **Por que escrever "Tomar até dia DD/MM/AAAA" evita falha terapêutica e superdosagem:** Quando o paciente já recebeu 4 dias de antibiótico endovenoso na enfermaria e precisa de mais 3 dias por via oral para completar 7 dias, prescrever apenas "tomar por 3 dias" sem explicar a contagem total confunde a família (ou faz o farmacêutico vender caixa para 10 dias). Registrar o **dia exato da última tomada** blinda o tratamento.
 - **Por que aplicar a técnica *Teach-Back* antes de liberar o leito:** Perguntar *"O senhor entendeu?"* tem valor preditivo nulo (o paciente sempre responde *"sim"* por constrangimento). O *Teach-Back* consiste em pedir: *"Para eu ter certeza de que expliquei direito, me conte com as suas palavras como o senhor vai tomar estes remédios amanhã cedo e qual remédio antigo o senhor não vai tomar mais"*.
 
-### 🚫 4. Segurança, Travas & Proibições
-**🧭 3. Os 4 Pilares de Segurança para Desospitalização Blindada (Checklist Pré-Saída)**
+### 🧭 3. Os 4 Pilares de Segurança para Desospitalização Blindada (Checklist Pré-Saída)
 | Pilar da Alta Segura | Critério de Verificação Obrigatória | Erro Clássico que Leva à Reinternação em 72h |
 | :--- | :--- | :--- |
 | **1. Estabilidade Clínica de 24–48h** | Afebril há `≥ 24–48h`, `SpO2 ≥ 93%` em ar ambiente (ou no basal domiciliar), `FC < 100 bpm`, `PA` estável e tolerando dieta e medicação VO há `≥ 24h`. | Dar alta no mesmo turno em que retirou o O2 ou logo após um último pico subfebril sem observar a transição oral. |

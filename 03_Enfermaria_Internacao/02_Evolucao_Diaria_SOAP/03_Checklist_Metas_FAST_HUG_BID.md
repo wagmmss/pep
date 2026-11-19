@@ -57,15 +57,11 @@ Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia at�
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Checklist de Metas Diárias - Bundle FAST HUG BID** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧠 1. Por Que o Checklist FAST HUG BID Reduz Mortalidade e Tempo de Internação? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que o Checklist FAST HUG BID Reduz Mortalidade e Tempo de Internação? (Fisiopatologia & Raciocínio)
 - **Por que a memória humana falha em enfermarias complexas:** Originalmente desenvolvido por Jean-Louis Vincent para UTIs e expandido para enfermarias (`FAST HUG BID`), este *bundle* corrige a "inércia terapêutica" — o fenômeno em que o médico foca apenas na doença principal (ex: pneumonia) e esquece que o paciente está há 4 dias constipado, com sonda vesical desnecessária, recebendo IBP sem indicação e desenvolvendo *delirium* hipoativo no leito.
 - **Por que o *delirium* no idoso internado é uma emergência médica (item S):** O *delirium* (especialmente o subtipo hipoativo, frequentemente confundido com "paciente calmo ou sonolento") é um marcador independente de mortalidade hospitalar, sepse oculta, hipóxia, retenção urinária aguda (bexigoma), fecaloma ou intoxicação medicamentosa (benzodiazepínicos, anti-histamínicos, tramadol).
 
-**🧭 3. Resumo Operacional dos 10 Pontos do FAST HUG BID na Visita Diária**
+### 🧭 3. Resumo Operacional dos 10 Pontos do FAST HUG BID na Visita Diária
 | Letra | Domínio Clínico | Pergunta-Chave na Beira do Leito | Ação Imediata se Alterado |
 | :---: | :--- | :--- | :--- |
 | **F** | **Feeding** (Nutrição) | O paciente está comendo `> 75%` da dieta? Precisa mesmo de jejum? | Liberar dieta oral precoce ou acionar Nutrição / SNE se ingesta `< 50%`. |
@@ -79,10 +75,6 @@ Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia at�
 | **I** | **Indwelling Catheters** | Ainda precisa da Sonda Vesical e do Acesso Venoso hoje? | **Retirar SVD** e sacar acessos venosos ociosos ou com sinais de flebite. |
 | **D** | **De-escalation** | Já pode trocar o antibiótico EV para VO ou dar alta? | Realizar *Switch Therapy* para via oral se afebril há `> 24–48h` e programar alta. |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Desprescrevemos IBP, Benzodiazepínicos e "Insulina Só se HGT Alto"? (Racional Farmacológico)**
+### 💊 2. Por Que Desprescrevemos IBP, Benzodiazepínicos e "Insulina Só se HGT Alto"? (Racional Farmacológico)
 - **Por que a "Insulina Regular conforme HGT" (*sliding scale* isolada) é proscrita:** Esperar a glicemia atingir `250 ou 300 mg/dL` para aplicar bólus isolados de insulina regular gera o "efeito montanha-russa" (picos hiperglicêmicos seguidos de quedas abruptas de hipoglicemia). O padrão-ouro para o paciente diabético internado é o **esquema Basal-Bólus** (`0,3 a 0,5 UI/kg/dia` divididos em 50% de insulina basal NPH/Glargina + 50% de insulina rápida pré-prandial).
 - **Por que tratamos constipação hospitalar com laxativo osmótico (Lactulose / PEG):** A imobilidade e o uso de analgésicos opioides reduzem o peristaltismo colônico, causando impacto fecal, translocação bacteriana, náuseas e *delirium* no idoso.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

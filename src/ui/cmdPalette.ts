@@ -211,6 +211,18 @@ export function initCmdPalette(): void {
     if (ev.target === overlay) close();
   });
 
+  overlay.querySelectorAll<HTMLButtonElement>('[data-cmd-nav]').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const target = chip.dataset.cmdNav;
+      close();
+      if (target === 'remume') {
+        uiBridge.openRemumeCalcModal('remume');
+      } else if (target) {
+        uiBridge.navigate(target as AppSection);
+      }
+    });
+  });
+
   uiBridge.openCmdPalette = open;
   uiBridge.closeCmdPalette = close;
 }

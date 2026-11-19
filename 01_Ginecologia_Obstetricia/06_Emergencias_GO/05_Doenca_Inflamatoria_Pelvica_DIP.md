@@ -81,13 +81,11 @@ ORIENTAÇÕES E RETORNO OBRIGATÓRIO:
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que o Diagnóstico de DIP é Clínico e de Baixo Limiar? (Prevenção de Sequelas Tubárias)**
+### 🧠 1. Por Que o Diagnóstico de DIP é Clínico e de Baixo Limiar? (Prevenção de Sequelas Tubárias)
 - **A Fisiopatologia da Lesão Tubária Irreversível:** A Doença Inflamatória Pélvica nasce da ascensão canalicular de *Neisseria gonorrhoeae* e *Chlamydia trachomatis* do colo uterino para o endométrio, endossalpinge e peritônio pélvico (facilitada pela abertura do canal cervical e perda do tampão mucoso durante a menstruação!). A resposta inflamatória destrói as células ciliadas da mucosa tubária: **cada episódio de DIP atrasado dobra o risco de Infertilidade por Fator Tubário, multiplica em 6 a 10x o risco de Gravidez Ectópica e causa Dor Pélvica Crônica (e aderências peri-hepáticas em *"cordas de violino"* — Síndrome de Fitz-Hugh-Curtis)**.
 - **Regra Diagnóstica do Ministério da Saúde (PCDT-IST):** Basta a presença dos **3 Critérios Maiores** (**Dor hipogástrica + Dor à palpação de anexos + Dor à mobilização do colo uterino / *Sinal de Chandelier***) somados a **1 Critério Menor** (febre, corrimento endocervical mucopurulento, leucocitose, PCR/VHS elevados ou diplococos/clamídia) para iniciar o tratamento imediatamente na porta!
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Classificação de Monif (Gainesville): Quando Internar vs. Tratar em Casa?**
+### 🧭 3. Classificação de Monif (Gainesville): Quando Internar vs. Tratar em Casa?
 | Estágio de Monif | Achado Clínico & Ultrassonográfico | Local de Tratamento & Conduta |
 | :--- | :--- | :--- |
 | **Estágio I (Leve / Não complicada)** | Salpingite aguda **sem peritonite** e sem massa anexial; paciente em bom estado geral, sem vômitos. | **Ambulatorial** (Ceftriaxona 500mg IM DU + Doxiciclina 14d + Metronidazol 14d) + **Reavaliação obrigatória em 48–72h**! |
@@ -95,13 +93,9 @@ ORIENTAÇÕES E RETORNO OBRIGATÓRIO:
 | **Estágio III (Abscesso Tubo-Ovariano)** | Presença de **massa anexial / Abscesso Tubo-Ovariano (ATO) íntegro** na USG transvaginal. | **Internação Hospitalar** (preferir **Clindamicina 900mg EV 8/8h + Gentamicina**, pois a Clindamicina penetra muito melhor dentro da cápsula do abscesso!). Se ATO `> 7–8 cm` ou sem melhora em 48–72h → drenagem cirúrgica/guiada. |
 | **Estágio IV (Abscesso Roto / Choque)** | **Rotura de Abscesso Tubo-Ovariano** com peritonite purulenta difusa e sepse/choque séptico. | **Emergência Cirúrgica Imediata** (Laparotomia exploradora + lavagem cavitária + ATB EV de amplo espectro). |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que a Prescrição de DIP Exige SEMPRE 3 Antibióticos Simultâneos?**
+### 💊 2. Por Que a Prescrição de DIP Exige SEMPRE 3 Antibióticos Simultâneos?
 Nenhum antibiótico isolado cobre todas as fases microbiológicas da DIP. Por isso o esquema (seja ambulatorial ou hospitalar) precisa atacar simultaneamente os **3 grupos bacterianos**:
 1. **Contra *Neisseria gonorrhoeae* (Gonococo):** **Ceftriaxona `500 mg IM` dose única** (no ambulatório) ou **Ceftriaxona `1 g EV 24/24h`** (na internação). *Por que não Ciprofloxacino?* Mais de 50% das cepas de gonococo no Brasil têm resistência cromossômica às quinolonas!
 2. **Contra *Chlamydia trachomatis* e *Mycoplasma genitalium* (Bactérias Intracelulares):** **Doxiciclina `100 mg VO de 12/12h por 14 dias`**.
 3. **Contra Anaeróbios Estritos (*Bacteroides, Peptostreptococcus*) e *Gardnerella*:** **Metronidazol `250 mg (2 cp) ou 400–500 mg VO de 12/12h por 14 dias`** — os anaeróbios invadem a trompa lesada e são os grandes responsáveis pela formação do **Abscesso Tubo-Ovariano (ATO)**!
 4. **Por que tratar os Parceiros Sexuais dos últimos 60 dias (mesmo assintomáticos)?** Com **Ceftriaxona 500 mg IM DU + Azitromicina 1 g VO DU**, evitando o *"efeito pingue-pongue"* de reinfecção da paciente!
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

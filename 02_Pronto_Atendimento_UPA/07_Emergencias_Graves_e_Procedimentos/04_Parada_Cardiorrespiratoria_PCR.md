@@ -70,21 +70,15 @@ DESFECHO DO ATENDIMENTO:
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Parada Cardiorrespiratória (PCR) Adulto & Cuidados Pós-RCE** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Capnografia na PCR e o Pacote de Cuidados Pós-Retorno da Circulação Espontânea (RCE)**
+### 🧭 3. Capnografia na PCR e o Pacote de Cuidados Pós-Retorno da Circulação Espontânea (RCE)
 Com via aérea avançada instalada, a **Capnografia quantitativa (EtCO₂)** é o termômetro em tempo real do débito cardíaco gerado pela massagem: **EtCO₂ < 10 mmHg** exige melhorar imediatamente a qualidade da compressão, enquanto um **salto abrupto do EtCO₂ para > 35–40 mmHg** é o primeiro sinal de **Retorno da Circulação Espontânea (RCE)**. Após o RCE, aplica-se a regra dos 5 passos: titular FiO₂ para **SpO₂ 92–98%** (evitar hiperóxia), manter PaCO₂ 35–45 mmHg, garantir **PAM ≥ 65 mmHg** com Noradrenalina, rodar **ECG de 12 derivações** (para CATE se Supra de ST) e prevenir febre (Tax < 37,5 °C) nos comatosos.
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Como Caçar e Tratar Ativamente os 5Hs e 5Ts Durante os 2 Minutos de RCP**
+### 💊 2. Como Caçar e Tratar Ativamente os 5Hs e 5Ts Durante os 2 Minutos de RCP
 Uma AESP raramente reverte apenas com adrenalina se a causa mecânica ou metabólica subjacente não for corrigida durante o atendimento:
 - **5 Hs**: **H**ipovolemia (bolus de cristaloide/hemotransfusão), **H**ipóxia (IOT sem hiperventilar — 1 ventilação a cada 6s), **H**idrogênio/Acidose (HCO₃⁻ 1 mEq/kg IV se acidose prévia grave ou tricíclico), **H**ipo/Hipercalemia (**Gluconato de Cálcio 10% 30 mL IV + HCO₃⁻** na suspeita de hiper-K em renal crônico) e **H**ipotermia.
 - **5 Ts**: **T**ensão no tórax/Pneumotórax hipertensivo (toracocentese de alívio), **T**amponamento cardíaco (pericardiocentese), **T**oxinas, **T**rombose coronariana (IAM) e **T**rombose pulmonar (TEP maciço — considerar trombólise com Alteplase 50 mg IV em bolus na PCR).
 
-### 🚫 4. Segurança, Travas & Proibições
-**🧠 1. Ritmos Chocáveis (FV/TVsp) vs. Não Chocáveis (AESP/Assistolia): Por Que Compressão e Choque Precoce Salvam no ACLS?**
+### 🧠 1. Ritmos Chocáveis (FV/TVsp) vs. Não Chocáveis (AESP/Assistolia): Por Que Compressão e Choque Precoce Salvam no ACLS?
 Apenas duas intervenções têm nível de evidência A incontestável de aumento da sobrevida neurológica intacta na PCR: **compressões torácicas de alta qualidade** (100–120/min, 5–6 cm de profundidade, retorno completo do tórax e fração de compressão > 80%) e **desfibrilação precoce nos ritmos chocáveis**.
 - Em **FV / TV sem pulso**: a prioridade absoluta é o **Choque Bifásico (200 J)** imediato seguido de 2 min de RCP; a **Adrenalina 1 mg IV** entra após o **2º choque**, e a **Amiodarona 300 mg IV** (1ª dose) / **150 mg IV** (2ª dose) entra na refração após o **3º choque**.
 - Em **AESP / Assistolia**: o choque é proscrito (em assistolia, realiza-se o **Protocolo da Linha Reta**: *Cabos conectados? Ganho aumentado? Derivação trocada?* para excluir FV fina) e a **Adrenalina 1 mg IV/IO deve ser feita o mais rápido possível (no 1º ciclo)**, repetida a cada 3–5 minutos.

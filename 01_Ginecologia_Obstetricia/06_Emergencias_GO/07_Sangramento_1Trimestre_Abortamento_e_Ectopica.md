@@ -71,8 +71,7 @@ USO ORAL (ALTA AMBULATORIAL — AMEAÇA DE ABORTO OU PÓS-ESVAZIAMENTO / AMIU SE
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. As Causas de Sangramento da 1ª Metade (< 20 Semanas): Como Diferenciar na Porta?**
+### 🧠 1. As Causas de Sangramento da 1ª Metade (< 20 Semanas): Como Diferenciar na Porta?
 Diante de toda gestante no 1º trimestre com sangramento vaginal e/ou dor pélvica, o **Exame Especular + Toque Vaginal Bimanual (avaliando o Orifício Cervical Interno) + USG Transvaginal** separam imediatamente os quadros:
 
 | Quadro Clínico | Orifício do Colo (Ao Toque) | Achado na USG Transvaginal | Conduta Definidora |
@@ -84,13 +83,6 @@ Diante de toda gestante no 1º trimestre com sangramento vaginal e/ou dor pélvi
 | **Gravidez Ectópica** | **Fechado** (*Grito de Douglas* se rota!) | **Útero vazio** com β-hCG acima da Zona Discriminatória (`> 2.000–3.500 mUI/mL`) + massa anexial (*Anel Tubário*) ± líquido livre. | **Rota/Instável:** Cirurgia imediata (Salpingectomia). **Íntegra:** Metotrexato `50 mg/m² IM` se preencher os critérios de elegibilidade. |
 | **Mola Hidatiforme (DTG)** | Fechado ou eliminando **vesículas ("cachos de uva")** | Útero aumentado para a IG + imagem em **"tempestade de neve"** + cistos tecaluteínicos (β-hCG `> 100.000`). | **Vácuo-aspiração / AMIU** (evitar cureta cortante!) + histopatológico + seguimento semanal/mensal de β-hCG! |
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que o Protocolo de Metotrexato (`50 mg/m² IM`) Exige Checar D4 e D7 e Excluir Contraindicações?**
+### 💊 2. Por Que o Protocolo de Metotrexato (`50 mg/m² IM`) Exige Checar D4 e D7 e Excluir Contraindicações?
 - **Por que dosar β-hCG no D1, D4 e D7:** Entre o **D1 e o D4**, a lise trofoblástica induzida pelo Metotrexato libera β-hCG intracelular, fazendo o nível sérico **subir fisiologicamente no D4**! O critério real de sucesso é a **queda ≥ 15% entre o valor do D4 e o do D7** (se `< 15%`, indicar 2ª dose ou cirurgia).
 - **Travas absolutas contra Metotrexato:** Instabilidade hemodinâmica, massa `≥ 3,5–4,0 cm`, BCF ectópico presente, aleitamento materno, imunodeficiência, úlcera péptica ativa ou alteração hepática/renal/hematológica (hemograma, TGO/TGP e creatinina obrigatórios antes da aplicação).
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

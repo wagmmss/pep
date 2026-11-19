@@ -361,6 +361,7 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
       <div class="hab-checklist-actions">
         <button type="button" class="btn btn-primary btn-xs" id="habFinishExecBtn">✅ Concluir Execução (${checkedCount}/${totalItems})</button>
         <button type="button" class="btn btn-secondary btn-xs" id="habCopyDebriefBtn">📋 Copiar Debriefing</button>
+        <button type="button" class="btn btn-secondary btn-xs" id="habSaveBlindspotsBtn">🎯 Salvar Pontos Cegos no Logbook</button>
         <button type="button" class="btn btn-ghost btn-xs" id="habResetChecksBtn">↺ Limpar Checklist</button>
       </div>
 
@@ -600,6 +601,34 @@ export function initPrePorta(): (container: HTMLElement, itemId?: string) => voi
         .filter(Boolean)
         .join('\n');
       void copyToClipboard(debrief, 'Debriefing Pré-Porta');
+    });
+
+    container.querySelector('#habSaveBlindspotsBtn')?.addEventListener('click', () => {
+      if (missedItems.length === 0) {
+        showToast('🎉 Todos os itens foram executados! Nenhum ponto cego pendente para salvar.', 'success');
+        return;
+      }
+      const topMissed = missedItems
+        .slice(0, 4)
+        .map((m) => `${m.critical ? '[CRÍTICO] ' : ''}${m.text}`)
+        .join(' | ');
+      updateCentral6AnoState((prev) => ({
+        ...prev,
+        logbookEntries: [
+          {
+            id: `lb-${Date.now()}`,
+            dateIso: new Date().toISOString().slice(0, 10),
+            rodizio: prev.rodizioId,
+            tipo: 'ponto_cego',
+            titulo: `Estação ${activeHab.title} (${checkedCount}/${totalItems})`,
+            papel: 'Checklist Pré-Porta',
+            aprendizado: `Pontos cegos pendentes: ${topMissed}`,
+            status: 'em_treino',
+          },
+          ...(prev.logbookEntries || []),
+        ],
+      }));
+      showToast(`🎯 ${missedItems.length} ponto(s) cego(s) salvo(s) no Logbook!`, 'success');
     });
 
     container.querySelector('#habLinkMicroBtn')?.addEventListener('click', () => {

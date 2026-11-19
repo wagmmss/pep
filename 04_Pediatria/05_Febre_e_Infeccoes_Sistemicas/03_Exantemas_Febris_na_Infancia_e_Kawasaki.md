@@ -56,16 +56,6 @@ USO ORAL (RECEITA DOMICILIAR PEDIÁTRICA — PESO DE REFERÊNCIA: [14] KG):
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**Regras de Ouro nos Exantemas Pediátricos: Kawasaki e Proibição de AINEs/AAS na Varicela**
+### Regras de Ouro nos Exantemas Pediátricos: Kawasaki e Proibição de AINEs/AAS na Varicela
 - **Por que nunca prescrever AAS ou Ibuprofeno na Varicela:** O uso de **AAS** durante a infecção pelo vírus Varicela-Zoster ou Influenza desencadeia a **Síndrome de Reye** (encefalopatia aguda não inflamatória + degeneração gordurosa hepática fulminante). Já o uso de **Ibuprofeno/AINEs** na varicela mascara sinais inflamatórios iniciais e está fortemente associado a superinfecção invasiva por *Streptococcus pyogenes* do grupo A (**fasciíte necrosante**). Use apenas **Paracetamol ou Dipirona**.
 - **Por que toda febre ≥ 5 dias na infância exige pensar em Doença de Kawasaki:** A principal complicação da Doença de Kawasaki não tratada é o desenvolvimento de **aneurismas de artérias coronárias** (em até 25% dos casos sem tratamento); a infusão de **IGIV 2 g/kg até o 10º dia de febre** reduz esse risco para menos de 4%.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-- Avaliar critérios clínicos de gravidade, indicação de internação hospitalar versus manejo ambulatorial e metas de reavaliação.
-
-### 💊 3. Farmacologia & Doses
-- Conferir doses, vias, diluições, alergias, função renal/hepática e teto posológico antes de assinar a prescrição.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

@@ -69,17 +69,11 @@ Alergias: [*Nega / Sim: [ ]].
 
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-**🧠 1. Por Que o Estado de Mal Epiléptico Exige Benzodiazepínico nos Primeiros 5 Minutos?**
+### 🧠 1. Por Que o Estado de Mal Epiléptico Exige Benzodiazepínico nos Primeiros 5 Minutos?
 Toda crise epiléptica tônico-clônica generalizada que dura **≥ 5 minutos** (ou duas crises sem recuperação completa da consciência entre elas — *T1 operacional da ILAE*) define **Estado de Mal Epiléptico (EME)**. Fisiopatologicamente, nos primeiros minutos de descarga neuronal hipersincrônica contínua, ocorre **internalização endocítica dos receptores sinápticos inibitórios GABA-A** e migração de receptores excitatórios NMDA/AMPA para a membrana pós-sináptica. Isso explica a perda progressiva de potência dos benzodiazepínicos quanto mais se demora a administrá-los e por que jamais se deve aguardar acesso venoso difícil: na ausência de veia pérvia imediata, o **Midazolam 10 mg IM** (estudo *RAMPART*) é tão ou mais rápido para abortar a crise quanto o Diazepam IV.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Primeira Crise no Adulto: Quem Precisa de TC de Crânio no PS e Quem Vai de Alta?**
+### 🧭 3. Primeira Crise no Adulto: Quem Precisa de TC de Crânio no PS e Quem Vai de Alta?
 Todo adulto com **primeira crise não provocada** requer investigação metabólica (Na, Ca, Mg, função renal, glicemia) e **TC de Crânio sem contraste na urgência** para excluir lesão estrutural aguda (AVCh, neoplasia, neurocisticercose, trombose venosa cerebral). Em crise única autolimitada, com retorno completo ao Glasgow 15 basal, exame neurológico sem déficit focal (excluída paralisia pós-ictal de Todd transitória) e TC/eletrólitos normais, **não se inicia anticonvulsivante de manutenção no PS** na primeira crise sem lesão estrutural, orientando-se proibição de direção veicular, trabalho em altura e encaminhamento ao neurologista.
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que a Fenitoína É Diluída Apenas em SF 0,9% e Por Que Checar Glicemia + Sódio Antes de Tudo?**
+### 💊 2. Por Que a Fenitoína É Diluída Apenas em SF 0,9% e Por Que Checar Glicemia + Sódio Antes de Tudo?
 Antes de rotular uma crise como epiléptica primária, a **glicemia capilar (HGT)** é o "quinto sinal vital": a hipoglicemia neuroglicopênica mimetiza EME refratário e só cessa com **Glicose 50% IV** (precedida de **Tiamina 100 mg IV** em etilistas ou desnutridos para prevenir encefalopatia de Wernicke). Na 2ª linha (crise refratária a 2 doses de benzodiazepínico), a **Fenitoína (20 mg/kg IV)** estabiliza canais de sódio voltagem-dependentes, mas possui pH altamente alcalino (~12): se diluída em Soro Glicosado 5%, precipita em microcristais insolúveis; se infundida a **> 50 mg/min**, bloqueia canais de sódio miocárdicos causando bradiarritmia grave e hipotensão.
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.

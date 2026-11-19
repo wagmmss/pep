@@ -86,13 +86,38 @@ SINAIS DE ALARME PARA RETORNO IMEDIATO AO PRONTO-SOCORRO:
 
 ---
 
+## 💊 Receita Domiciliar / Alta
+
+```text
+>> PRESCRIÇÃO DOMICILIAR / RECEITA DE ALTA:
+RECEITUÁRIO MÉDICO PEDIÁTRICO — BRONQUIOLITE VIRAL AGUDA LEVE (MANEJO DOMICILIAR)
+Lactente: [Nome] | Peso Atual: [ ] kg | Idade: [ ] meses | Data: [DD/MM/AAAA]
+
+USO NASAL E ORAL:
+1. Soro Fisiológico 0,9% (Morno / Temperatura Ambiente) ------------------------ 1 frasco (500 mL)
+   Lavar ambas as narinas com seringa de [3 a 5] mL em cada narina, com o bebê sentado no colo, OBRIGATORIAMENTE antes de todas as mamadas e antes de dormir (o bebê pequeno respira quase só pelo nariz; desentupir o nariz reduz metade do cansaço para mamar).
+
+2. Dipirona Solução Oral Gotas (500 mg/mL) (ou Paracetamol 200 mg/mL) ---------- 1 frasco
+   Dar [ ] gotas por via oral até de 6 em 6 horas APENAS se houver febre (≥ 37,8 °C) ou irritabilidade por dor.
+
+CUIDADOS ESSENCIAIS EM CASA & POR QUE NÃO USAR CORTICOIDE/ANTIBIÓTICO:
+- Mamadas Fracionadas: Ofereça o peito ou a mamadeira por menos tempo e mais vezes ao dia, permitindo que o bebê descanse e respire entre as sugadas.
+- Cabeceira Elevada: Coloque um calço firme embaixo dos pés da cabeceira do berço (inclinação de 20 a 30°).
+- Esclarecimento Importante: Na bronquiolite, o "chiado" é causado por catarro e inchaço viral nos bronquíolos finos, e não por falta de antibiótico ou crise de asma. Por isso, corticoides (Prednisolona), antibióticos (Amoxicilina) e xaropes NÃO ajudam e podem fazer mal ao bebê.
+- Atenção ao 3º a 5º dia: O pico de cansaço da bronquiolite costuma acontecer entre o 3º e o 5º dia do início do quadro.
+
+SINAIS DE ALARME PARA RETORNO IMEDIATO AO PRONTO-SOCORRO:
+1. Afundamento visível da barriga abaixo das costelas ou na furculinha do pescoço a cada respiração (tiragem).
+2. Respiração muito rápida (mais de 60 respirações por minuto contadas com o bebê calmo) ou gemido constante.
+3. Bebê que não consegue mamar (aceitando menos da metade do normal) ou que fica sem molhar a fralda por mais de 6 horas.
+4. Qualquer pausa na respiração (apneia), lábios arroxeados ou bebê muito molinho/difícil de acordar.
+```
+
+---
+
 ## 🎯 Diretrizes & Raciocínio Clínico
 
-### 🧠 1. Fisiopatologia & Porquê
-- Racional clínico e fisiopatológico de **Protocolo de Atendimento: Bronquiolite Viral Aguda (BVA) no Lactente** centrado na identificação precoce de gravidade e manejo baseado em evidências.
-
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Resumo das Diretrizes SBP / AAP: O Que Fazer vs O Que é Proscrito na BVA**
+### 🧭 3. Resumo das Diretrizes SBP / AAP: O Que Fazer vs O Que é Proscrito na BVA
 | Intervenção Clínica | Recomendação Formal (SBP / AAP / NICE) | O "Porquê" Baseado em Evidências |
 | :--- | :---: | :--- |
 | **Desobstrução Nasal com SF 0,9%** | ✅ **FORTEMENTE RECOMENDADO** | O lactente `< 6 meses` é respirador nasal quase exclusivo; limpar as narinas reduz em até 30% a resistência total da via aérea. |
@@ -102,12 +127,10 @@ SINAIS DE ALARME PARA RETORNO IMEDIATO AO PRONTO-SOCORRO:
 | **Antibióticos (Amoxicilina / Azitro)** | ❌ **PROSCRITO (salvo coinfecção bacteriana comprovada)** | Risco de bacteremia ou ITU concomitante é `< 1%`; atelectasia laminar no RX é frequentemente confundida com pneumonia! |
 | **Fisioterapia Motora (Tapotagem)** | ❌ **CONTRAINDICADA** | Percussão torácica aumenta o consumo de O2, agita o lactente e pode induzir colapso bronquiolar e vômito. |
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Por Que Passamos Sonda se FR > 60 irpm e Damos Solução Isotônica a 70–80% se FR > 70 irpm?**
+### 💊 2. Por Que Passamos Sonda se FR > 60 irpm e Damos Solução Isotônica a 70–80% se FR > 70 irpm?
 - **Por que `FR > 60 irpm` contraindica a alimentação por via oral (risco de broncoaspiração):** O lactente mama coordenando o ciclo **Sucção → Deglutição → Respiração**. Quando a frequência respiratória ultrapassa `60 a 70 incursões por minuto` (1 respiração a cada segundo!), o bebê não tem tempo fisiológico de fechar a epiglote para engolir o leite sem aspirá-lo para a traqueia.
 - **Por que a hidratação venosa na BVA grave deve ser ISOTÔNICA e restrita a 70–80% do Holliday-Segar:** A hiperinsuflação pulmonar aprisiona ar no tórax, reduz o retorno venoso ao átrio esquerdo e estimula intensamente os barorreceptores a liberarem **ADH (Hormônio Antidiurético)** — gerando **SIADH secundário**. Se prescrevermos soro hipotônico (o antigo SG 5% com pouco sódio) em volume total (100%), o lactente retém água livre pelo ADH elevado e desenvolve **hiponatremia dilucional aguda com edema cerebral e convulsão**.
 
-### 🚫 4. Segurança, Travas & Proibições
-**🧠 1. Por Que a Bronquiolite NÃO Responde a Corticoide nem a Salbutamol como a Asma? (Fisiopatologia & Raciocínio)**
+### 🧠 1. Por Que a Bronquiolite NÃO Responde a Corticoide nem a Salbutamol como a Asma? (Fisiopatologia & Raciocínio)
 - **A diferença fisiopatológica radical entre Bronquiolite (BVA) e Crise de Asma:** Na asma (crianças maiores), o sibilo decorre de **broncoespasmo da musculatura lisa brônquica** e inflamação eosinofílica responsiva a beta-2 agonista e corticoide. Já na **Bronquiolite Viral Aguda** (1º episódio de sibilância em lactente `< 2 anos`, causado em 70% pelo **Vírus Sincicial Respiratório — VSR**), o vírus infecta e necrosa o epitélio ciliado dos bronquíolos terminais. A luz bronquiolar fica ocluída por **rolhas de fibrina, restos celulares epiteliais necrosados, muco espesso e edema submucoso** — e **NÃO** por contração muscular lisa (inclusive porque os receptores \beta_2 bronquiolares são imaturos no lactente jovem!).
 - **Por que o 3º ao 5º dia é o momento crítico ("Curva da BVA"):** Um lactente avaliado no 2º dia de doença com quadro leve pode piorar fisiologicamente no 4º dia quando o descamamento epitelial atinge o pico no bronquíolo. Orientar os pais sobre essa curva evita surpresa e garante reavaliação oportuna.

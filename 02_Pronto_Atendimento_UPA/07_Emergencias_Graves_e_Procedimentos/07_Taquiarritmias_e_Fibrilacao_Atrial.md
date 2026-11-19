@@ -87,17 +87,12 @@ Alergias: [*Nega / [ ]].
 **🧠 1. Por Que a Primeira Pergunta Diante de Qualquer FC > 150 bpm É Estável vs. Instável (*5 Ds*)?**
 Antes de olhar se o QRS é estreito ou largo, avalia-se a repercussão hemodinâmica pelos **5 Ds da Instabilidade**: **D**iminuição da PA (**Choque/Hipotensão** com má perfusão), **D**or torácica anginosa isquêmica, **D**ispneia por **Edema Agudo de Pulmão**, **D**iminuição do nível de consciência (confusão/síncope) ou **D**escompensação aguda de insuficiência cardíaca. Se houver **qualquer critério de instabilidade** causado pela taquiarritmia, o tratamento imediato é a **Cardioversão Elétrica Sincronizada** (após sedoanalgesia com Fentanil + Etomidato/Midazolam se consciente) — o botão **SYNC** garante que o choque caia sobre a onda R e nunca sobre a onda T (período refratário relativo), evitando induzir Fibrilação Ventricular.
 
-### 🧭 2. Critérios & Decisão (Internação / Alta / Escores)
-**🧭 3. Fibrilação Atrial (QRS Estreito e R-R Irregular): A Regra das 48 Horas e o Escore CHA₂DS₂-VASc**
+### 🧭 3. Fibrilação Atrial (QRS Estreito e R-R Irregular): A Regra das 48 Horas e o Escore CHA₂DS₂-VASc
 Na **Fibrilação Atrial (FA) estável**, reverter o ritmo na sala de emergência sem critério pode causar **AVC cardioembólico iatrogênico** por deslocamento de trombo do apêndice atrial esquerdo:
 - **FA com início comprovadamente < 48 horas** (ou paciente já anticoagulado há ≥ 3 semanas): pode-se realizar cardioversão química (Amiodarona/Propafenona) ou elétrica, seguida de anticoagulação por no mínimo 4 semanas.
 - **FA com duração ≥ 48 horas ou tempo indeterminado**: **PROIBIDO cardioverter (nem com Amiodarona!)** sem ETE prévio descartando trombo ou 3 semanas de anticoagulação efetiva; a conduta na UPA é **apenas Controle da Frequência Cardíaca (alvo FC < 110 bpm)** com **Metoprolol IV/VO** (ou Deslanosídeo se IC descompensada) e início de anticoagulação oral (DOAC: Rivaroxabana/Apixabana) conforme o escore **CHA₂DS₂-VASc**.
 
-### 💊 3. Farmacologia & Doses
-**💊 2. Taquicardia Estável: Como Manejar TSV (Manobra de Valsalva Modificada + Adenosina) e TV Monomórfica**
+### 💊 2. Taquicardia Estável: Como Manejar TSV (Manobra de Valsalva Modificada + Adenosina) e TV Monomórfica
 Se o paciente está hemodinamicamente estável, classifica-se a largura do QRS (< 120 ms vs. ≥ 120 ms) e a regularidade do intervalo R-R:
 - **QRS Estreito e Regular (TSV por reentrada nodal/atrioventricular)**: inicia-se com a **Manobra de Valsalva Modificada (estudo *REVERT*)** — soprar seringa de 10 mL por 15s sentado e imediatamente deitar a 0° elevando as pernas a 45° por 15s (taxa de reversão ~43%). Se persistir, faz-se **Adenosina 6 mg IV em bolus ultrarrápido** na prega cubital seguido de *flush* de 20 mL de SF 0,9% com elevação do membro (se não reverter, **12 mg IV**).
 - **QRS Largo e Regular**: toda taquicardia de QRS largo é **Taquicardia Ventricular (TV)** até prova em contrário (80% dos casos; 95% se IAM prévio), tratada no paciente estável com **Amiodarona 150 mg IV em 10 minutos** (jamais usar Verapamil em QRS largo!).
-
-### 🚫 4. Segurança, Travas & Proibições
-- Nunca atrasar suporte de emergência diante de sinais de alarme ou instabilidade hemodinâmica; revisar contraindicações absolutas.
