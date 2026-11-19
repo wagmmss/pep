@@ -19,14 +19,8 @@ Motivo da internação / Diagnóstico de base: [ ]
 Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 
 # EVOLUÇÃO (24H):
-- Estado Geral no Período: Passou as últimas 24h [bem, sem intercorrências agudas / com queixa de: [ ]].
-- Controle da Dor Pós-Operatória (EVA 0–10): [EVA [0–2] restrita à ferida operatória, bem controlada com analgesia regular / Dor moderada (EVA [ ]) controlada após resgate].
-- Tolerância Alimentar & Retorno do Trânsito Intestinal:
-  * Dieta atual: [Líquida / Pastosa / Branda / Geral] -> [Boa aceitação plena, nega náuseas ou vômitos / Apresentou náusea isolada controlada com antiemético].
-  * Eliminação de Flatos: [Presentes desde oº DPO / Ainda ausentes, sem distensão].
-  * Evacuação: [Presente de aspecto habitual / Ausente desde o procedimento, sem dor em cólica ou empachamento].
-- Mobilidade & Deambulação: [Deambulando ativamente no quarto e corredor / Deambulação com auxílio / Restrito ao leito por recomendação cirúrgica específica].
-- Diurese: [Espontânea, clara e sem disúria após retirada de SVD / Por SVD com débito límpido].
+Passou as últimas 24h [bem, sem intercorrências agudas / com queixa de: [ ]]. Refere dor pós-operatória [leve (EVA [0–2]) restrita à ferida operatória, bem controlada com analgesia regular / moderada (EVA [ ]), controlada após resgate]. Em dieta [líquida / pastosa / branda / geral] com [boa aceitação, sem náuseas ou vômitos / náusea isolada controlada com antiemético].
+Eliminação de flatos [presente desde o [ ]º DPO / ainda ausente, sem distensão] e evacuação [presente de aspecto habitual / ausente desde o procedimento, sem cólicas ou empachamento]. Diurese [espontânea, clara e sem disúria após retirada de SVD / por SVD com débito límpido]. Segue [deambulando ativamente no quarto e corredor / deambulando com auxílio / restrito ao leito por orientação cirúrgica].
 
 # EXAME FÍSICO:
 - Sinais Vitais & Curvas (24h): PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax máx 24h: [ ] °C (Afebril) | Diurese 24h: [ ] mL | BH 24h: [Neutro / +[ ] mL / -[ ] mL].

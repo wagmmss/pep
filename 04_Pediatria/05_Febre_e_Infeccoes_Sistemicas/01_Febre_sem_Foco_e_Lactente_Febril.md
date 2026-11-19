@@ -23,9 +23,7 @@ Alergias: [*Nega / [ ]].
 - Febre aferida de até [ ] °C há [ ] [horas / dias], sem sintomas localizatórios aparentes.
 
 # HMA:
-- Responsável refere picos febris de até [ ] °C (aferidos com termômetro axilar) iniciados há [ ] horas/dias, a cada [ ] horas.
-- Comportamento no Intervalo Afebril (Pós-Antitérmico): [Criança reanima completamente, sorri, interage, mantém sucção vigorosa e brinca quando a febre cede / Permanece hipoativa, irritada ou gemente mesmo afebril].
-- Interrogatório Sistemático Negativo de Focos: Nega tosse, coriza, obstrução nasal, estridor, vômitos, diarreia, choro à micção ou urina fétida, lesões cutâneas ou recusa em movimentar algum membro (pseudoparalisia por artrite séptica/osteomielite).
+Responsável refere picos febris de até [ ] °C (aferidos com termômetro axilar) iniciados há [ ] horas/dias, recorrendo a cada [ ] horas. Nos intervalos afebris após antitérmico, [reanima completamente, sorri, interage, mantém sucção vigorosa e brinca / permanece hipoativa, irritada ou gemente mesmo afebril]. Nega tosse, coriza, obstrução nasal, estridor, vômitos, diarreia, choro à micção, urina fétida, lesões cutâneas ou recusa em movimentar algum membro.
 
 # EXAME FÍSICO:
 - Sinais Vitais (Após antitérmico): FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax atual: [ ] °C | TEC < 2s.

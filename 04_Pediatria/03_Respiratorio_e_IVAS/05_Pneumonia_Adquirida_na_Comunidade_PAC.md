@@ -18,11 +18,8 @@ Alergias: [*Nega / Alérgico(a) a Penicilinas / [ ]].
 - Tosse, febre persistente e respiração rápida/cansada há [ ] dias.
 
 # HMA:
-- Criança iniciou quadro de IVAS há [ ] dias, evoluindo há [ ] dias com febre alta persistente (Tax aferida de [ ] °C), tosse produtiva, queda do estado geral e percepção materna de "respiração acelerada / peito batendo rápido".
-- Padrão Clínico-Etiológico:
-  * [PAC Bacteriana Típica (*Streptococcus pneumoniae*)]: Início agudo/hiperagudo de febre alta (> 38,5–39 °C), taquipneia, tosse, dor torácica/abdominal referida e prostração.
-  * [PAC Atípica (*Mycoplasma pneumoniae* / *Chlamydia* — comum em ≥ 5 anos)]: Início insidioso, febre baixa, cefaleia, mialgia, tosse seca paroxística persistente e sibilância/estertores difusos.
-- Tolerância Oral & Vacinação: Aceitação de líquidos e medicação por via oral [preservada sem vômitos / prejudicada por vômitos ou fadiga respiratória]; Vacina Pneumocócica 10-valente e Pentavalente (Hib): [Em dia / Incompleta].
+Criança iniciou quadro de IVAS há [ ] dias, evoluindo há [ ] dias com febre persistente (Tax aferida de [ ] °C), tosse [produtiva / seca paroxística], queda do estado geral e percepção materna de respiração acelerada. Apresentação clínica sugestiva de padrão [bacteriano típico — início agudo de febre alta, taquipneia, prostração e dor torácica/abdominal referida / atípico — início insidioso, febre baixa, cefaleia, mialgia e tosse seca persistente].
+Mantém aceitação de líquidos e medicação por via oral [preservada, sem vômitos / prejudicada por vômitos ou fadiga respiratória]. Vacinação (Pneumocócica 10-valente e Pentavalente/Hib): [em dia / incompleta].
 
 # EXAME FÍSICO:
 - Sinais Vitais (Contados em 1 minuto completo com criança calma e afebril):

@@ -22,11 +22,8 @@ Motivo da internação / Diagnóstico de base: [ ]
 Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 
 # EVOLUÇÃO (24H):
-Encontro puérpera no leito com RN em alojamento conjunto.
-- Evolução Geral & Dor: Passou bem nas últimas 24h, deambulando sem tontura ortostática e com boa aceitação da dieta. Dor [ausente / leve e controlada com analgesia / discreta em ferida operatória / leve em região perineal].
-- Fisiológicas & Loquiação: Diurese espontânea clara e em bom volume (sem disúria); eliminação de flatos presente, evacuação [presente sem esforço / ausente até o momento]. Lóquios [rubros fisiológicos em pequena-moderada quantidade, sem odor fétido ou coágulos / aumentados].
-- Amamentação: Aleitamento materno exclusivo em livre demanda, [boa pega e posicionamento observados (boca bem aberta, lábio inferior evertido, queixo tocando a mama e deglutição audível), sem dor mamilar / dificuldade de pega orientada à beira-leito].
-- Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, lipotímia ou dor/empastamento em panturrilhas.
+Encontro puérpera no leito com RN em alojamento conjunto. Passou bem nas últimas 24h, deambulando sem tontura ortostática e com boa aceitação da dieta. Refere dor [ausente / leve e controlada com analgesia / discreta em ferida operatória / leve em região perineal]. Diurese espontânea clara e em bom volume, sem disúria; elimina flatos, com evacuação [presente sem esforço / ausente até o momento]. Lóquios [rubros fisiológicos em pequena-moderada quantidade, sem odor fétido ou coágulos / aumentados].
+RN em aleitamento materno exclusivo sob livre demanda, com [boa pega e posicionamento observados (boca bem aberta, lábio inferior evertido, queixo tocando a mama e deglutição audível), sem dor mamilar / dificuldade de pega orientada à beira-leito]. Nega cefaleia occipital/frontal, escotomas, epigastralgia em barra, febre/calafrios, dispneia, lipotímia ou dor/empastamento em panturrilhas.
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [110x70] mmHg | FC: [78] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C.

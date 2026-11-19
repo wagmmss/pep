@@ -18,14 +18,8 @@ Alergias: [*Nega / [ ]].
 - Coriza, obstrução nasal e tosse há [ ] dias.
 
 # HMA:
-- Quadro iniciado há [ ] dias com espirros, obstrução nasal e rinorreia [hialina fluida / mucoide amarelada fisiológica da evolução viral], acompanhada de tosse [predominantemente noturna ao deitar por gotejamento pós-nasal].
-- Curva Térmica: [Afebril / Febre baixa a moderada (< 38,5 °C) nos primeiros 2–3 dias, cedendo rapidamente ao antitérmico].
-- Estado Geral, Aceitação e Diurese: Criança permanece ativa, brincando e sorrindo quando afebril; aceitando [bem líquidos e seio materno / com leve redução de sólidos pelo nariz entupido]. Diurese clara e preservada.
-- Nega dispneia, respiração acelerada (taquipneia), afundamento de costelas (tiragens) ou gemência.
-- Nega sibilância (chiado no peito) ou estridor laríngeo inspiratório.
-- Nega febre alta persistente (> 39 °C) por mais de 72 horas ou "dupla curva" (piora após o 5º dia).
-- Nega otalgia intensa, otorreia purulenta ou abaulamento retroauricular.
-- Nega prostração fora do período febril, vômitos incoercíveis ou petéquias.
+Quadro iniciado há [ ] dias com espirros, obstrução nasal e rinorreia [hialina fluida / mucoide amarelada], acompanhada de tosse [predominantemente noturna ao deitar por gotejamento pós-nasal / seca esporádica]. Evoluiu [afebril / com febre baixa a moderada (< 38,5 °C) nos primeiros 2–3 dias, cedendo bem ao antitérmico].
+Permanece ativa, brincando e sorrindo quando afebril, aceitando [bem líquidos e seio materno / líquidos com leve redução de sólidos pela congestão nasal], com diurese clara e preservada. Nega dispneia, taquipneia, tiragens, gemência, sibilância, estridor inspiratório, febre alta persistente (> 39 °C há > 72h) ou recrudescência após o 5º dia. Nega ainda otalgia intensa, otorreia purulenta, abaulamento retroauricular, prostração fora da febre, vômitos incoercíveis ou petéquias.
 
 # EXAME FÍSICO:
 - Sinais Vitais: FC: [ ] bpm | FR (em 1 min, sem febre): [ ] irpm (Eupneico para a faixa etária) | SpO2: [ ]% em AA | Tax: [ ] °C | TEC < 2s.

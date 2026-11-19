@@ -18,15 +18,8 @@ Alergias: [*Nega / [ ]].
 - Episódio de crise convulsiva em vigência de febre há [ ] minutos/horas.
 
 # HMA:
-- Semiologia Detalhada do Evento Convulsivo:
-  * Morfologia Motora: [Crise Generalizada Tônico-Clônica bilateral e simétrica, associada a perda de consciência e versão ocular / Crise Focal — abalos restritos a um hemicorpo ou desvio lateral fixo do olhar].
-  * Duração Estimada da Crise: [< 5 minutos (cessou espontaneamente em domicílio/trajeto) / 5 a 14 minutos / ≥ 15 minutos (Crise Febril Prolongada)].
-  * Recorrência em 24 horas: [Episódio único nas últimas 24 horas / Múltiplos episódios ([ ] crises) no mesmo período de 24 horas].
-  * Recuperação Pós-Ictal: [Sonolência pós-ictal breve (< 30–60 min) com retorno completo ao estado neurológico basal normal / Sonolência persistente ou déficit motor focal pós-ictal (Paralisia de Todd)].
-- História da Febre e Antecedentes:
-  * Temperatura aferida: [ ] °C (frequentemente ocorre na ascensão rápida da temperatura no 1º dia de febre).
-  * Sintomas do Foco Infeccioso: [Coriza e tosse leve (IVAS) / Dor de ouvido (OMA) / Diarreia aguda / Febre isolada (< 24h)].
-  * Antecedentes Pessoais e Familiares: DNPM prévio [normal para a idade]; Crises afebris prévias: [Nega]; História familiar de convulsão febril em pais/irmãos: [Positiva / Negativa]; Vacinação (Hib, Pneumo-10, Meningo C): [Completa em dia / Incompleta].
+Criança trazida após episódio convulsivo caracterizado por [crise generalizada tônico-clônica bilateral e simétrica, com perda de consciência e versão ocular / crise focal com abalos restritos a um hemicorpo ou desvio lateral fixo do olhar], com duração estimada de [< 5 minutos, cessando espontaneamente / 5 a 14 minutos / ≥ 15 minutos], sendo [episódio único nas últimas 24h / recorrente ([ ] crises em 24h)]. Evoluiu no pós-ictal com [sonolência breve (< 30–60 min) e retorno completo ao estado basal / sonolência persistente ou déficit motor focal (Paralisia de Todd)].
+Apresentava febre aferida de [ ] °C associada a [coriza e tosse leve (IVAS) / dor de ouvido (OMA) / diarreia aguda / febre isolada há < 24h]. DNPM prévio [normal para a idade], [nega crises afebris prévias / refere crises afebris prévias], história familiar de convulsão febril [positiva / negativa] e esquema vacinal (Hib, Pneumo-10, Meningo C) [completo em dia / incompleto].
 
 # EXAME FÍSICO:
 - Sinais Vitais & Glicemia: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Glicemia Capilar (HGT): [ ] mg/dL (Normoglicemia confirmada).

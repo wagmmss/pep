@@ -17,12 +17,8 @@ Alergias: [*Nega / Sim: [ ]].
 - Falta de ar, chiado no peito e tosse seca há [ ] horas/dias.
 
 # HMA:
-- HMA: Paciente com diagnóstico conhecido de asma brônquica [ou primeiro episódio de sibilância] relata piora progressiva da dispneia há cerca de [ ] horas, acompanhada de chiado audível sem estetoscópio, opressão torácica e tosse seca paroxística. Relata fator desencadeante: [sintomas gripais recentes / exposição a alérgenos / poeira / mudança de clima / abandono da medicação de manutenção]. Fez uso prévio de bombinha em casa ([ ] jatos) com alívio transitório e recidiva rápida.
-- ESTRATIFICAÇÃO DE GRAVIDADE DA CRISE (GINA):
-  * LEVE A MODERADA: Fala em frases completas, prefere ficar sentado, FR aumentada, FC 100-120 bpm, SpO2 90-95% em ar ambiente.
-  * GRAVE: Fala apenas palavras isoladas/entrecortadas, postura curvada para a frente, agitado, uso evidente de musculatura acessória (tiragem intercostal), FC > 120 bpm, FR > 30 irpm, SpO2 < 90%.
-  * RISCO IMINENTE DE PARADA (ASMA QUASE FATAL): Sonolência, confusão mental, respiração paradoxal toracoabdominal, bradicardia e TÓRAX SILENCIOSO (ausência de sibilos por falta de fluxo de ar).
-- Histórico de Asma de Alto Risco: [Nega / Histórico prévio de intubação orotraqueal por asma / Internação em UTI no último ano / Múltiplas idas à UPA no último mês].
+Paciente com [diagnóstico prévio de asma brônquica / primeiro episódio de sibilância] refere piora progressiva da dispneia há cerca de [ ] horas, associada a chiado audível, opressão torácica e tosse seca paroxística, desencadeada por [infecção viral recente / exposição a poeira ou alérgenos / mudança climática / abandono da terapia de manutenção]. Fez uso domiciliar de broncodilatador ([ ] jatos) com alívio apenas transitório.
+Apresentação compatível com crise [leve a moderada (fala em frases completas, SpO2 90–95%) / grave (fala em palavras isoladas, uso de musculatura acessória, FC > 120 bpm, FR > 30 irpm, SpO2 < 90%) / quase fatal (sonolência, confusão mental, tórax silencioso)]. Antecedentes de alto risco: [nega intubação prévia ou internação recente em UTI / histórico de IOT prévia, UTI no último ano ou múltiplas idas ao PS no último mês].
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.

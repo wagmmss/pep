@@ -20,9 +20,7 @@ Alergias: [*NEGA ALERGIAS CONHECIDAS / ALÉRGICO(A) A: Dipirona / ALÉRGICO(A) A
 - [Descrever queixa principal] há [ ] [hora(s) / dia(s) / semana(s)].
 
 # HMA:
-- Início [*súbito / insidioso], intensidade [ ]/10, evolução [ ] e fatores de melhora/piora [ ].
-- Sintomas associados: [+ *Nega outros sintomas / Febre / Náuseas e vômitos / Dispneia / Tontura / [ ]].
-- Nega febre alta persistente, dor precordial, dispneia súbita, síncope, cefaleia em trovoada, déficits neurológicos focais, abdome em barra ou sangramentos ativos.
+Paciente refere quadro de início [*súbito / insidioso], intensidade [ ]/10, evoluindo com [ ] e fatores de melhora/piora [ ]. Sintomas associados: [+ *nega outros sintomas / febre / náuseas e vômitos / dispneia / tontura / [ ]]. Nega febre alta persistente, dor precordial, dispneia súbita, síncope, cefaleia em trovoada, déficits neurológicos focais, abdome em barra ou sangramentos ativos.
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C[? HGT :: | HGT: [ ] mg/dL].

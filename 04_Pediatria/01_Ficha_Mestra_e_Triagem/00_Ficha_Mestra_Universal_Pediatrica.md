@@ -19,13 +19,8 @@ Alergias: [*Nega alergias conhecidas / Alérgico(a) a: [ ]].
 - [ ] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Responsável informa que a criança iniciou quadro de [ ], evoluindo com [ ].
-- Medicações prévias em casa: [*Nenhuma / Dipirona [ ] gotas há [ ]h / Paracetamol [ ] gotas há [ ]h / Ibuprofeno [ ] gotas há [ ]h].
-- Comportamento quando afebril: [*Reanima, brinca e interage / Permanece prostrada mesmo sem febre].
-- Aceitação de líquidos/dieta: [*Mantendo aceitação plena de seio materno e líquidos / Aceitando líquidos com redução de sólidos / Recusa importante].
-- Diurese: [*Preservada (> 4–6 fraldas/dia, clara) / Reduzida / Sem diurese há > 6–8h].
-- Hábito intestinal: [*Normal / Diarreia ([ ] ep./24h) / Constipação há [ ] dias].
-- Nega crises convulsivas, gemência contínua, cianose, vômitos incoercíveis/biliosos, petéquias, abaulamento de fontanela ou rigidez de nuca.
+Responsável informa que a criança iniciou quadro de [ ], evoluindo com [ ]. Em casa recebeu [*nenhuma medicação / dipirona [ ] gotas há [ ]h / paracetamol [ ] gotas há [ ]h / ibuprofeno [ ] gotas há [ ]h]. Nos períodos afebris, [*reanima, brinca e interage normalmente / permanece prostrada].
+Mantém aceitação [*plena de seio materno e líquidos / boa de líquidos com redução de sólidos / diminuída com recusa importante], diurese [*preservada (> 4–6 fraldas/dia, clara) / reduzida / ausente há > 6–8h] e hábito intestinal [*normal / diarreico ([ ] ep./24h) / constipado há [ ] dias]. Nega crises convulsivas, gemência contínua, cianose, vômitos incoercíveis ou biliosos, petéquias, abaulamento de fontanela ou rigidez de nuca.
 [? Antecedentes Perinatais :: Parto [*Normal / Cesárea] com [ ] semanas, PN: [ ] g, [*sem intercorrências neonatais / [ ]].]
 
 # EXAME FÍSICO:

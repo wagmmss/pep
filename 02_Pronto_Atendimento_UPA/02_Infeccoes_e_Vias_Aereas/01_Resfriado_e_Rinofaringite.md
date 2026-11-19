@@ -17,11 +17,7 @@ Alergias: [*Nega alergias conhecidas / Alérgico a: [ ]].
 - Coriza, congestão nasal e dor de garganta há [ ] dias.
 
 # HMA:
-- HMA: Refere quadro iniciado há cerca de [ ] dias de coriza hialina, obstrução nasal, espirros frequentes, sensação de garganta arranhando e tosse [seca / produtiva clara]. Refere febrícula baixa não aferida no início do quadro.
-- Nega febre alta persistente (> 38,5 °C) ou piora após melhora inicial (sem duplo agravamento).
-- Nega dispneia, falta de ar, dor torácica ventilatório-dependente ou sibilos.
-- Nega dor facial intensa em peso unilateral ou secreção nasal purulenta fétida > 10 dias.
-- Nega disfagia intensa com recusa hídrica, trismo ou sialorreia.
+Refere quadro iniciado há cerca de [ ] dias com coriza hialina, obstrução nasal, espirros frequentes, irritação faríngea e tosse [seca / produtiva clara], associado a febrícula não aferida no início. Nega febre alta persistente (> 38,5 °C), piora após melhora inicial, dispneia, dor torácica ventilatório-dependente, sibilância, dor facial unilateral intensa ou secreção nasal purulenta fétida há > 10 dias. Nega ainda disfagia intensa com recusa hídrica, trismo ou sialorreia.
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

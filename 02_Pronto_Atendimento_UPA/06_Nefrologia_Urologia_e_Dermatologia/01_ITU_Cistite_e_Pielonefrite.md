@@ -17,14 +17,8 @@ Alergias: [*Nega / Alérgica a Quinolonas / Alérgica a Sulfas / Alérgica a Pen
 - Ardor para urinar (disúria), aumento da frequência e dor no baixo ventre há [ ] dias.
 
 # HMA:
-- HMA: Relata quadro iniciado há cerca de [ ] dias de dor e ardor ao urinar, polaciúria (micções frequentes em pequenos volumes), sensação de urgência miccional, tenesmo vesical e desconforto suprapúbico. Refere urina turva com odor alterado [e hematúria terminal leve / sem sangramento visível].
-- DIFERENCIAÇÃO CLÍNICA & PESQUISA DE SINAIS DE PIELONEFRITE:
-  * [ ] CISTITE AGUDA NÃO COMPLICADA: Sintomas puramente miccionais baixos; nega febre, calafrios, dor lombar ou vômitos.
-  * [ ] PIELONEFRITE AGUDA (ITU ALTA): Presença de dor lombar unilateral, febre alta com calafrios (Tax [ ] °C), prostração, náuseas e vômitos.
-- Em mulheres: Nega corrimento vaginal com prurido ou dor à relação sexual (afastada vaginite/cervicite).
-- Em homens: Nega secreção uretral purulenta ou dor perineal/ejaculatória (afastada uretrite e prostatite aguda).
-- Nega cólica nefrética irradiando para a virilha sem febre (afastada litíase pura).
-- Fatores de ITU Complicada: [Mulher jovem hígida / Gestante / Diabética / Idosa / Sexo masculino / Uso recente de cateter vesical de demora / Litíase conhecida].
+Refere há [ ] dias quadro de disúria, polaciúria, urgência miccional, tenesmo vesical e desconforto suprapúbico, associado a urina turva com odor fétido [sem sangramento visível / com hematúria terminal leve]. [Nega febre, calafrios, dor lombar, náuseas ou vômitos (quadro compatível com ITU baixa) / Evolui com febre (Tax [ ] °C), calafrios, prostração, dor lombar unilateral, náuseas e vômitos (suspeita de pielonefrite)].
+[Nega corrimento vaginal, prurido vulvar ou dispareunia / Nega secreção uretral purulenta ou dor perineal/ejaculatória], bem como cólica nefrética irradiada para virilha. Perfil de risco: [mulher jovem hígida / gestante / diabética / idosa / sexo masculino / uso recente de SVD / litíase urinária conhecida].
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.

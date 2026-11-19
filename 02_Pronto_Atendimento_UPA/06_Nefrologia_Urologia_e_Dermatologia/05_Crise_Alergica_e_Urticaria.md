@@ -17,20 +17,8 @@ Alergias: [*Nega / [ ]].
 - Manchas vermelhas pelo corpo que coçam muito / Inchaço nos lábios / Falta de ar há [ ] minutos.
 
 # HMA:
-- HMA: Relata aparecimento agudo há cerca de [ ] minutos de placas avermelhadas na pele com intenso prurido, sensação de calor e formigamento difuso, acompanhadas de inchaço (angioedema) em [lábios / pálpebras / orelhas / face / mãos].
-- FATOR DESENCADEANTE IDENTIFICADO:
-  * [ ] Ingestão alimentar recente: [Frutos do mar/camarão / Amendoim/castanhas / Ovos / Leite / Outro: [ ]].
-  * [ ] Medicamentos recentes: [Uso de anti-inflamatórios (AAS/Diclofenaco/Ibuprofeno) / Antibióticos (Amoxicilina/Penicilina) / Dipirona / IECA].
-  * [ ] Picada de inseto: [Abelha / Vespa / Formiga de fogo].
-  * [ ] Contato com látex ou substância química tópica.
-- CRITÉRIOS DIAGNÓSTICOS DE ANAFILAXIA (ENVOLVIMENTO DE 2 OU MAIS SISTEMAS COM RISCO DE MORTE):
-  [ ] PELE & MUCOSA: Urticária difusa, prurido, rubor e/ou angioedema de lábios, língua ou úvula.
-  [ ] APARELHO RESPIRATÓRIO: Dispneia, estridor laríngeo inspiratório, sensação de garganta fechando, voz rouca súbita, sibilos difusos ou SpO2 < 92%.
-  [ ] APARELHO CARDIOVASCULAR: Hipotensão arterial (PAS < 90 mmHg ou queda > 30% da basal), síncope, tontura severa com lipotímia, extremidades frias e pulso filiforme.
-  [ ] TRATO GASTROINTESTINAL: Dor abdominal em cólica intensa súbita, vômitos em jato repetidos ou diarreia aguda incoercível.
-  * CLASSIFICAÇÃO:
-    - [ ] URTICÁRIA AGUDA / ANGIOEDEMA ISOLADO (Sem sintomas respiratórios ou hemodinâmicos).
-    - [ ] ANAFILAXIA GRAVE EM CURSO (EMERGÊNCIA MÉDICA MÁXIMA - INDICADA ADRENALINA IMEDIATA).
+Refere surgimento agudo há cerca de [ ] minutos de placas eritemato-edematosas pruriginosas difusas, [sem angioedema / acompanhadas de angioedema em [lábios / pálpebras / orelhas / face / mãos]]. Associa o quadro a [fator desencadeante não identificado / ingestão alimentar recente ([camarão / amendoim / ovos / leite / [ ]]) / uso de medicação ([AINE / amoxicilina / dipirona / IECA / [ ]]) / picada de inseto ([abelha / vespa / formiga]) / contato com látex ou substância tópica].
+[Nega dispneia, estridor, sensação de garganta fechando, rouquidão, sibilos, tontura, síncope, cólica abdominal intensa ou vômitos repetidos (quadro restrito à pele/mucosa — urticária aguda/angioedema isolado) / Evolui com sintomas sistêmicos compatíveis com ANAFILAXIA: [dispneia, estridor ou rouquidão / hipotensão, lipotímia ou síncope / dor abdominal intensa ou vômitos repetidos]].
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

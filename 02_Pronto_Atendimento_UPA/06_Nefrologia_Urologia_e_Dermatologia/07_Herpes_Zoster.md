@@ -17,17 +17,8 @@ Alergias: [*Nega / Sim: [ ]].
 - Dor em queimação, fisgada e bolhinhas com água na pele há [ ] dias.
 
 # HMA:
-- HMA: Relata quadro iniciado há cerca de [ ] dias com dor prodrômica em queimação intensa, sensação de "choque elétrico", alodinia (dor ao simples roçar da roupa na pele) e formigamento localizado, seguido pelo aparecimento de vesículas agrupadas sobre base avermelhada que coçam e doem intensamente.
-- DISTRIBUIÇÃO ANATÔMICA DERMATÔMICA:
-  * Lesão estritamente UNILATERAL respeitando com precisão a linha média do corpo, localizada no dermátomo [Torácico (T3 a T10) / Lombar (L1 a L3) / Cervical / Oftálmico (ramo V1 do trigêmeo)].
-- RASTREAMENTO OBRIGATÓRIO DE COMPLICAÇÕES GRAVES:
-  * [ ] ZOSTER OFTÁLMICO (RAMO V1):
-    - Sinal de Hutchinson: [Pesquisado: Ausência de vesículas na ponta ou asa do nariz / PRESENÇA DE VESÍCULAS NA PONTA DO NARIZ (Sinal de Hutchinson positivo - risco iminente de ceratite herpética e cegueira)].
-    - Nega dor ocular profunda, fotofobia intensa, olho vermelho ou turvação visual.
-  * [ ] SÍNDROME DE RAMSAY HUNT (ZOSTER ÓTICO):
-    - Nega paralisia ou fraqueza na mímica facial (mímica facial simétrica).
-    - Nega dor intensa no ouvido com vesículas no conduto auditivo externo ou vertigem súbita.
-- Histórico: [Passado de catapora/varicela na infância / Imunossupressão / Idade > 50 anos].
+Refere há [ ] dias dor em queimação/choque elétrico e alodinia em faixa unilateral, seguida pelo surgimento de vesículas agrupadas sobre base eritematosa respeitando a linha média no dermátomo [torácico / lombar / cervical / oftálmico (V1)].
+Nega acometimento ocular, dor ocular profunda, fotofobia, turvação visual ou vesículas em ponta nasal (Sinal de Hutchinson [negativo / positivo]), assim como paralisia facial periférica, otalgia intensa, vesículas em conduto auditivo ou vertigem. Antecedente: [varicela na infância / idade > 50 anos / imunossupressão].
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril.

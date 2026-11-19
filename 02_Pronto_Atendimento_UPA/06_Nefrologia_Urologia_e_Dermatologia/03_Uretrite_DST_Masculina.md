@@ -17,13 +17,8 @@ Alergias: [*Nega alergias / Alérgico a Penicilinas / Alérgico a Macrolídeos /
 - Saída de pus pelo canal da urina e ardência para urinar há [ ] dias.
 
 # HMA:
-- HMA: Paciente relata aparecimento há cerca de [ ] dias de secreção uretral anormal espontânea, com aspecto [purulento abundante amarelo-esverdeado (típico de Gonorreia) / mucoide esbranquiçado e escasso (típico de Clamídia)], associada a disúria intensa ("sensação de queimar/cortar ao urinar"), prurido no trajeto da uretra peniana e eritema no meato externo.
-- HISTÓRIA SEXUAL:
-  * Histórico de relação sexual desprotegida (sem uso consistente de preservativo) há cerca de [ ] dias [relação vaginal / anal / oral receptiva ou insertiva].
-  * Parcerias sexuais: [Estável / Eventual].
-- Nega dor intensa, inchaço ou vermelhidão na bolsa escrotal/testículo (afastada Orquiepididimite aguda).
-- Nega febre, calafrios, dor no períneo ("dor entre o saco e o ânus") ou dificuldade para esvaziar a bexiga (afastada Prostatite Aguda).
-- Nega feridas, úlceras dolorosas ou indolores na glande, prepúcio ou corpo do pênis (afastados Cancro Duro e Herpes genital).
+Refere há cerca de [ ] dias surgimento de corrimento uretral espontâneo de aspecto [purulento abundante amarelo-esverdeado / mucoide esbranquiçado e escasso], associado a disúria em queimação, prurido uretral e hiperemia de meato. Relata relação sexual desprotegida ([vaginal / anal / oral]) há cerca de [ ] dias com parceria [eventual / estável].
+Nega dor ou edema escrotal/testicular, febre, calafrios, dor perineal, retenção urinária ou úlceras genitais.
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Afebril (Tax [ ] °C).

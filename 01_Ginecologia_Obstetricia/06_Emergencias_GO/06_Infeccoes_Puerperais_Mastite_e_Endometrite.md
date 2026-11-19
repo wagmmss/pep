@@ -19,9 +19,8 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Queixa Principal & HMA:
-  * [SE MASTITE]: Dor mamária localizada intensa, vermelhidão em cunha e calafrios/febre (Tax [38,5] °C) há [ ] dias, associada a fissura mamilar e ingurgitamento prévio em mama [direita / esquerda]. Nega dor hipogástrica ou lóquios fétidos.
-  * [SE ENDOMETRITE]: Febre alta (Tax >= 38,0 °C), calafrios, mal-estar, dor hipogástrica progressiva e eliminação de lóquios escuros/purulentos com odor fétido intenso há [ ] dias (Fatores de risco: [cesariana / bolsa rota prolongada / múltiplos toques / anemia]). Nega queixas mamárias ou respiratórias.
+[SE MASTITE] Puérpera refere dor mamária localizada intensa, hiperemia em cunha em mama [direita / esquerda], calafrios e febre (Tax [38,5] °C) há [ ] dias, precedidos por fissura mamilar e ingurgitamento. Nega dor hipogástrica ou lóquios fétidos.
+[SE ENDOMETRITE] Puérpera evoluindo há [ ] dias com febre alta (Tax >= 38,0 °C), calafrios, mal-estar, dor hipogástrica progressiva e lóquios escuros/purulentos de odor fétido intenso (fatores de risco: [cesariana / bolsa rota prolongada / múltiplos toques / anemia]). Nega queixas mamárias ou respiratórias.
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [110x70] mmHg | FC: [98] bpm | FR: [18] irpm | SpO2: [99]% AA | Tax: [38,4] °C.

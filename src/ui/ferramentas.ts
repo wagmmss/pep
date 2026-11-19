@@ -102,9 +102,6 @@ export function initFerramentas(): {
             <h2 class="mq-workspace-title">🧪 Ferramentas Clínicas, Calculadoras &amp; Raciocínio</h2>
             <p class="mq-workspace-sub">Gasometria 5 Passos · Calculadoras UBS/UPA · REMUME/HSL · LR+/Bayes · Checklists · Oratória 90s · 7 Travas</p>
           </div>
-          <div class="mq-btn-row">
-            <button type="button" class="btn-palette-trigger" id="ferGoPepBtn">🩺 Voltar aos PEPs</button>
-          </div>
         </header>
 
         <div class="mq-subtabs" role="tablist">
@@ -122,8 +119,6 @@ export function initFerramentas(): {
         <div id="ferramentasBody"></div>
       </section>
     `;
-
-    container.querySelector('#ferGoPepBtn')?.addEventListener('click', () => uiBridge.navigate('pep'));
 
     container.querySelectorAll<HTMLButtonElement>('[data-ftab]').forEach((btn) => {
       btn.addEventListener('click', () => {

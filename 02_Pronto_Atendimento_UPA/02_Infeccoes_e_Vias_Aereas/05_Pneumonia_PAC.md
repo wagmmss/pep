@@ -17,21 +17,7 @@ Alergias: [*Nega / Alérgico a Penicilinas / Alérgico a Macrolídeos / [ ]].
 - Tosse com catarro, febre e dor no peito para respirar há [ ] dias.
 
 # HMA:
-- HMA: Refere tosse produtiva há cerca de [ ] dias com escarro de aspecto [amarelado / purulento / ferruginoso], associada a picos febris diários (Tax [ ] °C) acompanhados de calafrios, astenia e dor torácica ventilatório-dependente (dor pleurítica em pontada à inspiração profunda) em hemitórax [direito / esquerdo].
-- ESTRATIFICAÇÃO PROGNÓSTICA - ESCORE CURB-65:
-  - C - Confusão mental aguda no exame (Glasgow < 15 ou desorientação) (+1)
-  - U - Ureia sérica > 50 mg/dL (BUN > 19 mg/dL) (+1)
-  - R - Respiração acelerada com FR >= 30 irpm (+1)
-  - B - Blood Pressure baixa: PAS < 90 mmHg ou PAD <= 60 mmHg (+1)
-  - 65 - Idade >= 65 anos (+1)
-  * PONTUAÇÃO CURB-65: [ ] PONTOS
-  * CONDUTA DEFINIDA PELO ESCORE:
-    - CURB 0-1 ponto: Baixo risco de mortalidade -> TRATAMENTO AMBULATORIAL SEGURO EM DOMICÍLIO.
-    - CURB 2 pontos: Risco intermediário -> INTERNAÇÃO EM ENFERMARIA / OBSERVAÇÃO CLÍNICA EM UPA.
-    - CURB >= 3 pontos: Alto risco de gravidade -> INTERNAÇÃO HOSPITALAR COM AVALIAÇÃO DE UTI.
-- Nega hemoptise volumosa ou sangramento respiratório ativo.
-- Nega estridor respiratório, sensação de asfixia ou tiragem de fúrcula/intercostal.
-- Nega internação hospitalar recente nos últimos 90 dias ou hemodiálise (afastada PAC hospitalar/multirresistente).
+Refere tosse produtiva há cerca de [ ] dias com escarro [amarelado / purulento / ferruginoso], associada a picos febris diários (Tax [ ] °C), calafrios, astenia e dor torácica ventilatório-dependente em hemitórax [direito / esquerdo]. Estratificação prognóstica pelo escore CURB-65: [0 / 1 / 2 / >= 3] ponto(s) ([manejo ambulatorial / internação ou observação / internação com avaliação de UTI]). Nega hemoptise volumosa, estridor, esforço respiratório importante, internação hospitalar nos últimos 90 dias ou hemodiálise.
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente | Tax: [ ] °C.

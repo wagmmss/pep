@@ -137,7 +137,6 @@ export function renderProtocolList(): void {
       const modLabel = getModShortLabel(item.mod_id);
       const hasSplit = Boolean(item.has_split);
       const hasGuia = Boolean(item.has_guia);
-      const hasReceita = Boolean(item.has_receita || item.receita_body?.trim());
       const previewText = buildCardPreviewText(item);
 
       return `
@@ -170,11 +169,8 @@ export function renderProtocolList(): void {
                 ${SVG_COPY_ICON}
                 <span>Copiar Tudo</span>
               </button>
-              ${hasSplit ? `<button type="button" class="btn btn-subtle" data-quick-copy="3" data-copy-id="${escapeHtml(item.id)}" title="Copiar apenas Conduta / Prescrição imediata">Conduta</button>` : ''}
-              ${hasReceita ? `<button type="button" class="btn btn-subtle" data-quick-copy="4" data-copy-id="${escapeHtml(item.id)}" title="Copiar apenas Receita estruturada">Receita</button>` : ''}
             </div>
             <div class="btn-group">
-              <code class="card-trigger">${escapeHtml(item.trigger)}</code>
               ${item.cid10 ? `<span class="card-cid-badge">${escapeHtml(item.cid10)}</span>` : ''}
               ${matched ? `<span class="card-symptom-match-badge">🎯 ${escapeHtml(matched)}</span>` : ''}
             </div>

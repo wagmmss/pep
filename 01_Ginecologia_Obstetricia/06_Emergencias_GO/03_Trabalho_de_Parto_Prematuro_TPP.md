@@ -19,8 +19,7 @@ Alergias: [*Nega / [ ]].
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Queixa Principal & HMA: Contrações uterinas dolorosas e rítmicas associadas a pressão pélvica e dor lombar há [ ] horas. Movimentação fetal presente.
-- Nega perda de líquido amniótico (afastada RPMO), nega sangramento vaginal vivo ou escuro (afastados PP e DPP), nega febre/calafrios ou corrimento fétido (afastada corioamnionite), nega cefaleia/escotomas. Queixas urinárias: [Nega disúria ou Giordano / Refere disúria].
+Gestante refere contrações uterinas dolorosas e rítmicas associadas a pressão pélvica e dor lombar há [ ] horas, com movimentação fetal presente. Nega perda de líquido amniótico, sangramento vaginal vivo ou escuro, febre, calafrios, corrimento fétido, cefaleia ou escotomas. Quanto ao trato urinário, [nega disúria ou dor lombar unilateral / refere disúria e polaciúria].
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [110x70] mmHg | FC: [84] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [36,5] °C (afebril).

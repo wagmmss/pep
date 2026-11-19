@@ -290,7 +290,7 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
               </span>
             </div>
             <div class="hab-card-nav-title">${escapeHtml(shortTitle)}</div>
-            <div class="hab-card-nav-meta">${escapeHtml(cat)} · <code>${escapeHtml(h.trigger)}</code></div>
+            <div class="hab-card-nav-meta">${escapeHtml(cat)}</div>
           </button>`;
       })
       .join('');
@@ -389,7 +389,6 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
 
       <div class="hab-checklist-actions">
         <button type="button" class="btn btn-primary btn-xs" id="habFinishExecBtn">✅ Concluir Execução (${checkedCount}/${totalItems})</button>
-        <button type="button" class="btn btn-secondary btn-xs" id="habCopyDebriefBtn">📋 Copiar Debriefing</button>
         <button type="button" class="btn btn-secondary btn-xs" id="habSaveBlindspotsBtn">🎯 Salvar Pontos Cegos no Logbook</button>
         <button type="button" class="btn btn-ghost btn-xs" id="habResetChecksBtn">↺ Limpar Checklist</button>
       </div>
@@ -500,7 +499,7 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
                 id="habFilterInput"
                 class="hab-filter-input"
                 aria-label="Filtrar 22 cartões Pré-Porta"
-                placeholder="Filtrar estação, ;atalho ou tema..."
+                placeholder="Filtrar estação ou tema..."
                 value="${escapeHtml(filterQuery)}"
               />
               <div class="hab-cat-chips">
@@ -523,7 +522,6 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
               <div>
                 <div class="drawer-eyebrow-row">
                   <span class="sev-badge ${sev.cls}">${escapeHtml(sev.label)}</span>
-                  <code class="trigger-chip">${escapeHtml(activeHab.trigger)}</code>
                   ${activeHab.time_goal ? `<span class="meta-time">⏱ ${escapeHtml(activeHab.time_goal)}</span>` : ''}
                   <span class="mq-hint">${escapeHtml(activeHab.hab_category || activeHab.category)}</span>
                 </div>
@@ -533,7 +531,6 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
                 <button type="button" class="btn ${isLinkedMicro ? 'btn-primary' : 'btn-secondary'} btn-xs" id="habLinkMicroBtn">
                   ${isLinkedMicro ? '⭐ Micro-Hábito Ativo' : '📌 Vincular Micro-Hábito'}
                 </button>
-                <button type="button" class="btn btn-secondary btn-xs" id="habCopyPreBtn">📋 Copiar Pré-Porta</button>
               </div>
             </div>
 
@@ -638,21 +635,6 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
       showToast('Checklist reiniciado.', 'info');
     });
 
-    container.querySelector('#habCopyDebriefBtn')?.addEventListener('click', () => {
-      const doneLines = sections.flatMap((sec) =>
-        sec.items.filter((it) => checksMap[it.id]).map((it) => `- [x] ${it.text}`)
-      );
-      const pendingLines = missedItems.map((m) => `- [ ] [${m.section}] ${m.critical ? '[CRÍTICO] ' : ''}${m.text}`);
-      const debrief = [
-        `DEBRIEFING — ${activeHab.title} (${checkedCount}/${totalItems} · ${pctDone}%)`,
-        pendingLines.length > 0 ? `\nPENDENTES:\n${pendingLines.join('\n')}` : '\nSem pendências.',
-        doneLines.length > 0 ? `\nEXECUTADOS:\n${doneLines.join('\n')}` : '',
-      ]
-        .filter(Boolean)
-        .join('\n');
-      void copyToClipboard(debrief, 'Debriefing Pré-Porta');
-    });
-
     container.querySelector('#habSaveBlindspotsBtn')?.addEventListener('click', () => {
       if (missedItems.length === 0) {
         showToast('🎉 Todos os itens foram executados! Nenhum ponto cego pendente para salvar.', 'success');
@@ -689,11 +671,6 @@ export function initPrePorta(): { render: (container: HTMLElement, itemId?: stri
       }));
       showToast('Micro-hábito semanal atualizado!', 'success');
       render(container);
-    });
-
-    container.querySelector('#habCopyPreBtn')?.addEventListener('click', () => {
-      const txt = `${activeHab.title}\nMeta: ${activeHab.time_goal || ''}\nÂncora: ${activeHab.anchor || ''}\n\n${activeHab.pre_porta || ''}`.trim();
-      void copyToClipboard(txt, 'Roteiro Pré-Porta 30s');
     });
 
     container.querySelector('#habFinishExecBtn')?.addEventListener('click', () => {

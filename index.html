@@ -71,7 +71,7 @@
               type="text"
               id="wsSearchInput"
               class="search-input"
-              placeholder="Buscar queixa, ;atalho, CID-10 ou protocolo..."
+              placeholder="Buscar queixa, CID-10 ou protocolo..."
               autocomplete="off"
               aria-label="Filtrar protocolos"
             />
@@ -85,10 +85,6 @@
         <div class="ws-list-Subbar">
           <span id="wsCenterCounter">88 Protocolos</span>
           <div class="ws-list-subbar-actions">
-            <button type="button" class="btn-palette-trigger" id="topbarSearchBtn" title="Paleta Global (Ctrl+K)">
-              <span>🔍</span>
-              <span class="kbd-shortcut">Ctrl+K</span>
-            </button>
             <button type="button" class="btn-palette-trigger" id="btnNovoPaciente" title="Limpar campos do paciente atual para novo atendimento">
               <span>🧹 Novo</span>
             </button>
@@ -118,7 +114,6 @@
             <div class="drawer-eyebrow-row">
               <span class="sev-badge sev-rotina" id="drawerSeverityBadge">ROTINA</span>
               <code id="drawerCidBadge" class="card-cid-badge" hidden></code>
-              <code id="drawerTrigger" class="trigger-chip">;atalho</code>
             </div>
             <h2 id="drawerTitle">Protocolo Clínico</h2>
           </div>
@@ -144,9 +139,6 @@
               <button type="button" class="power-action-btn" id="powerBtnCopyOrientacoes" data-power-action="5" title="Copiar apenas Orientações de Alta &amp; Sinais de Alarme (Tecla 5)">
                 <span class="kbd-num">5</span>
                 <span>Orientações</span>
-              </button>
-              <button type="button" class="power-action-btn icon-only-btn" id="powerBtnResetPatient" title="Restaurar campos para o padrão" aria-label="Restaurar Padrão">
-                <span>↺</span>
               </button>
             </div>
             <button type="button" class="close-btn" id="drawerCloseBtn" aria-label="Fechar painel" title="Fechar (Esc)">✕</button>

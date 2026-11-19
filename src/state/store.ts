@@ -15,6 +15,7 @@ export const STORAGE_KEYS = {
   SESSION_PATIENT_DRAFT: 'mq_patient_session_v1',
   SIDEBAR_COLLAPSED: 'mq_sidebar_collapsed_v1',
   START_SECTION: 'mq_default_start_section_v1',
+  KEEP_EMPTY_BRACKETS: 'mq_keep_empty_brackets_v1',
 } as const;
 
 export interface SharedPatientIdentity {
@@ -66,6 +67,7 @@ export interface CockpitStoreState {
   theme: ClinicalTheme;
   sidebarCollapsed: boolean;
   startSection: StartSectionPreference;
+  keepEmptyBrackets: boolean;
   colWidths: WsColumnWidths;
   prescriptionCart: PrescriptionCartItem[];
   patientSession: PatientSessionState;
@@ -400,7 +402,8 @@ function isManagedLocalKey(key: string | null): boolean {
     key === STORAGE_KEYS.WS_COL_WIDTHS ||
     key === STORAGE_KEYS.CLINICAL_THEME ||
     key === STORAGE_KEYS.SIDEBAR_COLLAPSED ||
-    key === STORAGE_KEYS.START_SECTION
+    key === STORAGE_KEYS.START_SECTION ||
+    key === STORAGE_KEYS.KEEP_EMPTY_BRACKETS
   );
 }
 
@@ -428,6 +431,7 @@ class ClinicalCockpitStore {
     const sidebarCollapsed = safeGetItem(ls, STORAGE_KEYS.SIDEBAR_COLLAPSED) === '1';
     const startSection: StartSectionPreference =
       safeGetItem(ls, STORAGE_KEYS.START_SECTION) === 'hoje' ? 'hoje' : 'pep';
+    const keepEmptyBrackets = safeGetItem(ls, STORAGE_KEYS.KEEP_EMPTY_BRACKETS) !== '0';
 
     const colWidths = safeJsonParse<WsColumnWidths>(
       safeGetItem(ls, STORAGE_KEYS.WS_COL_WIDTHS),
@@ -466,6 +470,7 @@ class ClinicalCockpitStore {
       theme,
       sidebarCollapsed,
       startSection,
+      keepEmptyBrackets,
       colWidths: { ...colWidths },
       prescriptionCart: prescriptionCart.map((it) => ({ ...it })),
       patientSession,
@@ -490,6 +495,7 @@ class ClinicalCockpitStore {
       theme: this.state.theme,
       sidebarCollapsed: this.state.sidebarCollapsed,
       startSection: this.state.startSection,
+      keepEmptyBrackets: this.state.keepEmptyBrackets,
       colWidths: { ...this.state.colWidths },
       prescriptionCart: this.state.prescriptionCart.map((it) => ({ ...it })),
       patientSession: {
@@ -552,6 +558,13 @@ class ClinicalCockpitStore {
     const next: StartSectionPreference = section === 'hoje' ? 'hoje' : 'pep';
     this.state = { ...this.state, startSection: next };
     safeSetItem(getLocalStore(), STORAGE_KEYS.START_SECTION, next);
+    this.emit();
+  }
+
+  public setKeepEmptyBrackets(keep: boolean): void {
+    const next = Boolean(keep);
+    this.state = { ...this.state, keepEmptyBrackets: next };
+    safeSetItem(getLocalStore(), STORAGE_KEYS.KEEP_EMPTY_BRACKETS, next ? '1' : '0');
     this.emit();
   }
 

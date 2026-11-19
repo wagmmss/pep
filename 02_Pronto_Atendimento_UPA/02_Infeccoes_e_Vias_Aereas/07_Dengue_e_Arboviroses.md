@@ -17,18 +17,8 @@ Alergias: [*Nega / Alérgico a Dipirona / [ ]].
 - Febre alta, dor no corpo e dor atrás dos olhos há [ ] dias.
 
 # HMA:
-- HMA: Refere quadro febril de início súbito há cerca de [ ] dias (Tax máxima [ ] °C), associado a cefaleia holocraniana intensa, dor retro-orbitária que piora à movimentação ocular, mialgia difusa ("dor nos ossos"), artralgia, astenia marcante, náuseas e exantema cutâneo maculopapular [pruriginoso / ausente].
-- FASE DA DOENÇA: [Fase Febril (dias 1 a 3) / Fase Crítica de Defervescência (dias 3 a 7 - ATENÇÃO MÁXIMA A SINAIS DE ALARME)].
-- CHECAGEM OBRIGATÓRIA DOS SINAIS DE ALARME (DIRETRIZ MS):
-  - Dor abdominal intensa e contínua ou dor à palpação do abdome
-  - Vômitos persistentes (>= 3 episódios em 1 hora ou >= 4 em 6 horas)
-  - Acúmulo de líquidos (ascite, derrame pleural ou pericárdico)
-  - Hipotensão postural (queda > 20 mmHg na PAS) ou lipotímia/tontura ao se levantar
-  - Hepatomegalia dolorosa > 2 cm abaixo do rebordo costal direito
-  - Sangramento de mucosas (gengivorragia, epistaxe, metrorragia volumosa ou hematêmese)
-  - Letargia, sonolência excessiva, desorientação ou irritabilidade
-  - Aumento progressivo e abrupto do hematócrito (hemoconcentração)
-  * STATUS: [TODOS OS SINAIS DE ALARME NEGADOS / SINAL DE ALARME PRESENTE: [ ]].
+Refere quadro febril de início súbito há cerca de [ ] dias (Tax máxima [ ] °C), associado a cefaleia holocraniana intensa, dor retro-orbitária, mialgia difusa, artralgia, astenia marcante, náuseas e exantema maculopapular [ausente / pruriginoso], encontrando-se na [fase febril (dias 1 a 3) / fase crítica de defervescência (dias 3 a 7)].
+Pesquisa ativa de sinais de alarme: [nega dor abdominal intensa e contínua, vômitos persistentes, tontura/hipotensão postural, sangramentos de mucosas, letargia ou irritabilidade / apresenta sinal de alarme: [ ]].
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | PA em pé (se tolerar): [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.

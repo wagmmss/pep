@@ -23,8 +23,7 @@
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Paciente admitido(a) nesta enfermaria proveniente de [UPA / Pronto-Socorro / Ambulatório] com quadro de [ ], iniciado há [ ] dias, caracterizado por [ ]. No serviço de origem recebeu [medidas e medicações prévias: [ ]]. No momento da admissão no leito, encontra-se [estável sem queixas álgicas agudas / com queixa residual de: [ ]].
-- Nega no momento precordialgia típica, dispneia em repouso, síncope, déficits motores focais agudos ou sangramentos francos ativos.
+Paciente admitido(a) nesta enfermaria proveniente de [UPA / Pronto-Socorro / Ambulatório] por quadro de [ ], iniciado há [ ] dias, caracterizado por [ ]. No serviço de origem recebeu [medidas e medicações prévias: [ ]]. À admissão no leito encontra-se [estável e sem queixas álgicas agudas / com queixa residual de: [ ]]. Nega precordialgia típica, dispneia em repouso, síncope, déficits motores focais agudos ou sangramentos ativos.
 
 # RECONCILIAÇÃO MEDICAMENTOSA DE ADMISSÃO (USO PRÉVIO DOMICILIAR):
 1. [Medicamento 1, dose e posologia] -> Conduta na internação: [Manter em prescrição / Suspender temporariamente por [ ] / Substituir por [ ]]

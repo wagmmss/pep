@@ -19,16 +19,8 @@ Alergias: [*Nega / Sim: [ ]].
 - Pressão alta aferida / Dor de cabeça / Tontura há [ ] horas.
 
 # HMA:
-- HMA: Paciente relata que comparece à UPA após aferir PA elevada em domicílio. Queixa-se de [cefaleia tensional / tontura inespecífica / ansiedade / palpitações / totalmente assintomático]. Relata abandono recente ou esquecimento das medicações de uso contínuo [ou nega diagnóstico prévio de hipertensão].
-- RASTREAMENTO SISTEMÁTICO DE LESÃO AGUDA DE ÓRGÃO-ALVO (LOA):
-  * CÉREBRO: Nega cefaleia excruciante súbita ("pior dor da vida"), nega déficits motores/sensitivos focais (paresia, assimetria facial, afasia), nega confusão mental aguda ou crise convulsiva.
-  * CORAÇÃO: Nega dor precordial em aperto, queimação retroesternal ou irradiação para membros. Nega dispneia em repouso ou ortopneia (falta de ar ao deitar).
-  * GRANDES VASOS: Nega dor interescapular lancinante "em rasgadura" de início hiperagudo.
-  * RINS: Nega anúria, oligúria ou urina com sangue (hematúria macroscópica).
-  * OLHOS: Nega perda súbita da acuidade visual ou escotomas cintilantes patológicos.
-  * GESTAÇÃO: Paciente não gestante (se mulher em idade fértil).
-- Fatores Emocionais / Desencadeantes: [Histórico de estresse emocional agudo / Dor osteomuscular concomitante / Privação de sono].
-- Medicações de Uso Contínuo: [Em uso irregular de Losartana, Enalapril, Anlodipino, Hidroclorotiazida / Nega uso de anti-hipertensivos].
+Paciente procura a unidade após aferir pressão arterial elevada em domicílio, referindo [cefaleia tensional / tontura inespecífica / ansiedade / palpitações / quadro assintomático], associado a [abandono ou uso irregular dos anti-hipertensivos habituais / estresse emocional ou dor osteomuscular / sem diagnóstico prévio de HAS]. Medicações de uso contínuo: [losartana, enalapril, anlodipino, hidroclorotiazida (uso irregular) / nega uso de anti-hipertensivos].
+Na triagem de lesão aguda de órgão-alvo, nega cefaleia súbita intensa, déficits neurológicos focais, confusão mental, convulsões, dor precordial, dispneia em repouso, ortopneia, dor interescapular em rasgadura, oligúria, hematúria macroscópica ou alterações visuais agudas. [? Gestação :: Paciente não gestante.]
 
 # EXAME FÍSICO:
 - SINAIS VITAIS REPETIDOS APÓS REPOUSO: PA: [ ]x[ ] mmHg (MSD) e [ ]x[ ] mmHg (MSE) (Sem assimetria pressórica significativa).

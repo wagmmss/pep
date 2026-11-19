@@ -17,13 +17,7 @@ Alergias: [*Nega / Sim: [ ]].
 - Vômito com sangue vivo / Fezes pretas e tontura há [ ] horas.
 
 # HMA:
-- HMA: Paciente relata episódio agudo de [hematêmese com sangue vermelho vivo / vômitos escuros em borra de café] e/ou [eliminação de fezes pretas, amolecidas, com odor fétido característico de piche (melena)]. Relata fraqueza intensa súbita, tontura ao se levantar (lipotímia), palpitações e sudorese fria.
-- SUSPEITA ETIOLÓGICA & ANTECEDENTES:
-  * HDA NÃO-VARICOSA (ÚLCERA PÉPTICA): Histórico de queimação epigástrica, uso recente de AINEs (Diclofenaco/Cetoprofeno/Ibuprofeno), uso de AAS ou anticoagulantes, tabagismo.
-  * HDA VARICOSA (HIPERTENSÃO PORTAL): Histórico de etilismo crônico pesado, cirrose hepática diagnosticada, hepatite B ou C, sangramento prévio por varizes de esôfago.
-- Nega dor torácica anginosa precedente.
-- Nega tosse com expectoração sanguinolenta (afastada hemoptise respiratória).
-- Nega disfagia ou emagrecimento severo recente.
+Paciente relata episódio agudo de [hematêmese com sangue vermelho vivo / vômitos em borra de café] [e melena / sem melena referida], acompanhado de fraqueza intensa súbita, tontura postural, palpitações e sudorese fria. Antecedentes relevantes para etiologia: [uso recente de AINEs, AAS ou anticoagulantes e história de dispepsia (suspeita não-varicosa) / etilismo crônico, cirrose hepática ou sangramento prévio por varizes esofágicas (suspeita varicosa) / sem fatores de risco conhecidos]. Nega dor torácica anginosa precedente, hemoptise, disfagia ou emagrecimento recente.
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA deitado: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia compensatória) | FR: [ ] irpm | SpO2: [ ]% em AA.

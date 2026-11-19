@@ -17,13 +17,8 @@ Alergias: [*Nega / Sim: [ ]].
 - Coceira no corpo todo que piora muito à noite há [ ] dias/semanas.
 
 # HMA:
-- HMA: Relata prurido cutâneo difuso de evolução progressiva, com exacerbação noturna intensa ("quase não consegue dormir ao se cobrir na cama"). Queixa-se de pequenas lesões avermelhadas e "bolhinhas" em dobras de pele.
-- HISTÓRIA EPIDEMIOLÓGICA POSITIVA:
-  * Presença de outros familiares, crianças ou parceiros que dormem na mesma casa apresentando quadro idêntico de coceira noturna.
-- TOPOGRAFIA HABITUAL DAS QUEIXAS:
-  * Prurido e lesões concentrados entre os dedos das mãos, punhos, axilas, ao redor do umbigo, nádegas e [na bolsa escrotal/pênis no homem / aréolas na mulher].
-- Nega febre, calafrios ou prostração sistêmica.
-- Nega lesões bolhosas extensas com descolamento cutâneo (afastado pênfigo ou eritema multiforme).
+Refere prurido cutâneo difuso progressivo com nítida piora noturna, associado a pequenas pápulas eritematosas e vesículas concentradas em espaços interdigitais, punhos, axilas, região periumbilical, nádegas e [região genital / aréolas]. [Refere contactantes domiciliares com quadro semelhante / Nega contactantes sintomáticos].
+Nega febre, calafrios, prostração sistêmica ou lesões bolhosas extensas com descolamento epidérmico.
 
 # EXAME FÍSICO:
 - Ectoscopia Cutânea:

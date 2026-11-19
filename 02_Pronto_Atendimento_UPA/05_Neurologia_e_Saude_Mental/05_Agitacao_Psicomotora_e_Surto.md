@@ -19,13 +19,7 @@ Alergias: [*Nega / Sim: [ ]].
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Apresentação Clínica: Paciente admitido com quadro de intensa agitação psicomotora, inquietação motora, desinibição verbal, agressividade [verbal / física direcionada a terceiros ou objetos], com discurso [desconexo / delirante paranoide / de grandiosidade / com alucinações auditivas e visuais].
-- ETIOLOGIA DA AGITAÇÃO EM INVESTIGAÇÃO:
-  * [ ] CAUSA PSIQUIÁTRICA PRIMÁRIA: Paciente com diagnóstico prévio de Esquizofrenia / Transtorno Bipolar em episódio maníaco / Transtorno de Personalidade em crise; relata abandono recente de antipsicóticos.
-  * [ ] CAUSA ORGÂNICA / DELIRIUM: Paciente idoso com quadro agudo flutuante de desorientação (investigar sepse urinária, pneumonia oculta, AVC ou distúrbio metabólico).
-  * [ ] CAUSA TÓXICA / ABSTINÊNCIA: Suspeita de intoxicação aguda por drogas de abuso estimulantes (cocaína/crack/canabinoides sintéticos) ou Síndrome de Abstinência Alcoólica (Delirium Tremens).
-- Nega histórico de trauma cranioencefálico recente ou cefaleia febril precedente.
-- Sem porte de armas ou objetos perfurocortantes (revista de segurança realizada pela equipe/guarda).
+Paciente admitido com quadro de intensa agitação psicomotora, inquietação, desinibição verbal e agressividade [verbal / física direcionada a terceiros ou objetos], apresentando discurso [desconexo / delirante paranoide / de grandiosidade / com alucinações auditivas e visuais]. Suspeita etiológica principal: [transtorno psiquiátrico primário com abandono recente de medicação / causa orgânica ou delirium em investigação / intoxicação por estimulantes ou síndrome de abstinência alcoólica]. Nega TCE recente ou cefaleia febril precedente; revista de segurança realizada pela equipe sem porte de armas ou perfurocortantes.
 
 # EXAME FÍSICO:
 - SINAIS VITAIS (AFERIDOS ASSIM QUE POSSÍVEL): PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% | Tax: [ ] °C.

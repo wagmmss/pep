@@ -20,9 +20,7 @@ Alergias: [*Nega / [ ]].
 =============================================================================
 
 # DADOS LABORATORIAIS & HISTÓRIA:
-- Potássio Sérico (K+): [ ] mEq/L (Normal: 3,5 a 5,0 mEq/L | Hipercalemia Grave se K+ > 6,0 a 6,5 mEq/L ou com alterações ao ECG).
-- Contexto Clínico: [Doença Renal Crônica dialítica / Injúria Renal Aguda oligúrica / Rabdomiólise / Uso de IECA, BRA, Espironolactona / Acidose grave].
-- Sintomas: [Fraqueza muscular proximal intensa, parestesias, palpitações / Assintomático com achado laboratorial].
+Potássio sérico de [ ] mEq/L no contexto de [doença renal crônica dialítica / injúria renal aguda oligúrica / rabdomiólise / uso de IECA, BRA ou espironolactona / acidose grave]. Paciente [assintomático com achado laboratorial / queixando-se de fraqueza muscular proximal, parestesias e palpitações].
 
 # ALTERAÇÕES NO ELETROCARDIOGRAMA DE 12 DERIVAÇÕES:
 [ ] Ondas T pontiagudas, simétricas e de base estreita ("T em tenda" - alteração precoce).
@@ -62,12 +60,7 @@ Alergias: [*Nega / [ ]].
 =============================================================================
 
 # DADOS LABORATORIAIS & HISTÓRIA:
-- Sódio Sérico (Na+): [ ] mEq/L (Normal: 135 a 145 mEq/L | Grave se Na+ < 120 a 125 mEq/L).
-- Osmolaridade Plasmática Calculada: [ ] mOsm/kg | Tempo Estimado: [Aguda < 48 horas / Crônica > 48 horas / Tempo Indeterminado].
-- Quadro Clínico Sintomático Neurológico Grave:
-  [ ] Crise convulsiva generalizada ativa ou recente.
-  [ ] Rebaixamento agudo do nível de consciência (Glasgow < 12 / coma / torpor).
-  [ ] Sinais clínicos de hipertensão intracraniana ou herniação cerebral iminente.
+Sódio sérico de [ ] mEq/L (osmolaridade plasmática calculada de [ ] mOsm/kg), de evolução [crônica (> 48h) ou tempo indeterminado / aguda (< 48h)]. Quadro neurológico: [sem crises convulsivas ou sinais de herniação / sintomas neurológicos graves presentes: [crise convulsiva / rebaixamento agudo do sensório (Glasgow < 12) / sinais de hipertensão intracraniana]].
 
 # CONDUTA DE EMERGÊNCIA NA HIPONATREMIA GRAVE SINTOMÁTICA:
 1. Alvo Inicial de Segurança: Elevar a natremia sérica em 4 a 6 mEq/L nas primeiras horas, o suficiente para reverter o edema cerebral agudo e cessar as crises convulsivas.

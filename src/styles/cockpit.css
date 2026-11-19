@@ -638,28 +638,6 @@
       opacity: 0.75;
     }
 
-    .trigger-chip {
-      -webkit-appearance: none;
-      appearance: none;
-      background: var(--surface-inset);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      padding: 2px 7px;
-      border-radius: 3px;
-      font-size: 0.72rem;
-      font-family: var(--font-mono);
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      cursor: pointer;
-      transition: border-color 0.12s ease, color 0.12s ease;
-    }
-    .trigger-chip:hover {
-      border-color: var(--border-strong);
-      color: var(--text);
-    }
-
     .card-body-block {
       display: flex;
       flex-direction: column;
@@ -2375,11 +2353,6 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-    .cmd-item-hab-trig {
-      color: var(--primary-bright);
-      background: rgba(2, 132, 199, 0.14);
-      border-color: rgba(2, 132, 199, 0.34);
-    }
     .cmd-footer {
       padding: 8px 14px;
       background: var(--bg);
@@ -4061,9 +4034,7 @@
       color: #f8fafc;
     }
     html.light .card-symptom-match-badge,
-    body.light-theme .card-symptom-match-badge,
-    html.light .cmd-item-hab-trig,
-    body.light-theme .cmd-item-hab-trig {
+    body.light-theme .card-symptom-match-badge {
       color: #075985;
       background: #e0f2fe;
       border-color: #7dd3fc;
@@ -4845,17 +4816,6 @@ body.light-theme .pep-section-heading {
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
-}
-
-.card-trigger {
-  font-family: var(--font-mono);
-  font-size: 0.69rem;
-  color: var(--primary-bright);
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  padding: 1px 6px;
-  border-radius: 4px;
-  white-space: nowrap;
 }
 
 .btn {
@@ -6016,8 +5976,6 @@ body.light-theme .hab-streak-pill {
 
 html.light .chip-preporta,
 body.light-theme .chip-preporta,
-html.light .card-trigger,
-body.light-theme .card-trigger,
 html.light .guia-tag,
 body.light-theme .guia-tag {
   background: #e0f2fe;

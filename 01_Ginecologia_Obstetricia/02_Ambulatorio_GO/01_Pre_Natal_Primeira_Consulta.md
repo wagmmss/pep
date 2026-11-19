@@ -23,8 +23,7 @@ Antecedentes Obstétricos: [*Nulípara / Gestações prévias sem intercorrênci
 - Abertura de pré-natal.
 
 # HMA:
-- Comparece para abertura de pré-natal, referindo [*ausência de queixas / náuseas matinais leves sem perda ponderal / mastalgia e sonolência fisiológicas / [ ]].
-- Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
+Comparece para abertura de pré-natal, referindo [*ausência de queixas / náuseas matinais leves sem perda ponderal / mastalgia e sonolência fisiológicas / [ ]]. Nega sangramento vaginal, perda de líquido, cólicas pélvicas intensas, disúria, febre ou contato com exantemas.
 
 # EXAME FÍSICO:
 - Antropometria & Vitais: Peso Pré-Gestacional: [ ] kg | Peso Atual: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m² ([Eutrófica / Sobrepeso / Obesidade / Baixo peso]). PA (sentada): [110x70] mmHg | FC: [78] bpm | Tax: [36,4] °C.

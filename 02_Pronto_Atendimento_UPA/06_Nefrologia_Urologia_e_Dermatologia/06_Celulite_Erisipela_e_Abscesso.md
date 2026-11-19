@@ -17,17 +17,8 @@ Alergias: [*Nega / Alérgico a Cefalosporinas / Alérgico a Penicilinas / [ ]].
 - Vermelhidão, dor, inchaço e calor na pele [em perna / pé / braço / face] há [ ] dias.
 
 # HMA:
-- HMA: Relata quadro de início há cerca de [ ] dias caracterizado por dor local progressiva, calor, edema e eritema cutâneo em [membro inferior direito/esquerdo / região periorbitária / dorso]. Refere febre alta precedente de [ ] °C e calafrios.
-- IDENTIFICAÇÃO DA SÍNDROME CLÍNICA DERMATOLÓGICA:
-  * [ ] ERISIPELA: Lesão cutânea eritematosa viva, brilhante, com BORDAS BEM DEMARCADAS E NÍTIDAS EM RELEVO, acometimento superficial da derme e linfáticos dérmicos.
-  * [ ] CELULITE INFECCIOSA: Lesão eritematosa mais profunda, com BORDAS IMPRECISAS E MAL DELIMITADAS, edema difuso sem relevo acentuado de margem.
-  * [ ] ABSCESSO CUTÂNEO: Nódulo eritematoso com coleção purulenta subcutânea flutuante central dolorosa à palpação.
-- PORTA DE ENTRADA IDENTIFICADA: [Micose interdigital ("frieira"/tinea pedis) / Fissura plantar / Picada de inseto / Escoriação traumática / Úlcera vascular prévia / Não identificada].
-- RASTREAMENTO OBRIGATÓRIO DE FASCIÍTE NECROSANTE (EMERGÊNCIA CIRÚRGICA):
-  * Nega dor desproporcionalmente intensa aos achados visuais da pele.
-  * Nega presença de gás ou estalidos/crepitação à palpação do tecido subcutâneo.
-  * Nega bolhas escuras hemorrágicas, necrose cutânea franca ou anestesia local no centro da lesão.
-- Fatores de Risco: [Diabetes Mellitus / Obesidade / Insuficiência venosa crônica / Linfedema prévio / Imunossupressão].
+Refere quadro iniciado há [ ] dias de dor progressiva, calor, edema e eritema em [membro inferior direito / membro inferior esquerdo / membro superior / face / dorso], [acompanhado de febre (Tax [ ] °C) e calafrios / sem febre referida]. Apresenta padrão sugestivo de [erisipela (placa eritematosa brilhante com bordas bem delimitadas) / celulite infecciosa (eritema profundo de bordas imprecisas) / abscesso cutâneo (nódulo eritematoso com flutuação purulenta central)], com provável porta de entrada por [tinea pedis interdigital / fissura plantar / picada de inseto / escoriação traumática / úlcera vascular prévia / não identificada].
+Nega dor desproporcional ao exame, crepitação subcutânea, bolhas hemorrágicas, áreas de necrose ou anestesia local. Fatores predisponentes: [nenhum referido / diabetes mellitus / obesidade / insuficiência venosa crônica / linfedema prévio / imunossupressão].
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C | SpO2: [ ]%.

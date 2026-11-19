@@ -17,18 +17,7 @@ Alergias: [*Nega alergias conhecidas / Alérgico a Penicilina / Alérgico a Dipi
 - Dor de garganta intensa (odinofagia) e febre há [ ] dias.
 
 # HMA:
-- HMA: Paciente relata dor de garganta de início súbito há [ ] dias, que piora intensamente à deglutição, associada a febre de [ ] °C aferida em domicílio e mal-estar geral.
-- ESCORE DE CENTOR MODIFICADO (ESTRATIFICAÇÃO ESTREPTOCÓCICA):
-  - Febre referida ou aferida > 38,0 °C (+1)
-  - Ausência de tosse (+1)
-  - Linfonodomegalia cervical anterior dolorosa à palpação (+1)
-  - Exsudato amigdaliano ou placas purulentas visíveis (+1)
-  - Idade: [3-14 anos (+1) / 15-44 anos (0) / >= 45 anos (-1)]
-  * PONTUAÇÃO DE CENTOR TOTAL: [ ] PONTOS ([0-1: Baixo risco/viral / 2-3: Intermediário / >= 4: Alta probabilidade de S. pyogenes]).
-- Nega trismo (dificuldade ou dor intensa ao tentar abrir a boca).
-- Nega sialorreia (dificuldade para engolir a própria saliva com baba).
-- Nega estridor respiratório ou sensação de asfixia.
-- Nega dor cervical com rigidez ou abaulamento cervical lateral.
+Paciente relata odinofagia de início súbito há [ ] dias, associada a febre aferida de [ ] °C em domicílio e mal-estar geral, [sem tosse / com tosse seca]. Critérios de Centor modificado: febre > 38 °C ([Sim / Não]), ausência de tosse ([Sim / Não]), linfonodomegalia cervical anterior dolorosa ([Sim / Não]), exsudato amigdaliano ([Sim / Não]), faixa etária ([15–44 anos / 3–14 anos / >= 45 anos]) — escore total [ ] ponto(s) ([0–1: baixo risco viral / 2–3: intermediário / >= 4: alta probabilidade estreptocócica]). Nega trismo, sialorreia, estridor respiratório, dispneia, rigidez ou abaulamento cervical lateral.
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

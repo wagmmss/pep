@@ -5,9 +5,7 @@ import re
 import unicodedata
 
 BASE_PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SNIPPETS_DIR = os.path.join(BASE_PROJECT, 'snippets')
 SRC_DATA_DIR = os.path.join(BASE_PROJECT, 'src', 'data')
-os.makedirs(SNIPPETS_DIR, exist_ok=True)
 os.makedirs(SRC_DATA_DIR, exist_ok=True)
 
 PED_UNIFIED_DIR = os.path.join(BASE_PROJECT, '04_Pediatria')
@@ -597,20 +595,6 @@ def build_all():
     hab_snippets = [parse_hab_card(f, i + 1) for i, f in enumerate(hab_files)]
     print(f"Processando Habilidades Clínicas: {len(hab_snippets)} cartões.")
 
-    for mod in modules:
-        mod_snippets = [s for s in pep_snippets if s['mod_id'] == mod['id']]
-        json_path = os.path.join(SNIPPETS_DIR, f"snippets_{mod['id']}.json")
-        with open(json_path, 'w', encoding='utf-8') as fh:
-            json.dump(mod_snippets, fh, indent=2, ensure_ascii=False)
-
-    all_json_path = os.path.join(SNIPPETS_DIR, 'snippets_todos.json')
-    with open(all_json_path, 'w', encoding='utf-8') as fh:
-        json.dump(pep_snippets, fh, indent=2, ensure_ascii=False)
-
-    hab_json_path = os.path.join(SNIPPETS_DIR, 'snippets_hab.json')
-    with open(hab_json_path, 'w', encoding='utf-8') as fh:
-        json.dump(hab_snippets, fh, indent=2, ensure_ascii=False)
-
     cockpit_items = pep_snippets + hab_snippets
     count_by_mod = {m['id']: len([s for s in pep_snippets if s['mod_id'] == m['id']]) for m in modules}
     protocols_payload = {
@@ -630,7 +614,7 @@ def build_all():
     with open(protocols_json_path, 'w', encoding='utf-8') as fh:
         json.dump(protocols_payload, fh, indent=2, ensure_ascii=False)
 
-    print(f"JSONs puros gerados com sucesso em {SNIPPETS_DIR}/ e {protocols_json_path}!")
+    print(f"Protocolos compilados com sucesso em {protocols_json_path}!")
 
 
 if __name__ == '__main__':

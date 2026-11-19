@@ -19,15 +19,8 @@ Alergias: [*Nega / Sim: [ ]].
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Substância Ingerida / Exposta: [Álcool etílico / Benzodiazepínicos / Antidepressivo Tricíclico / Agrotóxico (Organofosforado/Chumbinho) / Cocaína/Crack / Paracetamol / Desconhecida].
-- Quantidade Estimada: [ ] comprimidos / [ ] mL / [ ] garrafas.
-- Tempo Estimado da Ingestão: Há cerca de [ ] horas/minutos.
-- QUADRO CLÍNICO E RECONHECIMENTO DA TOXIDROME:
-  * [ ] 1. TOXIDROME SEDATIVO-HIPNÓTICA / ALCOÓLICA (Álcool, Benzodiazepínicos): Rebaixamento do nível de consciência, fala pastosa/arrastada, ataxia da marcha, hiporreflexia, pupilas de tamanho habitual ou discretamente midriáticas.
-  * [ ] 2. TOXIDROME OPIÓIDE (Morfina, Fentanil, Metadona, Tramadol em megadose): Tríade clássica: Miose puntiforme bilateral + Depressão respiratória severa (FR < 8-10 irpm) + Coma.
-  * [ ] 3. TOXIDROME COLINÉRGICA (Organofosforados / Carbamatos / Chumbinho): Miose puntiforme, bradicardia acentuada, sialorreia profusa ("baba contínua"), broncorreia intensa com estertores ("afogando nas próprias secreções"), sudorese, fasciculações musculares e diarreia.
-  * [ ] 4. TOXIDROME SIMPATICOMIMÉTICA (Cocaína, Crack, Anfetaminas): Agitação psicomotora violenta, midríase bilateral fotorreagente, taquicardia extrema, pico hipertensivo grave, sudorese profusa e hipertermia.
-  * [ ] 5. TOXIDROME ANTICOLINÉRGICA (Tricíclicos, Anti-histamínicos): Midríase paralítica fixa, pele seca e quente, taquicardia, retenção urinária aguda (bexigoma) e delírio agitado.
+Paciente trazido por exposição/ingestão há cerca de [ ] [horas / minutos] de [álcool etílico / benzodiazepínicos / antidepressivo tricíclico / organofosforado ou carbamato / cocaína ou crack / paracetamol / opioide / substância desconhecida], em quantidade estimada de [ ] [comprimidos / mL / garrafas].
+Apresenta quadro compatível com [toxidrome sedativo-hipnótica/alcoólica (rebaixamento de consciência, fala pastosa e ataxia) / toxidrome opioide (miose puntiforme, depressão respiratória e coma) / toxidrome colinérgica (miose, bradicardia, sialorreia, broncorreia, sudorese e fasciculações) / toxidrome simpaticomimética (agitação psicomotora, midríase fotorreagente, taquicardia, hipertensão e hipertermia) / toxidrome anticolinérgica (midríase fixa, pele seca/quente, taquicardia, retenção urinária e delirium)].
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

@@ -258,10 +258,10 @@ async function run() {
     assert.ok((await page.locator('#cockpitPowerActions [data-power-action]').count()) === 5, 'Cabeçalho do Cockpit deve ter os 5 botões de Power Action (1-5)');
     await page.locator('#wsClearSearchBtn').click();
 
-    await page.locator('#topbarSearchBtn').click();
+    await page.keyboard.press('Control+k');
     assert.ok((await page.locator('#cmdQuickNavChips [data-cmd-nav]').count()) >= 6, 'Ctrl+K deve exibir chips de navegação rápida');
-    await page.locator('#cmdSearchInput').fill(';sca');
-    assert.ok((await page.locator('#cmdResults [data-cmd-type="pep"]').count()) >= 1, 'Ctrl+K deve encontrar PEP por ;atalho');
+    await page.locator('#cmdSearchInput').fill('síndrome coronariana');
+    assert.ok((await page.locator('#cmdResults [data-cmd-type="pep"]').count()) >= 1, 'Ctrl+K deve encontrar PEP por busca clínica');
     await page.locator('#cmdCloseBtn').click();
 
     // 6. Pré-Porta 30s

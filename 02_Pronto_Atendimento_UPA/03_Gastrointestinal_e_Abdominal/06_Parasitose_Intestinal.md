@@ -18,14 +18,7 @@ Hábitos & Saneamento: [*Água encanada tratada / Água de poço; consome verdur
 - Dor de barriga, gases, prurido anal ou suspeita de verminose há [ ] semanas.
 
 # HMA:
-- HMA: Paciente relata queixas gastrointestinais insidiosas:
-  * Prurido perianal de predomínio noturno que prejudica o sono (suspeita de Oxiuríase / Enterobius vermicularis).
-  * Eliminação de espécime macroscópico nas fezes tipo "minhoca branca/rosada" (Ascaris lumbricoides).
-  * Fezes amolecidas, espumosas, de odor fétido acentuado com distensão abdominal e eructações frequentes (suspeita de Giardíase).
-  * Dor abdominal periumbilical mal definida em cólica leve, perda de apetite e sensação de fraqueza.
-- Nega vômitos fecaloides ou parada de eliminação de flatos e fezes (afasta suboclusão por bolo de áscaris).
-- Nega febre alta, calafrios ou fezes com sangue vivo e pus.
-- Nega desidratação, prostração grave ou perda de peso volumosa.
+Paciente relata queixas gastrointestinais insidiosas há [ ], caracterizadas por [prurido perianal de predomínio noturno / eliminação de helminto macroscópico nas fezes / fezes amolecidas, espumosas e fétidas com distensão abdominal e eructações frequentes / dor abdominal periumbilical em cólica leve com hiporexia e astenia]. Nega vômitos fecaloides, parada de eliminação de flatos e fezes, febre alta, calafrios, disenteria com sangue vivo ou pus, desidratação ou perda ponderal importante.
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Afebril.

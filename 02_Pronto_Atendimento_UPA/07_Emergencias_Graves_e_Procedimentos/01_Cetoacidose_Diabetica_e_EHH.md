@@ -19,13 +19,8 @@ Alergias: [*Nega / Sim: [ ]].
 - Fraqueza extrema, vômitos, dor na barriga e respiração ofegante há [ ] horas/dias.
 
 # HMA:
-- HMA: Relata quadro de descompensação há cerca de [ ] dias caracterizado pela tétrade de hiperglicemia clássica: poliúria (micção em grandes volumes), polidipsia intensa (sede insaciável), polifagia e perda ponderal rápida, evoluindo nas últimas 24 horas com náuseas, vômitos repetidos, dor abdominal difusa em cólica e respiração profunda e cansada.
-- FATORES PRECIPITANTES IDENTIFICADOS:
-  * [ ] Infecção aguda precipitante (Pneumonia, ITU, infecção cutânea).
-  * [ ] Omissão ou suspensão inadvertida da dose de Insulina basal.
-  * [ ] Infarto agudo do miocárdio silencioso ou AVC agudo.
-- Nega cirurgia abdominal recente ou hematêmese.
-- Nega uso de drogas simpatomiméticas ilícitas (cocaína).
+Relata quadro há [ ] dias de poliúria, polidipsia intensa, polifagia e perda ponderal, evoluindo nas últimas 24 horas com náuseas, vômitos repetidos, dor abdominal difusa em cólica e padrão respiratório profundo e cansado. Fator precipitante identificado: [infecção aguda (pneumonia, ITU ou pele) / omissão ou irregularidade de insulina / primodescompensação diabética / evento cardiovascular ou neurológico agudo / não identificado].
+Nega cirurgia abdominal recente, hematêmese ou uso de drogas simpatomiméticas ilícitas.
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (hipotensão postural) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (hiperpneia) | SpO2: [ ]% | Tax: [ ] °C.

@@ -18,15 +18,8 @@ Antecedentes Cirúrgicos/Pessoais: [*Nega cirurgias prévias / Relata laparotomi
 - Dor de barriga intensa há [ ] horas/dias.
 
 # HMA:
-- HMA: Relata dor abdominal de início [súbito / insidioso] há cerca de [ ] horas.
-  * Localização inicial: [Epigástrio / Periumbilical / Hipogástrio / Fossa ilíaca direita / Fossa ilíaca esquerda / Flanco].
-  * Migração da dor: [Dor iniciou periumbilical e migrou para fossa ilíaca direita após horas (cronologia de Murphy da apendicite) / Fixa sem migração].
-  * Caráter & Intensidade: [Em cólica intermitente / Contínua em pontada / Queimação intensa], intensidade [ ]/10 na escala visual de dor.
-  * Fatores de Piora/Melhora: Piora com tosse e deambulação (peritonismo); [sem alívio com analgésicos comuns].
-  * Sintomas Associados: [Febre de [ ] °C / Anorexia total (recusa qualquer comida) / Náuseas e vômitos ([ ] episódios) / Parada de eliminação de flatos e fezes há [ ] horas].
-- DUM: [DD/MM/AAAA] (Afastada gravidez ectópica: beta-hCG [negativo / solicitado com urgência]).
-- Nega corrimento vaginal fétido ou sangramento genital ativo.
-- Nega hematêmese, melena ou enterorragia volumosa.
+Relata dor abdominal de início [súbito / insidioso] há cerca de [ ] horas, localizada inicialmente em [epigástrio / região periumbilical / hipogástrio / fossa ilíaca direita / fossa ilíaca esquerda / flanco], de caráter [contínuo em pontada / em cólica intermitente / em queimação intensa] e intensidade [ ]/10, evoluindo [com migração para fossa ilíaca direita após [ ] horas / fixa sem migração], com piora à tosse e à deambulação e [sem alívio com analgésicos comuns / melhora parcial com analgésico].
+Sintomas associados: [febre de [ ] °C / anorexia / náuseas e vômitos ([ ] episódios) / parada de eliminação de flatos e fezes há [ ] horas]. Nega hematêmese, melena, enterorragia volumosa, corrimento vaginal fétido ou sangramento genital ativo. [? DUM / Beta-hCG :: DUM: [DD/MM/AAAA]; beta-hCG [negativo / solicitado com urgência].]
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm (taquicardia) | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

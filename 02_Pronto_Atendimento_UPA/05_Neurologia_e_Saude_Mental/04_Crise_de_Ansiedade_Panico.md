@@ -17,14 +17,7 @@ Alergias: [*Nega / Sim: [ ]].
 - Falta de ar, taquicardia no peito, tremores e sensação de morte há [ ] minutos/horas.
 
 # HMA:
-- HMA: Paciente relata início súbito há cerca de [ ] minutos de intensa sensação de angústia, acompanhada de palpitações rápidas no peito, sensação de sufocamento ("o ar não entra nos pulmões"), tremores difusos nos membros, sudorese fria, tontura e sensação de irrealidade / medo de perder o controle ou de morte iminente.
-- SINTOMAS DE HIPERVENTILAÇÃO (ALCALOSE RESPIRATÓRIA):
-  * Refere formigamento (parestesias) ao redor dos lábios/boca e nas pontas dos dedos das mãos e pés.
-  * Presença de contratura muscular espasmódica leve nas mãos (espasmo carpopedal por hipocalcemia iônica secundária à hiperventilação).
-- Fatores Desencadeantes: [Gatilho emocional recente / Estresse profissional ou familiar intenso / Privação de sono / Consumo excessivo de cafeína ou energéticos / Episódios semelhantes prévios].
-- EXCLUSÃO DE SÍNDROME CORONARIANA AGUDA: Nega dor precordial em aperto com irradiação para mandíbula ou dorso; nega histórico de cardiopatia isquêmica.
-- EXCLUSÃO DE TEP E ASMA: Nega dor pleurítica aguda em pontada, nega tosse ou chiado no peito; nega imobilização recente ou TVP prévia.
-- EXCLUSÃO DE INTOXICAÇÃO: Nega uso de drogas simpaticomiméticas ilícitas (cocaína, ecstasy, anfetaminas) ou anorexígenos.
+Paciente relata início súbito há cerca de [ ] minutos de angústia intensa acompanhada de palpitações, sensação de sufocamento, tremores difusos, sudorese fria, tontura e medo de perder o controle ou de morte iminente, associada a [parestesias periorais e em extremidades por hiperventilação / espasmo carpopedal leve / sem sinais de hiperventilação]. Desencadeado por [gatilho emocional recente / estresse intenso / privação de sono / consumo excessivo de cafeína ou energéticos / episódios prévios semelhantes]. Nega dor precordial opressiva com irradiação, cardiopatia isquêmica prévia, dor pleurítica, tosse, sibilância, imobilização recente ou uso de drogas simpaticomiméticas.
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (discretamente elevada por tônus adrenérgico) | FC: [ ] bpm (taquicardia sinusal) | FR: [ ] irpm (padrão taquipneico suspiroso) | SpO2: 99% a 100% em ar ambiente | Tax: [ ] °C.

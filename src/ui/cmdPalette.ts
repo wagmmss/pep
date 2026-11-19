@@ -67,7 +67,7 @@ export function initCmdPalette(): void {
                 </div>
                 <div class="cmd-item-right">
                   ${r.item.cid10 ? `<span class="card-cid-badge">${escapeHtml(r.item.cid10)}</span>` : ''}
-                  <code class="cmd-item-trig">${escapeHtml(r.item.trigger)}</code>
+                  <code class="cmd-item-trig">${escapeHtml(r.item.mod_id.toUpperCase())}</code>
                 </div>
               </button>`
           )
@@ -89,7 +89,7 @@ export function initCmdPalette(): void {
                   </div>
                 </div>
                 <div class="cmd-item-right">
-                  <code class="cmd-item-trig cmd-item-hab-trig">${escapeHtml(r.item.trigger)}</code>
+                  <code class="cmd-item-trig">PRÉ-PORTA</code>
                 </div>
               </button>`
           )

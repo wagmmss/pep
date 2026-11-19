@@ -21,10 +21,7 @@ Alergias: [*Nega / Sim: [ ]].
 - Falta de ar intensa e súbita, sensação de afogamento e tosse com catarro espumoso há [ ] horas.
 
 # HMA:
-- HMA: Paciente com diagnóstico de Insuficiência Cardíaca / HAS grave relata início súbito de dispneia em repouso há cerca de [ ] horas. Refere ortopneia absoluta (incapaz de deitar na maca), dispneia paroxística noturna e tosse produtiva com expectoração espumosa [esbranquiçada / rósea característica]. Relata história recente de: [abandono de diuréticos / transgressão hídrica e de sal / pico hipertensivo / infecção recente / síndrome coronariana aguda desencadeante].
-- Nega dor torácica pleurítica aguda súbita com assimetria de murmúrio (afastado pneumotórax).
-- Nega febre alta, calafrios ou secreção purulenta espessa (afastada sepse pulmonar pura).
-- Nega estridor respiratório ou edema de glote anafilático.
+Paciente com antecedente de insuficiência cardíaca / HAS grave relata início súbito de dispneia em repouso há cerca de [ ] horas, acompanhada de ortopneia absoluta, dispneia paroxística noturna e tosse com expectoração espumosa [esbranquiçada / rósea]. Como fator desencadeante provável, refere [abandono de diuréticos / transgressão hidrossalina / pico hipertensivo / infecção recente / suspeita de síndrome coronariana aguda]. Nega dor torácica pleurítica súbita, febre alta com calafrios, escarro purulento espesso ou estridor laríngeo.
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (acentuadamente elevada) | FC: [ ] bpm | FR: [ ] irpm (taquipneia severa) | SpO2: [ ]% em ar ambiente.

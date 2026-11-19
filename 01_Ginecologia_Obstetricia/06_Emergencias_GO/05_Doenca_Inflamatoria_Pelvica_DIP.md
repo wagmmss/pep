@@ -19,8 +19,7 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Queixa Principal & HMA: Dor pélvica/baixo ventre bilateral progressiva há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria].
-- Nega atraso menstrual (β-hCG negativo — afastada ectópica). [Nega vômitos incoercíveis, peritonismo difuso ou instabilidade hemodinâmica (elegível para Monif I ambulatorial) / Apresenta febre alta, vômitos e peritonismo (indicada internação — Monif II/III)].
+Paciente refere dor pélvica em baixo ventre, bilateral e progressiva, há [ ] dias, associada a corrimento vaginal purulento, dispareunia de profundidade e [febre aferida de [ ] °C / calafrios / disúria]. Nega atraso menstrual (beta-hCG negativo). No momento, [nega vômitos incoercíveis, peritonismo difuso ou instabilidade hemodinâmica / apresenta febre alta, vômitos e sinais de peritonismo].
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [115x70] mmHg | FC: [88] bpm | FR: [16] irpm | SpO2: [99]% AA | Tax: [37,8] °C.

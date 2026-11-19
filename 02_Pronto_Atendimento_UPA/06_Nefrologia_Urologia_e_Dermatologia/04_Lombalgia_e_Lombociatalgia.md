@@ -17,15 +17,8 @@ Alergias: [*Nega / Sim: [ ]].
 - Dor na coluna lombar / Dor que desce para a perna há [ ] dias/horas.
 
 # HMA:
-- HMA: Relata quadro de dor lombar de início após esforço físico / levantamento de carga / movimento de torção do tronco há cerca de [ ] dias.
-  * Localização & Irradiação: [Dor estritamente lombar baixa sem irradiação (Lombalgia mecânica pura) / Dor irradiando para glúteo, face posterior da coxa, perna e dorso/planta do pé (direito / esquerdo) (Lombociatalgia com radiculopatia)].
-  * Caráter: Dor em pontada profunda associada a sensação de espasmo/trava muscular, intensidade [ ]/10.
-  * Fatores de Piora/Melhora: Piora ao fletir a coluna para a frente, permanecer sentado ou tossir; alívio parcial em decúbito dorsal com pernas dobradas sobre travesseiros.
-- RASTREAMENTO OBRIGATÓRIO DE SINAIS DE ALARME (RED FLAGS DA COLUNA):
-  * [ ] SÍNDROME DA CAUDA EQUINA (EMERGÊNCIA CIRÚRGICA): Nega anestesia ou perda de sensibilidade em "sela" (região perianal, nádegas e períneo); nega perda de controle dos esfíncteres (incontinência fecal ou retenção urinária aguda com perda involuntária de urina por transbordamento); nega fraqueza bilateral progressiva nos pés/pernas.
-  * [ ] NEOPLASIA / METÁSTASE ÓSSEA: Nega histórico pessoal prévio de câncer (mama, próstata, pulmão); nega dor contínua em repouso que piora de madrugada na cama sem alívio em qualquer posição; nega perda ponderal inexplicada.
-  * [ ] INFECÇÃO DA COLUNA (ESPONDILODISCITE / ABSCESSO EPIDURAL): Nega febre, calafrios ou sudorese noturna; nega uso de drogas endovenosas ou infecção urinária/cutânea recente.
-  * [ ] RISCO DE FRATURA OSTEOPORÓTICA: Idade < 65 anos, nega uso crônico prolongado de corticoides orais e nega trauma contuso de alto impacto.
+Refere dor lombar iniciada há [ ] dias após [esforço físico ou levantamento de carga / movimento brusco / sem fator desencadeante claro], de caráter em pontada associada a espasmo muscular (intensidade [ ]/10), [estritamente lombar baixa sem irradiação / irradiando para glúteo, face posterior da coxa e perna à [direita / esquerda]]. Relata piora ao fletir o tronco, permanecer sentado ou tossir, com alívio parcial em repouso.
+Nega sinais de alarme: sem anestesia em sela, incontinência fecal, retenção urinária ou fraqueza progressiva em membros inferiores; nega febre, calafrios, sudorese noturna, perda ponderal inexplicada, dor noturna em repouso, histórico de neoplasia, uso prolongado de corticoides ou trauma de alto impacto[? Sinais de alarme presentes :: ; atenção para red flag referida: [ ]].
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril).

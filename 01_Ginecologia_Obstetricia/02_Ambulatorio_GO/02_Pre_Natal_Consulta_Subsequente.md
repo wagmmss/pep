@@ -19,9 +19,7 @@ Alergias: [*Nega / [ ]].
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Evolução & Movimentação Fetal: Comparece para retorno com exames. Movimentação fetal [presente e ativa / ainda não percebida (< 18–20s)]. Queixas: [Assintomática no período / Refere pirose leve / Lombalgia mecânica leve / Edema maleolar vespertino leve].
-- Adesão Medicamentosa: Em uso regular de [Sulfato Ferroso / Ácido Fólico / AAS 100 mg + Carbonato de Cálcio / Metildopa].
-- Nega sangramento vaginal, perda de líquido amniótico, contrações rítmicas dolorosas, cefaleia, escotomas, epigastralgia em barra, disúria ou febre.
+Comparece para retorno de pré-natal com exames, referindo movimentação fetal [presente e ativa / ainda não percebida (< 18–20s)] e quadro clínico [assintomático no período / com pirose leve / com lombalgia mecânica leve / com edema maleolar vespertino leve]. Mantém uso regular de [Sulfato Ferroso / Ácido Fólico / AAS 100 mg + Carbonato de Cálcio / Metildopa]. Nega sangramento vaginal, perda de líquido amniótico, contrações rítmicas dolorosas, cefaleia, escotomas, epigastralgia em barra, disúria ou febre.
 
 # EXAME FÍSICO:
 - Vitais & Antropometria: PA (sentada): [110x70] mmHg | FC: [80] bpm | Peso Atual: [ ] kg (Variação no período: [+/- ] kg | Ganho total: [ ] kg).

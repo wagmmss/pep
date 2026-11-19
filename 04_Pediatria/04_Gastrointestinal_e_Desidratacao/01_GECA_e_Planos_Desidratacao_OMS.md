@@ -19,9 +19,8 @@ Alergias: [*Nega / [ ]].
 - Diarreia líquida e vômitos há [ ] dias.
 
 # HMA:
-- Quadro iniciado há [ ] dias com dejeções líquidas ([ ] episódios nas últimas 24h) de aspecto [aquoso amarelado/esverdeado explosivo, sem sangue ou pus (padrão viral secretor/osmótico) / mucossanguinolento com tenesmo (padrão disentérico invasivo — Shigella/Salmonella/Campylobacter)], associado a [ ] episódios de vômitos alimentares nas últimas 24h e febre de [ ] °C.
-- Aceitação de Líquidos & Diurese: [Aceitando líquidos sem sede ávida / Sedenta, bebendo líquidos avidamente / Incapaz de beber ou vomitando tudo o que ingere]. Última diurese há [ ] horas ([Fraldas molhadas habituais / Oligúria com urina escura / Anúria > 6–8h]).
-- Nega vômitos biliosos (verde-escuros), fezes em "geleia de morango/framboesa" com choro paroxístico e flexão das pernas, distensão abdominal tensa ou defesa peritoneal localizada.
+Quadro iniciado há [ ] dias com dejeções líquidas ([ ] episódios nas últimas 24h) de aspecto [aquoso amarelado/esverdeado explosivo, sem sangue ou pus / mucossanguinolento com tenesmo], associado a [ ] episódios de vômitos alimentares nas últimas 24h e febre de [ ] °C.
+Encontra-se [aceitando líquidos sem sede ávida / sedenta, bebendo líquidos avidamente / incapaz de beber ou vomitando toda ingesta], com última diurese há [ ] horas ([fraldas molhadas habituais / oligúria com urina escura / anúria > 6–8h]). Nega vômitos biliosos, fezes em geleia de morango com choro paroxístico, distensão abdominal tensa ou dor localizada com defesa.
 
 # EXAME FÍSICO:
 - Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | Tempo de Enchimento Capilar (TEC): [< 2 segundos / 2 a 3 segundos / > 3 segundos] | Pulso radial: [Cheio e amplo / Rápido e fino / Muito fraco ou ausente].

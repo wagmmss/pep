@@ -19,8 +19,7 @@ Alergias: [*Nega / [ ]].
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Queixas & Sinais de Iminência: [Cefaleia fronto-occipital intensa refratária a analgésicos / Escotomas cintilantes, diplopia ou visão turva / Epigastralgia ou dor em barra no HCD (Sinal de Chaussier) / Náuseas e vômitos / Assintomática com PA >= 160x110 mmHg].
-- Sintomas Cardiopulmonares & Obstétricos: [Nega dispneia ou ortopneia / Dispneia com estertores (EAP)] | [Nega sangramento vaginal ou hipertonia uterina (afastado DPP) / Refere dor abdominal e sangramento].
+Gestante admitida com quadro de [cefaleia fronto-occipital intensa refratária a analgésicos / escotomas cintilantes, diplopia ou visão turva / epigastralgia ou dor em barra no HCD (Sinal de Chaussier) / náuseas e vômitos / hipertensão grave (PA >= 160x110 mmHg), assintomática]. No momento, [nega dispneia ou ortopneia / refere dispneia com estertores (suspeita de EAP)] e [nega sangramento vaginal ou hipertonia uterina / refere dor abdominal contínua e sangramento vaginal].
 
 # EXAME FÍSICO:
 - Sinais Vitais & Neurológico: PA: [170x115] mmHg (confirmada em 15 min) | FC: [88] bpm | FR: [18] irpm | SpO2: [98]% AA. Consciente, ECG [15], pupilas isocóricas. Reflexos patelares: [Exaltados 3+/4+ ou 4+/4+ com clônus aquileu / Normoativos 2+/4+].

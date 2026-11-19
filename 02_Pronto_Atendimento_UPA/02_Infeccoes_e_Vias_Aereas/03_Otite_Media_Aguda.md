@@ -17,11 +17,7 @@ Alergias: [*Nega / Alérgico a Penicilinas / [ ]].
 - Dor intensa no ouvido (otalgia) [direito / esquerdo / bilateral] há [ ] dias.
 
 # HMA:
-- HMA: Refere otalgia contínua e pulsátil iniciada há [ ] dias, precedida por sintomas gripais (coriza e congestão nasal). Relata sensação de ouvido entupido (plenitude auricular), redução da audição e febre de [ ] °C aferida em casa. [Refere saída de secreção purulenta recente com alívio súbito da dor / Sem otorréia].
-- Nega dor, vermelhidão ou inchaço atrás da orelha (região retroauricular/mastoide).
-- Nega protrusão ou desvio do pavilhão auricular para a frente.
-- Nega assimetria facial, desvio de rima labial ou incapacidade de fechar o olho (paralisia facial).
-- Nega vertigem incapacitante, vômitos em jato ou rigidez de nuca.
+Refere otalgia contínua e pulsátil iniciada há [ ] dias, precedida por quadro gripal (coriza e congestão nasal), acompanhada de plenitude auricular, hipoacusia e febre de [ ] °C aferida em domicílio, [sem otorreia / com saída recente de secreção purulenta seguida de alívio parcial da dor]. Nega dor, hiperemia ou edema retroauricular, anteriorização do pavilhão auricular, assimetria facial, vertigem incapacitante, vômitos em jato ou rigidez de nuca.
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.

@@ -17,20 +17,8 @@ Alergias: [*Nega / Alérgico a Dipirona / Alérgico a AINEs / [ ]].
 - Dor lombar insuportável em cólica de início súbito há [ ] horas.
 
 # HMA:
-- HMA: Relata início agudo há cerca de [ ] horas de dor lombar intensa e paroxística (em cólica) unilateral à [direita / esquerda], com irradiação típica no sentido crânio-caudal para flanco ipsilateral, fossa ilíaca e genitália externa ([testículo/bolsa escrotal no homem / grande lábio na mulher]). Intensidade [10/10] na escala analógica.
-- Sintomas Vegetativos & Urinários Associados:
-  * Náuseas intensas e vômitos ([ ] episódios) desencadeados pelo reflexo autonômico celíaco.
-  * Agitação psicomotora evidente: paciente inquieto, move-se constantemente e não encontra posição de alívio na maca.
-  * Sintomas de irritação ureterovesical distal: Polaciúria, disúria e sensação de urgência miccional.
-  * Hematúria [macroscópica com urina cor de refrigerante de cola / microscópica na fita reativa].
-- RASTREAMENTO OBRIGATÓRIO DE SINAIS DE ALARME (URGÊNCIA UROLÓGICA):
-  [ ] Febre (Tax >= 37,8 °C) ou calafrios referidos (ALERTA MÁXIMO DE RIM OBSTRUÍDO INFECTADO / SEPSE).
-  [ ] Rim único funcionante ou rim transplantado (risco de anúria obstrutiva aguda).
-  [ ] Anúria persistente ou oligúria severa.
-  [ ] Dor intratável refratária à analgesia venosa potente na UPA.
-  [ ] Gestante em vigência de cólica nefrética.
-  * STATUS: [TODOS OS CRITÉRIOS DE URGÊNCIA UROLÓGICA NEGADOS / PRESENTE: [ ]].
-- Histórico Prévio: [Episódios prévios conhecidos de litíase urinária com eliminação de cálculos / Primeiro episódio da vida].
+Refere dor lombar aguda, intensa ([10/10]) e paroxística em cólica à [direita / esquerda], iniciada há cerca de [ ] horas, com irradiação para flanco ipsilateral, fossa ilíaca e [bolsa escrotal / grande lábio]. Acompanha-se de inquietação psicomotora sem posição de alívio, náuseas e [sem vômitos / [ ] episódios de vômitos], além de polaciúria, disúria, urgência miccional e hematúria [ausente / microscópica / macroscópica].
+Nega febre, calafrios, anúria ou oligúria severa[? Urgência urológica :: ; alerta presente: [febre ou calafrios / rim único ou transplantado / anúria persistente / dor refratária à analgesia EV / gestante]]. Antecedente: [episódios prévios de nefrolitíase / primeiro episódio].
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg (PA elevada reativa à dor) | FC: [ ] bpm (taquicardia sinusal álgica) | FR: [ ] irpm | Tax: [ ] °C (afebril).

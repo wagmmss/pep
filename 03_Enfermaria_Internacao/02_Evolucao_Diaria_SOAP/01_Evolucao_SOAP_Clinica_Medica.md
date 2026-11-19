@@ -20,13 +20,8 @@ Motivo da internação / Diagnóstico de base: [ ]
 Data da admissão / Procedimento ou parto: [DD/MM/AAAA] | Evolução prévia até ontem: [ ]
 
 # EVOLUÇÃO (24H):
-- Intercorrências no Plantão Noturno: [Passou as últimas 24h estável, sem intercorrências agudas / Apresentou queixa de no período].
-- Controle Álgico (Escala EVA 0–10): [EVA 0 — Nega dor / Dor leve (EVA [ ]) em [ ], controlada com analgesia prescrita].
-- Sono, Apetite e Tolerância Oral: Padrão de sono [preservado / prejudicado por insônia]; Dieta por via oral [com boa aceitação plena (> 75%), sem náuseas ou vômitos / aceitação parcial / inapetência].
-- Sintomas Cardinais de Alarme: Nega dor torácica, palpitações, dispneia em repouso ou ortopneia, calafrios, tontura postural ou sangramentos.
-- Eliminações Fisiológicas:
-  * Diurese: [Presente, espontânea, límpida e sem disúria / Por SVD com débito claro e satisfatório].
-  * Hábito Intestinal: [Evacuação presente nas últimas 24h, aspecto habitual (Bristol 3–4) / Ausente há [ ] dias, sem distensão ou dor abdominal].
+[Passou as últimas 24h estável, sem intercorrências agudas / Apresentou queixa de [ ] no período]. Refere dor [ausente (EVA 0) / leve (EVA [ ]) em [ ], controlada com analgesia prescrita], padrão de sono [preservado / prejudicado por insônia] e dieta por via oral com [boa aceitação (> 75%), sem náuseas ou vômitos / aceitação parcial / inapetência].
+Diurese [espontânea, límpida e sem disúria / por SVD com débito claro e satisfatório] e evacuação [presente nas últimas 24h, aspecto habitual (Bristol 3–4) / ausente há [ ] dias, sem distensão ou dor abdominal]. Nega dor torácica, palpitações, dispneia em repouso, ortopneia, calafrios, tontura postural ou sangramentos.
 
 # EXAME FÍSICO:
 - Sinais Vitais & Curvas das 24h:

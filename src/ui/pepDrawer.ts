@@ -175,7 +175,6 @@ export function initPepDrawer(): void {
   const titleEl = document.getElementById('drawerTitle');
   const sevBadge = document.getElementById('drawerSeverityBadge');
   const cidBadge = document.getElementById('drawerCidBadge');
-  const triggerEl = document.getElementById('drawerTrigger');
 
   const tabStandardBtn = document.getElementById('tabStandardBtn');
   const tabPepBtn = document.getElementById('tabPepBtn');
@@ -194,7 +193,10 @@ export function initPepDrawer(): void {
   let activeProtocol: ClinicalProtocolItem | null = null;
   let activeTab: DrawerTab = 'pep';
   let highlightGaps = false;
-  let keepEmptyBrackets = true;
+  let keepEmptyBrackets = cockpitStore.getState().keepEmptyBrackets;
+  cockpitStore.subscribe((st) => {
+    keepEmptyBrackets = st.keepEmptyBrackets;
+  });
   let freeEditMode = false;
   let freeEditState: FreeEditSessionState = createFreeEditState('');
   let interactiveBodyEl: HTMLElement | null = null;
@@ -1623,12 +1625,10 @@ export function initPepDrawer(): void {
 
     drawerFooter.innerHTML = `
       <div class="drawer-hab-meta-footer">
-        <span class="trigger-chip" id="drawerFooterTriggerChip" title="Copiar ;atalho"><code>${escapeHtml(activeProtocol.trigger)}</code></span>
         <span>Tab · Atalhos ?</span>
       </div>
       <div class="mq-btn-row">
         <button type="button" class="btn btn-primary btn-sm" id="pepCopyAllBtn">${mainCopyLabel}</button>
-        ${hasReceita ? `<button type="button" class="btn btn-secondary btn-sm" id="pepCopyReceitaBtn">📋 Copiar Receita</button>` : ''}
         <button type="button" class="btn btn-secondary btn-sm" id="pepAddCartBtn" ${hasReceita ? '' : 'title="Protocolo sem receita domiciliar padrão"'}>
           <span>🛒 + Carrinho</span>
           <span class="badge-cart-count" id="cartItemCountBadge" style="display:${cartCount > 0 ? 'inline-block' : 'none'};">${cartCount}</span>
@@ -1636,10 +1636,6 @@ export function initPepDrawer(): void {
         <button type="button" class="btn btn-ghost btn-sm" id="pepPrintReceiptBtn">🖨️ Imprimir</button>
       </div>
     `;
-
-    drawerFooter.querySelector('#drawerFooterTriggerChip')?.addEventListener('click', () => {
-      if (activeProtocol) void copyToClipboard(activeProtocol.trigger, 'Atalho');
-    });
 
     drawerFooter.querySelector('#pepCopyAllBtn')?.addEventListener('click', async () => {
       if (!activeProtocol) return;
@@ -1671,13 +1667,6 @@ export function initPepDrawer(): void {
         showToast(`⚠️ Copiado com ${gapCheck.totalGaps} lacuna(s) [ ] pendente(s).`, 'warning', 2600);
       }
       await copyToClipboard(result.text, 'PEP Completo');
-    });
-
-    drawerFooter.querySelector('#pepCopyReceitaBtn')?.addEventListener('click', async () => {
-      if (!activeProtocol) return;
-      syncDraftToStore.flush();
-      const res = resolvePowerActionText(4, getCompiledPepText(), activeProtocol);
-      await copyToClipboard(res.text, 'Receita / Alta');
     });
 
     drawerFooter.querySelector('#pepAddCartBtn')?.addEventListener('click', () => {
@@ -1799,8 +1788,6 @@ export function initPepDrawer(): void {
           <button type="button" class="pep-tool-btn${freeEditMode ? ' is-active-mode' : ''}" id="pepToggleFreeEditBtn" title="Alternar Edição Livre (Alt+E)">
             ${freeEditMode ? '⚡ Voltar às Pílulas' : '✏️ Edição Livre'}
           </button>
-          <button type="button" class="pep-tool-btn" id="pepCopyOrientacoesBtn" title="Copiar apenas Orientações de Alta & Sinais de Alarme (Tecla 5)">📢 Orientações</button>
-          <button type="button" class="pep-tool-btn" id="pepEmptyModeBtn" title="Alternar formato de cópia de campos vazios">${keepEmptyBrackets ? '[ ] Vazios: Manter' : '[ ] Vazios: ___'}</button>
           <button type="button" class="pep-tool-btn" id="pepResetBtn" title="Restaurar opções e campos para o padrão">↺ Restaurar</button>
         </div>
       </div>
@@ -1935,17 +1922,6 @@ export function initPepDrawer(): void {
       );
     });
 
-    pepPanel.querySelector('#pepEmptyModeBtn')?.addEventListener('click', () => {
-      keepEmptyBrackets = !keepEmptyBrackets;
-      const btn = pepPanel.querySelector('#pepEmptyModeBtn');
-      if (btn) btn.textContent = keepEmptyBrackets ? '[ ] Vazios: Manter' : '[ ] Vazios: ___';
-      showToast(
-        keepEmptyBrackets ? 'Campos vazios serão copiados como [ ].' : 'Campos vazios serão copiados como ___.',
-        'info',
-        1400
-      );
-    });
-
     pepPanel.querySelector('#pepResetBtn')?.addEventListener('click', () => {
       if (!activeProtocol) return;
       syncDraftToStore.cancel();
@@ -1978,16 +1954,6 @@ export function initPepDrawer(): void {
       freeEditState = undoFreeEditSnapshot(freeEditState);
       syncDraftToStoreNow();
       renderPepTab();
-    });
-
-    pepPanel.querySelector('#pepCopyOrientacoesBtn')?.addEventListener('click', () => {
-      if (!activeProtocol) return;
-      const res = resolvePowerActionText(5, getCompiledPepText(), activeProtocol);
-      if (!res.text.trim()) {
-        showToast('Este protocolo não possui bloco separado de Orientações.', 'warning', 1600);
-        return;
-      }
-      void copyToClipboard(res.text, 'Orientações');
     });
 
     pepPanel.querySelector('#pepFreeCopyMedsOnlyBtn')?.addEventListener('click', () => {
@@ -2122,7 +2088,6 @@ export function initPepDrawer(): void {
       cidBadge.textContent = prot.cid10 || '';
       cidBadge.style.display = prot.cid10 ? 'inline-block' : 'none';
     }
-    if (triggerEl) triggerEl.textContent = prot.trigger || '';
 
     const hasReceita = Boolean(prot.has_receita || prot.receita_body?.trim());
     if (tabReceitaBtn) tabReceitaBtn.style.display = hasReceita ? '' : 'none';
@@ -2201,10 +2166,6 @@ export function initPepDrawer(): void {
       const actionId = Number(btn.dataset.powerAction) as 1 | 2 | 3 | 4 | 5;
       void triggerPowerActionCopy(actionId, btn);
     });
-  });
-
-  document.getElementById('powerBtnResetPatient')?.addEventListener('click', () => {
-    document.getElementById('pepResetBtn')?.click();
   });
 
   window.addEventListener('keydown', (e) => {

@@ -25,8 +25,7 @@ Alergias: [*Nega alergias medicamentosas / Alérgica a: [ ]].
 - [*Rotina ginecológica preventiva / Corrimento vaginal / Sangramento uterino anormal / Fogachos e climatério / [ ]].
 
 # HMA:
-- Comparece para [*rotina ginecológica preventiva anual assintomática / queixa de corrimento vaginal com prurido / queixa de corrimento com odor fétido (peixe) / sangramento uterino anormal / fogachos e ressecamento vaginal].
-- Nega sinusorragia (sangramento pós-coito), sangramento pós-menopausa, dor pélvica aguda, dispareunia profunda, febre ou perda urinária.
+Comparece para [*rotina ginecológica preventiva anual assintomática / queixa de corrimento vaginal com prurido / queixa de corrimento com odor fétido (peixe) / sangramento uterino anormal / fogachos e ressecamento vaginal]. Nega sinusorragia (sangramento pós-coito), sangramento pós-menopausa, dor pélvica aguda, dispareunia profunda, febre ou perda urinária.
 
 # EXAME FÍSICO:
 - Vitais & Antropometria: PA: [115x75] mmHg | FC: [74] bpm | Peso: [ ] kg | Altura: [ ] m | IMC: [ ] kg/m². BEG, corada, hidratada.

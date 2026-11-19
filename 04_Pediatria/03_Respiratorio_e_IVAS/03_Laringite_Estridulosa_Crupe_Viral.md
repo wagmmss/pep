@@ -18,11 +18,7 @@ Alergias: [*Nega / [ ]].
 - Tosse rouca ("tosse de cachorro/foca") e barulho agudo para puxar o ar iniciados à noite há [ ] horas.
 
 # HMA:
-- Criança apresentou pródromo catarral leve há [1 a 3] dias (coriza hialina e febre baixa de [ ] °C), evoluindo na madrugada de hoje com início abrupto de tosse ladrante metálica, rouquidão vocal e estridor inspiratório laríngeo.
-- Exclusão Mandatória de Epiglotite Aguda, Traqueíte Bacteriana e Aspiração de Corpo Estranho:
-  * Deglutição e Saliva: [Deglutindo saliva normalmente, sem sialorreia (baba) e sem posição em tripé].
-  * História de Engasgo: Nega início hiperagudo durante alimentação ou brincadeira com peças pequenas/grãos (afastada aspiração de corpo estranho).
-  * Estado Toxêmico: Nega febre alta (> 39,5 °C) com aparência tóxica ou prostração extrema.
+Criança com pródromo catarral leve há [1 a 3] dias (coriza hialina e febre baixa de [ ] °C), evoluindo na madrugada de hoje com início abrupto de tosse ladrante metálica, rouquidão e estridor inspiratório laríngeo. Segue [deglutindo saliva normalmente, sem sialorreia e sem posição em tripé / com dificuldade de deglutição]. Nega episódio de engasgo durante alimentação ou brincadeira com peças pequenas, febre alta (> 39,5 °C), aparência tóxica ou prostração extrema.
 
 # EXAME FÍSICO:
 - Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C | TEC < 2s.

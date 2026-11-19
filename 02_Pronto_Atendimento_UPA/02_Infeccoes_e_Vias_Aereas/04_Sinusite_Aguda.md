@@ -17,15 +17,7 @@ Alergias: [*Nega / Alérgico a Penicilinas / [ ]].
 - Dor e sensação de pressão na face com secreção nasal amarelada há [ ] dias.
 
 # HMA:
-- HMA: Refere quadro iniciado há cerca de [ ] dias de congestão nasal bilateral e secreção espessa amarelo-esverdeada, associada a dor e peso em região [maxilar / frontal / periorbitária] que piora intensamente ao abaixar a cabeça. Relata febre baixa, tosse que piora à noite (gotejamento pós-nasal) e dor em dentes superiores.
-- CRITÉRIOS DE RINOSSINUSITE BACTERIANA (PREENCHIMENTO DE CRITÉRIO TEMPORAL):
-  - Sintomas persistentes por mais de 10 dias sem sinal de melhora clínica.
-  - Piora clínica secundária ("duplo agravamento"): piora importante de febre e dor após melhora de resfriado prévio.
-  - Início grave com febre alta (> 38,5 °C) e secreção purulenta por mais de 3 dias consecutivos.
-- Nega inchaço, vermelhidão ou dor ao redor dos olhos (edema periorbitário).
-- Nega olho "saltado" para fora (proptose) ou dor intensa ao movimentar os olhos.
-- Nega visão dupla (diplopia) ou perda de visão.
-- Nega sonolência excessiva, convulsões, rigidez de nuca ou cefaleia incapacitante em trovoada.
+Refere quadro iniciado há cerca de [ ] dias com congestão nasal bilateral e rinorreia espessa amarelo-esverdeada, associada a dor e pressão em região [maxilar / frontal / periorbitária] que piora ao inclinar a cabeça, febre baixa, tosse noturna por gotejamento pós-nasal e dor em arcada dentária superior. Evolução compatível com [sintomas persistentes > 10 dias sem melhora / piora secundária após melhora inicial ("duplo agravamento") / início grave com febre > 38,5 °C e secreção purulenta por >= 3 dias / quadro viral < 10 dias sem sinais de alarme]. Nega edema ou hiperemia periorbitária, proptose, dor à movimentação ocular, diplopia, turvação visual, sonolência excessiva, rigidez de nuca ou cefaleia em trovoada.
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C.

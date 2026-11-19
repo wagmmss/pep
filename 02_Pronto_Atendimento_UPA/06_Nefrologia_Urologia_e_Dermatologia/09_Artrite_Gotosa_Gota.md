@@ -17,20 +17,8 @@ Alergias: [*Nega / Alérgico a AINEs / [ ]].
 - Dor insuportável, vermelhidão e inchaço no "dedão do pé" / joelho iniciados de madrugada há [ ] horas.
 
 # HMA:
-- HMA: Relata início hiperagudo de dor articular excruciante (intensidade [10/10]), que acordou o paciente durante a noite. Descreve dor em queimação e pontada tão intensa que até o contato suave do lençol ou meia causa sofrimento intolerável (alodinia mecânica extrema). Acompanhada de calor local, edema volumoso e vermelhidão brilhante.
-- ARTICULAÇÃO ACOMETIDA:
-  * [ ] Primeira articulação metatarsofalângica do hálux (Podagra típica - sítio clássico em > 60% dos casos).
-  * [ ] Tornozelo / Tarso / Joelho.
-- FATORES GATILHOS DESENCADEANTES RECENTES:
-  * [ ] Consumo excessivo de bebidas alcoólicas nas últimas 24-48 horas (especialmente cerveja rica em purinas ou destilados).
-  * [ ] Ingestão recente de refeição rica em purinas (churrasco/carne vermelha, frutos do mar, miúdos).
-  * [ ] Início recente ou alteração de dose de diuréticos (Hidroclorotiazida / Furosemida).
-  * [ ] Desidratação, trauma articular leve ou pós-operatório recente.
-- RASTREAMENTO OBRIGATÓRIO DE ARTRITE SÉPTICA (DIAGNÓSTICO DIFERENCIAL GRAVE):
-  * Nega febre alta com calafrios ou prostração séptica.
-  * Nega porta de entrada cutânea purulenta, úlcera infectada ou ferimento perfurante contíguo.
-  * Nega uso de drogas endovenosas ou presença de prótese articular ortopédica no local.
-- Histórico: [Crises prévias idênticas de gota com hiperuricemia / Primeiro episódio da vida].
+Refere início hiperagudo de monoartrite intensa ([10/10]) em [primeira metatarsofalângica do hálux (podagra) / tornozelo / tarso / joelho], com dor em queimação e alodinia marcante ao toque do lençol, acompanhada de edema, calor e eritema brilhante local. Relata provável fator desencadeante por [nenhum identificado / ingesta alcoólica recente / refeição rica em purinas / início ou ajuste de diurético / desidratação ou trauma leve].
+Nega febre alta com calafrios, prostração sistêmica, porta de entrada cutânea purulenta, uso de drogas endovenosas ou prótese articular local. Histórico: [crises prévias de gota com hiperuricemia / primeiro episódio].
 
 # EXAME FÍSICO:
 - Sinais Vitais: PA: [ ]x[ ] mmHg | FC: [ ] bpm | Tax: [ ] °C (afebril ou febrícula álgica).

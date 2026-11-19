@@ -19,8 +19,7 @@ Alergias: [*Nega / [ ]].
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Queixa Principal & HMA: Perda súbita e contínua de líquido claro em grande volume pela vagina há [ ] horas, escorrendo pelas pernas, com odor característico de água sanitária. Movimentação fetal [presente e ativa / reduzida].
-- Triagem Clínica de Corioamnionite e Complicações: [Nega febre, calafrios, dor uterina contínua ou odor vaginal fétido (sem sinais clínicos de corioamnionite) / Apresenta febre e dor uterina (suspeita de corioamnionite)] | Nega sangramento vaginal vivo ou escuro (afastados PP e DPP). Contrações: [Nega contrações rítmicas / Refere cólicas regulares].
+Gestante relata perda súbita e contínua de líquido claro em grande volume pela vagina há [ ] horas, escorrendo pelas pernas, com odor característico de água sanitária, mantendo movimentação fetal [presente e ativa / reduzida]. [Nega febre, calafrios, dor uterina contínua ou corrimento fétido / Refere febre e dor uterina contínua, suspeita de corioamnionite], nega sangramento vaginal vivo ou escuro e [nega contrações rítmicas / refere cólicas regulares].
 
 # EXAME FÍSICO:
 - Sinais Vitais Maternos: PA: [110x70] mmHg | FC: [82] bpm (< 100 bpm) | FR: [16] irpm | Tax: [36,5] °C (< 37,8 °C — afebril).

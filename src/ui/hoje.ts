@@ -82,6 +82,7 @@ export function initHoje(): { render: (container: HTMLElement) => void; cleanup:
   let timerPreset: TimerPresetId = 'ciclo_90m';
   let timerRemainingSec = TIMER_PRESETS.ciclo_90m.seconds;
   let timerRunning = false;
+  let selectedPromptKind: 'paciente' | 'oratoria' | 'raciocinio' | 'exames' | 'osce' = 'paciente';
 
   const stopTick = () => {
     if (timerId) {
@@ -140,8 +141,6 @@ export function initHoje(): { render: (container: HTMLElement) => void; cleanup:
           <div class="mq-btn-row">
             <button type="button" class="btn-palette-trigger" id="hojeSyncRealBtn">📍 Sincronizar Hoje Real</button>
             <button type="button" class="btn-palette-trigger" id="domExportMdBtn">📋 Copiar Resumo (.md)</button>
-            <button type="button" class="btn-palette-trigger" id="hojeGoPepBtn">🩺 Protocolos PEP</button>
-            <button type="button" class="btn-palette-trigger" id="hojeGoTeoriaBtn">📚 Formação Teórica</button>
           </div>
         </header>
 
@@ -323,9 +322,7 @@ export function initHoje(): { render: (container: HTMLElement) => void; cleanup:
             <div class="mq-stat-sub">Âncora 70%: <strong>${weeklySummary.pctAncora}%</strong> (${weeklySummary.questoesAncora}q) · Trilha 30%: <strong>${weeklySummary.pctTrilha}%</strong> (${weeklySummary.questoesTrilha}q)</div>
             <div class="mq-btn-row">
               <button type="button" class="mq-counter-btn" data-q-add="ancora:10">+10 Âncora</button>
-              <button type="button" class="mq-counter-btn" data-q-add="ancora:20">+20 Âncora</button>
               <button type="button" class="mq-counter-btn" data-q-add="trilha:10">+10 Trilha</button>
-              <button type="button" class="mq-counter-btn" data-q-add="trilha:20">+20 Trilha</button>
               <button type="button" class="mq-counter-btn" id="domResetQuestionsBtn" title="Zerar contadores da semana">↺ Zerar</button>
               <button type="button" class="mq-counter-btn" id="domCloseWeekBtn">📥 Fechar Semana</button>
             </div>
@@ -352,9 +349,6 @@ export function initHoje(): { render: (container: HTMLElement) => void; cleanup:
                       )
                       .join('')
               }
-            </div>
-            <div>
-              <button type="button" class="btn btn-secondary btn-xs" id="hojeGoLogbookBtn">🎯 Abrir Logbook &amp; Pontos Cegos →</button>
             </div>
           </div>
         </div>
@@ -470,12 +464,15 @@ export function initHoje(): { render: (container: HTMLElement) => void; cleanup:
         <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
           <div class="mq-eyebrow">SIMULAÇÃO ATIVA &amp; PRECEPTORIA SOCRÁTICA · 1 CLIQUE</div>
           <h3 style="font-size:1.05rem; font-weight:700;">🎭 Treinar com IA — Central de Prompts Contextuais</h3>
-          <div class="mq-btn-row">
-            <button type="button" class="mq-counter-btn" data-hoje-prompt="paciente">🎭 1. Paciente Simulado</button>
-            <button type="button" class="mq-counter-btn" data-hoje-prompt="oratoria">🎙️ 2. Preceptor SNAPPS/SBAR</button>
-            <button type="button" class="mq-counter-btn" data-hoje-prompt="raciocinio">🧠 3. Raciocínio Bayesian/Scripts</button>
-            <button type="button" class="mq-counter-btn" data-hoje-prompt="exames">🧪 4. Micro-Dose Exames (25m)</button>
-            <button type="button" class="mq-counter-btn" data-hoje-prompt="osce">🏅 5. Estação OSCE</button>
+          <div class="mq-form-row">
+            <select id="hojePromptKindSel" class="mq-select" aria-label="Tipo de prompt contextual para treino">
+              <option value="paciente" ${selectedPromptKind === 'paciente' ? 'selected' : ''}>🎭 1. Paciente Simulado</option>
+              <option value="oratoria" ${selectedPromptKind === 'oratoria' ? 'selected' : ''}>🎙️ 2. Preceptor SNAPPS/SBAR</option>
+              <option value="raciocinio" ${selectedPromptKind === 'raciocinio' ? 'selected' : ''}>🧠 3. Raciocínio Bayesian/Scripts</option>
+              <option value="exames" ${selectedPromptKind === 'exames' ? 'selected' : ''}>🧪 4. Micro-Dose Exames (25m)</option>
+              <option value="osce" ${selectedPromptKind === 'osce' ? 'selected' : ''}>🏅 5. Estação OSCE</option>
+            </select>
+            <button type="button" class="btn btn-primary btn-xs" id="hojeCopyPromptBtn">📋 Copiar Prompt</button>
           </div>
           <textarea
             id="contextualPromptPreview"
@@ -483,7 +480,7 @@ export function initHoje(): { render: (container: HTMLElement) => void; cleanup:
             style="min-height:92px; font-size:0.78rem;"
             readonly
             aria-label="Pré-visualização do prompt contextual para IA"
-            placeholder="Clique em qualquer um dos 5 botões acima para gerar, visualizar e copiar automaticamente o prompt contextualizado..."
+            placeholder="Escolha o modo acima e clique em 'Copiar Prompt' para gerar, visualizar e copiar..."
           ></textarea>
         </div>
       </section>
@@ -515,9 +512,6 @@ export function initHoje(): { render: (container: HTMLElement) => void; cleanup:
       void copyToClipboard(md, 'Resumo Semanal (.md)');
     });
 
-    container.querySelector('#hojeGoPepBtn')?.addEventListener('click', () => uiBridge.navigate('pep'));
-    container.querySelector('#hojeGoTeoriaBtn')?.addEventListener('click', () => uiBridge.navigate('teoria'));
-    container.querySelector('#hojeGoLogbookBtn')?.addEventListener('click', () => uiBridge.navigate('logbook'));
     container.querySelector('#hojeQuickTeoriaBtn')?.addEventListener('click', () => {
       uiBridge.navigate('teoria', { subTab: rotaDia.moduloId });
     });
@@ -763,14 +757,15 @@ export function initHoje(): { render: (container: HTMLElement) => void; cleanup:
       });
     });
 
-    container.querySelectorAll<HTMLButtonElement>('[data-hoje-prompt]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const kind = btn.dataset.hojePrompt as 'paciente' | 'oratoria' | 'raciocinio' | 'exames' | 'osce';
-        const prompt = buildContextualAiPrompt(kind, getCentral6AnoState());
-        const previewEl = container.querySelector<HTMLTextAreaElement>('#contextualPromptPreview');
-        if (previewEl) previewEl.value = prompt;
-        void copyToClipboard(prompt, `Prompt ${kind.toUpperCase()}`);
-      });
+    container.querySelector<HTMLSelectElement>('#hojePromptKindSel')?.addEventListener('change', (e) => {
+      selectedPromptKind = (e.target as HTMLSelectElement).value as typeof selectedPromptKind;
+    });
+
+    container.querySelector('#hojeCopyPromptBtn')?.addEventListener('click', () => {
+      const prompt = buildContextualAiPrompt(selectedPromptKind, getCentral6AnoState());
+      const previewEl = container.querySelector<HTMLTextAreaElement>('#contextualPromptPreview');
+      if (previewEl) previewEl.value = prompt;
+      void copyToClipboard(prompt, `Prompt ${selectedPromptKind.toUpperCase()}`);
     });
   };
 

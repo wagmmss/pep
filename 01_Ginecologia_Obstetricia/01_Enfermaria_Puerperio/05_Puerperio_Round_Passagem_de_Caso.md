@@ -15,9 +15,7 @@
 - Intraparto: [Sem intercorrências / Apresentou HPP por atonia revertida com ocitocina + ácido tranexâmico]."
 
 # 2. EVOLUÇÃO (24H) & AMAMENTAÇÃO:
-"Passou as últimas 24h estável, afebril, deambulando sem ortostatismo e aceitando bem a dieta.
-- Dor & Eliminações: Dor [ausente / leve controlada com dipirona], diurese espontânea clara, flatos presentes, evacuação [presente / ausente] e lóquios fisiológicos sem odor. Nega cefaleia, escotomas, epigastralgia ou dispneia.
-- Amamentação: RN em AME sob livre demanda, com [boa pega, posicionamento adequado e papilas íntegras / ajuste de pega realizado]."
+"Passou as últimas 24h estável, afebril, deambulando sem ortostatismo e aceitando bem a dieta. Dor [ausente / leve controlada com dipirona], diurese espontânea clara, flatos presentes, evacuação [presente / ausente] e lóquios fisiológicos sem odor. RN em AME sob livre demanda, com [boa pega, posicionamento adequado e papilas íntegras / ajuste de pega realizado]. Nega cefaleia, escotomas, epigastralgia ou dispneia."
 
 # 3. EXAME FÍSICO DIRIGIDO:
 "Ao exame físico hoje:

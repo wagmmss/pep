@@ -17,18 +17,8 @@ Alergias: [*Nega / Sim: [ ]].
 - Dor de cabeça forte há [ ] horas/dias.
 
 # HMA:
-- HMA: Relata cefaleia de localização [hemicraniana à direita/esquerda / holocraniana / frontal / occipital / em aperto tipo faixa].
-  * Intensidade: [ ]/10 na escala visual analógica.
-  * Caráter: [Pulsátil latejante / Em aperto contínuo / Pontada / Em queimação].
-  * Sintomas Acompanhantes: [Náuseas e vômitos / Fotofobia e fonofobia / Piora importante com atividade física habitual / Presença de aura visual prévia com escotomas cintilantes e pontos brilhantes / Ausentes].
-- RASTREAMENTO MANDATÓRIO DE SINAIS DE ALARME (RED FLAGS - MNEMÔNICO SNOOP10):
-  * S - SINTOMAS SISTÊMICOS: Nega febre, calafrios, sudorese noturna ou perda ponderal inexplicada; nega histórico de neoplasia prévia ou imunossupressão (HIV).
-  * N - SINAIS NEUROLÓGICOS: Nega déficits motores focais (fraqueza em membros, boca torta), nega dormência assimétrica, nega alteração da fala, nega crise convulsiva e nega confusão mental.
-  * O - ONSET SÚBITO (CEFALEIA EM TROVOADA / THUNDERCLAP): Nega início hiperagudo que atingiu intensidade máxima em menos de 1 minuto ("pior dor de cabeça de toda a vida" - afasta Hemorragia Subaracnoide por rotura de aneurisma).
-  * O - OLDER AGE (IDADE DE INÍCIO): Idade < 50 anos [se > 50 anos: nega dor em couro cabeludo ao pentear o cabelo, nega claudicação de mandíbula ao mastigar - afasta Arterite Temporal].
-  * P - PATTERN CHANGE (MUDANÇA DE PADRÃO): Nega dor que acorda o paciente de madrugada com vômitos em jato, nega piora acentuada com manobra de Valsalva (tosse, evacuação, esforço físico) e nega componente postural extremo (piora ortostática pós-raqui).
-  * PÓS-TRAUMA: Nega trauma cranioencefálico (TCE) recente nos últimos dias/semanas.
-- Histórico Prévio: [Paciente com crises semelhantes prévias de enxaqueca / Primeiro episódio da vida].
+Relata cefaleia [hemicraniana à direita / hemicraniana à esquerda / holocraniana / frontal / occipital / em faixa], de caráter [pulsátil latejante / em aperto contínuo / em pontada / em queimação] e intensidade [ ]/10, associada a [náuseas, vômitos, fotofobia e fonofobia / aura visual prévia com escotomas cintilantes / piora com esforço físico habitual / ausência de sintomas acompanhantes], tratando-se de [crise semelhante a episódios prévios de enxaqueca / primeiro episódio desse padrão].
+Na triagem de sinais de alarme (SNOOP10), nega febre, sintomas constitucionais, neoplasia ou imunossupressão, déficits neurológicos focais, confusão mental, convulsões, início hiperagudo em trovoada (< 1 min), despertar noturno com vômitos em jato, piora acentuada à manobra de Valsalva, componente postural ou TCE recente [? Idade > 50 anos :: ; nega dor em couro cabeludo ou claudicação de mandíbula].
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | Tax: [ ] °C (afebril).

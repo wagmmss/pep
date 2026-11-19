@@ -19,13 +19,8 @@ Alergias: [*Nega / [ ]].
 - [Queixa principal] há [ ] [hora(s) / dia(s)].
 
 # HMA:
-- Intercorrências desde a última consulta: [Assintomático(a), em excelente evolução / Apresentou quadro leve de [ ]].
-- Alimentação e Prática Nutricional:
-  * Lactente < 6 meses: [Aleitamento Materno Exclusivo (AME) em livre demanda, boa pega e sucção efetiva / Aleitamento misto / Fórmula infantil de partida ([ ]) na diluição correta de 1 medida rasa para cada 30 mL de água].
-  * Criança ≥ 6 meses: [Aleitamento materno complementado + Introdução alimentar oportuna / Dieta da família consistente (5 grupos alimentares no almoço e jantar + frutas in natura), sem açúcar, mel ou ultraprocessados]. Oferta de água potável: [Adequada / Baixa].
-- Sono Seguro & Hábitos: Dorme em [berço próprio em decúbito dorsal (barriga para cima), colchão firme e sem objetos soltos / cama compartilhada — orientado risco de sufocamento e SMSL].
-- Eliminações Fisiológicas: Diurese [ampla, > 5–6 fraldas molhadas/dia] | Evacuações [aspecto e frequência habituais para a idade, sem esforço doloroso ou sangue].
-- Saúde Bucal & Exposição a Telas: Higiene oral [com escova macia e pasta fluoretada ≥ 1.000 ppm (quantidade de 1 grão de arroz cru) / ainda sem erupção dentária]; Tempo de telas (celular/TV): [Zero telas conforme recomendação SBP (< 2 anos) / Exposição inadequada — orientada suspensão].
+Comparece para consulta de puericultura, [assintomático(a), sem intercorrências desde a última avaliação / tendo apresentado quadro leve de [ ] no período]. Em alimentação com [aleitamento materno exclusivo (AME) em livre demanda, boa pega e sucção efetiva / aleitamento misto / fórmula infantil de partida ([ ]) na diluição de 1 medida rasa para 30 mL de água / aleitamento materno complementado com introdução alimentar oportuna / dieta da família consistente, sem açúcar, mel ou ultraprocessados], com oferta de água potável [adequada / reduzida].
+Dorme em [berço próprio em decúbito dorsal, colchão firme e sem objetos soltos / cama compartilhada — orientado risco de sufocamento e SMSL]. Diurese [ampla, > 5–6 fraldas molhadas/dia] e evacuações de [aspecto e frequência habituais para a idade, sem esforço doloroso ou sangue]. Higiene oral [com escova macia e pasta fluoretada ≥ 1.000 ppm (quantidade de 1 grão de arroz cru) / ainda sem erupção dentária], com tempo de telas [zero conforme recomendação SBP (< 2 anos) / inadequado — orientada suspensão].
 
 # EXAME FÍSICO:
 - Dados Antropométricos e Curvas da OMS (Caderneta da Criança):

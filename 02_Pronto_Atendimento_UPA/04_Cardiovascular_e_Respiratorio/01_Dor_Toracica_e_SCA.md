@@ -19,20 +19,8 @@ Alergias: [*Nega alergias / Alérgico a AAS / Alérgico a Dipirona / [ ]].
 - Dor no peito em aperto / queimação iniciada há [ ] horas/minutos.
 
 # HMA:
-- HMA (CARACTERÍSTICAS DA DOR TORÁCICA):
-  * Caráter: [Dor retroesternal opressiva em aperto / Em peso / Queimação intensa / Pontada ventilatório-dependente].
-  * Irradiação: [Irradiação para membro superior esquerdo / Mandíbula / Dorso interescapular / Região epigástrica / Sem irradiação].
-  * Intensidade: [ ]/10 na escala visual analógica.
-  * Fatores Desencadeantes: [Aos esforços físicos / Em repouso súbito / Após estresse emocional intenso].
-  * Sintomas Adrenérgicos Associados: [Sudorese fria profusa, náuseas, vômitos, palidez, sensação de morte iminente e dispneia aguda associada / Ausentes].
-- DIAGNÓSTICO DIFERENCIAL DAS 5 CAUSAS FATAIS DE DOR TORÁCICA:
-  - 1. DISSECÇÃO AGUDA DE AORTA: Nega dor excruciante "em rasgadura" de início hiperagudo irradiando para dorso; pulsos periféricos simétricos nos 4 membros; diferença de PA entre membros < 15 mmHg.
-  - 2. TROMBOEMBOLISMO PULMONAR (TEP): Nega dispneia súbita com dor pleurítica em pontada, nega imobilização recente, nega edema assimétrico de MMII (Score de Wells baixo).
-  - 3. PNEUMOTÓRAX HIPERTENSIVO: Ausculta simétrica bilateral, ausência de turgência jugular patológica ou desvio de traqueia.
-  - 4. RUPTURA ESOFÁGICA (BOERHAAVE): Nega vômitos violentos repetidos seguidos de dor torácica aguda; ausência de enfisema subcutâneo palpável em pescoço.
-  - 5. SÍNDROME CORONARIANA AGUDA (SCA): Hipótese clínica prioritária em investigação.
-- Fatores de Risco Cardiovasculares: [Hipertensão Arterial / Diabetes Mellitus tipo 2 / Tabagismo ativo ( maços/ano) / Dislipidemia / Histórico familiar precoce de DAC / Infarto prévio / Sedentarismo].
-- Contraindicações ao uso de Nitratos: Nega uso de inibidores da fosfodiesterase-5 (Sildenafil nas últimas 24h ou Tadalafil nas últimas 48h).
+Paciente refere [dor retroesternal opressiva em aperto / dor em peso / queimação retroesternal intensa / dor em pontada ventilatório-dependente], de intensidade [ ]/10, iniciada [em repouso / aos esforços físicos / após estresse emocional], com irradiação para [membro superior esquerdo / mandíbula / dorso interescapular / região epigástrica / sem irradiação], associada a [sudorese fria, náuseas, vômitos, palidez e dispneia / ausência de sintomas autonômicos].
+Fatores de risco cardiovasculares: [HAS, DM2, tabagismo, dislipidemia / história familiar precoce de DAC / DAC ou IAM prévio / nega fatores de risco conhecidos]. Nega dor hiperaguda em rasgadura irradiada para dorso, imobilização recente ou edema assimétrico de MMII, vômitos violentos precedentes e nega uso de inibidores da PDE-5 (sildenafil nas últimas 24h ou tadalafil nas últimas 48h).
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA MSD: [ ]x[ ] mmHg | PA MSE: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA.

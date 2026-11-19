@@ -18,13 +18,7 @@ Hábitos: [*Constipação intestinal crônica, baixa ingesta de fibras e água /
 - Dor anal intensa / Sangramento ao evacuar há [ ] dias/horas.
 
 # HMA:
-- HMA: Relata quadro com início após esforço evacuatório com fezes ressecadas há cerca de [ ] dias.
-  * HIPÓTESE A - TROMBOSE HEMORROIDÁRIA EXTERNA: Dor anal de início súbito, contínua, latejante, que piora ao sentar ou deambular, associada ao aparecimento de "nódulo doloroso" duro na margem do ânus.
-  * HIPÓTESE B - FISSURA ANAL AGUDA: Dor anal excruciante em queimação ("sensação de cortar como caco de vidro") durante a evacuação, que persiste por várias horas após evacuar, associada a rajas de sangue vermelho vivo sobre as fezes ou no papel.
-  * HIPÓTESE C - HEMORROIDA INTERNA SANGRANTE: Sangramento indolor vermelho rutilante gotejando no vaso sanitário ao término da evacuação, associado a sensação de peso e prolapso mucoso redutível.
-- Nega febre, calafrios ou secreção purulenta fétida anal contínua (afasta Abscesso Isquiorretal).
-- Nega fezes afiladas ("fezes em fita"), perda involuntária de peso ou astenia severa.
-- Nega diarreia crônica alternada com constipação persistente.
+Relata quadro iniciado há cerca de [ ] dias após esforço evacuatório com fezes ressecadas, caracterizado por [dor anal súbita, contínua e latejante que piora ao sentar ou deambular, associada a nódulo endurecido e doloroso na margem anal / dor anal intensa em queimação durante a evacuação com persistência por horas e rajas de sangue vermelho vivo nas fezes ou papel / sangramento indolor vermelho vivo gotejando ao final da evacuação, com sensação de peso e prolapso mucoso redutível]. Nega febre, calafrios, secreção purulenta fétida contínua, fezes afiladas, perda ponderal involuntária, astenia importante ou alteração crônica do hábito intestinal.
 
 # EXAME FÍSICO:
 - Posição do Paciente: Posição de Sims (decúbito lateral esquerdo com flexão das coxas sobre o abdome) sob foco de luz direta e privacidade.

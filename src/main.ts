@@ -421,7 +421,6 @@ function bootstrap(): void {
     navigateTo('hoje');
   }
 
-  document.getElementById('topbarSearchBtn')?.addEventListener('click', () => uiBridge.openCmdPalette());
   document.getElementById('mobileTopSearchBtn')?.addEventListener('click', () => uiBridge.openCmdPalette());
 
   document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {

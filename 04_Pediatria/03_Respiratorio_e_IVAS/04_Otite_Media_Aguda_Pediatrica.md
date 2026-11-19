@@ -18,12 +18,8 @@ Alergias: [*Nega / Alérgico(a) a Penicilinas / [ ]].
 - Dor de ouvido (otalgia), febre e irritabilidade há [ ] dias.
 
 # HMA:
-- Quadro iniciado há [ ] dias após pródromo de resfriado comum (obstrução nasal e coriza), evoluindo nas últimas [24 a 48] horas com otalgia aguda em orelha [direita / esquerda / bilateral], despertar noturno com choro intenso, [mão levada repetidamente à orelha] e febre de [ ] °C.
-- Presença de Otorreia: [Ausente / Otorreia purulenta exteriorizada no conduto auditivo externo após alívio súbito da dor (perfuração timpânica espontânea)].
-- Presença de Conjuntivite Purulenta Ipsilateral (Síndrome Otite-Conjuntivite): [Ausente / Presente — forte preditor de Haemophilus influenzae não-tipável produtor de beta-lactamase].
-- Estratificação de Risco para Pneumococo Resistente (Define Dose de Amoxicilina 50 vs 90 mg/kg/dia):
-  * Idade < 2 anos: [Sim / Não] | Frequenta creche/berçário: [Sim / Não] | Uso de antibiótico nos últimos 30 dias: [Não / Sim: [ ]].
-- Nega edema, hiperemia ou dor retroauricular com deslocamento anterior do pavilhão ("orelha em abano" aguda), paralisia facial periférica, vômitos em jato ou rigidez de nuca.
+Quadro iniciado há [ ] dias após resfriado comum (obstrução nasal e coriza), evoluindo nas últimas [24 a 48] horas com otalgia aguda em orelha [direita / esquerda / bilateral], despertar noturno com choro intenso, [manipulação frequente da orelha] e febre de [ ] °C. Otorreia [ausente / purulenta após alívio súbito da dor] e conjuntivite purulenta ipsilateral [ausente / presente].
+Quanto aos fatores de risco para pneumococo resistente: idade < 2 anos ([Sim / Não]), frequenta creche/berçário ([Sim / Não]) e uso de antibiótico nos últimos 30 dias ([Não / Sim: [ ]]). Nega edema, hiperemia ou dor retroauricular com anteriorização do pavilhão, paralisia facial periférica, vômitos em jato ou rigidez de nuca.
 
 # EXAME FÍSICO:
 - Sinais Vitais: FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em AA | Tax: [ ] °C.

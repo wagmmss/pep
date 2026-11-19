@@ -1,6 +1,6 @@
 import { getLocalTodayIso } from '../engine/calculadoras.ts';
 import { cockpitStore } from '../state/store.ts';
-import { copyToClipboard, downloadTextFile, guardPiiBeforeSave, showToast } from './utils.ts';
+import { downloadTextFile, guardPiiBeforeSave, showToast } from './utils.ts';
 
 export function initConfig(): { render: (container: HTMLElement) => void } {
   let confirmingReset = false;
@@ -33,22 +33,21 @@ export function initConfig(): { render: (container: HTMLElement) => void } {
           <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
             <div class="mq-stat-label">Ergonomia, Tela Inicial &amp; Colunas</div>
             <div style="font-weight:700; font-size:0.95rem;">Workstation Desktop &amp; Tela Padrão</div>
-            <p class="mq-hint">Escolha a aba de abertura e ajuste Modo Zen (Alt+Z), barra lateral (Alt+B) ou largura das colunas.</p>
+            <p class="mq-hint">Escolha a aba de abertura e restaure a largura padrão das colunas (Modo Zen: Alt+Z · Sidebar: Alt+B).</p>
             <div class="mq-btn-row" style="margin-top:4px;">
               <button type="button" class="btn-palette-trigger${startSection === 'pep' ? ' active' : ''}" id="cfgStartPep">🩺 Abrir em PEP</button>
               <button type="button" class="btn-palette-trigger${startSection === 'hoje' ? ' active' : ''}" id="cfgStartHoje">📅 Abrir em Hoje</button>
               <button type="button" class="btn-palette-trigger" id="cfgResetColsBtn">↺ Restaurar Colunas</button>
-              <button type="button" class="btn-palette-trigger" id="cfgToggleZenBtn">🧘 Modo Zen (Alt+Z)</button>
-              <button type="button" class="btn-palette-trigger" id="cfgToggleSideBtn">⇤ Sidebar (Alt+B)</button>
             </div>
           </div>
 
           <div class="mq-card" style="display:flex; flex-direction:column; gap:10px;">
-            <div class="mq-stat-label">Sessão Clínica &amp; Segurança</div>
-            <div style="font-weight:700; font-size:0.95rem;">Novo Paciente &amp; Dados da Sessão</div>
-            <p class="mq-hint">Rascunhos PEP e 7 Travas ficam isolados em <code>sessionStorage</code>; limpe com 1 clique ao trocar de paciente.</p>
+            <div class="mq-stat-label">Editor PEP · Cópia de Campos Vazios</div>
+            <div style="font-weight:700; font-size:0.95rem;">Formato de Lacunas [ ] ao Copiar</div>
+            <p class="mq-hint">Define como lacunas não preenchidas saem no texto copiado para o prontuário eletrônico.</p>
             <div class="mq-btn-row" style="margin-top:4px;">
-              <button type="button" class="btn btn-warning btn-xs" id="cfgClearPatientBtn">🧹 Limpar Sessão Clínica Atual</button>
+              <button type="button" class="btn-palette-trigger${state.keepEmptyBrackets ? ' active' : ''}" id="cfgEmptyKeepBtn">[ ] Manter Colchetes</button>
+              <button type="button" class="btn-palette-trigger${!state.keepEmptyBrackets ? ' active' : ''}" id="cfgEmptyUnderscoreBtn">___ Usar Sublinhado</button>
             </div>
           </div>
         </div>
@@ -60,17 +59,16 @@ export function initConfig(): { render: (container: HTMLElement) => void } {
 
           <div class="mq-btn-row">
             <button type="button" class="btn btn-primary btn-sm" id="cfgExportBackupBtn">⬇️ Baixar Backup v2 (.json)</button>
-            <button type="button" class="btn btn-secondary btn-sm" id="cfgCopyBackupTextBtn">📋 Copiar Backup JSON</button>
             <button type="button" class="btn btn-secondary btn-sm" id="cfgImportFromTextBtn">⬆️ Importar do Campo Abaixo</button>
           </div>
 
           <div class="mq-control-group">
-            <label class="mq-control-label" for="configBackupJsonArea">Visualizar / Colar Backup JSON</label>
+            <label class="mq-control-label" for="configBackupJsonArea">Colar Backup JSON</label>
             <textarea
               id="configBackupJsonArea"
               class="pep-free-edit-textarea"
               style="min-height:120px; font-size:0.76rem;"
-              placeholder="Clique em 'Copiar Backup JSON' para visualizar seu estado completo ou cole aqui um JSON salvo para restaurar..."
+              placeholder="Cole aqui o conteúdo de um arquivo de backup v2 (.json) para restaurar..."
             ></textarea>
           </div>
 
@@ -119,16 +117,16 @@ export function initConfig(): { render: (container: HTMLElement) => void } {
     container.querySelector('#cfgResetColsBtn')?.addEventListener('click', () => {
       window.dispatchEvent(new CustomEvent('mq:reset-columns'));
     });
-    container.querySelector('#cfgToggleZenBtn')?.addEventListener('click', () => {
-      window.dispatchEvent(new CustomEvent('mq:toggle-zen'));
-    });
-    container.querySelector('#cfgToggleSideBtn')?.addEventListener('click', () => {
-      window.dispatchEvent(new CustomEvent('mq:toggle-sidebar'));
-    });
 
-    container.querySelector('#cfgClearPatientBtn')?.addEventListener('click', () => {
-      cockpitStore.clearPatientSession();
-      showToast('🧹 Sessão do paciente limpa com sucesso.', 'success');
+    container.querySelector('#cfgEmptyKeepBtn')?.addEventListener('click', () => {
+      cockpitStore.setKeepEmptyBrackets(true);
+      showToast('Campos vazios serão copiados como [ ].', 'info');
+      render(container);
+    });
+    container.querySelector('#cfgEmptyUnderscoreBtn')?.addEventListener('click', () => {
+      cockpitStore.setKeepEmptyBrackets(false);
+      showToast('Campos vazios serão copiados como ___.', 'info');
+      render(container);
     });
 
     container.querySelector('#cfgExportBackupBtn')?.addEventListener('click', async () => {
@@ -148,16 +146,6 @@ export function initConfig(): { render: (container: HTMLElement) => void } {
         preview.textContent = `Backup v2 exportado (${payload.exportedAt} · versão ${payload.version}).`;
       }
       showToast('Backup v2 JSON exportado com sucesso!', 'success');
-    });
-
-    container.querySelector('#cfgCopyBackupTextBtn')?.addEventListener('click', async () => {
-      const payload = cockpitStore.exportBackupV2();
-      const rawJson = JSON.stringify(payload, null, 2);
-      const safeJson = await guardPiiBeforeSave(rawJson, 'Backup JSON');
-      if (safeJson === null) return;
-      const ta = container.querySelector<HTMLTextAreaElement>('#configBackupJsonArea');
-      if (ta) ta.value = safeJson;
-      void copyToClipboard(safeJson, 'Backup JSON v2');
     });
 
     container.querySelector('#cfgImportFromTextBtn')?.addEventListener('click', () => {

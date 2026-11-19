@@ -17,12 +17,7 @@ Alergias: [*Nega alergias / Alérgico a colírios: [ ]].
 - Olho vermelho, sensação de areia e secreção há [ ] dias.
 
 # HMA:
-- HMA: Relata hiperemia conjuntival iniciada há [ ] dias em olho [direito / esquerdo / bilateral], associada a sensação de corpo estranho ("areia nos olhos"), prurido, lacrimejamento e secreção de aspecto [aquoso claro / mucopurulento amarelado com pálpebras coladas ao acordar]. Relata contato recente com familiar/colega com sintomas semelhantes.
-- Nega dor ocular profunda, contínua e latejante no bulbo ocular.
-- Nega perda ou redução súbita da acuidade visual / visão borrada.
-- Nega enxergar halos coloridos ao redor de luzes ou cefaleia hemicraniana com náuseas (afasta Glaucoma Agudo).
-- Nega uso de lentes de contato (afasta ceratite por Pseudomonas).
-- Nega trauma ocular mecânico, químico ou respingo de substâncias cáusticas.
+Relata hiperemia conjuntival iniciada há [ ] dias em olho [direito / esquerdo / bilateral], associada a sensação de corpo estranho, prurido, lacrimejamento e secreção [aquosa clara / mucopurulenta amarelada com pálpebras aderidas ao despertar], com história de contato recente com caso semelhante. Nega dor ocular profunda, redução da acuidade visual, halos luminosos, cefaleia hemicraniana com náuseas, uso de lentes de contato ou trauma ocular mecânico/químico.
 
 # EXAME FÍSICO:
 - Ectoscopia Ocular Externa:

@@ -19,19 +19,7 @@ Alergias: [*Nega / Sim: [ ]].
 - Piora da falta de ar e aumento do catarro há [ ] dias.
 
 # HMA:
-- HMA (CRITÉRIOS CARDINAIS DE ANTHONISEN):
-  - 1. AUMENTO DA DISPNEIA (falta de ar pior que o padrão habitual do dia a dia).
-  - 2. AUMENTO DO VOLUME DA SECREÇÃO (escarro aumentado em quantidade).
-  - 3. AUMENTO DA PURULÊNCIA DO ESCARRO (catarro tornou-se espesso, amarelado ou esverdeado).
-  * CLASSIFICAÇÃO DE ANTHONISEN:
-    - [ ] Tipo 1 (Exacerbação Grave): 3 sintomas cardinais presentes -> INDICAÇÃO FORMAL DE ANTIBIOTICOTERAPIA.
-    - [ ] Tipo 2 (Exacerbação Moderada): 2 sintomas cardinais presentes (indicado antibiótico se houver purulência).
-    - [ ] Tipo 3 (Exacerbação Leve): 1 sintoma cardinal associado a tosse, febre ou sintomas gripais.
-- Nega dor torácica pleurítica aguda súbita (afastado Pneumotórax espontâneo por rotura de bolha).
-- Nega dor precordial em aperto (afastada Síndrome Coronariana Aguda associada).
-- Nega edema assimétrico de panturrilhas ou hemoptise (afastado TEP).
-- Nega piora de edema de membros inferiores ou ortopneia (afastada Insuficiência Cardíaca descompensada associada).
-- Medicações Habitual: [Em uso de Formoterol/Budesonida, Tiotrópio, Salbutamol SOS].
+Paciente portador de DPOC (em uso habitual de [formoterol/budesonida, tiotrópio e salbutamol SOS / [ ]]) evolui há [ ] dias com piora da dispneia em relação ao basal, associada a [aumento do volume e purulência do escarro — Anthonisen tipo 1 / aumento do volume ou purulência do escarro — Anthonisen tipo 2 / piora isolada da dispneia com sintomas gripais — Anthonisen tipo 3]. Nega dor torácica pleurítica súbita, dor precordial opressiva, hemoptise, edema assimétrico de panturrilhas ou piora recente de edema de MMII e ortopneia.
 
 # EXAME FÍSICO:
 - SINAIS VITAIS: PA: [ ]x[ ] mmHg | FC: [ ] bpm | FR: [ ] irpm | SpO2: [ ]% em ar ambiente.
