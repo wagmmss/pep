@@ -11,27 +11,52 @@ export function escapeHtml(str: unknown): string {
     .replace(/'/g, '&#39;');
 }
 
-export function formatGuiaInlineHtml(rawStr: unknown): string {
-  let s = String(rawStr == null ? '' : rawStr);
+function normalizeInlineLatex(input: string): string {
+  let s = input;
+  // Desembrulha delimitadores $...$ preservando valores monetários (R$ ...)
+  s = s.replace(/(?<!R)\$([^$\n]+)\$/g, '$1');
+
+  // Comandos e símbolos LaTeX comuns (com ou sem $ ao redor)
   s = s
-    .replace(/\$\\rightarrow\$/g, '→')
-    .replace(/\$\\leftarrow\$/g, '←')
-    .replace(/\$\\ge\$/g, '≥')
-    .replace(/\$\\le\$/g, '≤')
-    .replace(/\$\\pm\$/g, '±')
-    .replace(/\$\\times\$/g, '×')
-    .replace(/\$\\beta\$/g, 'β')
-    .replace(/\$\\alpha\$/g, 'α')
-    .replace(/\$\\gamma\$/g, 'γ')
-    .replace(/\$MgSO_4\$/g, 'MgSO₄')
-    .replace(/\$PGE_2\$/g, 'PGE₂')
-    .replace(/\$PGI_2\$/g, 'PGI₂')
-    .replace(/\$Fe\^\{2\+\}\$/g, 'Fe²⁺')
-    .replace(/\$Fe\^\{3\+\}\$/g, 'Fe³⁺')
-    .replace(/\$O_2\$/g, 'O₂')
-    .replace(/\$CO_2\$/g, 'CO₂')
-    .replace(/\$10\^5\$/g, '10⁵')
-    .replace(/(?<!R)\$([^$\n]+)\$/g, '$1');
+    .replace(/\\rightarrow\b/g, '→')
+    .replace(/\\leftarrow\b/g, '←')
+    .replace(/\\ge\b/g, '≥')
+    .replace(/\\le\b/g, '≤')
+    .replace(/\\pm\b/g, '±')
+    .replace(/\\times\b/g, '×')
+    .replace(/\\approx\b/g, '≈')
+    .replace(/\\beta\b/g, 'β')
+    .replace(/\\alpha\b/g, 'α')
+    .replace(/\\gamma\b/g, 'γ')
+    .replace(/\\Delta\b/g, 'Δ')
+    .replace(/\\mu\b/g, 'μ')
+    .replace(/\^\{\\circ\}|\^\\circ\b/g, '°')
+    .replace(/\\%/g, '%')
+    .replace(/\\,/g, ' ');
+
+  // Superescritos e subscritos químicos/matemáticos frequentes
+  s = s
+    .replace(/\^\{2\+\}/g, '²⁺')
+    .replace(/\^\{3\+\}/g, '³⁺')
+    .replace(/\^2\b|\^\{2\}/g, '²')
+    .replace(/\^3\b|\^\{3\}/g, '³')
+    .replace(/\^5\b|\^\{5\}/g, '⁵')
+    .replace(/_2\b|_\{2\}/g, '₂')
+    .replace(/_4\b|_\{4\}/g, '₄');
+
+  // Remove wrappers \text{...}, \mathbf{...}, \mathrm{...} (inclusive aninhados)
+  for (let i = 0; i < 3; i++) {
+    s = s.replace(/\\(?:text|mathbf|mathrm|mathit|textbf)\{([^{}]*)\}/g, '$1');
+  }
+
+  // Subscritos textuais como Alb_{Soro} -> Alb (Soro)
+  s = s.replace(/_\{([^{}]+)\}/g, ' ($1)');
+  s = s.replace(/\^\{([^{}]+)\}/g, '^$1');
+  return s;
+}
+
+export function formatGuiaInlineHtml(rawStr: unknown): string {
+  let s = normalizeInlineLatex(String(rawStr == null ? '' : rawStr));
 
   const codeTokens: string[] = [];
   s = s.replace(/`([^`]+)`/g, (_, codeContent) => {

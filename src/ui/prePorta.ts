@@ -148,7 +148,10 @@ function renderPrePortaStructuredHtml(rawInput: string): string {
     const stepBoldMatch =
       trimmed.match(/^((?:(?:\d+|[A-E])\.\s+)?\*\*[^*\n]{2,70}:\*\*)\s+(.+)$/) ||
       trimmed.match(/^((?:\d+|[A-E])\.\s+\*\*[^*\n]{2,70}\*\*:\s*)(.+)$/);
-    const stepPlainMatch = !stepBoldMatch ? trimmed.match(/^((?:(?:\d+|[A-E])\.\s+[^:]{1,70}|[^:]{2,55}):)\s+(.+)$/) : null;
+    const stepPlainMatch =
+      !stepBoldMatch && !trimmed.startsWith('**')
+        ? trimmed.match(/^((?:(?:\d+|[A-E])\.\s+[^:]{1,70}|[^:]{2,55}):)\s+(.+)$/)
+        : null;
     const stepMatch = stepBoldMatch || stepPlainMatch;
     if (stepMatch && !stepMatch[1].includes('http')) {
       blocks.push(
